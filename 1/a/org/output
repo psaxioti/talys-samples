@@ -1,7 +1,7 @@
 
-    TALYS-1.4 Version: December 27, 2011)
+    TALYS-1.6 (Version: December 23, 2013)
 
- Copyright (C) 2011  A.J. Koning, S. Hilaire and S. Goriely      
+ Copyright (C) 2013  A.J. Koning, S. Hilaire and S. Goriely      
                          NRG          CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
@@ -36,11 +36,12 @@
  maxz               12     maxZ         maximal number of protons away from the initial compound nucleus
  maxn               32     maxN         maximal number of neutrons away from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
+ equidistant         n     flagequi     flag to use equidistant excitation bins instead of logarithmic bins
  segment             1     segment      number of segments to divide emission energy grid
- maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
+ maxlevelstar       30     nlevmax      maximum number of included discrete levels for target
  maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
  maxlevelsbin g     10     nlevbin      maximum number of included discrete levels for gamma    channel
- maxlevelsbin n     20     nlevbin      maximum number of included discrete levels for neutron  channel
+ maxlevelsbin n     30     nlevbin      maximum number of included discrete levels for neutron  channel
  maxlevelsbin p     10     nlevbin      maximum number of included discrete levels for proton   channel
  maxlevelsbin d      5     nlevbin      maximum number of included discrete levels for deuteron channel
  maxlevelsbin t      5     nlevbin      maximum number of included discrete levels for triton   channel
@@ -57,7 +58,7 @@
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
  anglesrec           1     nanglerec    number of recoil angles
- maxenrec           24     maxenrec     number of recoil energies
+ maxenrec           20     maxenrec     number of recoil energies
  channels            n     flagchannels flag for exclusive channels calculation
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
@@ -72,6 +73,10 @@
  astrogs             n     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
  massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
+ disctable           1     disctable    table with discrete levels
+ production          n     flagprod     flag for isotope production
+ outfy               n     flagoutfy    flag for output detailed fission yield calculation
+ gefran          50000     gefran       number of random events for GEF calculation
  #
  # Optical model
  #
@@ -79,6 +84,7 @@
  dispersion          n     flagdisp     flag for dispersive optical model
  jlmomp              n     flagjlm      flag for using semi-microscopic JLM OMP
  optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
+ incadjust           y     flagincadj   flag for OMP adjustment on incident channel also
  omponly             n     flagomponly  flag to execute ONLY an optical model calculation
  autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
  spherical           n     flagspher    flag to force spherical optical model
@@ -105,8 +111,9 @@
  compound            y     flagcomp     flag for compound nucleus model
  fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
  eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
+ cpang               n     flagcpang    flag for compound angular distribution calculation for incident charged particles
  urr                 n     flagurr      flag for URR calculation
- urrnjoy             y     flagurrnjoy  flag for normalization of URR parameters with NJOY method
+ urrnjoy             n     flagurrnjoy  flag for normalization of URR parameters with NJOY method
  lurr                2     lurr         maximal orbital angular momentum for URR
  #
  # Gamma emission
@@ -115,6 +122,8 @@
  strength            1     strength     model for E1 gamma-ray strength function
  strengthM1          2     strengthM1   model for M1 gamma-ray strength function
  electronconv        y     flagelectron flag for application of electron conversion coefficient
+ racap               n     flagracap    flag for radiative capture model
+ ldmodelracap        1     ldmodelracap level density model for direct radiative capture
  #
  # Pre-equilibrium
  #
@@ -124,7 +133,7 @@
  mpreeqmode          2     mpreeqmode   designator for multiple pre-equilibrium model
  phmodel             1     phmodel      particle-hole state density model
  pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
- preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
+ preeqspin           1     pespinmodel  model for pre-equilibrium spin distribution
  giantresonance      y     flaggiant    flag for collective contribution from giant resonances
  preeqsurface        y     flagsurface  flag for surface effects in exciton model
  preeqcomplex        y     flagpecomp   flag for Kalbach complex particle emission model
@@ -152,7 +161,9 @@
  hbstate             y     flaghbstate  flag for head band states in fission
  class2              y     flagclass2   flag for class2 states in fission
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
- ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
+ ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
+ fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
+ fymodel             2     fymodel      fission yield model, 1: Brosa 2: GEF
  #
  # Output
  #
@@ -188,7 +199,7 @@
  ########## BASIC REACTION PARAMETERS ##########
 
  Projectile           : neutron     Mass in a.m.u.      :   1.008665
- Target               :  93Nb       Mass in a.m.u.      :  92.906378
+ Target               :  93Nb       Mass in a.m.u.      :  92.906373
 
  Included channels:
                      gamma   
@@ -207,11 +218,11 @@
 
  Q(n,g):  7.22755
  Q(n,n):  0.00000
- Q(n,p):  0.69112
- Q(n,d): -3.81879
- Q(n,t): -6.19635
- Q(n,h): -7.72313
- Q(n,a):  4.92559
+ Q(n,p):  0.69205
+ Q(n,d): -3.81775
+ Q(n,t): -6.19530
+ Q(n,h): -7.72099
+ Q(n,a):  4.92829
 
  ########## RESULTS FOR E= 14.00000 ##########
 
@@ -232,33 +243,33 @@
  Total           = 3.98195E+03
    Shape elastic   = 2.21132E+03
    Reaction        = 1.77063E+03
-     Compound elastic= 5.99517E-04
+     Compound elastic= 5.71496E-04
      Non-elastic     = 1.77063E+03
-       Direct          = 3.14960E+01
-       Pre-equilibrium = 4.15333E+02
-       Giant resonance = 6.25987E+01
-       Compound non-el = 1.26120E+03
+       Direct          = 4.25145E+01
+       Pre-equilibrium = 4.13497E+02
+       Giant resonance = 5.04830E+01
+       Compound non-el = 1.26413E+03
      Total elastic   = 2.21132E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 4.18039E+00
- neutron = 1.69542E+03
- proton  = 3.82417E+01
- deuteron= 4.95152E+00
- triton  = 1.81578E-01
- helium-3= 7.05542E-10
- alpha   = 2.76588E+01
+ gamma   = 4.16364E+00
+ neutron = 1.69582E+03
+ proton  = 3.78981E+01
+ deuteron= 4.95326E+00
+ triton  = 1.81728E-01
+ helium-3= 6.94429E-10
+ alpha   = 2.76106E+01
 
  3. Total particle production cross sections
 
- gamma   = 2.20691E+03    Multiplicity= 1.24640E+00
- neutron = 3.08065E+03    Multiplicity= 1.73986E+00
- proton  = 4.06663E+01    Multiplicity= 2.29671E-02
- deuteron= 4.95152E+00    Multiplicity= 2.79647E-03
- triton  = 1.81579E-01    Multiplicity= 1.02550E-04
- helium-3= 7.05542E-10    Multiplicity= 3.98469E-13
- alpha   = 2.83525E+01    Multiplicity= 1.60126E-02
+ gamma   = 2.23452E+03    Multiplicity= 1.26199E+00
+ neutron = 3.08695E+03    Multiplicity= 1.74342E+00
+ proton  = 4.02260E+01    Multiplicity= 2.27185E-02
+ deuteron= 4.95326E+00    Multiplicity= 2.79746E-03
+ triton  = 1.81728E-01    Multiplicity= 1.02635E-04
+ helium-3= 6.94430E-10    Multiplicity= 3.92194E-13
+ alpha   = 2.83423E+01    Multiplicity= 1.60069E-02
 
  4. Residual production cross sections
 
@@ -267,34 +278,34 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.18310E+00    0    5.99925E-01  0.50708
-                                 1    5.83176E-01  0.49292   3.76000E+02 sec. 
-   41  93 ( 93Nb) 3.23779E+02    0    2.77675E+02  0.85761
-                                 1    4.61036E+01  0.14239   5.09000E+08 sec. 
-   40  93 ( 93Zr) 2.98768E+01    0    2.98768E+01  1.00000
-   41  92 ( 92Nb) 1.37152E+03    0    8.51678E+02  0.62098
-                                 1    5.19838E+02  0.37902   8.77000E+05 sec. 
-   40  92 ( 92Zr) 1.57410E+01    0    1.57410E+01  1.00000
-   40  91 ( 91Zr) 1.81575E-01    0    1.81575E-01  1.00000
-   39  90 ( 90Y ) 2.53058E+01    0    1.28872E+01  0.50926
-                                 2    1.24185E+01  0.49074   1.15000E+04 sec. 
-   39  89 ( 89Y ) 3.04668E+00    0    1.23415E+00  0.40508
-                                 1    1.81254E+00  0.59492   1.57000E+01 sec. 
+   41  94 ( 94Nb) 1.13952E+00    0    5.52758E-01  0.48508
+                                 1    5.86765E-01  0.51492   3.76000E+02 sec. 
+   41  93 ( 93Nb) 3.21570E+02    0    2.81009E+02  0.87387
+                                 1    4.05609E+01  0.12613   5.09000E+08 sec. 
+   40  93 ( 93Zr) 2.99236E+01    0    2.99236E+01  1.00000
+   41  92 ( 92Nb) 1.37758E+03    0    8.62153E+02  0.62585
+                                 1    5.15425E+02  0.37415   8.77000E+05 sec. 
+   40  92 ( 92Zr) 1.55070E+01    0    1.55070E+01  1.00000
+   40  91 ( 91Zr) 1.82294E-01    0    1.82294E-01  1.00000
+   39  90 ( 90Y ) 2.53138E+01    0    1.30258E+01  0.51457
+                                 2    1.22880E+01  0.48543   1.15000E+04 sec. 
+   39  89 ( 89Y ) 3.02843E+00    0    1.22528E+00  0.40459
+                                 1    1.80315E+00  0.59541   1.57000E+01 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.18310E+00
-   93 3.53656E+02
-   92 1.38726E+03
-   91 1.81575E-01
-   90 2.53058E+01
-   89 3.04668E+00
+   94 1.13952E+00
+   93 3.51494E+02
+   92 1.39308E+03
+   91 1.82294E-01
+   90 2.53138E+01
+   89 3.02843E+00
 
- Total residual production cross section:  1770.62927
+ Total residual production cross section:  1774.24243
  Non-elastic cross section              :  1770.62939
 
- Execution time:  0 hours  0 minutes  1.60 seconds 
+ Execution time:  0 hours  0 minutes  1.27 seconds 
 
  The TALYS team congratulates you with this successful calculation.
