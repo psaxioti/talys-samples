@@ -1,0 +1,47 @@
+# Target Z    :  67
+# Target A    : 165
+# Target state:  
+# Projectile  : a
+# Reaction    : (a,n')    
+# Final state :  
+# Quantity    : Cross section
+# Frame       : L
+# MF          :    3
+# MT          :    4
+# X4 ID       : D4195002 
+# X4 code     : 67-HO-165(A,N)69-TM-168,,SIG
+# Author      : Singh                    
+# Year        : 1995
+# Data points :      6
+#    E(MeV)       xs(mb)      dxs(mb)     dE(MeV)      Evaluation  C/E(F)      Chi-2     Delta(mb)
+  1.58000E+01  4.70000E+00  0.00000E+00  1.30000E+00  8.27963E+00   1.762       0.000       3.580    
+  2.00000E+01  1.20600E+02  0.00000E+00  1.60000E+00  2.32327E+01  0.1926       0.000       97.37    
+  2.39000E+01  1.29600E+02  0.00000E+00  1.40000E+00  1.34528E+01  0.1038       0.000       116.1    
+  2.76000E+01  3.55000E+01  0.00000E+00  1.20000E+00  9.86674E+00  0.2779       0.000       25.63    
+  3.08000E+01  1.63000E+01  0.00000E+00  9.00000E-01  8.04958E+00  0.4938       0.000       8.250    
+  3.39000E+01  8.20000E+00  0.00000E+00  8.00000E-01  6.65815E+00  0.8120       0.000       1.542    
+#
+# Average deviation:                                                3.718       0.000       42.09    
+#
+# Full reference:
+#B.P.Singh,  R.Prasad
+#Jour. Physica Scripta Vol.51, p.440, 1995
+#Measurement and analysis of excitation functions for the reactions 165Ho(a,xn) (x=1-3) in the energy range 10-40 MeV
+#
+#
+# Quality information:
+#
+# Quality  D4195002 : N2
+# Date     D4195002 : 23-08-2015
+# Reaction D4195002 : NP:    6 E-range:   15.8    -   33.9     MeV 67-HO-165(A,N)69-TM-168,,SIG        pdf: n
+# Paper    D4195002 : B.P.Singh+ Jour. Physica Scripta Vol.51, p.440, 1995 Measurement and analysis of excitation functions for the reactions 165Ho(a,xn) (x=1-3)
+# Action   D4195002 : 
+# Comment  D4195002 : Evaluation        N=     6 F=   3.72     chi-2=   0.00     D=   42.1     mb T=   11.6     mb E=   52.5     K1=  4.36     K2= 4.415E+04
+# Comment  D4195002 : TALYS             N=     6 F=   3.72     chi-2=   0.00     D=   42.1     mb T=   11.6     mb E=   52.5     K1=  4.36     K2= 4.415E+04
+# Comment  D4195002 : cendl3.1          N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : eaf.2010          N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : endfb7.1          N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : irdff1.0          N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : jeff3.2           N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : jendl4.0          N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00
+# Comment  D4195002 : tendl.2014        N=     0 F=   0.00     chi-2=   0.00     D=   0.00     mb T=   0.00     mb E=   52.5     K1=  0.00     K2=  0.00

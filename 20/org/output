@@ -1,7 +1,7 @@
 
-    TALYS-1.6 (Version: December 23, 2013) 
+    TALYS-1.8 (Version: December 28, 2015)
 
- Copyright (C) 2013  A.J. Koning, S. Hilaire and S. Goriely      
+ Copyright (C) 2015  A.J. Koning, S. Hilaire and S. Goriely      
                          NRG          CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
@@ -36,11 +36,12 @@
  #
  # Basic physical and numerical parameters
  #
- ejectiles  g n p d t h a  outtype      outgoing particles
+ ejectiles g n p d t h a   outtype      outgoing particles
  maxz               12     maxZ         maximal number of protons away from the initial compound nucleus
  maxn               32     maxN         maximal number of neutrons away from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
  equidistant         n     flagequi     flag to use equidistant excitation bins instead of logarithmic bins
+ popmev              n     flagpopmev   flag to use initial population per MeV instead of histograms
  segment             1     segment      number of segments to divide emission energy grid
  maxlevelstar       30     nlevmax      maximum number of included discrete levels for target
  maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
@@ -57,7 +58,7 @@
  transeps         1.00E-18 transeps     limit for transmission coefficient
  xseps            1.00E-17 xseps        limit for cross sections
  popeps           1.00E-13 popeps       limit for population cross section per nucleus
- Rfiseps          1.00E-13 Rfiseps      ratio for limit for fission cross section per nucleus
+ Rfiseps          1.00E-06 Rfiseps      ratio for limit for fission cross section per nucleus
  elow             1.00E-06 elow         minimal incident energy for nuclear model calculations
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
@@ -67,6 +68,8 @@
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
  best                n     flagbest     flag to use best set of adjusted parameters
+ bestbranch          y     flagbestbr   flag to use flag to use only best set of branching ratios
+ bestend             n     flagbestend  flag to put best set of parameters at end of input file
  relativistic        y     flagrel      flag for relativistic kinematics
  recoil              n     flagrecoil   flag for calculation of recoils
  labddx              n     flaglabddx   flag for calculation of DDX in LAB system
@@ -81,6 +84,10 @@
  production          n     flagprod     flag for isotope production
  outfy               n     flagoutfy    flag for output detailed fission yield calculation
  gefran          50000     gefran       number of random events for GEF calculation
+ Estop            1000.000 Estop        incident energy above which TALYS stops
+ rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
+ maxZrp             12     maxZrp       maximal number of protons away from the initial compound nucleus before residual evaporation
+ maxNrp             32     maxNrp       maximal number of neutons away from the initial compound nucleus before residual evaporation
  #
  # Optical model
  #
@@ -105,7 +112,7 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential)
+ alphaomp            6     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
  deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
@@ -135,6 +142,7 @@
  preeqmode           2     preeqmode    designator for pre-equilibrium model
  multipreeq          n     flagmulpre   flag for multiple pre-equilibrium calculation
  mpreeqmode          2     mpreeqmode   designator for multiple pre-equilibrium model
+ breakupmodel        1     breakupmodel model for break-up reaction: 1. Kalbach 2. Avrigeanu
  phmodel             1     phmodel      particle-hole state density model
  pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
  preeqspin           1     pespinmodel  model for pre-equilibrium spin distribution
@@ -168,6 +176,7 @@
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
  fymodel             2     fymodel      fission yield model, 1: Brosa 2: GEF
+ ffspin              n     flagffspin   flag to use spin distribution in initial FF population
  #
  # Output
  #
@@ -187,6 +196,9 @@
  outfission          n     flagfisout   flag for output of fission information
  outdiscrete         n     flagdisc     flag for output of discrete state cross sections
  outspectra          n     flagspec     flag for output of double-differential cross sections
+ outbinspectra       n     flagbinspec  flag for output of emission spectrum per excitation bin
+ resonance           n     flagres      flag for output of low energy resonance cross sections
+ group               n     flaggroup    flag for output of low energy groupwise cross sections
  addiscrete          y     flagadd      flag for addition of discrete states to spectra
  addelastic          y     flagaddel    flag for addition of elastic peak to spectra
  outangle            n     flagang      flag for output of angular distributions
@@ -198,6 +210,7 @@
  components          n     flagcompo    flag for output of cross section components
  endf                n     flagendf     flag for information for ENDF-6 file
  endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
+ sacs                n     flagsacs     flag for statistical analysis of cross sections
  partable            n     flagpartable flag for output of model parameters on separate file
 
  ########## BASIC REACTION PARAMETERS ##########
@@ -214,7 +227,7 @@
                      helium-3
                      alpha   
 
-  75 incident energies (LAB):
+    75 incident energies (LAB):
 
   2.015E-06
   4.029E-06
@@ -1058,19 +1071,19 @@
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 5.51570E+05 3.81060E+00
+   0.3481 1.00000E+00 5.74477E+05 3.96886E+00
 
  Reaction rate for Z= 56 A=138 (138Ba) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 8.50697E+00 5.87716E-05
+   0.3481 1.00000E+00 8.92719E+00 6.16747E-05
 
  Reaction rate for Z= 54 A=135 (135Xe) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 2.45285E-07 1.69459E-12
+   0.3481 1.00000E+00 2.43579E-07 1.68280E-12
 
  Reaction rate for Z= 52 A=131 (131Te) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
@@ -1078,6 +1091,6 @@
 
    0.3481 1.00000E+00 1.66319E-12 1.14904E-17
 
- Execution time:  0 hours  0 minutes  8.76 seconds 
+ Execution time:  0 hours  0 minutes  9.36 seconds 
 
  The TALYS team congratulates you with this successful calculation.
