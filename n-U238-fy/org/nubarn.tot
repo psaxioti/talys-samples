@@ -1,9 +1,25 @@
-# n + U238: Average prompt neutron  multiplicity (nubar-prompt)
-# 
-# # energies =     4
-# 
-# E-in           nubar
- 1.00000E+00 2.68005E+00
- 1.60000E+00 2.87373E+00
- 5.50000E+00 3.69717E+00
- 1.00000E+01 4.26170E+00
+# header:
+#   title: U238(n,f) average neutron multiplicity
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 1
+#   ENDF_MT: 456
+#   ejectile: neutron
+# datablock:
+#   quantity: multiplicity
+#   columns: 2
+#   entries: 4
+##       E            nubar
+##     [MeV]           []
+   1.000000E+00   2.699821E+00
+   1.600000E+00   2.876771E+00
+   5.500000E+00   3.697365E+00
+   1.000000E+01   4.261745E+00

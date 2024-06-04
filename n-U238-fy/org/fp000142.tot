@@ -1,9 +1,26 @@
-# n + U238: Fission product yield of A=142
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 7.05142E-02 5.78271E-02 4.29067E-01 3.51701E-01
- 1.60000E+00 6.64043E-02 5.85472E-02 6.87291E+00 6.05976E+00
- 5.50000E+00 6.59472E-02 6.53253E-02 3.72196E+01 3.68688E+01
- 1.00000E+01 6.62030E-02 6.53877E-02 4.08184E+01 4.03137E+01
+# header:
+#   title: U238(n,f) fission yield for Np142
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 93
+#   A: 142
+#   nuclide: Np142
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   7.018226E-02   5.780155E-02   3.720396E-01   3.062564E-01
+   1.600000E+00   6.634269E-02   5.855792E-02   6.830556E+00   6.029121E+00
+   5.500000E+00   6.594667E-02   6.532721E-02   3.724681E+01   3.689718E+01
+   1.000000E+01   6.620299E-02   6.538776E-02   4.081807E+01   4.031339E+01

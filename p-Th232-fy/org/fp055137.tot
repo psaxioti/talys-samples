@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 137Cs
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.54316E-03 7.75747E-03 3.20193E+00 2.90745E+00
+# header:
+#   title: Th232(p,f) fission yield for Cs137
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 55
+#   A: 137
+#   nuclide: Cs137
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.543164E-03   7.757473E-03   3.201926E+00   2.907454E+00

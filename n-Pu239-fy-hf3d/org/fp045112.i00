@@ -1,8 +1,25 @@
-# n + Pu239: Fission product yield of 112Rh ground state
-# 
-# # energies =     3
-# 
-# E-incident     FP yield      FP xs   Ratio 
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 8.82208E-04 1.58610E+02 4.75027E-01
+# header:
+#   title: Pu239(n,f) fission yield for Rh112g
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 45
+#   A: 112
+#   nuclide: Rh112g
+# datablock:
+#   quantity: fission yield
+#   columns: 4
+#   entries: 239
+##       E          FP yield         FP xs          Ratio
+##     [MeV]           []            [mb]            []
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   8.822083E-04   1.586097E+02   4.750269E-01

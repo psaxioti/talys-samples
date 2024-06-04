@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 158Pr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 5.76866E-18 3.32601E-07 2.16206E-15 1.24657E-04
+# header:
+#   title: Th232(p,f) fission yield for Pr158
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 59
+#   A: 158
+#   nuclide: Pr158
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   5.768663E-18   3.326008E-07   2.162060E-15   1.246568E-04

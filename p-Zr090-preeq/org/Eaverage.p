@@ -1,6 +1,19 @@
-# p + Zr90 Average proton   emission energy
-# Q-value    = 0.00000E+00
-# 
-# # energies =     1
-#    E       E-average
- 1.20000E+02 3.25198E+01
+# header:
+#   title: Zr90(p,xp) average emission energy
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 40
+#   A: 90
+#   nuclide: Zr90
+# reaction:
+#   type: (p,xp)
+# datablock:
+#   quantity: average emission energy
+#   columns: 2
+#   entries: 0
+##       E          E-average
+##     [MeV]          [MeV]
+   1.200000E+02   3.251980E+01

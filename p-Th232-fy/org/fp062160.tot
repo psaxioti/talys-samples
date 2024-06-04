@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 160Sm
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 3.22890E-11 1.01699E-05 1.21017E-08 3.81162E-03
+# header:
+#   title: Th232(p,f) fission yield for Sm160
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 62
+#   A: 160
+#   nuclide: Sm160
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   3.228895E-11   1.016991E-05   1.210170E-08   3.811621E-03

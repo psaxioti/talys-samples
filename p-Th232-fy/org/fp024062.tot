@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  62Cr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.34014E-08 7.24900E-09 5.02278E-06 2.71688E-06
+# header:
+#   title: Th232(p,f) fission yield for Cr62
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 24
+#   A: 62
+#   nuclide: Cr62
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   1.340145E-08   7.249002E-09   5.022780E-06   2.716882E-06

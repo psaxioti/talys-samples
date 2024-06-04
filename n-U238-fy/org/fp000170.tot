@@ -1,9 +1,26 @@
-# n + U238: Fission product yield of A=170
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 5.07956E-07 6.53288E-07 3.08929E-06 3.97320E-06
- 1.60000E+00 0.00000E+00 3.91150E-05 4.98883E-07 4.04842E-03
- 5.50000E+00 3.37372E-06 1.77328E-05 1.90405E-03 1.00081E-02
- 1.00000E+01 1.14700E-05 4.34054E-05 8.24745E-03 2.67605E-02
+# header:
+#   title: U238(n,f) fission yield for Np170
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 93
+#   A: 170
+#   nuclide: Np170
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   3.561739E-07   4.548707E-07   1.887115E-06   2.410054E-06
+   1.600000E+00   0.000000E+00   3.941497E-05   3.511805E-07   4.058098E-03
+   5.500000E+00   3.370022E-06   1.772921E-05   1.903375E-03   1.001345E-02
+   1.000000E+01   1.147019E-05   4.340615E-05   8.247625E-03   2.676079E-02

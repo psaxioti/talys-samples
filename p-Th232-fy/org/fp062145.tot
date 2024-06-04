@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 145Sm
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.64842E-05 2.61833E-11 6.17819E-03 9.81333E-09
+# header:
+#   title: Th232(p,f) fission yield for Sm145
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 62
+#   A: 145
+#   nuclide: Sm145
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.648424E-05   2.618326E-11   6.178195E-03   9.813325E-09

@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  90Sr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.10468E-04 7.11803E-08 1.28003E-03 4.32908E-07
- 1.60000E+00 2.38616E-04 1.94386E-05 2.46968E-02 2.01190E-03
- 5.50000E+00 3.45177E-04 1.04857E-05 1.94811E-01 5.91796E-03
- 1.00000E+01 3.19163E-04 5.73865E-06 1.96771E-01 3.53803E-03
+# header:
+#   title: U238(n,f) fission yield for Sr90
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 38
+#   A: 90
+#   nuclide: Sr90
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.130917E-04   4.984989E-08   1.129023E-03   2.641211E-07
+   1.600000E+00   2.390690E-04   1.962778E-05   2.461399E-02   2.020843E-03
+   5.500000E+00   3.452379E-04   1.048905E-05   1.949890E-01   5.924210E-03
+   1.000000E+01   3.191643E-04   5.738413E-06   1.967703E-01   3.537851E-03

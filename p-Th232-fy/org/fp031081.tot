@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  81Ga
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 9.48912E-05 5.09172E-04 3.55646E-02 1.90835E-01
+# header:
+#   title: Th232(p,f) fission yield for Ga81
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 31
+#   A: 81
+#   nuclide: Ga81
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   9.489115E-05   5.091724E-04   3.556463E-02   1.908347E-01

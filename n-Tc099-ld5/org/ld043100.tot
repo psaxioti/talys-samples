@@ -1,19 +1,38 @@
-# Level density for 100Tc            
-# Model: Hilaire-Goriely tables   Collective enhancement: no
-# Experimental D0 :             12.00 eV +-         1.30000
-# Theoretical D0  :             12.46 eV Chi2: 1.24769E-01 Dtheo/Dexp:   1.03827
-# Nlow:   8 Ntop:  17           Mass in a.m.u.  :  99.907653
-# ctable          :  -0.16211
-# ptable          :  -0.57637
-#
-#
-#
-#
-# Energy  Level N_cumulative    Total l.d.        a            Sigma  
-# Chi-2 per level :   0.41740
-# Frms per level  :   1.05758
-# Erms per level  :   0.97685
-# av dev per level:   0.51138
+# header:
+#   title: Tc100 level density
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# residual:
+#   Z: 43
+#   A: 100
+#   nuclide: Tc100
+# parameters:
+#   ldmodel keyword: 5
+#   level density model: Hilaire-Goriely tables
+#   Nlow: 8
+#   Ntop: 17
+#   ctable: -1.621100E-01
+#   ptable: -5.763700E-01
+# observables:
+#   experimental D0 [eV]:  1.200000E+01
+#   experimental D0 unc. [eV]:  1.300000E+00
+#   theoretical D0 [eV]:  1.245919E+01
+#   Chi-2 D0:  1.247688E-01
+#   C/E D0:  1.038266E+00
+#   Frms D0:  1.010565E+00
+#   Erms D0:  1.010565E+00
+#   Chi-2 per level:  3.756589E-02
+#   Frms per level:  1.016938E+00
+#   Erms per level:  9.978944E-01
+#   average deviation per level:  4.602415E-02
+# datablock:
+#   quantity: level density
+#   columns: 4
+#   entries: 79
+##       E            Level      N_cumulative     Total LD
+##     [MeV]           []             []          [MeV^-1]
    3.194900E-01     9            8.913245E+00   4.605372E+01
    3.351600E-01    10            9.663440E+00   4.787457E+01
    3.409800E-01    11            9.948689E+00   4.901198E+01

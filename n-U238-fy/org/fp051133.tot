@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 133Sb
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.16915E-02 1.29775E-02 1.31924E-01 7.89270E-02
- 1.60000E+00 2.41619E-02 1.42611E-02 2.50076E+00 1.47603E+00
- 5.50000E+00 2.15268E-02 1.64708E-02 1.21493E+01 9.29584E+00
- 1.00000E+01 1.96733E-02 1.75691E-02 1.21290E+01 1.08318E+01
+# header:
+#   title: U238(n,f) fission yield for Sb133
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 51
+#   A: 133
+#   nuclide: Sb133
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.220963E-02   1.322989E-02   1.176732E-01   7.009627E-02
+   1.600000E+00   2.422152E-02   1.428753E-02   2.493791E+00   1.471020E+00
+   5.500000E+00   2.152597E-02   1.647157E-02   1.215778E+01   9.303132E+00
+   1.000000E+01   1.967314E-02   1.756918E-02   1.212883E+01   1.083177E+01

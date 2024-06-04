@@ -1,8 +1,27 @@
-# n + Pu239: Fission product yield of 105Nb
-# 
-# # energies =     3
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 7.63065E-03 2.55009E-02 1.37189E+03 4.58732E+03
+# header:
+#   title: Pu239(n,f) fission yield for Nb105
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 41
+#   A: 105
+#   nuclide: Nb105
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 3
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   7.630646E-03   2.550089E-02   1.371892E+03   4.587323E+03

@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  98Mo
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 9.43319E-05 0.00000E+00
- 1.60000E+00 0.00000E+00 0.00000E+00 1.58023E-06 0.00000E+00
- 5.50000E+00 0.00000E+00 0.00000E+00 7.41108E-03 0.00000E+00
- 1.00000E+01 0.00000E+00 0.00000E+00 5.65803E-03 0.00000E+00
+# header:
+#   title: U238(n,f) fission yield for Mo98
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 42
+#   A: 98
+#   nuclide: Mo98
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   0.000000E+00   0.000000E+00   8.877651E-05   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00   9.496545E-07   0.000000E+00
+   5.500000E+00   0.000000E+00   0.000000E+00   7.418393E-03   0.000000E+00
+   1.000000E+01   0.000000E+00   0.000000E+00   5.658232E-03   0.000000E+00

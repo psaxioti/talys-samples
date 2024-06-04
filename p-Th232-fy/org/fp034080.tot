@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  80Se
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 6.12287E-04 5.65846E-05 2.29481E-01 2.12076E-02
+# header:
+#   title: Th232(p,f) fission yield for Se80
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 34
+#   A: 80
+#   nuclide: Se80
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   6.122866E-04   5.658462E-05   2.294813E-01   2.120757E-02

@@ -1,9 +1,31 @@
-# n + U238: Production of Pa238 - Total
-# Q-value    =-2.80396E+00 mass= 238.054637
-# E-threshold= 2.81584E+00
-# # energies =     4
-#     E          xs
- 1.00000E+00 0.00000E+00
- 1.60000E+00 0.00000E+00
- 5.50000E+00 0.00000E+00
- 1.00000E+01 5.32377E-04
+# header:
+#   title: U238(n,x)Pa238 cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,x)
+#   Q-value [MeV]: -2.803958E+00
+#   E-threshold [MeV]:  2.815839E+00
+#   ENDF_MF: 6
+#   ENDF_MT: 5
+# residual:
+#   Z: 91
+#   A: 238
+#   nuclide: Pa238
+#   mass [amu]:  2.380546E+02
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 4
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E+00   0.000000E+00
+   1.600000E+00   0.000000E+00
+   5.500000E+00   0.000000E+00
+   1.000000E+01   5.323863E-04

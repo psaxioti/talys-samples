@@ -1,9 +1,26 @@
-# n + U238: Fission product yield of A=131
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.33018E-02 1.11571E-02 8.08994E-02 6.78563E-02
- 1.60000E+00 1.61909E-02 1.22324E-02 1.67577E+00 1.26606E+00
- 5.50000E+00 1.61016E-02 1.25079E-02 9.08741E+00 7.05925E+00
- 1.00000E+01 1.91807E-02 1.27990E-02 1.18253E+01 7.89095E+00
+# header:
+#   title: U238(n,f) fission yield for Np131
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 93
+#   A: 131
+#   nuclide: Np131
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   1.365859E-02   1.137746E-02   7.236763E-02   6.028179E-02
+   1.600000E+00   1.624068E-02   1.225472E-02   1.672114E+00   1.261731E+00
+   5.500000E+00   1.610121E-02   1.250810E-02   9.093920E+00   7.064600E+00
+   1.000000E+01   1.918088E-02   1.279900E-02   1.182531E+01   7.890888E+00

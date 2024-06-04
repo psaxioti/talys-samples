@@ -1,8 +1,25 @@
-# n + Pu239: Fission product yield of A=123
-# 
-# # energies =     3
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 5.32658E-04 3.91479E-04 9.57797E+01 7.04236E+01
+# header:
+#   title: Pu239(n,f) fission yield for Am123
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 95
+#   A: 123
+#   nuclide: Am123
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 3
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   5.326579E-04   3.914794E-04   9.577967E+01   7.042365E+01

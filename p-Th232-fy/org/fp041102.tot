@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 102Nb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.28327E-03 1.30793E-02 3.10452E+00 4.90204E+00
+# header:
+#   title: Th232(p,f) fission yield for Nb102
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 41
+#   A: 102
+#   nuclide: Nb102
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.283269E-03   1.307930E-02   3.104519E+00   4.902042E+00

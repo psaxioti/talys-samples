@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  87Se
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.50030E-03 6.08367E-03 9.37097E-01 2.28012E+00
+# header:
+#   title: Th232(p,f) fission yield for Se87
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 34
+#   A: 87
+#   nuclide: Se87
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.500299E-03   6.083669E-03   9.370970E-01   2.280122E+00

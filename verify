@@ -94,10 +94,10 @@ for f in ${files} ; do
   fi
   first=1
   for of in `ls -1` ; do
-    diff ${of} ../org/${of} >> /dev/null
+    diff ${of} ../org/${of} | grep -v date >> /dev/null
     if [ $? -eq 1 ] ; then
       echo $of >> outputdiff
-      diff ${of} ../org/${of} >> outputdiff
+      diff ${of} ../org/${of} | grep -v date >> outputdiff
     fi
     lines_new=`cat ${of}|wc -l`
     lines_org=`cat ../org/${of}|wc -l`

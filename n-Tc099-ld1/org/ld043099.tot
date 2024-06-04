@@ -1,19 +1,51 @@
-# Level density for  99Tc            
-# Model: Gilbert-Cameron          Collective enhancement: no
-# Experimental D0 :              0.00 eV +-         0.00000
-# Theoretical D0  :              8.01 eV Chi2: 0.00000E+00 Dtheo/Dexp:   0.00000
-# Nlow:   8 Ntop:  15           Mass in a.m.u.  :  98.906250
-# a(Sn)           :  15.03382   Asymptotic a    :  12.90773
-# Shell correction:   2.47530   Damping gamma   :   0.09362
-# Pairing energy  :   1.20605   Separation en.  :   8.96698
-# Disc. sigma     :   2.98608   Sigma (Sn)      :   4.96408
-# Adj. pair shift :   0.00000
-# Matching Ex     :   7.33223   Temperature     :   0.78651   E0:  -1.89071
-# Energy  Level N_cumulative    Total l.d.        a            Sigma  
-# Chi-2 per level :   0.56846
-# Frms per level  :   1.06268
-# Erms per level  :   0.95639
-# av dev per level:   0.56508
+# header:
+#   title: Tc99 level density
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# residual:
+#   Z: 43
+#   A: 99
+#   nuclide: Tc99
+# parameters:
+#   ldmodel keyword: 1
+#   level density model: Gilbert-Cameron
+#   Collective enhacement: n
+#   a(Sn) [MeV^-1]:  1.503382E+01
+#   asymptotic a [MeV^-1]:  1.290773E+01
+#   shell correction [MeV]:  2.475302E+00
+#   damping gamma:  9.361952E-02
+#   pairing energy [MeV]:  1.206045E+00
+#   adjusted pairing shift [MeV]:  0.000000E+00
+#   separation energy [MeV]:  8.966977E+00
+#   discrete spin cutoff parameter:  8.916667E+00
+#   spin cutoff parameter(Sn):  2.464204E+01
+#   matching energy [MeV]:  7.332231E+00
+#   temperature [MeV]:  7.865146E-01
+#   E0 [MeV]: -1.890708E+00
+#   Nlow: 8
+#   Ntop: 15
+#   ctable:  1.000000E-20
+#   ptable:  1.000000E-20
+# observables:
+#   experimental D0 [eV]:  0.000000E+00
+#   experimental D0 unc. [eV]:  0.000000E+00
+#   theoretical D0 [eV]:  8.014590E+00
+#   Chi-2 D0:  0.000000E+00
+#   C/E D0:  1.401298E-45
+#   Frms D0:  0.000000E+00
+#   Erms D0:  0.000000E+00
+#   Chi-2 per level:  2.782685E-02
+#   Frms per level:  1.013542E+00
+#   Erms per level:  9.978196E-01
+#   average deviation per level:  2.766107E-02
+# datablock:
+#   quantity: level density
+#   columns: 6
+#   entries: 134
+##       E            Level      N_cumulative     Total LD           a            Sigma
+##     [MeV]           []             []          [MeV^-1]       [MeV^-1]          []
    6.527700E-01     9            8.863828E+00   3.226568E+01   1.589892E+01   2.986079E+00
    6.714770E-01    10            9.474644E+00   3.304230E+01   1.589892E+01   2.986079E+00
    7.194100E-01    11            1.110746E+01   3.511864E+01   1.589892E+01   2.986079E+00

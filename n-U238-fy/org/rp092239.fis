@@ -1,9 +1,26 @@
-# n + U238: Fission of 239U 
-#                 
-#                 
-# # energies =     4
-#    E         xs 
- 1.00000E+00 1.21636E+01
- 1.60000E+00 2.06999E+02
- 5.50000E+00 2.70732E+02
- 1.00000E+01 7.16910E+00
+# header:
+#   title: U238(n,f)U239 cross section per fissioning nuclide
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 92
+#   A: 239
+#   nuclide: U239
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 4
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E+00   1.059657E+01
+   1.600000E+00   2.059148E+02
+   5.500000E+00   2.706515E+02
+   1.000000E+01   7.154790E+00

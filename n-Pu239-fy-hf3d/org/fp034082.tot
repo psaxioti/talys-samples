@@ -1,8 +1,27 @@
-# n + Pu239: Fission product yield of  82Se
-# 
-# # energies =     3
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 5.34429E-04 1.02393E-04 9.60835E+01 1.84193E+01
+# header:
+#   title: Pu239(n,f) fission yield for Se82
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 34
+#   A: 82
+#   nuclide: Se82
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 3
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]           [mb]            []            [mb]
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   5.344290E-04   1.023926E-04   9.608347E+01   1.841928E+01

@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 111Zr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.83313E-15 2.09045E-06 6.87045E-13 7.83487E-04
+# header:
+#   title: Th232(p,f) fission yield for Zr111
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 40
+#   A: 111
+#   nuclide: Zr111
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   1.833126E-15   2.090447E-06   6.870446E-13   7.834869E-04

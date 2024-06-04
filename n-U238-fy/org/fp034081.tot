@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  81Se
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.55189E-05 5.40872E-08 1.55201E-04 3.28950E-07
- 1.60000E+00 2.13438E-05 1.97155E-05 2.20908E-03 2.04057E-03
- 5.50000E+00 7.45166E-05 9.55291E-06 4.20556E-02 5.39149E-03
- 1.00000E+01 1.01989E-04 1.27527E-05 6.28783E-02 7.86238E-03
+# header:
+#   title: U238(n,f) fission yield for Se81
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 34
+#   A: 81
+#   nuclide: Se81
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.399124E-05   4.191251E-08   1.271127E-04   2.220662E-07
+   1.600000E+00   2.089248E-05   1.981068E-05   2.151041E-03   2.039674E-03
+   5.500000E+00   7.452999E-05   9.553523E-06   4.209424E-02   5.395825E-03
+   1.000000E+01   1.019892E-04   1.275257E-05   6.287809E-02   7.862225E-03

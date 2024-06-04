@@ -1,8 +1,25 @@
-# n + Pu239: Fission product yield of 115Pd isomer      
-# 
-# # energies =     3
-# 
-# E-incident     FP yield      FP xs   Ratio 
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 1.35155E-04 2.43029E+01 6.06671E-01
+# header:
+#   title: Pu239(n,f) fission yield for Pd115m
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 46
+#   A: 115
+#   nuclide: Pd115m
+# datablock:
+#   quantity: fission yield
+#   columns: 4
+#   entries: 239
+##       E          FP yield         FP xs          Ratio
+##     [MeV]           []            [mb]            []
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   1.351554E-04   2.430292E+01   6.066706E-01

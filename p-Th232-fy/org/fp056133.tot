@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 133Ba
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 3.19458E-03 2.66674E-06 1.19731E+00 9.99477E-04
+# header:
+#   title: Th232(p,f) fission yield for Ba133
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 56
+#   A: 133
+#   nuclide: Ba133
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   3.194583E-03   2.666736E-06   1.197310E+00   9.994766E-04

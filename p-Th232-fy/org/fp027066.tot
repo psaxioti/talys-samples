@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  66Co
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.57601E-06 3.65811E-07 9.65472E-04 1.37104E-04
+# header:
+#   title: Th232(p,f) fission yield for Co66
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 27
+#   A: 66
+#   nuclide: Co66
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.576007E-06   3.658105E-07   9.654718E-04   1.371036E-04

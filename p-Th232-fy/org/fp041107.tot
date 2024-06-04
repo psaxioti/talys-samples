@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 107Nb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.89864E-06 4.87965E-03 7.11600E-04 1.82886E+00
+# header:
+#   title: Th232(p,f) fission yield for Nb107
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 41
+#   A: 107
+#   nuclide: Nb107
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.898643E-06   4.879646E-03   7.115999E-04   1.828862E+00

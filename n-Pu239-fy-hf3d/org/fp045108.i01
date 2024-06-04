@@ -1,8 +1,25 @@
-# n + Pu239: Fission product yield of 108Rh isomer      
-# 
-# # energies =     3
-# 
-# E-incident     FP yield      FP xs   Ratio 
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 6.75559E-05 1.21457E+01 2.71966E-01
+# header:
+#   title: Pu239(n,f) fission yield for Rh108m
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 45
+#   A: 108
+#   nuclide: Rh108m
+# datablock:
+#   quantity: fission yield
+#   columns: 4
+#   entries: 239
+##       E          FP yield         FP xs          Ratio
+##     [MeV]           []            [mb]            []
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   6.755595E-05   1.214569E+01   2.719665E-01

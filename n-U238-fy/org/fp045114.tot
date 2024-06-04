@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 114Rh
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 3.39216E-06 1.42349E-07 2.06305E-05 8.65748E-07
- 1.60000E+00 5.98857E-07 1.94391E-05 6.19817E-05 2.01196E-03
- 5.50000E+00 3.54715E-05 1.17462E-05 2.00193E-02 6.62933E-03
- 1.00000E+01 1.09682E-04 4.13201E-05 6.76212E-02 2.54749E-02
+# header:
+#   title: U238(n,f) fission yield for Rh114
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 45
+#   A: 114
+#   nuclide: Rh114
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.448395E-06   9.968827E-08   1.297233E-05   5.281811E-07
+   1.600000E+00   4.072372E-07   1.962810E-05   4.192819E-05   2.020875E-03
+   5.500000E+00   3.547657E-05   1.174685E-05   2.003703E-02   6.634612E-03
+   1.000000E+01   1.096887E-04   4.132286E-05   6.762502E-02   2.547640E-02

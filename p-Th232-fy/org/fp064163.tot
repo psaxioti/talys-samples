@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 163Gd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.93429E-11 1.24921E-06 3.34852E-08 4.68195E-04
+# header:
+#   title: Th232(p,f) fission yield for Gd163
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 64
+#   A: 163
+#   nuclide: Gd163
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.934292E-11   1.249206E-06   3.348518E-08   4.681950E-04

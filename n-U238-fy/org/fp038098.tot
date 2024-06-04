@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  98Sr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.37018E-02 4.90353E-02 1.44150E-01 2.98225E-01
- 1.60000E+00 2.16636E-02 4.55748E-02 2.24219E+00 4.71702E+00
- 5.50000E+00 1.75194E-02 3.99690E-02 9.88755E+00 2.25578E+01
- 1.00000E+01 1.53231E-02 3.55501E-02 9.44701E+00 2.19176E+01
+# header:
+#   title: U238(n,f) fission yield for Sr98
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 38
+#   A: 98
+#   nuclide: Sr98
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.336159E-02   4.829553E-02   1.237767E-01   2.558856E-01
+   1.600000E+00   2.162888E-02   4.549618E-02   2.226859E+00   4.684209E+00
+   5.500000E+00   1.751791E-02   3.996760E-02   9.894043E+00   2.257368E+01
+   1.000000E+01   1.532291E-02   3.554982E-02   9.446836E+00   2.191720E+01

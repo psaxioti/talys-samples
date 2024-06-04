@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  72Co
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.60000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 5.50000E+00 1.41359E-08 1.41359E-08 7.97802E-06 7.97802E-06
- 1.00000E+01 1.40995E-06 1.41000E-06 8.69264E-04 8.69300E-04
+# header:
+#   title: U238(n,f) fission yield for Co72
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 27
+#   A: 72
+#   nuclide: Co72
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []             []             []
+   1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   5.500000E+00   1.354235E-08   1.354227E-08   7.648665E-06   7.648665E-06
+   1.000000E+01   1.410040E-06   1.410081E-06   8.693138E-04   8.693441E-04

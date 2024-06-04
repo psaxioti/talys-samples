@@ -1,3 +1,27 @@
-# Reaction rate for   56 138Ba+n      5 reactions  Jp(GS)=  0.0+ at <E>= 0.03000 MeV (Excited States Contribution : y)
-     T9      G(T)    (n,g)139Ba  (n,n)138Ba  (n,p)138Cs  (n,a)135Xe    Fission  
-  0.3481 1.00000E+00 8.52199E+05 6.04596E+00 0.00000E+00 1.66342E-12 0.00000E+00
+# header:
+#   title: Ba138(n,x) reaction rate
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 56
+#   A: 138
+#   nuclide: Ba138
+#   level: 
+#     number: 0
+#     energy [MeV]:  0.000000E+00
+#     spin:  0.000000E+00
+#     parity: 1
+# reaction:
+#   type: (n,x)
+#   reactions: 5
+#   astrogs: y
+#   <E> [MeV]: 3.000000E-02
+# datablock:
+#   quantity: reaction rate
+#   columns: 7
+#   entries: 1
+##    10^9 K          G(T)        (n,g)Ba139     (n,n)Ba138     (n,p)Cs138     (n,a)Xe135       fission
+##  [cm3/mol/s]        []         [cm3/mol/s]    [cm3/mol/s]    [cm3/mol/s]    [cm3/mol/s]    [cm3/mol/s]
+   3.481369E-01   1.000000E+00   8.521989E+05   6.045962E+00   0.000000E+00   1.663418E-12   0.000000E+00

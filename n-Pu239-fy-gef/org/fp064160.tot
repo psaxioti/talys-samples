@@ -1,8 +1,27 @@
-# n + Pu239: Fission product yield of 160Gd
-# 
-# # energies =     3
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 4.73410E-05 1.16712E-05 8.51261E+00 2.09954E+00
+# header:
+#   title: Pu239(n,f) fission yield for Gd160
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 64
+#   A: 160
+#   nuclide: Gd160
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 3
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]           [mb]            []            [mb]
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   4.734103E-05   1.167119E-05   8.512609E+00   2.099544E+00

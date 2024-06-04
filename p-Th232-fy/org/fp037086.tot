@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  86Rb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 6.53742E-04 2.17469E-05 2.45019E-01 8.15059E-03
+# header:
+#   title: Th232(p,f) fission yield for Rb86
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 37
+#   A: 86
+#   nuclide: Rb86
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   6.537421E-04   2.174686E-05   2.450185E-01   8.150592E-03

@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  70Ni
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.58989E-05 1.05033E-05 9.70676E-03 3.93656E-03
+# header:
+#   title: Th232(p,f) fission yield for Ni70
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 28
+#   A: 70
+#   nuclide: Ni70
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.589894E-05   1.050325E-05   9.706764E-03   3.936556E-03

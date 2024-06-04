@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  88Se
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 8.00026E-03 1.25279E-02 4.86561E-02 7.61928E-02
- 1.60000E+00 7.12969E-03 1.04662E-02 7.37923E-01 1.08326E+00
- 5.50000E+00 7.45139E-03 1.18815E-02 4.20541E+00 6.70570E+00
- 1.00000E+01 6.93803E-03 1.08411E-02 4.27745E+00 6.68379E+00
+# header:
+#   title: U238(n,f) fission yield for Se88
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 34
+#   A: 88
+#   nuclide: Se88
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   7.872927E-03   1.249350E-02   4.171311E-02   6.619468E-02
+   1.600000E+00   7.119661E-03   1.044381E-02   7.330237E-01   1.075277E+00
+   5.500000E+00   7.451238E-03   1.188160E-02   4.208429E+00   6.710722E+00
+   1.000000E+01   6.938013E-03   1.084101E-02   4.277405E+00   6.683711E+00

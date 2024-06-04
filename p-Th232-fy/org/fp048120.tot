@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 120Cd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.61270E-03 1.13222E-02 9.79223E-01 4.24349E+00
+# header:
+#   title: Th232(p,f) fission yield for Cd120
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 48
+#   A: 120
+#   nuclide: Cd120
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.612697E-03   1.132220E-02   9.792230E-01   4.243494E+00

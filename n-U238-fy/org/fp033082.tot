@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  82As
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.55310E-03 6.06900E-04 9.44566E-03 3.69107E-03
- 1.60000E+00 1.59045E-03 7.72888E-04 1.64612E-01 7.99943E-02
- 5.50000E+00 2.27184E-03 1.01031E-03 1.28218E+00 5.70201E-01
- 1.00000E+01 2.67053E-03 1.29021E-03 1.64644E+00 7.95450E-01
+# header:
+#   title: U238(n,f) fission yield for As82
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 33
+#   A: 82
+#   nuclide: As82
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.571512E-03   6.106991E-04   8.326340E-03   3.235684E-03
+   1.600000E+00   1.593575E-03   7.752455E-04   1.640708E-01   7.981796E-02
+   5.500000E+00   2.272027E-03   1.010393E-03   1.283232E+00   5.706692E-01
+   1.000000E+01   2.670561E-03   1.290233E-03   1.646447E+00   7.954556E-01

@@ -1,8 +1,27 @@
-# n + Pu239: Fission product yield of 131Sb
-# 
-# # energies =     3
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 2.04439E-02 1.67205E-02 3.67612E+03 3.00787E+03
+# header:
+#   title: Pu239(n,f) fission yield for Sb131
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 51
+#   A: 131
+#   nuclide: Sb131
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 3
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]           [mb]            []            [mb]
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   2.044393E-02   1.672049E-02   3.676117E+03   3.007867E+03
