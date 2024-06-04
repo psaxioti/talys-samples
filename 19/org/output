@@ -1,8 +1,7 @@
 
-    TALYS-1.9 (Version: December 21, 2017)
+    TALYS-1.95 (Version: December 28, 2019)
 
- Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
-                         IAEA         CEA          ULB    
+ Copyright (C) 2019  A.J. Koning, S. Hilaire and S. Goriely      
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -10,17 +9,17 @@
 
  USER INPUT FILE
 
- #                                                                               
- # general                                                                       
- #                                                                               
- projectile n                                                                    
- element    ba                                                                   
- mass       136                                                                  
- energy   energies                                                               
- #                                                                               
- # output                                                                        
- #                                                                               
- urr y                                                                           
+ #
+ # general
+ #
+ projectile n
+ element    ba
+ mass       136
+ energy   energies
+ #
+ # output
+ #
+ urr y
 
  USER INPUT FILE + DEFAULTS
 
@@ -137,6 +136,8 @@
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
  ldmodelracap        1     ldmodelracap level density model for direct radiative capture
+ upbend              n     flagupbend   flag for low-energy upbend of photon strength function
+ psfglobal           n    flagpsfglobal flag for global photon strength functions only
  #
  # Pre-equilibrium
  #
@@ -163,9 +164,10 @@
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
+ colenhance          n     flagcolall   flag for collective enhancement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+ colldamp            n     flagcolldamp flag for damping of collective effects in effective  level density
  #
  # Fission
  #
@@ -174,6 +176,7 @@
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
  hbstate             y     flaghbstate  flag for head band states in fission
  class2              y     flagclass2   flag for class2 states in fission
+ fispartdamp         n  flagfispartdamp flag for fission partial damping
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
@@ -189,8 +192,10 @@
  outlevels           n     flaglevels   flag for output of discrete level information
  outdensity          n     flagdensity  flag for output of level densities
  outomp              n     flagoutomp   flag for output of optical model parameters
+ outkd               n     flagoutkd    flag for output of KD03 OMP parameters
  outdirect           n     flagdirect   flag for output of direct reaction results
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+ outdecay            n     flagdecay    flag for output of decay of each population bin
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
  outgamma            n     flaggamma    flag for output of gamma-ray information
@@ -271,16 +276,16 @@
  Total           = 2.61743E+04
    Shape elastic   = 2.42988E+03
    Reaction        = 2.37444E+04
-     Compound elastic= 2.34046E+04
-     Non-elastic     = 3.39840E+02
+     Compound elastic= 2.34087E+04
+     Non-elastic     = 3.35729E+02
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 3.39840E+02
-     Total elastic   = 2.58344E+04
+       Compound non-el = 3.35729E+02
+     Total elastic   = 2.58386E+04
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 3.38156E+02
+ gamma   = 3.34008E+02
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -290,7 +295,7 @@
 
  3. Total particle production cross sections
 
- gamma   = 7.06091E+02    Multiplicity= 2.07772E+00
+ gamma   = 6.97325E+02    Multiplicity= 2.07705E+00
  neutron = 0.00000E+00    Multiplicity= 0.00000E+00
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
@@ -305,8 +310,8 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 3.38156E+02    0    3.32686E+02  0.98382
-                                 2    5.47017E+00  0.01618   1.53100E+02 sec. 
+   56 137 (137Ba) 3.34008E+02    0    3.28581E+02  0.98375
+                                 2    5.42723E+00  0.01625   1.53100E+02 sec. 
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -314,10 +319,10 @@
 
    A  cross section
 
-  137 3.38156E+02
+  137 3.34008E+02
 
- Total residual production cross section:   338.15579
- Non-elastic cross section              :   339.83984
+ Total residual production cross section:   334.0082703
+ Non-elastic cross section              :   335.7285156
 
  ########## RESULTS FOR E=   0.00200 ##########
 
@@ -338,16 +343,16 @@
  Total           = 1.91373E+04
    Shape elastic   = 2.41116E+03
    Reaction        = 1.67262E+04
-     Compound elastic= 1.65002E+04
-     Non-elastic     = 2.25965E+02
+     Compound elastic= 1.65026E+04
+     Non-elastic     = 2.23561E+02
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 2.25965E+02
-     Total elastic   = 1.89114E+04
+       Compound non-el = 2.23561E+02
+     Total elastic   = 1.89138E+04
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.24304E+02
+ gamma   = 2.21870E+02
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -357,7 +362,7 @@
 
  3. Total particle production cross sections
 
- gamma   = 4.63449E+02    Multiplicity= 2.05098E+00
+ gamma   = 4.58343E+02    Multiplicity= 2.05020E+00
  neutron = 0.00000E+00    Multiplicity= 0.00000E+00
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
@@ -372,8 +377,8 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 2.24304E+02    0    2.19426E+02  0.97825
-                                 2    4.87800E+00  0.02175   1.53100E+02 sec. 
+   56 137 (137Ba) 2.21870E+02    0    2.17024E+02  0.97816
+                                 2    4.84577E+00  0.02184   1.53100E+02 sec. 
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -381,10 +386,10 @@
 
    A  cross section
 
-  137 2.24304E+02
+  137 2.21870E+02
 
- Total residual production cross section:   224.30437
- Non-elastic cross section              :   225.96484
+ Total residual production cross section:   221.8700409
+ Non-elastic cross section              :   223.5605469
 
  ########## RESULTS FOR E=   0.00500 ##########
 
@@ -405,16 +410,16 @@
  Total           = 1.29139E+04
    Shape elastic   = 2.37435E+03
    Reaction        = 1.05395E+04
-     Compound elastic= 1.03937E+04
-     Non-elastic     = 1.45753E+02
+     Compound elastic= 1.03953E+04
+     Non-elastic     = 1.44240E+02
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 1.45753E+02
-     Total elastic   = 1.27681E+04
+       Compound non-el = 1.44240E+02
+     Total elastic   = 1.27696E+04
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.44359E+02
+ gamma   = 1.42831E+02
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -424,8 +429,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 2.95110E+02    Multiplicity= 2.02473E+00
- neutron = 2.38270E-03    Multiplicity= 1.63475E-05
+ gamma   = 2.91960E+02    Multiplicity= 2.02412E+00
+ neutron = 2.37006E-03    Multiplicity= 1.64313E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -439,9 +444,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 1.44356E+02    0    1.40051E+02  0.97018
-                                 2    4.30470E+00  0.02982   1.53100E+02 sec. 
-   56 136 (136Ba) 2.38270E-03    0    2.38270E-03  1.00000
+   56 137 (137Ba) 1.42828E+02    0    1.38557E+02  0.97010
+                                 2    4.27086E+00  0.02990   1.53100E+02 sec. 
+   56 136 (136Ba) 2.37006E-03    0    2.37006E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -449,11 +454,11 @@
 
    A  cross section
 
-  137 1.44356E+02
-  136 2.38270E-03
+  137 1.42828E+02
+  136 2.37006E-03
 
- Total residual production cross section:   144.35855
- Non-elastic cross section              :   145.75293
+ Total residual production cross section:   142.8306885
+ Non-elastic cross section              :   144.2402344
 
  ########## RESULTS FOR E=   0.01000 ##########
 
@@ -474,16 +479,16 @@
  Total           = 9.79914E+03
    Shape elastic   = 2.33416E+03
    Reaction        = 7.46498E+03
-     Compound elastic= 7.36235E+03
-     Non-elastic     = 1.02626E+02
+     Compound elastic= 7.36351E+03
+     Non-elastic     = 1.01468E+02
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 1.02626E+02
-     Total elastic   = 9.69651E+03
+       Compound non-el = 1.01468E+02
+     Total elastic   = 9.69767E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.01517E+02
+ gamma   = 1.00351E+02
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -493,8 +498,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 2.07044E+02    Multiplicity= 2.01746E+00
- neutron = 2.26858E-03    Multiplicity= 2.21053E-05
+ gamma   = 2.04660E+02    Multiplicity= 2.01700E+00
+ neutron = 2.24978E-03    Multiplicity= 2.21724E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -508,9 +513,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 1.01515E+02    0    9.79308E+01  0.96469
-                                 2    3.58424E+00  0.03531   1.53100E+02 sec. 
-   56 136 (136Ba) 2.26858E-03    0    2.26858E-03  1.00000
+   56 137 (137Ba) 1.00349E+02    0    9.67988E+01  0.96462
+                                 2    3.55032E+00  0.03538   1.53100E+02 sec. 
+   56 136 (136Ba) 2.24978E-03    0    2.24978E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -518,11 +523,11 @@
 
    A  cross section
 
-  137 1.01515E+02
-  136 2.26858E-03
+  137 1.00349E+02
+  136 2.24978E-03
 
- Total residual production cross section:   101.51732
- Non-elastic cross section              :   102.62598
+ Total residual production cross section:   100.3514023
+ Non-elastic cross section              :   101.4677734
 
  ########## RESULTS FOR E=   0.02000 ##########
 
@@ -543,16 +548,16 @@
  Total           = 7.62397E+03
    Shape elastic   = 2.28218E+03
    Reaction        = 5.34179E+03
-     Compound elastic= 5.27218E+03
-     Non-elastic     = 6.96055E+01
+     Compound elastic= 5.27302E+03
+     Non-elastic     = 6.87671E+01
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 6.96055E+01
-     Total elastic   = 7.55436E+03
+       Compound non-el = 6.87671E+01
+     Total elastic   = 7.55520E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 6.87866E+01
+ gamma   = 6.79445E+01
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -562,8 +567,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 1.40972E+02    Multiplicity= 2.02530E+00
- neutron = 2.09196E-03    Multiplicity= 3.00545E-05
+ gamma   = 1.39254E+02    Multiplicity= 2.02501E+00
+ neutron = 2.07311E-03    Multiplicity= 3.01468E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -577,9 +582,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 6.87845E+01    0    6.58304E+01  0.95705
-                                 2    2.95414E+00  0.04295   1.53100E+02 sec. 
-   56 136 (136Ba) 2.09196E-03    0    2.09196E-03  1.00000
+   56 137 (137Ba) 6.79424E+01    0    6.50172E+01  0.95695
+                                 2    2.92517E+00  0.04305   1.53100E+02 sec. 
+   56 136 (136Ba) 2.07311E-03    0    2.07311E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -587,11 +592,11 @@
 
    A  cross section
 
-  137 6.87845E+01
-  136 2.09196E-03
+  137 6.79424E+01
+  136 2.07311E-03
 
- Total residual production cross section:    68.78661
- Non-elastic cross section              :    69.60547
+ Total residual production cross section:    67.9444504
+ Non-elastic cross section              :    68.7670898
 
  ########## RESULTS FOR E=   0.05000 ##########
 
@@ -612,16 +617,16 @@
  Total           = 5.75941E+03
    Shape elastic   = 2.21196E+03
    Reaction        = 3.54745E+03
-     Compound elastic= 3.50288E+03
-     Non-elastic     = 4.45723E+01
+     Compound elastic= 3.50340E+03
+     Non-elastic     = 4.40452E+01
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 4.45723E+01
-     Total elastic   = 5.71484E+03
+       Compound non-el = 4.40452E+01
+     Total elastic   = 5.71536E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 4.40751E+01
+ gamma   = 4.35457E+01
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -631,8 +636,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 9.27755E+01    Multiplicity= 2.08146E+00
- neutron = 2.08265E-03    Multiplicity= 4.67253E-05
+ gamma   = 9.16795E+01    Multiplicity= 2.08149E+00
+ neutron = 2.06229E-03    Multiplicity= 4.68222E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -646,9 +651,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 4.40730E+01    0    4.11549E+01  0.93379
-                                 2    2.91815E+00  0.06621   1.53100E+02 sec. 
-   56 136 (136Ba) 2.08265E-03    0    2.08265E-03  1.00000
+   56 137 (137Ba) 4.35436E+01    0    4.06515E+01  0.93358
+                                 2    2.89206E+00  0.06642   1.53100E+02 sec. 
+   56 136 (136Ba) 2.06229E-03    0    2.06229E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -656,11 +661,11 @@
 
    A  cross section
 
-  137 4.40730E+01
-  136 2.08265E-03
+  137 4.35436E+01
+  136 2.06229E-03
 
- Total residual production cross section:    44.07509
- Non-elastic cross section              :    44.57227
+ Total residual production cross section:    43.5456696
+ Non-elastic cross section              :    44.0451660
 
  ########## RESULTS FOR E=   0.10000 ##########
 
@@ -681,16 +686,16 @@
  Total           = 4.92769E+03
    Shape elastic   = 2.21747E+03
    Reaction        = 2.71022E+03
-     Compound elastic= 2.67526E+03
-     Non-elastic     = 3.49604E+01
+     Compound elastic= 2.67569E+03
+     Non-elastic     = 3.45322E+01
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 3.49604E+01
-     Total elastic   = 4.89273E+03
+       Compound non-el = 3.45322E+01
+     Total elastic   = 4.89316E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 3.46346E+01
+ gamma   = 3.42044E+01
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -700,8 +705,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 7.51313E+01    Multiplicity= 2.14904E+00
- neutron = 2.21551E-03    Multiplicity= 6.33719E-05
+ gamma   = 7.42105E+01    Multiplicity= 2.14902E+00
+ neutron = 2.19287E-03    Multiplicity= 6.35020E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -715,9 +720,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 3.46324E+01    0    3.15472E+01  0.91091
-                                 2    3.08523E+00  0.08909   1.53100E+02 sec. 
-   56 136 (136Ba) 2.21551E-03    0    2.21551E-03  1.00000
+   56 137 (137Ba) 3.42022E+01    0    3.11493E+01  0.91074
+                                 2    3.05294E+00  0.08926   1.53100E+02 sec. 
+   56 136 (136Ba) 2.19287E-03    0    2.19287E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -725,11 +730,11 @@
 
    A  cross section
 
-  137 3.46324E+01
-  136 2.21551E-03
+  137 3.42022E+01
+  136 2.19287E-03
 
- Total residual production cross section:    34.63464
- Non-elastic cross section              :    34.96045
+ Total residual production cross section:    34.2044029
+ Non-elastic cross section              :    34.5322266
 
  ########## RESULTS FOR E=   0.20000 ##########
 
@@ -750,16 +755,16 @@
  Total           = 4.58331E+03
    Shape elastic   = 2.41072E+03
    Reaction        = 2.17258E+03
-     Compound elastic= 2.14401E+03
-     Non-elastic     = 2.85688E+01
+     Compound elastic= 2.14438E+03
+     Non-elastic     = 2.82014E+01
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 2.85688E+01
-     Total elastic   = 4.55473E+03
+       Compound non-el = 2.82014E+01
+     Total elastic   = 4.55510E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.83475E+01
+ gamma   = 2.79787E+01
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -769,8 +774,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 6.35804E+01    Multiplicity= 2.22552E+00
- neutron = 2.61253E-03    Multiplicity= 9.14469E-05
+ gamma   = 6.27627E+01    Multiplicity= 2.22552E+00
+ neutron = 2.58242E-03    Multiplicity= 9.15705E-05
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -784,9 +789,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 2.83449E+01    0    2.51263E+01  0.88645
-                                 2    3.21859E+00  0.11355   1.53100E+02 sec. 
-   56 136 (136Ba) 2.61253E-03    0    2.61253E-03  1.00000
+   56 137 (137Ba) 2.79761E+01    0    2.47934E+01  0.88623
+                                 2    3.18277E+00  0.11377   1.53100E+02 sec. 
+   56 136 (136Ba) 2.58242E-03    0    2.58242E-03  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -794,11 +799,11 @@
 
    A  cross section
 
-  137 2.83449E+01
-  136 2.61253E-03
+  137 2.79761E+01
+  136 2.58242E-03
 
- Total residual production cross section:    28.34750
- Non-elastic cross section              :    28.56885
+ Total residual production cross section:    27.9787312
+ Non-elastic cross section              :    28.2014160
 
  ########## RESULTS FOR E=   0.50000 ##########
 
@@ -819,16 +824,16 @@
  Total           = 5.11974E+03
    Shape elastic   = 3.21293E+03
    Reaction        = 1.90680E+03
-     Compound elastic= 1.87773E+03
-     Non-elastic     = 2.90679E+01
+     Compound elastic= 1.87810E+03
+     Non-elastic     = 2.86996E+01
        Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 2.90679E+01
-     Total elastic   = 5.09066E+03
+       Compound non-el = 2.86996E+01
+     Total elastic   = 5.09103E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.89338E+01
+ gamma   = 2.85643E+01
  neutron = 0.00000E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
@@ -838,8 +843,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 6.97586E+01    Multiplicity= 2.39985E+00
- neutron = 6.05827E-02    Multiplicity= 2.08418E-03
+ gamma   = 6.88829E+01    Multiplicity= 2.40014E+00
+ neutron = 5.98659E-02    Multiplicity= 2.08595E-03
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -853,9 +858,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 2.88733E+01    0    2.36864E+01  0.82036
-                                 2    5.18684E+00  0.17964   1.53100E+02 sec. 
-   56 136 (136Ba) 6.05827E-02    0    6.05827E-02  1.00000
+   56 137 (137Ba) 2.85044E+01    0    2.33701E+01  0.81988
+                                 2    5.13434E+00  0.18012   1.53100E+02 sec. 
+   56 136 (136Ba) 5.98659E-02    0    5.98659E-02  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -863,11 +868,11 @@
 
    A  cross section
 
-  137 2.88733E+01
-  136 6.05827E-02
+  137 2.85044E+01
+  136 5.98659E-02
 
- Total residual production cross section:    28.93384
- Non-elastic cross section              :    29.06787
+ Total residual production cross section:    28.5642624
+ Non-elastic cross section              :    28.6995850
 
  ########## RESULTS FOR E=   1.00000 ##########
 
@@ -888,17 +893,17 @@
  Total           = 6.27561E+03
    Shape elastic   = 4.07111E+03
    Reaction        = 2.20450E+03
-     Compound elastic= 1.65301E+03
-     Non-elastic     = 5.51492E+02
+     Compound elastic= 1.65324E+03
+     Non-elastic     = 5.51257E+02
        Direct          = 4.10229E+01
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 5.10469E+02
-     Total elastic   = 5.72412E+03
+       Compound non-el = 5.10234E+02
+     Total elastic   = 5.72435E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.47230E+01
- neutron = 5.26750E+02
+ gamma   = 2.43786E+01
+ neutron = 5.26860E+02
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
@@ -907,8 +912,8 @@
 
  3. Total particle production cross sections
 
- gamma   = 6.45246E+01    Multiplicity= 1.17000E-01
- neutron = 5.27293E+02    Multiplicity= 9.56121E-01
+ gamma   = 6.36377E+01    Multiplicity= 1.15441E-01
+ neutron = 5.27396E+02    Multiplicity= 9.56714E-01
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -922,9 +927,9 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   56 137 (137Ba) 2.41799E+01    0    1.73611E+01  0.71799
-                                 2    6.81888E+00  0.28201   1.53100E+02 sec. 
-   56 136 (136Ba) 5.27293E+02    0    5.27293E+02  1.00000
+   56 137 (137Ba) 2.38424E+01    0    1.71049E+01  0.71741
+                                 2    6.73751E+00  0.28259   1.53100E+02 sec. 
+   56 136 (136Ba) 5.27396E+02    0    5.27396E+02  1.00000
    54 133 (133Xe) 1.00000E-07    0    0.00000E+00  0.00000
                                  1    0.00000E+00  0.00000   1.89900E+05 sec. 
 
@@ -932,11 +937,11 @@
 
    A  cross section
 
-  137 2.41799E+01
-  136 5.27293E+02
+  137 2.38424E+01
+  136 5.27396E+02
 
- Total residual production cross section:   551.47266
- Non-elastic cross section              :   551.49182
+ Total residual production cross section:   551.2382202
+ Non-elastic cross section              :   551.2574463
 
  ########## EXCITATION FUNCTIONS ###########
 
@@ -944,31 +949,31 @@
 
    Energy    Non-elastic  Elastic     Total    Comp. el.  Shape el.  Reaction   Comp non-el  Direct   Pre-equil.
 
-  1.00000E-03 3.39840E+02 2.58344E+04 2.61743E+04 2.34046E+04 2.42988E+03 2.37444E+04 3.39840E+02 0.00000E+00 0.0
-  2.00000E-03 2.25965E+02 1.89114E+04 1.91373E+04 1.65002E+04 2.41116E+03 1.67262E+04 2.25965E+02 0.00000E+00 0.0
-  5.00000E-03 1.45753E+02 1.27681E+04 1.29139E+04 1.03937E+04 2.37435E+03 1.05395E+04 1.45753E+02 0.00000E+00 0.0
-  1.00000E-02 1.02626E+02 9.69651E+03 9.79914E+03 7.36235E+03 2.33416E+03 7.46498E+03 1.02626E+02 0.00000E+00 0.0
-  2.00000E-02 6.96055E+01 7.55436E+03 7.62397E+03 5.27218E+03 2.28218E+03 5.34179E+03 6.96055E+01 0.00000E+00 0.0
-  5.00000E-02 4.45723E+01 5.71484E+03 5.75941E+03 3.50288E+03 2.21196E+03 3.54745E+03 4.45723E+01 0.00000E+00 0.0
-  1.00000E-01 3.49604E+01 4.89273E+03 4.92769E+03 2.67526E+03 2.21747E+03 2.71022E+03 3.49604E+01 0.00000E+00 0.0
-  2.00000E-01 2.85688E+01 4.55473E+03 4.58331E+03 2.14401E+03 2.41072E+03 2.17258E+03 2.85688E+01 0.00000E+00 0.0
-  5.00000E-01 2.90679E+01 5.09066E+03 5.11974E+03 1.87773E+03 3.21293E+03 1.90680E+03 2.90679E+01 0.00000E+00 0.0
-  1.00000E+00 5.51492E+02 5.72412E+03 6.27561E+03 1.65301E+03 4.07111E+03 2.20450E+03 5.10469E+02 4.10229E+01 0.0
+  1.00000E-03 3.35729E+02 2.58386E+04 2.61743E+04 2.34087E+04 2.42988E+03 2.37444E+04 3.35729E+02 0.00000E+00 0.0
+  2.00000E-03 2.23561E+02 1.89138E+04 1.91373E+04 1.65026E+04 2.41116E+03 1.67262E+04 2.23561E+02 0.00000E+00 0.0
+  5.00000E-03 1.44240E+02 1.27696E+04 1.29139E+04 1.03953E+04 2.37435E+03 1.05395E+04 1.44240E+02 0.00000E+00 0.0
+  1.00000E-02 1.01468E+02 9.69767E+03 9.79914E+03 7.36351E+03 2.33416E+03 7.46498E+03 1.01468E+02 0.00000E+00 0.0
+  2.00000E-02 6.87671E+01 7.55520E+03 7.62397E+03 5.27302E+03 2.28218E+03 5.34179E+03 6.87671E+01 0.00000E+00 0.0
+  5.00000E-02 4.40452E+01 5.71536E+03 5.75941E+03 3.50340E+03 2.21196E+03 3.54745E+03 4.40452E+01 0.00000E+00 0.0
+  1.00000E-01 3.45322E+01 4.89316E+03 4.92769E+03 2.67569E+03 2.21747E+03 2.71022E+03 3.45322E+01 0.00000E+00 0.0
+  2.00000E-01 2.82014E+01 4.55510E+03 4.58331E+03 2.14438E+03 2.41072E+03 2.17258E+03 2.82014E+01 0.00000E+00 0.0
+  5.00000E-01 2.86996E+01 5.09103E+03 5.11974E+03 1.87810E+03 3.21293E+03 1.90680E+03 2.86996E+01 0.00000E+00 0.0
+  1.00000E+00 5.51257E+02 5.72435E+03 6.27561E+03 1.65324E+03 4.07111E+03 2.20450E+03 5.10234E+02 4.10229E+01 0.0
 
  2. Binary non-elastic cross sections (non-exclusive)
 
    Energy     gamma      neutron    proton     deuteron   triton     helium-3   alpha   
 
-  1.00000E-03 3.38156E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  2.00000E-03 2.24304E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  5.00000E-03 1.44359E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  1.00000E-02 1.01517E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  2.00000E-02 6.87866E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  5.00000E-02 4.40751E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  1.00000E-01 3.46346E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  2.00000E-01 2.83475E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  5.00000E-01 2.89338E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
-  1.00000E+00 2.47230E+01 5.26750E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  1.00000E-03 3.34008E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  2.00000E-03 2.21870E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  5.00000E-03 1.42831E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  1.00000E-02 1.00351E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  2.00000E-02 6.79445E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  5.00000E-02 4.35457E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  1.00000E-01 3.42044E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  2.00000E-01 2.79787E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  5.00000E-01 2.85643E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
+  1.00000E+00 2.43786E+01 5.26860E+02 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00                
 
  3. Total particle production cross sections
 
@@ -976,16 +981,16 @@
 
  Energy   Cross section Multiplicity
 
-  1.00000E-03 7.06091E+02 2.07772E+00                                            
-  2.00000E-03 4.63449E+02 2.05098E+00                                            
-  5.00000E-03 2.95110E+02 2.02473E+00                                            
-  1.00000E-02 2.07044E+02 2.01746E+00                                            
-  2.00000E-02 1.40972E+02 2.02530E+00                                            
-  5.00000E-02 9.27755E+01 2.08146E+00                                            
-  1.00000E-01 7.51313E+01 2.14904E+00                                            
-  2.00000E-01 6.35804E+01 2.22552E+00                                            
-  5.00000E-01 6.97586E+01 2.39985E+00                                            
-  1.00000E+00 6.45246E+01 1.17000E-01                                            
+  1.00000E-03 6.97325E+02 2.07705E+00                                            
+  2.00000E-03 4.58343E+02 2.05020E+00                                            
+  5.00000E-03 2.91960E+02 2.02412E+00                                            
+  1.00000E-02 2.04660E+02 2.01700E+00                                            
+  2.00000E-02 1.39254E+02 2.02501E+00                                            
+  5.00000E-02 9.16795E+01 2.08149E+00                                            
+  1.00000E-01 7.42105E+01 2.14902E+00                                            
+  2.00000E-01 6.27627E+01 2.22552E+00                                            
+  5.00000E-01 6.88829E+01 2.40014E+00                                            
+  1.00000E+00 6.36377E+01 1.15441E-01                                            
 
  neutron  production
 
@@ -993,14 +998,14 @@
 
   1.00000E-03 0.00000E+00 0.00000E+00                                            
   2.00000E-03 0.00000E+00 0.00000E+00                                            
-  5.00000E-03 2.38270E-03 1.63475E-05                                            
-  1.00000E-02 2.26858E-03 2.21053E-05                                            
-  2.00000E-02 2.09196E-03 3.00545E-05                                            
-  5.00000E-02 2.08265E-03 4.67253E-05                                            
-  1.00000E-01 2.21551E-03 6.33719E-05                                            
-  2.00000E-01 2.61253E-03 9.14469E-05                                            
-  5.00000E-01 6.05827E-02 2.08418E-03                                            
-  1.00000E+00 5.27293E+02 9.56121E-01                                            
+  5.00000E-03 2.37006E-03 1.64313E-05                                            
+  1.00000E-02 2.24978E-03 2.21724E-05                                            
+  2.00000E-02 2.07311E-03 3.01468E-05                                            
+  5.00000E-02 2.06229E-03 4.68222E-05                                            
+  1.00000E-01 2.19287E-03 6.35020E-05                                            
+  2.00000E-01 2.58242E-03 9.15705E-05                                            
+  5.00000E-01 5.98659E-02 2.08595E-03                                            
+  1.00000E+00 5.27396E+02 9.56714E-01                                            
 
  proton   production
 
@@ -1086,16 +1091,16 @@
 
  Energy   Cross section
 
-  1.00000E-03 3.38156E+02                                                        
-  2.00000E-03 2.24304E+02                                                        
-  5.00000E-03 1.44356E+02                                                        
-  1.00000E-02 1.01515E+02                                                        
-  2.00000E-02 6.87845E+01                                                        
-  5.00000E-02 4.40730E+01                                                        
-  1.00000E-01 3.46324E+01                                                        
-  2.00000E-01 2.83449E+01                                                        
-  5.00000E-01 2.88733E+01                                                        
-  1.00000E+00 2.41799E+01                                                        
+  1.00000E-03 3.34008E+02                                                        
+  2.00000E-03 2.21870E+02                                                        
+  5.00000E-03 1.42828E+02                                                        
+  1.00000E-02 1.00349E+02                                                        
+  2.00000E-02 6.79424E+01                                                        
+  5.00000E-02 4.35436E+01                                                        
+  1.00000E-01 3.42022E+01                                                        
+  2.00000E-01 2.79761E+01                                                        
+  5.00000E-01 2.85044E+01                                                        
+  1.00000E+00 2.38424E+01                                                        
 
  Production of Z= 56 A=137 (137Ba) - Level  0  (lifetime: 0.00000E+00 sec.)
 
@@ -1104,16 +1109,16 @@
 
  Energy   Cross section Branching ratio
 
-  1.00000E-03 3.32686E+02 9.83824E-01                                            
-  2.00000E-03 2.19426E+02 9.78253E-01                                            
-  5.00000E-03 1.40051E+02 9.70180E-01                                            
-  1.00000E-02 9.79308E+01 9.64693E-01                                            
-  2.00000E-02 6.58304E+01 9.57052E-01                                            
-  5.00000E-02 4.11549E+01 9.33788E-01                                            
-  1.00000E-01 3.15472E+01 9.10915E-01                                            
-  2.00000E-01 2.51263E+01 8.86449E-01                                            
-  5.00000E-01 2.36864E+01 8.20359E-01                                            
-  1.00000E+00 1.73611E+01 7.17995E-01                                            
+  1.00000E-03 3.28581E+02 9.83751E-01                                            
+  2.00000E-03 2.17024E+02 9.78159E-01                                            
+  5.00000E-03 1.38557E+02 9.70098E-01                                            
+  1.00000E-02 9.67988E+01 9.64620E-01                                            
+  2.00000E-02 6.50172E+01 9.56946E-01                                            
+  5.00000E-02 4.06515E+01 9.33582E-01                                            
+  1.00000E-01 3.11493E+01 9.10738E-01                                            
+  2.00000E-01 2.47934E+01 8.86233E-01                                            
+  5.00000E-01 2.33701E+01 8.19876E-01                                            
+  1.00000E+00 1.71049E+01 7.17414E-01                                            
 
  Production of Z= 56 A=137 (137Ba) - Level  2  (lifetime: 1.53100E+02 sec.)
 
@@ -1122,34 +1127,34 @@
 
  Energy   Cross section Branching ratio
 
-  1.00000E-03 5.47017E+00 1.61765E-02                                            
-  2.00000E-03 4.87800E+00 2.17472E-02                                            
-  5.00000E-03 4.30470E+00 2.98200E-02                                            
-  1.00000E-02 3.58424E+00 3.53075E-02                                            
-  2.00000E-02 2.95414E+00 4.29478E-02                                            
-  5.00000E-02 2.91815E+00 6.62117E-02                                            
-  1.00000E-01 3.08523E+00 8.90851E-02                                            
-  2.00000E-01 3.21859E+00 1.13551E-01                                            
-  5.00000E-01 5.18684E+00 1.79642E-01                                            
-  1.00000E+00 6.81888E+00 2.82005E-01                                            
+  1.00000E-03 5.42723E+00 1.62488E-02                                            
+  2.00000E-03 4.84577E+00 2.18406E-02                                            
+  5.00000E-03 4.27086E+00 2.99021E-02                                            
+  1.00000E-02 3.55032E+00 3.53796E-02                                            
+  2.00000E-02 2.92517E+00 4.30538E-02                                            
+  5.00000E-02 2.89206E+00 6.64175E-02                                            
+  1.00000E-01 3.05294E+00 8.92615E-02                                            
+  2.00000E-01 3.18277E+00 1.13767E-01                                            
+  5.00000E-01 5.13434E+00 1.80124E-01                                            
+  1.00000E+00 6.73751E+00 2.82586E-01                                            
 
  Production of Z= 56 A=136 (136Ba) - Total
 
  Q-value    =   0.000000
- E-threshold=   0.000000
+ E-threshold=  -0.000000
 
  Energy   Cross section
 
   1.00000E-03 0.00000E+00                                                        
   2.00000E-03 0.00000E+00                                                        
-  5.00000E-03 2.38270E-03                                                        
-  1.00000E-02 2.26858E-03                                                        
-  2.00000E-02 2.09196E-03                                                        
-  5.00000E-02 2.08265E-03                                                        
-  1.00000E-01 2.21551E-03                                                        
-  2.00000E-01 2.61253E-03                                                        
-  5.00000E-01 6.05827E-02                                                        
-  1.00000E+00 5.27293E+02                                                        
+  5.00000E-03 2.37006E-03                                                        
+  1.00000E-02 2.24978E-03                                                        
+  2.00000E-02 2.07311E-03                                                        
+  5.00000E-02 2.06229E-03                                                        
+  1.00000E-01 2.19287E-03                                                        
+  2.00000E-01 2.58242E-03                                                        
+  5.00000E-01 5.98659E-02                                                        
+  1.00000E+00 5.27396E+02                                                        
 
  Production of Z= 54 A=133 (133Xe) - Total
 
@@ -1205,6 +1210,6 @@
   5.00000E-01 0.00000E+00 0.00000E+00                                            
   1.00000E+00 0.00000E+00 0.00000E+00                                            
 
- Execution time:  0 hours  0 minutes  1.88 seconds 
+ Execution time:  0 hours  0 minutes  2.04 seconds 
 
  The TALYS team congratulates you with this successful calculation.

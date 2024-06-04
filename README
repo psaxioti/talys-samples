@@ -3,8 +3,7 @@
 
 This directory contains sample cases.
 For every sample case, there is a subdirectory org/ with input files and OUR 
-calculated results. For this, we used the Fujitsu/Lahey Fortran90/95 compiler 
-v8.0 on Linux Red Hat Enterprise 6 and an Intel XEON X5472 3.0 GHz processor.
+calculated results. For this, we used the gfortran compiler MacOS.
 There is also a subdirectory new/ which, when you receive this, contains only 
 the input files.
 By running the script 'verify', the sample cases are executed and the new/ 
