@@ -22,7 +22,7 @@ timestamp color 1
 timestamp rot 0
 timestamp font 4
 timestamp char size 1.000000
-timestamp def "Fri Aug  6 14:59:29 2004"
+timestamp def "Fri Dec 15 15:03:38 2006"
 with g0
 g0 on
 g0 label off
@@ -36,8 +36,8 @@ g0 fixedpoint format general general
 g0 fixedpoint prec 6, 6
     world xmin 0
     world xmax 180
-    world ymin 600
-    world ymax 670
+    world ymin 590
+    world ymax 660
     stack world 0, 0, 0, 0 tick 0, 0, 0, 0
     view xmin 0.150000
     view xmax 0.850000

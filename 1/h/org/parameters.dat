@@ -3,16 +3,17 @@
 #
 # Level density
 #
-a         41  94  12.08028
-gammald   41  94   0.10095
+a         41  94  12.78526
+gammald   41  94   0.08030
 pair      41  94   0.00000
 D0        41  94      0.04
+Pshift    41  94   0.00000   0
 deltaW    41  94   0.58504   0
-T         41  94   0.82171   0
-E0        41  94  -2.05564   0
-Exmatch   41  94   5.27159   0
-Ntop      41  94  10   0
-Nlow      41  94   2   0
+T         41  94   0.68958   0
+E0        41  94  -1.09621   0
+Exmatch   41  94   3.68836   0
+Ntop      41  94  19   0
+Nlow      41  94   8   0
 Krotconstant   41  94   1.00000   0
 g         41  94   6.26667
 gp        41  94   2.73333
@@ -39,15 +40,16 @@ ggr       41  94   4.982 E2
 #
 # Level density
 #
-a         41  93  11.57705
-gammald   41  93   0.10131
+a         41  93  12.31308
+gammald   41  93   0.08058
 pair      41  93   1.24434
+Pshift    41  93   0.00000   0
 deltaW    41  93   0.10752   0
-T         41  93   0.94199   0
-E0        41  93  -1.80827   0
-Exmatch   41  93   8.36497   0
-Ntop      41  93  24   0
-Nlow      41  93   2   0
+T         41  93   0.87005   0
+E0        41  93  -1.36859   0
+Exmatch   41  93   7.66462   0
+Ntop      41  93  15   0
+Nlow      41  93   5   0
 Krotconstant   41  93   1.00000   0
 g         41  93   6.20000
 gp        41  93   2.73333
@@ -74,16 +76,17 @@ ggr       41  93   4.994 E2
 #
 # Level density
 #
-a         40  93  11.91934
-gammald   40  93   0.10131
+a         40  93  12.61712
+gammald   40  93   0.08058
 pair      40  93   1.24434
 D0        40  93      2.60
+Pshift    40  93   0.00000   0
 deltaW    40  93   0.48118   0
-T         40  93   0.80742   0
-E0        40  93  -0.57595   0
-Exmatch   40  93   6.18013   0
-Ntop      40  93  11   0
-Nlow      40  93   2   0
+T         40  93   0.71043   0
+E0        40  93   0.04907   0
+Exmatch   40  93   5.14535   0
+Ntop      40  93  18   0
+Nlow      40  93   8   0
 Krotconstant   40  93   1.00000   0
 g         40  93   6.20000
 gp        40  93   2.66667
@@ -110,16 +113,17 @@ ggr       40  93   4.994 E2
 #
 # Level density
 #
-a         40  92  11.38421
-gammald   40  92   0.10168
+a         40  92  12.12135
+gammald   40  92   0.08088
 pair      40  92   2.50217
 D0        40  92      0.57
+Pshift    40  92   0.00000   0
 deltaW    40  92  -0.00102   0
-T         40  92   0.84521   0
-E0        40  92   0.59986   0
-Exmatch   40  92   7.79584   0
-Ntop      40  92  11   0
-Nlow      40  92   2   0
+T         40  92   0.80380   0
+E0        40  92   0.68868   0
+Exmatch   40  92   7.63962   0
+Ntop      40  92  16   0
+Nlow      40  92   3   0
 Krotconstant   40  92   1.00000   0
 g         40  92   6.13333
 gp        40  92   2.66667
@@ -146,16 +150,17 @@ ggr       40  92   5.006 E2
 #
 # Level density
 #
-a         40  91  10.21947
-gammald   40  91   0.10205
+a         40  91  11.05981
+gammald   40  91   0.08117
 pair      40  91   1.25794
 D0        40  91      6.40
+Pshift    40  91   0.00000   0
 deltaW    40  91  -1.22875   0
-T         40  91   0.82671   0
-E0        40  91   0.14866   0
-Exmatch   40  91   5.66269   0
-Ntop      40  91  15   0
-Nlow      40  91   2   0
+T         40  91   0.79446   0
+E0        40  91   0.05318   0
+Exmatch   40  91   5.70228   0
+Ntop      40  91  17   0
+Nlow      40  91   3   0
 Krotconstant   40  91   1.00000   0
 g         40  91   6.06667
 gp        40  91   2.66667
@@ -182,15 +187,16 @@ ggr       40  91   5.018 E2
 #
 # Level density
 #
-a         39  91  11.42211
-gammald   39  91   0.10205
+a         39  91  12.13820
+gammald   39  91   0.08117
 pair      39  91   1.25794
+Pshift    39  91   0.00000   0
 deltaW    39  91   0.16983   0
-T         39  91   0.72028   0
-E0        39  91   0.35848   0
-Exmatch   39  91   4.66700   0
-Ntop      39  91  10   0
-Nlow      39  91   2   0
+T         39  91   0.61579   0
+E0        39  91   0.85751   0
+Exmatch   39  91   3.65674   0
+Ntop      39  91  15   0
+Nlow      39  91   8   0
 Krotconstant   39  91   1.00000   0
 g         39  91   6.06667
 gp        39  91   2.60000
@@ -217,16 +223,17 @@ ggr       39  91   5.018 E2
 #
 # Level density
 #
-a         39  90  10.11429
-gammald   39  90   0.10242
+a         39  90  10.94006
+gammald   39  90   0.08147
 pair      39  90   0.00000
 D0        39  90      4.00
+Pshift    39  90   0.00000   0
 deltaW    39  90  -1.29039   0
-T         39  90   0.65468   0
-E0        39  90  -0.06110   0
-Exmatch   39  90   1.80549   0
-Ntop      39  90  11   0
-Nlow      39  90   2   0
+T         39  90   0.87635   0
+E0        39  90  -1.85490   0
+Exmatch   39  90   5.75556   0
+Ntop      39  90  16   0
+Nlow      39  90   3   0
 Krotconstant   39  90   1.00000   0
 g         39  90   6.00000
 gp        39  90   2.60000
@@ -253,15 +260,16 @@ ggr       39  90   5.030 E2
 #
 # Level density
 #
-a         41  92  10.26708
-gammald   41  92   0.10168
+a         41  92  11.10435
+gammald   41  92   0.08088
 pair      41  92   0.00000
+Pshift    41  92   0.00000   0
 deltaW    41  92  -1.40400   0
-T         41  92   0.74606   0
-E0        41  92  -0.52701   0
-Exmatch   41  92   3.14131   0
-Ntop      41  92  11   0
-Nlow      41  92   2   0
+T         41  92   0.72034   0
+E0        41  92  -0.64356   0
+Exmatch   41  92   3.29515   0
+Ntop      41  92  15   0
+Nlow      41  92   8   0
 Krotconstant   41  92   1.00000   0
 g         41  92   6.13333
 gp        41  92   2.73333
@@ -288,15 +296,16 @@ ggr       41  92   5.006 E2
 #
 # Level density
 #
-a         40  90   9.74422
-gammald   40  90   0.10242
+a         40  90  10.57915
+gammald   40  90   0.08147
 pair      40  90   2.52982
+Pshift    40  90   0.00000   0
 deltaW    40  90  -1.95076   0
-T         40  90   0.87182   0
-E0        40  90   1.47923   0
-Exmatch   40  90   7.26912   0
-Ntop      40  90   6   0
-Nlow      40  90   2   0
+T         40  90   0.52952   0
+E0        40  90   2.98899   0
+Exmatch   40  90   2.94079   0
+Ntop      40  90  16   0
+Nlow      40  90   8   0
 Krotconstant   40  90   1.00000   0
 g         40  90   6.00000
 gp        40  90   2.66667
@@ -323,15 +332,16 @@ ggr       40  90   5.030 E2
 #
 # Level density
 #
-a         39  89   9.75898
-gammald   39  89   0.10281
+a         39  89  10.57033
+gammald   39  89   0.08177
 pair      39  89   1.27200
+Pshift    39  89   0.00000   0
 deltaW    39  89  -1.86045   0
-T         39  89   0.90611   0
-E0        39  89   0.89836   0
-Exmatch   39  89   1.70767   0
-Ntop      39  89  11   0
-Nlow      39  89   2   0
+T         39  89   0.89592   0
+E0        39  89  -0.44113   0
+Exmatch   39  89   7.06076   0
+Ntop      39  89  15   0
+Nlow      39  89   5   0
 Krotconstant   39  89   1.00000   0
 g         39  89   5.93333
 gp        39  89   2.60000
@@ -358,15 +368,16 @@ ggr       39  89   5.042 E2
 #
 # Level density
 #
-a         41  91   9.92817
-gammald   41  91   0.10205
+a         41  91  10.75185
+gammald   41  91   0.08117
 pair      41  91   1.25794
+Pshift    41  91   0.00000   0
 deltaW    41  91  -1.93801   0
-T         41  91   0.98321   0
-E0        41  91  -0.85932   0
-Exmatch   41  91   8.30456   0
-Ntop      41  91  23   0
-Nlow      41  91   2   0
+T         41  91   0.89232   0
+E0        41  91  -0.50370   0
+Exmatch   41  91   7.14366   0
+Ntop      41  91  16   0
+Nlow      41  91   7   0
 Krotconstant   41  91   1.00000   0
 g         41  91   6.06667
 gp        41  91   2.73333
@@ -393,14 +404,15 @@ ggr       41  91   5.018 E2
 #
 # Level density
 #
-a         40  89  10.61424
-gammald   40  89   0.10281
+a         40  89  11.37032
+gammald   40  89   0.08177
 pair      40  89   1.27200
+Pshift    40  89   0.00000   0
 deltaW    40  89  -0.58910   0
-T         40  89   0.85899   0
-E0        40  89  -0.30971   0
-Exmatch   40  89   6.32019   0
-Ntop      40  89  20   0
+T         40  89   0.80868   0
+E0        40  89  -0.20447   0
+Exmatch   40  89   6.04303   0
+Ntop      40  89  15   0
 Nlow      40  89   2   0
 Krotconstant   40  89   1.00000   0
 g         40  89   5.93333
@@ -428,15 +440,16 @@ ggr       40  89   5.042 E2
 #
 # Level density
 #
-a         39  88  10.59584
-gammald   39  88   0.10319
+a         39  88  11.33374
+gammald   39  88   0.08208
 pair      39  88   0.00000
+Pshift    39  88   0.00000   0
 deltaW    39  88  -0.50882   0
-T         39  88   0.80272   0
-E0        39  88  -1.11354   0
-Exmatch   39  88   4.11343   0
-Ntop      39  88  11   0
-Nlow      39  88   2   0
+T         39  88   0.69588   0
+E0        39  88  -0.61753   0
+Exmatch   39  88   3.04488   0
+Ntop      39  88  15   0
+Nlow      39  88   8   0
 Krotconstant   39  88   1.00000   0
 g         39  88   5.86667
 gp        39  88   2.60000
@@ -463,15 +476,16 @@ ggr       39  88   5.054 E2
 #
 # Level density
 #
-a         39  92  11.69541
-gammald   39  92   0.10168
+a         39  92  12.40156
+gammald   39  92   0.08088
 pair      39  92   0.00000
+Pshift    39  92   0.00000   0
 deltaW    39  92   0.36701   0
-T         39  92   0.94156   0
-E0        39  92  -0.78026   0
-Exmatch   39  92   0.29881   0
-Ntop      39  92  10   0
-Nlow      39  92   2   0
+T         39  92   0.82900   0
+E0        39  92  -2.21671   0
+Exmatch   39  92   5.69130   0
+Ntop      39  92  15   0
+Nlow      39  92   7   0
 Krotconstant   39  92   1.00000   0
 g         39  92   6.13333
 gp        39  92   2.60000
@@ -498,15 +512,16 @@ ggr       39  92   5.006 E2
 #
 # Level density
 #
-a         38  90  11.30369
-gammald   38  90   0.10242
+a         38  90  12.01273
+gammald   38  90   0.08147
 pair      38  90   2.52982
+Pshift    38  90   0.00000   0
 deltaW    38  90   0.14506   0
-T         38  90   0.79732   0
-E0        38  90   1.08894   0
-Exmatch   38  90   6.97205   0
-Ntop      38  90  10   0
-Nlow      38  90   2   0
+T         38  90   0.74907   0
+E0        38  90   1.24728   0
+Exmatch   38  90   6.70352   0
+Ntop      38  90  26   0
+Nlow      38  90   8   0
 Krotconstant   38  90   1.00000   0
 g         38  90   6.00000
 gp        38  90   2.53333
@@ -533,16 +548,17 @@ ggr       38  90   5.030 E2
 #
 # Level density
 #
-a         38  89  10.22700
-gammald   38  89   0.10281
+a         38  89  11.03603
+gammald   38  89   0.08177
 pair      38  89   1.27200
 D0        38  89     25.00
+Pshift    38  89   0.00000   0
 deltaW    38  89  -0.95160   0
-T         38  89   0.69335   0
-E0        38  89   0.96877   0
-Exmatch   38  89   3.70966   0
-Ntop      38  89  10   0
-Nlow      38  89   2   0
+T         38  89   0.87601   0
+E0        38  89  -0.67569   0
+Exmatch   38  89   7.06076   0
+Ntop      38  89  15   0
+Nlow      38  89   7   0
 Krotconstant   38  89   1.00000   0
 g         38  89   5.93333
 gp        38  89   2.53333
@@ -569,16 +585,17 @@ ggr       38  89   5.042 E2
 #
 # Level density
 #
-a         38  88   9.82823
-gammald   38  88   0.10319
+a         38  88  10.63268
+gammald   38  88   0.08208
 pair      38  88   2.55841
 D0        38  88      0.12
+Pshift    38  88   0.00000   0
 deltaW    38  88  -1.51267   0
-T         38  88   0.80165   0
-E0        38  88   1.88187   0
-Exmatch   38  88   6.18130   0
-Ntop      38  88  30   0
-Nlow      38  88   2   0
+T         38  88   0.53796   0
+E0        38  88   2.80045   0
+Exmatch   38  88   3.66565   0
+Ntop      38  88  26   0
+Nlow      38  88   4   0
 Krotconstant   38  88   1.00000   0
 g         38  88   5.86667
 gp        38  88   2.53333
@@ -605,16 +622,17 @@ ggr       38  88   5.054 E2
 #
 # Level density
 #
-a         38  87  10.83914
-gammald   38  87   0.10359
+a         38  87  11.54300
+gammald   38  87   0.08240
 pair      38  87   1.28654
 D0        38  87      0.50
+Pshift    38  87   0.00000   0
 deltaW    38  87  -0.02601   0
-T         38  87   0.80429   0
-E0        38  87   0.00033   0
-Exmatch   38  87   5.54775   0
-Ntop      38  87  28   0
-Nlow      38  87   2   0
+T         38  87   0.68989   0
+E0        38  87   0.60622   0
+Exmatch   38  87   4.36380   0
+Ntop      38  87  18   0
+Nlow      38  87   7   0
 Krotconstant   38  87   1.00000   0
 g         38  87   5.80000
 gp        38  87   2.53333
@@ -641,15 +659,16 @@ ggr       38  87   5.066 E2
 #
 # Level density
 #
-a         37  87  10.28034
-gammald   37  87   0.10359
+a         37  87  11.03048
+gammald   37  87   0.08240
 pair      37  87   1.28654
+Pshift    37  87   0.00000   0
 deltaW    37  87  -0.77931   0
-T         37  87   0.81264   0
-E0        37  87   0.26114   0
-Exmatch   37  87   5.35459   0
-Ntop      37  87  12   0
-Nlow      37  87   2   0
+T         37  87   0.72228   0
+E0        37  87   0.61459   0
+Exmatch   37  87   4.52950   0
+Ntop      37  87  15   0
+Nlow      37  87   7   0
 Krotconstant   37  87   1.00000   0
 g         37  87   5.80000
 gp        37  87   2.46667
@@ -676,16 +695,17 @@ ggr       37  87   5.066 E2
 #
 # Level density
 #
-a         37  86  10.75663
-gammald   37  86   0.10399
+a         37  86  11.45130
+gammald   37  86   0.08271
 pair      37  86   0.00000
 D0        37  86      0.20
+Pshift    37  86   0.00000   0
 deltaW    37  86   0.00312   0
-T         37  86   0.74517   0
-E0        37  86  -0.82670   0
-Exmatch   37  86   3.36633   0
-Ntop      37  86  24   0
-Nlow      37  86   2   0
+T         37  86   0.75825   0
+E0        37  86  -1.13662   0
+Exmatch   37  86   3.98442   0
+Ntop      37  86  16   0
+Nlow      37  86   5   0
 Krotconstant   37  86   1.00000   0
 g         37  86   5.73333
 gp        37  86   2.46667
@@ -712,15 +732,16 @@ ggr       37  86   5.078 E2
 #
 # Level density
 #
-a         38  86  11.31108
-gammald   38  86   0.10399
+a         38  86  11.96081
+gammald   38  86   0.08271
 pair      38  86   2.58799
+Pshift    38  86   0.00000   0
 deltaW    38  86   0.76334   0
-T         38  86   0.85468   0
-E0        38  86   0.56175   0
-Exmatch   38  86   7.82564   0
-Ntop      38  86  11   0
-Nlow      38  86   2   0
+T         38  86   0.80114   0
+E0        38  86   0.81643   0
+Exmatch   38  86   7.48550   0
+Ntop      38  86  16   0
+Nlow      38  86   8   0
 Krotconstant   38  86   1.00000   0
 g         38  86   5.73333
 gp        38  86   2.53333
@@ -747,15 +768,16 @@ ggr       38  86   5.078 E2
 #
 # Level density
 #
-a         37  85  11.73805
-gammald   37  85   0.10439
+a         37  85  12.34000
+gammald   37  85   0.08304
 pair      37  85   1.30158
+Pshift    37  85   0.00000   0
 deltaW    37  85   1.52387   0
-T         37  85   0.84789   0
-E0        37  85  -0.95129   0
-Exmatch   37  85   6.60849   0
-Ntop      37  85  10   0
-Nlow      37  85   2   0
+T         37  85   0.81676   0
+E0        37  85  -0.85414   0
+Exmatch   37  85   6.61094   0
+Ntop      37  85  17   0
+Nlow      37  85   8   0
 Krotconstant   37  85   1.00000   0
 g         37  85   5.66667
 gp        37  85   2.46667
@@ -782,26 +804,166 @@ ggr       37  85   5.090 E2
 #
 # Level density
 #
-alphald        0.06660
-betald         0.25800
-gammashell1    0.45900
+alphald        0.07160
+betald         0.27159
+gammashell1    0.36510
 gammashell2    0.00000
+pairconstant  12.00000
+pshiftconstant   0.00000
 Rspincut       1.00000
 Ufermi        30.00000
-cfermi        10.00000
+cfermi         5.00000
 Ufermibf      45.00000
-cfermibf      10.00000
+cfermibf       5.00000
 Kph           15.00000
 #
 # Gamma-ray
 #
-gnorm          1.66018
+gnorm          2.27716
 #
 # Pre-equilibrium
 #
 M2constant     1.00000
 M2limit        1.00000
 M2shift        1.00000
-Rpinu          1.50000
+Rpipi          1.00000
+Rnunu          1.50000
+Rpinu          1.00000
+Rnupi          1.00000
 Rgamma         2.00000
 Esurf         12.11795
+Cstrip     n   1.00000
+Cknock     n   1.00000
+Cstrip     p   1.00000
+Cknock     p   1.00000
+Cstrip     d   1.00000
+Cknock     d   1.00000
+Cstrip     t   1.00000
+Cknock     t   1.00000
+Cstrip     h   1.00000
+Cknock     h   1.00000
+Cstrip     a   1.00000
+Cknock     a   1.00000
+#
+# Optical model
+#
+v1adjust   n   1.00000
+v2adjust   n   1.00000
+v3adjust   n   1.00000
+v4adjust   n   1.00000
+rvadjust   n   1.00000
+avadjust   n   1.00000
+w1adjust   n   1.00000
+w2adjust   n   1.00000
+d1adjust   n   1.00000
+d2adjust   n   1.00000
+d3adjust   n   1.00000
+rvdadjust  n   1.00000
+avdadjust  n   1.00000
+rvsoadjust n   1.00000
+avsoadjust n   1.00000
+vso1adjust n   1.00000
+vso2adjust n   1.00000
+wso1adjust n   1.00000
+wso2adjust n   1.00000
+rcadjust   n   1.00000
+v1adjust   p   1.00000
+v2adjust   p   1.00000
+v3adjust   p   1.00000
+v4adjust   p   1.00000
+rvadjust   p   1.00000
+avadjust   p   1.00000
+w1adjust   p   1.00000
+w2adjust   p   1.00000
+d1adjust   p   1.00000
+d2adjust   p   1.00000
+d3adjust   p   1.00000
+rvdadjust  p   1.00000
+avdadjust  p   1.00000
+rvsoadjust p   1.00000
+avsoadjust p   1.00000
+vso1adjust p   1.00000
+vso2adjust p   1.00000
+wso1adjust p   1.00000
+wso2adjust p   1.00000
+rcadjust   p   1.00000
+v1adjust   d   1.00000
+v2adjust   d   1.00000
+v3adjust   d   1.00000
+v4adjust   d   1.00000
+rvadjust   d   1.00000
+avadjust   d   1.00000
+w1adjust   d   1.00000
+w2adjust   d   1.00000
+d1adjust   d   1.00000
+d2adjust   d   1.00000
+d3adjust   d   1.00000
+rvdadjust  d   1.00000
+avdadjust  d   1.00000
+rvsoadjust d   1.00000
+avsoadjust d   1.00000
+vso1adjust d   1.00000
+vso2adjust d   1.00000
+wso1adjust d   1.00000
+wso2adjust d   1.00000
+rcadjust   d   1.00000
+v1adjust   t   1.00000
+v2adjust   t   1.00000
+v3adjust   t   1.00000
+v4adjust   t   1.00000
+rvadjust   t   1.00000
+avadjust   t   1.00000
+w1adjust   t   1.00000
+w2adjust   t   1.00000
+d1adjust   t   1.00000
+d2adjust   t   1.00000
+d3adjust   t   1.00000
+rvdadjust  t   1.00000
+avdadjust  t   1.00000
+rvsoadjust t   1.00000
+avsoadjust t   1.00000
+vso1adjust t   1.00000
+vso2adjust t   1.00000
+wso1adjust t   1.00000
+wso2adjust t   1.00000
+rcadjust   t   1.00000
+v1adjust   h   1.00000
+v2adjust   h   1.00000
+v3adjust   h   1.00000
+v4adjust   h   1.00000
+rvadjust   h   1.00000
+avadjust   h   1.00000
+w1adjust   h   1.00000
+w2adjust   h   1.00000
+d1adjust   h   1.00000
+d2adjust   h   1.00000
+d3adjust   h   1.00000
+rvdadjust  h   1.00000
+avdadjust  h   1.00000
+rvsoadjust h   1.00000
+avsoadjust h   1.00000
+vso1adjust h   1.00000
+vso2adjust h   1.00000
+wso1adjust h   1.00000
+wso2adjust h   1.00000
+rcadjust   h   1.00000
+v1adjust   a   1.00000
+v2adjust   a   1.00000
+v3adjust   a   1.00000
+v4adjust   a   1.00000
+rvadjust   a   1.00000
+avadjust   a   1.00000
+w1adjust   a   1.00000
+w2adjust   a   1.00000
+d1adjust   a   1.00000
+d2adjust   a   1.00000
+d3adjust   a   1.00000
+rvdadjust  a   1.00000
+avdadjust  a   1.00000
+rvsoadjust a   1.00000
+avsoadjust a   1.00000
+vso1adjust a   1.00000
+vso2adjust a   1.00000
+wso1adjust a   1.00000
+wso2adjust a   1.00000
+rcadjust   a   1.00000
