@@ -1,8 +1,7 @@
 
-    TALYS-1.9 (Version: December 21, 2017)
+    TALYS-1.95 (Version: December 28, 2019)
 
- Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
-                         IAEA         CEA          ULB    
+ Copyright (C) 2019  A.J. Koning, S. Hilaire and S. Goriely      
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -10,17 +9,17 @@
 
  USER INPUT FILE
 
- #                                                                               
- # general                                                                       
- #                                                                               
- projectile n                                                                    
- element    ba                                                                   
- mass       138                                                                  
- energy   1.                                                                     
- #                                                                               
- # output                                                                        
- #                                                                               
- astroe 0.030                                                                    
+ #
+ # general
+ #
+ projectile n
+ element    ba
+ mass       138
+ energy   1.
+ #
+ # output
+ #
+ astroe 0.030
 
  USER INPUT FILE + DEFAULTS
 
@@ -137,6 +136,8 @@
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
  ldmodelracap        1     ldmodelracap level density model for direct radiative capture
+ upbend              n     flagupbend   flag for low-energy upbend of photon strength function
+ psfglobal           n    flagpsfglobal flag for global photon strength functions only
  #
  # Pre-equilibrium
  #
@@ -163,9 +164,10 @@
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
+ colenhance          n     flagcolall   flag for collective enhancement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+ colldamp            n     flagcolldamp flag for damping of collective effects in effective  level density
  #
  # Fission
  #
@@ -174,6 +176,7 @@
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
  hbstate             y     flaghbstate  flag for head band states in fission
  class2              y     flagclass2   flag for class2 states in fission
+ fispartdamp         n  flagfispartdamp flag for fission partial damping
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
@@ -189,8 +192,10 @@
  outlevels           n     flaglevels   flag for output of discrete level information
  outdensity          n     flagdensity  flag for output of level densities
  outomp              n     flagoutomp   flag for output of optical model parameters
+ outkd               n     flagoutkd    flag for output of KD03 OMP parameters
  outdirect           n     flagdirect   flag for output of direct reaction results
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+ outdecay            n     flagdecay    flag for output of decay of each population bin
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
  outgamma            n     flaggamma    flag for output of gamma-ray information
@@ -1073,13 +1078,13 @@
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 5.74477E+05 3.96886E+00
+   0.3481 1.00000E+00 5.65449E+05 3.90648E+00
 
  Reaction rate for Z= 56 A=138 (138Ba) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 8.92719E+00 6.16747E-05
+   0.3481 1.00000E+00 8.79270E+00 6.07456E-05
 
  Reaction rate for Z= 54 A=135 (135Xe) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
@@ -1093,6 +1098,6 @@
 
    0.3481 1.00000E+00 1.11029E-21 7.67060E-27
 
- Execution time:  0 hours  0 minutes 10.78 seconds 
+ Execution time:  0 hours  0 minutes 10.36 seconds 
 
  The TALYS team congratulates you with this successful calculation.
