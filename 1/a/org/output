@@ -1,8 +1,8 @@
 
-    TALYS-1.8 (Version: December 28, 2015)
+    TALYS-1.9 (Version: December 21, 2017)
 
- Copyright (C) 2015  A.J. Koning, S. Hilaire and S. Goriely      
-                         NRG          CEA          ULB    
+ Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
+                         IAEA         CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -74,6 +74,8 @@
  reaction            y     flagreaction flag for calculation of nuclear reactions
  astro               n     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             n     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
+ astroex             n     flagastroex  flag for calculation of astrophysics reaction rate to long-lived excited states
+ nonthermlev        -1     nonthermlev  excited level non-thermalized in the calculation of astrophysics rate
  massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
  disctable           1     disctable    table with discrete levels
@@ -108,8 +110,8 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            6     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
- deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
+ alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
+ deuteronomp         1     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
@@ -231,13 +233,13 @@
 
  Q(n,g):  7.22755
  Q(n,n):  0.00000
- Q(n,p):  0.69205
- Q(n,d): -3.81775
- Q(n,t): -6.19530
- Q(n,h): -7.72099
- Q(n,a):  4.92829
+ Q(n,p):  0.69155
+ Q(n,d): -3.81821
+ Q(n,t): -6.19574
+ Q(n,h): -7.72142
+ Q(n,a):  4.92763
 
- ########## RESULTS FOR E= 14.00000 ##########
+ ########## RESULTS FOR E=  14.00000 ##########
 
  Energy dependent input flags
 
@@ -247,42 +249,42 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########### REACTION SUMMARY FOR E= 14.00000 ###########
+ ########### REACTION SUMMARY FOR E=  14.00000 ###########
 
- Center-of-mass energy:  13.849
+ Center-of-mass energy:   13.849
 
  1. Total (binary) cross sections
 
  Total           = 3.98195E+03
    Shape elastic   = 2.21132E+03
    Reaction        = 1.77063E+03
-     Compound elastic= 5.71136E-04
+     Compound elastic= 5.70654E-04
      Non-elastic     = 1.77063E+03
-       Direct          = 4.27729E+01
-       Pre-equilibrium = 4.13292E+02
+       Direct          = 4.28253E+01
+       Pre-equilibrium = 4.14263E+02
        Giant resonance = 5.11138E+01
-       Compound non-el = 1.26345E+03
+       Compound non-el = 1.26243E+03
      Total elastic   = 2.21132E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 4.16466E+00
- neutron = 1.69572E+03
- proton  = 3.80180E+01
- deuteron= 4.95144E+00
- triton  = 1.81730E-01
- helium-3= 6.93997E-10
- alpha   = 2.75947E+01
+ gamma   = 4.16219E+00
+ neutron = 1.69467E+03
+ proton  = 3.79993E+01
+ deuteron= 4.95110E+00
+ triton  = 1.81644E-01
+ helium-3= 6.92110E-10
+ alpha   = 2.86699E+01
 
  3. Total particle production cross sections
 
- gamma   = 2.22357E+03    Multiplicity= 1.25581E+00
- neutron = 3.08655E+03    Multiplicity= 1.74319E+00
- proton  = 4.03475E+01    Multiplicity= 2.27871E-02
- deuteron= 4.95145E+00    Multiplicity= 2.79643E-03
- triton  = 1.81730E-01    Multiplicity= 1.02636E-04
- helium-3= 6.93998E-10    Multiplicity= 3.91950E-13
- alpha   = 2.83296E+01    Multiplicity= 1.59997E-02
+ gamma   = 2.22456E+03    Multiplicity= 1.25637E+00
+ neutron = 3.08462E+03    Multiplicity= 1.74210E+00
+ proton  = 4.03268E+01    Multiplicity= 2.27754E-02
+ deuteron= 4.95110E+00    Multiplicity= 2.79624E-03
+ triton  = 1.81644E-01    Multiplicity= 1.02587E-04
+ helium-3= 6.92111E-10    Multiplicity= 3.90884E-13
+ alpha   = 2.92211E+01    Multiplicity= 1.65032E-02
 
  4. Residual production cross sections
 
@@ -291,34 +293,34 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.13890E+00    0    5.23940E-01  0.46004
-                                 1    6.14964E-01  0.53996   3.75800E+02 sec. 
-   41  93 ( 93Nb) 3.21831E+02    0    2.84002E+02  0.88246
-                                 1    3.78292E+01  0.11754   5.08700E+08 sec. 
-   40  93 ( 93Zr) 2.99601E+01    0    2.99601E+01  1.00000
-   41  92 ( 92Nb) 1.37721E+03    0    8.60037E+02  0.62448
-                                 1    5.17177E+02  0.37552   8.77000E+05 sec. 
-   40  92 ( 92Zr) 1.55816E+01    0    1.55816E+01  1.00000
-   40  91 ( 91Zr) 1.82300E-01    0    1.82300E-01  1.00000
-   39  90 ( 90Y ) 2.53054E+01    0    1.36393E+01  0.53899
-                                 2    1.16662E+01  0.46101   1.14800E+04 sec. 
-   39  89 ( 89Y ) 3.02410E+00    0    1.22274E+00  0.40433
-                                 1    1.80136E+00  0.59567   1.56600E+01 sec. 
+   41  94 ( 94Nb) 1.13883E+00    0    5.23890E-01  0.46003
+                                 1    6.14938E-01  0.53997   3.75800E+02 sec. 
+   41  93 ( 93Nb) 3.21887E+02    0    2.84051E+02  0.88246
+                                 1    3.78358E+01  0.11754   5.08700E+08 sec. 
+   40  93 ( 93Zr) 2.99513E+01    0    2.99513E+01  1.00000
+   41  92 ( 92Nb) 1.37629E+03    0    8.59477E+02  0.62449
+                                 1    5.16812E+02  0.37551   8.77000E+05 sec. 
+   40  92 ( 92Zr) 1.55693E+01    0    1.55693E+01  1.00000
+   40  91 ( 91Zr) 1.82214E-01    0    1.82214E-01  1.00000
+   39  90 ( 90Y ) 2.63195E+01    0    1.41877E+01  0.53906
+                                 2    1.21318E+01  0.46094   1.14800E+04 sec. 
+   39  89 ( 89Y ) 2.90161E+00    0    1.22546E+00  0.42234
+                                 1    1.67615E+00  0.57766   1.56600E+01 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.13890E+00
-   93 3.51791E+02
-   92 1.39280E+03
-   91 1.82300E-01
-   90 2.53054E+01
-   89 3.02410E+00
+   94 1.13883E+00
+   93 3.51838E+02
+   92 1.39186E+03
+   91 1.82214E-01
+   90 2.63195E+01
+   89 2.90161E+00
 
  Total residual production cross section:  1774.23792
  Non-elastic cross section              :  1770.62939
 
- Execution time:  0 hours  0 minutes  1.50 seconds 
+ Execution time:  0 hours  0 minutes  1.62 seconds 
 
  The TALYS team congratulates you with this successful calculation.
