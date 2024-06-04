@@ -1,0 +1,38 @@
+#
+# General 
+#
+projectile n
+element u
+mass 238
+energy energies
+#
+# Parameters
+#
+fismodel 1 
+fismodelalt 4 
+maxband 0 
+ldmodel 1 
+optmod 92 238 z092a238n.omp
+fisbar   92 239        6.10  1       
+fisbar   92 239        5.90  2       
+fisbar   92 238        6.00  1       
+fisbar   92 238        5.60  2       
+fisbar   92 237        5.40  1       
+fisbar   92 237        5.60  2       
+fishw    92 239        0.61  1       
+fishw    92 239        0.40  2       
+fishw    92 238        0.85  1       
+fishw    92 238        0.50  2       
+fishw    92 237        0.70  1       
+fishw    92 237        0.42  2       
+m2constant             0.94          
+a        92 239       34.30          
+a        92 238       32.80          
+a        92 237       28.10          
+class2 y
+#
+# Output
+#
+filefission y
+massdis y
+ffevaporation y

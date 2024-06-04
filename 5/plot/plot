@@ -1,0 +1,2 @@
+#!/bin/csh -f
+xmgr -p fission.par fis.endfb6_8 fis.jeff3_0 fis.jendl3_3 ../org/fission.tot

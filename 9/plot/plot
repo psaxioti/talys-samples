@@ -1,0 +1,13 @@
+#!/bin/csh -f
+xmgr -p el11.par -xydy pb208nela011.000.exp -xy ../org/nn011.000ang.L00 &
+xmgr -p el14.par -xydy pb208nela013.900.exp -xy ../org/nn013.700ang.L00 &
+xmgr -p el20.par -xydy pb208nela020.000.exp -xy ../org/nn020.000ang.L00 &
+xmgr -p el22.par -xydy pb208nela022.000.exp -xy ../org/nn022.000ang.L00 &
+xmgr -p el26.par -xydy pb208nela026.000.exp -xy ../org/nn025.700ang.L00 &
+xmgr -p ninlang11L1.par -xydy nn1e11.0ang.exp -xy ../org/nn011.000ang.L01 &
+xmgr -p ninlang11L2.par -xydy nn2e11.0ang.exp -xy ../org/nn011.000ang.L02 &
+xmgr -p ninlang14L1.par -xydy nn1e13.7ang.exp -xy ../org/nn013.700ang.L01 &
+xmgr -p ninlang20L1.par -xydy nn1e20.0ang.exp -xy ../org/nn020.000ang.L01 &
+xmgr -p ninlang22L1.par -xydy nn1e22.0ang.exp -xy ../org/nn022.000ang.L01 &
+xmgr -p ninlang26L1.par -xydy nn1e25.7ang.exp -xy ../org/nn025.700ang.L01 &
+xmgr -p ninlang26L2.par -xydy nn2e25.7ang.exp -xy ../org/nn025.700ang.L02 &
