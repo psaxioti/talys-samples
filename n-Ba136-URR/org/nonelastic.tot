@@ -1,15 +1,30 @@
-# n + Ba136 Nonelastic cross sections
-# 
-# 
-# # energies =    10
-#    E      Cross section
- 1.00000E-03 4.21090E+02
- 2.00000E-03 2.74020E+02
- 5.00000E-03 1.77414E+02
- 1.00000E-02 1.28115E+02
- 2.00000E-02 8.87803E+01
- 5.00000E-02 5.65872E+01
- 1.00000E-01 4.41594E+01
- 2.00000E-01 3.58252E+01
- 5.00000E-01 3.48193E+01
- 1.00000E+00 5.53854E+02
+# header:
+#   title: Ba136(n,non) cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 56
+#   A: 136
+#   nuclide: Ba136
+# reaction:
+#   type: (n,non)
+#   ENDF_MF: 3
+#   ENDF_MT: 3
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 10
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E-03   4.210898E+02
+   2.000000E-03   2.740195E+02
+   5.000000E-03   1.774141E+02
+   1.000000E-02   1.281147E+02
+   2.000000E-02   8.878027E+01
+   5.000000E-02   5.658716E+01
+   1.000000E-01   4.415942E+01
+   2.000000E-01   3.582520E+01
+   5.000000E-01   3.481934E+01
+   1.000000E+00   5.538542E+02

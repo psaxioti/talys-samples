@@ -1,9 +1,24 @@
-# n + U238 Total alpha    production
-# Q-value    = 8.93639E+00
-# 
-# # energies =     4
-#    E         xs         Yield
- 1.00000E+00 0.00000E+00 0.00000E+00
- 1.60000E+00 2.58149E-14 7.20721E-18
- 5.50000E+00 1.44363E-07 4.25935E-11
- 1.00000E+01 4.37238E-04 1.34320E-07
+# header:
+#   title: U238(n,xa) cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,xa)
+#   ENDF_MF: 3
+#   ENDF_MT: 207
+# datablock:
+#   quantity: cross section
+#   columns: 3
+#   entries: 4
+##       E             xs        Multiplicity
+##     [MeV]          [mb]            []
+   1.000000E+00   0.000000E+00   0.000000E+00
+   1.600000E+00   2.581486E-14   7.208756E-18
+   5.500000E+00   1.444873E-07   4.263027E-11
+   1.000000E+01   4.372379E-04   1.343202E-07

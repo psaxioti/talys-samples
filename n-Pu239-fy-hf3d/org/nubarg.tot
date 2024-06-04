@@ -1,8 +1,22 @@
-# n + Pu239: Average prompt gamma    multiplicity (nubar-prompt)
-# 
-# # energies =     3
-# 
-# E-in           nubar
- 2.53000E-08 5.08952E+00
- 2.00000E-07 5.08952E+00
- 1.00000E-06 5.08952E+00
+# header:
+#   title: Pu239(n,f) average gamma multiplicity
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+#   ejectile: gamma
+# datablock:
+#   quantity: multiplicity
+#   columns: 2
+#   entries: 3
+##       E            nubar
+##     [MeV]           []
+   2.530000E-08   5.089524E+00
+   2.000000E-07   5.089524E+00
+   1.000000E-06   5.089524E+00

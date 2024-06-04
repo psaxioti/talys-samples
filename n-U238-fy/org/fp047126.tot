@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 126Ag
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.60000E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 5.50000E+00 1.25010E-05 1.73008E-05 7.05527E-03 9.76427E-03
- 1.00000E+01 1.01653E-06 1.14653E-05 6.26714E-04 7.06866E-03
+# header:
+#   title: U238(n,f) fission yield for Ag126
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 47
+#   A: 126
+#   nuclide: Ag126
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []             []             []
+   1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   5.500000E+00   1.250415E-05   1.730318E-05   7.062293E-03   9.772824E-03
+   1.000000E+01   1.016227E-06   1.146590E-05   6.265216E-04   7.068966E-03

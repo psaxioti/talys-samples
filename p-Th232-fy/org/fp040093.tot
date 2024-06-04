@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  93Zr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.21022E-03 1.57778E-05 4.53584E-01 5.91341E-03
+# header:
+#   title: Th232(p,f) fission yield for Zr93
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 40
+#   A: 93
+#   nuclide: Zr93
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.210222E-03   1.577776E-05   4.535838E-01   5.913407E-03

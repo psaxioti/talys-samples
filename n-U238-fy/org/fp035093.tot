@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  93Br
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 3.32755E-04 1.48996E-03 2.02376E-03 9.06168E-03
- 1.60000E+00 4.76504E-04 1.39761E-03 4.93181E-02 1.44654E-01
- 5.50000E+00 1.91131E-04 9.62871E-04 1.07870E-01 5.43427E-01
- 1.00000E+01 2.50595E-04 9.30971E-04 1.54497E-01 5.73968E-01
+# header:
+#   title: U238(n,f) fission yield for Br93
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 35
+#   A: 93
+#   nuclide: Br93
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   3.457104E-04   1.504047E-03   1.831677E-03   7.968932E-03
+   1.600000E+00   4.776740E-04   1.398392E-03   4.918019E-02   1.439760E-01
+   5.500000E+00   1.910519E-04   9.626716E-04   1.079053E-01   5.437164E-01
+   1.000000E+01   2.505957E-04   9.309718E-04   1.544966E-01   5.739635E-01

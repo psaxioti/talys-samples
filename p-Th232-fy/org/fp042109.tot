@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 109Mo
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 5.76744E-06 6.72434E-03 2.16160E-03 2.52024E+00
+# header:
+#   title: Th232(p,f) fission yield for Mo109
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 42
+#   A: 109
+#   nuclide: Mo109
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   5.767443E-06   6.724336E-03   2.161603E-03   2.520240E+00

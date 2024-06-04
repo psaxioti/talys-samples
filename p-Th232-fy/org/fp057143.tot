@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 143La
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.54899E-03 4.15980E-03 5.80552E-01 1.55907E+00
+# header:
+#   title: Th232(p,f) fission yield for La143
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 57
+#   A: 143
+#   nuclide: La143
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.548990E-03   4.159797E-03   5.805520E-01   1.559067E+00

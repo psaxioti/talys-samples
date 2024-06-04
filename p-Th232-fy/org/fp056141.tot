@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 141Ba
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.54950E-03 7.61446E-03 9.55539E-01 2.85385E+00
+# header:
+#   title: Th232(p,f) fission yield for Ba141
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 56
+#   A: 141
+#   nuclide: Ba141
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.549504E-03   7.614456E-03   9.555386E-01   2.853852E+00

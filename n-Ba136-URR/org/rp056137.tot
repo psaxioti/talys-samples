@@ -1,15 +1,37 @@
-# n + Ba136: Production of Ba137 - Total
-# Q-value    = 6.90564E+00 mass= 136.905827
-# E-threshold= 0.00000E+00
-# # energies =    10
-#     E          xs
- 1.00000E-03 4.19944E+02
- 2.00000E-03 2.72786E+02
- 5.00000E-03 1.76274E+02
- 1.00000E-02 1.27162E+02
- 2.00000E-02 8.80494E+01
- 5.00000E-02 5.61276E+01
- 1.00000E-01 4.38578E+01
- 2.00000E-01 3.56242E+01
- 5.00000E-01 3.46402E+01
- 1.00000E+00 2.78109E+01
+# header:
+#   title: Ba136(n,x)Ba137 cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 56
+#   A: 136
+#   nuclide: Ba136
+# reaction:
+#   type: (n,x)
+#   Q-value [MeV]:  6.905644E+00
+#   E-threshold [MeV]:  0.000000E+00
+#   ENDF_MF: 6
+#   ENDF_MT: 5
+# residual:
+#   Z: 56
+#   A: 137
+#   nuclide: Ba137
+#   mass [amu]:  1.369058E+02
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 10
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E-03   4.199436E+02
+   2.000000E-03   2.727856E+02
+   5.000000E-03   1.762744E+02
+   1.000000E-02   1.271619E+02
+   2.000000E-02   8.804941E+01
+   5.000000E-02   5.612760E+01
+   1.000000E-01   4.385784E+01
+   2.000000E-01   3.562422E+01
+   5.000000E-01   3.464016E+01
+   1.000000E+00   2.781091E+01

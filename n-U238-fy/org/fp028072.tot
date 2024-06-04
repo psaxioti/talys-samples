@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  72Ni
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 4.21259E-05 5.22476E-05 2.56202E-04 3.17762E-04
- 1.60000E+00 7.92744E-05 4.01074E-05 8.20490E-03 4.15114E-03
- 5.50000E+00 1.23483E-04 1.13416E-04 6.96911E-02 6.40102E-02
- 1.00000E+01 1.22497E-04 1.08818E-04 7.55223E-02 6.70891E-02
+# header:
+#   title: U238(n,f) fission yield for Ni72
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 28
+#   A: 72
+#   nuclide: Ni72
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   4.150776E-05   5.433622E-05   2.199205E-04   2.878911E-04
+   1.600000E+00   7.950752E-05   4.006235E-05   8.185909E-03   4.124751E-03
+   5.500000E+00   1.234850E-04   1.134196E-04   6.974381E-02   6.405931E-02
+   1.000000E+01   1.224959E-04   1.088172E-04   7.552081E-02   6.708810E-02

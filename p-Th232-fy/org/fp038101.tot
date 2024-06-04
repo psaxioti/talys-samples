@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 101Sr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 7.62527E-08 1.18317E-03 2.85791E-05 4.43444E-01
+# header:
+#   title: Th232(p,f) fission yield for Sr101
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 38
+#   A: 101
+#   nuclide: Sr101
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   7.625273E-08   1.183168E-03   2.857906E-05   4.434443E-01

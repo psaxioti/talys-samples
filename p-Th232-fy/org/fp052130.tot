@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 130Te
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.97856E-03 1.20622E-02 3.36511E+00 4.52085E+00
+# header:
+#   title: Th232(p,f) fission yield for Te130
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 52
+#   A: 130
+#   nuclide: Te130
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.978564E-03   1.206223E-02   3.365111E+00   4.520850E+00

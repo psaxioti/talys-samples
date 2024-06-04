@@ -1,6 +1,23 @@
-# p + Th232: Fission product yield of A= 64
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.09029E-06 1.67613E-07 4.08633E-04 6.28201E-05
+# header:
+#   title: Th232(p,f) fission yield for Pa64
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+# residual:
+#   Z: 91
+#   A: 64
+#   nuclide: Pa64
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   1.090286E-06   1.676126E-07   4.086327E-04   6.282011E-05

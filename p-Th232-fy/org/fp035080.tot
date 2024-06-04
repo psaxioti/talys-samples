@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  80Br
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 4.21384E-05 7.16953E-07 1.57932E-02 2.68710E-04
+# header:
+#   title: Th232(p,f) fission yield for Br80
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 35
+#   A: 80
+#   nuclide: Br80
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   4.213840E-05   7.169527E-07   1.579322E-02   2.687096E-04

@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  69Fe
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.07356E-07 8.25978E-07 7.77157E-05 3.09572E-04
+# header:
+#   title: Th232(p,f) fission yield for Fe69
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 26
+#   A: 69
+#   nuclide: Fe69
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.073557E-07   8.259784E-07   7.771565E-05   3.095717E-04

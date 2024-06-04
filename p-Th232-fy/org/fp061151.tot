@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 151Pm
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 6.19207E-05 7.87562E-05 2.32075E-02 2.95173E-02
+# header:
+#   title: Th232(p,f) fission yield for Pm151
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 61
+#   A: 151
+#   nuclide: Pm151
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   6.192071E-05   7.875619E-05   2.320750E-02   2.951734E-02

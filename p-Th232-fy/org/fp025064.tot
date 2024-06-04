@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  64Mn
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.33205E-07 6.50748E-08 4.99243E-05 2.43897E-05
+# header:
+#   title: Th232(p,f) fission yield for Mn64
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 25
+#   A: 64
+#   nuclide: Mn64
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.332047E-07   6.507483E-08   4.992432E-05   2.438965E-05

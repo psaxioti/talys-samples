@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 112Ru
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.17628E-04 1.31174E-02 8.15655E-02 4.91631E+00
+# header:
+#   title: Th232(p,f) fission yield for Ru112
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 44
+#   A: 112
+#   nuclide: Ru112
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.176275E-04   1.311737E-02   8.156547E-02   4.916311E+00

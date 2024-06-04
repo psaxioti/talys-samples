@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 129Sn
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.85004E-03 1.43605E-03 1.12516E-02 8.73383E-03
- 1.60000E+00 2.77776E-03 1.74158E-03 2.87498E-01 1.80255E-01
- 5.50000E+00 3.37787E-03 2.02339E-03 1.90640E+00 1.14197E+00
- 1.00000E+01 4.53446E-03 2.12279E-03 2.79560E+00 1.30875E+00
+# header:
+#   title: U238(n,f) fission yield for Sn129
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 50
+#   A: 129
+#   nuclide: Sn129
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.929533E-03   1.475518E-03   1.022324E-02   7.817776E-03
+   1.600000E+00   2.791841E-03   1.747695E-03   2.874414E-01   1.799397E-01
+   5.500000E+00   3.377923E-03   2.023455E-03   1.907838E+00   1.142846E+00
+   1.000000E+01   4.534551E-03   2.122791E-03   2.795629E+00   1.308745E+00

@@ -1,9 +1,28 @@
-# n + U238   : (n,n')            Total
-# Q-value    = 0.00000E+00
-# E-threshold= 4.51063E-02
-# # energies =     4
-#     E          xs       gamma xs  xs/res.prod.xs
- 1.00000E+00 2.55620E+03 3.78723E+03 9.97784E-01
- 1.60000E+00 3.33902E+03 6.71732E+03 9.95727E-01
- 5.50000E+00 2.25059E+03 8.71613E+03 9.95760E-01
- 1.00000E+01 5.28376E+02 1.33767E+03 9.99021E-01
+# header:
+#   title: U238(n,n')U238 cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,n')
+#   Q-value [MeV]:  0.000000E+00
+#   E-threshold [MeV]:  4.510632E-02
+# residual:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# datablock:
+#   quantity: cross section
+#   columns: 4
+#   entries: 4
+##       E             xs          gamma xs    xs/res.prod.xs
+##     [MeV]          [mb]           [mb]            []
+   1.000000E+00   2.566177E+03   3.803820E+03   9.985982E-01
+   1.600000E+00   3.349750E+03   6.741677E+03   9.971750E-01
+   5.500000E+00   2.252281E+03   8.724062E+03   9.968074E-01
+   1.000000E+01   5.283801E+02   1.337695E+03   9.991755E-01

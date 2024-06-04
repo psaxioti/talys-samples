@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 118Pd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.44435E-04 1.10821E-02 5.41333E-02 4.15349E+00
+# header:
+#   title: Th232(p,f) fission yield for Pd118
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 46
+#   A: 118
+#   nuclide: Pd118
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.444348E-04   1.108206E-02   5.413329E-02   4.153488E+00

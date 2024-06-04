@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 157Sm
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 5.42512E-05 3.53674E-09 3.29946E-04 2.15099E-08
- 1.60000E+00 0.00000E+00 0.00000E+00 1.22721E-02 0.00000E+00
- 5.50000E+00 1.45680E-04 2.97039E-06 8.22186E-02 1.67643E-03
- 1.00000E+01 2.04157E-04 1.02706E-05 1.25867E-01 6.33209E-03
+# header:
+#   title: U238(n,f) fission yield for Sm157
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 62
+#   A: 157
+#   nuclide: Sm157
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   5.028358E-05   2.543718E-09   2.664174E-04   1.347745E-08
+   1.600000E+00   0.000000E+00   0.000000E+00   1.225720E-02   0.000000E+00
+   5.500000E+00   1.456888E-04   2.971386E-06   8.228447E-02   1.678237E-03
+   1.000000E+01   2.041569E-04   1.027111E-05   1.258663E-01   6.332352E-03

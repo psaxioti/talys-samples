@@ -1,9 +1,31 @@
-# n + U238: Production of U239 - Total
-# Q-value    = 4.80639E+00 mass= 239.054292
-# E-threshold= 0.00000E+00
-# # energies =     4
-#     E          xs
- 1.00000E+00 3.23963E+01
- 1.60000E+00 2.14626E+01
- 5.50000E+00 5.51680E-01
- 1.00000E+01 1.29118E+00
+# header:
+#   title: U238(n,x)U239 cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,x)
+#   Q-value [MeV]:  4.806386E+00
+#   E-threshold [MeV]:  0.000000E+00
+#   ENDF_MF: 6
+#   ENDF_MT: 5
+# residual:
+#   Z: 92
+#   A: 239
+#   nuclide: U239
+#   mass [amu]:  2.390543E+02
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 4
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E+00   2.278620E+01
+   1.600000E+00   1.589579E+01
+   5.500000E+00   4.550618E-01
+   1.000000E+01   1.273937E+00

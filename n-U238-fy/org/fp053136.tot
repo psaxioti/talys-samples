@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 136I 
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.04056E-02 3.79097E-03 1.24103E-01 2.30561E-02
- 1.60000E+00 2.60715E-02 4.27619E-03 2.69840E+00 4.42588E-01
- 5.50000E+00 3.19711E-02 6.29123E-03 1.80438E+01 3.55065E+00
- 1.00000E+01 3.90108E-02 7.38277E-03 2.40511E+01 4.55167E+00
+# header:
+#   title: U238(n,f) fission yield for I136
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 53
+#   A: 136
+#   nuclide: I136
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.103069E-02   3.787768E-03   1.114269E-01   2.006884E-02
+   1.600000E+00   2.616830E-02   4.277486E-03   2.694227E+00   4.404027E-01
+   5.500000E+00   3.197201E-02   6.291845E-03   1.805766E+01   3.553631E+00
+   1.000000E+01   3.901128E-02   7.382818E-03   2.405113E+01   4.551661E+00

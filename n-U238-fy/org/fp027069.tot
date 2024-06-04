@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  69Co
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.31980E-08 2.31978E-08 1.41086E-07 1.41086E-07
- 1.60000E+00 1.94567E-05 1.94566E-05 2.01377E-03 2.01377E-03
- 5.50000E+00 1.29679E-05 1.29678E-05 7.31879E-03 7.31879E-03
- 1.00000E+01 3.07413E-05 3.09755E-05 1.89527E-02 1.90972E-02
+# header:
+#   title: U238(n,f) fission yield for Co69
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 27
+#   A: 69
+#   nuclide: Co69
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.570354E-08   1.570345E-08   8.320201E-08   8.320201E-08
+   1.600000E+00   1.963909E-05   1.963897E-05   2.021995E-03   2.021995E-03
+   5.500000E+00   1.296601E-05   1.296594E-05   7.323153E-03   7.323153E-03
+   1.000000E+01   3.074232E-05   3.097649E-05   1.895317E-02   1.909765E-02

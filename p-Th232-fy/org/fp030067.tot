@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  67Zn
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 4.00705E-08 1.50591E-10 1.50182E-05 5.64405E-08
+# header:
+#   title: Th232(p,f) fission yield for Zn67
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 30
+#   A: 67
+#   nuclide: Zn67
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   4.007054E-08   1.505909E-10   1.501819E-05   5.644054E-08

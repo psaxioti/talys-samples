@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  74Zn
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.80966E-04 1.33488E-04 1.10060E-03 8.11857E-04
- 1.60000E+00 2.57663E-04 2.36118E-04 2.66681E-02 2.44384E-02
- 5.50000E+00 3.70618E-04 2.62724E-04 2.09169E-01 1.48277E-01
- 1.00000E+01 4.06749E-04 2.93963E-04 2.50770E-01 1.81236E-01
+# header:
+#   title: U238(n,f) fission yield for Zn74
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 30
+#   A: 74
+#   nuclide: Zn74
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.808066E-04   1.353245E-04   9.579674E-04   7.169935E-04
+   1.600000E+00   2.584362E-04   2.374097E-04   2.660798E-02   2.444329E-02
+   5.500000E+00   3.706398E-04   2.627393E-04   2.093359E-01   1.483950E-01
+   1.000000E+01   4.067435E-04   2.939605E-04   2.507644E-01   1.812328E-01

@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 104Mo
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.17954E-02 2.31543E-03 7.17375E-02 1.40821E-02
- 1.60000E+00 1.16766E-02 2.35555E-03 1.20853E+00 2.43801E-01
- 5.50000E+00 1.06329E-02 3.31905E-03 6.00097E+00 1.87321E+00
- 1.00000E+01 9.42391E-03 2.83234E-03 5.81005E+00 1.74621E+00
+# header:
+#   title: U238(n,f) fission yield for Mo104
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 42
+#   A: 104
+#   nuclide: Mo104
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.172407E-02   2.234226E-03   6.211761E-02   1.183766E-02
+   1.600000E+00   1.167104E-02   2.350395E-03   1.201623E+00   2.419926E-01
+   5.500000E+00   1.063286E-02   3.319479E-03   6.005399E+00   1.874840E+00
+   1.000000E+01   9.423833E-03   2.832310E-03   5.809957E+00   1.746178E+00

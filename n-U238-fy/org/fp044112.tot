@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 112Ru
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.34834E-05 3.81260E-05 8.20035E-05 2.31877E-04
- 1.60000E+00 4.57997E-07 3.94471E-05 4.74027E-05 4.08280E-03
- 5.50000E+00 5.96349E-05 6.65627E-05 3.36567E-02 3.75668E-02
- 1.00000E+01 1.34255E-04 1.06699E-04 8.27710E-02 6.57830E-02
+# header:
+#   title: U238(n,f) fission yield for Ru112
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 44
+#   A: 112
+#   nuclide: Ru112
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   9.836354E-06   3.867142E-05   5.211593E-05   2.048939E-04
+   1.600000E+00   3.067351E-07   3.963442E-05   3.158073E-05   4.080693E-03
+   5.500000E+00   5.963198E-05   6.656085E-05   3.367990E-02   3.759353E-02
+   1.000000E+01   1.342617E-04   1.067039E-04   8.277465E-02   6.578519E-02

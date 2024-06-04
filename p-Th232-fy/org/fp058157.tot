@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 157Ce
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 3.61187E-33 3.39610E-08 1.35371E-30 1.27284E-05
+# header:
+#   title: Th232(p,f) fission yield for Ce157
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 58
+#   A: 157
+#   nuclide: Ce157
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   3.611874E-33   3.396100E-08   1.353708E-30   1.272838E-05

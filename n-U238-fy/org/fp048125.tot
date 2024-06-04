@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 125Cd
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 3.31837E-06 1.37426E-06 2.01817E-05 8.35801E-06
- 1.60000E+00 3.37713E-08 1.99268E-05 3.49533E-06 2.06243E-03
- 5.50000E+00 5.88949E-05 5.22777E-05 3.32390E-02 2.95045E-02
- 1.00000E+01 9.18185E-05 1.27151E-04 5.66082E-02 7.83918E-02
+# header:
+#   title: U238(n,f) fission yield for Cd125
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 48
+#   A: 125
+#   nuclide: Cd125
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.422495E-06   9.765687E-07   1.283510E-05   5.174181E-06
+   1.600000E+00   2.066047E-08   1.995446E-05   2.127153E-06   2.054477E-03
+   5.500000E+00   5.890426E-05   5.227553E-05   3.326890E-02   2.952519E-02
+   1.000000E+01   9.182348E-05   1.271576E-04   5.661077E-02   7.839528E-02
