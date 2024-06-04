@@ -97,25 +97,17 @@ set style line 18 pointtype 8 linecolor rgb "green "
 set style line 19 pointtype 9 linecolor rgb "blue "
 set style line 20 pointtype 10 linecolor rgb "blue "
 plot [0:20][3500.:7500.0] \
-"/Users/koning/talys/samples/n-Sn120-omp-KD03/org/totalxs.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "KD03 local OMP" w lines linestyle 10, \
-"/Users/koning/talys/samples/n-Sn120-omp-KD03global/org/totalxs.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "KD03 global OMP" w lines linestyle 1, \
-"/Users/koning/talys/samples/n-Sn120-omp-KD03disp/org/totalxs.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "Dispersive local OMP" w lines linestyle 2, \
-"/Users/koning/talys/samples/n-Sn120-omp-JLM/org/totalxs.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JLM OMP" w lines linestyle 3, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Knopf-22451036.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 11, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Knopf-22451036.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Knopf(1997) " linestyle 11, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Wisshak-22377007.1996" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 12, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Wisshak-22377007.1996" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Wisshak(1996) " linestyle 12, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Musaelyan-41005029.1989" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 13, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Musaelyan-41005029.1989" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Musaelyan(1989) " linestyle 13, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Timokhov-40960030.1988" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 14, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Timokhov-40960030.1988" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Timokhov(1988) " linestyle 14, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Harper-12791004.1982" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 15, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Harper-12791004.1982" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Harper(1982) " linestyle 15, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639005.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 16, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639005.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Carlton(1976) " linestyle 16, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639006.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 17, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639006.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Carlton(1976) " linestyle 17, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Rapaport-10817003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 18, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Rapaport-10817003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Rapaport(1980) " linestyle 18, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Dukarevich-40813023.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 19, \
-"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Dukarevich-40813023.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Dukarevich(1967) " linestyle 19, \
+"/Users/koning/talys/samples/n-Sn120-omp-KD03/org/total.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "KD03 local OMP" w lines linestyle 10, \
+"/Users/koning/talys/samples/n-Sn120-omp-KD03global/org/total.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "KD03 global OMP" w lines linestyle 1, \
+"/Users/koning/talys/samples/n-Sn120-omp-KD03disp/org/total.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "Dispersive local OMP" w lines linestyle 2, \
+"/Users/koning/talys/samples/n-Sn120-omp-JLM/org/total.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JLM OMP" w lines linestyle 3, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Knopf-22451036.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Knopf-22451036.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Knopf(1997) " linestyle 11, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639005.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 16, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639005.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Carlton(1976) " linestyle 16, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639006.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 17, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Carlton-10639006.1976" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Carlton(1976) " linestyle 17, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Rapaport-10817003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 18, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Rapaport-10817003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Rapaport(1980) " linestyle 18, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Dukarevich-40813023.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 19, \
+"/Users/koning/libraries/n/Sn120/exfor/xs/001/n-Sn120-MT001-Dukarevich-40813023.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Dukarevich(1967) " linestyle 19, \

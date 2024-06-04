@@ -56,9 +56,9 @@ set style line 12 pointtype 2 linecolor rgb "#00008B "
 plot [0.:30][2.84992013E-04:301.760986] \
 "/Users/koning/talys/samples/g-Zr090-xs/org/nprod.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS" w lines linestyle 10, \
 "/Users/koning/libraries/g/Zr090/endfb8.0/tables/xs/g-Zr090-MT201.endfb8.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "ENDF/B-VIII" w lines linestyle 1, \
-"/Users/koning/libraries/g/Zr090/iaea/tables/xs/g-Zr090-MT201.iaea" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
-"/Users/koning/libraries/g/Zr090/tendl.2019/tables/xs/g-Zr090-MT201.tendl.2019" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TENDL-2019" w lines linestyle 3, \
-"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Lepretre-L0027011.1971" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 11, \
-"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Lepretre-L0027011.1971" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Lepretre(1971) " linestyle 11, \
-"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Berman-L0011005.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 12, \
-"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Berman-L0011005.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Berman(1967) " linestyle 12, \
+"/Users/koning/libraries/g/Zr090/iaea.pd/tables/xs/g-Zr090-MT201.iaea.pd" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
+"/Users/koning/libraries/g/Zr090/tendl.2023/tables/xs/g-Zr090-MT201.tendl.2023" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TENDL-2023" w lines linestyle 3, \
+"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Lepretre-L0027011.1971" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
+"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Lepretre-L0027011.1971" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Lepretre(1971) " linestyle 11, \
+"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Berman-L0011005.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 12, \
+"/Users/koning/libraries/g/Zr090/exfor/xs/201/g-Zr090-MT201-Berman-L0011005.1967" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Berman(1967) " linestyle 12, \

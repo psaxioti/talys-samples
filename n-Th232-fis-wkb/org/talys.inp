@@ -1,5 +1,5 @@
 #
-# n-Th232-fis
+# n-Th232-fisaa-wkb
 #
 # General
 #
@@ -25,6 +25,7 @@ multipreeq 6.
 #
 channels y
 filechannels y
+outfission y
 #
 # reduce output for activation-only calculation
 #
@@ -32,7 +33,7 @@ outspectra n
 outangle n
 ddxmode 0
 outdiscrete n
-maxrot 4
+maxrot 2
 strength 9
 strengthm1 3
 ngfit y

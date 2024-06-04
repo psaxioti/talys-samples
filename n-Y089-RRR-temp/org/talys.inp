@@ -6,7 +6,7 @@
 projectile n
 element Y
 mass 89
-energy n0-2.grid
+energy energies
 #
 # Model
 #
@@ -17,3 +17,4 @@ Tres 1200.
 #
 channels y
 filechannels y
+wtable 39 90 0.82 E1
