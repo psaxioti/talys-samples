@@ -1,9 +1,0 @@
-#!/bin/csh -f
-xmgr -p nn1.par -xydy nn1.exp1 nn1.exp2 -xy ../org/nn.L01 MT51.b6 MT51.j3 MT51.b7 &
-xmgr -p nn2.par -xydy nn2.exp1 -xy ../org/nn.L02 MT52.b6 MT52.j3 &
-xmgr -p nn3.par -xydy nn3.exp1 -xy ../org/nn.L03 MT53.b6 MT53.j3 &
-xmgr -p ninl.par -xydy ninl.exp1 ninl.exp2 -xy ../org/xs100000.tot MT4.b6 MT4.j3 &
-xmgr -p n2n.par -xydy n2n.exp1 n2n.exp2 -xy ../org/xs200000.tot MT16.b6 MT16.j3 &
-xmgr -p np.par -xydy np.exp1 np.exp2 np.exp3 -xy ../org/xs010000.tot MT103.b6 MT103.j3 &
-xmgr -p ng.par -xydy ng.exp -xy ../org/xs000000.tot MT102.b6 MT102.j3 &
-xmgr -p na.par -xydy na.exp -xy ../org/xs000001.tot MT107.b6 MT107.j3 &

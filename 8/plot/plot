@@ -1,5 +1,0 @@
-#!/bin/csh -f
-xmgr -p log.par -xy fe000co056p.exp -xy ../org/rp027056.tot\
-                -xy fe000co055p.exp -xy ../org/rp027055.tot\
-                -xy fe000mn054p.exp -xy ../org/rp025054.tot\
-                -xy fe000mn052p.exp -xy ../org/rp025052.tot
