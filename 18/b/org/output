@@ -1,7 +1,7 @@
 
-    TALYS-1.0      (Version: December 21, 2007)
+    TALYS-1.2       (Version: December 21, 2009)
 
- Copyright (C) 2007  A.J. Koning, S. Hilaire and M.C. Duijvestijn
+ Copyright (C) 2009  A.J. Koning, S. Hilaire and M.C. Duijvestijn
                          NRG          CEA              NRG
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
@@ -42,8 +42,8 @@
  # Basic physical and numerical parameters
  #
  ejectiles  g n p d t h a  outtype      outgoing particles
- maxz               10     maxZ         maximal number of protons away from the initial compound nucleus
- maxn               22     maxN         maximal number of neutrons away from the initial compound nucleus
+ maxz                8     maxZ         maximal number of protons away from the initial compound nucleus
+ maxn               18     maxN         maximal number of neutrons away from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
  segment             1     segment      number of segments to divide emission energy grid
  maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
@@ -66,9 +66,11 @@
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
  anglesrec           1     nanglerec    number of recoil angles
- maxenrec           20     maxenrec     number of recoil energies
+ maxenrec           16     maxenrec     number of recoil energies
  channels            n     flagchannels flag for exclusive channels calculation
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
+ micro               n     flagmicro    flag for completely microscopic Talys calculation
+ best                n     flagbest     flag to use best set of adjusted parameters
  relativistic        y     flagrel      flag for relativistic kinematics
  recoil              n     flagrecoil   flag for calculation of recoils
  labddx              n     flaglabddx   flag for calculation of DDX in LAB system
@@ -77,7 +79,7 @@
  reaction            y     flagreaction flag for calculation of nuclear reactions
  astro               y     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             n     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
- massmodel           3     massmodel    model for theoretical nuclear mass
+ massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
  #
  # Optical model
@@ -86,18 +88,23 @@
  dispersion          n     flagdisp     flag for dispersive optical model
  jlmomp              n     flagjlm      flag for using semi-microscopic JLM OMP
  optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
+ omponly             n     flagomponly  flag to execute ONLY an optical model calculation
  autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
  spherical           n     flagspher    flag to force spherical optical model
+ coulomb             y     flagcoulomb  flag for Coulomb excitation calculation with ECIS
  statepot            n     flagstate    flag for optical model potential for each excited state
  maxband             0     maxband      highest vibrational band added to rotational model
  maxrot              2     maxrot       number of included excited rotational levels
  sysreaction               sysreaction  particles with reaction cross section from systematics
- rotational   n p          rotational   particles with possible rotational optical model
+ rotational   n            rotational   particles with possible rotational optical model
  core               -1     core         even-even core for weakcoupling (-1 or 1)
  ecissave            n     flagecissave flag for saving ECIS input and output files
  eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
  inccalc             y     flaginccalc  flag for new ECIS calculation for incident channel
+ endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
+ jlmmode             0     jlmmode      option for JLM imaginary potential normalization
+ alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler)
  #
  # Compound nucleus
  #
@@ -111,14 +118,16 @@
  #
  gammax              2     gammax       number of l-values for gamma multipolarity
  strength            2     strength     model for E1 gamma-ray strength function
- electronconv        n     flagelectron flag for application of electron conversion coefficient
+ strengthM1          2     strengthM1   model for M1 gamma-ray strength function
+ electronconv        y     flagelectron flag for application of electron conversion coefficient
  #
  # Pre-equilibrium
  #
  preequilibrium      1.000 epreeq       on-set incident energy for preequilibrium calculation
  preeqmode           2     preeqmode    designator for pre-equilibrium model
  multipreeq         20.000 emulpre      on-set incident energy for multiple preequilibrium
- mpreeqmode          1     mpreeqmode   designator for multiple pre-equilibrium model
+ mpreeqmode          2     mpreeqmode   designator for multiple pre-equilibrium model
+ phmodel             1     phmodel      particle-hole state density model
  pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
  preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
  giantresonance      y     flaggiant    flag for collective contribution from giant resonances
@@ -145,7 +154,8 @@
  fission             n     flagfission  flag for fission
  fismodel            1     fismodel     fission model
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
- class2              n     flagclass2   flag for class2 states in fission
+ hbstate             y     flaghbstate  flag for head band states in fission
+ class2              y     flagclass2   flag for class2 states in fission
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  #
@@ -162,12 +172,13 @@
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
+ outurr              n     flagurr      flag for output of unresolved resonance parameters
  outgamma            n     flaggamma    flag for output of gamma-ray information
  outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
  outfission          n     flagfisout   flag for output of fission information
  outdiscrete         n     flagdisc     flag for output of discrete state cross sections
  outspectra          n     flagspec     flag for output of double-differential cross sections
- adddiscrete         y     flagadd      flag for addition of discrete states to spectra
+ addiscrete          y     flagadd      flag for addition of discrete states to spectra
  addelastic          y     flagaddel    flag for addition of elastic peak to spectra
  outangle            n     flagang      flag for output of angular distributions
  outlegendre         n     flaglegendre flag for output of Legendre coefficients
@@ -320,881 +331,991 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 4.02158E-06 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 6.03237E-06 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 8.04316E-06 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 1.00540E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 2.01079E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 3.01619E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 4.02158E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 5.02698E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 6.03237E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 7.03777E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 8.04316E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 9.04856E-05 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 1.00540E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 2.01079E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 3.01619E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 4.02158E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 5.02698E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 6.03237E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 7.03777E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 8.04316E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 9.04856E-04 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00101 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00201 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00302 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00402 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00503 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00603 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00704 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00804 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.00905 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.01005 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.01408 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.01810 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.02212 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.02614 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.03016 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.03418 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.03821 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.04223 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.04625 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.05027 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.05429 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.05831 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.06233 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.06636 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.07038 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.07440 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.07842 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : y
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : y
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.08244 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.08646 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.09049 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.09451 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.09853 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.10255 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.15282 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.20309 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.25336 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.30363 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.35390 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.40417 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.45444 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.50471 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.55498 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.60525 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.65552 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.70579 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.75606 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.80633 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.85660 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.90687 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  0.95714 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  1.00741 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  1.25875 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  1.51010 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  1.76145 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  2.01280 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  2.26415 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  2.51550 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  2.76685 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  3.01820 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  3.26955 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  3.52089 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  3.77224 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  4.02359 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  4.27494 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  4.52629 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  4.77764 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  5.02899 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  5.53168 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  6.03438 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  6.53708 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  7.03978 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  7.54247 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  8.04517 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  8.54787 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  9.05057 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E=  9.55327 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 10.05596 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 12.06675 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 14.07754 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 16.08834 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 18.09912 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 20.10991 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 25.13689 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 30.16387 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 35.19084 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 40.21782 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 45.24480 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  ########## RESULTS FOR E= 50.27177 ##########
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : y
- Multiple preequilibrium (flagmulpre): y
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : y
+ Multiple preequilibrium (flagmulpre)      : y
+ Number of continuum excitation energy bins: 40
 
  8. Thermonuclear reaction rates
 
@@ -1202,36 +1323,36 @@
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 5.46242E+08
-   0.0005 1.00000E+00 4.96512E+08
-   0.0010 1.00000E+00 4.45882E+08
-   0.0050 1.00000E+00 3.52813E+08
-   0.0100 1.00002E+00 3.01755E+08
-   0.0500 1.20827E+00 2.03467E+08
-   0.1000 1.64630E+00 1.87256E+08
-   0.1500 1.95860E+00 1.82416E+08
-   0.2000 2.21894E+00 1.80436E+08
-   0.2500 2.48838E+00 1.79690E+08
-   0.3000 2.79031E+00 1.79474E+08
-   0.4000 3.49874E+00 1.79716E+08
-   0.5000 4.31540E+00 1.80165E+08
-   0.6000 5.20597E+00 1.80375E+08
-   0.7000 6.15215E+00 1.80187E+08
-   0.8000 7.14759E+00 1.79580E+08
-   0.9000 8.19300E+00 1.78579E+08
-   1.0000 9.29313E+00 1.77221E+08
-   1.5000 1.59091E+01 1.66128E+08
-   2.0000 2.54251E+01 1.49800E+08
-   2.5000 3.98702E+01 1.30369E+08
-   3.0000 6.27717E+01 1.09492E+08
-   3.5000 1.00819E+02 8.84048E+07
-   4.0000 1.67282E+02 6.82288E+07
-   5.0000 5.25988E+02 3.47451E+07
-   6.0000 2.01299E+03 1.42315E+07
-   7.0000 8.89739E+03 4.96750E+06
-   8.0000 4.06951E+04 1.65398E+06
-   9.0000 1.76057E+05 5.76250E+05
-  10.0000 6.92169E+05 2.19125E+05
+   0.0001 1.00000E+00 1.49968E+09
+   0.0005 1.00000E+00 1.35045E+09
+   0.0010 1.00000E+00 1.18407E+09
+   0.0050 1.00000E+00 8.70848E+08
+   0.0100 1.00002E+00 7.24385E+08
+   0.0500 1.20827E+00 4.64955E+08
+   0.1000 1.64630E+00 4.23203E+08
+   0.1500 1.95860E+00 4.11429E+08
+   0.2000 2.21894E+00 4.07365E+08
+   0.2500 2.48838E+00 4.06365E+08
+   0.3000 2.79031E+00 4.06404E+08
+   0.4000 3.49874E+00 4.07128E+08
+   0.5000 4.31539E+00 4.07482E+08
+   0.6000 5.20591E+00 4.06999E+08
+   0.7000 6.15184E+00 4.05670E+08
+   0.8000 7.14652E+00 4.03624E+08
+   0.9000 8.19010E+00 4.00993E+08
+   1.0000 9.28665E+00 3.97878E+08
+   1.5000 1.58258E+01 3.76534E+08
+   2.0000 2.50758E+01 3.46244E+08
+   2.5000 3.89302E+01 3.07998E+08
+   3.0000 6.07212E+01 2.64022E+08
+   3.5000 9.67948E+01 2.16979E+08
+   4.0000 1.59774E+02 1.69911E+08
+   5.0000 5.00541E+02 8.82692E+07
+   6.0000 1.92013E+03 3.65189E+07
+   7.0000 8.52472E+03 1.27856E+07
+   8.0000 3.91595E+04 4.24716E+06
+   9.0000 1.70030E+05 1.46918E+06
+  10.0000 6.70457E+05 5.52332E+05
 
  Reaction rate for Z= 76 A=187 (187Os)
 
@@ -1240,68 +1361,68 @@
    0.0001 1.00000E+00 0.00000E+00
    0.0005 1.00000E+00 0.00000E+00
    0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 1.44514E-04
-   0.0100 1.00002E+00 6.43763E+02
-   0.0500 1.20827E+00 4.82336E+07
-   0.1000 1.64630E+00 1.36523E+08
-   0.1500 1.95860E+00 1.85044E+08
-   0.2000 2.21894E+00 2.19529E+08
-   0.2500 2.48838E+00 2.48399E+08
-   0.3000 2.79031E+00 2.73605E+08
-   0.4000 3.49874E+00 3.16008E+08
-   0.5000 4.31540E+00 3.50981E+08
-   0.6000 5.20597E+00 3.80993E+08
-   0.7000 6.15215E+00 4.07485E+08
-   0.8000 7.14759E+00 4.31331E+08
-   0.9000 8.19300E+00 4.53085E+08
-   1.0000 9.29313E+00 4.73107E+08
-   1.5000 1.59091E+01 5.53253E+08
-   2.0000 2.54251E+01 6.07526E+08
-   2.5000 3.98702E+01 6.45559E+08
-   3.0000 6.27717E+01 6.77182E+08
-   3.5000 1.00819E+02 7.09087E+08
-   4.0000 1.67282E+02 7.44000E+08
-   5.0000 5.25988E+02 8.10740E+08
-   6.0000 2.01299E+03 8.08722E+08
-   7.0000 8.89739E+03 6.83503E+08
-   8.0000 4.06951E+04 4.95975E+08
-   9.0000 1.76057E+05 3.28343E+08
-  10.0000 6.92169E+05 2.08163E+08
+   0.0050 1.00000E+00 6.32216E-04
+   0.0100 1.00002E+00 2.53770E+03
+   0.0500 1.20827E+00 1.70366E+08
+   0.1000 1.64630E+00 4.58039E+08
+   0.1500 1.95860E+00 6.00797E+08
+   0.2000 2.21894E+00 6.95675E+08
+   0.2500 2.48838E+00 7.72535E+08
+   0.3000 2.79031E+00 8.38339E+08
+   0.4000 3.49874E+00 9.46895E+08
+   0.5000 4.31539E+00 1.03522E+09
+   0.6000 5.20591E+00 1.11116E+09
+   0.7000 6.15184E+00 1.17906E+09
+   0.8000 7.14652E+00 1.24137E+09
+   0.9000 8.19010E+00 1.29948E+09
+   1.0000 9.28665E+00 1.35419E+09
+   1.5000 1.58258E+01 1.58595E+09
+   2.0000 2.50758E+01 1.75344E+09
+   2.5000 3.89302E+01 1.87141E+09
+   3.0000 6.07212E+01 1.96322E+09
+   3.5000 9.67948E+01 2.04617E+09
+   4.0000 1.59774E+02 2.12517E+09
+   5.0000 5.00541E+02 2.22061E+09
+   6.0000 1.92013E+03 2.06266E+09
+   7.0000 8.52472E+03 1.59955E+09
+   8.0000 3.91595E+04 1.06526E+09
+   9.0000 1.70030E+05 6.50983E+08
+  10.0000 6.70457E+05 3.83269E+08
 
  Reaction rate for Z= 75 A=187 (187Re)
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 2.77592E-04
-   0.0005 1.00000E+00 6.54044E-04
-   0.0010 1.00000E+00 8.81152E-04
-   0.0050 1.00000E+00 2.06838E-03
-   0.0100 1.00002E+00 2.78545E-03
-   0.0500 1.20827E+00 5.15326E-03
-   0.1000 1.64630E+00 5.31726E-03
-   0.1500 1.95860E+00 5.48095E-03
-   0.2000 2.21894E+00 5.61794E-03
-   0.2500 2.48838E+00 5.63259E-03
-   0.3000 2.79031E+00 5.52141E-03
-   0.4000 3.49874E+00 5.08867E-03
-   0.5000 4.31540E+00 4.59888E-03
-   0.6000 5.20597E+00 4.16096E-03
-   0.7000 6.15215E+00 3.79120E-03
-   0.8000 7.14759E+00 3.47996E-03
-   0.9000 8.19300E+00 3.21422E-03
-   1.0000 9.29313E+00 2.98308E-03
-   1.5000 1.59091E+01 2.13410E-03
-   2.0000 2.54251E+01 2.32121E-03
-   2.5000 3.98702E+01 2.33761E-02
-   3.0000 6.27717E+01 2.59204E-01
-   3.5000 1.00819E+02 1.79232E+00
-   4.0000 1.67282E+02 8.89993E+00
-   5.0000 5.25988E+02 1.09446E+02
-   6.0000 2.01299E+03 6.36940E+02
-   7.0000 8.89739E+03 2.03653E+03
-   8.0000 4.06951E+04 4.21814E+03
-   9.0000 1.76057E+05 6.53012E+03
-  10.0000 6.92169E+05 8.33407E+03
+   0.0001 1.00000E+00 2.71632E-04
+   0.0005 1.00000E+00 6.53171E-04
+   0.0010 1.00000E+00 8.80724E-04
+   0.0050 1.00000E+00 2.06761E-03
+   0.0100 1.00002E+00 2.78476E-03
+   0.0500 1.20827E+00 5.15303E-03
+   0.1000 1.64630E+00 5.31715E-03
+   0.1500 1.95860E+00 5.48132E-03
+   0.2000 2.21894E+00 5.61870E-03
+   0.2500 2.48838E+00 5.63329E-03
+   0.3000 2.79031E+00 5.52180E-03
+   0.4000 3.49874E+00 5.08846E-03
+   0.5000 4.31539E+00 4.59844E-03
+   0.6000 5.20591E+00 4.16054E-03
+   0.7000 6.15184E+00 3.79099E-03
+   0.8000 7.14652E+00 3.48017E-03
+   0.9000 8.19010E+00 3.21511E-03
+   1.0000 9.28665E+00 2.98498E-03
+   1.5000 1.58258E+01 2.14650E-03
+   2.0000 2.50758E+01 2.54361E-03
+   2.5000 3.89302E+01 2.89677E-02
+   3.0000 6.07212E+01 3.22221E-01
+   3.5000 9.67948E+01 2.21437E+00
+   4.0000 1.59774E+02 1.08993E+01
+   5.0000 5.00541E+02 1.31199E+02
+   6.0000 1.92013E+03 7.47158E+02
+   7.0000 8.52472E+03 2.33933E+03
+   8.0000 3.91595E+04 4.74652E+03
+   9.0000 1.70030E+05 7.20214E+03
+  10.0000 6.70457E+05 9.01624E+03
 
  Reaction rate for Z= 76 A=186 (186Os)
 
@@ -1319,24 +1440,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 6.24149E-20
-   1.5000 1.59091E+01 3.98255E-09
-   2.0000 2.54251E+01 1.15112E-03
-   2.5000 3.98702E+01 2.36795E+00
-   3.0000 6.27717E+01 3.97562E+02
-   3.5000 1.00819E+02 1.55863E+04
-   4.0000 1.67282E+02 2.38357E+05
-   5.0000 5.25988E+02 8.97230E+06
-   6.0000 2.01299E+03 7.07383E+07
-   7.0000 8.89739E+03 2.18067E+08
-   8.0000 4.06951E+04 3.92976E+08
-   9.0000 1.76057E+05 5.29133E+08
-  10.0000 6.92169E+05 6.05589E+08
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 3.77365E-19
+   1.5000 1.58258E+01 1.89073E-08
+   2.0000 2.50758E+01 4.77510E-03
+   2.5000 3.89302E+01 9.05309E+00
+   3.0000 6.07212E+01 1.42966E+03
+   3.5000 9.67948E+01 5.30133E+04
+   4.0000 1.59774E+02 7.68744E+05
+   5.0000 5.00541E+02 2.62500E+07
+   6.0000 1.92013E+03 1.89341E+08
+   7.0000 8.52472E+03 5.36666E+08
+   8.0000 3.91595E+04 8.94199E+08
+   9.0000 1.70030E+05 1.12028E+09
+  10.0000 6.70457E+05 1.19997E+09
 
  Reaction rate for Z= 75 A=186 (186Re)
 
@@ -1354,24 +1475,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 1.19026E-24
-   2.0000 2.54251E+01 5.95788E-17
-   2.5000 3.98702E+01 8.76945E-12
-   3.0000 6.27717E+01 4.09507E-08
-   3.5000 1.00819E+02 1.77437E-05
-   4.0000 1.67282E+02 1.66831E-03
-   5.0000 5.25988E+02 9.07559E-01
-   6.0000 2.01299E+03 4.99436E+01
-   7.0000 8.89739E+03 6.85634E+02
-   8.0000 4.06951E+04 3.98441E+03
-   9.0000 1.76057E+05 1.35133E+04
-  10.0000 6.92169E+05 3.23922E+04
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 2.04459E-24
+   2.0000 2.50758E+01 9.54314E-17
+   2.5000 3.89302E+01 1.31967E-11
+   3.0000 6.07212E+01 5.90363E-08
+   3.5000 9.67948E+01 2.48444E-05
+   4.0000 1.59774E+02 2.28385E-03
+   5.0000 5.00541E+02 1.20015E+00
+   6.0000 1.92013E+03 6.44935E+01
+   7.0000 8.52472E+03 8.72209E+02
+   8.0000 3.91595E+04 5.02292E+03
+   9.0000 1.70030E+05 1.69574E+04
+  10.0000 6.70457E+05 4.06431E+04
 
  Reaction rate for Z= 74 A=186 (186W )
 
@@ -1389,24 +1510,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 9.74321E-24
-   3.0000 6.27717E+01 3.07864E-19
-   3.5000 1.00819E+02 5.58567E-16
-   4.0000 1.67282E+02 1.80776E-13
-   5.0000 5.25988E+02 7.73865E-10
-   6.0000 2.01299E+03 1.98645E-07
-   7.0000 8.89739E+03 8.56320E-06
-   8.0000 4.06951E+04 1.30800E-04
-   9.0000 1.76057E+05 1.06948E-03
-  10.0000 6.92169E+05 5.64561E-03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 4.10044E-24
+   3.0000 6.07212E+01 1.24445E-19
+   3.5000 9.67948E+01 2.21292E-16
+   4.0000 1.59774E+02 7.09056E-14
+   5.0000 5.00541E+02 2.99666E-10
+   6.0000 1.92013E+03 7.56962E-08
+   7.0000 8.52472E+03 3.23084E-06
+   8.0000 3.91595E+04 4.93236E-05
+   9.0000 1.70030E+05 4.04446E-04
+  10.0000 6.70457E+05 2.14429E-03
 
  Reaction rate for Z= 76 A=185 (185Os)
 
@@ -1424,24 +1545,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 1.55168E-13
-   3.0000 6.27717E+01 1.94880E-08
-   3.5000 1.00819E+02 7.29877E-05
-   4.0000 1.67282E+02 3.07077E-02
-   5.0000 5.25988E+02 1.06021E+02
-   6.0000 2.01299E+03 1.62972E+04
-   7.0000 8.89739E+03 4.03273E+05
-   8.0000 4.06951E+04 3.26017E+06
-   9.0000 1.76057E+05 1.32828E+07
-  10.0000 6.92169E+05 3.53624E+07
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 7.31466E-13
+   3.0000 6.07212E+01 8.62827E-08
+   3.5000 9.67948E+01 3.07102E-04
+   4.0000 1.59774E+02 1.22813E-01
+   5.0000 5.00541E+02 3.77898E+02
+   6.0000 1.92013E+03 5.13615E+04
+   7.0000 8.52472E+03 1.13923E+06
+   8.0000 3.91595E+04 8.42644E+06
+   9.0000 1.70030E+05 3.18983E+07
+  10.0000 6.70457E+05 7.95154E+07
 
  Reaction rate for Z= 75 A=185 (185Re)
 
@@ -1459,24 +1580,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 1.31277E-26
-   2.0000 2.54251E+01 4.61841E-19
-   2.5000 3.98702E+01 1.85781E-14
-   3.0000 6.27717E+01 2.94068E-11
-   3.5000 1.00819E+02 8.21768E-09
-   4.0000 1.67282E+02 7.21480E-07
-   5.0000 5.25988E+02 6.97702E-04
-   6.0000 2.01299E+03 1.44490E-01
-   7.0000 8.89739E+03 8.45317E+00
-   8.0000 4.06951E+04 1.88910E+02
-   9.0000 1.76057E+05 2.05389E+03
-  10.0000 6.92169E+05 1.32390E+04
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 1.93617E-26
+   2.0000 2.50758E+01 6.20872E-19
+   2.5000 3.89302E+01 2.36237E-14
+   3.0000 6.07212E+01 3.58951E-11
+   3.5000 9.67948E+01 9.76719E-09
+   4.0000 1.59774E+02 8.55021E-07
+   5.0000 5.00541E+02 9.49623E-04
+   6.0000 1.92013E+03 2.35449E-01
+   7.0000 8.52472E+03 1.53155E+01
+   8.0000 3.91595E+04 3.60317E+02
+   9.0000 1.70030E+05 3.97496E+03
+  10.0000 6.70457E+05 2.55404E+04
 
  Reaction rate for Z= 74 A=185 (185W )
 
@@ -1494,24 +1615,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 7.31808E-27
-   3.0000 6.27717E+01 9.97102E-22
-   3.5000 1.00819E+02 4.42333E-18
-   4.0000 1.67282E+02 2.55245E-15
-   5.0000 5.25988E+02 2.23745E-11
-   6.0000 2.01299E+03 1.05110E-08
-   7.0000 8.89739E+03 1.18856E-06
-   8.0000 4.06951E+04 6.04439E-05
-   9.0000 1.76057E+05 1.58419E-03
-  10.0000 6.92169E+05 2.34562E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 1.01627E-26
+   3.0000 6.07212E+01 1.32180E-21
+   3.5000 9.67948E+01 5.74499E-18
+   4.0000 1.59774E+02 3.31221E-15
+   5.0000 5.00541E+02 2.90921E-11
+   6.0000 1.92013E+03 1.33025E-08
+   7.0000 8.52472E+03 1.44933E-06
+   8.0000 3.91595E+04 7.37077E-05
+   9.0000 1.70030E+05 1.98555E-03
+  10.0000 6.70457E+05 3.00563E-02
 
  Reaction rate for Z= 73 A=185 (185Ta)
 
@@ -1529,24 +1650,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 3.08351E-26
-   6.0000 2.01299E+03 4.25235E-21
-   7.0000 8.89739E+03 1.55663E-17
-   8.0000 4.06951E+04 7.26230E-15
-   9.0000 1.76057E+05 8.61412E-13
-  10.0000 6.92169E+05 3.87514E-11
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 5.21268E-27
+   6.0000 1.92013E+03 7.51374E-22
+   7.0000 8.52472E+03 2.73004E-18
+   8.0000 3.91595E+04 1.27064E-15
+   9.0000 1.70030E+05 1.50071E-13
+  10.0000 6.70457E+05 6.70213E-12
 
  Reaction rate for Z= 76 A=184 (184Os)
 
@@ -1564,24 +1685,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 1.90635E-10
-   5.0000 5.25988E+02 9.41985E-05
-   6.0000 2.01299E+03 3.22632E-01
-   7.0000 8.89739E+03 6.66223E+01
-   8.0000 4.06951E+04 2.71663E+03
-   9.0000 1.76057E+05 4.26043E+04
-  10.0000 6.92169E+05 3.63318E+05
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.07488E-09
+   5.0000 5.00541E+02 4.91808E-04
+   6.0000 1.92013E+03 1.57326E+00
+   7.0000 8.52472E+03 2.97952E+02
+   8.0000 3.91595E+04 1.07533E+04
+   9.0000 1.70030E+05 1.45433E+05
+  10.0000 6.70457E+05 1.06887E+06
 
  Reaction rate for Z= 75 A=184 (184Re)
 
@@ -1599,59 +1720,59 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 2.50758E-26
-   3.0000 6.27717E+01 3.00267E-18
-   3.5000 1.00819E+02 5.56892E-14
-   4.0000 1.67282E+02 8.97244E-11
-   5.0000 5.25988E+02 2.12716E-06
-   6.0000 2.01299E+03 1.26326E-03
-   7.0000 8.89739E+03 1.18041E-01
-   8.0000 4.06951E+04 4.20453E+00
-   9.0000 1.76057E+05 8.19041E+01
-  10.0000 6.92169E+05 1.00179E+03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 6.25997E-26
+   3.0000 6.07212E+01 5.31209E-18
+   3.5000 9.67948E+01 9.21911E-14
+   4.0000 1.59774E+02 1.41258E-10
+   5.0000 5.00541E+02 3.12357E-06
+   6.0000 1.92013E+03 1.79283E-03
+   7.0000 8.52472E+03 1.87715E-01
+   8.0000 3.91595E+04 8.58448E+00
+   9.0000 1.70030E+05 1.96310E+02
+  10.0000 6.70457E+05 2.48015E+03
 
  Reaction rate for Z= 74 A=184 (184W )
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 7.77741E+02
-   0.0005 1.00000E+00 7.29263E+02
-   0.0010 1.00000E+00 6.63137E+02
-   0.0050 1.00000E+00 5.40897E+02
-   0.0100 1.00002E+00 4.67616E+02
-   0.0500 1.20827E+00 3.02061E+02
-   0.1000 1.64630E+00 2.47890E+02
-   0.1500 1.95860E+00 2.29035E+02
-   0.2000 2.21894E+00 2.19152E+02
-   0.2500 2.48838E+00 2.11528E+02
-   0.3000 2.79031E+00 2.04225E+02
-   0.4000 3.49874E+00 1.90512E+02
-   0.5000 4.31540E+00 1.79563E+02
-   0.6000 5.20597E+00 1.71606E+02
-   0.7000 6.15215E+00 1.65891E+02
-   0.8000 7.14759E+00 1.61648E+02
-   0.9000 8.19300E+00 1.58338E+02
-   1.0000 9.29313E+00 1.55625E+02
-   1.5000 1.59091E+01 1.46711E+02
-   2.0000 2.54251E+01 1.44266E+02
-   2.5000 3.98702E+01 1.51716E+02
-   3.0000 6.27717E+01 1.75488E+02
-   3.5000 1.00819E+02 2.27116E+02
-   4.0000 1.67282E+02 3.28149E+02
-   5.0000 5.25988E+02 8.56338E+02
-   6.0000 2.01299E+03 2.28930E+03
-   7.0000 8.89739E+03 4.97644E+03
-   8.0000 4.06951E+04 8.62024E+03
-   9.0000 1.76057E+05 1.25446E+04
-  10.0000 6.92169E+05 1.60266E+04
+   0.0001 1.00000E+00 1.30826E+03
+   0.0005 1.00000E+00 1.21153E+03
+   0.0010 1.00000E+00 1.07372E+03
+   0.0050 1.00000E+00 8.09100E+02
+   0.0100 1.00002E+00 6.78068E+02
+   0.0500 1.20827E+00 4.07786E+02
+   0.1000 1.64630E+00 3.24140E+02
+   0.1500 1.95860E+00 2.95649E+02
+   0.2000 2.21894E+00 2.81188E+02
+   0.2500 2.48838E+00 2.70433E+02
+   0.3000 2.79031E+00 2.60349E+02
+   0.4000 3.49874E+00 2.41503E+02
+   0.5000 4.31539E+00 2.26299E+02
+   0.6000 5.20591E+00 2.15085E+02
+   0.7000 6.15184E+00 2.06945E+02
+   0.8000 7.14652E+00 2.00907E+02
+   0.9000 8.19010E+00 1.96270E+02
+   1.0000 9.28665E+00 1.92592E+02
+   1.5000 1.58258E+01 1.82382E+02
+   2.0000 2.50758E+01 1.82916E+02
+   2.5000 3.89302E+01 1.98951E+02
+   3.0000 6.07212E+01 2.42623E+02
+   3.5000 9.67948E+01 3.37554E+02
+   4.0000 1.59774E+02 5.28389E+02
+   5.0000 5.00541E+02 1.57185E+03
+   6.0000 1.92013E+03 4.50883E+03
+   7.0000 8.52472E+03 1.01347E+04
+   8.0000 3.91595E+04 1.78569E+04
+   9.0000 1.70030E+05 2.62229E+04
+  10.0000 6.70457E+05 3.36679E+04
 
  Reaction rate for Z= 73 A=184 (184Ta)
 
@@ -1669,24 +1790,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 5.12888E-24
-   6.0000 2.01299E+03 3.17927E-19
-   7.0000 8.89739E+03 8.58456E-16
-   8.0000 4.06951E+04 3.69680E-13
-   9.0000 1.76057E+05 5.16810E-11
-  10.0000 6.92169E+05 3.22833E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 1.98754E-24
+   6.0000 1.92013E+03 1.18552E-19
+   7.0000 8.52472E+03 3.16791E-16
+   8.0000 3.91595E+04 1.47629E-13
+   9.0000 1.70030E+05 2.36205E-11
+  10.0000 6.70457E+05 1.63190E-09
 
  Reaction rate for Z= 72 A=184 (184Hf)
 
@@ -1704,24 +1825,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 1.78793E-29
-   8.0000 4.06951E+04 3.79613E-25
-   9.0000 1.76057E+05 2.29529E-22
-  10.0000 6.92169E+05 3.18451E-20
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 1.58467E-30
+   8.0000 3.91595E+04 3.57106E-26
+   9.0000 1.70030E+05 2.07320E-23
+  10.0000 6.70457E+05 2.77700E-21
 
  Reaction rate for Z= 76 A=183 (183Os)
 
@@ -1739,24 +1860,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 6.38104E-14
-   6.0000 2.01299E+03 1.98116E-06
-   7.0000 8.89739E+03 6.25272E-03
-   8.0000 4.06951E+04 1.85055E+00
-   9.0000 1.76057E+05 1.27790E+02
-  10.0000 6.92169E+05 3.45116E+03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 1.10628E-12
+   6.0000 1.92013E+03 1.20340E-05
+   7.0000 8.52472E+03 3.49936E-02
+   8.0000 3.91595E+04 9.38936E+00
+   9.0000 1.70030E+05 5.73685E+02
+  10.0000 6.70457E+05 1.34798E+04
 
  Reaction rate for Z= 75 A=183 (183Re)
 
@@ -1774,94 +1895,94 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 2.02847E-17
-   5.0000 5.25988E+02 3.59511E-11
-   6.0000 2.01299E+03 6.50180E-07
-   7.0000 8.89739E+03 5.01053E-04
-   8.0000 4.06951E+04 5.51948E-02
-   9.0000 1.76057E+05 1.99435E+00
-  10.0000 6.92169E+05 3.87602E+01
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 4.67739E-17
+   5.0000 5.00541E+02 7.26610E-11
+   6.0000 1.92013E+03 1.20861E-06
+   7.0000 8.52472E+03 8.85021E-04
+   8.0000 3.91595E+04 9.61045E-02
+   9.0000 1.70030E+05 3.67130E+00
+  10.0000 6.70457E+05 7.94429E+01
 
  Reaction rate for Z= 74 A=183 (183W )
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 2.77592E-04
-   0.0005 1.00000E+00 6.54044E-04
-   0.0010 1.00000E+00 8.81152E-04
-   0.0050 1.00000E+00 2.06838E-03
-   0.0100 1.00002E+00 2.78545E-03
-   0.0500 1.20827E+00 5.15326E-03
-   0.1000 1.64630E+00 5.31726E-03
-   0.1500 1.95860E+00 5.48095E-03
-   0.2000 2.21894E+00 5.61794E-03
-   0.2500 2.48838E+00 5.63259E-03
-   0.3000 2.79031E+00 5.52141E-03
-   0.4000 3.49874E+00 5.08867E-03
-   0.5000 4.31540E+00 4.59888E-03
-   0.6000 5.20597E+00 4.16096E-03
-   0.7000 6.15215E+00 3.79120E-03
-   0.8000 7.14759E+00 3.47996E-03
-   0.9000 8.19300E+00 3.21422E-03
-   1.0000 9.29313E+00 2.98308E-03
-   1.5000 1.59091E+01 2.12984E-03
-   2.0000 2.54251E+01 1.54061E-03
-   2.5000 3.98702E+01 1.10036E-03
-   3.0000 6.27717E+01 8.98937E-04
-   3.5000 1.00819E+02 1.00489E-02
-   4.0000 1.67282E+02 2.32686E-01
-   5.0000 5.25988E+02 1.88788E+01
-   6.0000 2.01299E+03 3.21979E+02
-   7.0000 8.89739E+03 2.22592E+03
-   8.0000 4.06951E+04 8.86834E+03
-   9.0000 1.76057E+05 2.47557E+04
-  10.0000 6.92169E+05 5.40311E+04
+   0.0001 1.00000E+00 2.71632E-04
+   0.0005 1.00000E+00 6.53171E-04
+   0.0010 1.00000E+00 8.80724E-04
+   0.0050 1.00000E+00 2.06761E-03
+   0.0100 1.00002E+00 2.78476E-03
+   0.0500 1.20827E+00 5.15303E-03
+   0.1000 1.64630E+00 5.31715E-03
+   0.1500 1.95860E+00 5.48132E-03
+   0.2000 2.21894E+00 5.61870E-03
+   0.2500 2.48838E+00 5.63329E-03
+   0.3000 2.79031E+00 5.52180E-03
+   0.4000 3.49874E+00 5.08846E-03
+   0.5000 4.31539E+00 4.59844E-03
+   0.6000 5.20591E+00 4.16054E-03
+   0.7000 6.15184E+00 3.79099E-03
+   0.8000 7.14652E+00 3.48017E-03
+   0.9000 8.19010E+00 3.21511E-03
+   1.0000 9.28665E+00 2.98498E-03
+   1.5000 1.58258E+01 2.14106E-03
+   2.0000 2.50758E+01 1.56212E-03
+   2.5000 3.89302E+01 1.12747E-03
+   3.0000 6.07212E+01 1.10203E-03
+   3.5000 9.67948E+01 2.21677E-02
+   4.0000 1.59774E+02 5.18604E-01
+   5.0000 5.00541E+02 4.16590E+01
+   6.0000 1.92013E+03 7.22620E+02
+   7.0000 8.52472E+03 5.17138E+03
+   8.0000 3.91595E+04 2.13399E+04
+   9.0000 1.70030E+05 6.10702E+04
+  10.0000 6.70457E+05 1.35165E+05
 
  Reaction rate for Z= 73 A=183 (183Ta)
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 2.77592E-04
-   0.0005 1.00000E+00 6.54044E-04
-   0.0010 1.00000E+00 8.81152E-04
-   0.0050 1.00000E+00 2.06838E-03
-   0.0100 1.00002E+00 2.78545E-03
-   0.0500 1.20827E+00 5.15326E-03
-   0.1000 1.64630E+00 5.31726E-03
-   0.1500 1.95860E+00 5.48095E-03
-   0.2000 2.21894E+00 5.61794E-03
-   0.2500 2.48838E+00 5.63259E-03
-   0.3000 2.79031E+00 5.52141E-03
-   0.4000 3.49874E+00 5.08867E-03
-   0.5000 4.31540E+00 4.59888E-03
-   0.6000 5.20597E+00 4.16096E-03
-   0.7000 6.15215E+00 3.79120E-03
-   0.8000 7.14759E+00 3.47996E-03
-   0.9000 8.19300E+00 3.21422E-03
-   1.0000 9.29313E+00 2.98308E-03
-   1.5000 1.59091E+01 2.12984E-03
-   2.0000 2.54251E+01 1.54061E-03
-   2.5000 3.98702E+01 1.10001E-03
-   3.0000 6.27717E+01 7.66089E-04
-   3.5000 1.00819E+02 5.15388E-04
-   4.0000 1.67282E+02 3.32053E-04
-   5.0000 5.25988E+02 1.18000E-04
-   6.0000 2.01299E+03 3.44163E-05
-   7.0000 8.89739E+03 3.26372E-05
-   8.0000 4.06951E+04 4.01222E-04
-   9.0000 1.76057E+05 4.00231E-03
-  10.0000 6.92169E+05 2.71739E-02
+   0.0001 1.00000E+00 2.71632E-04
+   0.0005 1.00000E+00 6.53171E-04
+   0.0010 1.00000E+00 8.80724E-04
+   0.0050 1.00000E+00 2.06761E-03
+   0.0100 1.00002E+00 2.78476E-03
+   0.0500 1.20827E+00 5.15303E-03
+   0.1000 1.64630E+00 5.31715E-03
+   0.1500 1.95860E+00 5.48132E-03
+   0.2000 2.21894E+00 5.61870E-03
+   0.2500 2.48838E+00 5.63329E-03
+   0.3000 2.79031E+00 5.52180E-03
+   0.4000 3.49874E+00 5.08846E-03
+   0.5000 4.31539E+00 4.59844E-03
+   0.6000 5.20591E+00 4.16054E-03
+   0.7000 6.15184E+00 3.79099E-03
+   0.8000 7.14652E+00 3.48017E-03
+   0.9000 8.19010E+00 3.21511E-03
+   1.0000 9.28665E+00 2.98498E-03
+   1.5000 1.58258E+01 2.14106E-03
+   2.0000 2.50758E+01 1.56212E-03
+   2.5000 3.89302E+01 1.12661E-03
+   3.0000 6.07212E+01 7.91974E-04
+   3.5000 9.67948E+01 5.36815E-04
+   4.0000 1.59774E+02 3.47655E-04
+   5.0000 5.00541E+02 1.23995E-04
+   6.0000 1.92013E+03 3.59471E-05
+   7.0000 8.52472E+03 3.55203E-05
+   8.0000 3.91595E+04 5.81989E-04
+   9.0000 1.70030E+05 6.99477E-03
+  10.0000 6.70457E+05 5.27913E-02
 
  Reaction rate for Z= 72 A=183 (183Hf)
 
@@ -1879,24 +2000,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 1.19094E-26
-   8.0000 4.06951E+04 1.41860E-22
-   9.0000 1.76057E+05 8.18494E-20
-  10.0000 6.92169E+05 1.11307E-17
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 1.75634E-27
+   8.0000 3.91595E+04 2.03430E-23
+   9.0000 1.70030E+05 1.12335E-20
+  10.0000 6.70457E+05 1.47291E-18
 
  Reaction rate for Z= 76 A=182 (182Os)
 
@@ -1914,24 +2035,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 1.25449E-11
-   7.0000 8.89739E+03 3.55298E-07
-   8.0000 4.06951E+04 5.64994E-04
-   9.0000 1.76057E+05 1.50435E-01
-  10.0000 6.92169E+05 1.15625E+01
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 2.14328E-10
+   7.0000 8.52472E+03 3.95325E-06
+   8.0000 3.91595E+04 4.86010E-03
+   9.0000 1.70030E+05 1.09159E+00
+  10.0000 6.70457E+05 7.41092E+01
 
  Reaction rate for Z= 75 A=182 (182Re)
 
@@ -1949,24 +2070,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 8.38829E-12
-   7.0000 8.89739E+03 7.75270E-08
-   8.0000 4.06951E+04 5.77738E-05
-   9.0000 1.76057E+05 8.25593E-03
-  10.0000 6.92169E+05 3.98091E-01
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 2.52751E-11
+   7.0000 8.52472E+03 1.97369E-07
+   8.0000 3.91595E+04 1.35010E-04
+   9.0000 1.70030E+05 1.84284E-02
+  10.0000 6.70457E+05 8.78496E-01
 
  Reaction rate for Z= 74 A=182 (182W )
 
@@ -1984,24 +2105,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 1.46053E-16
-   3.0000 6.27717E+01 4.82566E-12
-   3.5000 1.00819E+02 8.92858E-09
-   4.0000 1.67282E+02 2.61412E-06
-   5.0000 5.25988E+02 6.25663E-03
-   6.0000 2.01299E+03 7.91895E-01
-   7.0000 8.89739E+03 1.93103E+01
-   8.0000 4.06951E+04 1.99654E+02
-   9.0000 1.76057E+05 1.33547E+03
-  10.0000 6.92169E+05 6.61390E+03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 6.17937E-16
+   3.0000 6.07212E+01 1.83519E-11
+   3.5000 9.67948E+01 3.01749E-08
+   4.0000 1.59774E+02 8.02751E-06
+   5.0000 5.00541E+02 1.72732E-02
+   6.0000 1.92013E+03 2.11445E+00
+   7.0000 8.52472E+03 5.25514E+01
+   8.0000 3.91595E+04 5.69483E+02
+   9.0000 1.70030E+05 3.90505E+03
+  10.0000 6.70457E+05 1.90000E+04
 
  Reaction rate for Z= 73 A=182 (182Ta)
 
@@ -2019,24 +2140,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 7.38848E-25
-   3.5000 1.00819E+02 1.82686E-20
-   4.0000 1.67282E+02 3.70121E-17
-   5.0000 5.25988E+02 2.37650E-12
-   6.0000 2.01299E+03 6.39002E-09
-   7.0000 8.89739E+03 1.81795E-06
-   8.0000 4.06951E+04 1.29725E-04
-   9.0000 1.76057E+05 3.75785E-03
-  10.0000 6.92169E+05 5.71500E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 1.04481E-24
+   3.5000 9.67948E+01 2.56445E-20
+   4.0000 1.59774E+02 5.31058E-17
+   5.0000 5.00541E+02 4.17410E-12
+   6.0000 1.92013E+03 1.26411E-08
+   7.0000 8.52472E+03 3.98326E-06
+   8.0000 3.91595E+04 3.10648E-04
+   9.0000 1.70030E+05 9.49453E-03
+  10.0000 6.70457E+05 1.48211E-01
 
  Reaction rate for Z= 72 A=182 (182Hf)
 
@@ -2054,24 +2175,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 1.51114E-23
-   6.0000 2.01299E+03 5.29683E-19
-   7.0000 8.89739E+03 9.33600E-16
-   8.0000 4.06951E+04 3.00955E-13
-   9.0000 1.76057E+05 3.02997E-11
-  10.0000 6.92169E+05 1.28274E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 2.27407E-23
+   6.0000 1.92013E+03 8.75069E-19
+   7.0000 8.52472E+03 1.79170E-15
+   8.0000 3.91595E+04 6.59562E-13
+   9.0000 1.70030E+05 7.31113E-11
+  10.0000 6.70457E+05 3.31102E-09
 
  Reaction rate for Z= 76 A=181 (181Os)
 
@@ -2089,24 +2210,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 2.87354E-08
-   9.0000 1.76057E+05 1.83904E-05
-  10.0000 6.92169E+05 2.60981E-03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 5.13144E-07
+   9.0000 1.70030E+05 3.13294E-04
+  10.0000 6.70457E+05 4.28131E-02
 
  Reaction rate for Z= 75 A=181 (181Re)
 
@@ -2124,24 +2245,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 1.53740E-18
-   7.0000 8.89739E+03 1.50526E-11
-   8.0000 4.06951E+04 4.42620E-08
-   9.0000 1.76057E+05 1.70353E-05
-  10.0000 6.92169E+05 1.80545E-03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 9.26844E-18
+   7.0000 8.52472E+03 6.54951E-11
+   8.0000 3.91595E+04 1.63377E-07
+   9.0000 1.70030E+05 5.55316E-05
+  10.0000 6.70457E+05 5.27171E-03
 
  Reaction rate for Z= 74 A=181 (181W )
 
@@ -2159,24 +2280,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 6.14850E-15
-   5.0000 5.25988E+02 3.20240E-09
-   6.0000 2.01299E+03 1.43300E-05
-   7.0000 8.89739E+03 5.33703E-03
-   8.0000 4.06951E+04 4.43490E-01
-   9.0000 1.76057E+05 1.34528E+01
-  10.0000 6.92169E+05 2.03802E+02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 2.86151E-14
+   5.0000 5.00541E+02 1.38133E-08
+   6.0000 1.92013E+03 5.79347E-05
+   7.0000 8.52472E+03 2.01640E-02
+   8.0000 3.91595E+04 1.55997E+00
+   9.0000 1.70030E+05 4.39252E+01
+  10.0000 6.70457E+05 6.17988E+02
 
  Reaction rate for Z= 73 A=181 (181Ta)
 
@@ -2194,24 +2315,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 6.22280E-25
-   3.5000 1.00819E+02 1.06555E-20
-   4.0000 1.67282E+02 1.62724E-17
-   5.0000 5.25988E+02 3.77067E-13
-   6.0000 2.01299E+03 2.64598E-10
-   7.0000 8.89739E+03 5.54386E-08
-   8.0000 4.06951E+04 8.35614E-06
-   9.0000 1.76057E+05 5.96868E-04
-  10.0000 6.92169E+05 1.97551E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 4.33620E-25
+   3.5000 9.67948E+01 7.06708E-21
+   4.0000 1.59774E+02 1.03751E-17
+   5.0000 5.00541E+02 2.27703E-13
+   6.0000 1.92013E+03 1.93353E-10
+   7.0000 8.52472E+03 9.55027E-08
+   8.0000 3.91595E+04 2.13497E-05
+   9.0000 1.70030E+05 1.61720E-03
+  10.0000 6.70457E+05 5.25466E-02
 
  Reaction rate for Z= 72 A=181 (181Hf)
 
@@ -2229,24 +2350,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 4.51905E-28
-   5.0000 5.25988E+02 3.61320E-22
-   6.0000 2.01299E+03 4.74047E-18
-   7.0000 8.89739E+03 5.46468E-15
-   8.0000 4.06951E+04 1.53930E-12
-   9.0000 1.76057E+05 1.81158E-10
-  10.0000 6.92169E+05 1.01107E-08
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 2.07037E-28
+   5.0000 5.00541E+02 1.88156E-22
+   6.0000 1.92013E+03 3.71478E-18
+   7.0000 8.52472E+03 7.08317E-15
+   8.0000 3.91595E+04 2.96064E-12
+   9.0000 1.70030E+05 4.07939E-10
+  10.0000 6.70457E+05 2.33064E-08
 
  Reaction rate for Z= 71 A=181 (181Lu)
 
@@ -2264,24 +2385,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 2.53526E-27
-   8.0000 4.06951E+04 2.73691E-23
-   9.0000 1.76057E+05 1.56129E-20
-  10.0000 6.92169E+05 2.11247E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 4.10764E-27
+   8.0000 3.91595E+04 4.67512E-23
+   9.0000 1.70030E+05 2.57682E-20
+  10.0000 6.70457E+05 3.37585E-18
 
  Reaction rate for Z= 75 A=180 (180Re)
 
@@ -2299,24 +2420,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 8.30874E-30
-   8.0000 4.06951E+04 3.05660E-14
-   9.0000 1.76057E+05 1.95620E-11
-  10.0000 6.92169E+05 2.77607E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 1.95724E-28
+   8.0000 3.91595E+04 2.26276E-13
+   9.0000 1.70030E+05 1.38150E-10
+  10.0000 6.70457E+05 1.88789E-08
 
  Reaction rate for Z= 74 A=180 (180W )
 
@@ -2334,24 +2455,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 5.46434E-15
-   6.0000 2.01299E+03 5.83231E-10
-   7.0000 8.89739E+03 1.87695E-06
-   8.0000 4.06951E+04 7.74676E-04
-   9.0000 1.76057E+05 8.32219E-02
-  10.0000 6.92169E+05 3.48338E+00
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 4.76214E-14
+   6.0000 1.92013E+03 3.64171E-09
+   7.0000 8.52472E+03 1.00954E-05
+   8.0000 3.91595E+04 3.74242E-03
+   9.0000 1.70030E+05 3.65641E-01
+  10.0000 6.70457E+05 1.40310E+01
 
  Reaction rate for Z= 73 A=180 (180Ta)
 
@@ -2369,59 +2490,59 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 5.02560E-25
-   5.0000 5.25988E+02 2.87632E-17
-   6.0000 2.01299E+03 1.08485E-12
-   7.0000 8.89739E+03 2.03388E-09
-   8.0000 4.06951E+04 6.63330E-07
-   9.0000 1.76057E+05 6.83954E-05
-  10.0000 6.92169E+05 3.09064E-03
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 7.18511E-25
+   5.0000 5.00541E+02 4.92770E-17
+   6.0000 1.92013E+03 2.13041E-12
+   7.0000 8.52472E+03 4.48484E-09
+   8.0000 3.91595E+04 1.53800E-06
+   9.0000 1.70030E+05 1.60675E-04
+  10.0000 6.70457E+05 7.21666E-03
 
  Reaction rate for Z= 72 A=180 (180Hf)
 
     T        G(T)        Rate
 
-   0.0001 1.00000E+00 2.77592E-04
-   0.0005 1.00000E+00 6.54044E-04
-   0.0010 1.00000E+00 8.81152E-04
-   0.0050 1.00000E+00 2.06838E-03
-   0.0100 1.00002E+00 2.78545E-03
-   0.0500 1.20827E+00 5.15326E-03
-   0.1000 1.64630E+00 5.31726E-03
-   0.1500 1.95860E+00 5.48095E-03
-   0.2000 2.21894E+00 5.61794E-03
-   0.2500 2.48838E+00 5.63259E-03
-   0.3000 2.79031E+00 5.52141E-03
-   0.4000 3.49874E+00 5.08867E-03
-   0.5000 4.31540E+00 4.59888E-03
-   0.6000 5.20597E+00 4.16096E-03
-   0.7000 6.15215E+00 3.79120E-03
-   0.8000 7.14759E+00 3.47996E-03
-   0.9000 8.19300E+00 3.21422E-03
-   1.0000 9.29313E+00 2.98308E-03
-   1.5000 1.59091E+01 2.12984E-03
-   2.0000 2.54251E+01 1.54061E-03
-   2.5000 3.98702E+01 1.10001E-03
-   3.0000 6.27717E+01 7.66089E-04
-   3.5000 1.00819E+02 5.15388E-04
-   4.0000 1.67282E+02 3.32053E-04
-   5.0000 5.25988E+02 1.18046E-04
-   6.0000 2.01299E+03 3.62759E-05
-   7.0000 8.89739E+03 5.46761E-05
-   8.0000 4.06951E+04 4.60145E-04
-   9.0000 1.76057E+05 3.15110E-03
-  10.0000 6.92169E+05 1.68146E-02
+   0.0001 1.00000E+00 2.71632E-04
+   0.0005 1.00000E+00 6.53171E-04
+   0.0010 1.00000E+00 8.80724E-04
+   0.0050 1.00000E+00 2.06761E-03
+   0.0100 1.00002E+00 2.78476E-03
+   0.0500 1.20827E+00 5.15303E-03
+   0.1000 1.64630E+00 5.31715E-03
+   0.1500 1.95860E+00 5.48132E-03
+   0.2000 2.21894E+00 5.61870E-03
+   0.2500 2.48838E+00 5.63329E-03
+   0.3000 2.79031E+00 5.52180E-03
+   0.4000 3.49874E+00 5.08846E-03
+   0.5000 4.31539E+00 4.59844E-03
+   0.6000 5.20591E+00 4.16054E-03
+   0.7000 6.15184E+00 3.79099E-03
+   0.8000 7.14652E+00 3.48017E-03
+   0.9000 8.19010E+00 3.21511E-03
+   1.0000 9.28665E+00 2.98498E-03
+   1.5000 1.58258E+01 2.14106E-03
+   2.0000 2.50758E+01 1.56212E-03
+   2.5000 3.89302E+01 1.12661E-03
+   3.0000 6.07212E+01 7.91974E-04
+   3.5000 9.67948E+01 5.36815E-04
+   4.0000 1.59774E+02 3.47655E-04
+   5.0000 5.00541E+02 1.24057E-04
+   6.0000 1.92013E+03 3.89025E-05
+   7.0000 8.52472E+03 7.88051E-05
+   8.0000 3.91595E+04 7.74185E-04
+   9.0000 1.70030E+05 5.97232E-03
+  10.0000 6.70457E+05 3.53528E-02
 
  Reaction rate for Z= 71 A=180 (180Lu)
 
@@ -2439,24 +2560,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 2.88294E-30
-   7.0000 8.89739E+03 6.37969E-25
-   8.0000 4.06951E+04 3.52323E-21
-   9.0000 1.76057E+05 1.78873E-18
-  10.0000 6.92169E+05 2.28951E-16
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 4.17746E-30
+   7.0000 8.52472E+03 1.20027E-24
+   8.0000 3.91595E+04 7.90691E-21
+   9.0000 1.70030E+05 4.03203E-18
+  10.0000 6.70457E+05 5.09750E-16
 
  Reaction rate for Z= 74 A=179 (179W )
 
@@ -2474,24 +2595,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 6.30681E-15
-   7.0000 8.89739E+03 4.25646E-10
-   8.0000 4.06951E+04 9.36924E-07
-   9.0000 1.76057E+05 3.08046E-04
-  10.0000 6.92169E+05 2.87417E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 7.13210E-14
+   7.0000 8.52472E+03 3.49808E-09
+   8.0000 3.91595E+04 6.75455E-06
+   9.0000 1.70030E+05 2.02512E-03
+  10.0000 6.70457E+05 1.74460E-01
 
  Reaction rate for Z= 73 A=179 (179Ta)
 
@@ -2509,24 +2630,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 7.48738E-16
-   7.0000 8.89739E+03 1.04461E-11
-   8.0000 4.06951E+04 1.28898E-08
-   9.0000 1.76057E+05 3.06988E-06
-  10.0000 6.92169E+05 2.26075E-04
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 2.35806E-15
+   7.0000 8.52472E+03 3.12401E-11
+   8.0000 3.91595E+04 3.69120E-08
+   9.0000 1.70030E+05 8.49295E-06
+  10.0000 6.70457E+05 6.09435E-04
 
  Reaction rate for Z= 72 A=179 (179Hf)
 
@@ -2544,24 +2665,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 2.24585E-26
-   2.0000 2.54251E+01 2.05232E-20
-   2.5000 3.98702E+01 6.22981E-17
-   3.0000 6.27717E+01 1.08980E-14
-   3.5000 1.00819E+02 3.69131E-13
-   4.0000 1.67282E+02 4.40885E-12
-   5.0000 5.25988E+02 1.09176E-10
-   6.0000 2.01299E+03 1.32590E-08
-   7.0000 8.89739E+03 1.89604E-06
-   8.0000 4.06951E+04 1.05622E-04
-   9.0000 1.76057E+05 2.80588E-03
-  10.0000 6.92169E+05 4.22045E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 3.05623E-26
+   2.0000 2.50758E+01 2.60612E-20
+   2.5000 3.89302E+01 7.62767E-17
+   3.0000 6.07212E+01 1.30591E-14
+   3.5000 9.67948E+01 4.35982E-13
+   4.0000 1.59774E+02 5.15002E-12
+   5.0000 5.00541E+02 1.42825E-10
+   6.0000 1.92013E+03 2.99065E-08
+   7.0000 8.52472E+03 4.93846E-06
+   8.0000 3.91595E+04 3.03721E-04
+   9.0000 1.70030E+05 8.62013E-03
+  10.0000 6.70457E+05 1.35181E-01
 
  Reaction rate for Z= 71 A=179 (179Lu)
 
@@ -2579,24 +2700,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 2.62633E-34
-   2.0000 2.54251E+01 2.98758E-26
-   2.5000 3.98702E+01 1.59524E-21
-   3.0000 6.27717E+01 1.84506E-18
-   3.5000 1.00819E+02 2.36565E-16
-   4.0000 1.67282E+02 7.55969E-15
-   5.0000 5.25988E+02 5.95826E-13
-   6.0000 2.01299E+03 5.91782E-12
-   7.0000 8.89739E+03 1.76175E-11
-   8.0000 4.06951E+04 2.71765E-11
-   9.0000 1.76057E+05 1.15593E-10
-  10.0000 6.92169E+05 3.88082E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 3.96524E-34
+   2.0000 2.50758E+01 4.09865E-26
+   2.5000 3.89302E+01 2.07638E-21
+   3.0000 6.07212E+01 2.32505E-18
+   3.5000 9.67948E+01 2.91548E-16
+   4.0000 1.59774E+02 9.15893E-15
+   5.0000 5.00541E+02 7.02385E-13
+   6.0000 1.92013E+03 6.81853E-12
+   7.0000 8.52472E+03 1.99201E-11
+   8.0000 3.91595E+04 3.08715E-11
+   9.0000 1.70030E+05 1.91495E-10
+  10.0000 6.70457E+05 7.21344E-09
 
  Reaction rate for Z= 74 A=178 (178W )
 
@@ -2614,24 +2735,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 6.82711E-16
-   8.0000 4.06951E+04 1.26978E-10
-   9.0000 1.76057E+05 8.07521E-08
-  10.0000 6.92169E+05 1.14319E-05
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 1.84575E-14
+   8.0000 3.91595E+04 1.59957E-09
+   9.0000 1.70030E+05 9.64131E-07
+  10.0000 6.70457E+05 1.31099E-04
 
  Reaction rate for Z= 73 A=178 (178Ta)
 
@@ -2649,24 +2770,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 6.71818E-22
-   7.0000 8.89739E+03 9.61685E-16
-   8.0000 4.06951E+04 1.05924E-11
-   9.0000 1.76057E+05 6.06014E-09
-  10.0000 6.92169E+05 8.21115E-07
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 3.32364E-21
+   7.0000 8.52472E+03 4.39876E-15
+   8.0000 3.91595E+04 4.16865E-11
+   9.0000 1.70030E+05 2.24916E-08
+  10.0000 6.70457E+05 2.91879E-06
 
  Reaction rate for Z= 72 A=178 (178Hf)
 
@@ -2684,24 +2805,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 1.41034E-21
-   5.0000 5.25988E+02 1.31341E-15
-   6.0000 2.01299E+03 2.05458E-11
-   7.0000 8.89739E+03 2.37933E-08
-   8.0000 4.06951E+04 5.06597E-06
-   9.0000 1.76057E+05 3.46726E-04
-  10.0000 6.92169E+05 1.06788E-02
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 6.34046E-21
+   5.0000 5.00541E+02 6.05031E-15
+   6.0000 1.92013E+03 9.68495E-11
+   7.0000 8.52472E+03 1.10094E-07
+   8.0000 3.91595E+04 2.31213E-05
+   9.0000 1.70030E+05 1.57882E-03
+  10.0000 6.70457E+05 4.87502E-02
 
  Reaction rate for Z= 71 A=178 (178Lu)
 
@@ -2719,24 +2840,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 2.14610E-25
-   6.0000 2.01299E+03 5.89587E-20
-   7.0000 8.89739E+03 5.29154E-16
-   8.0000 4.06951E+04 5.21280E-13
-   9.0000 1.76057E+05 1.12467E-10
-  10.0000 6.92169E+05 8.32799E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 4.30591E-25
+   6.0000 1.92013E+03 1.32260E-19
+   7.0000 8.52472E+03 1.20625E-15
+   8.0000 3.91595E+04 1.20784E-12
+   9.0000 1.70030E+05 2.65564E-10
+  10.0000 6.70457E+05 1.99849E-08
 
  Reaction rate for Z= 70 A=178 (178Yb)
 
@@ -2754,24 +2875,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 4.00852E-31
-   7.0000 8.89739E+03 2.83633E-26
-   8.0000 4.06951E+04 1.28946E-22
-   9.0000 1.76057E+05 6.30085E-20
-  10.0000 6.92169E+05 7.93664E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 5.24959E-31
+   7.0000 8.52472E+03 4.10774E-26
+   8.0000 3.91595E+04 2.05307E-22
+   9.0000 1.70030E+05 9.95427E-20
+  10.0000 6.70457E+05 1.23072E-17
 
  Reaction rate for Z= 74 A=177 (177W )
 
@@ -2789,24 +2910,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 1.81461E-21
-   9.0000 1.76057E+05 1.16133E-18
-  10.0000 6.92169E+05 1.64807E-16
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 3.60939E-19
+   9.0000 1.70030E+05 2.20367E-16
+  10.0000 6.70457E+05 3.01142E-14
 
  Reaction rate for Z= 73 A=177 (177Ta)
 
@@ -2824,24 +2945,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 5.30265E-23
-   8.0000 4.06951E+04 5.63800E-16
-   9.0000 1.76057E+05 3.60787E-13
-  10.0000 6.92169E+05 5.11978E-11
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 6.45614E-22
+   8.0000 3.91595E+04 3.28849E-15
+   9.0000 1.70030E+05 2.00731E-12
+  10.0000 6.70457E+05 2.74286E-10
 
  Reaction rate for Z= 72 A=177 (177Hf)
 
@@ -2859,24 +2980,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 2.88146E-21
-   6.0000 2.01299E+03 5.09067E-15
-   7.0000 8.89739E+03 4.85839E-11
-   8.0000 4.06951E+04 4.15012E-08
-   9.0000 1.76057E+05 7.39761E-06
-  10.0000 6.92169E+05 4.63871E-04
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 2.70113E-20
+   6.0000 1.92013E+03 4.32752E-14
+   7.0000 8.52472E+03 3.86223E-10
+   8.0000 3.91595E+04 3.15567E-07
+   9.0000 1.70030E+05 5.42805E-05
+  10.0000 6.70457E+05 3.27899E-03
 
  Reaction rate for Z= 71 A=177 (177Lu)
 
@@ -2894,24 +3015,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 2.70972E-26
-   6.0000 2.01299E+03 5.24735E-21
-   7.0000 8.89739E+03 3.87850E-17
-   8.0000 4.06951E+04 5.00804E-14
-   9.0000 1.76057E+05 1.48437E-11
-  10.0000 6.92169E+05 1.40696E-09
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 2.61563E-26
+   6.0000 1.92013E+03 6.42465E-21
+   7.0000 8.52472E+03 6.61580E-17
+   8.0000 3.91595E+04 1.10841E-13
+   9.0000 1.70030E+05 3.62322E-11
+  10.0000 6.70457E+05 3.57264E-09
 
  Reaction rate for Z= 70 A=177 (177Yb)
 
@@ -2929,24 +3050,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 3.00831E-29
-   7.0000 8.89739E+03 1.26298E-24
-   8.0000 4.06951E+04 3.43280E-21
-   9.0000 1.76057E+05 1.38212E-18
-  10.0000 6.92169E+05 1.55946E-16
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 5.93791E-29
+   7.0000 8.52472E+03 2.55997E-24
+   8.0000 3.91595E+04 6.92995E-21
+   9.0000 1.70030E+05 2.72173E-18
+  10.0000 6.70457E+05 2.99263E-16
 
  Reaction rate for Z= 72 A=176 (176Hf)
 
@@ -2964,24 +3085,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 1.11316E-19
-   7.0000 8.89739E+03 1.93991E-14
-   8.0000 4.06951E+04 8.34801E-11
-   9.0000 1.76057E+05 3.93558E-08
-  10.0000 6.92169E+05 4.83679E-06
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 1.09889E-18
+   7.0000 8.52472E+03 1.81061E-13
+   8.0000 3.91595E+04 6.79096E-10
+   9.0000 1.70030E+05 2.96328E-07
+  10.0000 6.70457E+05 3.44117E-05
 
  Reaction rate for Z= 71 A=176 (176Lu)
 
@@ -2999,24 +3120,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 2.51348E-23
-   7.0000 8.89739E+03 9.22524E-19
-   8.0000 4.06951E+04 3.02605E-15
-   9.0000 1.76057E+05 1.35359E-12
-  10.0000 6.92169E+05 1.63730E-10
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 3.80456E-23
+   7.0000 8.52472E+03 1.48592E-18
+   8.0000 3.91595E+04 5.17371E-15
+   9.0000 1.70030E+05 2.29331E-12
+  10.0000 6.70457E+05 2.72041E-10
 
  Reaction rate for Z= 70 A=176 (176Yb)
 
@@ -3034,24 +3155,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 2.62633E-34
-   2.0000 2.54251E+01 2.98758E-26
-   2.5000 3.98702E+01 1.59524E-21
-   3.0000 6.27717E+01 1.84506E-18
-   3.5000 1.00819E+02 2.36565E-16
-   4.0000 1.67282E+02 7.55969E-15
-   5.0000 5.25988E+02 5.95826E-13
-   6.0000 2.01299E+03 5.91782E-12
-   7.0000 8.89739E+03 1.76158E-11
-   8.0000 4.06951E+04 2.65162E-11
-   9.0000 1.76057E+05 4.64573E-11
-  10.0000 6.92169E+05 7.59233E-10
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 3.96524E-34
+   2.0000 2.50758E+01 4.09865E-26
+   2.5000 3.89302E+01 2.07638E-21
+   3.0000 6.07212E+01 2.32505E-18
+   3.5000 9.67948E+01 2.91548E-16
+   4.0000 1.59774E+02 9.15893E-15
+   5.0000 5.00541E+02 7.02385E-13
+   6.0000 1.92013E+03 6.81853E-12
+   7.0000 8.52472E+03 1.99163E-11
+   8.0000 3.91595E+04 2.95489E-11
+   9.0000 1.70030E+05 5.36562E-11
+  10.0000 6.70457E+05 9.44104E-10
 
  Reaction rate for Z= 72 A=175 (175Hf)
 
@@ -3069,24 +3190,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 1.60613E-20
-   8.0000 4.06951E+04 7.58619E-15
-   9.0000 1.76057E+05 4.84304E-12
-  10.0000 6.92169E+05 6.86630E-10
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 4.73046E-19
+   8.0000 3.91595E+04 1.26460E-13
+   9.0000 1.70030E+05 7.68889E-11
+  10.0000 6.70457E+05 1.04905E-08
 
  Reaction rate for Z= 71 A=175 (175Lu)
 
@@ -3104,24 +3225,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 1.49330E-28
-   7.0000 8.89739E+03 1.41376E-21
-   8.0000 4.06951E+04 2.64289E-17
-   9.0000 1.76057E+05 1.58537E-14
-  10.0000 6.92169E+05 2.19235E-12
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 3.08880E-28
+   7.0000 8.52472E+03 2.73264E-21
+   8.0000 3.91595E+04 5.96278E-17
+   9.0000 1.70030E+05 3.45599E-14
+  10.0000 6.70457E+05 4.62608E-12
 
  Reaction rate for Z= 70 A=175 (175Yb)
 
@@ -3139,24 +3260,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 2.81662E-33
-   3.0000 6.27717E+01 3.46508E-28
-   3.5000 1.00819E+02 1.24487E-24
-   4.0000 1.67282E+02 4.84100E-22
-   5.0000 5.25988E+02 1.25750E-18
-   6.0000 2.01299E+03 1.27789E-16
-   7.0000 8.89739E+03 2.12325E-15
-   8.0000 4.06951E+04 8.48443E-14
-   9.0000 1.76057E+05 1.32568E-11
-  10.0000 6.92169E+05 9.17415E-10
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 4.26056E-33
+   3.0000 6.07212E+01 4.94895E-28
+   3.5000 9.67948E+01 1.70798E-24
+   4.0000 1.59774E+02 6.44217E-22
+   5.0000 5.00541E+02 1.59778E-18
+   6.0000 1.92013E+03 1.56744E-16
+   7.0000 8.52472E+03 2.64990E-15
+   8.0000 3.91595E+04 1.63358E-13
+   9.0000 1.70030E+05 2.59203E-11
+  10.0000 6.70457E+05 1.73255E-09
 
  Reaction rate for Z= 69 A=175 (175Tm)
 
@@ -3174,24 +3295,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 7.48322E-33
-   5.0000 5.25988E+02 3.67859E-27
-   6.0000 2.01299E+03 1.22196E-23
-   7.0000 8.89739E+03 2.27893E-21
-   8.0000 4.06951E+04 7.46866E-20
-   9.0000 1.76057E+05 8.51377E-19
-  10.0000 6.92169E+05 7.01833E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.14636E-32
+   5.0000 5.00541E+02 5.23015E-27
+   6.0000 1.92013E+03 1.64515E-23
+   7.0000 8.52472E+03 2.94285E-21
+   8.0000 3.91595E+04 9.33893E-20
+   9.0000 1.70030E+05 1.04146E-18
+  10.0000 6.70457E+05 8.85019E-18
 
  Reaction rate for Z= 72 A=174 (174Hf)
 
@@ -3209,24 +3330,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 3.41597E-21
-   9.0000 1.76057E+05 2.18619E-18
-  10.0000 6.92169E+05 3.10246E-16
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 2.18511E-19
+   9.0000 1.70030E+05 1.33409E-16
+  10.0000 6.70457E+05 1.82310E-14
 
  Reaction rate for Z= 71 A=174 (174Lu)
 
@@ -3244,24 +3365,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 2.14962E-29
-   8.0000 4.06951E+04 3.47481E-23
-   9.0000 1.76057E+05 2.22223E-20
-  10.0000 6.92169E+05 3.15274E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 8.55042E-29
+   8.0000 3.91595E+04 1.27416E-22
+   9.0000 1.70030E+05 7.77348E-20
+  10.0000 6.70457E+05 1.06198E-17
 
  Reaction rate for Z= 70 A=174 (174Yb)
 
@@ -3279,24 +3400,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 7.48322E-33
-   5.0000 5.25988E+02 3.67859E-27
-   6.0000 2.01299E+03 1.23682E-22
-   7.0000 8.89739E+03 1.86913E-18
-   8.0000 4.06951E+04 4.03751E-15
-   9.0000 1.76057E+05 1.57055E-12
-  10.0000 6.92169E+05 1.78186E-10
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.14636E-32
+   5.0000 5.00541E+02 5.23015E-27
+   6.0000 1.92013E+03 4.77918E-22
+   7.0000 8.52472E+03 6.73848E-18
+   8.0000 3.91595E+04 1.17435E-14
+   9.0000 1.70030E+05 4.03504E-12
+  10.0000 6.70457E+05 4.24701E-10
 
  Reaction rate for Z= 69 A=174 (174Tm)
 
@@ -3314,24 +3435,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 7.48322E-33
-   5.0000 5.25988E+02 3.67859E-27
-   6.0000 2.01299E+03 1.22196E-23
-   7.0000 8.89739E+03 2.27892E-21
-   8.0000 4.06951E+04 7.46503E-20
-   9.0000 1.76057E+05 8.34456E-19
-  10.0000 6.92169E+05 4.93589E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.14636E-32
+   5.0000 5.00541E+02 5.23015E-27
+   6.0000 1.92013E+03 1.64515E-23
+   7.0000 8.52472E+03 2.94284E-21
+   8.0000 3.91595E+04 9.33391E-20
+   9.0000 1.70030E+05 1.01789E-18
+  10.0000 6.70457E+05 5.97983E-18
 
  Reaction rate for Z= 70 A=173 (173Yb)
 
@@ -3349,24 +3470,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 5.08263E-27
-   7.0000 8.89739E+03 9.28773E-21
-   8.0000 4.06951E+04 4.60937E-17
-   9.0000 1.76057E+05 2.25505E-14
-  10.0000 6.92169E+05 2.82407E-12
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 1.95513E-26
+   7.0000 8.52472E+03 3.22666E-20
+   8.0000 3.91595E+04 1.66538E-16
+   9.0000 1.70030E+05 7.99499E-14
+  10.0000 6.70457E+05 9.78860E-12
 
  Reaction rate for Z= 69 A=173 (173Tm)
 
@@ -3384,24 +3505,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 7.48322E-33
-   5.0000 5.25988E+02 3.67859E-27
-   6.0000 2.01299E+03 1.22196E-23
-   7.0000 8.89739E+03 2.27892E-21
-   8.0000 4.06951E+04 7.46466E-20
-   9.0000 1.76057E+05 8.32486E-19
-  10.0000 6.92169E+05 4.67663E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.14636E-32
+   5.0000 5.00541E+02 5.23015E-27
+   6.0000 1.92013E+03 1.64515E-23
+   7.0000 8.52472E+03 2.94283E-21
+   8.0000 3.91595E+04 9.33334E-20
+   9.0000 1.70030E+05 1.01489E-18
+  10.0000 6.70457E+05 5.59244E-18
 
  Reaction rate for Z= 70 A=172 (172Yb)
 
@@ -3419,24 +3540,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 3.67762E-26
-   8.0000 4.06951E+04 1.86875E-20
-   9.0000 1.76057E+05 1.19322E-17
-  10.0000 6.92169E+05 1.69183E-15
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 5.58400E-25
+   8.0000 3.91595E+04 2.34230E-19
+   9.0000 1.70030E+05 1.42629E-16
+  10.0000 6.70457E+05 1.94712E-14
 
  Reaction rate for Z= 69 A=172 (172Tm)
 
@@ -3454,24 +3575,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 7.28542E-27
-   9.0000 1.76057E+05 4.66260E-24
-  10.0000 6.92169E+05 6.61678E-22
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 1.32026E-26
+   9.0000 1.70030E+05 8.06072E-24
+  10.0000 6.70457E+05 1.10153E-21
 
  Reaction rate for Z= 68 A=172 (172Er)
 
@@ -3489,24 +3610,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 7.48322E-33
-   5.0000 5.25988E+02 3.67859E-27
-   6.0000 2.01299E+03 1.22196E-23
-   7.0000 8.89739E+03 2.27892E-21
-   8.0000 4.06951E+04 7.46508E-20
-   9.0000 1.76057E+05 8.33853E-19
-  10.0000 6.92169E+05 4.81020E-18
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 1.14636E-32
+   5.0000 5.00541E+02 5.23015E-27
+   6.0000 1.92013E+03 1.64515E-23
+   7.0000 8.52472E+03 2.94284E-21
+   8.0000 3.91595E+04 9.33355E-20
+   9.0000 1.70030E+05 1.01550E-18
+  10.0000 6.70457E+05 5.64401E-18
 
  Reaction rate for Z= 70 A=171 (171Yb)
 
@@ -3524,24 +3645,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 6.64758E-27
-   9.0000 1.76057E+05 4.25439E-24
-  10.0000 6.92169E+05 6.03748E-22
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 2.07705E-25
+   9.0000 1.70030E+05 1.26812E-22
+  10.0000 6.70457E+05 1.73294E-20
 
  Reaction rate for Z= 69 A=171 (171Tm)
 
@@ -3559,24 +3680,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 4.09342E-31
-   9.0000 1.76057E+05 2.61975E-28
-  10.0000 6.92169E+05 3.71773E-26
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 7.82823E-31
+   9.0000 1.70030E+05 4.77943E-28
+  10.0000 6.70457E+05 6.53132E-26
 
  Reaction rate for Z= 68 A=171 (171Er)
 
@@ -3594,59 +3715,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 3.78158E-32
-   6.0000 2.01299E+03 8.78179E-28
-   7.0000 8.89739E+03 6.56999E-25
-   8.0000 4.06951E+04 6.20231E-23
-   9.0000 1.76057E+05 2.10891E-21
-  10.0000 6.92169E+05 9.39000E-20
-
- Reaction rate for Z= 67 A=171 (171Ho)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 4.19938E-36
-   7.0000 8.89739E+03 5.05344E-32
-   8.0000 4.06951E+04 3.76817E-29
-   9.0000 1.76057E+05 4.77468E-27
-  10.0000 6.92169E+05 1.85620E-25
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 5.72398E-32
+   6.0000 1.92013E+03 1.24563E-27
+   7.0000 8.52472E+03 8.87156E-25
+   8.0000 3.91595E+04 8.02442E-23
+   9.0000 1.70030E+05 2.43986E-21
+  10.0000 6.70457E+05 8.59831E-20
 
  Reaction rate for Z= 68 A=170 (170Er)
 
@@ -3664,59 +3750,24 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 6.13587E-32
-   7.0000 8.89739E+03 1.84084E-28
-   8.0000 4.06951E+04 5.97297E-26
-   9.0000 1.76057E+05 9.95967E-24
-  10.0000 6.92169E+05 1.08155E-21
-
- Reaction rate for Z= 67 A=170 (170Ho)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 4.19938E-36
-   7.0000 8.89739E+03 5.05344E-32
-   8.0000 4.06951E+04 3.76817E-29
-   9.0000 1.76057E+05 4.77468E-27
-  10.0000 6.92169E+05 1.85620E-25
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 9.16944E-32
+   7.0000 8.52472E+03 2.59954E-28
+   8.0000 3.91595E+04 8.33211E-26
+   9.0000 1.70030E+05 1.44559E-23
+  10.0000 6.70457E+05 1.55860E-21
 
  Reaction rate for Z= 68 A=169 (169Er)
 
@@ -3734,165 +3785,25 @@
    0.2500 2.48838E+00 0.00000E+00
    0.3000 2.79031E+00 0.00000E+00
    0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 1.65759E-30
-   9.0000 1.76057E+05 1.06084E-27
-  10.0000 6.92169E+05 1.50546E-25
+   0.5000 4.31539E+00 0.00000E+00
+   0.6000 5.20591E+00 0.00000E+00
+   0.7000 6.15184E+00 0.00000E+00
+   0.8000 7.14652E+00 0.00000E+00
+   0.9000 8.19010E+00 0.00000E+00
+   1.0000 9.28665E+00 0.00000E+00
+   1.5000 1.58258E+01 0.00000E+00
+   2.0000 2.50758E+01 0.00000E+00
+   2.5000 3.89302E+01 0.00000E+00
+   3.0000 6.07212E+01 0.00000E+00
+   3.5000 9.67948E+01 0.00000E+00
+   4.0000 1.59774E+02 0.00000E+00
+   5.0000 5.00541E+02 0.00000E+00
+   6.0000 1.92013E+03 0.00000E+00
+   7.0000 8.52472E+03 0.00000E+00
+   8.0000 3.91595E+04 1.09742E-29
+   9.0000 1.70030E+05 6.70014E-27
+  10.0000 6.70457E+05 9.15606E-25
 
- Reaction rate for Z= 67 A=169 (169Ho)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 4.19938E-36
-   7.0000 8.89739E+03 5.05344E-32
-   8.0000 4.06951E+04 3.76817E-29
-   9.0000 1.76057E+05 4.77468E-27
-  10.0000 6.92169E+05 1.85620E-25
-
- Reaction rate for Z= 66 A=168 (168Dy)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 4.19938E-36
-   7.0000 8.89739E+03 5.05344E-32
-   8.0000 4.06951E+04 3.76817E-29
-   9.0000 1.76057E+05 4.77468E-27
-  10.0000 6.92169E+05 1.85620E-25
-
- Reaction rate for Z= 66 A=167 (167Dy)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 1.36523E-35
-   8.0000 4.06951E+04 2.88485E-32
-   9.0000 1.76057E+05 8.21515E-30
-  10.0000 6.92169E+05 6.10183E-28
-
- Reaction rate for Z= 66 A=166 (166Dy)
-
-    T        G(T)        Rate
-
-   0.0001 1.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00
-   0.0500 1.20827E+00 0.00000E+00
-   0.1000 1.64630E+00 0.00000E+00
-   0.1500 1.95860E+00 0.00000E+00
-   0.2000 2.21894E+00 0.00000E+00
-   0.2500 2.48838E+00 0.00000E+00
-   0.3000 2.79031E+00 0.00000E+00
-   0.4000 3.49874E+00 0.00000E+00
-   0.5000 4.31540E+00 0.00000E+00
-   0.6000 5.20597E+00 0.00000E+00
-   0.7000 6.15215E+00 0.00000E+00
-   0.8000 7.14759E+00 0.00000E+00
-   0.9000 8.19300E+00 0.00000E+00
-   1.0000 9.29313E+00 0.00000E+00
-   1.5000 1.59091E+01 0.00000E+00
-   2.0000 2.54251E+01 0.00000E+00
-   2.5000 3.98702E+01 0.00000E+00
-   3.0000 6.27717E+01 0.00000E+00
-   3.5000 1.00819E+02 0.00000E+00
-   4.0000 1.67282E+02 0.00000E+00
-   5.0000 5.25988E+02 0.00000E+00
-   6.0000 2.01299E+03 0.00000E+00
-   7.0000 8.89739E+03 0.00000E+00
-   8.0000 4.06951E+04 1.09069E-35
-   9.0000 1.76057E+05 6.98029E-33
-  10.0000 6.92169E+05 9.90585E-31
-
- Execution time:  0 hours  3 minutes 28.29 seconds 
+ Execution time:  0 hours  2 minutes 13.55 seconds 
 
  The TALYS team congratulates you with this successful calculation.

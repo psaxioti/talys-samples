@@ -6,7 +6,6 @@
 a         41  94  12.42018
 gammald   41  94   0.09525
 pair      41  94   0.00000
-D0        41  94      0.08
 Pshift    41  94   0.00000   0
 deltaW    41  94   0.58504   0
 T         41  94   0.72029   0
@@ -14,21 +13,26 @@ E0        41  94  -1.20649   0
 Exmatch   41  94   3.93113   0
 Ntop      41  94  19   0
 Nlow      41  94   8   0
-Krotconstant   41  94   1.00000   0
+s2adjust   41  94   1.00000   0
+aadjust   41  94   1.00000
+D0        41  94 8.00000E-02
 g         41  94   6.26667
 gp        41  94   2.73333
 gn        41  94   3.53333
+gnadjust   41  94   1.00000
+gpadjust   41  94   1.00000
 #
 # Gamma-ray
 #
 gamgam    41  94   0.14500
-sgr       41  94   2.515 M1
+gamgamadjust    41  94   1.00000
+sgr       41  94   0.751 M1
 egr       41  94   9.017 M1
 ggr       41  94   4.000 M1
 sgr       41  94 192.148 E1
 egr       41  94  16.523 E1
 ggr       41  94   5.515 E1
-sgr       41  94   0.002 M2
+sgr       41  94   0.001 M2
 egr       41  94   9.017 M2
 ggr       41  94   4.000 M2
 sgr       41  94   0.144 E2
@@ -50,21 +54,25 @@ E0        41  93  -1.36134   0
 Exmatch   41  93   7.63849   0
 Ntop      41  93  15   0
 Nlow      41  93   5   0
-Krotconstant   41  93   1.00000   0
+s2adjust   41  93   1.00000   0
+aadjust   41  93   1.00000
 g         41  93   6.20000
 gp        41  93   2.73333
 gn        41  93   3.46667
+gnadjust   41  93   1.00000
+gpadjust   41  93   1.00000
 #
 # Gamma-ray
 #
 gamgam    41  93   0.15000
-sgr       41  93   2.555 M1
+gamgamadjust    41  93   1.00000
+sgr       41  93   0.657 M1
 egr       41  93   9.049 M1
 ggr       41  93   4.000 M1
 sgr       41  93 200.000 E1
 egr       41  93  16.590 E1
 ggr       41  93   5.050 E1
-sgr       41  93   0.002 M2
+sgr       41  93   0.001 M2
 egr       41  93   9.049 M2
 ggr       41  93   4.000 M2
 sgr       41  93   0.145 E2
@@ -79,7 +87,6 @@ ggr       41  93   4.994 E2
 a         40  93  12.14647
 gammald   40  93   0.09559
 pair      40  93   1.24434
-D0        40  93      3.50
 Pshift    40  93   0.00000   0
 deltaW    40  93   0.48211   0
 T         40  93   0.75140   0
@@ -87,21 +94,26 @@ E0        40  93  -0.09468   0
 Exmatch   40  93   5.47365   0
 Ntop      40  93  18   0
 Nlow      40  93   8   0
-Krotconstant   40  93   1.00000   0
+s2adjust   40  93   1.00000   0
+aadjust   40  93   1.00000
+D0        40  93 3.50000E+00
 g         40  93   6.20000
 gp        40  93   2.66667
 gn        40  93   3.53333
+gnadjust   40  93   1.00000
+gpadjust   40  93   1.00000
 #
 # Gamma-ray
 #
 gamgam    40  93   0.13500
-sgr       40  93   2.555 M1
+gamgamadjust    40  93   1.00000
+sgr       40  93   0.754 M1
 egr       40  93   9.049 M1
 ggr       40  93   4.000 M1
 sgr       40  93 188.566 E1
 egr       40  93  16.564 E1
 ggr       40  93   5.541 E1
-sgr       40  93   0.002 M2
+sgr       40  93   0.001 M2
 egr       40  93   9.049 M2
 ggr       40  93   4.000 M2
 sgr       40  93   0.138 E2
@@ -116,7 +128,6 @@ ggr       40  93   4.994 E2
 a         40  92  11.49586
 gammald   40  92   0.09594
 pair      40  92   2.50217
-D0        40  92      0.55
 Pshift    40  92   0.00000   0
 deltaW    40  92  -0.00102   0
 T         40  92   0.85688   0
@@ -124,21 +135,26 @@ E0        40  92   0.52153   0
 Exmatch   40  92   8.07653   0
 Ntop      40  92  16   0
 Nlow      40  92   3   0
-Krotconstant   40  92   1.00000   0
+s2adjust   40  92   1.00000   0
+aadjust   40  92   1.00000
+D0        40  92 5.50000E-01
 g         40  92   6.13333
 gp        40  92   2.66667
 gn        40  92   3.46667
+gnadjust   40  92   1.00000
+gpadjust   40  92   1.00000
 #
 # Gamma-ray
 #
 gamgam    40  92   0.14000
-sgr       40  92   2.595 M1
+gamgamadjust    40  92   1.00000
+sgr       40  92   0.555 M1
 egr       40  92   9.082 M1
 ggr       40  92   4.000 M1
 sgr       40  92 166.000 E1
 egr       40  92  16.260 E1
 ggr       40  92   4.680 E1
-sgr       40  92   0.002 M2
+sgr       40  92   0.000 M2
 egr       40  92   9.082 M2
 ggr       40  92   4.000 M2
 sgr       40  92   0.138 E2
@@ -153,7 +169,6 @@ ggr       40  92   5.006 E2
 a         40  91  10.48370
 gammald   40  91   0.09629
 pair      40  91   1.25794
-D0        40  91      6.00
 Pshift    40  91   0.00000   0
 deltaW    40  91  -1.22782   0
 T         40  91   0.86439   0
@@ -161,21 +176,26 @@ E0        40  91  -0.21558   0
 Exmatch   40  91   6.50196   0
 Ntop      40  91  17   0
 Nlow      40  91   3   0
-Krotconstant   40  91   1.00000   0
+s2adjust   40  91   1.00000   0
+aadjust   40  91   1.00000
+D0        40  91 6.00000E+00
 g         40  91   6.06667
 gp        40  91   2.66667
 gn        40  91   3.40000
+gnadjust   40  91   1.00000
+gpadjust   40  91   1.00000
 #
 # Gamma-ray
 #
 gamgam    40  91   0.13000
-sgr       40  91   2.637 M1
+gamgamadjust    40  91   1.00000
+sgr       40  91   0.447 M1
 egr       40  91   9.115 M1
 ggr       40  91   4.000 M1
 sgr       40  91 184.000 E1
 egr       40  91  16.580 E1
 ggr       40  91   4.200 E1
-sgr       40  91   0.002 M2
+sgr       40  91   0.000 M2
 egr       40  91   9.115 M2
 ggr       40  91   4.000 M2
 sgr       40  91   0.139 E2
@@ -197,21 +217,25 @@ E0        39  91   0.86795   0
 Exmatch   39  91   3.62318   0
 Ntop      39  91  15   0
 Nlow      39  91   8   0
-Krotconstant   39  91   1.00000   0
+s2adjust   39  91   1.00000   0
+aadjust   39  91   1.00000
 g         39  91   6.06667
 gp        39  91   2.60000
 gn        39  91   3.46667
+gnadjust   39  91   1.00000
+gpadjust   39  91   1.00000
 #
 # Gamma-ray
 #
 gamgam    39  91   0.16000
-sgr       39  91   2.637 M1
+gamgamadjust    39  91   1.00000
+sgr       39  91   0.764 M1
 egr       39  91   9.115 M1
 ggr       39  91   4.000 M1
 sgr       39  91 182.550 E1
 egr       39  91  16.650 E1
 ggr       39  91   5.596 E1
-sgr       39  91   0.002 M2
+sgr       39  91   0.001 M2
 egr       39  91   9.115 M2
 ggr       39  91   4.000 M2
 sgr       39  91   0.132 E2
@@ -226,7 +250,6 @@ ggr       39  91   5.018 E2
 a         39  90   9.22539
 gammald   39  90   0.09664
 pair      39  90   0.00000
-D0        39  90      3.70
 Pshift    39  90   0.00000   0
 deltaW    39  90  -1.29039   0
 T         39  90   0.86355   0
@@ -234,21 +257,26 @@ E0        39  90  -0.70829   0
 Exmatch   39  90   4.04826   0
 Ntop      39  90  16   0
 Nlow      39  90   3   0
-Krotconstant   39  90   1.00000   0
+s2adjust   39  90   1.00000   0
+aadjust   39  90   1.00000
+D0        39  90 3.70000E+00
 g         39  90   6.00000
 gp        39  90   2.60000
 gn        39  90   3.40000
+gnadjust   39  90   1.00000
+gpadjust   39  90   1.00000
 #
 # Gamma-ray
 #
 gamgam    39  90   0.13000
-sgr       39  90   2.680 M1
+gamgamadjust    39  90   1.00000
+sgr       39  90   0.771 M1
 egr       39  90   9.149 M1
 ggr       39  90   4.000 M1
 sgr       39  90 180.129 E1
 egr       39  90  16.693 E1
 ggr       39  90   5.624 E1
-sgr       39  90   0.002 M2
+sgr       39  90   0.001 M2
 egr       39  90   9.149 M2
 ggr       39  90   4.000 M2
 sgr       39  90   0.133 E2
@@ -270,21 +298,25 @@ E0        41  92  -0.72167   0
 Exmatch   41  92   3.57916   0
 Ntop      41  92  15   0
 Nlow      41  92   8   0
-Krotconstant   41  92   1.00000   0
+s2adjust   41  92   1.00000   0
+aadjust   41  92   1.00000
 g         41  92   6.13333
 gp        41  92   2.73333
 gn        41  92   3.40000
+gnadjust   41  92   1.00000
+gpadjust   41  92   1.00000
 #
 # Gamma-ray
 #
 gamgam    41  92   0.15500
-sgr       41  92   2.595 M1
+gamgamadjust    41  92   1.00000
+sgr       41  92   0.765 M1
 egr       41  92   9.082 M1
 ggr       41  92   4.000 M1
 sgr       41  92 187.095 E1
 egr       41  92  16.607 E1
 ggr       41  92   5.568 E1
-sgr       41  92   0.002 M2
+sgr       41  92   0.001 M2
 egr       41  92   9.082 M2
 ggr       41  92   4.000 M2
 sgr       41  92   0.145 E2
@@ -306,21 +338,25 @@ E0        40  90   3.03638   0
 Exmatch   40  90   3.34350   0
 Ntop      40  90  16   0
 Nlow      40  90   8   0
-Krotconstant   40  90   1.00000   0
+s2adjust   40  90   1.00000   0
+aadjust   40  90   1.00000
 g         40  90   6.00000
 gp        40  90   2.66667
 gn        40  90   3.33333
+gnadjust   40  90   1.00000
+gpadjust   40  90   1.00000
 #
 # Gamma-ray
 #
 gamgam    40  90   0.16500
-sgr       40  90   2.680 M1
+gamgamadjust    40  90   1.00000
+sgr       40  90   0.485 M1
 egr       40  90   9.149 M1
 ggr       40  90   4.000 M1
 sgr       40  90 211.000 E1
 egr       40  90  16.740 E1
 ggr       40  90   4.160 E1
-sgr       40  90   0.002 M2
+sgr       40  90   0.000 M2
 egr       40  90   9.149 M2
 ggr       40  90   4.000 M2
 sgr       40  90   0.140 E2
@@ -337,26 +373,30 @@ gammald   39  89   0.09700
 pair      39  89   1.27200
 Pshift    39  89   0.00000   0
 deltaW    39  89  -1.85952   0
-T         39  89   0.61010   0
-E0        39  89   1.43654   0
-Exmatch   39  89   3.24878   0
+T         39  89   0.94426   0
+E0        39  89  -0.79912   0
+Exmatch   39  89   8.05694   0
 Ntop      39  89  15   0
 Nlow      39  89   5   0
-Krotconstant   39  89   1.00000   0
+s2adjust   39  89   1.00000   0
+aadjust   39  89   1.00000
 g         39  89   5.93333
 gp        39  89   2.60000
 gn        39  89   3.33333
+gnadjust   39  89   1.00000
+gpadjust   39  89   1.00000
 #
 # Gamma-ray
 #
 gamgam    39  89   0.17000
-sgr       39  89   2.725 M1
+gamgamadjust    39  89   1.00000
+sgr       39  89   0.369 M1
 egr       39  89   9.183 M1
 ggr       39  89   4.000 M1
 sgr       39  89 205.000 E1
 egr       39  89  16.830 E1
 ggr       39  89   3.690 E1
-sgr       39  89   0.002 M2
+sgr       39  89   0.000 M2
 egr       39  89   9.183 M2
 ggr       39  89   4.000 M2
 sgr       39  89   0.133 E2
@@ -378,21 +418,25 @@ E0        41  91  -0.57947   0
 Exmatch   41  91   7.57135   0
 Ntop      41  91  16   0
 Nlow      41  91   7   0
-Krotconstant   41  91   1.00000   0
+s2adjust   41  91   1.00000   0
+aadjust   41  91   1.00000
 g         41  91   6.06667
 gp        41  91   2.73333
 gn        41  91   3.33333
+gnadjust   41  91   1.00000
+gpadjust   41  91   1.00000
 #
 # Gamma-ray
 #
 gamgam    41  91   0.16000
-sgr       41  91   2.637 M1
+gamgamadjust    41  91   1.00000
+sgr       41  91   0.772 M1
 egr       41  91   9.115 M1
 ggr       41  91   4.000 M1
 sgr       41  91 184.530 E1
 egr       41  91  16.650 E1
 ggr       41  91   5.596 E1
-sgr       41  91   0.002 M2
+sgr       41  91   0.001 M2
 egr       41  91   9.115 M2
 ggr       41  91   4.000 M2
 sgr       41  91   0.146 E2
@@ -414,21 +458,25 @@ E0        40  89  -0.22107   0
 Exmatch   40  89   6.12438   0
 Ntop      40  89  15   0
 Nlow      40  89   2   0
-Krotconstant   40  89   1.00000   0
+s2adjust   40  89   1.00000   0
+aadjust   40  89   1.00000
 g         40  89   5.93333
 gp        40  89   2.66667
 gn        40  89   3.26667
+gnadjust   40  89   1.00000
+gpadjust   40  89   1.00000
 #
 # Gamma-ray
 #
 gamgam    40  89   0.17000
-sgr       40  89   2.725 M1
+gamgamadjust    40  89   1.00000
+sgr       40  89   0.783 M1
 egr       40  89   9.183 M1
 ggr       40  89   4.000 M1
 sgr       40  89 178.594 E1
 egr       40  89  16.737 E1
 ggr       40  89   5.652 E1
-sgr       40  89   0.002 M2
+sgr       40  89   0.001 M2
 egr       40  89   9.183 M2
 ggr       40  89   4.000 M2
 sgr       40  89   0.140 E2
@@ -450,21 +498,25 @@ E0        39  88  -0.63866   0
 Exmatch   39  88   3.11932   0
 Ntop      39  88  15   0
 Nlow      39  88   8   0
-Krotconstant   39  88   1.00000   0
+s2adjust   39  88   1.00000   0
+aadjust   39  88   1.00000
 g         39  88   5.86667
 gp        39  88   2.60000
 gn        39  88   3.26667
+gnadjust   39  88   1.00000
+gpadjust   39  88   1.00000
 #
 # Gamma-ray
 #
 gamgam    39  88   0.17500
-sgr       39  88   2.771 M1
+gamgamadjust    39  88   1.00000
+sgr       39  88   0.787 M1
 egr       39  88   9.218 M1
 ggr       39  88   4.000 M1
 sgr       39  88 175.212 E1
 egr       39  88  16.782 E1
 ggr       39  88   5.681 E1
-sgr       39  88   0.002 M2
+sgr       39  88   0.001 M2
 egr       39  88   9.218 M2
 ggr       39  88   4.000 M2
 sgr       39  88   0.134 E2
@@ -486,21 +538,25 @@ E0        39  92  -1.89940   0
 Exmatch   39  92   5.13147   0
 Ntop      39  92  10   0
 Nlow      39  92   2   0
-Krotconstant   39  92   1.00000   0
+s2adjust   39  92   1.00000   0
+aadjust   39  92   1.00000
 g         39  92   6.13333
 gp        39  92   2.60000
 gn        39  92   3.53333
+gnadjust   39  92   1.00000
+gpadjust   39  92   1.00000
 #
 # Gamma-ray
 #
 gamgam    39  92   0.15500
-sgr       39  92   2.595 M1
+gamgamadjust    39  92   1.00000
+sgr       39  92   0.756 M1
 egr       39  92   9.082 M1
 ggr       39  92   4.000 M1
 sgr       39  92 184.947 E1
 egr       39  92  16.607 E1
 ggr       39  92   5.568 E1
-sgr       39  92   0.002 M2
+sgr       39  92   0.001 M2
 egr       39  92   9.082 M2
 ggr       39  92   4.000 M2
 sgr       39  92   0.131 E2
@@ -522,21 +578,25 @@ E0        38  90   1.25775   0
 Exmatch   38  90   6.67169   0
 Ntop      38  90  26   0
 Nlow      38  90   8   0
-Krotconstant   38  90   1.00000   0
+s2adjust   38  90   1.00000   0
+aadjust   38  90   1.00000
 g         38  90   6.00000
 gp        38  90   2.53333
 gn        38  90   3.46667
+gnadjust   38  90   1.00000
+gpadjust   38  90   1.00000
 #
 # Gamma-ray
 #
 gamgam    38  90   0.16500
-sgr       38  90   2.680 M1
+gamgamadjust    38  90   1.00000
+sgr       38  90   0.766 M1
 egr       38  90   9.149 M1
 ggr       38  90   4.000 M1
 sgr       38  90 178.951 E1
 egr       38  90  16.693 E1
 ggr       38  90   5.624 E1
-sgr       38  90   0.002 M2
+sgr       38  90   0.001 M2
 egr       38  90   9.149 M2
 ggr       38  90   4.000 M2
 sgr       38  90   0.126 E2
@@ -551,7 +611,6 @@ ggr       38  90   5.030 E2
 a         38  89   9.77755
 gammald   38  89   0.09700
 pair      38  89   1.27200
-D0        38  89     23.70
 Pshift    38  89   0.00000   0
 deltaW    38  89  -0.95346   0
 T         38  89   0.60946   0
@@ -559,21 +618,26 @@ E0        38  89   1.49002   0
 Exmatch   38  89   1.62528   0
 Ntop      38  89  15   0
 Nlow      38  89   7   0
-Krotconstant   38  89   1.00000   0
+s2adjust   38  89   1.00000   0
+aadjust   38  89   1.00000
+D0        38  89 2.37000E+01
 g         38  89   5.93333
 gp        38  89   2.53333
 gn        38  89   3.40000
+gnadjust   38  89   1.00000
+gpadjust   38  89   1.00000
 #
 # Gamma-ray
 #
 gamgam    38  89   0.19000
-sgr       38  89   2.725 M1
+gamgamadjust    38  89   1.00000
+sgr       38  89   0.774 M1
 egr       38  89   9.183 M1
 ggr       38  89   4.000 M1
 sgr       38  89 176.590 E1
 egr       38  89  16.737 E1
 ggr       38  89   5.652 E1
-sgr       38  89   0.002 M2
+sgr       38  89   0.001 M2
 egr       38  89   9.183 M2
 ggr       38  89   4.000 M2
 sgr       38  89   0.127 E2
@@ -588,7 +652,6 @@ ggr       38  89   5.042 E2
 a         38  88   9.23669
 gammald   38  88   0.09737
 pair      38  88   2.55841
-D0        38  88      0.29
 Pshift    38  88   0.00000   0
 deltaW    38  88  -1.51453   0
 T         38  88   0.93787   0
@@ -596,21 +659,26 @@ E0        38  88   1.34365   0
 Exmatch   38  88   7.81329   0
 Ntop      38  88  26   0
 Nlow      38  88   4   0
-Krotconstant   38  88   1.00000   0
+s2adjust   38  88   1.00000   0
+aadjust   38  88   1.00000
+D0        38  88 2.90000E-01
 g         38  88   5.86667
 gp        38  88   2.53333
 gn        38  88   3.33333
+gnadjust   38  88   1.00000
+gpadjust   38  88   1.00000
 #
 # Gamma-ray
 #
 gamgam    38  88   0.29000
-sgr       38  88   2.771 M1
+gamgamadjust    38  88   1.00000
+sgr       38  88   0.567 M1
 egr       38  88   9.218 M1
 ggr       38  88   4.000 M1
 sgr       38  88 206.000 E1
 egr       38  88  16.840 E1
 ggr       38  88   4.500 E1
-sgr       38  88   0.002 M2
+sgr       38  88   0.000 M2
 egr       38  88   9.218 M2
 ggr       38  88   4.000 M2
 sgr       38  88   0.127 E2
@@ -625,7 +693,6 @@ ggr       38  88   5.054 E2
 a         38  87  10.14442
 gammald   38  87   0.09774
 pair      38  87   1.28654
-D0        38  87      2.60
 Pshift    38  87   0.00000   0
 deltaW    38  87  -0.02788   0
 T         38  87   0.86306   0
@@ -633,21 +700,26 @@ E0        38  87   0.00885   0
 Exmatch   38  87   5.89476   0
 Ntop      38  87  18   0
 Nlow      38  87   7   0
-Krotconstant   38  87   1.00000   0
+s2adjust   38  87   1.00000   0
+aadjust   38  87   1.00000
+D0        38  87 2.60000E+00
 g         38  87   5.80000
 gp        38  87   2.53333
 gn        38  87   3.26667
+gnadjust   38  87   1.00000
+gpadjust   38  87   1.00000
 #
 # Gamma-ray
 #
 gamgam    38  87   0.26000
-sgr       38  87   2.819 M1
+gamgamadjust    38  87   1.00000
+sgr       38  87   0.791 M1
 egr       38  87   9.253 M1
 ggr       38  87   4.000 M1
 sgr       38  87 171.793 E1
 egr       38  87  16.827 E1
 ggr       38  87   5.710 E1
-sgr       38  87   0.002 M2
+sgr       38  87   0.001 M2
 egr       38  87   9.253 M2
 ggr       38  87   4.000 M2
 sgr       38  87   0.128 E2
@@ -669,21 +741,25 @@ E0        37  87   0.58601   0
 Exmatch   37  87   4.64349   0
 Ntop      37  87  15   0
 Nlow      37  87   7   0
-Krotconstant   37  87   1.00000   0
+s2adjust   37  87   1.00000   0
+aadjust   37  87   1.00000
 g         37  87   5.80000
 gp        37  87   2.46667
 gn        37  87   3.33333
+gnadjust   37  87   1.00000
+gpadjust   37  87   1.00000
 #
 # Gamma-ray
 #
 gamgam    37  87   0.18500
-sgr       37  87   2.819 M1
+gamgamadjust    37  87   1.00000
+sgr       37  87   0.786 M1
 egr       37  87   9.253 M1
 ggr       37  87   4.000 M1
 sgr       37  87 170.686 E1
 egr       37  87  16.827 E1
 ggr       37  87   5.710 E1
-sgr       37  87   0.002 M2
+sgr       37  87   0.001 M2
 egr       37  87   9.253 M2
 ggr       37  87   4.000 M2
 sgr       37  87   0.121 E2
@@ -698,7 +774,6 @@ ggr       37  87   5.066 E2
 a         37  86   9.91946
 gammald   37  86   0.09812
 pair      37  86   0.00000
-D0        37  86      0.17
 Pshift    37  86   0.00000   0
 deltaW    37  86   0.00312   0
 T         37  86   0.95936   0
@@ -706,21 +781,26 @@ E0        37  86  -1.95811   0
 Exmatch   37  86   5.89975   0
 Ntop      37  86  16   0
 Nlow      37  86   5   0
-Krotconstant   37  86   1.00000   0
+s2adjust   37  86   1.00000   0
+aadjust   37  86   1.00000
+D0        37  86 1.70000E-01
 g         37  86   5.73333
 gp        37  86   2.46667
 gn        37  86   3.26667
+gnadjust   37  86   1.00000
+gpadjust   37  86   1.00000
 #
 # Gamma-ray
 #
 gamgam    37  86   0.20500
-sgr       37  86   2.868 M1
+gamgamadjust    37  86   1.00000
+sgr       37  86   0.794 M1
 egr       37  86   9.289 M1
 ggr       37  86   4.000 M1
 sgr       37  86 168.336 E1
 egr       37  86  16.873 E1
 ggr       37  86   5.740 E1
-sgr       37  86   0.002 M2
+sgr       37  86   0.001 M2
 egr       37  86   9.289 M2
 ggr       37  86   4.000 M2
 sgr       37  86   0.122 E2
@@ -742,21 +822,25 @@ E0        38  86   0.84557   0
 Exmatch   38  86   7.37667   0
 Ntop      38  86  16   0
 Nlow      38  86   8   0
-Krotconstant   38  86   1.00000   0
+s2adjust   38  86   1.00000   0
+aadjust   38  86   1.00000
 g         38  86   5.73333
 gp        38  86   2.53333
 gn        38  86   3.20000
+gnadjust   38  86   1.00000
+gpadjust   38  86   1.00000
 #
 # Gamma-ray
 #
 gamgam    38  86   0.19000
-sgr       38  86   2.868 M1
+gamgamadjust    38  86   1.00000
+sgr       38  86   0.799 M1
 egr       38  86   9.289 M1
 ggr       38  86   4.000 M1
 sgr       38  86 169.358 E1
 egr       38  86  16.873 E1
 ggr       38  86   5.740 E1
-sgr       38  86   0.002 M2
+sgr       38  86   0.001 M2
 egr       38  86   9.289 M2
 ggr       38  86   4.000 M2
 sgr       38  86   0.129 E2
@@ -773,26 +857,30 @@ gammald   37  85   0.09850
 pair      37  85   1.30158
 Pshift    37  85   0.00000   0
 deltaW    37  85   1.52387   0
-T         37  85   0.80277   0
-E0        37  85  -0.80433   0
-Exmatch   37  85   6.41963   0
+T         37  85   0.80427   0
+E0        37  85  -0.81933   0
+Exmatch   37  85   6.44253   0
 Ntop      37  85  17   0
 Nlow      37  85   8   0
-Krotconstant   37  85   1.00000   0
+s2adjust   37  85   1.00000   0
+aadjust   37  85   1.00000
 g         37  85   5.66667
 gp        37  85   2.46667
 gn        37  85   3.20000
+gnadjust   37  85   1.00000
+gpadjust   37  85   1.00000
 #
 # Gamma-ray
 #
 gamgam    37  85   0.20000
-sgr       37  85   2.919 M1
+gamgamadjust    37  85   1.00000
+sgr       37  85   0.579 M1
 egr       37  85   9.325 M1
 ggr       37  85   4.000 M1
 sgr       37  85 190.000 E1
 egr       37  85  16.800 E1
 ggr       37  85   4.470 E1
-sgr       37  85   0.002 M2
+sgr       37  85   0.000 M2
 egr       37  85   9.325 M2
 ggr       37  85   4.000 M2
 sgr       37  85   0.123 E2
@@ -811,15 +899,12 @@ gammashell2    0.00000
 pairconstant  12.00000
 pshiftconstant   0.00000
 Rspincut       1.00000
-Ufermi        30.00000
-cfermi         5.00000
-Ufermibf      45.00000
-cfermibf       5.00000
 Kph           15.00000
 #
 # Gamma-ray
 #
-gnorm          0.70061
+gnorm          2.55336
+xscaptherm   1.15000E+03
 #
 # Pre-equilibrium
 #
@@ -967,3 +1052,7 @@ vso2adjust a   1.00000
 wso1adjust a   1.00000
 wso2adjust a   1.00000
 rcadjust   a   1.00000
+#
+# Resonance parameters
+#  Z   A     S0        R      xs(therm)    D0         a         P        Sn
+#  41  93 3.175E-01 4.195E+00 1.150E+03 8.000E+01 1.242E+01 0.000E+00 7.228E+00
