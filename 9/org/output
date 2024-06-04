@@ -1,8 +1,8 @@
 
-    TALYS-1.2       (Version: December 21, 2009)
+    TALYS-1.4 Version: December 27, 2011)
 
- Copyright (C) 2009  A.J. Koning, S. Hilaire and M.C. Duijvestijn
-                         NRG          CEA              NRG
+ Copyright (C) 2011  A.J. Koning, S. Hilaire and S. Goriely      
+                         NRG          CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -75,7 +75,7 @@
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
  anglesrec           1     nanglerec    number of recoil angles
- maxenrec           16     maxenrec     number of recoil energies
+ maxenrec           24     maxenrec     number of recoil energies
  channels            n     flagchannels flag for exclusive channels calculation
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
@@ -113,7 +113,8 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler)
+ alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential)
+ deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
@@ -122,6 +123,9 @@
  compound            n     flagcomp     flag for compound nucleus model
  fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
  eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
+ urr                 n     flagurr      flag for URR calculation
+ urrnjoy             y     flagurrnjoy  flag for normalization of URR parameters with NJOY method
+ lurr                2     lurr         maximal orbital angular momentum for URR
  #
  # Gamma emission
  #
@@ -148,13 +152,13 @@
  #
  # Level densities
  #
- ldmodel             1     ldmodel      level density model
+ ldmodel             1     ldmodelall   level density model
  shellmodel          1     shellmodel   model for shell correction energies
  kvibmodel           2     kvibmodel    model for vibrational enhancement
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcol      flag for damping of collective effects
+ colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
  #
@@ -181,7 +185,6 @@
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
- outurr              n     flagurr      flag for output of unresolved resonance parameters
  outgamma            n     flaggamma    flag for output of gamma-ray information
  outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
  outfission          n     flagfisout   flag for output of fission information
@@ -195,6 +198,7 @@
  outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
  outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
  outexcitation       y     flagexc      flag for output of excitation functions
+ components          n     flagcompo    flag for output of cross section components
  endf                n     flagendf     flag for information for ENDF-6 file
  endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
  partable            n     flagpartable flag for output of model parameters on separate file
@@ -224,6 +228,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : n
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
@@ -1527,6 +1532,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : n
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
@@ -2830,6 +2836,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : n
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
@@ -4133,6 +4140,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : n
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
@@ -5436,6 +5444,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : n
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
@@ -6741,6 +6750,6 @@
 
  4. Residual production cross sections
 
- Execution time:  0 hours  0 minutes  3.72 seconds 
+ Execution time:  0 hours  0 minutes  2.73 seconds 
 
  The TALYS team congratulates you with this successful calculation.

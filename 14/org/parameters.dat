@@ -1,8 +1,8 @@
-#
-# Parameters for 239U 
-#
-# Level density
-#
+##
+## Parameters for 239U 
+##
+## Level density
+##
 a         92 239  29.94213
 gammald   92 239   0.07396
 pair      92 239   0.77622
@@ -40,9 +40,9 @@ gp        92 239   6.13333
 gn        92 239   9.80000
 gnadjust   92 239   1.00000
 gpadjust   92 239   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    92 239   0.02400
 gamgamadjust    92 239   1.00000
 sgr       92 239   1.126 M1
@@ -57,9 +57,9 @@ ggr       92 239   4.000 M2
 sgr       92 239   0.598 E2
 egr       92 239  10.152 E2
 ggr       92 239   3.242 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    92 239   6.35000  1
 fishw     92 239   0.70000  1
 class2width   92 239   0.20000  1
@@ -70,11 +70,11 @@ fishw     92 239   0.50000  2
 Rtransmom   92 239   1.00000  2
 Rclass2mom   92 239   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 238U 
-#
-# Level density
-#
+##
+## Parameters for 238U 
+##
+## Level density
+##
 a         92 238  30.02925
 gammald   92 238   0.07407
 pair      92 238   1.55569
@@ -112,9 +112,9 @@ gp        92 238   6.13333
 gn        92 238   9.73333
 gnadjust   92 238   1.00000
 gpadjust   92 238   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    92 238   0.03000
 gamgamadjust    92 238   1.00000
 sgr       92 238   2.242 M1
@@ -132,9 +132,9 @@ ggr       92 238   4.000 M2
 sgr       92 238   0.597 E2
 egr       92 238  10.166 E2
 ggr       92 238   3.254 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    92 238   6.05000  1
 fishw     92 238   0.75000  1
 class2width   92 238   0.10000  1
@@ -145,11 +145,11 @@ fishw     92 238   0.60000  2
 Rtransmom   92 238   1.00000  2
 Rclass2mom   92 238   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 238Pa
-#
-# Level density
-#
+##
+## Parameters for 238Pa
+##
+## Level density
+##
 a         91 238  31.38318
 gammald   91 238   0.07407
 pair      91 238   0.00000
@@ -177,9 +177,9 @@ gp        91 238   6.06667
 gn        91 238   9.80000
 gnadjust   91 238   1.00000
 gpadjust   91 238   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    91 238   0.03000
 gamgamadjust    91 238   1.00000
 sgr       91 238   1.115 M1
@@ -194,19 +194,19 @@ ggr       91 238   4.000 M2
 sgr       91 238   0.584 E2
 egr       91 238  10.166 E2
 ggr       91 238   3.254 E2
-#
-# Fission parameters
-#
-fisbar    91 238   7.51552  1
+##
+## Fission parameters
+##
+fisbar    91 238 -19.52793  1
 fishw     91 238   0.24000  1
 Rtransmom   91 238   0.60000  1
 Rclass2mom   91 238   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 237Pa
-#
-# Level density
-#
+##
+## Parameters for 237Pa
+##
+## Level density
+##
 a         91 237  31.70473
 gammald   91 237   0.07417
 pair      91 237   0.77948
@@ -234,9 +234,9 @@ gp        91 237   6.06667
 gn        91 237   9.73333
 gnadjust   91 237   1.00000
 gpadjust   91 237   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    91 237   0.03000
 gamgamadjust    91 237   1.00000
 sgr       91 237   1.109 M1
@@ -251,19 +251,19 @@ ggr       91 237   4.000 M2
 sgr       91 237   0.584 E2
 egr       91 237  10.180 E2
 ggr       91 237   3.266 E2
-#
-# Fission parameters
-#
-fisbar    91 237   7.51681  1
+##
+## Fission parameters
+##
+fisbar    91 237 -19.53127  1
 fishw     91 237   0.24000  1
 Rtransmom   91 237   0.60000  1
 Rclass2mom   91 237   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 236Pa
-#
-# Level density
-#
+##
+## Parameters for 236Pa
+##
+## Level density
+##
 a         91 236  30.88224
 gammald   91 236   0.07427
 pair      91 236   0.00000
@@ -291,9 +291,9 @@ gp        91 236   6.06667
 gn        91 236   9.66667
 gnadjust   91 236   1.00000
 gpadjust   91 236   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    91 236   0.03000
 gamgamadjust    91 236   1.00000
 sgr       91 236   1.102 M1
@@ -308,19 +308,19 @@ ggr       91 236   4.000 M2
 sgr       91 236   0.583 E2
 egr       91 236  10.195 E2
 ggr       91 236   3.278 E2
-#
-# Fission parameters
-#
-fisbar    91 236   7.51781  1
+##
+## Fission parameters
+##
+fisbar    91 236 -19.53389  1
 fishw     91 236   0.24000  1
 Rtransmom   91 236   0.60000  1
 Rclass2mom   91 236   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 236Th
-#
-# Level density
-#
+##
+## Parameters for 236Th
+##
+## Level density
+##
 a         90 236  32.12891
 gammald   90 236   0.07427
 pair      90 236   1.56227
@@ -348,9 +348,9 @@ gp        90 236   6.00000
 gn        90 236   9.73333
 gnadjust   90 236   1.00000
 gpadjust   90 236   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    90 236   0.03000
 gamgamadjust    90 236   1.00000
 sgr       90 236   1.097 M1
@@ -365,19 +365,19 @@ ggr       90 236   4.000 M2
 sgr       90 236   0.571 E2
 egr       90 236  10.195 E2
 ggr       90 236   3.278 E2
-#
-# Fission parameters
-#
-fisbar    90 236  13.74754  1
+##
+## Fission parameters
+##
+fisbar    90 236 -23.98114  1
 fishw     90 236   0.24000  1
 Rtransmom   90 236   0.60000  1
 Rclass2mom   90 236   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 235Th
-#
-# Level density
-#
+##
+## Parameters for 235Th
+##
+## Level density
+##
 a         90 235  31.94116
 gammald   90 235   0.07438
 pair      90 235   0.78279
@@ -405,9 +405,9 @@ gp        90 235   6.00000
 gn        90 235   9.66667
 gnadjust   90 235   1.00000
 gpadjust   90 235   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    90 235   0.03000
 gamgamadjust    90 235   1.00000
 sgr       90 235   1.091 M1
@@ -422,19 +422,19 @@ ggr       90 235   4.000 M2
 sgr       90 235   0.570 E2
 egr       90 235  10.209 E2
 ggr       90 235   3.290 E2
-#
-# Fission parameters
-#
-fisbar    90 235   7.46089  1
+##
+## Fission parameters
+##
+fisbar    90 235 -19.38598  1
 fishw     90 235   0.24000  1
 Rtransmom   90 235   0.60000  1
 Rclass2mom   90 235   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 237U 
-#
-# Level density
-#
+##
+## Parameters for 237U 
+##
+## Level density
+##
 a         92 237  30.63208
 gammald   92 237   0.07417
 pair      92 237   0.77948
@@ -472,9 +472,9 @@ gp        92 237   6.13333
 gn        92 237   9.66667
 gnadjust   92 237   1.00000
 gpadjust   92 237   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    92 237   0.02300
 gamgamadjust    92 237   1.00000
 sgr       92 237   1.113 M1
@@ -489,9 +489,9 @@ ggr       92 237   4.000 M2
 sgr       92 237   0.597 E2
 egr       92 237  10.180 E2
 ggr       92 237   3.266 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    92 237   5.70000  1
 fishw     92 237   0.70000  1
 class2width   92 237   0.10000  1
@@ -502,11 +502,11 @@ fishw     92 237   0.40000  2
 Rtransmom   92 237   1.00000  2
 Rclass2mom   92 237   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 235Pa
-#
-# Level density
-#
+##
+## Parameters for 235Pa
+##
+## Level density
+##
 a         91 235  30.95733
 gammald   91 235   0.07438
 pair      91 235   0.78279
@@ -534,9 +534,9 @@ gp        91 235   6.06667
 gn        91 235   9.60000
 gnadjust   91 235   1.00000
 gpadjust   91 235   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    91 235   0.03000
 gamgamadjust    91 235   1.00000
 sgr       91 235   1.096 M1
@@ -551,19 +551,19 @@ ggr       91 235   4.000 M2
 sgr       91 235   0.583 E2
 egr       91 235  10.209 E2
 ggr       91 235   3.290 E2
-#
-# Fission parameters
-#
-fisbar    91 235   7.51854  1
+##
+## Fission parameters
+##
+fisbar    91 235 -19.53577  1
 fishw     91 235   0.24000  1
 Rtransmom   91 235   0.60000  1
 Rclass2mom   91 235   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 234Th
-#
-# Level density
-#
+##
+## Parameters for 234Th
+##
+## Level density
+##
 a         90 234  31.18096
 gammald   90 234   0.07449
 pair      90 234   1.56893
@@ -591,9 +591,9 @@ gp        90 234   6.00000
 gn        90 234   9.60000
 gnadjust   90 234   1.00000
 gpadjust   90 234   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    90 234   0.03000
 gamgamadjust    90 234   1.00000
 sgr       90 234   1.085 M1
@@ -608,19 +608,19 @@ ggr       90 234   4.000 M2
 sgr       90 234   0.570 E2
 egr       90 234  10.224 E2
 ggr       90 234   3.302 E2
-#
-# Fission parameters
-#
-fisbar    90 234   7.46207  1
+##
+## Fission parameters
+##
+fisbar    90 234 -19.38905  1
 fishw     90 234   0.24000  1
 Rtransmom   90 234   0.60000  1
 Rclass2mom   90 234   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 236U 
-#
-# Level density
-#
+##
+## Parameters for 236U 
+##
+## Level density
+##
 a         92 236  29.94384
 gammald   92 236   0.07427
 pair      92 236   1.56227
@@ -658,9 +658,9 @@ gp        92 236   6.13333
 gn        92 236   9.60000
 gnadjust   92 236   1.00000
 gpadjust   92 236   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    92 236   0.03500
 gamgamadjust    92 236   1.00000
 sgr       92 236   1.938 M1
@@ -678,9 +678,9 @@ ggr       92 236   4.000 M2
 sgr       92 236   0.596 E2
 egr       92 236  10.195 E2
 ggr       92 236   3.278 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    92 236   5.00000  1
 fishw     92 236   0.90000  1
 class2width   92 236   0.20000  1
@@ -691,11 +691,11 @@ fishw     92 236   0.60000  2
 Rtransmom   92 236   1.00000  2
 Rclass2mom   92 236   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 234Pa
-#
-# Level density
-#
+##
+## Parameters for 234Pa
+##
+## Level density
+##
 a         91 234  30.25778
 gammald   91 234   0.07449
 pair      91 234   0.00000
@@ -733,9 +733,9 @@ gp        91 234   6.06667
 gn        91 234   9.53333
 gnadjust   91 234   1.00000
 gpadjust   91 234   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    91 234   0.04700
 gamgamadjust    91 234   1.00000
 sgr       91 234   1.089 M1
@@ -750,9 +750,9 @@ ggr       91 234   4.000 M2
 sgr       91 234   0.583 E2
 egr       91 234  10.224 E2
 ggr       91 234   3.302 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    91 234   6.30000  1
 fishw     91 234   0.60000  1
 class2width   91 234   0.20000  1
@@ -763,11 +763,11 @@ fishw     91 234   0.40000  2
 Rtransmom   91 234   1.00000  2
 Rclass2mom   91 234   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 233Th
-#
-# Level density
-#
+##
+## Parameters for 233Th
+##
+## Level density
+##
 a         90 233  31.08249
 gammald   90 233   0.07459
 pair      90 233   0.78615
@@ -805,9 +805,9 @@ gp        90 233   6.00000
 gn        90 233   9.53333
 gnadjust   90 233   1.00000
 gpadjust   90 233   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    90 233   0.02400
 gamgamadjust    90 233   1.00000
 sgr       90 233   1.078 M1
@@ -822,9 +822,9 @@ ggr       90 233   4.000 M2
 sgr       90 233   0.569 E2
 egr       90 233  10.238 E2
 ggr       90 233   3.314 E2
-#
-# Fission parameters
-#
+##
+## Fission parameters
+##
 fisbar    90 233   5.10000  1
 fishw     90 233   0.70000  1
 class2width   90 233   0.20000  1
@@ -835,11 +835,11 @@ fishw     90 233   0.50000  2
 Rtransmom   90 233   1.00000  2
 Rclass2mom   90 233   1.00000  2
 #---------------------------------------------
-#
-# Parameters for 234Ac
-#
-# Level density
-#
+##
+## Parameters for 234Ac
+##
+## Level density
+##
 a         89 234  32.58735
 gammald   89 234   0.07449
 pair      89 234   0.00000
@@ -867,9 +867,9 @@ gp        89 234   5.93333
 gn        89 234   9.66667
 gnadjust   89 234   1.00000
 gpadjust   89 234   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    89 234   0.03000
 gamgamadjust    89 234   1.00000
 sgr       89 234   1.080 M1
@@ -884,19 +884,19 @@ ggr       89 234   4.000 M2
 sgr       89 234   0.557 E2
 egr       89 234  10.224 E2
 ggr       89 234   3.302 E2
-#
-# Fission parameters
-#
-fisbar    89 234  13.64358  1
+##
+## Fission parameters
+##
+fisbar    89 234 -23.79979  1
 fishw     89 234   0.24000  1
 Rtransmom   89 234   0.60000  1
 Rclass2mom   89 234   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 233Ac
-#
-# Level density
-#
+##
+## Parameters for 233Ac
+##
+## Level density
+##
 a         89 233  32.31537
 gammald   89 233   0.07459
 pair      89 233   0.78615
@@ -924,9 +924,9 @@ gp        89 233   5.93333
 gn        89 233   9.60000
 gnadjust   89 233   1.00000
 gpadjust   89 233   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    89 233   0.03000
 gamgamadjust    89 233   1.00000
 sgr       89 233   1.074 M1
@@ -941,19 +941,19 @@ ggr       89 233   4.000 M2
 sgr       89 233   0.557 E2
 egr       89 233  10.238 E2
 ggr       89 233   3.314 E2
-#
-# Fission parameters
-#
-fisbar    89 233  13.64660  1
+##
+## Fission parameters
+##
+fisbar    89 233 -23.80505  1
 fishw     89 233   0.24000  1
 Rtransmom   89 233   0.60000  1
 Rclass2mom   89 233   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 232Ac
-#
-# Level density
-#
+##
+## Parameters for 232Ac
+##
+## Level density
+##
 a         89 232  31.69631
 gammald   89 232   0.07470
 pair      89 232   0.00000
@@ -981,9 +981,9 @@ gp        89 232   5.93333
 gn        89 232   9.53333
 gnadjust   89 232   1.00000
 gpadjust   89 232   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    89 232   0.03000
 gamgamadjust    89 232   1.00000
 sgr       89 232   1.067 M1
@@ -998,19 +998,19 @@ ggr       89 232   4.000 M2
 sgr       89 232   0.556 E2
 egr       89 232  10.253 E2
 ggr       89 232   3.326 E2
-#
-# Fission parameters
-#
-fisbar    89 232  13.64910  1
+##
+## Fission parameters
+##
+fisbar    89 232 -23.80942  1
 fishw     89 232   0.24000  1
 Rtransmom   89 232   0.60000  1
 Rclass2mom   89 232   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 232Ra
-#
-# Level density
-#
+##
+## Parameters for 232Ra
+##
+## Level density
+##
 a         88 232  32.49403
 gammald   88 232   0.07470
 pair      88 232   1.57568
@@ -1038,9 +1038,9 @@ gp        88 232   5.86667
 gn        88 232   9.60000
 gnadjust   88 232   1.00000
 gpadjust   88 232   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    88 232   0.03000
 gamgamadjust    88 232   1.00000
 sgr       88 232   1.063 M1
@@ -1055,19 +1055,19 @@ ggr       88 232   4.000 M2
 sgr       88 232   0.544 E2
 egr       88 232  10.253 E2
 ggr       88 232   3.326 E2
-#
-# Fission parameters
-#
-fisbar    88 232  13.53902  1
+##
+## Fission parameters
+##
+fisbar    88 232 -23.61739  1
 fishw     88 232   0.24000  1
 Rtransmom   88 232   0.60000  1
 Rclass2mom   88 232   1.00000  1
 #---------------------------------------------
-#
-# Parameters for 231Ra
-#
-# Level density
-#
+##
+## Parameters for 231Ra
+##
+## Level density
+##
 a         88 231  32.55307
 gammald   88 231   0.07481
 pair      88 231   0.78954
@@ -1095,9 +1095,9 @@ gp        88 231   5.86667
 gn        88 231   9.53333
 gnadjust   88 231   1.00000
 gpadjust   88 231   1.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gamgam    88 231   0.03000
 gamgamadjust    88 231   1.00000
 sgr       88 231   1.057 M1
@@ -1112,19 +1112,19 @@ ggr       88 231   4.000 M2
 sgr       88 231   0.544 E2
 egr       88 231  10.268 E2
 ggr       88 231   3.338 E2
-#
-# Fission parameters
-#
-fisbar    88 231  13.54237  1
+##
+## Fission parameters
+##
+fisbar    88 231 -23.62324  1
 fishw     88 231   0.24000  1
 Rtransmom   88 231   0.60000  1
 Rclass2mom   88 231   1.00000  1
 #---------------------------------------------
-#
-# General parameters
-#
-# Level density
-#
+##
+## General parameters
+##
+## Level density
+##
 alphald        0.06660
 betald         0.25800
 gammashell1    0.45900
@@ -1137,14 +1137,14 @@ cfermi         5.00000
 Ufermibf      45.00000
 cfermibf       5.00000
 Kph           15.00000
-#
-# Gamma-ray
-#
+##
+## Gamma-ray
+##
 gnorm         21.05812
 xscaptherm   2.68000E+03
-#
-# Pre-equilibrium
-#
+##
+## Pre-equilibrium
+##
 M2constant     1.00000
 M2limit        1.00000
 M2shift        1.00000
@@ -1154,21 +1154,13 @@ Rpinu          1.00000
 Rnupi          1.00000
 Rgamma         2.00000
 Esurf         12.10659
-Cstrip     n   1.00000
-Cknock     n   1.00000
-Cstrip     p   1.00000
-Cknock     p   1.00000
 Cstrip     d   1.00000
-Cknock     d   1.00000
 Cstrip     t   1.00000
-Cknock     t   1.00000
-Cstrip     h   1.00000
-Cknock     h   1.00000
 Cstrip     a   1.00000
 Cknock     a   1.00000
-#
-# Optical model
-#
+##
+## Optical model
+##
 v1adjust   n   1.00000
 v2adjust   n   1.00000
 v3adjust   n   1.00000
@@ -1289,7 +1281,7 @@ vso2adjust a   1.00000
 wso1adjust a   1.00000
 wso2adjust a   1.00000
 rcadjust   a   1.00000
-#
-# Resonance parameters
-#  Z   A     S0        R      xs(therm)    D0         a         P        Sn
+##
+## Resonance parameters
+## Z   A     S0        R      xs(therm)    D0         a         P        Sn
 #  92 238 3.557E-01 4.565E+00 2.680E+03 5.616E+01 2.994E+01 7.762E-01 4.806E+00
