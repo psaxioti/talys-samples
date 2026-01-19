@@ -1,7 +1,7 @@
 
-    TALYS-1.0      (Version: December 21, 2007)
+    TALYS-1.2       (Version: December 21, 2009)
 
- Copyright (C) 2007  A.J. Koning, S. Hilaire and M.C. Duijvestijn
+ Copyright (C) 2009  A.J. Koning, S. Hilaire and M.C. Duijvestijn
                          NRG          CEA              NRG
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
@@ -75,9 +75,11 @@
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
  anglesrec           1     nanglerec    number of recoil angles
- maxenrec           20     maxenrec     number of recoil energies
+ maxenrec           16     maxenrec     number of recoil energies
  channels            n     flagchannels flag for exclusive channels calculation
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
+ micro               n     flagmicro    flag for completely microscopic Talys calculation
+ best                n     flagbest     flag to use best set of adjusted parameters
  relativistic        y     flagrel      flag for relativistic kinematics
  recoil              n     flagrecoil   flag for calculation of recoils
  labddx              n     flaglabddx   flag for calculation of DDX in LAB system
@@ -86,7 +88,7 @@
  reaction            y     flagreaction flag for calculation of nuclear reactions
  astro               n     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             n     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
- massmodel           3     massmodel    model for theoretical nuclear mass
+ massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
  #
  # Optical model
@@ -95,18 +97,23 @@
  dispersion          n     flagdisp     flag for dispersive optical model
  jlmomp              n     flagjlm      flag for using semi-microscopic JLM OMP
  optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
+ omponly             n     flagomponly  flag to execute ONLY an optical model calculation
  autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
  spherical           n     flagspher    flag to force spherical optical model
+ coulomb             y     flagcoulomb  flag for Coulomb excitation calculation with ECIS
  statepot            n     flagstate    flag for optical model potential for each excited state
  maxband             0     maxband      highest vibrational band added to rotational model
  maxrot              2     maxrot       number of included excited rotational levels
  sysreaction               sysreaction  particles with reaction cross section from systematics
- rotational   n p          rotational   particles with possible rotational optical model
+ rotational   n            rotational   particles with possible rotational optical model
  core               -1     core         even-even core for weakcoupling (-1 or 1)
  ecissave            n     flagecissave flag for saving ECIS input and output files
  eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
  inccalc             y     flaginccalc  flag for new ECIS calculation for incident channel
+ endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
+ jlmmode             0     jlmmode      option for JLM imaginary potential normalization
+ alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler)
  #
  # Compound nucleus
  #
@@ -120,14 +127,16 @@
  #
  gammax              2     gammax       number of l-values for gamma multipolarity
  strength            1     strength     model for E1 gamma-ray strength function
- electronconv        n     flagelectron flag for application of electron conversion coefficient
+ strengthM1          2     strengthM1   model for M1 gamma-ray strength function
+ electronconv        y     flagelectron flag for application of electron conversion coefficient
  #
  # Pre-equilibrium
  #
  preequilibrium      n     flagpreeq    flag for pre-equilibrium calculation
  preeqmode           2     preeqmode    designator for pre-equilibrium model
  multipreeq         20.000 emulpre      on-set incident energy for multiple preequilibrium
- mpreeqmode          1     mpreeqmode   designator for multiple pre-equilibrium model
+ mpreeqmode          2     mpreeqmode   designator for multiple pre-equilibrium model
+ phmodel             1     phmodel      particle-hole state density model
  pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
  preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
  giantresonance      y     flaggiant    flag for collective contribution from giant resonances
@@ -154,7 +163,8 @@
  fission             n     flagfission  flag for fission
  fismodel            1     fismodel     fission model
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
- class2              n     flagclass2   flag for class2 states in fission
+ hbstate             y     flaghbstate  flag for head band states in fission
+ class2              y     flagclass2   flag for class2 states in fission
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  #
@@ -171,12 +181,13 @@
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
+ outurr              n     flagurr      flag for output of unresolved resonance parameters
  outgamma            n     flaggamma    flag for output of gamma-ray information
  outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
  outfission          n     flagfisout   flag for output of fission information
  outdiscrete         n     flagdisc     flag for output of discrete state cross sections
  outspectra          n     flagspec     flag for output of double-differential cross sections
- adddiscrete         y     flagadd      flag for addition of discrete states to spectra
+ addiscrete          y     flagadd      flag for addition of discrete states to spectra
  addelastic          y     flagaddel    flag for addition of elastic peak to spectra
  outangle            y     flagang      flag for output of angular distributions
  outlegendre         n     flaglegendre flag for output of Legendre coefficients
@@ -212,9 +223,10 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins:  5
 
  ########### REACTION SUMMARY FOR E= 11.00000 ###########
 
@@ -1514,9 +1526,10 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins:  5
 
  ########### REACTION SUMMARY FOR E= 13.70000 ###########
 
@@ -2816,9 +2829,10 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins:  5
 
  ########### REACTION SUMMARY FOR E= 20.00000 ###########
 
@@ -4118,9 +4132,10 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins:  5
 
  ########### REACTION SUMMARY FOR E= 22.00000 ###########
 
@@ -5420,9 +5435,10 @@
 
  Energy dependent input flags
 
- Width fluctuations (flagwidth)      : n
- Preequilibrium (flagpreeq)          : n
- Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)            : n
+ Preequilibrium (flagpreeq)                : n
+ Multiple preequilibrium (flagmulpre)      : n
+ Number of continuum excitation energy bins:  5
 
  ########### REACTION SUMMARY FOR E= 25.70000 ###########
 
@@ -6725,6 +6741,6 @@
 
  4. Residual production cross sections
 
- Execution time:  0 hours  0 minutes  4.89 seconds 
+ Execution time:  0 hours  0 minutes  3.72 seconds 
 
  The TALYS team congratulates you with this successful calculation.
