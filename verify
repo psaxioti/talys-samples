@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# This script runs TALYS for each sample case 
+# present in the new-directories and determines
+# the numerical differences with the results of
+# the org-directory
+#
+files=`find . -name input | grep new`
+#
+homedir=`pwd`
+for  f  in  ${files}
+do
+   dir=`dirname ${f}`
+   cd ${dir}
+   pwd
+   talys < input > output
+   diff -bitw output ../org/output > outputdiff
+   cd $homedir
+done

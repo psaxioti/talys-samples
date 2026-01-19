@@ -1,0 +1,4 @@
+#!/bin/csh -f
+xmgr -p nngam.par -xydy gam2614.exp -xy ../org/gam082208L01L00.tot &
+xmgr -p n2ngam1.par -xydy n2ngam569.exp -xy ../org/gam082207L01L00.tot &
+xmgr -p n2ngam2.par -xydy n2ngam897.exp -xy ../org/gam082207L02L00.tot & 

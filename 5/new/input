@@ -1,0 +1,59 @@
+#
+# General
+#
+projectile n                                                                    
+element pu                                                                      
+mass 239                                                                        
+energy energies                                                                 
+#
+# Models and output
+#
+ejectiles g n                                                                   
+optmod 94 239 z094a239n.omp n                                                   
+class2 y                                                                        
+ldmodel 1                                                                       
+fismodel 1                                                                      
+maxrot 4                                                                        
+bins 30                                                                         
+partable y                                                                      
+outfission y                                                                   
+filefission y                                                                   
+#
+# Parameters
+#
+fisbar   94 240        5.86598  1       
+fishw    94 240        0.75442  1       
+fisbar   94 240        5.79983  2       
+fishw    94 240        0.64346  2       
+a        94 240       30.85535          
+gammald  94 240        0.08051          
+pair     94 240        1.44454          
+deltaW   94 240        1.92382  0       
+Ntop     94 240      23  0              
+krotconstant   94 240    1.65051  0     
+deltaW   94 240        2.13515  1       
+Ntop     94 240      31  1              
+krotconstant   94 240    0.83718  1     
+deltaW   94 240        0.98397  2       
+Ntop     94 240      16  2              
+krotconstant   94 240    1.77575  2     
+class2width   94 240    0.18575  1      
+rtransmom   94 240     0.42452  1       
+rclass2mom   94 240    1.00692  1       
+rtransmom   94 240     1.29815  2       
+rclass2mom   94 240    2.28954  2       
+fisbar   94 239        5.63731  1       
+fishw    94 239        0.69663  1       
+fisbar   94 239        5.77552  2       
+fishw    94 239        0.60689  2       
+a        94 238       28.15777          
+m2constant             1.20344          
+a        94 239       27.97096          
+fisbar   94 238        6.15134  1       
+fishw    94 238        1.01618  1       
+fisbar   94 238        5.53253  2       
+fishw    94 238        0.78091  2       
+ufermi                40.31846          
+cfermi                11.96158          
+ufermibf              42.42088          
+cfermibf              24.29564          

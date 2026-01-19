@@ -1,0 +1,4239 @@
+
+     TALYS-0.64 (Version: December 5, 2004)
+
+ Copyright (C) 2004  A.J. Koning, S. Hilaire and M.C. Duijvestijn
+                         NRG          CEA              NRG
+
+ Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
+
+########## USER INPUT ##########
+
+USER INPUT FILE
+
+#                                                                               
+# general                                                                       
+#                                                                               
+projectile n                                                                    
+element ge                                                                      
+mass 74                                                                         
+energy energies                                                                 
+#                                                                               
+# output                                                                        
+#                                                                               
+outexcitation n                                                                 
+outdiscrete y                                                                   
+filediscrete 1                                                                  
+
+USER INPUT FILE + DEFAULTS
+
+Keyword           Value   Variable     Explanation
+
+#
+# Four main keywords
+#
+projectile          n     ptype0       type of incident particle
+element            Ge     Starget      symbol of target nucleus
+mass               74     mass         mass number of target nucleus
+energy energies           energyfile   file with incident energies
+#
+# Basic physical and numerical parameters
+#
+ejectiles  g n p d t h a  outtype      outgoing particles
+maxz               10     maxZ         maximal number of protons away from the initial compound nucleus
+maxn               25     maxN         maximal number of neutrons away from the initial compound nucleus
+bins               40     nbins        number of continuum excitation energy bins
+segment             1     segment      number of segments to divide emission energy grid
+maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
+maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
+maxlevelsbin g     10     nlevbin      maximum number of included discrete levels for gamma    channel
+maxlevelsbin n     20     nlevbin      maximum number of included discrete levels for neutron  channel
+maxlevelsbin p     10     nlevbin      maximum number of included discrete levels for proton   channel
+maxlevelsbin d      5     nlevbin      maximum number of included discrete levels for deuteron channel
+maxlevelsbin t      5     nlevbin      maximum number of included discrete levels for triton   channel
+maxlevelsbin h      5     nlevbin      maximum number of included discrete levels for helium-3 channel
+maxlevelsbin a     10     nlevbin      maximum number of included discrete levels for alpha    channel
+ltarget             0     ltarget      excited level of target
+isomer           1.00E+00 isomer       definition of isomer in seconds
+transpower          5     transpower   power for transmission coefficient limit
+transeps         1.00E-08 transeps     limit for transmission coefficient
+xseps            1.00E-07 xseps        limit for cross sections
+popeps           1.00E-03 popeps       limit for population cross section per nucleus
+Rfiseps          1.00E-03 Rfiseps      ratio for limit for fission cross section per nucleus
+elow             3.00E-03 elow         minimal incident energy for nuclear model calculations
+angles             90     nangle       number of angles
+anglescont         18     nanglecont   number of angles for continuum
+anglesrec           1     nanglerec    number of recoil angles
+maxenrec           25     maxenrec     number of recoil energies
+channels            n     flagchannels flag for exclusive channels calculation
+maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
+relativistic        y     flagrel      flag for relativistic kinematics
+recoil              n     flagrecoil   flag for calculation of recoils
+labddx              n     flaglabddx   flag for calculation of DDX in LAB system
+recoilaverage       n     flagrecoilav flag for average velocity in recoil calculation
+channelenergy       n     flagEchannel flag for channel energy for emission spectrum
+#
+# Optical model
+#
+localomp            y     flaglocalomp flag for local (y) or global (n) optical model
+optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
+autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
+spherical           n     flagspher    flag to force spherical optical model
+statepot            n     flagstate    flag for optical model potential for each excited state
+maxband             0     maxband      highest vibrational band added to rotational model
+maxrot              2     maxrot       number of included excited rotational levels
+sysreaction  d t h a      sysreaction  particles with reaction cross section from systematics
+rotational   n p          rotational   particles with possible rotational optical model
+core               -1     core         even-even core for weakcoupling (-1 or 1)
+ecissave            n     flagecissave flag for saving ECIS input and output files
+eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
+inccalc             y     flaginccalc  flag for new ECIS calculation for incident channel
+#
+# Compound nucleus
+#
+widthfluc           y     flagwidth    flag for width fluctuation calculation
+widthmode           1     wmode        designator for width fluctuation model
+compound            y     flagcomp     flag for compound nucleus model
+fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
+eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
+#
+# Gamma emission
+#
+gammax              2     gammax       number of l-values for gamma multipolarity
+strength            1     strength     strength function of Kopecky-Uhl (1) or Brink-Axel (2)
+electronconv        n     flagelectron flag for application of electron conversion coefficient
+#
+# Pre-equilibrium
+#
+preequilibrium      2.711 epreeq       on-set incident energy for preequilibrium calculation
+preeqmode           2     preeqmode    designator for pre-equilibrium model
+multipreeq          n     flagmulpre   flag for multiple pre-equilibrium calculation
+mpreeqmode          1     mpreeqmode   designator for multiple pre-equilibrium model
+preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
+giantresonance      y     flaggiant    flag for collective contribution from giant resonances
+preeqsurface        y     flagsurface  flag for surface effects in exciton model
+preeqcomplex        y     flagpecomp   flag for Kalbach complex particle emission model
+twocomponent        y     flag2comp    flag for two-component pre-equilibrium model
+ecisdwba            y     flagecisdwba flag for new ECIS calculation for DWBA for MSD
+onestep             n     flagonestep  flag for continuum one-step direct only
+#
+# Level densities
+#
+ldmodel             1     ldmodel      level density model
+asys                y     flagasys     flag for all level density parameters a from systematics
+colldamp            n     flagcolldamp flag for damping of collective effects
+ flag for coupling of single particle level density parameter g to level density parameter a
+gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+#
+# Fission
+#
+fission             n     flagfission  flag for fission
+fismodel            1     fismodel     fission model
+fismodelalt         4     fismodelalt  alternative fission model for default barriers
+class2              n     flagclass2   flag for class2 states in fission
+massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
+ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
+#
+# Output
+#
+outmain             y     flagmain     flag for main output
+outbasic            n     flagbasic    flag for output of basic information and results
+outpopulation       n     flagpop      flag for output of population
+outcheck            n     flagcheck    flag for output of numerical checks
+outlevels           n     flaglevels   flag for output of discrete level information
+outdensity          n     flagdensity  flag for output of level densities
+outomp              n     flagoutomp   flag for output of optical model parameters
+outdirect           n     flagdirect   flag for output of direct reaction results
+outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
+outecis             n     flagoutecis  flag for output of ECIS results
+outgamma            n     flaggamma    flag for output of gamma-ray information
+outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
+outfission          n     flagfisout   flag for output of fission information
+outdiscrete         y     flagdisc     flag for output of discrete state cross sections
+outspectra          n     flagspec     flag for output of double-differential cross sections
+adddiscrete         y     flagadd      flag for addition of discrete states to spectra
+addelastic          y     flagaddel    flag for addition of elastic peak to spectra
+outangle            n     flagang      flag for output of angular distributions
+outlegendre         n     flaglegendre flag for output of Legendre coefficients
+ddxmode             0     ddxmode      mode for double-differential cross sections
+outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
+outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
+outexcitation       n     flagexc      flag for output of excitation functions
+endf                n     flagendf     flag for information for ENDF-6 file
+partable            n     flagpartable flag for output of model parameters on separate file
+
+########## BASIC REACTION PARAMETERS ##########
+
+Projectile           : neutron     Mass in a.m.u.      :   1.008665
+Target               :  74Ge       Mass in a.m.u.      :  73.921178
+
+Included channels:
+                    gamma   
+                    neutron 
+                    proton  
+                    deuteron
+                    triton  
+                    helium-3
+                    alpha   
+
+ 29 incident energies (LAB):
+
+     0.100
+     0.200
+     0.400
+     0.600
+     0.700
+     0.800
+     0.900
+     1.000
+     1.100
+     1.200
+     1.300
+     1.400
+     1.500
+     1.600
+     1.800
+     2.000
+     2.500
+     3.000
+     3.500
+     4.000
+     4.500
+     5.000
+     5.500
+     6.000
+     6.500
+     7.000
+     8.000
+     9.000
+    10.000
+
+Q-values for binary reactions:
+
+Q(n,g):  6.50522
+Q(n,n):  0.00000
+Q(n,p): -4.58565
+Q(n,d): -8.78257
+Q(n,t):-11.71399
+Q(n,h):-12.15348
+Q(n,a): -0.45393
+
+########## RESULTS FOR E=  0.10000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.100 ###########
+
+Center-of-mass energy:   0.099
+
+1. Total (binary) cross sections
+
+Total           = 8.34100E+03
+  Shape elastic   = 4.74780E+03
+  Reaction        = 3.59310E+03
+    Compound elastic= 3.56313E+03
+    Non-elastic     = 2.99675E+01
+      Direct          = 0.00000E+00
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 2.99675E+01
+    Total elastic   = 8.31093E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.94799E+01
+neutron = 0.00000E+00
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 6.60997E+01    Multiplicity= 1.83963E-02
+neutron = 7.97403E-05    Multiplicity= 2.21926E-08
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 2.94798E+01    0    2.10978E+01  0.71567
+                                2    8.38201E+00  0.28433   4.77000E+01 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 2.94798E+01
+
+Total residual production cross section:    29.47980
+Non-elastic cross section              :    29.96753
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   6.60387    0.5-     0.00000     0.79379     0.79379          
+ 1   0.06189   6.54198    2.5+     0.00000     0.59345     0.59345          
+ 2   0.13969   6.46418    3.5+     0.00000     0.19208     0.19208          
+ 3   0.19222   6.41165    2.5+     0.00000     0.52579     0.52579          
+ 4   0.19989   6.40398    4.5+     0.00000     0.00537     0.00537          
+ 5   0.25310   6.35077    1.5-     0.00000     0.73510     0.73510          
+ 6   0.31679   6.28708    2.5-     0.00000     0.46845     0.46845          
+ 7   0.45705   6.14682    2.5-     0.00000     0.41223     0.41223          
+ 8   0.57467   6.02920    1.5-     0.00000     0.54840     0.54840          
+ 9   0.58445   6.01942    2.5+     0.00000     0.36765     0.36765          
+10   0.65100   5.95287    3.5-     0.00000     0.08364     0.08364          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     4.72596     4.72596
+Continuum   (n,g)  :               0.00000    24.75393    24.75393
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000    29.47989    29.47989
+
+
+########## RESULTS FOR E=  0.20000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.200 ###########
+
+Center-of-mass energy:   0.197
+
+1. Total (binary) cross sections
+
+Total           = 7.65610E+03
+  Shape elastic   = 4.23500E+03
+  Reaction        = 3.42120E+03
+    Compound elastic= 3.39813E+03
+    Non-elastic     = 2.30718E+01
+      Direct          = 0.00000E+00
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 2.30718E+01
+    Total elastic   = 7.63313E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.25330E+01
+neutron = 0.00000E+00
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 5.07357E+01    Multiplicity= 1.48298E-02
+neutron = 1.17803E-03    Multiplicity= 3.44334E-07
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 2.25318E+01    0    1.54516E+01  0.68577
+                                2    7.08021E+00  0.31423   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.17803E-03    0    1.17803E-03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 2.25318E+01
+  74 1.17803E-03
+
+Total residual production cross section:    22.53302
+Non-elastic cross section              :    23.07178
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   6.70253    0.5-     0.00000     0.48230     0.48230          
+ 1   0.06189   6.64064    2.5+     0.00000     0.48979     0.48979          
+ 2   0.13969   6.56284    3.5+     0.00000     0.20721     0.20721          
+ 3   0.19222   6.51031    2.5+     0.00000     0.43157     0.43157          
+ 4   0.19989   6.50264    4.5+     0.00000     0.02128     0.02128          
+ 5   0.25310   6.44943    1.5-     0.00000     0.49319     0.49319          
+ 6   0.31679   6.38574    2.5-     0.00000     0.36472     0.36472          
+ 7   0.45705   6.24548    2.5-     0.00000     0.32129     0.32129          
+ 8   0.57467   6.12786    1.5-     0.00000     0.36895     0.36895          
+ 9   0.58445   6.11808    2.5+     0.00000     0.30102     0.30102          
+10   0.65100   6.05153    3.5-     0.00000     0.10315     0.10315          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     3.58446     3.58446
+Continuum   (n,g)  :               0.00000    18.94856    18.94856
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000    22.53301    22.53302
+
+
+########## RESULTS FOR E=  0.40000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.400 ###########
+
+Center-of-mass energy:   0.395
+
+1. Total (binary) cross sections
+
+Total           = 6.67680E+03
+  Shape elastic   = 3.55830E+03
+  Reaction        = 3.11860E+03
+    Compound elastic= 3.09856E+03
+    Non-elastic     = 2.00352E+01
+      Direct          = 0.00000E+00
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 2.00352E+01
+    Total elastic   = 6.65687E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.96102E+01
+neutron = 0.00000E+00
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 4.46558E+01    Multiplicity= 1.43192E-02
+neutron = 6.12386E-03    Multiplicity= 1.96366E-06
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.96041E+01    0    1.26712E+01  0.64635
+                                2    6.93295E+00  0.35365   4.77000E+01 sec. 
+  32  74 ( 74Ge) 6.12386E-03    0    6.12386E-03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.96041E+01
+  74 6.12386E-03
+
+Total residual production cross section:    19.61023
+Non-elastic cross section              :    20.03516
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   6.89983    0.5-     0.00000     0.30959     0.30959          
+ 1   0.06189   6.83794    2.5+     0.00000     0.42080     0.42080          
+ 2   0.13969   6.76014    3.5+     0.00000     0.22278     0.22278          
+ 3   0.19222   6.70761    2.5+     0.00000     0.37116     0.37116          
+ 4   0.19989   6.69994    4.5+     0.00000     0.05177     0.05177          
+ 5   0.25310   6.64673    1.5-     0.00000     0.36566     0.36566          
+ 6   0.31679   6.58304    2.5-     0.00000     0.33227     0.33227          
+ 7   0.45705   6.44278    2.5-     0.00000     0.29096     0.29096          
+ 8   0.57467   6.32516    1.5-     0.00000     0.27062     0.27062          
+ 9   0.58445   6.31538    2.5+     0.00000     0.25650     0.25650          
+10   0.65100   6.24883    3.5-     0.00000     0.13572     0.13572          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     3.02783     3.02783
+Continuum   (n,g)  :               0.00000    16.58241    16.58241
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000    19.61023    19.61023
+
+
+########## RESULTS FOR E=  0.60000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.600 ###########
+
+Center-of-mass energy:   0.592
+
+1. Total (binary) cross sections
+
+Total           = 5.88870E+03
+  Shape elastic   = 3.06610E+03
+  Reaction        = 2.82270E+03
+    Compound elastic= 2.80283E+03
+    Non-elastic     = 1.98726E+01
+      Direct          = 0.00000E+00
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.98726E+01
+    Total elastic   = 5.86893E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.95468E+01
+neutron = 0.00000E+00
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 4.50407E+01    Multiplicity= 1.59566E-02
+neutron = 2.19270E-02    Multiplicity= 7.76811E-06
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.95249E+01    0    1.21939E+01  0.62453
+                                2    7.33097E+00  0.37547   4.77000E+01 sec. 
+  32  74 ( 74Ge) 2.19270E-02    0    2.19270E-02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.95249E+01
+  74 2.19270E-02
+
+Total residual production cross section:    19.54683
+Non-elastic cross section              :    19.87256
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.09714    0.5-     0.00000     0.25408     0.25408          
+ 1   0.06189   7.03525    2.5+     0.00000     0.40348     0.40348          
+ 2   0.13969   6.95745    3.5+     0.00000     0.23807     0.23807          
+ 3   0.19222   6.90492    2.5+     0.00000     0.35637     0.35637          
+ 4   0.19989   6.89725    4.5+     0.00000     0.07239     0.07239          
+ 5   0.25310   6.84404    1.5-     0.00000     0.32888     0.32888          
+ 6   0.31679   6.78035    2.5-     0.00000     0.33136     0.33136          
+ 7   0.45705   6.64009    2.5-     0.00000     0.28946     0.28946          
+ 8   0.57467   6.52247    1.5-     0.00000     0.24074     0.24074          
+ 9   0.58445   6.51269    2.5+     0.00000     0.24367     0.24367          
+10   0.65100   6.44614    3.5-     0.00000     0.15341     0.15341          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     2.91189     2.91189
+Continuum   (n,g)  :               0.00000    16.63494    16.63494
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000    19.54683    19.54683
+
+
+########## RESULTS FOR E=  0.70000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.700 ###########
+
+Center-of-mass energy:   0.691
+
+1. Total (binary) cross sections
+
+Total           = 5.53330E+03
+  Shape elastic   = 2.84670E+03
+  Reaction        = 2.68670E+03
+    Compound elastic= 2.21563E+03
+    Non-elastic     = 4.71072E+02
+      Direct          = 2.84220E+01
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 4.42650E+02
+    Total elastic   = 5.06233E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 8.74226E+00
+neutron = 4.62182E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 2.03364E+01    Multiplicity= 7.56929E-03
+neutron = 4.62204E+02    Multiplicity= 1.72034E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 8.72026E+00    0    5.72116E+00  0.65608
+                                2    2.99910E+00  0.34392   4.77000E+01 sec. 
+  32  74 ( 74Ge) 4.62204E+02    0    4.62204E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 8.72026E+00
+  74 4.62204E+02
+
+Total residual production cross section:   470.92459
+Non-elastic cross section              :   471.07153
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.19579    0.5-     0.00000     0.16230     0.16230          
+ 1   0.06189   7.13390    2.5+     0.00000     0.15814     0.15814          
+ 2   0.13969   7.05610    3.5+     0.00000     0.08225     0.08225          
+ 3   0.19222   7.00357    2.5+     0.00000     0.13979     0.13979          
+ 4   0.19989   6.99590    4.5+     0.00000     0.03180     0.03180          
+ 5   0.25310   6.94269    1.5-     0.00000     0.16161     0.16161          
+ 6   0.31679   6.87900    2.5-     0.00000     0.12940     0.12940          
+ 7   0.45705   6.73874    2.5-     0.00000     0.11312     0.11312          
+ 8   0.57467   6.62112    1.5-     0.00000     0.11855     0.11855          
+ 9   0.58445   6.61134    2.5+     0.00000     0.09583     0.09583          
+10   0.65100   6.54479    3.5-     0.00000     0.04713     0.04713          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     1.23991     1.23991
+Continuum   (n,g)  :               0.00000     7.50235     7.50235
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     8.74226     8.74226
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.09472    2.0+    28.42200   433.76035   462.18234    Direct
+ 2   1.20420  -0.51363    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.77319    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.79224    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -1.00657    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -1.03438    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -1.22243    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -1.47443    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -1.47469    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.50736    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.53720    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.60943    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.79943    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.84574    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.87876    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.90975    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.97905    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -2.00311    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -2.00635    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -2.02043    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:              28.42200   433.76035   462.18234
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:              28.42200   433.76035   462.18231
+
+(n,gn) cross section:     0.02200
+
+########## RESULTS FOR E=  0.80000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.800 ###########
+
+Center-of-mass energy:   0.789
+
+1. Total (binary) cross sections
+
+Total           = 5.22290E+03
+  Shape elastic   = 2.64530E+03
+  Reaction        = 2.57760E+03
+    Compound elastic= 1.89126E+03
+    Non-elastic     = 6.86339E+02
+      Direct          = 5.80900E+01
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 6.28249E+02
+    Total elastic   = 4.53656E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 7.30399E+00
+neutron = 6.78924E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.71000E+01    Multiplicity= 6.63407E-03
+neutron = 6.78948E+02    Multiplicity= 2.63403E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 7.27944E+00    0    4.78824E+00  0.65778
+                                2    2.49120E+00  0.34222   4.77000E+01 sec. 
+  32  74 ( 74Ge) 6.78948E+02    0    6.78948E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 7.27944E+00
+  74 6.78948E+02
+
+Total residual production cross section:   686.22791
+Non-elastic cross section              :   686.33923
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.29445    0.5-     0.00000     0.13387     0.13387          
+ 1   0.06189   7.23256    2.5+     0.00000     0.12821     0.12821          
+ 2   0.13969   7.15476    3.5+     0.00000     0.06743     0.06743          
+ 3   0.19222   7.10223    2.5+     0.00000     0.11343     0.11343          
+ 4   0.19989   7.09456    4.5+     0.00000     0.02554     0.02554          
+ 5   0.25310   7.04135    1.5-     0.00000     0.13298     0.13298          
+ 6   0.31679   6.97766    2.5-     0.00000     0.10200     0.10200          
+ 7   0.45705   6.83740    2.5-     0.00000     0.08922     0.08922          
+ 8   0.57467   6.71978    1.5-     0.00000     0.09770     0.09770          
+ 9   0.58445   6.71000    2.5+     0.00000     0.07799     0.07799          
+10   0.65100   6.64345    3.5-     0.00000     0.03752     0.03752          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     1.00588     1.00588
+Continuum   (n,g)  :               0.00000     6.29811     6.29811
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     7.30399     7.30399
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.19338    2.0+    58.09000   620.83392   678.92395    Direct
+ 2   1.20420  -0.41497    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.67453    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.69358    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.90791    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.93572    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -1.12377    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -1.37577    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -1.37603    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.40870    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.43854    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.51077    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.70077    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.74708    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.78010    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.81109    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.88039    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.90445    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.90769    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.92177    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:              58.09000   620.83392   678.92395
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:              58.09000   620.83392   678.92395
+
+(n,gn) cross section:     0.02455
+
+########## RESULTS FOR E=  0.90000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  0.900 ###########
+
+Center-of-mass energy:   0.888
+
+1. Total (binary) cross sections
+
+Total           = 4.95770E+03
+  Shape elastic   = 2.46590E+03
+  Reaction        = 2.49180E+03
+    Compound elastic= 1.67532E+03
+    Non-elastic     = 8.16479E+02
+      Direct          = 8.10570E+01
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 7.35422E+02
+    Total elastic   = 4.14122E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 6.68244E+00
+neutron = 8.09725E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.57160E+01    Multiplicity= 6.30709E-03
+neutron = 8.09763E+02    Multiplicity= 3.24971E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 6.64433E+00    0    4.34807E+00  0.65440
+                                2    2.29626E+00  0.34560   4.77000E+01 sec. 
+  32  74 ( 74Ge) 8.09763E+02    0    8.09763E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 6.64433E+00
+  74 8.09763E+02
+
+Total residual production cross section:   816.40704
+Non-elastic cross section              :   816.47937
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.39310    0.5-     0.00000     0.11815     0.11815          
+ 1   0.06189   7.33121    2.5+     0.00000     0.11451     0.11451          
+ 2   0.13969   7.25341    3.5+     0.00000     0.06178     0.06178          
+ 3   0.19222   7.20088    2.5+     0.00000     0.10139     0.10139          
+ 4   0.19989   7.19321    4.5+     0.00000     0.02392     0.02392          
+ 5   0.25310   7.14000    1.5-     0.00000     0.11820     0.11820          
+ 6   0.31679   7.07631    2.5-     0.00000     0.09009     0.09009          
+ 7   0.45705   6.93605    2.5-     0.00000     0.07886     0.07886          
+ 8   0.57467   6.81843    1.5-     0.00000     0.08700     0.08700          
+ 9   0.58445   6.80865    2.5+     0.00000     0.06988     0.06988          
+10   0.65100   6.74210    3.5-     0.00000     0.03429     0.03429          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.89807     0.89807
+Continuum   (n,g)  :               0.00000     5.78437     5.78437
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     6.68244     6.68244
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.29203    2.0+    81.05700   728.66760   809.72461    Direct
+ 2   1.20420  -0.31632    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.57588    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.59493    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.80926    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.83707    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -1.02512    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -1.27712    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -1.27738    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.31005    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.33989    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.41212    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.60212    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.64843    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.68145    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.71244    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.78174    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.80580    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.80904    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.82312    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:              81.05700   728.66760   809.72461
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:              81.05700   728.66760   809.72461
+
+(n,gn) cross section:     0.03811
+
+########## RESULTS FOR E=  1.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.000 ###########
+
+Center-of-mass energy:   0.987
+
+1. Total (binary) cross sections
+
+Total           = 4.72970E+03
+  Shape elastic   = 2.30760E+03
+  Reaction        = 2.42210E+03
+    Compound elastic= 1.52085E+03
+    Non-elastic     = 9.01249E+02
+      Direct          = 9.74010E+01
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 8.03848E+02
+    Total elastic   = 3.82845E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 6.41661E+00
+neutron = 8.94776E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.51712E+01    Multiplicity= 6.26365E-03
+neutron = 8.94821E+02    Multiplicity= 3.69440E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 6.37137E+00    0    4.13604E+00  0.64916
+                                2    2.23532E+00  0.35084   4.77000E+01 sec. 
+  32  74 ( 74Ge) 8.94821E+02    0    8.94821E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 6.37137E+00
+  74 8.94821E+02
+
+Total residual production cross section:   901.19214
+Non-elastic cross section              :   901.24890
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.49175    0.5-     0.00000     0.10858     0.10858          
+ 1   0.06189   7.42986    2.5+     0.00000     0.10749     0.10749          
+ 2   0.13969   7.35206    3.5+     0.00000     0.05972     0.05972          
+ 3   0.19222   7.29953    2.5+     0.00000     0.09526     0.09526          
+ 4   0.19989   7.29186    4.5+     0.00000     0.02415     0.02415          
+ 5   0.25310   7.23865    1.5-     0.00000     0.10962     0.10962          
+ 6   0.31679   7.17496    2.5-     0.00000     0.08446     0.08446          
+ 7   0.45705   7.03470    2.5-     0.00000     0.07399     0.07399          
+ 8   0.57467   6.91708    1.5-     0.00000     0.08085     0.08085          
+ 9   0.58445   6.90730    2.5+     0.00000     0.06580     0.06580          
+10   0.65100   6.84075    3.5-     0.00000     0.03344     0.03344          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.84337     0.84337
+Continuum   (n,g)  :               0.00000     5.57325     5.57325
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     6.41662     6.41661
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.39068    2.0+    97.40100   797.37451   894.77551    Direct
+ 2   1.20420  -0.21767    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.47723    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.49628    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.71061    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.73842    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.92647    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -1.17847    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -1.17873    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.21140    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.24124    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.31347    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.50347    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.54978    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.58280    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.61379    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.68309    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.70715    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.71039    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.72447    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:              97.40100   797.37451   894.77551
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:              97.40100   797.37451   894.77551
+
+(n,gn) cross section:     0.04525
+
+########## RESULTS FOR E=  1.10000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.100 ###########
+
+Center-of-mass energy:   1.085
+
+1. Total (binary) cross sections
+
+Total           = 4.53190E+03
+  Shape elastic   = 2.16820E+03
+  Reaction        = 2.36370E+03
+    Compound elastic= 1.40394E+03
+    Non-elastic     = 9.59762E+02
+      Direct          = 1.08570E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 8.51192E+02
+    Total elastic   = 3.57214E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 6.35632E+00
+neutron = 9.53394E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.50764E+01    Multiplicity= 6.37832E-03
+neutron = 9.53461E+02    Multiplicity= 4.03377E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 6.28907E+00    0    4.04178E+00  0.64267
+                                2    2.24730E+00  0.35733   4.77000E+01 sec. 
+  32  74 ( 74Ge) 9.53461E+02    0    9.53461E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 6.28907E+00
+  74 9.53461E+02
+
+Total residual production cross section:   959.75037
+Non-elastic cross section              :   959.76208
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.59040    0.5-     0.00000     0.10256     0.10256          
+ 1   0.06189   7.52851    2.5+     0.00000     0.10411     0.10411          
+ 2   0.13969   7.45071    3.5+     0.00000     0.05959     0.05959          
+ 3   0.19222   7.39818    2.5+     0.00000     0.09234     0.09234          
+ 4   0.19989   7.39051    4.5+     0.00000     0.02533     0.02533          
+ 5   0.25310   7.33730    1.5-     0.00000     0.10458     0.10458          
+ 6   0.31679   7.27361    2.5-     0.00000     0.08220     0.08220          
+ 7   0.45705   7.13335    2.5-     0.00000     0.07208     0.07208          
+ 8   0.57467   7.01573    1.5-     0.00000     0.07729     0.07729          
+ 9   0.58445   7.00595    2.5+     0.00000     0.06394     0.06394          
+10   0.65100   6.93940    3.5-     0.00000     0.03386     0.03386          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.81789     0.81789
+Continuum   (n,g)  :               0.00000     5.53843     5.53843
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     6.35632     6.35632
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.48933    2.0+   108.57000   844.82404   953.39404    Direct
+ 2   1.20420  -0.11902    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.37858    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.39763    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.61196    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.63977    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.82782    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -1.07982    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -1.08008    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.11275    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.14259    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.21482    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.40482    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.45113    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.48415    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.51514    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.58444    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.60850    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.61174    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.62582    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             108.57000   844.82404   953.39404
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             108.57000   844.82404   953.39404
+
+(n,gn) cross section:     0.06725
+
+########## RESULTS FOR E=  1.20000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.200 ###########
+
+Center-of-mass energy:   1.184
+
+1. Total (binary) cross sections
+
+Total           = 4.35910E+03
+  Shape elastic   = 2.04520E+03
+  Reaction        = 2.31390E+03
+    Compound elastic= 1.31171E+03
+    Non-elastic     = 1.00219E+03
+      Direct          = 1.15890E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 8.86297E+02
+    Total elastic   = 3.35691E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 6.43654E+00
+neutron = 9.95739E+02
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.53355E+01    Multiplicity= 6.62757E-03
+neutron = 9.95821E+02    Multiplicity= 4.30365E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 6.35497E+00    0    4.04140E+00  0.63594
+                                2    2.31357E+00  0.36406   4.77000E+01 sec. 
+  32  74 ( 74Ge) 9.95820E+02    0    9.95820E+02  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 6.35497E+00
+  74 9.95820E+02
+
+Total residual production cross section:  1002.17548
+Non-elastic cross section              :  1002.18738
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.68906    0.5-     0.00000     0.09878     0.09878          
+ 1   0.06189   7.62717    2.5+     0.00000     0.10301     0.10301          
+ 2   0.13969   7.54937    3.5+     0.00000     0.06067     0.06067          
+ 3   0.19222   7.49684    2.5+     0.00000     0.09145     0.09145          
+ 4   0.19989   7.48917    4.5+     0.00000     0.02713     0.02713          
+ 5   0.25310   7.43596    1.5-     0.00000     0.10180     0.10180          
+ 6   0.31679   7.37227    2.5-     0.00000     0.08212     0.08212          
+ 7   0.45705   7.23201    2.5-     0.00000     0.07207     0.07207          
+ 8   0.57467   7.11439    1.5-     0.00000     0.07539     0.07539          
+ 9   0.58445   7.10461    2.5+     0.00000     0.06347     0.06347          
+10   0.65100   7.03806    3.5-     0.00000     0.03513     0.03513          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.81102     0.81102
+Continuum   (n,g)  :               0.00000     5.62552     5.62552
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     6.43654     6.43654
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.58799    2.0+   115.89000   879.84888   995.73889    Direct
+ 2   1.20420  -0.02036    2.0+     0.00000     0.00000     0.00000          
+ 3   1.46376  -0.27992    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.29897    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.51330    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.54111    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.72916    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.98116    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.98142    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -1.01409    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -1.04393    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.11616    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.30616    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.35247    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.38549    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.41648    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.48578    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.50984    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.51308    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.52716    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             115.89000   879.84888   995.73889
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             115.89000   879.84888   995.73901
+
+(n,gn) cross section:     0.08157
+
+########## RESULTS FOR E=  1.30000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.300 ###########
+
+Center-of-mass energy:   1.282
+
+1. Total (binary) cross sections
+
+Total           = 4.20530E+03
+  Shape elastic   = 1.93550E+03
+  Reaction        = 2.26980E+03
+    Compound elastic= 1.15446E+03
+    Non-elastic     = 1.11534E+03
+      Direct          = 1.24735E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 9.90602E+02
+    Total elastic   = 3.08996E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 5.70380E+00
+neutron = 1.10961E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.36337E+01    Multiplicity= 6.00657E-03
+neutron = 1.10971E+03    Multiplicity= 4.88904E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 5.60332E+00    0    3.55213E+00  0.63393
+                                2    2.05118E+00  0.36607   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.10971E+03    0    1.10971E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 5.60332E+00
+  74 1.10971E+03
+
+Total residual production cross section:  1115.31738
+Non-elastic cross section              :  1115.33643
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.78771    0.5-     0.00000     0.08855     0.08855          
+ 1   0.06189   7.72582    2.5+     0.00000     0.08546     0.08546          
+ 2   0.13969   7.64802    3.5+     0.00000     0.05142     0.05142          
+ 3   0.19222   7.59549    2.5+     0.00000     0.07594     0.07594          
+ 4   0.19989   7.58782    4.5+     0.00000     0.02567     0.02567          
+ 5   0.25310   7.53461    1.5-     0.00000     0.08924     0.08924          
+ 6   0.31679   7.47092    2.5-     0.00000     0.06980     0.06980          
+ 7   0.45705   7.33066    2.5-     0.00000     0.06131     0.06131          
+ 8   0.57467   7.21304    1.5-     0.00000     0.06624     0.06624          
+ 9   0.58445   7.20326    2.5+     0.00000     0.05284     0.05284          
+10   0.65100   7.13671    3.5-     0.00000     0.03011     0.03011          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.69658     0.69658
+Continuum   (n,g)  :               0.00000     5.00722     5.00722
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     5.70380     5.70380
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.68664    2.0+   119.24000   817.34485   936.58484    Direct
+ 2   1.20420   0.07829    2.0+     5.49460   167.53413   173.02873    Direct
+ 3   1.46376  -0.18127    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.20032    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.41465    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.44246    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.63051    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.88251    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.88277    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.91544    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.94528    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -1.01751    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.20751    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.25382    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.28684    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.31783    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.38713    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.41119    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.41443    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.42851    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             124.73460   984.87897  1109.61353
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             124.73460   984.87897  1109.61353
+
+(n,gn) cross section:     0.10048
+
+########## RESULTS FOR E=  1.40000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.400 ###########
+
+Center-of-mass energy:   1.381
+
+1. Total (binary) cross sections
+
+Total           = 4.07500E+03
+  Shape elastic   = 1.84030E+03
+  Reaction        = 2.23470E+03
+    Compound elastic= 1.03806E+03
+    Non-elastic     = 1.19664E+03
+      Direct          = 1.32682E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.06396E+03
+    Total elastic   = 2.87836E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 5.44492E+00
+neutron = 1.19115E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.30668E+01    Multiplicity= 5.84721E-03
+neutron = 1.19126E+03    Multiplicity= 5.33076E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 5.33147E+00    0    3.36122E+00  0.63045
+                                2    1.97025E+00  0.36955   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.19126E+03    0    1.19126E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 5.33147E+00
+  74 1.19126E+03
+
+Total residual production cross section:  1196.59534
+Non-elastic cross section              :  1196.64160
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.88636    0.5-     0.00000     0.08147     0.08147          
+ 1   0.06189   7.82447    2.5+     0.00000     0.07940     0.07940          
+ 2   0.13969   7.74667    3.5+     0.00000     0.04825     0.04825          
+ 3   0.19222   7.69414    2.5+     0.00000     0.07063     0.07063          
+ 4   0.19989   7.68647    4.5+     0.00000     0.02462     0.02462          
+ 5   0.25310   7.63326    1.5-     0.00000     0.08266     0.08266          
+ 6   0.31679   7.56957    2.5-     0.00000     0.06456     0.06456          
+ 7   0.45705   7.42931    2.5-     0.00000     0.05676     0.05676          
+ 8   0.57467   7.31169    1.5-     0.00000     0.06149     0.06149          
+ 9   0.58445   7.30191    2.5+     0.00000     0.04928     0.04928          
+10   0.65100   7.23536    3.5-     0.00000     0.02839     0.02839          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.64750     0.64750
+Continuum   (n,g)  :               0.00000     4.79742     4.79742
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     5.44492     5.44492
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.78529    2.0+   120.58000   776.33472   896.91473    Direct
+ 2   1.20420   0.17694    2.0+    12.10200   282.13376   294.23575    Direct
+ 3   1.46376  -0.08262    4.0+     0.00000     0.00000     0.00000          
+ 4   1.48281  -0.10167    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.31600    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.34381    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.53186    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.78386    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.78412    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.81679    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.84663    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -0.91886    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.10886    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.15517    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.18819    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.21918    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.28848    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.31254    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.31578    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.32986    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             132.68201  1058.46851  1191.15051
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             132.68201  1058.46851  1191.15039
+
+(n,gn) cross section:     0.11345
+
+########## RESULTS FOR E=  1.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.500 ###########
+
+Center-of-mass energy:   1.480
+
+1. Total (binary) cross sections
+
+Total           = 3.96440E+03
+  Shape elastic   = 1.75420E+03
+  Reaction        = 2.21010E+03
+    Compound elastic= 9.50742E+02
+    Non-elastic     = 1.25936E+03
+      Direct          = 1.38523E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.12084E+03
+    Total elastic   = 2.70494E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 5.15291E+00
+neutron = 1.25423E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.23361E+01    Multiplicity= 5.58167E-03
+neutron = 1.25437E+03    Multiplicity= 5.67561E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 5.01702E+00    0    3.21679E+00  0.64118
+                                2    1.80023E+00  0.35882   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.25437E+03    0    1.25437E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 5.01702E+00
+  74 1.25437E+03
+
+Total residual production cross section:  1259.38330
+Non-elastic cross section              :  1259.35840
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.98501    0.5-     0.00000     0.07668     0.07668          
+ 1   0.06189   7.92312    2.5+     0.00000     0.07537     0.07537          
+ 2   0.13969   7.84532    3.5+     0.00000     0.04198     0.04198          
+ 3   0.19222   7.79279    2.5+     0.00000     0.06713     0.06713          
+ 4   0.19989   7.78512    4.5+     0.00000     0.01789     0.01789          
+ 5   0.25310   7.73191    1.5-     0.00000     0.07888     0.07888          
+ 6   0.31679   7.66822    2.5-     0.00000     0.06177     0.06177          
+ 7   0.45705   7.52796    2.5-     0.00000     0.05436     0.05436          
+ 8   0.57467   7.41034    1.5-     0.00000     0.05882     0.05882          
+ 9   0.58445   7.40056    2.5+     0.00000     0.04697     0.04697          
+10   0.65100   7.33401    3.5-     0.00000     0.02580     0.02580          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.60566     0.60566
+Continuum   (n,g)  :               0.00000     4.54725     4.54725
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     5.15291     5.15291
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.88394    2.0+   120.36000   749.96643   870.32642    Direct
+ 2   1.20420   0.27559    2.0+    18.11200   360.20367   378.31567    Direct
+ 3   1.46376   0.01603    4.0+     0.05072     5.53752     5.58824    Direct
+ 4   1.48281  -0.00302    0.0+     0.00000     0.00000     0.00000          
+ 5   1.69714  -0.21735    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.24516    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.43321    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.68521    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.68547    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.71814    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.74798    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -0.82021    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -1.01021    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -1.05652    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -1.08954    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.12053    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.18983    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.21389    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.21713    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.23121    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             138.52272  1115.70764  1254.23035
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             138.52272  1115.70764  1254.23022
+
+(n,gn) cross section:     0.13589
+
+########## RESULTS FOR E=  1.60000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.600 ###########
+
+Center-of-mass energy:   1.578
+
+1. Total (binary) cross sections
+
+Total           = 3.87300E+03
+  Shape elastic   = 1.69130E+03
+  Reaction        = 2.18170E+03
+    Compound elastic= 8.26388E+02
+    Non-elastic     = 1.35531E+03
+      Direct          = 1.50802E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.20451E+03
+    Total elastic   = 2.51769E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 4.72306E+00
+neutron = 1.35059E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.12733E+01    Multiplicity= 5.16720E-03
+neutron = 1.35075E+03    Multiplicity= 6.19126E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 4.56939E+00    0    2.95536E+00  0.64677
+                                2    1.61404E+00  0.35323   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.35075E+03    0    1.35075E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 4.56939E+00
+  74 1.35075E+03
+
+Total residual production cross section:  1355.31592
+Non-elastic cross section              :  1355.31189
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   8.08366    0.5-     0.00000     0.06851     0.06851          
+ 1   0.06189   8.02177    2.5+     0.00000     0.07034     0.07034          
+ 2   0.13969   7.94397    3.5+     0.00000     0.03744     0.03744          
+ 3   0.19222   7.89144    2.5+     0.00000     0.06274     0.06274          
+ 4   0.19989   7.88377    4.5+     0.00000     0.01334     0.01334          
+ 5   0.25310   7.83056    1.5-     0.00000     0.07196     0.07196          
+ 6   0.31679   7.76687    2.5-     0.00000     0.05673     0.05673          
+ 7   0.45705   7.62661    2.5-     0.00000     0.04999     0.04999          
+ 8   0.57467   7.50899    1.5-     0.00000     0.05379     0.05379          
+ 9   0.58445   7.49921    2.5+     0.00000     0.04403     0.04403          
+10   0.65100   7.43266    3.5-     0.00000     0.02265     0.02265          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.55152     0.55152
+Continuum   (n,g)  :               0.00000     4.17154     4.17154
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     4.72306     4.72306
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   0.98259    2.0+   119.68000   699.96704   819.64703    Direct
+ 2   1.20420   0.37424    2.0+    22.44000   397.39984   419.83984    Direct
+ 3   1.46376   0.11468    4.0+     0.76733    35.96785    36.73518    Direct
+ 4   1.48281   0.09563    0.0+     7.91420    66.45655    74.37075    Direct
+ 5   1.69714  -0.11870    3.0+     0.00000     0.00000     0.00000          
+ 6   1.72495  -0.14651    0.0+     0.00000     0.00000     0.00000          
+ 7   1.91300  -0.33456    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.58656    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.58682    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.61949    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.64933    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -0.72156    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -0.91156    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -0.95787    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -0.99089    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -1.02188    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -1.09118    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -1.11524    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -1.11848    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -1.13256    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             150.80153  1199.79138  1350.59290
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             150.80153  1199.79138  1350.59290
+
+(n,gn) cross section:     0.15367
+
+########## RESULTS FOR E=  1.80000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  1.800 ###########
+
+Center-of-mass energy:   1.776
+
+1. Total (binary) cross sections
+
+Total           = 3.74330E+03
+  Shape elastic   = 1.58780E+03
+  Reaction        = 2.15550E+03
+    Compound elastic= 6.60070E+02
+    Non-elastic     = 1.49543E+03
+      Direct          = 1.69129E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.32630E+03
+    Total elastic   = 2.24787E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 4.36856E+00
+neutron = 1.49100E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.04022E+01    Multiplicity= 4.82590E-03
+neutron = 1.49121E+03    Multiplicity= 6.91815E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 4.16629E+00    0    2.68730E+00  0.64501
+                                2    1.47900E+00  0.35499   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.49121E+03    0    1.49121E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 4.16629E+00
+  74 1.49121E+03
+
+Total residual production cross section:  1495.37341
+Non-elastic cross section              :  1495.42981
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   8.28097    0.5-     0.00000     0.05923     0.05923          
+ 1   0.06189   8.21908    2.5+     0.00000     0.06313     0.06313          
+ 2   0.13969   8.14128    3.5+     0.00000     0.03277     0.03277          
+ 3   0.19222   8.08875    2.5+     0.00000     0.05648     0.05648          
+ 4   0.19989   8.08108    4.5+     0.00000     0.01126     0.01126          
+ 5   0.25310   8.02787    1.5-     0.00000     0.06341     0.06341          
+ 6   0.31679   7.96418    2.5-     0.00000     0.05114     0.05114          
+ 7   0.45705   7.82392    2.5-     0.00000     0.04517     0.04517          
+ 8   0.57467   7.70630    1.5-     0.00000     0.04767     0.04767          
+ 9   0.58445   7.69652    2.5+     0.00000     0.03992     0.03992          
+10   0.65100   7.62997    3.5-     0.00000     0.02033     0.02033          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.49052     0.49052
+Continuum   (n,g)  :               0.00000     3.87804     3.87804
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     4.36856     4.36856
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   1.17990    2.0+   118.19000   617.29279   735.48279    Direct
+ 2   1.20420   0.57155    2.0+    28.41100   419.55325   447.96426    Direct
+ 3   1.46376   0.31199    4.0+     3.12530    81.79045    84.91575    Direct
+ 4   1.48281   0.29294    0.0+    19.40300   115.09525   134.49825    Direct
+ 5   1.69714   0.07861    3.0+     0.00000    58.75571    58.75571          
+ 6   1.72495   0.05080    0.0+     0.00000    29.38805    29.38805          
+ 7   1.91300  -0.13725    0.0+     0.00000     0.00000     0.00000          
+ 8   2.16500  -0.38925    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.38951    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.42218    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.45202    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -0.52425    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -0.71425    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -0.76056    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -0.79358    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -0.82457    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -0.89387    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -0.91793    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -0.92117    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -0.93525    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             169.12930  1321.87549  1491.00476
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             169.12930  1321.87549  1491.00464
+
+(n,gn) cross section:     0.20226
+
+########## RESULTS FOR E=  2.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  2.000 ###########
+
+Center-of-mass energy:   1.973
+
+1. Total (binary) cross sections
+
+Total           = 3.66250E+03
+  Shape elastic   = 1.51640E+03
+  Reaction        = 2.14610E+03
+    Compound elastic= 5.36966E+02
+    Non-elastic     = 1.60913E+03
+      Direct          = 1.82309E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.42682E+03
+    Total elastic   = 2.05337E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 4.25698E+00
+neutron = 1.60490E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 1.01204E+01    Multiplicity= 4.71573E-03
+neutron = 1.60516E+03    Multiplicity= 7.47942E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 4.00107E+00    0    2.54742E+00  0.63669
+                                2    1.45365E+00  0.36331   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.60516E+03    0    1.60516E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 4.00107E+00
+  74 1.60516E+03
+
+Total residual production cross section:  1609.15918
+Non-elastic cross section              :  1609.13403
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   8.47827    0.5-     0.00000     0.05157     0.05157          
+ 1   0.06189   8.41638    2.5+     0.00000     0.05951     0.05951          
+ 2   0.13969   8.33858    3.5+     0.00000     0.03158     0.03158          
+ 3   0.19222   8.28605    2.5+     0.00000     0.05345     0.05345          
+ 4   0.19989   8.27838    4.5+     0.00000     0.01117     0.01117          
+ 5   0.25310   8.22517    1.5-     0.00000     0.05721     0.05721          
+ 6   0.31679   8.16148    2.5-     0.00000     0.04838     0.04838          
+ 7   0.45705   8.02122    2.5-     0.00000     0.04287     0.04287          
+ 8   0.57467   7.90360    1.5-     0.00000     0.04329     0.04329          
+ 9   0.58445   7.89382    2.5+     0.00000     0.03811     0.03811          
+10   0.65100   7.82727    3.5-     0.00000     0.02011     0.02011          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.45725     0.45725
+Continuum   (n,g)  :               0.00000     3.79973     3.79973
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     4.25698     4.25698
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   1.37720    2.0+   118.05000   546.33606   664.38605    Direct
+ 2   1.20420   0.76885    2.0+    31.90300   400.43921   432.34219    Direct
+ 3   1.46376   0.50929    4.0+     5.83750   110.72545   116.56295    Direct
+ 4   1.48281   0.49024    0.0+    26.51900   122.30893   148.82793    Direct
+ 5   1.69714   0.27591    3.0+     0.00000   143.92201   143.92201          
+ 6   1.72495   0.24810    0.0+     0.00000    75.18040    75.18040          
+ 7   1.91300   0.06005    0.0+     0.00000    23.68069    23.68069          
+ 8   2.16500  -0.19195    1.0-     0.00000     0.00000     0.00000          
+ 9   2.16526  -0.19221    4.0+     0.00000     0.00000     0.00000          
+10   2.19793  -0.22488    2.0+     0.00000     0.00000     0.00000          
+11   2.22777  -0.25472    0.0+     0.00000     0.00000     0.00000          
+12   2.30000  -0.32695    5.0-     0.00000     0.00000     0.00000          
+13   2.49000  -0.51695    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -0.56326    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -0.59628    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -0.62727    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -0.69657    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -0.72063    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -0.72387    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -0.73795    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             182.30949  1422.59277  1604.90222
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             182.30949  1422.59277  1604.90198
+
+(n,gn) cross section:     0.25592
+
+########## RESULTS FOR E=  2.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : n
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  2.500 ###########
+
+Center-of-mass energy:   2.466
+
+1. Total (binary) cross sections
+
+Total           = 3.60030E+03
+  Shape elastic   = 1.43740E+03
+  Reaction        = 2.16300E+03
+    Compound elastic= 3.35516E+02
+    Non-elastic     = 1.82748E+03
+      Direct          = 2.01462E+02
+      Pre-equilibrium = 0.00000E+00
+      Compound non-el = 1.62602E+03
+    Total elastic   = 1.77292E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 4.20500E+00
+neutron = 1.82324E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 0.00000E+00
+
+3. Total particle production cross sections
+
+gamma   = 9.88928E+00    Multiplicity= 4.57202E-03
+neutron = 1.82367E+03    Multiplicity= 8.43122E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 0.00000E+00    Multiplicity= 0.00000E+00
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 3.77230E+00    0    2.29908E+00  0.60946
+                                2    1.47322E+00  0.39054   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.82367E+03    0    1.82367E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 3.77230E+00
+  74 1.82367E+03
+
+Total residual production cross section:  1827.44446
+Non-elastic cross section              :  1827.48413
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   8.97152    0.5-     0.00000     0.03571     0.03571          
+ 1   0.06189   8.90963    2.5+     0.00000     0.05072     0.05072          
+ 2   0.13969   8.83183    3.5+     0.00000     0.03052     0.03052          
+ 3   0.19222   8.77930    2.5+     0.00000     0.04609     0.04609          
+ 4   0.19989   8.77163    4.5+     0.00000     0.01265     0.01265          
+ 5   0.25310   8.71842    1.5-     0.00000     0.04458     0.04458          
+ 6   0.31679   8.65473    2.5-     0.00000     0.04425     0.04425          
+ 7   0.45705   8.51447    2.5-     0.00000     0.03969     0.03969          
+ 8   0.57467   8.39685    1.5-     0.00000     0.03458     0.03458          
+ 9   0.58445   8.38707    2.5+     0.00000     0.03383     0.03383          
+10   0.65100   8.32052    3.5-     0.00000     0.02193     0.02193          
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00000     0.39455     0.39455
+Continuum   (n,g)  :               0.00000     3.81045     3.81045
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00000     4.20500     4.20500
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   1.87045    2.0+   121.22000   393.54105   514.76105    Direct
+ 2   1.20420   1.26210    2.0+    36.25600   316.11771   352.37372    Direct
+ 3   1.46376   1.00254    4.0+    11.97500   139.04672   151.02173    Direct
+ 4   1.48281   0.98349    0.0+    31.53300    90.50023   122.03323    Direct
+ 5   1.69714   0.76916    3.0+     0.00000   202.91028   202.91028          
+ 6   1.72495   0.74135    0.0+     0.00000    78.34595    78.34595          
+ 7   1.91300   0.55330    0.0+     0.00000    66.93622    66.93622          
+ 8   2.16500   0.30130    1.0-     0.08077   110.83740   110.91817    Direct
+ 9   2.16526   0.30104    4.0+     0.06563    60.51543    60.58106    Direct
+10   2.19793   0.26837    2.0+     0.32885   122.34701   122.67586    Direct
+11   2.22777   0.23853    0.0+     0.00000    35.94902    35.94902          
+12   2.30000   0.16630    5.0-     0.00264     4.73053     4.73316    Direct
+13   2.49000  -0.02370    3.0-     0.00000     0.00000     0.00000          
+14   2.53631  -0.07001    3.0-     0.00000     0.00000     0.00000          
+15   2.56933  -0.10303    4.0+     0.00000     0.00000     0.00000          
+16   2.60032  -0.13402    1.0+     0.00000     0.00000     0.00000          
+17   2.66962  -0.20332    4.0+     0.00000     0.00000     0.00000          
+18   2.69368  -0.22738    4.0+     0.00000     0.00000     0.00000          
+19   2.69692  -0.23062    2.0+     0.00000     0.00000     0.00000          
+20   2.71100  -0.24470    4.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             201.46190  1621.77747  1823.23938
+Continuum Inelastic:               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total     Inelastic:             201.46190  1621.77747  1823.23950
+
+(n,gn) cross section:     0.43270
+
+########## RESULTS FOR E=  3.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  3.000 ###########
+
+Center-of-mass energy:   2.960
+
+1. Total (binary) cross sections
+
+Total           = 3.64970E+03
+  Shape elastic   = 1.45760E+03
+  Reaction        = 2.19210E+03
+    Compound elastic= 1.98568E+02
+    Non-elastic     = 1.99353E+03
+      Direct          = 2.20150E+02
+      Pre-equilibrium = 4.06354E+00
+      Giant resonance = 1.44634E-01
+      Compound non-el = 1.76917E+03
+    Total elastic   = 1.65617E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 3.63592E+00
+neutron = 1.98986E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 5.12840E-16
+
+3. Total particle production cross sections
+
+gamma   = 1.57386E+02    Multiplicity= 7.17969E-02
+neutron = 1.99044E+03    Multiplicity= 9.08006E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 5.12840E-16    Multiplicity= 2.33949E-19
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 3.05797E+00    0    1.84189E+00  0.60232
+                                2    1.21608E+00  0.39768   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.99044E+03    0    1.99044E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 3.05797E+00
+  74 1.99044E+03
+
+Total residual production cross section:  1993.49817
+Non-elastic cross section              :  1993.53174
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   9.46477    0.5-     0.00014     0.02431     0.02445    Preeq 
+ 1   0.06189   9.40288    2.5+     0.00031     0.03500     0.03530    Preeq 
+ 2   0.13969   9.32508    3.5+     0.00029     0.02178     0.02207    Preeq 
+ 3   0.19222   9.27255    2.5+     0.00013     0.03222     0.03236    Preeq 
+ 4   0.19989   9.26488    4.5+     0.00013     0.01001     0.01014    Preeq 
+ 5   0.25310   9.21167    1.5-     0.00026     0.03158     0.03184    Preeq 
+ 6   0.31679   9.14798    2.5-     0.00045     0.03164     0.03209    Preeq 
+ 7   0.45705   9.00772    2.5-     0.00048     0.02896     0.02944    Preeq 
+ 8   0.57467   8.89010    1.5-     0.00019     0.02546     0.02566    Preeq 
+ 9   0.58445   8.88032    2.5+     0.00012     0.02457     0.02468    Preeq 
+10   0.65100   8.81377    3.5-     0.00010     0.01679     0.01689    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00260     0.28231     0.28491
+Continuum   (n,g)  :               0.00559     3.34542     3.35101
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.00819     3.62773     3.63592
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   2.36370    2.0+   126.08000   245.69478   371.77478    Direct
+ 2   1.20420   1.75535    2.0+    38.07500   200.95689   239.03189    Direct
+ 3   1.46376   1.49579    4.0+    16.62200   103.45938   120.08138    Direct
+ 4   1.48281   1.47674    0.0+    30.25400    59.22838    89.48238    Direct
+ 5   1.69714   1.26241    3.0+     0.00000   144.68880   144.68880          
+ 6   1.72495   1.23460    0.0+     0.00000    53.76639    53.76639          
+ 7   1.91300   1.04655    0.0+     0.00000    49.20313    49.20313          
+ 8   2.16500   0.79455    1.0-     0.14362   106.06085   106.20448    Direct
+ 9   2.16526   0.79429    4.0+     0.23776    68.61701    68.85477    Direct
+10   2.19793   0.76162    2.0+     0.84788   128.85167   129.69955    Direct
+11   2.22777   0.73178    0.0+     0.00000    41.16146    41.16146          
+12   2.30000   0.65955    5.0-     0.03421    14.88525    14.91946    Direct
+13   2.49000   0.46955    3.0-     0.14307    73.73930    73.88237    Direct
+14   2.53631   0.42324    3.0-     7.13220    68.42786    75.56007    Direct
+15   2.56933   0.39022    4.0+     0.10438    43.27897    43.38335    Direct
+16   2.60032   0.35923    1.0+     0.00000    63.09937    63.09937          
+17   2.66962   0.28993    4.0+     0.07128    33.35748    33.42876    Direct
+18   2.69368   0.26587    4.0+     0.06357    30.69456    30.75813    Direct
+19   2.69692   0.26263    2.0+     0.28008    62.81742    63.09750    Direct
+20   2.71100   0.24855    4.0+     0.05810    28.73913    28.79723    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             220.14714  1620.72803  1840.87512
+Continuum Inelastic:               4.20258   144.78430   148.98688
+                                 ---------   ---------   ---------
+Total     Inelastic:             224.34972  1765.51233  1989.86206
+
+(n,gn) cross section:     0.57795
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   2.50563    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.15770   2.34793    4.5+     0.00000     0.00000     0.00000    Preeq 
+ 2   0.28630   2.21933    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 3   0.46500   2.04063    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   2.01583    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   1.83093    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   1.65263    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   1.45363    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   1.42763    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   1.24433    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   1.08463    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00000     0.00000
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00000     0.00000
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  3.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  3.500 ###########
+
+Center-of-mass energy:   3.453
+
+1. Total (binary) cross sections
+
+Total           = 3.73330E+03
+  Shape elastic   = 1.53800E+03
+  Reaction        = 2.19530E+03
+    Compound elastic= 1.10913E+02
+    Non-elastic     = 2.08439E+03
+      Direct          = 2.32212E+02
+      Pre-equilibrium = 2.30275E+01
+      Giant resonance = 7.79510E-01
+      Compound non-el = 1.82837E+03
+    Total elastic   = 1.64891E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 3.11176E+00
+neutron = 2.08121E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 7.16466E-13
+
+3. Total particle production cross sections
+
+gamma   = 6.87532E+02    Multiplicity= 3.13184E-01
+neutron = 2.08188E+03    Multiplicity= 9.48337E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 7.16466E-13    Multiplicity= 3.26363E-16
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 2.44081E+00    0    1.42431E+00  0.58354
+                                2    1.01650E+00  0.41646   4.77000E+01 sec. 
+  32  74 ( 74Ge) 2.08189E+03    0    2.08189E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 2.44081E+00
+  74 2.08189E+03
+
+Total residual production cross section:  2084.32593
+Non-elastic cross section              :  2084.38745
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   9.95802    0.5-     0.00018     0.01428     0.01446    Preeq 
+ 1   0.06189   9.89613    2.5+     0.00041     0.02336     0.02377    Preeq 
+ 2   0.13969   9.81833    3.5+     0.00038     0.01589     0.01627    Preeq 
+ 3   0.19222   9.76580    2.5+     0.00018     0.02169     0.02187    Preeq 
+ 4   0.19989   9.75813    4.5+     0.00018     0.00862     0.00880    Preeq 
+ 5   0.25310   9.70492    1.5-     0.00034     0.01967     0.02001    Preeq 
+ 6   0.31679   9.64123    2.5-     0.00060     0.02064     0.02123    Preeq 
+ 7   0.45705   9.50097    2.5-     0.00064     0.01936     0.02000    Preeq 
+ 8   0.57467   9.38335    1.5-     0.00026     0.01659     0.01685    Preeq 
+ 9   0.58445   9.37357    2.5+     0.00016     0.01710     0.01726    Preeq 
+10   0.65100   9.30702    3.5-     0.00014     0.01250     0.01264    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00346     0.18969     0.19315
+Continuum   (n,g)  :               0.00735     2.91126     2.91861
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.01081     3.10095     3.11176
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   2.85695    2.0+   129.52000   145.02278   274.54279    Direct
+ 2   1.20420   2.24860    2.0+    38.20300   120.58542   158.78842    Direct
+ 3   1.46376   1.98904    4.0+    20.37200    74.27689    94.64890    Direct
+ 4   1.48281   1.96999    0.0+    28.84300    34.07486    62.91786    Direct
+ 5   1.69714   1.75566    3.0+     0.00000    94.61739    94.61739          
+ 6   1.72495   1.72785    0.0+     0.00000    31.22481    31.22481          
+ 7   1.91300   1.53980    0.0+     0.00000    29.21898    29.21898          
+ 8   2.16500   1.28780    1.0-     0.18846    66.46965    66.65811    Direct
+ 9   2.16526   1.28754    4.0+     0.38828    52.77576    53.16404    Direct
+10   2.19793   1.25487    2.0+     1.11630    84.05587    85.17217    Direct
+11   2.22777   1.22503    0.0+     0.00000    25.70656    25.70656          
+12   2.30000   1.15280    5.0-     0.07482    18.55293    18.62775    Direct
+13   2.49000   0.96280    3.0-     0.22533    61.72140    61.94673    Direct
+14   2.53631   0.91649    3.0-    11.61500    59.79855    71.41354    Direct
+15   2.56933   0.88347    4.0+     0.26279    42.11885    42.38164    Direct
+16   2.60032   0.85248    1.0+     0.00000    51.73140    51.73140          
+17   2.66962   0.78318    4.0+     0.23161    39.63541    39.86702    Direct
+18   2.69368   0.75912    4.0+     0.22405    39.05082    39.27486    Direct
+19   2.69692   0.75588    2.0+     0.72555    64.71036    65.43591    Direct
+20   2.71100   0.74180    4.0+     0.21859    38.61922    38.83781    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             232.20879  1173.96777  1406.17651
+Continuum Inelastic:              23.79967   651.23761   675.03729
+                                 ---------   ---------   ---------
+Total     Inelastic:             256.00845  1825.20532  2081.21387
+
+(n,gn) cross section:     0.67095
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   2.99887    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.15770   2.84117    4.5+     0.00000     0.00000     0.00000    Preeq 
+ 2   0.28630   2.71257    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 3   0.46500   2.53387    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   2.50907    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   2.32417    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   2.14587    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   1.94687    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   1.92087    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   1.73757    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   1.57787    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00000     0.00000
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00000     0.00000
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  4.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  4.000 ###########
+
+Center-of-mass energy:   3.946
+
+1. Total (binary) cross sections
+
+Total           = 3.80960E+03
+  Shape elastic   = 1.64490E+03
+  Reaction        = 2.16470E+03
+    Compound elastic= 6.30662E+01
+    Non-elastic     = 2.10163E+03
+      Direct          = 2.38304E+02
+      Pre-equilibrium = 4.17239E+01
+      Giant resonance = 1.16125E+00
+      Compound non-el = 1.82045E+03
+    Total elastic   = 1.70797E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.80170E+00
+neutron = 2.09879E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 4.35866E-11
+
+3. Total particle production cross sections
+
+gamma   = 1.11528E+03    Multiplicity= 5.15214E-01
+neutron = 2.09957E+03    Multiplicity= 9.69913E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 4.35866E-11    Multiplicity= 2.01352E-14
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 2.02311E+00    0    1.13912E+00  0.56305
+                                2    8.83988E-01  0.43695   4.77000E+01 sec. 
+  32  74 ( 74Ge) 2.09957E+03    0    2.09957E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 2.02311E+00
+  74 2.09957E+03
+
+Total residual production cross section:  2101.59326
+Non-elastic cross section              :  2101.63379
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  10.45126    0.5-     0.00024     0.00852     0.00876    Preeq 
+ 1   0.06189  10.38937    2.5+     0.00054     0.01636     0.01690    Preeq 
+ 2   0.13969  10.31157    3.5+     0.00050     0.01197     0.01248    Preeq 
+ 3   0.19222  10.25904    2.5+     0.00023     0.01519     0.01542    Preeq 
+ 4   0.19989  10.25137    4.5+     0.00023     0.00733     0.00756    Preeq 
+ 5   0.25310  10.19816    1.5-     0.00045     0.01220     0.01265    Preeq 
+ 6   0.31679  10.13447    2.5-     0.00078     0.01305     0.01384    Preeq 
+ 7   0.45705   9.99421    2.5-     0.00084     0.01247     0.01331    Preeq 
+ 8   0.57467   9.87659    1.5-     0.00034     0.01062     0.01097    Preeq 
+ 9   0.58445   9.86681    2.5+     0.00021     0.01215     0.01236    Preeq 
+10   0.65100   9.80026    3.5-     0.00018     0.00890     0.00907    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00455     0.12877     0.13332
+Continuum   (n,g)  :               0.00962     2.65876     2.66838
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.01417     2.78753     2.80170
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   3.35019    2.0+   130.82001    87.10872   217.92873    Direct
+ 2   1.20420   2.74184    2.0+    36.99900    74.68173   111.68073    Direct
+ 3   1.46376   2.48228    4.0+    23.33200    53.26245    76.59445    Direct
+ 4   1.48281   2.46323    0.0+    28.28000    20.65432    48.93432    Direct
+ 5   1.69714   2.24890    3.0+     0.00000    63.03647    63.03647          
+ 6   1.72495   2.22109    0.0+     0.00000    18.90470    18.90470          
+ 7   1.91300   2.03304    0.0+     0.00000    17.59925    17.59925          
+ 8   2.16500   1.78104    1.0-     0.21545    40.00508    40.22053    Direct
+ 9   2.16526   1.78078    4.0+     0.51568    39.06133    39.57701    Direct
+10   2.19793   1.74811    2.0+     1.26250    53.39525    54.65775    Direct
+11   2.22777   1.71827    0.0+     0.00000    15.57646    15.57646          
+12   2.30000   1.64604    5.0-     0.10553    17.28364    17.38917    Direct
+13   2.49000   1.45604    3.0-     0.27137    44.08701    44.35838    Direct
+14   2.53631   1.40973    3.0-    14.13900    43.23263    57.37163    Direct
+15   2.56933   1.37671    4.0+     0.38045    32.37854    32.75900    Direct
+16   2.60032   1.34572    1.0+     0.00000    33.47297    33.47297          
+17   2.66962   1.27642    4.0+     0.35065    30.83195    31.18261    Direct
+18   2.69368   1.25236    4.0+     0.34364    30.47194    30.81557    Direct
+19   2.69692   1.24912    2.0+     0.94508    43.97719    44.92227    Direct
+20   2.71100   1.23504    4.0+     0.33863    30.21152    30.55015    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             238.29898   789.23315  1027.53210
+Continuum Inelastic:              42.87554  1028.38123  1071.25671
+                                 ---------   ---------   ---------
+Total     Inelastic:             281.17453  1817.61438  2098.79150
+
+(n,gn) cross section:     0.77859
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   3.49212    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.15770   3.33442    4.5+     0.00000     0.00000     0.00000    Preeq 
+ 2   0.28630   3.20582    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 3   0.46500   3.02712    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   3.00232    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   2.81742    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   2.63912    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   2.44012    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   2.41412    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   2.23082    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   2.07112    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00000     0.00000
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00000     0.00000
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  4.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  4.500 ###########
+
+Center-of-mass energy:   4.439
+
+1. Total (binary) cross sections
+
+Total           = 3.86650E+03
+  Shape elastic   = 1.75370E+03
+  Reaction        = 2.11280E+03
+    Compound elastic= 3.54494E+01
+    Non-elastic     = 2.07735E+03
+      Direct          = 2.40003E+02
+      Pre-equilibrium = 5.70512E+01
+      Giant resonance = 1.38090E+00
+      Compound non-el = 1.77892E+03
+    Total elastic   = 1.78915E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.56713E+00
+neutron = 2.07474E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 3.11065E-07
+
+3. Total particle production cross sections
+
+gamma   = 1.43160E+03    Multiplicity= 6.77584E-01
+neutron = 2.07561E+03    Multiplicity= 9.82396E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 3.11065E-07    Multiplicity= 1.47229E-10
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.70170E+00    0    9.29271E-01  0.54608
+                                2    7.72426E-01  0.45392   4.77000E+01 sec. 
+  32  74 ( 74Ge) 2.07561E+03    0    2.07561E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.70170E+00
+  74 2.07561E+03
+
+Total residual production cross section:  2077.30835
+Non-elastic cross section              :  2077.35059
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  10.94450    0.5-     0.00031     0.00538     0.00569    Preeq 
+ 1   0.06189  10.88261    2.5+     0.00070     0.01172     0.01242    Preeq 
+ 2   0.13969  10.80481    3.5+     0.00065     0.00899     0.00965    Preeq 
+ 3   0.19222  10.75228    2.5+     0.00030     0.01083     0.01113    Preeq 
+ 4   0.19989  10.74461    4.5+     0.00030     0.00593     0.00624    Preeq 
+ 5   0.25310  10.69140    1.5-     0.00058     0.00775     0.00833    Preeq 
+ 6   0.31679  10.62771    2.5-     0.00102     0.00811     0.00913    Preeq 
+ 7   0.45705  10.48745    2.5-     0.00110     0.00777     0.00887    Preeq 
+ 8   0.57467  10.36983    1.5-     0.00045     0.00676     0.00721    Preeq 
+ 9   0.58445  10.36005    2.5+     0.00027     0.00862     0.00889    Preeq 
+10   0.65100  10.29350    3.5-     0.00024     0.00599     0.00623    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00593     0.08785     0.09378
+Continuum   (n,g)  :               0.01255     2.46080     2.47335
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.01848     2.54865     2.56713
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   3.84343    2.0+   131.00999    51.58691   182.59691    Direct
+ 2   1.20420   3.23508    2.0+    34.97200    45.87995    80.85195    Direct
+ 3   1.46376   2.97552    4.0+    25.16200    36.39856    61.56056    Direct
+ 4   1.48281   2.95647    0.0+    27.82600    12.72355    40.54955    Direct
+ 5   1.69714   2.74214    3.0+     0.00000    41.32150    41.32150          
+ 6   1.72495   2.71433    0.0+     0.00000    11.77497    11.77497          
+ 7   1.91300   2.52628    0.0+     0.00000    11.02118    11.02118          
+ 8   2.16500   2.27428    1.0-     0.23460    24.30484    24.53944    Direct
+ 9   2.16526   2.27402    4.0+     0.63682    27.92641    28.56323    Direct
+10   2.19793   2.24135    2.0+     1.37740    34.16810    35.54550    Direct
+11   2.22777   2.21151    0.0+     0.00000     9.77871     9.77871          
+12   2.30000   2.13928    5.0-     0.12883    14.11185    14.24068    Direct
+13   2.49000   1.94928    3.0-     0.29638    29.21961    29.51599    Direct
+14   2.53631   1.90297    3.0-    15.49000    28.75053    44.24053    Direct
+15   2.56933   1.86995    4.0+     0.48070    23.42927    23.90997    Direct
+16   2.60032   1.83896    1.0+     0.00000    21.20803    21.20803          
+17   2.66962   1.76966    4.0+     0.44704    22.40968    22.85672    Direct
+18   2.69368   1.74560    4.0+     0.43926    22.17150    22.61076    Direct
+19   2.69692   1.74236    2.0+     1.06240    28.51655    29.57895    Direct
+20   2.71100   1.72828    4.0+     0.43372    22.00162    22.43534    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             239.99715   518.70331   758.70044
+Continuum Inelastic:              58.41957  1257.62146  1316.04102
+                                 ---------   ---------   ---------
+Total     Inelastic:             298.41672  1776.32471  2074.74121
+
+(n,gn) cross section:     0.86543
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   3.98536    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.15770   3.82766    4.5+     0.00000     0.00000     0.00000    Preeq 
+ 2   0.28630   3.69906    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 3   0.46500   3.52036    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   3.49556    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   3.31066    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   3.13236    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   2.93336    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   2.90736    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   2.72406    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   2.56436    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00000     0.00000
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00000     0.00000
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  5.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  5.000 ###########
+
+Center-of-mass energy:   4.933
+
+1. Total (binary) cross sections
+
+Total           = 3.90650E+03
+  Shape elastic   = 1.85140E+03
+  Reaction        = 2.05510E+03
+    Compound elastic= 1.97958E+01
+    Non-elastic     = 2.03530E+03
+      Direct          = 2.38913E+02
+      Pre-equilibrium = 6.91580E+01
+      Giant resonance = 1.56355E+00
+      Compound non-el = 1.72567E+03
+    Total elastic   = 1.87120E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.37846E+00
+neutron = 2.03292E+03
+proton  = 0.00000E+00
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 7.80208E-06
+
+3. Total particle production cross sections
+
+gamma   = 1.67897E+03    Multiplicity= 8.16979E-01
+neutron = 2.03386E+03    Multiplicity= 9.89662E-01
+proton  = 0.00000E+00    Multiplicity= 0.00000E+00
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 7.80208E-06    Multiplicity= 3.79645E-09
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.44270E+00    0    7.66165E-01  0.53106
+                                2    6.76536E-01  0.46894   4.77000E+01 sec. 
+  32  74 ( 74Ge) 2.03386E+03    0    2.03386E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.44270E+00
+  74 2.03386E+03
+
+Total residual production cross section:  2035.29773
+Non-elastic cross section              :  2035.30432
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  11.43774    0.5-     0.00040     0.00363     0.00403    Preeq 
+ 1   0.06189  11.37585    2.5+     0.00091     0.00859     0.00950    Preeq 
+ 2   0.13969  11.29805    3.5+     0.00085     0.00680     0.00765    Preeq 
+ 3   0.19222  11.24552    2.5+     0.00039     0.00789     0.00828    Preeq 
+ 4   0.19989  11.23785    4.5+     0.00040     0.00472     0.00511    Preeq 
+ 5   0.25310  11.18464    1.5-     0.00076     0.00515     0.00591    Preeq 
+ 6   0.31679  11.12095    2.5-     0.00133     0.00521     0.00654    Preeq 
+ 7   0.45705  10.98069    2.5-     0.00144     0.00494     0.00638    Preeq 
+ 8   0.57467  10.86307    1.5-     0.00059     0.00442     0.00501    Preeq 
+ 9   0.58445  10.85329    2.5+     0.00035     0.00618     0.00654    Preeq 
+10   0.65100  10.78674    3.5-     0.00031     0.00408     0.00439    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.00772     0.06161     0.06933
+Continuum   (n,g)  :               0.01629     2.29283     2.30912
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.02401     2.35444     2.37846
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   4.33667    2.0+   130.89999    30.14532   161.04532    Direct
+ 2   1.20420   3.72832    2.0+    32.59400    27.65785    60.25185    Direct
+ 3   1.46376   3.46876    4.0+    25.79300    23.77084    49.56384    Direct
+ 4   1.48281   3.44971    0.0+    26.88000     7.70493    34.58493    Direct
+ 5   1.69714   3.23538    3.0+     0.00000    26.37226    26.37226          
+ 6   1.72495   3.20757    0.0+     0.00000     7.26598     7.26598          
+ 7   1.91300   3.01952    0.0+     0.00000     6.89348     6.89348          
+ 8   2.16500   2.76752    1.0-     0.25500    14.91328    15.16828    Direct
+ 9   2.16526   2.76726    4.0+     0.74225    19.32751    20.06976    Direct
+10   2.19793   2.73459    2.0+     1.47180    21.84419    23.31599    Direct
+11   2.22777   2.70475    0.0+     0.00000     6.22747     6.22747          
+12   2.30000   2.63252    5.0-     0.15046    10.73527    10.88573    Direct
+13   2.49000   2.44252    3.0-     0.31489    19.18958    19.50447    Direct
+14   2.53631   2.39621    3.0-    16.46300    18.91234    35.37534    Direct
+15   2.56933   2.36319    4.0+     0.57991    16.58210    17.16201    Direct
+16   2.60032   2.33220    1.0+     0.00000    13.65954    13.65954          
+17   2.66962   2.26290    4.0+     0.54236    15.91709    16.45945    Direct
+18   2.69368   2.23884    4.0+     0.53358    15.75990    16.29348    Direct
+19   2.69692   2.23560    2.0+     1.15810    18.51094    19.66904    Direct
+20   2.71100   2.22152    4.0+     0.52732    15.64731    16.17463    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             238.90565   337.03717   575.94281
+Continuum Inelastic:              70.70528  1386.27173  1456.97705
+                                 ---------   ---------   ---------
+Total     Inelastic:             309.61093  1723.30884  2032.91943
+
+(n,gn) cross section:     0.93575
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   4.47859    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.15770   4.32089    4.5+     0.00000     0.00000     0.00000    Preeq 
+ 2   0.28630   4.19229    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 3   0.46500   4.01359    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   3.98879    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   3.80389    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   3.62559    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   3.42659    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   3.40059    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   3.21729    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   3.05759    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00001     0.00001
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00001     0.00001
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  5.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  5.500 ###########
+
+Center-of-mass energy:   5.426
+
+1. Total (binary) cross sections
+
+Total           = 3.93430E+03
+  Shape elastic   = 1.93260E+03
+  Reaction        = 2.00170E+03
+    Compound elastic= 1.10323E+01
+    Non-elastic     = 1.99067E+03
+      Direct          = 2.36264E+02
+      Pre-equilibrium = 8.60073E+01
+      Giant resonance = 1.73835E+00
+      Compound non-el = 1.66666E+03
+    Total elastic   = 1.94363E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.21493E+00
+neutron = 1.98842E+03
+proton  = 9.04156E-08
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 5.33165E-05
+
+3. Total particle production cross sections
+
+gamma   = 1.88973E+03    Multiplicity= 9.44060E-01
+neutron = 1.98940E+03    Multiplicity= 9.93857E-01
+proton  = 9.04156E-08    Multiplicity= 4.51694E-11
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 5.33166E-05    Multiplicity= 2.66356E-08
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.22653E+00    0    6.34146E-01  0.51702
+                                2    5.92384E-01  0.48298   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.98940E+03    0    1.98940E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.22653E+00
+  74 1.98940E+03
+
+Total residual production cross section:  1990.62976
+Non-elastic cross section              :  1990.66760
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  11.93097    0.5-     0.00053     0.00258     0.00311    Preeq 
+ 1   0.06189  11.86908    2.5+     0.00119     0.00641     0.00760    Preeq 
+ 2   0.13969  11.79128    3.5+     0.00111     0.00521     0.00632    Preeq 
+ 3   0.19222  11.73875    2.5+     0.00051     0.00586     0.00638    Preeq 
+ 4   0.19989  11.73108    4.5+     0.00052     0.00376     0.00428    Preeq 
+ 5   0.25310  11.67787    1.5-     0.00100     0.00360     0.00460    Preeq 
+ 6   0.31679  11.61418    2.5-     0.00174     0.00355     0.00528    Preeq 
+ 7   0.45705  11.47392    2.5-     0.00188     0.00332     0.00519    Preeq 
+ 8   0.57467  11.35630    1.5-     0.00077     0.00301     0.00378    Preeq 
+ 9   0.58445  11.34652    2.5+     0.00046     0.00452     0.00498    Preeq 
+10   0.65100  11.27997    3.5-     0.00040     0.00293     0.00333    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.01011     0.04475     0.05486
+Continuum   (n,g)  :               0.02142     2.13865     2.16007
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.03153     2.18339     2.21493
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   4.82990    2.0+   130.72000    17.43852   148.15852    Direct
+ 2   1.20420   4.22155    2.0+    30.23200    16.34546    46.57747    Direct
+ 3   1.46376   3.96199    4.0+    25.56400    14.94773    40.51173    Direct
+ 4   1.48281   3.94294    0.0+    25.43400     4.53001    29.96401    Direct
+ 5   1.69714   3.72861    3.0+     0.00000    16.31957    16.31957          
+ 6   1.72495   3.70080    0.0+     0.00000     4.34818     4.34818          
+ 7   1.91300   3.51275    0.0+     0.00000     4.18738     4.18738          
+ 8   2.16500   3.26075    1.0-     0.27745     9.11818     9.39563    Direct
+ 9   2.16526   3.26049    4.0+     0.80831    12.83625    13.64456    Direct
+10   2.19793   3.22782    2.0+     1.51870    13.68820    15.20690    Direct
+11   2.22777   3.19798    0.0+     0.00000     3.88127     3.88127          
+12   2.30000   3.12575    5.0-     0.17247     7.72762     7.90009    Direct
+13   2.49000   2.93575    3.0-     0.33311    12.42515    12.75826    Direct
+14   2.53631   2.88944    3.0-    17.41600    12.27114    29.68714    Direct
+15   2.56933   2.85642    4.0+     0.66671    11.37032    12.03703    Direct
+16   2.60032   2.82543    1.0+     0.00000     8.73157     8.73157          
+17   2.66962   2.75613    4.0+     0.63060    10.98949    11.62009    Direct
+18   2.69368   2.73207    4.0+     0.62195    10.89748    11.51943    Direct
+19   2.69692   2.72883    2.0+     1.24270    11.92803    13.17073    Direct
+20   2.71100   2.71475    4.0+     0.61574    10.83126    11.44700    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             236.25374   214.81279   451.06653
+Continuum Inelastic:              87.72419  1449.62329  1537.34753
+                                 ---------   ---------   ---------
+Total     Inelastic:             323.97794  1664.43604  1988.41516
+
+(n,gn) cross section:     0.98840
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   0.84010    3.0-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.05655   0.78355    2.0-     0.00000     0.00000     0.00000    Preeq 
+ 2   0.05957   0.78053    0.0-     0.00000     0.00000     0.00000    Preeq 
+ 3   0.10228   0.73783    4.0-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.10865   0.73145    1.0+     0.00000     0.00000     0.00000    Preeq 
+ 5   0.14133   0.69877    5.0+     0.00000     0.00000     0.00000    Preeq 
+ 6   0.14503   0.69507    1.0+     0.00000     0.00000     0.00000    Preeq 
+ 7   0.22780   0.61230    6.0+     0.00000     0.00000     0.00000    Preeq 
+ 8   0.25179   0.58832    1.0+     0.00000     0.00000     0.00000    Preeq 
+ 9   0.45506   0.38504    1.0+     0.00000     0.00000     0.00000    Preeq 
+10   0.89411  -0.05401    1.0+     0.00000     0.00000     0.00000          
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.00000     0.00000     0.00000
+Continuum   (n,p)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.00000     0.00000     0.00000
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   4.97182    0.5-     0.00000     0.00002     0.00002    Preeq 
+ 1   0.15770   4.81412    4.5+     0.00000     0.00002     0.00002    Preeq 
+ 2   0.28630   4.68552    2.5+     0.00000     0.00001     0.00001    Preeq 
+ 3   0.46500   4.50682    2.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.48980   4.48202    0.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.67470   4.29712    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 6   0.85300   4.11882    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   3.91982    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   3.89382    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   3.71052    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   3.55082    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00005     0.00005
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00005     0.00005
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  6.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  6.000 ###########
+
+Center-of-mass energy:   5.919
+
+1. Total (binary) cross sections
+
+Total           = 3.95260E+03
+  Shape elastic   = 1.99600E+03
+  Reaction        = 1.95660E+03
+    Compound elastic= 6.20057E+00
+    Non-elastic     = 1.95040E+03
+      Direct          = 2.32921E+02
+      Pre-equilibrium = 9.94428E+01
+      Giant resonance = 1.87073E+00
+      Compound non-el = 1.61616E+03
+    Total elastic   = 2.00220E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 2.07974E+00
+neutron = 1.94826E+03
+proton  = 9.30921E-05
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 2.37755E-04
+
+3. Total particle production cross sections
+
+gamma   = 2.08015E+03    Multiplicity= 1.06315E+00
+neutron = 1.94928E+03    Multiplicity= 9.96260E-01
+proton  = 9.30921E-05    Multiplicity= 4.75785E-08
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 2.37756E-04    Multiplicity= 1.21515E-07
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 1.05305E+00    0    5.30947E-01  0.50420
+                                2    5.22099E-01  0.49580   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.94928E+03    0    1.94928E+03  1.00000
+
+  b. Per mass
+
+  A  cross section
+
+  75 1.05305E+00
+  74 1.94928E+03
+
+Total residual production cross section:  1950.33545
+Non-elastic cross section              :  1950.39941
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  12.42420    0.5-     0.00070     0.00193     0.00263    Preeq 
+ 1   0.06189  12.36231    2.5+     0.00157     0.00489     0.00645    Preeq 
+ 2   0.13969  12.28451    3.5+     0.00146     0.00407     0.00554    Preeq 
+ 3   0.19222  12.23198    2.5+     0.00068     0.00445     0.00513    Preeq 
+ 4   0.19989  12.22431    4.5+     0.00068     0.00305     0.00373    Preeq 
+ 5   0.25310  12.17110    1.5-     0.00131     0.00265     0.00396    Preeq 
+ 6   0.31679  12.10741    2.5-     0.00229     0.00257     0.00486    Preeq 
+ 7   0.45705  11.96715    2.5-     0.00248     0.00237     0.00485    Preeq 
+ 8   0.57467  11.84953    1.5-     0.00102     0.00216     0.00318    Preeq 
+ 9   0.58445  11.83975    2.5+     0.00061     0.00339     0.00400    Preeq 
+10   0.65100  11.77320    3.5-     0.00053     0.00224     0.00277    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.01333     0.03377     0.04709
+Continuum   (n,g)  :               0.02834     2.00431     2.03265
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.04166     2.03808     2.07974
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   5.32313    2.0+   130.55000    10.10083   140.65083    Direct
+ 2   1.20420   4.71478    2.0+    28.12100     9.58751    37.70851    Direct
+ 3   1.46376   4.45522    4.0+    24.91300     9.21665    34.12965    Direct
+ 4   1.48281   4.43617    0.0+    23.72800     2.61933    26.34733    Direct
+ 5   1.69714   4.22184    3.0+     0.00000     9.91029     9.91029          
+ 6   1.72495   4.19403    0.0+     0.00000     2.54533     2.54533          
+ 7   1.91300   4.00598    0.0+     0.00000     2.47910     2.47910          
+ 8   2.16500   3.75398    1.0-     0.29748     5.53707     5.83455    Direct
+ 9   2.16526   3.75372    4.0+     0.82708     8.24318     9.07026    Direct
+10   2.19793   3.72105    2.0+     1.50680     8.40249     9.90929    Direct
+11   2.22777   3.69121    0.0+     0.00000     2.35058     2.35058          
+12   2.30000   3.61898    5.0-     0.19408     5.32704     5.52112    Direct
+13   2.49000   3.42898    3.0-     0.35070     7.92320     8.27390    Direct
+14   2.53631   3.38267    3.0-    18.35000     7.84441    26.19441    Direct
+15   2.56933   3.34965    4.0+     0.72085     7.53514     8.25599    Direct
+16   2.60032   3.31866    1.0+     0.00000     5.47218     5.47218          
+17   2.66962   3.24936    4.0+     0.69152     7.34219     8.03371    Direct
+18   2.69368   3.22530    4.0+     0.68435     7.29504     7.97939    Direct
+19   2.69692   3.22206    2.0+     1.29380     7.56244     8.85624    Direct
+20   2.71100   3.20798    4.0+     0.67915     7.26089     7.94004    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             232.90781   134.55487   367.46268
+Continuum Inelastic:             101.28520  1479.50830  1580.79346
+                                 ---------   ---------   ---------
+Total     Inelastic:             334.19302  1614.06323  1948.25562
+
+(n,gn) cross section:     1.02670
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   1.33333    3.0-     0.00000     0.00004     0.00004    Preeq 
+ 1   0.05655   1.27678    2.0-     0.00000     0.00002     0.00002    Preeq 
+ 2   0.05957   1.27376    0.0-     0.00000     0.00001     0.00001    Preeq 
+ 3   0.10228   1.23106    4.0-     0.00000     0.00001     0.00001    Preeq 
+ 4   0.10865   1.22468    1.0+     0.00000     0.00001     0.00001    Preeq 
+ 5   0.14133   1.19200    5.0+     0.00000     0.00000     0.00000    Preeq 
+ 6   0.14503   1.18830    1.0+     0.00000     0.00000     0.00000    Preeq 
+ 7   0.22780   1.10553    6.0+     0.00000     0.00000     0.00000    Preeq 
+ 8   0.25179   1.08155    1.0+     0.00000     0.00000     0.00000    Preeq 
+ 9   0.45506   0.87827    1.0+     0.00000     0.00000     0.00000    Preeq 
+10   0.89411   0.43922    1.0+     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.00000     0.00009     0.00009
+Continuum   (n,p)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.00000     0.00009     0.00009
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   5.46505    0.5-     0.00000     0.00006     0.00006    Preeq 
+ 1   0.15770   5.30735    4.5+     0.00000     0.00007     0.00007    Preeq 
+ 2   0.28630   5.17875    2.5+     0.00000     0.00006     0.00006    Preeq 
+ 3   0.46500   5.00005    2.5-     0.00000     0.00002     0.00002    Preeq 
+ 4   0.48980   4.97525    0.5-     0.00000     0.00001     0.00001    Preeq 
+ 5   0.67470   4.79035    1.5-     0.00000     0.00001     0.00001    Preeq 
+ 6   0.85300   4.61205    2.5+     0.00000     0.00000     0.00000    Preeq 
+ 7   1.05200   4.41305    3.5+     0.00000     0.00000     0.00000    Preeq 
+ 8   1.07800   4.38705    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   4.20375    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   4.04405    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00000     0.00024     0.00024
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00000     0.00024     0.00024
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  6.50000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  6.500 ###########
+
+Center-of-mass energy:   6.412
+
+1. Total (binary) cross sections
+
+Total           = 3.96250E+03
+  Shape elastic   = 2.04230E+03
+  Reaction        = 1.92020E+03
+    Compound elastic= 3.50786E+00
+    Non-elastic     = 1.91669E+03
+      Direct          = 2.29416E+02
+      Pre-equilibrium = 1.16366E+02
+      Giant resonance = 1.92847E+00
+      Compound non-el = 1.56898E+03
+    Total elastic   = 2.04581E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.95831E+00
+neutron = 1.91466E+03
+proton  = 2.54540E-03
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 8.12778E-04
+
+3. Total particle production cross sections
+
+gamma   = 2.25883E+03    Multiplicity= 1.17635E+00
+neutron = 1.91571E+03    Multiplicity= 9.97661E-01
+proton  = 2.54540E-03    Multiplicity= 1.32559E-06
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 8.12779E-04    Multiplicity= 4.23278E-07
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 9.12712E-01    0    4.51053E-01  0.49419
+                                2    4.61659E-01  0.50581   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.91571E+03    0    1.91571E+03  1.00000
+  31  74 ( 74Ga) 2.54533E-03    0    2.10546E-03  0.82718
+                                2    4.39876E-04  0.17282   9.50000E+00 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 9.12712E-01
+  74 1.91571E+03
+
+Total residual production cross section:  1916.62354
+Non-elastic cross section              :  1916.69214
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  12.91743    0.5-     0.00092     0.00149     0.00241    Preeq 
+ 1   0.06189  12.85554    2.5+     0.00209     0.00377     0.00586    Preeq 
+ 2   0.13969  12.77773    3.5+     0.00195     0.00324     0.00518    Preeq 
+ 3   0.19222  12.72521    2.5+     0.00090     0.00343     0.00433    Preeq 
+ 4   0.19989  12.71754    4.5+     0.00091     0.00251     0.00342    Preeq 
+ 5   0.25310  12.66432    1.5-     0.00175     0.00201     0.00376    Preeq 
+ 6   0.31679  12.60064    2.5-     0.00305     0.00196     0.00500    Preeq 
+ 7   0.45705  12.46037    2.5-     0.00329     0.00179     0.00508    Preeq 
+ 8   0.57467  12.34276    1.5-     0.00135     0.00162     0.00297    Preeq 
+ 9   0.58445  12.33298    2.5+     0.00081     0.00258     0.00339    Preeq 
+10   0.65100  12.26643    3.5-     0.00071     0.00179     0.00249    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.01773     0.02617     0.04389
+Continuum   (n,g)  :               0.03771     1.87670     1.91441
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.05544     1.90287     1.95831
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   5.81636    2.0+   130.42999     5.85670   136.28670    Direct
+ 2   1.20420   5.20801    2.0+    26.35100     5.59463    31.94563    Direct
+ 3   1.46376   4.94845    4.0+    24.15500     5.60838    29.76338    Direct
+ 4   1.48281   4.92940    0.0+    21.97800     1.49963    23.47763    Direct
+ 5   1.69714   4.71507    3.0+     0.00000     5.93177     5.93177          
+ 6   1.72495   4.68726    0.0+     0.00000     1.46721     1.46721          
+ 7   1.91300   4.49921    0.0+     0.00000     1.43871     1.43871          
+ 8   2.16500   4.24721    1.0-     0.31182     3.31907     3.63089    Direct
+ 9   2.16526   4.24695    4.0+     0.81067     5.14553     5.95620    Direct
+10   2.19793   4.21428    2.0+     1.45180     5.05120     6.50300    Direct
+11   2.22777   4.18444    0.0+     0.00000     1.38533     1.38533          
+12   2.30000   4.11221    5.0-     0.21410     3.53436     3.74846    Direct
+13   2.49000   3.92221    3.0-     0.36584     4.94387     5.30971    Direct
+14   2.53631   3.87590    3.0-    19.16100     4.90568    24.06668    Direct
+15   2.56933   3.84288    4.0+     0.73716     4.81712     5.55428    Direct
+16   2.60032   3.81189    1.0+     0.00000     3.33684     3.33684          
+17   2.66962   3.74259    4.0+     0.71594     4.72656     5.44250    Direct
+18   2.69368   3.71853    4.0+     0.71067     4.70425     5.41492    Direct
+19   2.69692   3.71529    2.0+     1.29890     4.67218     5.97108    Direct
+20   2.71100   3.70121    4.0+     0.70684     4.68804     5.39488    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             229.39873    82.62704   312.02576
+Continuum Inelastic:             118.25661  1484.38013  1602.63672
+                                 ---------   ---------   ---------
+Total     Inelastic:             347.65533  1567.00720  1914.66284
+
+(n,gn) cross section:     1.04559
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   1.82656    3.0-     0.00000     0.00087     0.00087    Preeq 
+ 1   0.05655   1.77001    2.0-     0.00000     0.00047     0.00047    Preeq 
+ 2   0.05957   1.76699    0.0-     0.00000     0.00015     0.00015    Preeq 
+ 3   0.10228   1.72428    4.0-     0.00000     0.00037     0.00037    Preeq 
+ 4   0.10865   1.71791    1.0+     0.00000     0.00023     0.00023    Preeq 
+ 5   0.14133   1.68523    5.0+     0.00000     0.00016     0.00016    Preeq 
+ 6   0.14503   1.68153    1.0+     0.00000     0.00018     0.00018    Preeq 
+ 7   0.22780   1.59876    6.0+     0.00000     0.00002     0.00002    Preeq 
+ 8   0.25179   1.57477    1.0+     0.00000     0.00009     0.00009    Preeq 
+ 9   0.45506   1.37150    1.0+     0.00000     0.00002     0.00002    Preeq 
+10   0.89411   0.93245    1.0+     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.00000     0.00254     0.00255
+Continuum   (n,p)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.00000     0.00254     0.00255
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   5.95828    0.5-     0.00000     0.00019     0.00019    Preeq 
+ 1   0.15770   5.80058    4.5+     0.00000     0.00024     0.00024    Preeq 
+ 2   0.28630   5.67198    2.5+     0.00000     0.00018     0.00018    Preeq 
+ 3   0.46500   5.49328    2.5-     0.00000     0.00008     0.00008    Preeq 
+ 4   0.48980   5.46848    0.5-     0.00000     0.00004     0.00004    Preeq 
+ 5   0.67470   5.28358    1.5-     0.00000     0.00004     0.00004    Preeq 
+ 6   0.85300   5.10528    2.5+     0.00000     0.00002     0.00002    Preeq 
+ 7   1.05200   4.90628    3.5+     0.00000     0.00001     0.00001    Preeq 
+ 8   1.07800   4.88028    5.5+     0.00000     0.00000     0.00000    Preeq 
+ 9   1.26130   4.69698    2.5+     0.00000     0.00000     0.00000    Preeq 
+10   1.42100   4.53728    1.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00001     0.00079     0.00081
+Continuum   (n,a)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00002     0.00080     0.00081
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  7.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  7.000 ###########
+
+Center-of-mass energy:   6.905
+
+1. Total (binary) cross sections
+
+Total           = 3.96460E+03
+  Shape elastic   = 2.07330E+03
+  Reaction        = 1.89120E+03
+    Compound elastic= 2.00471E+00
+    Non-elastic     = 1.88920E+03
+      Direct          = 2.26000E+02
+      Pre-equilibrium = 1.30186E+02
+      Giant resonance = 1.91689E+00
+      Compound non-el = 1.53109E+03
+    Total elastic   = 2.07530E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.85389E+00
+neutron = 1.88734E+03
+proton  = 1.71159E-02
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 2.25041E-03
+
+3. Total particle production cross sections
+
+gamma   = 2.43245E+03    Multiplicity= 1.28619E+00
+neutron = 1.88840E+03    Multiplicity= 9.98518E-01
+proton  = 1.71159E-02    Multiplicity= 9.05031E-06
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 2.25042E-03    Multiplicity= 1.18994E-06
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 7.91377E-01    0    3.82746E-01  0.48365
+                                2    4.08631E-01  0.51635   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.88840E+03    0    1.88840E+03  1.00000
+  31  74 ( 74Ga) 1.71047E-02    0    1.36730E-02  0.79937
+                                2    3.43169E-03  0.20063   9.50000E+00 sec. 
+  30  71 ( 71Zn) 2.24335E-03    0    1.02219E-03  0.45565
+                                1    1.22116E-03  0.54435   1.43000E+04 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 7.91377E-01
+  74 1.88842E+03
+  71 2.24335E-03
+
+Total residual production cross section:  1889.20886
+Non-elastic cross section              :  1889.19519
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  13.41065    0.5-     0.00124     0.00117     0.00241    Preeq 
+ 1   0.06189  13.34876    2.5+     0.00280     0.00295     0.00575    Preeq 
+ 2   0.13969  13.27096    3.5+     0.00261     0.00262     0.00523    Preeq 
+ 3   0.19222  13.21843    2.5+     0.00121     0.00267     0.00388    Preeq 
+ 4   0.19989  13.21076    4.5+     0.00122     0.00209     0.00331    Preeq 
+ 5   0.25310  13.15755    1.5-     0.00234     0.00157     0.00392    Preeq 
+ 6   0.31679  13.09386    2.5-     0.00409     0.00154     0.00563    Preeq 
+ 7   0.45705  12.95360    2.5-     0.00442     0.00140     0.00582    Preeq 
+ 8   0.57467  12.83598    1.5-     0.00181     0.00125     0.00306    Preeq 
+ 9   0.58445  12.82620    2.5+     0.00108     0.00200     0.00309    Preeq 
+10   0.65100  12.75965    3.5-     0.00095     0.00147     0.00241    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.02377     0.02074     0.04451
+Continuum   (n,g)  :               0.05049     1.75889     1.80938
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.07425     1.77963     1.85389
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   6.30958    2.0+   130.31000     3.41573   133.72572    Direct
+ 2   1.20420   5.70123    2.0+    24.90500     3.27290    28.17790    Direct
+ 3   1.46376   5.44167    4.0+    23.45200     3.40157    26.85357    Direct
+ 4   1.48281   5.42262    0.0+    20.30200     0.85991    21.16191    Direct
+ 5   1.69714   5.20829    3.0+     0.00000     3.53541     3.53541          
+ 6   1.72495   5.18048    0.0+     0.00000     0.84385     0.84385          
+ 7   1.91300   4.99243    0.0+     0.00000     0.83039     0.83039          
+ 8   2.16500   4.74043    1.0-     0.32014     1.97583     2.29597    Direct
+ 9   2.16526   4.74017    4.0+     0.77633     3.16503     3.94136    Direct
+10   2.19793   4.70750    2.0+     1.37670     3.00527     4.38197    Direct
+11   2.22777   4.67766    0.0+     0.00000     0.80628     0.80628          
+12   2.30000   4.60543    5.0-     0.23190     2.28952     2.52142    Direct
+13   2.49000   4.41543    3.0-     0.37788     3.03971     3.41759    Direct
+14   2.53631   4.36912    3.0-    19.80700     3.02122    22.82822    Direct
+15   2.56933   4.33610    4.0+     0.72585     3.00851     3.73436    Direct
+16   2.60032   4.30511    1.0+     0.00000     1.99787     1.99787          
+17   2.66962   4.23581    4.0+     0.71111     2.96615     3.67726    Direct
+18   2.69368   4.21175    4.0+     0.70743     2.95571     3.66314    Direct
+19   2.69692   4.20851    2.0+     1.26770     2.83306     4.10076    Direct
+20   2.71100   4.19443    4.0+     0.70474     2.94812     3.65286    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             225.97577    50.17203   276.14780
+Continuum Inelastic:             132.05232  1479.13452  1611.18689
+                                 ---------   ---------   ---------
+Total     Inelastic:             358.02811  1529.30652  1887.33557
+
+(n,gn) cross section:     1.06251
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   2.31978    3.0-     0.00000     0.00476     0.00476    Preeq 
+ 1   0.05655   2.26323    2.0-     0.00000     0.00295     0.00295    Preeq 
+ 2   0.05957   2.26021    0.0-     0.00000     0.00091     0.00091    Preeq 
+ 3   0.10228   2.21751    4.0-     0.00000     0.00261     0.00261    Preeq 
+ 4   0.10865   2.21113    1.0+     0.00000     0.00160     0.00160    Preeq 
+ 5   0.14133   2.17845    5.0+     0.00000     0.00136     0.00136    Preeq 
+ 6   0.14503   2.17475    1.0+     0.00000     0.00138     0.00138    Preeq 
+ 7   0.22780   2.09198    6.0+     0.00000     0.00031     0.00031    Preeq 
+ 8   0.25179   2.06799    1.0+     0.00000     0.00086     0.00086    Preeq 
+ 9   0.45506   1.86472    1.0+     0.00001     0.00030     0.00032    Preeq 
+10   0.89411   1.42567    1.0+     0.00001     0.00001     0.00002    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.00002     0.01705     0.01708
+Continuum   (n,p)  :               0.00000     0.00004     0.00004
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.00003     0.01709     0.01712
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   6.45150    0.5-     0.00001     0.00046     0.00047    Preeq 
+ 1   0.15770   6.29380    4.5+     0.00002     0.00062     0.00064    Preeq 
+ 2   0.28630   6.16520    2.5+     0.00002     0.00047     0.00049    Preeq 
+ 3   0.46500   5.98650    2.5-     0.00001     0.00023     0.00024    Preeq 
+ 4   0.48980   5.96170    0.5-     0.00000     0.00011     0.00011    Preeq 
+ 5   0.67470   5.77680    1.5-     0.00001     0.00011     0.00012    Preeq 
+ 6   0.85300   5.59850    2.5+     0.00000     0.00008     0.00008    Preeq 
+ 7   1.05200   5.39950    3.5+     0.00000     0.00003     0.00003    Preeq 
+ 8   1.07800   5.37350    5.5+     0.00000     0.00002     0.00002    Preeq 
+ 9   1.26130   5.19020    2.5+     0.00000     0.00002     0.00002    Preeq 
+10   1.42100   5.03050    1.5-     0.00000     0.00001     0.00001    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00007     0.00216     0.00222
+Continuum   (n,a)  :               0.00000     0.00003     0.00003
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00007     0.00218     0.00225
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  8.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  8.000 ###########
+
+Center-of-mass energy:   7.892
+
+1. Total (binary) cross sections
+
+Total           = 3.94720E+03
+  Shape elastic   = 2.09780E+03
+  Reaction        = 1.84950E+03
+    Compound elastic= 6.59195E-01
+    Non-elastic     = 1.84884E+03
+      Direct          = 2.19304E+02
+      Pre-equilibrium = 1.63583E+02
+      Giant resonance = 1.40471E+01
+      Compound non-el = 1.45191E+03
+    Total elastic   = 2.09846E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.66045E+00
+neutron = 1.84703E+03
+proton  = 1.09558E-01
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 1.05347E-02
+
+3. Total particle production cross sections
+
+gamma   = 2.76702E+03    Multiplicity= 1.49609E+00
+neutron = 1.84807E+03    Multiplicity= 9.99224E-01
+proton  = 1.09558E-01    Multiplicity= 5.92367E-05
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 1.05347E-02    Multiplicity= 5.69599E-06
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 6.25681E-01    0    2.96638E-01  0.47410
+                                2    3.29043E-01  0.52590   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.84807E+03    0    1.84807E+03  1.00000
+  31  74 ( 74Ga) 1.09551E-01    0    8.29323E-02  0.75702
+                                2    2.66183E-02  0.24298   9.50000E+00 sec. 
+  30  71 ( 71Zn) 1.05268E-02    0    4.99237E-03  0.47425
+                                1    5.53444E-03  0.52575   1.43000E+04 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 6.25681E-01
+  74 1.84817E+03
+  71 1.05268E-02
+
+Total residual production cross section:  1848.81104
+Non-elastic cross section              :  1848.84082
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  14.39708    0.5-     0.00225     0.00074     0.00299    Preeq 
+ 1   0.06189  14.33519    2.5+     0.00508     0.00180     0.00688    Preeq 
+ 2   0.13969  14.25739    3.5+     0.00474     0.00173     0.00646    Preeq 
+ 3   0.19222  14.20486    2.5+     0.00219     0.00163     0.00382    Preeq 
+ 4   0.19989  14.19719    4.5+     0.00221     0.00147     0.00368    Preeq 
+ 5   0.25310  14.14398    1.5-     0.00425     0.00099     0.00524    Preeq 
+ 6   0.31679  14.08029    2.5-     0.00741     0.00100     0.00841    Preeq 
+ 7   0.45705  13.94003    2.5-     0.00801     0.00090     0.00891    Preeq 
+ 8   0.57467  13.82241    1.5-     0.00329     0.00078     0.00407    Preeq 
+ 9   0.58445  13.81263    2.5+     0.00197     0.00122     0.00319    Preeq 
+10   0.65100  13.74608    3.5-     0.00172     0.00100     0.00272    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.04312     0.01326     0.05637
+Continuum   (n,g)  :               0.09084     1.51324     1.60408
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.13396     1.52650     1.66045
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   7.29601    2.0+   129.55000     1.15862   130.70862    Direct
+ 2   1.20420   6.68766    2.0+    22.64900     1.11303    23.76203    Direct
+ 3   1.46376   6.42810    4.0+    22.35000     1.22860    23.57860    Direct
+ 4   1.48281   6.40905    0.0+    17.31300     0.28255    17.59555    Direct
+ 5   1.69714   6.19472    3.0+     0.00000     1.23444     1.23444          
+ 6   1.72495   6.16691    0.0+     0.00000     0.27764     0.27764          
+ 7   1.91300   5.97886    0.0+     0.00000     0.27375     0.27375          
+ 8   2.16500   5.72686    1.0-     0.32409     0.68286     1.00695    Direct
+ 9   2.16526   5.72660    4.0+     0.69919     1.15580     1.85499    Direct
+10   2.19793   5.69393    2.0+     1.22750     1.03531     2.26281    Direct
+11   2.22777   5.66409    0.0+     0.00000     0.26708     0.26708          
+12   2.30000   5.59186    5.0-     0.26046     0.90740     1.16786    Direct
+13   2.49000   5.40186    3.0-     0.39423     1.10136     1.49559    Direct
+14   2.53631   5.35555    3.0-    20.67600     1.09642    21.77242    Direct
+15   2.56933   5.32253    4.0+     0.67038     1.11291     1.78329    Direct
+16   2.60032   5.29154    1.0+     0.00000     0.68570     0.68570          
+17   2.66962   5.22224    4.0+     0.66236     1.10197     1.76433    Direct
+18   2.69368   5.19818    4.0+     0.66037     1.09931     1.75968    Direct
+19   2.69692   5.19494    2.0+     1.16140     0.99304     2.15444    Direct
+20   2.71100   5.18086    4.0+     0.65893     1.09739     1.75632    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             219.25693    17.90517   237.16209
+Continuum Inelastic:             177.53818  1432.32910  1609.86731
+                                 ---------   ---------   ---------
+Total     Inelastic:             396.79510  1450.23425  1847.03064
+
+(n,gn) cross section:     1.03477
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   3.30622    3.0-     0.00000     0.02046     0.02046    Preeq 
+ 1   0.05655   3.24967    2.0-     0.00000     0.01467     0.01467    Preeq 
+ 2   0.05957   3.24664    0.0-     0.00000     0.00444     0.00444    Preeq 
+ 3   0.10228   3.20394    4.0-     0.00000     0.01531     0.01531    Preeq 
+ 4   0.10865   3.19756    1.0+     0.00000     0.00906     0.00906    Preeq 
+ 5   0.14133   3.16488    5.0+     0.00000     0.00981     0.00981    Preeq 
+ 6   0.14503   3.16118    1.0+     0.00000     0.00840     0.00840    Preeq 
+ 7   0.22780   3.07841    6.0+     0.00000     0.00365     0.00365    Preeq 
+ 8   0.25179   3.05443    1.0+     0.00019     0.00664     0.00683    Preeq 
+ 9   0.45506   2.85116    1.0+     0.00144     0.00405     0.00549    Preeq 
+10   0.89411   2.41211    1.0+     0.00115     0.00106     0.00221    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.00277     0.09756     0.10033
+Continuum   (n,p)  :               0.00142     0.00781     0.00923
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.00419     0.10537     0.10956
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   7.43794    0.5-     0.00009     0.00155     0.00164    Preeq 
+ 1   0.15770   7.28024    4.5+     0.00017     0.00249     0.00265    Preeq 
+ 2   0.28630   7.15164    2.5+     0.00018     0.00189     0.00207    Preeq 
+ 3   0.46500   6.97294    2.5-     0.00008     0.00113     0.00122    Preeq 
+ 4   0.48980   6.94814    0.5-     0.00005     0.00051     0.00056    Preeq 
+ 5   0.67470   6.76324    1.5-     0.00009     0.00059     0.00069    Preeq 
+ 6   0.85300   6.58494    2.5+     0.00006     0.00046     0.00053    Preeq 
+ 7   1.05200   6.38594    3.5+     0.00002     0.00026     0.00028    Preeq 
+ 8   1.07800   6.35994    5.5+     0.00002     0.00015     0.00016    Preeq 
+ 9   1.26130   6.17664    2.5+     0.00003     0.00015     0.00018    Preeq 
+10   1.42100   6.01694    1.5-     0.00001     0.00007     0.00008    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00080     0.00926     0.01006
+Continuum   (n,a)  :               0.00005     0.00042     0.00047
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00085     0.00968     0.01053
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E=  9.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E=  9.000 ###########
+
+Center-of-mass energy:   8.878
+
+1. Total (binary) cross sections
+
+Total           = 3.90420E+03
+  Shape elastic   = 2.08400E+03
+  Reaction        = 1.82020E+03
+    Compound elastic= 2.20156E-01
+    Non-elastic     = 1.81998E+03
+      Direct          = 2.12031E+02
+      Pre-equilibrium = 1.98006E+02
+      Giant resonance = 2.46369E+01
+      Compound non-el = 1.38531E+03
+    Total elastic   = 2.08422E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.52315E+00
+neutron = 1.81811E+03
+proton  = 2.87006E-01
+deuteron= 0.00000E+00
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 3.09012E-02
+
+3. Total particle production cross sections
+
+gamma   = 3.09322E+03    Multiplicity= 1.69938E+00
+neutron = 1.81908E+03    Multiplicity= 9.99386E-01
+proton  = 2.87008E-01    Multiplicity= 1.57679E-04
+deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 3.09013E-02    Multiplicity= 1.69769E-05
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 5.46568E-01    0    2.62391E-01  0.48007
+                                2    2.84177E-01  0.51993   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.81908E+03    0    1.81908E+03  1.00000
+  31  74 ( 74Ga) 2.87005E-01    0    2.14794E-01  0.74840
+                                2    7.22106E-02  0.25160   9.50000E+00 sec. 
+  30  71 ( 71Zn) 3.08963E-02    0    1.54415E-02  0.49978
+                                1    1.54548E-02  0.50022   1.43000E+04 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 5.46568E-01
+  74 1.81937E+03
+  71 3.08963E-02
+
+Total residual production cross section:  1819.94727
+Non-elastic cross section              :  1819.97974
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  15.38350    0.5-     0.00399     0.00045     0.00444    Preeq 
+ 1   0.06189  15.32161    2.5+     0.00901     0.00104     0.01005    Preeq 
+ 2   0.13969  15.24381    3.5+     0.00841     0.00109     0.00950    Preeq 
+ 3   0.19222  15.19128    2.5+     0.00388     0.00096     0.00485    Preeq 
+ 4   0.19989  15.18361    4.5+     0.00393     0.00098     0.00491    Preeq 
+ 5   0.25310  15.13040    1.5-     0.00754     0.00061     0.00815    Preeq 
+ 6   0.31679  15.06671    2.5-     0.01138     0.00063     0.01201    Preeq 
+ 7   0.45705  14.92645    2.5-     0.01213     0.00058     0.01271    Preeq 
+ 8   0.57467  14.80883    1.5-     0.00599     0.00049     0.00649    Preeq 
+ 9   0.58445  14.79905    2.5+     0.00359     0.00074     0.00433    Preeq 
+10   0.65100  14.73250    3.5-     0.00313     0.00067     0.00380    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.07299     0.00825     0.08124
+Continuum   (n,g)  :               0.16369     1.27822     1.44191
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.23668     1.28647     1.52315
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   8.28243    2.0+   127.45000     0.39542   127.84541    Direct
+ 2   1.20420   7.67408    2.0+    20.73100     0.38061    21.11161    Direct
+ 3   1.46376   7.41452    4.0+    21.47300     0.44088    21.91388    Direct
+ 4   1.48281   7.39547    0.0+    14.85400     0.09438    14.94838    Direct
+ 5   1.69714   7.18114    3.0+     0.00000     0.43036     0.43036          
+ 6   1.72495   7.15333    0.0+     0.00000     0.09275     0.09275          
+ 7   1.91300   6.96528    0.0+     0.00000     0.09146     0.09146          
+ 8   2.16500   6.71328    1.0-     0.32038     0.23501     0.55539    Direct
+ 9   2.16526   6.71302    4.0+     0.63868     0.41670     1.05538    Direct
+10   2.19793   6.68035    2.0+     1.11470     0.35556     1.47026    Direct
+11   2.22777   6.65051    0.0+     0.00000     0.08928     0.08928          
+12   2.30000   6.57828    5.0-     0.28064     0.34795     0.62859    Direct
+13   2.49000   6.38828    3.0-     0.40366     0.39190     0.79556    Direct
+14   2.53631   6.34197    3.0-    21.16800     0.39037    21.55837    Direct
+15   2.56933   6.30895    4.0+     0.61514     0.40273     1.01787    Direct
+16   2.60032   6.27796    1.0+     0.00000     0.23300     0.23300          
+17   2.66962   6.20866    4.0+     0.60903     0.39926     1.00829    Direct
+18   2.69368   6.18460    4.0+     0.60755     0.39842     1.00597    Direct
+19   2.69692   6.18136    2.0+     1.06000     0.34261     1.40261    Direct
+20   2.71100   6.16728    4.0+     0.60648     0.39782     1.00430    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             211.93225     6.32645   218.25870
+Continuum Inelastic:             222.44489  1377.40149  1599.84631
+                                 ---------   ---------   ---------
+Total     Inelastic:             434.37714  1383.72791  1818.10632
+
+(n,gn) cross section:     0.97658
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   4.29263    3.0-     0.00000     0.02702     0.02702    Preeq 
+ 1   0.05655   4.23608    2.0-     0.00000     0.02069     0.02069    Preeq 
+ 2   0.05957   4.23306    0.0-     0.00000     0.00595     0.00595    Preeq 
+ 3   0.10228   4.19036    4.0-     0.00000     0.02366     0.02366    Preeq 
+ 4   0.10865   4.18398    1.0+     0.00000     0.01370     0.01370    Preeq 
+ 5   0.14133   4.15130    5.0+     0.00000     0.01746     0.01746    Preeq 
+ 6   0.14503   4.14760    1.0+     0.00000     0.01309     0.01309    Preeq 
+ 7   0.22780   4.06483    6.0+     0.00000     0.00901     0.00901    Preeq 
+ 8   0.25179   4.04085    1.0+     0.00096     0.01141     0.01237    Preeq 
+ 9   0.45506   3.83757    1.0+     0.00942     0.00860     0.01802    Preeq 
+10   0.89411   3.39852    1.0+     0.00979     0.00419     0.01398    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.02018     0.15478     0.17495
+Continuum   (n,p)  :               0.03368     0.07838     0.11205
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.05385     0.23315     0.28701
+
+(n,gp) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   8.42436    0.5-     0.00049     0.00283     0.00332    Preeq 
+ 1   0.15770   8.26666    4.5+     0.00089     0.00537     0.00626    Preeq 
+ 2   0.28630   8.13806    2.5+     0.00096     0.00415     0.00511    Preeq 
+ 3   0.46500   7.95936    2.5-     0.00051     0.00286     0.00337    Preeq 
+ 4   0.48980   7.93456    0.5-     0.00039     0.00127     0.00166    Preeq 
+ 5   0.67470   7.74966    1.5-     0.00068     0.00161     0.00229    Preeq 
+ 6   0.85300   7.57136    2.5+     0.00052     0.00144     0.00196    Preeq 
+ 7   1.05200   7.37236    3.5+     0.00020     0.00098     0.00118    Preeq 
+ 8   1.07800   7.34636    5.5+     0.00018     0.00061     0.00080    Preeq 
+ 9   1.26130   7.16306    2.5+     0.00030     0.00061     0.00091    Preeq 
+10   1.42100   7.00336    1.5-     0.00014     0.00031     0.00045    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.00525     0.02205     0.02730
+Continuum   (n,a)  :               0.00072     0.00288     0.00360
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.00597     0.02493     0.03090
+
+(n,ga) cross section:     0.00000
+
+########## RESULTS FOR E= 10.00000 ##########
+
+Energy dependent input flags
+
+Width fluctuations (flagwidth)      : y
+Preequilibrium (flagpreeq)          : y
+Multiple preequilibrium (flagmulpre): n
+
+########### REACTION SUMMARY FOR E= 10.000 ###########
+
+Center-of-mass energy:   9.865
+
+1. Total (binary) cross sections
+
+Total           = 3.83490E+03
+  Shape elastic   = 2.04050E+03
+  Reaction        = 1.79440E+03
+    Compound elastic= 7.46843E-02
+    Non-elastic     = 1.79433E+03
+      Direct          = 2.04154E+02
+      Pre-equilibrium = 2.34209E+02
+      Giant resonance = 2.95130E+01
+      Compound non-el = 1.32645E+03
+    Total elastic   = 2.04057E+03
+
+2. Binary non-elastic cross sections (non-exclusive)
+
+gamma   = 1.47727E+00
+neutron = 1.79185E+03
+proton  = 7.02312E-01
+deuteron= 2.38086E-11
+triton  = 0.00000E+00
+helium-3= 0.00000E+00
+alpha   = 2.28355E-01
+
+3. Total particle production cross sections
+
+gamma   = 3.40311E+03    Multiplicity= 1.89652E+00
+neutron = 1.79274E+03    Multiplicity= 9.99075E-01
+proton  = 7.02318E-01    Multiplicity= 3.91394E-04
+deuteron= 2.38086E-11    Multiplicity= 1.32683E-14
+triton  = 0.00000E+00    Multiplicity= 0.00000E+00
+helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
+alpha   = 2.28356E-01    Multiplicity= 1.27260E-04
+
+4. Residual production cross sections
+
+  a. Per isotope
+
+  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                cross section       cross section  ratio
+
+  32  75 ( 75Ge) 5.90160E-01    0    2.98116E-01  0.50514
+                                2    2.92044E-01  0.49486   4.77000E+01 sec. 
+  32  74 ( 74Ge) 1.79274E+03    0    1.79274E+03  1.00000
+  31  74 ( 74Ga) 7.02315E-01    0    5.22797E-01  0.74439
+                                2    1.79518E-01  0.25561   9.50000E+00 sec. 
+  30  71 ( 71Zn) 2.28349E-01    0    9.87756E-02  0.43256
+                                1    1.29574E-01  0.56744   1.43000E+04 sec. 
+
+  b. Per mass
+
+  A  cross section
+
+  75 5.90160E-01
+  74 1.79344E+03
+  71 2.28349E-01
+
+Total residual production cross section:  1794.26111
+Non-elastic cross section              :  1794.32532
+
+5. Binary reactions to discrete levels and continuum
+
+  (n,g)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000  16.36991    0.5-     0.00617     0.00022     0.00639    Preeq 
+ 1   0.06189  16.30802    2.5+     0.01392     0.00051     0.01443    Preeq 
+ 2   0.13969  16.23022    3.5+     0.01299     0.00058     0.01357    Preeq 
+ 3   0.19222  16.17769    2.5+     0.00600     0.00049     0.00649    Preeq 
+ 4   0.19989  16.17002    4.5+     0.00607     0.00055     0.00662    Preeq 
+ 5   0.25310  16.11681    1.5-     0.01165     0.00033     0.01198    Preeq 
+ 6   0.31679  16.05312    2.5-     0.01831     0.00035     0.01866    Preeq 
+ 7   0.45705  15.91286    2.5-     0.02060     0.00033     0.02093    Preeq 
+ 8   0.57467  15.79524    1.5-     0.01018     0.00028     0.01046    Preeq 
+ 9   0.58445  15.78546    2.5+     0.00610     0.00041     0.00651    Preeq 
+10   0.65100  15.71891    3.5-     0.00532     0.00040     0.00571    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,g)  :               0.11730     0.00444     0.12174
+Continuum   (n,g)  :               0.28966     1.06587     1.35553
+                                 ---------   ---------   ---------
+Total       (n,g)  :               0.40696     1.07031     1.47727
+
+
+Inelastic cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 1   0.59585   9.26884    2.0+   124.22000     0.13625   124.35625    Direct
+ 2   1.20420   8.66049    2.0+    18.87400     0.13153    19.00553    Direct
+ 3   1.46376   8.40093    4.0+    20.53600     0.15846    20.69446    Direct
+ 4   1.48281   8.38188    0.0+    12.88700     0.03217    12.91917    Direct
+ 5   1.69714   8.16755    3.0+     0.00000     0.15113     0.15113          
+ 6   1.72495   8.13974    0.0+     0.00000     0.03162     0.03162          
+ 7   1.91300   7.95169    0.0+     0.00000     0.03120     0.03120          
+ 8   2.16500   7.69969    1.0-     0.31650     0.08155     0.39805    Direct
+ 9   2.16526   7.69943    4.0+     0.59653     0.15040     0.74693    Direct
+10   2.19793   7.66676    2.0+     1.03660     0.12335     1.15995    Direct
+11   2.22777   7.63692    0.0+     0.00000     0.03047     0.03047          
+12   2.30000   7.56469    5.0-     0.29457     0.13189     0.42646    Direct
+13   2.49000   7.37469    3.0-     0.40925     0.13971     0.54896    Direct
+14   2.53631   7.32838    3.0-    21.45400     0.13922    21.59322    Direct
+15   2.56933   7.29536    4.0+     0.57359     0.14570     0.71929    Direct
+16   2.60032   7.26437    1.0+     0.00000     0.08010     0.08010          
+17   2.66962   7.19507    4.0+     0.56781     0.14453     0.71234    Direct
+18   2.69368   7.17101    4.0+     0.56642     0.14425     0.71067    Direct
+19   2.69692   7.16777    2.0+     0.98353     0.11909     1.10262    Direct
+20   2.71100   7.15369    4.0+     0.56542     0.14405     0.70947    Direct
+                                 ---------   ---------   ---------
+Discrete  Inelastic:             203.88121     2.24666   206.12787
+Continuum Inelastic:             263.21219  1322.51208  1585.72424
+                                 ---------   ---------   ---------
+Total     Inelastic:             467.09341  1324.75879  1791.85315
+
+(n,gn) cross section:     0.88710
+
+  (n,p)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   5.27904    3.0-     0.00000     0.02142     0.02142    Preeq 
+ 1   0.05655   5.22249    2.0-     0.00000     0.01680     0.01680    Preeq 
+ 2   0.05957   5.21947    0.0-     0.00000     0.00460     0.00460    Preeq 
+ 3   0.10228   5.17677    4.0-     0.00000     0.02032     0.02032    Preeq 
+ 4   0.10865   5.17039    1.0+     0.00000     0.01158     0.01158    Preeq 
+ 5   0.14133   5.13771    5.0+     0.00000     0.01679     0.01679    Preeq 
+ 6   0.14503   5.13401    1.0+     0.00000     0.01124     0.01124    Preeq 
+ 7   0.22780   5.05124    6.0+     0.00000     0.01042     0.01042    Preeq 
+ 8   0.25179   5.02725    1.0+     0.00841     0.01030     0.01871    Preeq 
+ 9   0.45506   4.82398    1.0+     0.04755     0.00859     0.05614    Preeq 
+10   0.89411   4.38493    1.0+     0.03697     0.00549     0.04246    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,p)  :               0.09293     0.13756     0.23049
+Continuum   (n,p)  :               0.21399     0.25783     0.47182
+                                 ---------   ---------   ---------
+Total       (n,p)  :               0.30692     0.39539     0.70231
+
+(n,gp) cross section:     0.00001
+
+  (n,d)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   1.08212    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 1   0.19800   0.88412    3.5-     0.00000     0.00000     0.00000    Preeq 
+ 2   0.21795   0.86417    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 3   0.49582   0.58630    3.5-     0.00000     0.00000     0.00000    Preeq 
+ 4   0.91097   0.17115    1.5-     0.00000     0.00000     0.00000    Preeq 
+ 5   0.95600   0.12612    2.5-     0.00000     0.00000     0.00000    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,d)  :               0.00000     0.00000     0.00000
+Continuum   (n,d)  :               0.00000     0.00000     0.00000
+                                 ---------   ---------   ---------
+Total       (n,d)  :               0.00000     0.00000     0.00000
+
+(n,gd) cross section:     0.00000
+
+  (n,a)   cross sections:
+
+Inclusive:
+
+Level Energy    E-out     J/P       Direct    Compound      Total     Origin
+
+ 0   0.00000   9.41076    0.5-     0.00935     0.02003     0.02938    Preeq 
+ 1   0.15770   9.25306    4.5+     0.01698     0.04420     0.06118    Preeq 
+ 2   0.28630   9.12446    2.5+     0.01823     0.03434     0.05257    Preeq 
+ 3   0.46500   8.94576    2.5-     0.00682     0.02291     0.02973    Preeq 
+ 4   0.48980   8.92096    0.5-     0.00162     0.00948     0.01109    Preeq 
+ 5   0.67470   8.73606    1.5-     0.00280     0.00874     0.01154    Preeq 
+ 6   0.85300   8.55776    2.5+     0.00237     0.00406     0.00644    Preeq 
+ 7   1.05200   8.35876    3.5+     0.00110     0.00200     0.00309    Preeq 
+ 8   1.07800   8.33276    5.5+     0.00102     0.00140     0.00242    Preeq 
+ 9   1.26130   8.14946    2.5+     0.00167     0.00135     0.00302    Preeq 
+10   1.42100   7.98976    1.5-     0.00060     0.00078     0.00138    Preeq 
+                                 ---------   ---------   ---------
+Discrete    (n,a)  :               0.06255     0.14928     0.21184
+Continuum   (n,a)  :               0.00561     0.01091     0.01652
+                                 ---------   ---------   ---------
+Total       (n,a)  :               0.06816     0.16019     0.22836
+
+(n,ga) cross section:     0.00000
+
+Execution time:  0 hours  2 minutes 17.67 seconds 
+
+The TALYS team congratulates you with this successful calculation.
