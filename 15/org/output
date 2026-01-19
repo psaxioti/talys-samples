@@ -1,8 +1,8 @@
 
-    TALYS-1.2       (Version: December 21, 2009)
+    TALYS-1.4 Version: December 27, 2011)
 
- Copyright (C) 2009  A.J. Koning, S. Hilaire and M.C. Duijvestijn
-                         NRG          CEA              NRG
+ Copyright (C) 2011  A.J. Koning, S. Hilaire and S. Goriely      
+                         NRG          CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -33,8 +33,8 @@
  # Basic physical and numerical parameters
  #
  ejectiles  g n p d t h a  outtype      outgoing particles
- maxz                8     maxZ         maximal number of protons away from the initial compound nucleus
- maxn               18     maxN         maximal number of neutrons away from the initial compound nucleus
+ maxz               12     maxZ         maximal number of protons away from the initial compound nucleus
+ maxn               32     maxN         maximal number of neutrons away from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
  segment             1     segment      number of segments to divide emission energy grid
  maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
@@ -57,7 +57,7 @@
  angles             90     nangle       number of angles
  anglescont         18     nanglecont   number of angles for continuum
  anglesrec           1     nanglerec    number of recoil angles
- maxenrec           16     maxenrec     number of recoil energies
+ maxenrec           24     maxenrec     number of recoil energies
  channels            n     flagchannels flag for exclusive channels calculation
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
@@ -95,7 +95,8 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler)
+ alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential)
+ deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
@@ -104,6 +105,9 @@
  compound            y     flagcomp     flag for compound nucleus model
  fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
  eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
+ urr                 n     flagurr      flag for URR calculation
+ urrnjoy             y     flagurrnjoy  flag for normalization of URR parameters with NJOY method
+ lurr                2     lurr         maximal orbital angular momentum for URR
  #
  # Gamma emission
  #
@@ -130,13 +134,13 @@
  #
  # Level densities
  #
- ldmodel             1     ldmodel      level density model
+ ldmodel             1     ldmodelall   level density model
  shellmodel          1     shellmodel   model for shell correction energies
  kvibmodel           2     kvibmodel    model for vibrational enhancement
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcol      flag for damping of collective effects
+ colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
  #
@@ -163,7 +167,6 @@
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
- outurr              n     flagurr      flag for output of unresolved resonance parameters
  outgamma            n     flaggamma    flag for output of gamma-ray information
  outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
  outfission          n     flagfisout   flag for output of fission information
@@ -177,6 +180,7 @@
  outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
  outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
  outexcitation       y     flagexc      flag for output of excitation functions
+ components          n     flagcompo    flag for output of cross section components
  endf                n     flagendf     flag for information for ENDF-6 file
  endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
  partable            n     flagpartable flag for output of model parameters on separate file
@@ -233,6 +237,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -296,6 +301,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -359,6 +365,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -422,6 +429,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -452,7 +460,7 @@
  3. Total particle production cross sections
 
  gamma   = 9.78696E+00    Multiplicity= 2.35314E-01
- neutron = 2.77835E+01    Multiplicity= 6.68016E-01
+ neutron = 2.77835E+01    Multiplicity= 6.68015E-01
  proton  = 9.53717E+00    Multiplicity= 2.29308E-01
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
@@ -489,6 +497,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -548,7 +557,7 @@
    89 6.68482E+01
    86 7.58304E-03
 
- Total residual production cross section:    69.42573
+ Total residual production cross section:    69.42574
  Non-elastic cross section              :    69.34103
 
  ########## RESULTS FOR E= 15.00000 ##########
@@ -556,6 +565,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -623,6 +633,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -690,6 +701,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -757,6 +769,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -824,6 +837,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -891,6 +905,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -958,6 +973,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -1025,6 +1041,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
@@ -1092,6 +1109,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1159,6 +1177,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1228,6 +1247,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1298,6 +1318,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1369,6 +1390,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1440,6 +1462,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1488,7 +1511,7 @@
    40  89 ( 89Zr) 5.74051E+00    0    3.01255E+00  0.52479
                                  1    2.72795E+00  0.47521   2.50000E+02 sec. 
    39  89 ( 89Y ) 1.50314E+00    0    1.05340E+00  0.70080
-                                 1    4.49743E-01  0.29920   1.57000E+01 sec. 
+                                 1    4.49744E-01  0.29920   1.57000E+01 sec. 
    40  88 ( 88Zr) 1.23407E+01    0    1.23407E+01  1.00000
    39  88 ( 88Y ) 5.53175E-01    0    5.53175E-01  1.00000
    38  88 ( 88Sr) 2.42540E-01    0    2.42540E-01  1.00000
@@ -1511,6 +1534,7 @@
  Energy dependent input flags
 
  Width fluctuations (flagwidth)            : n
+ Unresolved resonance parameters (flagurr) : n
  Preequilibrium (flagpreeq)                : y
  Multiple preequilibrium (flagmulpre)      : y
  Number of continuum excitation energy bins: 40
@@ -1663,7 +1687,7 @@
   1.000E+01 0.00000E+00 0.00000E+00                                              
   1.100E+01 0.00000E+00 0.00000E+00                                              
   1.200E+01 3.07714E-04 1.16612E-05                                              
-  1.300E+01 2.77835E+01 6.68016E-01                                              
+  1.300E+01 2.77835E+01 6.68015E-01                                              
   1.400E+01 5.96991E+01 8.59118E-01                                              
   1.500E+01 1.09735E+02 9.17215E-01                                              
   1.600E+01 1.71655E+02 9.14145E-01                                              
@@ -1871,9 +1895,9 @@
 
  Energy   Cross section Branching ratio
 
-  1.000E+01 0.00000E+00                                                          
-  1.100E+01 0.00000E+00                                                          
-  1.200E+01 0.00000E+00                                                          
+  1.000E+01 0.00000E+00  0.00000                                                 
+  1.100E+01 0.00000E+00  0.00000                                                 
+  1.200E+01 0.00000E+00  0.00000                                                 
   1.300E+01 6.21116E+00  0.22356                                                 
   1.400E+01 2.94161E+01  0.49274                                                 
   1.500E+01 2.45411E+01  0.22364                                                 
@@ -1899,9 +1923,9 @@
 
  Energy   Cross section Branching ratio
 
-  1.000E+01 0.00000E+00                                                          
-  1.100E+01 0.00000E+00                                                          
-  1.200E+01 0.00000E+00                                                          
+  1.000E+01 0.00000E+00  0.00000                                                 
+  1.100E+01 0.00000E+00  0.00000                                                 
+  1.200E+01 0.00000E+00  0.00000                                                 
   1.300E+01 2.15723E+01  0.77644                                                 
   1.400E+01 3.02830E+01  0.50726                                                 
   1.500E+01 8.51936E+01  0.77636                                                 
@@ -2001,7 +2025,7 @@
   2.200E+01 7.28051E-01  0.21754                                                 
   2.300E+01 6.20651E-01  0.24314                                                 
   2.400E+01 5.34354E-01  0.27055                                                 
-  2.500E+01 4.49743E-01  0.29920                                                 
+  2.500E+01 4.49744E-01  0.29920                                                 
   2.600E+01 3.63545E-01  0.32833                                                 
 
  Production of Z= 40 A= 88 ( 88Zr) - Total
@@ -2116,6 +2140,6 @@
   2.500E+01 5.28819E-02                                                          
   2.600E+01 5.69647E-02                                                          
 
- Execution time:  0 hours  0 minutes  6.05 seconds 
+ Execution time:  0 hours  0 minutes  6.79 seconds 
 
  The TALYS team congratulates you with this successful calculation.
