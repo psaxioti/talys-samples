@@ -1,269 +1,276 @@
 
-     TALYS-0.64 (Version: December 5, 2004)
+    TALYS-0.72      (Version: December 15, 2006)
 
  Copyright (C) 2004  A.J. Koning, S. Hilaire and M.C. Duijvestijn
                          NRG          CEA              NRG
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
-########## USER INPUT ##########
+ ########## USER INPUT ##########
 
-USER INPUT FILE
+ USER INPUT FILE
 
-#                                                                               
-# general                                                                       
-#                                                                               
-projectile n                                                                    
-element nb                                                                      
-mass 93                                                                         
-energy 14.                                                                      
+ #                                                                               
+ # general                                                                       
+ #                                                                               
+ projectile n                                                                    
+ element nb                                                                      
+ mass 93                                                                         
+ energy 14.                                                                      
 
-USER INPUT FILE + DEFAULTS
+ USER INPUT FILE + DEFAULTS
 
-Keyword           Value   Variable     Explanation
+ Keyword           Value   Variable     Explanation
 
-#
-# Four main keywords
-#
-projectile          n     ptype0       type of incident particle
-element            Nb     Starget      symbol of target nucleus
-mass               93     mass         mass number of target nucleus
-energy             14.000 eninc        incident energy in MeV
-#
-# Basic physical and numerical parameters
-#
-ejectiles  g n p d t h a  outtype      outgoing particles
-maxz               10     maxZ         maximal number of protons away from the initial compound nucleus
-maxn               25     maxN         maximal number of neutrons away from the initial compound nucleus
-bins               40     nbins        number of continuum excitation energy bins
-segment             1     segment      number of segments to divide emission energy grid
-maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
-maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
-maxlevelsbin g     10     nlevbin      maximum number of included discrete levels for gamma    channel
-maxlevelsbin n     20     nlevbin      maximum number of included discrete levels for neutron  channel
-maxlevelsbin p     10     nlevbin      maximum number of included discrete levels for proton   channel
-maxlevelsbin d      5     nlevbin      maximum number of included discrete levels for deuteron channel
-maxlevelsbin t      5     nlevbin      maximum number of included discrete levels for triton   channel
-maxlevelsbin h      5     nlevbin      maximum number of included discrete levels for helium-3 channel
-maxlevelsbin a     10     nlevbin      maximum number of included discrete levels for alpha    channel
-ltarget             0     ltarget      excited level of target
-isomer           1.00E+00 isomer       definition of isomer in seconds
-transpower          5     transpower   power for transmission coefficient limit
-transeps         1.00E-08 transeps     limit for transmission coefficient
-xseps            1.00E-07 xseps        limit for cross sections
-popeps           1.00E-03 popeps       limit for population cross section per nucleus
-Rfiseps          1.00E-03 Rfiseps      ratio for limit for fission cross section per nucleus
-elow             4.40E-05 elow         minimal incident energy for nuclear model calculations
-angles             90     nangle       number of angles
-anglescont         18     nanglecont   number of angles for continuum
-anglesrec           1     nanglerec    number of recoil angles
-maxenrec           25     maxenrec     number of recoil energies
-channels            n     flagchannels flag for exclusive channels calculation
-maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
-relativistic        y     flagrel      flag for relativistic kinematics
-recoil              n     flagrecoil   flag for calculation of recoils
-labddx              n     flaglabddx   flag for calculation of DDX in LAB system
-recoilaverage       n     flagrecoilav flag for average velocity in recoil calculation
-channelenergy       n     flagEchannel flag for channel energy for emission spectrum
-#
-# Optical model
-#
-localomp            y     flaglocalomp flag for local (y) or global (n) optical model
-optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
-autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
-spherical           n     flagspher    flag to force spherical optical model
-statepot            n     flagstate    flag for optical model potential for each excited state
-maxband             0     maxband      highest vibrational band added to rotational model
-maxrot              2     maxrot       number of included excited rotational levels
-sysreaction  d t h a      sysreaction  particles with reaction cross section from systematics
-rotational   n p          rotational   particles with possible rotational optical model
-core               -1     core         even-even core for weakcoupling (-1 or 1)
-ecissave            n     flagecissave flag for saving ECIS input and output files
-eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
-inccalc             y     flaginccalc  flag for new ECIS calculation for incident channel
-#
-# Compound nucleus
-#
-widthfluc           n     flagwidth    flag for width fluctuation calculation
-widthmode           1     wmode        designator for width fluctuation model
-compound            y     flagcomp     flag for compound nucleus model
-fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
-eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
-#
-# Gamma emission
-#
-gammax              2     gammax       number of l-values for gamma multipolarity
-strength            1     strength     strength function of Kopecky-Uhl (1) or Brink-Axel (2)
-electronconv        n     flagelectron flag for application of electron conversion coefficient
-#
-# Pre-equilibrium
-#
-preequilibrium      y     flagpreeq    flag for pre-equilibrium calculation
-preeqmode           2     preeqmode    designator for pre-equilibrium model
-multipreeq          n     flagmulpre   flag for multiple pre-equilibrium calculation
-mpreeqmode          1     mpreeqmode   designator for multiple pre-equilibrium model
-preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
-giantresonance      y     flaggiant    flag for collective contribution from giant resonances
-preeqsurface        y     flagsurface  flag for surface effects in exciton model
-preeqcomplex        y     flagpecomp   flag for Kalbach complex particle emission model
-twocomponent        y     flag2comp    flag for two-component pre-equilibrium model
-ecisdwba            y     flagecisdwba flag for new ECIS calculation for DWBA for MSD
-onestep             n     flagonestep  flag for continuum one-step direct only
-#
-# Level densities
-#
-ldmodel             1     ldmodel      level density model
-asys                y     flagasys     flag for all level density parameters a from systematics
-colldamp            n     flagcolldamp flag for damping of collective effects
- flag for coupling of single particle level density parameter g to level density parameter a
-gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
-#
-# Fission
-#
-fission             n     flagfission  flag for fission
-fismodel            1     fismodel     fission model
-fismodelalt         4     fismodelalt  alternative fission model for default barriers
-class2              n     flagclass2   flag for class2 states in fission
-massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
-ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
-#
-# Output
-#
-outmain             y     flagmain     flag for main output
-outbasic            n     flagbasic    flag for output of basic information and results
-outpopulation       n     flagpop      flag for output of population
-outcheck            n     flagcheck    flag for output of numerical checks
-outlevels           n     flaglevels   flag for output of discrete level information
-outdensity          n     flagdensity  flag for output of level densities
-outomp              n     flagoutomp   flag for output of optical model parameters
-outdirect           n     flagdirect   flag for output of direct reaction results
-outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
-outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
-outecis             n     flagoutecis  flag for output of ECIS results
-outgamma            n     flaggamma    flag for output of gamma-ray information
-outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
-outfission          n     flagfisout   flag for output of fission information
-outdiscrete         n     flagdisc     flag for output of discrete state cross sections
-outspectra          n     flagspec     flag for output of double-differential cross sections
-adddiscrete         y     flagadd      flag for addition of discrete states to spectra
-addelastic          y     flagaddel    flag for addition of elastic peak to spectra
-outangle            n     flagang      flag for output of angular distributions
-outlegendre         n     flaglegendre flag for output of Legendre coefficients
-ddxmode             0     ddxmode      mode for double-differential cross sections
-outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
-outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
-outexcitation       n     flagexc      flag for output of excitation functions
-endf                n     flagendf     flag for information for ENDF-6 file
-partable            n     flagpartable flag for output of model parameters on separate file
+ #
+ # Four main keywords
+ #
+ projectile          n     ptype0       type of incident particle
+ element            Nb     Starget      symbol of target nucleus
+ mass               93     mass         mass number of target nucleus
+ energy             14.000 eninc        incident energy in MeV
+ #
+ # Basic physical and numerical parameters
+ #
+ ejectiles  g n p d t h a  outtype      outgoing particles
+ maxz               10     maxZ         maximal number of protons away from the initial compound nucleus
+ maxn               25     maxN         maximal number of neutrons away from the initial compound nucleus
+ bins               40     nbins        number of continuum excitation energy bins
+ segment             1     segment      number of segments to divide emission energy grid
+ maxlevelstar       20     nlevmax      maximum number of included discrete levels for target
+ maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
+ maxlevelsbin g     10     nlevbin      maximum number of included discrete levels for gamma    channel
+ maxlevelsbin n     20     nlevbin      maximum number of included discrete levels for neutron  channel
+ maxlevelsbin p     10     nlevbin      maximum number of included discrete levels for proton   channel
+ maxlevelsbin d      5     nlevbin      maximum number of included discrete levels for deuteron channel
+ maxlevelsbin t      5     nlevbin      maximum number of included discrete levels for triton   channel
+ maxlevelsbin h      5     nlevbin      maximum number of included discrete levels for helium-3 channel
+ maxlevelsbin a     10     nlevbin      maximum number of included discrete levels for alpha    channel
+ ltarget             0     ltarget      excited level of target
+ isomer           1.00E+00 isomer       definition of isomer in seconds
+ transpower          5     transpower   power for transmission coefficient limit
+ transeps         1.00E-08 transeps     limit for transmission coefficient
+ xseps            1.00E-07 xseps        limit for cross sections
+ popeps           1.00E-03 popeps       limit for population cross section per nucleus
+ Rfiseps          1.00E-03 Rfiseps      ratio for limit for fission cross section per nucleus
+ elow             1.00E-06 elow         minimal incident energy for nuclear model calculations
+ angles             90     nangle       number of angles
+ anglescont         18     nanglecont   number of angles for continuum
+ anglesrec           1     nanglerec    number of recoil angles
+ maxenrec           25     maxenrec     number of recoil energies
+ channels            n     flagchannels flag for exclusive channels calculation
+ maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
+ relativistic        y     flagrel      flag for relativistic kinematics
+ recoil              n     flagrecoil   flag for calculation of recoils
+ labddx              n     flaglabddx   flag for calculation of DDX in LAB system
+ recoilaverage       n     flagrecoilav flag for average velocity in recoil calculation
+ channelenergy       n     flagEchannel flag for channel energy for emission spectrum
+ reaction            y     flagreaction flag for calculation of nuclear reactions
+ massmodel           1     massmodel    model for theoretical nuclear mass
+ expmass             y     flagexpmass  flag for using experimental nuclear mass if available
+ #
+ # Optical model
+ #
+ localomp            y     flaglocalomp flag for local (y) or global (n) optical model
+ optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
+ autorot             n     flagautorot  flag for automatic rotational coupled channels calculations for A > 150
+ spherical           n     flagspher    flag to force spherical optical model
+ statepot            n     flagstate    flag for optical model potential for each excited state
+ maxband             0     maxband      highest vibrational band added to rotational model
+ maxrot              2     maxrot       number of included excited rotational levels
+ sysreaction               sysreaction  particles with reaction cross section from systematics
+ rotational   n p          rotational   particles with possible rotational optical model
+ core               -1     core         even-even core for weakcoupling (-1 or 1)
+ ecissave            n     flagecissave flag for saving ECIS input and output files
+ eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
+ inccalc             y     flaginccalc  flag for new ECIS calculation for incident channel
+ #
+ # Compound nucleus
+ #
+ widthfluc           n     flagwidth    flag for width fluctuation calculation
+ widthmode           1     wmode        designator for width fluctuation model
+ compound            y     flagcomp     flag for compound nucleus model
+ fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
+ eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
+ #
+ # Gamma emission
+ #
+ gammax              2     gammax       number of l-values for gamma multipolarity
+ strength            1     strength     model for E1 gamma-ray strength function
+ electronconv        n     flagelectron flag for application of electron conversion coefficient
+ #
+ # Pre-equilibrium
+ #
+ preequilibrium      y     flagpreeq    flag for pre-equilibrium calculation
+ preeqmode           2     preeqmode    designator for pre-equilibrium model
+ multipreeq          n     flagmulpre   flag for multiple pre-equilibrium calculation
+ mpreeqmode          1     mpreeqmode   designator for multiple pre-equilibrium model
+ pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
+ preeqspin           n     flagpespin   flag for pre-equilibrium spin distribution
+ giantresonance      y     flaggiant    flag for collective contribution from giant resonances
+ preeqsurface        y     flagsurface  flag for surface effects in exciton model
+ preeqcomplex        y     flagpecomp   flag for Kalbach complex particle emission model
+ twocomponent        y     flag2comp    flag for two-component pre-equilibrium model
+ ecisdwba            y     flagecisdwba flag for new ECIS calculation for DWBA for MSD
+ onestep             n     flagonestep  flag for continuum one-step direct only
+ #
+ # Level densities
+ #
+ ldmodel             1     ldmodel      level density model
+ shellmodel          1     shellmodel   model for shell correction energies
+ spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
+ asys                y     flagasys     flag for all level density parameters a from systematics
+ parity              n     flagparity   flag for non-equal parity distribution
+ colenhance          n     flagcol      flag for damping of collective effects
+ gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+ #
+ # Fission
+ #
+ fission             n     flagfission  flag for fission
+ fismodel            1     fismodel     fission model
+ fismodelalt         4     fismodelalt  alternative fission model for default barriers
+ class2              n     flagclass2   flag for class2 states in fission
+ massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
+ ffevaporation       n     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
+ #
+ # Output
+ #
+ outmain             y     flagmain     flag for main output
+ outbasic            n     flagbasic    flag for output of basic information and results
+ outpopulation       n     flagpop      flag for output of population
+ outcheck            n     flagcheck    flag for output of numerical checks
+ outlevels           n     flaglevels   flag for output of discrete level information
+ outdensity          n     flagdensity  flag for output of level densities
+ outomp              n     flagoutomp   flag for output of optical model parameters
+ outdirect           n     flagdirect   flag for output of direct reaction results
+ outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+ outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
+ outecis             n     flagoutecis  flag for output of ECIS results
+ outgamma            n     flaggamma    flag for output of gamma-ray information
+ outpreequilibrium   n     flagpeout    flag for output of pre-equilibrium results 
+ outfission          n     flagfisout   flag for output of fission information
+ outdiscrete         n     flagdisc     flag for output of discrete state cross sections
+ outspectra          n     flagspec     flag for output of double-differential cross sections
+ adddiscrete         y     flagadd      flag for addition of discrete states to spectra
+ addelastic          y     flagaddel    flag for addition of elastic peak to spectra
+ outangle            n     flagang      flag for output of angular distributions
+ outlegendre         n     flaglegendre flag for output of Legendre coefficients
+ ddxmode             0     ddxmode      mode for double-differential cross sections
+ outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
+ outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
+ outexcitation       n     flagexc      flag for output of excitation functions
+ endf                n     flagendf     flag for information for ENDF-6 file
+ endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
+ partable            n     flagpartable flag for output of model parameters on separate file
 
-########## BASIC REACTION PARAMETERS ##########
+ ########## BASIC REACTION PARAMETERS ##########
 
-Projectile           : neutron     Mass in a.m.u.      :   1.008665
-Target               :  93Nb       Mass in a.m.u.      :  92.906377
+ Projectile           : neutron     Mass in a.m.u.      :   1.008665
+ Target               :  93Nb       Mass in a.m.u.      :  92.906377
 
-Included channels:
-                    gamma   
-                    neutron 
-                    proton  
-                    deuteron
-                    triton  
-                    helium-3
-                    alpha   
+ Included channels:
+                     gamma   
+                     neutron 
+                     proton  
+                     deuteron
+                     triton  
+                     helium-3
+                     alpha   
 
-1 incident energy (LAB):
+ 1 incident energy (LAB):
 
-    14.000
+     14.000
 
-Q-values for binary reactions:
+ Q-values for binary reactions:
 
-Q(n,g):  7.22747
-Q(n,n):  0.00000
-Q(n,p):  0.69099
-Q(n,d): -3.81858
-Q(n,t): -6.19608
-Q(n,h): -7.72232
-Q(n,a):  4.92553
+ Q(n,g):  7.22747
+ Q(n,n):  0.00000
+ Q(n,p):  0.69099
+ Q(n,d): -3.81858
+ Q(n,t): -6.19608
+ Q(n,h): -7.72232
+ Q(n,a):  4.92553
 
-########## RESULTS FOR E= 14.00000 ##########
+ ########## RESULTS FOR E= 14.00000 ##########
 
-Energy dependent input flags
+ Energy dependent input flags
 
-Width fluctuations (flagwidth)      : n
-Preequilibrium (flagpreeq)          : y
-Multiple preequilibrium (flagmulpre): n
+ Width fluctuations (flagwidth)      : n
+ Preequilibrium (flagpreeq)          : y
+ Multiple preequilibrium (flagmulpre): n
 
-########### REACTION SUMMARY FOR E= 14.000 ###########
+ ########### REACTION SUMMARY FOR E= 14.000 ###########
 
-Center-of-mass energy:  13.849
+ Center-of-mass energy:  13.849
 
-1. Total (binary) cross sections
+ 1. Total (binary) cross sections
 
-Total           = 3.98190E+03
-  Shape elastic   = 2.21130E+03
-  Reaction        = 1.77060E+03
-    Compound elastic= 1.05478E-03
-    Non-elastic     = 1.77060E+03
-      Direct          = 4.53222E+01
-      Pre-equilibrium = 4.24545E+02
-      Giant resonance = 6.33243E+01
-      Compound non-el = 1.23741E+03
-    Total elastic   = 2.21130E+03
+ Total           = 3.98200E+03
+   Shape elastic   = 2.21130E+03
+   Reaction        = 1.77060E+03
+     Compound elastic= 5.96759E-04
+     Non-elastic     = 1.77060E+03
+       Direct          = 4.18528E+01
+       Pre-equilibrium = 4.15685E+02
+       Giant resonance = 7.00806E+01
+       Compound non-el = 1.24298E+03
+     Total elastic   = 2.21130E+03
 
-2. Binary non-elastic cross sections (non-exclusive)
+ 2. Binary non-elastic cross sections (non-exclusive)
 
-gamma   = 2.97252E+00
-neutron = 1.66248E+03
-proton  = 5.67462E+01
-deuteron= 1.56242E+01
-triton  = 1.69988E+00
-helium-3= 1.18587E-08
-alpha   = 3.10767E+01
+ gamma   = 3.58813E+00
+ neutron = 1.67768E+03
+ proton  = 4.20039E+01
+ deuteron= 1.04138E+01
+ triton  = 7.29863E-01
+ helium-3= 2.49344E-08
+ alpha   = 3.61818E+01
 
-3. Total particle production cross sections
+ 3. Total particle production cross sections
 
-gamma   = 2.05606E+03    Multiplicity= 1.16122E+00
-neutron = 3.02632E+03    Multiplicity= 1.70921E+00
-proton  = 5.99929E+01    Multiplicity= 3.38828E-02
-deuteron= 1.56242E+01    Multiplicity= 8.82426E-03
-triton  = 1.69988E+00    Multiplicity= 9.60061E-04
-helium-3= 1.18587E-08    Multiplicity= 6.69756E-12
-alpha   = 3.21314E+01    Multiplicity= 1.81472E-02
+ gamma   = 2.21356E+03    Multiplicity= 1.25018E+00
+ neutron = 3.03987E+03    Multiplicity= 1.71686E+00
+ proton  = 4.42373E+01    Multiplicity= 2.49844E-02
+ deuteron= 1.04138E+01    Multiplicity= 5.88152E-03
+ triton  = 7.29863E-01    Multiplicity= 4.12212E-04
+ helium-3= 2.49344E-08    Multiplicity= 1.40824E-11
+ alpha   = 3.67970E+01    Multiplicity= 2.07822E-02
 
-4. Residual production cross sections
+ 4. Residual production cross sections
 
-  a. Per isotope
+   a. Per isotope
 
-  Z   A  nuclide    total     level   isomeric    isomeric    lifetime
-                cross section       cross section  ratio
+   Z   A  nuclide    total     level   isomeric    isomeric    lifetime
+                 cross section       cross section  ratio
 
-  41  94 ( 94Nb) 1.32555E+00    0    6.47368E-01  0.48838
-                                1    6.78179E-01  0.51162   3.76000E+02 sec. 
-  41  93 ( 93Nb) 3.17521E+02    0    2.70943E+02  0.85331
-                                1    4.65780E+01  0.14669   5.09000E+08 sec. 
-  40  93 ( 93Zr) 4.26957E+01    0    4.26957E+01  1.00000
-  41  92 ( 92Nb) 1.34230E+03    0    8.36701E+02  0.62333
-                                1    5.05602E+02  0.37667   8.77000E+05 sec. 
-  40  92 ( 92Zr) 3.29213E+01    0    3.29213E+01  1.00000
-  40  91 ( 91Zr) 1.69988E+00    0    1.69988E+00  1.00000
-  39  90 ( 90Y ) 2.52339E+01    0    1.55004E+01  0.61427
-                                2    9.73356E+00  0.38573   1.15000E+04 sec. 
-  39  89 ( 89Y ) 6.89745E+00    0    2.73554E+00  0.39660
-                                1    4.16191E+00  0.60340   1.61000E+01 sec. 
+   41  94 ( 94Nb) 1.30059E+00    0    6.48482E-01  0.49861
+                                 1    6.52110E-01  0.50139   3.76000E+02 sec. 
+   41  93 ( 93Nb) 3.32678E+02    0    2.82006E+02  0.84769
+                                 1    5.06714E+01  0.15231   5.09000E+08 sec. 
+   40  93 ( 93Zr) 3.13058E+01    0    3.13058E+01  1.00000
+   41  92 ( 92Nb) 1.34444E+03    0    8.47157E+02  0.63012
+                                 1    4.97286E+02  0.36988   8.77000E+05 sec. 
+   40  92 ( 92Zr) 2.33454E+01    0    2.33454E+01  1.00000
+   40  91 ( 91Zr) 7.29859E-01    0    7.29859E-01  1.00000
+   39  90 ( 90Y ) 3.14190E+01    0    1.64894E+01  0.52482
+                                 2    1.49295E+01  0.47518   1.15000E+04 sec. 
+   39  89 ( 89Y ) 5.37798E+00    0    1.98978E+00  0.36999
+                                 1    3.38821E+00  0.63001   1.57000E+01 sec. 
 
-  b. Per mass
+   b. Per mass
 
-  A  cross section
+   A  cross section
 
-  94 1.32555E+00
-  93 3.60217E+02
-  92 1.37523E+03
-  91 1.69988E+00
-  90 2.52339E+01
-  89 6.89745E+00
+   94 1.30059E+00
+   93 3.63984E+02
+   92 1.36779E+03
+   91 7.29859E-01
+   90 3.14190E+01
+   89 5.37798E+00
 
-Total residual production cross section:  1770.59851
-Non-elastic cross section              :  1770.59888
+ Total residual production cross section:  1770.59912
+ Non-elastic cross section              :  1770.59937
 
-Execution time:  0 hours  0 minutes  4.60 seconds 
+ Execution time:  0 hours  0 minutes  3.22 seconds 
 
-The TALYS team congratulates you with this successful calculation.
+ The TALYS team congratulates you with this successful calculation.
