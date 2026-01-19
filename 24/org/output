@@ -1,7 +1,7 @@
 
-    TALYS-1.6 (Version: December 23, 2013) 
+    TALYS-1.8 (Version: December 28, 2015)
 
- Copyright (C) 2013  A.J. Koning, S. Hilaire and S. Goriely      
+ Copyright (C) 2015  A.J. Koning, S. Hilaire and S. Goriely      
                          NRG          CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
@@ -38,11 +38,12 @@
  #
  # Basic physical and numerical parameters
  #
- ejectiles  g n p d t h a  outtype      outgoing particles
+ ejectiles g n p d t h a   outtype      outgoing particles
  maxz               12     maxZ         maximal number of protons away from the initial compound nucleus
  maxn               32     maxN         maximal number of neutrons away from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
  equidistant         n     flagequi     flag to use equidistant excitation bins instead of logarithmic bins
+ popmev              n     flagpopmev   flag to use initial population per MeV instead of histograms
  segment             1     segment      number of segments to divide emission energy grid
  maxlevelstar       30     nlevmax      maximum number of included discrete levels for target
  maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
@@ -69,6 +70,8 @@
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
  best                n     flagbest     flag to use best set of adjusted parameters
+ bestbranch          y     flagbestbr   flag to use flag to use only best set of branching ratios
+ bestend             n     flagbestend  flag to put best set of parameters at end of input file
  relativistic        y     flagrel      flag for relativistic kinematics
  recoil              n     flagrecoil   flag for calculation of recoils
  labddx              n     flaglabddx   flag for calculation of DDX in LAB system
@@ -83,6 +86,10 @@
  production          n     flagprod     flag for isotope production
  outfy               n     flagoutfy    flag for output detailed fission yield calculation
  gefran          50000     gefran       number of random events for GEF calculation
+ Estop            1000.000 Estop        incident energy above which TALYS stops
+ rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
+ maxZrp             12     maxZrp       maximal number of protons away from the initial compound nucleus before residual evaporation
+ maxNrp             32     maxNrp       maximal number of neutons away from the initial compound nucleus before residual evaporation
  #
  # Optical model
  #
@@ -107,7 +114,7 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            1     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential)
+ alphaomp            6     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
  deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
@@ -137,6 +144,7 @@
  preeqmode           2     preeqmode    designator for pre-equilibrium model
  multipreeq          n     flagmulpre   flag for multiple pre-equilibrium calculation
  mpreeqmode          2     mpreeqmode   designator for multiple pre-equilibrium model
+ breakupmodel        1     breakupmodel model for break-up reaction: 1. Kalbach 2. Avrigeanu
  phmodel             1     phmodel      particle-hole state density model
  pairmodel           2     pairmodel    designator for pre-equilibrium pairing model
  preeqspin           1     pespinmodel  model for pre-equilibrium spin distribution
@@ -170,6 +178,7 @@
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
  fymodel             2     fymodel      fission yield model, 1: Brosa 2: GEF
+ ffspin              n     flagffspin   flag to use spin distribution in initial FF population
  #
  # Output
  #
@@ -189,6 +198,9 @@
  outfission          n     flagfisout   flag for output of fission information
  outdiscrete         n     flagdisc     flag for output of discrete state cross sections
  outspectra          n     flagspec     flag for output of double-differential cross sections
+ outbinspectra       n     flagbinspec  flag for output of emission spectrum per excitation bin
+ resonance           n     flagres      flag for output of low energy resonance cross sections
+ group               n     flaggroup    flag for output of low energy groupwise cross sections
  addiscrete          y     flagadd      flag for addition of discrete states to spectra
  addelastic          y     flagaddel    flag for addition of elastic peak to spectra
  outangle            n     flagang      flag for output of angular distributions
@@ -200,6 +212,7 @@
  components          n     flagcompo    flag for output of cross section components
  endf                n     flagendf     flag for information for ENDF-6 file
  endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
+ sacs                n     flagsacs     flag for statistical analysis of cross sections
  partable            n     flagpartable flag for output of model parameters on separate file
 
  ########## BASIC REACTION PARAMETERS ##########
@@ -216,7 +229,7 @@
                      helium-3
                      alpha   
 
-  25 incident energies (LAB):
+    25 incident energies (LAB):
 
       0.200
       0.400
@@ -434,32 +447,32 @@
  Total           = 1.20021E+04
    Shape elastic   = 5.66578E+03
    Reaction        = 6.33635E+03
-     Compound elastic= 6.25336E+03
-     Non-elastic     = 8.29907E+01
-       Direct          = 7.83791E-03
+     Compound elastic= 6.25320E+03
+     Non-elastic     = 8.31504E+01
+       Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 8.29829E+01
-     Total elastic   = 1.19191E+04
+       Compound non-el = 8.31504E+01
+     Total elastic   = 1.19190E+04
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 7.93752E+01
- neutron = 3.52266E+00
+ gamma   = 7.95426E+01
+ neutron = 3.51635E+00
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.36050E-04
+ alpha   = 1.36141E-04
 
  3. Total particle production cross sections
 
- gamma   = 2.43732E+02    Multiplicity= 2.93686E+00
- neutron = 3.62771E+00    Multiplicity= 4.37123E-02
+ gamma   = 2.43635E+02    Multiplicity= 2.93005E+00
+ neutron = 3.62142E+00    Multiplicity= 4.35527E-02
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.36050E-04    Multiplicity= 1.63934E-06
+ alpha   = 1.36141E-04    Multiplicity= 1.63728E-06
 
  4. Residual production cross sections
 
@@ -468,23 +481,23 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 7.92701E+01    0    3.12704E+01  0.39448
-                                 1    4.79997E+01  0.60552   3.76000E+02 sec. 
-   41  93 ( 93Nb) 3.62771E+00    0    1.00305E-01  0.02765
-                                 1    3.52741E+00  0.97235   5.09000E+08 sec. 
+   41  94 ( 94Nb) 7.94376E+01    0    2.89684E+01  0.36467
+                                 1    5.04691E+01  0.63533   3.75800E+02 sec. 
+   41  93 ( 93Nb) 3.62142E+00    0    1.00318E-01  0.02770
+                                 1    3.52110E+00  0.97230   5.08700E+08 sec. 
    40  93 ( 93Zr) 1.00000E-07    0    0.00000E+00  0.00000
-   39  90 ( 90Y ) 1.00000E-07    0    1.36050E-04  0.00000
-                                 2    0.00000E+00  0.00000   1.15000E+04 sec. 
+   39  90 ( 90Y ) 1.00000E-07    0    1.36141E-04  0.00000
+                                 2    0.00000E+00  0.00000   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 7.92701E+01
-   93 3.62771E+00
+   94 7.94376E+01
+   93 3.62142E+00
 
- Total residual production cross section:    82.89783
- Non-elastic cross section              :    82.99072
+ Total residual production cross section:    83.05901
+ Non-elastic cross section              :    83.15039
 
  ########## RESULTS FOR E=  0.40000 ##########
 
@@ -513,32 +526,32 @@
  Total           = 1.07105E+04
    Shape elastic   = 6.15554E+03
    Reaction        = 4.55498E+03
-     Compound elastic= 4.47754E+03
-     Non-elastic     = 7.74404E+01
-       Direct          = 6.76013E-02
+     Compound elastic= 4.47747E+03
+     Non-elastic     = 7.75103E+01
+       Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 7.73730E+01
-     Total elastic   = 1.06331E+04
+       Compound non-el = 7.75103E+01
+     Total elastic   = 1.06330E+04
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 6.38329E+01
- neutron = 1.35747E+01
+ gamma   = 6.39657E+01
+ neutron = 1.35114E+01
  proton  = 0.00000E+00
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 3.98873E-04
+ alpha   = 3.99029E-04
 
  3. Total particle production cross sections
 
- gamma   = 2.00514E+02    Multiplicity= 2.58927E+00
- neutron = 1.36755E+01    Multiplicity= 1.76594E-01
+ gamma   = 2.00335E+02    Multiplicity= 2.58462E+00
+ neutron = 1.36122E+01    Multiplicity= 1.75618E-01
  proton  = 0.00000E+00    Multiplicity= 0.00000E+00
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 3.98921E-04    Multiplicity= 5.15133E-06
+ alpha   = 3.99078E-04    Multiplicity= 5.14871E-06
 
  4. Residual production cross sections
 
@@ -547,23 +560,23 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 6.37322E+01    0    2.79903E+01  0.43919
-                                 1    3.57419E+01  0.56081   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.36755E+01    0    9.56317E-02  0.00699
-                                 1    1.35799E+01  0.99301   5.09000E+08 sec. 
+   41  94 ( 94Nb) 6.38650E+01    0    2.59840E+01  0.40686
+                                 1    3.78809E+01  0.59314   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.36122E+01    0    9.56229E-02  0.00702
+                                 1    1.35165E+01  0.99298   5.08700E+08 sec. 
    40  93 ( 93Zr) 1.00000E-07    0    0.00000E+00  0.00000
-   39  90 ( 90Y ) 1.00000E-07    0    2.10712E-04  0.00000
-                                 2    0.00000E+00  0.00000   1.15000E+04 sec. 
+   39  90 ( 90Y ) 1.00000E-07    0    2.10818E-04  0.00000
+                                 2    0.00000E+00  0.00000   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 6.37322E+01
-   93 1.36755E+01
+   94 6.38650E+01
+   93 1.36122E+01
 
- Total residual production cross section:    77.40770
- Non-elastic cross section              :    77.44043
+ Total residual production cross section:    77.47713
+ Non-elastic cross section              :    77.51025
 
  ########## RESULTS FOR E=  0.60000 ##########
 
@@ -592,32 +605,32 @@
  Total           = 9.45489E+03
    Shape elastic   = 5.99895E+03
    Reaction        = 3.45594E+03
-     Compound elastic= 3.36725E+03
-     Non-elastic     = 8.86873E+01
-       Direct          = 1.84339E-01
+     Compound elastic= 3.36730E+03
+     Non-elastic     = 8.86382E+01
+       Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 8.85029E+01
-     Total elastic   = 9.36620E+03
+       Compound non-el = 8.86382E+01
+     Total elastic   = 9.36625E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 6.13252E+01
- neutron = 2.73524E+01
- proton  = 8.39878E-06
+ gamma   = 6.14534E+01
+ neutron = 2.71750E+01
+ proton  = 8.40484E-06
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 9.85797E-04
+ alpha   = 9.85972E-04
 
  3. Total particle production cross sections
 
- gamma   = 1.93987E+02    Multiplicity= 2.18731E+00
- neutron = 2.82919E+01    Multiplicity= 3.19008E-01
- proton  = 8.39878E-06    Multiplicity= 9.47011E-08
+ gamma   = 1.93791E+02    Multiplicity= 2.18631E+00
+ neutron = 2.81144E+01    Multiplicity= 3.17181E-01
+ proton  = 8.40484E-06    Multiplicity= 9.48219E-08
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 9.85876E-04    Multiplicity= 1.11163E-05
+ alpha   = 9.86050E-04    Multiplicity= 1.11244E-05
 
  4. Residual production cross sections
 
@@ -626,23 +639,23 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 6.03857E+01    0    2.80252E+01  0.46410
-                                 1    3.23605E+01  0.53590   3.76000E+02 sec. 
-   41  93 ( 93Nb) 2.82919E+01    0    9.13268E-01  0.03228
-                                 1    2.73787E+01  0.96772   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.00000E-07    0    8.39878E-06  0.00000
-   39  90 ( 90Y ) 1.00000E-07    0    6.63468E-04  0.00000
-                                 2    0.00000E+00  0.00000   1.15000E+04 sec. 
+   41  94 ( 94Nb) 6.05141E+01    0    2.60456E+01  0.43041
+                                 1    3.44685E+01  0.56959   3.75800E+02 sec. 
+   41  93 ( 93Nb) 2.81144E+01    0    9.13013E-01  0.03247
+                                 1    2.72014E+01  0.96753   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.00000E-07    0    8.40484E-06  0.00000
+   39  90 ( 90Y ) 1.00000E-07    0    6.63566E-04  0.00000
+                                 2    0.00000E+00  0.00000   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 6.03857E+01
-   93 2.82919E+01
+   94 6.05141E+01
+   93 2.81144E+01
 
- Total residual production cross section:    88.67759
- Non-elastic cross section              :    88.68726
+ Total residual production cross section:    88.62847
+ Non-elastic cross section              :    88.63818
 
  ########## RESULTS FOR E=  0.80000 ##########
 
@@ -671,18 +684,18 @@
  Total           = 8.45890E+03
    Shape elastic   = 5.59220E+03
    Reaction        = 2.86670E+03
-     Compound elastic= 2.58471E+03
-     Non-elastic     = 2.81989E+02
-       Direct          = 3.38235E-01
+     Compound elastic= 2.58487E+03
+     Non-elastic     = 2.81831E+02
+       Direct          = 0.00000E+00
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 2.81651E+02
-     Total elastic   = 8.17691E+03
+       Compound non-el = 2.81831E+02
+     Total elastic   = 8.17707E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 5.72899E+01
- neutron = 2.24696E+02
- proton  = 1.05296E-04
+ gamma   = 5.74342E+01
+ neutron = 2.24393E+02
+ proton  = 1.05319E-04
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
@@ -690,13 +703,13 @@
 
  3. Total particle production cross sections
 
- gamma   = 1.83935E+02    Multiplicity= 6.52278E-01
- neutron = 2.25961E+02    Multiplicity= 8.01310E-01
- proton  = 1.05298E-04    Multiplicity= 3.73412E-07
+ gamma   = 1.83647E+02    Multiplicity= 6.51621E-01
+ neutron = 2.25658E+02    Multiplicity= 8.00687E-01
+ proton  = 1.05321E-04    Multiplicity= 3.73702E-07
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.96610E-03    Multiplicity= 6.97226E-06
+ alpha   = 1.96610E-03    Multiplicity= 6.97618E-06
 
  4. Residual production cross sections
 
@@ -705,24 +718,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 5.60249E+01    0    2.87882E+01  0.51385
-                                 1    2.72366E+01  0.48615   3.76000E+02 sec. 
-   41  93 ( 93Nb) 2.25961E+02    0    1.77121E+02  0.78386
-                                 1    4.88401E+01  0.21614   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.00000E-07    0    1.05157E-04  0.00000
-   39  90 ( 90Y ) 1.96610E-03    0    1.88101E-03  0.95672
-                                 2    8.50928E-05  0.04328   1.15000E+04 sec. 
+   41  94 ( 94Nb) 5.61690E+01    0    2.67550E+01  0.47633
+                                 1    2.94140E+01  0.52367   3.75800E+02 sec. 
+   41  93 ( 93Nb) 2.25659E+02    0    1.77147E+02  0.78502
+                                 1    4.85118E+01  0.21498   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.00000E-07    0    1.05180E-04  0.00000
+   39  90 ( 90Y ) 1.96610E-03    0    1.88106E-03  0.95675
+                                 2    8.50410E-05  0.04325   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 5.60248E+01
-   93 2.25961E+02
+   94 5.61690E+01
+   93 2.25659E+02
    90 1.96610E-03
 
- Total residual production cross section:   281.98746
- Non-elastic cross section              :   281.98901
+ Total residual production cross section:   281.82944
+ Non-elastic cross section              :   281.83105
 
  ########## RESULTS FOR E=  1.00000 ##########
 
@@ -751,32 +764,32 @@
  Total           = 7.66697E+03
    Shape elastic   = 5.10947E+03
    Reaction        = 2.55751E+03
-     Compound elastic= 1.68993E+03
-     Non-elastic     = 8.67577E+02
-       Direct          = 2.61904E+01
+     Compound elastic= 1.69017E+03
+     Non-elastic     = 8.67341E+02
+       Direct          = 2.56914E+01
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 8.41387E+02
-     Total elastic   = 6.79940E+03
+       Compound non-el = 8.41649E+02
+     Total elastic   = 6.79964E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 4.06239E+01
- neutron = 8.26951E+02
- proton  = 2.72782E-04
+ gamma   = 4.07485E+01
+ neutron = 8.26589E+02
+ proton  = 2.72838E-04
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 2.31701E-03
+ alpha   = 2.31721E-03
 
  3. Total particle production cross sections
 
- gamma   = 1.32182E+02    Multiplicity= 1.52358E-01
- neutron = 8.28072E+02    Multiplicity= 9.54464E-01
- proton  = 2.72783E-04    Multiplicity= 3.14420E-07
+ gamma   = 1.31921E+02    Multiplicity= 1.52098E-01
+ neutron = 8.27710E+02    Multiplicity= 9.54308E-01
+ proton  = 2.72839E-04    Multiplicity= 3.14570E-07
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 2.31731E-03    Multiplicity= 2.67102E-06
+ alpha   = 2.31751E-03    Multiplicity= 2.67197E-06
 
  4. Residual production cross sections
 
@@ -785,24 +798,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 3.95029E+01    0    2.13680E+01  0.54092
-                                 1    1.81350E+01  0.45908   3.76000E+02 sec. 
-   41  93 ( 93Nb) 8.28072E+02    0    7.15883E+02  0.86452
-                                 1    1.12189E+02  0.13548   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.00000E-07    0    2.68452E-04  0.00000
-   39  90 ( 90Y ) 2.31731E-03    0    2.15048E-03  0.92801
-                                 2    1.66829E-04  0.07199   1.15000E+04 sec. 
+   41  94 ( 94Nb) 3.96273E+01    0    1.98427E+01  0.50073
+                                 1    1.97846E+01  0.49927   3.75800E+02 sec. 
+   41  93 ( 93Nb) 8.27711E+02    0    7.16813E+02  0.86602
+                                 1    1.10897E+02  0.13398   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.00000E-07    0    2.68507E-04  0.00000
+   39  90 ( 90Y ) 2.31751E-03    0    2.15072E-03  0.92803
+                                 2    1.66794E-04  0.07197   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 3.95029E+01
-   93 8.28072E+02
-   90 2.31731E-03
+   94 3.96273E+01
+   93 8.27711E+02
+   90 2.31751E-03
 
- Total residual production cross section:   867.57721
- Non-elastic cross section              :   867.57727
+ Total residual production cross section:   867.34033
+ Non-elastic cross section              :   867.34058
 
  ########## RESULTS FOR E=  1.20000 ##########
 
@@ -831,32 +844,32 @@
  Total           = 7.06912E+03
    Shape elastic   = 4.69226E+03
    Reaction        = 2.37687E+03
-     Compound elastic= 9.47782E+02
-     Non-elastic     = 1.42909E+03
-       Direct          = 7.70938E+01
+     Compound elastic= 9.45408E+02
+     Non-elastic     = 1.43146E+03
+       Direct          = 7.64314E+01
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 1.35199E+03
-     Total elastic   = 5.64004E+03
+       Compound non-el = 1.35503E+03
+     Total elastic   = 5.63767E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.75290E+01
- neutron = 1.40155E+03
- proton  = 8.95809E-04
+ gamma   = 2.73919E+01
+ neutron = 1.40407E+03
+ proton  = 8.82370E-04
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 2.97228E-03
+ alpha   = 2.96207E-03
 
  3. Total particle production cross sections
 
- gamma   = 8.78820E+01    Multiplicity= 6.14952E-02
- neutron = 1.40332E+03    Multiplicity= 9.81967E-01
- proton  = 8.95816E-04    Multiplicity= 6.26844E-07
+ gamma   = 8.71414E+01    Multiplicity= 6.08758E-02
+ neutron = 1.40581E+03    Multiplicity= 9.82078E-01
+ proton  = 8.82376E-04    Multiplicity= 6.16416E-07
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 2.97273E-03    Multiplicity= 2.08016E-06
+ alpha   = 2.96252E-03    Multiplicity= 2.06957E-06
 
  4. Residual production cross sections
 
@@ -865,24 +878,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 2.57673E+01    0    1.34818E+01  0.52321
-                                 1    1.22855E+01  0.47679   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.40332E+03    0    1.27697E+03  0.90996
-                                 1    1.26350E+02  0.09004   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.00000E-07    0    8.68245E-04  0.00000
-   39  90 ( 90Y ) 2.97273E-03    0    2.76418E-03  0.92984
-                                 2    2.08553E-04  0.07016   1.15000E+04 sec. 
+   41  94 ( 94Nb) 2.56497E+01    0    1.25024E+01  0.48743
+                                 1    1.31473E+01  0.51257   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.40581E+03    0    1.29014E+03  0.91772
+                                 1    1.15673E+02  0.08228   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.00000E-07    0    8.54325E-04  0.00000
+   39  90 ( 90Y ) 2.96252E-03    0    2.75421E-03  0.92968
+                                 2    2.08310E-04  0.07032   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 2.57673E+01
-   93 1.40332E+03
-   90 2.97273E-03
+   94 2.56497E+01
+   93 1.40581E+03
+   90 2.96252E-03
 
- Total residual production cross section:  1429.08691
- Non-elastic cross section              :  1429.08789
+ Total residual production cross section:  1431.46118
+ Non-elastic cross section              :  1431.46252
 
  ########## RESULTS FOR E=  1.40000 ##########
 
@@ -911,32 +924,32 @@
  Total           = 6.69564E+03
    Shape elastic   = 4.69120E+03
    Reaction        = 2.00444E+03
-     Compound elastic= 5.99245E+02
-     Non-elastic     = 1.40520E+03
-       Direct          = 6.05701E+01
+     Compound elastic= 5.93777E+02
+     Non-elastic     = 1.41066E+03
+       Direct          = 6.01028E+01
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 1.34462E+03
-     Total elastic   = 5.29044E+03
+       Compound non-el = 1.35056E+03
+     Total elastic   = 5.28498E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.44078E+01
- neutron = 1.38078E+03
- proton  = 2.42287E-03
+ gamma   = 2.41133E+01
+ neutron = 1.38654E+03
+ proton  = 2.36582E-03
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 4.83808E-03
+ alpha   = 4.78767E-03
 
  3. Total particle production cross sections
 
- gamma   = 7.67968E+01    Multiplicity= 5.46521E-02
- neutron = 1.38306E+03    Multiplicity= 9.84244E-01
- proton  = 2.42289E-03    Multiplicity= 1.72424E-06
+ gamma   = 7.56112E+01    Multiplicity= 5.35998E-02
+ neutron = 1.38877E+03    Multiplicity= 9.84484E-01
+ proton  = 2.36584E-03    Multiplicity= 1.67711E-06
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 4.83837E-03    Multiplicity= 3.44320E-06
+ alpha   = 4.78796E-03    Multiplicity= 3.39412E-06
 
  4. Residual production cross sections
 
@@ -945,24 +958,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 2.21326E+01    0    1.18548E+01  0.53563
-                                 1    1.02778E+01  0.46437   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.38306E+03    0    1.23050E+03  0.88970
-                                 1    1.52551E+02  0.11030   5.09000E+08 sec. 
-   40  93 ( 93Zr) 2.42289E-03    0    2.42289E-03  1.00000
-   39  90 ( 90Y ) 4.83837E-03    0    4.24127E-03  0.87659
-                                 2    5.97092E-04  0.12341   1.15000E+04 sec. 
+   41  94 ( 94Nb) 2.18809E+01    0    1.09289E+01  0.49947
+                                 1    1.09520E+01  0.50053   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.38878E+03    0    1.25827E+03  0.90603
+                                 1    1.30508E+02  0.09397   5.08700E+08 sec. 
+   40  93 ( 93Zr) 2.36584E-03    0    2.36584E-03  1.00000
+   39  90 ( 90Y ) 4.78796E-03    0    4.19630E-03  0.87643
+                                 2    5.91653E-04  0.12357   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 2.21326E+01
-   93 1.38306E+03
-   90 4.83837E-03
+   94 2.18809E+01
+   93 1.38878E+03
+   90 4.78796E-03
 
- Total residual production cross section:  1405.19543
- Non-elastic cross section              :  1405.19507
+ Total residual production cross section:  1410.66296
+ Non-elastic cross section              :  1410.66309
 
  ########## RESULTS FOR E=  1.60000 ##########
 
@@ -991,32 +1004,32 @@
  Total           = 6.06827E+03
    Shape elastic   = 4.40542E+03
    Reaction        = 1.66285E+03
-     Compound elastic= 4.08671E+02
-     Non-elastic     = 1.25418E+03
-       Direct          = 4.13316E+01
+     Compound elastic= 4.03169E+02
+     Non-elastic     = 1.25968E+03
+       Direct          = 4.06884E+01
        Pre-equilibrium = 0.00000E+00
-       Compound non-el = 1.21285E+03
-     Total elastic   = 4.81409E+03
+       Compound non-el = 1.21899E+03
+     Total elastic   = 4.80859E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 2.05407E+01
- neutron = 1.23363E+03
- proton  = 4.65410E-03
+ gamma   = 2.03585E+01
+ neutron = 1.23931E+03
+ proton  = 4.53025E-03
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 5.94523E-03
+ alpha   = 5.90127E-03
 
  3. Total particle production cross sections
 
- gamma   = 6.50912E+01    Multiplicity= 5.18994E-02
- neutron = 1.23579E+03    Multiplicity= 9.85342E-01
- proton  = 4.65414E-03    Multiplicity= 3.71091E-06
+ gamma   = 6.42483E+01    Multiplicity= 5.10036E-02
+ neutron = 1.24145E+03    Multiplicity= 9.85528E-01
+ proton  = 4.53028E-03    Multiplicity= 3.59638E-06
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 5.94574E-03    Multiplicity= 4.74075E-06
+ alpha   = 5.90177E-03    Multiplicity= 4.68513E-06
 
  4. Residual production cross sections
 
@@ -1025,24 +1038,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.83737E+01    0    1.04846E+01  0.57063
-                                 1    7.88907E+00  0.42937   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.23579E+03    0    9.56338E+02  0.77386
-                                 1    2.79457E+02  0.22614   5.09000E+08 sec. 
-   40  93 ( 93Zr) 4.65414E-03    0    4.65414E-03  1.00000
-   39  90 ( 90Y ) 5.94264E-03    0    4.99372E-03  0.84032
-                                 2    9.48923E-04  0.15968   1.15000E+04 sec. 
+   41  94 ( 94Nb) 1.82189E+01    0    9.68770E+00  0.53174
+                                 1    8.53124E+00  0.46826   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.24145E+03    0    9.91646E+02  0.79878
+                                 1    2.49806E+02  0.20122   5.08700E+08 sec. 
+   40  93 ( 93Zr) 4.53028E-03    0    4.53028E-03  1.00000
+   39  90 ( 90Y ) 5.89859E-03    0    4.95601E-03  0.84020
+                                 2    9.42580E-04  0.15980   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.83737E+01
-   93 1.23580E+03
-   90 5.94264E-03
+   94 1.82189E+01
+   93 1.24146E+03
+   90 5.89859E-03
 
- Total residual production cross section:  1254.17871
- Non-elastic cross section              :  1254.17847
+ Total residual production cross section:  1259.68079
+ Non-elastic cross section              :  1259.68066
 
  ########## RESULTS FOR E=  1.80000 ##########
 
@@ -1071,33 +1084,33 @@
  Total           = 6.05523E+03
    Shape elastic   = 4.23686E+03
    Reaction        = 1.81837E+03
-     Compound elastic= 3.66693E+02
-     Non-elastic     = 1.45168E+03
-       Direct          = 7.17271E+01
-       Pre-equilibrium = 1.56085E-01
+     Compound elastic= 3.63621E+02
+     Non-elastic     = 1.45475E+03
+       Direct          = 7.04892E+01
+       Pre-equilibrium = 1.56196E-01
        Giant resonance = 0.00000E+00
-       Compound non-el = 1.37979E+03
-     Total elastic   = 4.60355E+03
+       Compound non-el = 1.38410E+03
+     Total elastic   = 4.60048E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.82710E+01
- neutron = 1.43339E+03
- proton  = 9.49553E-03
+ gamma   = 1.82243E+01
+ neutron = 1.43651E+03
+ proton  = 9.22469E-03
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 8.39977E-03
+ alpha   = 8.38229E-03
 
  3. Total particle production cross sections
 
- gamma   = 9.83947E+01    Multiplicity= 6.77800E-02
- neutron = 1.43552E+03    Multiplicity= 9.88867E-01
- proton  = 9.49562E-03    Multiplicity= 6.54113E-06
+ gamma   = 9.78263E+01    Multiplicity= 6.72461E-02
+ neutron = 1.43862E+03    Multiplicity= 9.88915E-01
+ proton  = 9.22478E-03    Multiplicity= 6.34115E-06
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 8.40067E-03    Multiplicity= 5.78687E-06
+ alpha   = 8.38318E-03    Multiplicity= 5.76263E-06
 
  4. Residual production cross sections
 
@@ -1106,24 +1119,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.61490E+01    0    9.60854E+00  0.59499
-                                 1    6.54049E+00  0.40501   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.43552E+03    0    1.11275E+03  0.77516
-                                 1    3.22763E+02  0.22484   5.09000E+08 sec. 
-   40  93 ( 93Zr) 9.49562E-03    0    9.49562E-03  1.00000
-   39  90 ( 90Y ) 8.39670E-03    0    6.84726E-03  0.81547
-                                 2    1.54945E-03  0.18453   1.15000E+04 sec. 
+   41  94 ( 94Nb) 1.61130E+01    0    8.98589E+00  0.55768
+                                 1    7.12707E+00  0.44232   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.43863E+03    0    1.14642E+03  0.79688
+                                 1    2.92210E+02  0.20312   5.08700E+08 sec. 
+   40  93 ( 93Zr) 9.22478E-03    0    9.22478E-03  1.00000
+   39  90 ( 90Y ) 8.37894E-03    0    6.82581E-03  0.81464
+                                 2    1.55313E-03  0.18536   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.61490E+01
-   93 1.43553E+03
-   90 8.39670E-03
+   94 1.61130E+01
+   93 1.43864E+03
+   90 8.37894E-03
 
- Total residual production cross section:  1451.68469
- Non-elastic cross section              :  1451.67749
+ Total residual production cross section:  1454.75659
+ Non-elastic cross section              :  1454.74951
 
  ########## RESULTS FOR E=  2.00000 ##########
 
@@ -1152,33 +1165,33 @@
  Total           = 6.10929E+03
    Shape elastic   = 4.16312E+03
    Reaction        = 1.94617E+03
-     Compound elastic= 3.00251E+02
-     Non-elastic     = 1.64592E+03
-       Direct          = 1.09681E+02
-       Pre-equilibrium = 1.94352E+00
-       Giant resonance = 2.45832E-01
-       Compound non-el = 1.53405E+03
-     Total elastic   = 4.46337E+03
+     Compound elastic= 2.97936E+02
+     Non-elastic     = 1.64823E+03
+       Direct          = 1.08395E+02
+       Pre-equilibrium = 1.94478E+00
+       Giant resonance = 3.46514E-01
+       Compound non-el = 1.53755E+03
+     Total elastic   = 4.46106E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.58914E+01
- neutron = 1.63000E+03
- proton  = 1.78422E-02
+ gamma   = 1.58531E+01
+ neutron = 1.63235E+03
+ proton  = 1.73588E-02
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.25697E-02
+ alpha   = 1.25242E-02
 
  3. Total particle production cross sections
 
- gamma   = 3.60959E+02    Multiplicity= 2.19306E-01
- neutron = 1.63315E+03    Multiplicity= 9.92242E-01
- proton  = 1.78424E-02    Multiplicity= 1.08404E-05
+ gamma   = 3.59284E+02    Multiplicity= 2.17981E-01
+ neutron = 1.63549E+03    Multiplicity= 9.92266E-01
+ proton  = 1.73590E-02    Multiplicity= 1.05319E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.25707E-02    Multiplicity= 7.63751E-06
+ alpha   = 1.25252E-02    Multiplicity= 7.59916E-06
 
  4. Residual production cross sections
 
@@ -1187,24 +1200,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.27422E+01    0    7.60397E+00  0.59676
-                                 1    5.13819E+00  0.40324   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.63317E+03    0    1.30517E+03  0.79916
-                                 1    3.28000E+02  0.20084   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.78424E-02    0    1.78424E-02  1.00000
-   39  90 ( 90Y ) 1.25698E-02    0    1.00486E-02  0.79942
-                                 2    2.52125E-03  0.20058   1.15000E+04 sec. 
+   41  94 ( 94Nb) 1.27218E+01    0    7.13951E+00  0.56120
+                                 1    5.58230E+00  0.43880   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.63551E+03    0    1.33822E+03  0.81823
+                                 1    2.97294E+02  0.18177   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.73590E-02    0    1.73590E-02  1.00000
+   39  90 ( 90Y ) 1.25241E-02    0    9.99870E-03  0.79835
+                                 2    2.52544E-03  0.20165   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.27422E+01
-   93 1.63319E+03
-   90 1.25698E-02
+   94 1.27218E+01
+   93 1.63553E+03
+   90 1.25241E-02
 
- Total residual production cross section:  1645.94446
- Non-elastic cross section              :  1645.91931
+ Total residual production cross section:  1648.26135
+ Non-elastic cross section              :  1648.23450
 
  ########## RESULTS FOR E=  2.20000 ##########
 
@@ -1233,33 +1246,33 @@
  Total           = 5.77649E+03
    Shape elastic   = 3.89915E+03
    Reaction        = 1.87734E+03
-     Compound elastic= 1.97510E+02
-     Non-elastic     = 1.67983E+03
-       Direct          = 1.07205E+02
-       Pre-equilibrium = 4.52697E+00
-       Giant resonance = 1.39177E+00
-       Compound non-el = 1.56671E+03
-     Total elastic   = 4.09666E+03
+     Compound elastic= 1.95928E+02
+     Non-elastic     = 1.68141E+03
+       Direct          = 1.06412E+02
+       Pre-equilibrium = 4.52479E+00
+       Giant resonance = 3.03619E+00
+       Compound non-el = 1.56744E+03
+     Total elastic   = 4.09508E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.33694E+01
- neutron = 1.66642E+03
- proton  = 2.95399E-02
+ gamma   = 1.33299E+01
+ neutron = 1.66804E+03
+ proton  = 2.89126E-02
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.62096E-02
+ alpha   = 1.62237E-02
 
  3. Total particle production cross sections
 
- gamma   = 6.01847E+02    Multiplicity= 3.58279E-01
- neutron = 1.66935E+03    Multiplicity= 9.93759E-01
- proton  = 2.95403E-02    Multiplicity= 1.75853E-05
+ gamma   = 6.00680E+02    Multiplicity= 3.57247E-01
+ neutron = 1.67095E+03    Multiplicity= 9.93779E-01
+ proton  = 2.89130E-02    Multiplicity= 1.71957E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.62105E-02    Multiplicity= 9.65010E-06
+ alpha   = 1.62246E-02    Multiplicity= 9.64939E-06
 
  4. Residual production cross sections
 
@@ -1268,24 +1281,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.04438E+01    0    5.97964E+00  0.57256
-                                 1    4.46412E+00  0.42744   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.66941E+03    0    1.38429E+03  0.82921
-                                 1    2.85119E+02  0.17079   5.09000E+08 sec. 
-   40  93 ( 93Zr) 2.95393E-02    0    2.95393E-02  1.00000
-   39  90 ( 90Y ) 1.62063E-02    0    1.31364E-02  0.81058
-                                 2    3.06984E-03  0.18942   1.15000E+04 sec. 
+   41  94 ( 94Nb) 1.04206E+01    0    5.60567E+00  0.53794
+                                 1    4.81497E+00  0.46206   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.67103E+03    0    1.41267E+03  0.84539
+                                 1    2.58357E+02  0.15461   5.08700E+08 sec. 
+   40  93 ( 93Zr) 2.89118E-02    0    2.89118E-02  1.00000
+   39  90 ( 90Y ) 1.62202E-02    0    1.31514E-02  0.81080
+                                 2    3.06880E-03  0.18920   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.04438E+01
-   93 1.66944E+03
-   90 1.62063E-02
+   94 1.04206E+01
+   93 1.67106E+03
+   90 1.62202E-02
 
- Total residual production cross section:  1679.89600
- Non-elastic cross section              :  1679.82959
+ Total residual production cross section:  1681.49768
+ Non-elastic cross section              :  1681.41235
 
  ########## RESULTS FOR E=  2.40000 ##########
 
@@ -1314,33 +1327,33 @@
  Total           = 5.20523E+03
    Shape elastic   = 3.45472E+03
    Reaction        = 1.75052E+03
-     Compound elastic= 1.20095E+02
-     Non-elastic     = 1.63043E+03
-       Direct          = 8.26586E+01
-       Pre-equilibrium = 6.79568E+00
-       Giant resonance = 2.47742E+00
-       Compound non-el = 1.53849E+03
-     Total elastic   = 3.57481E+03
+     Compound elastic= 1.19442E+02
+     Non-elastic     = 1.63108E+03
+       Direct          = 8.23924E+01
+       Pre-equilibrium = 6.78545E+00
+       Giant resonance = 5.25154E+00
+       Compound non-el = 1.53665E+03
+     Total elastic   = 3.57416E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.12990E+01
- neutron = 1.61906E+03
- proton  = 4.49726E-02
+ gamma   = 1.12864E+01
+ neutron = 1.61973E+03
+ proton  = 4.43554E-02
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 2.18067E-02
+ alpha   = 2.19093E-02
 
  3. Total particle production cross sections
 
- gamma   = 7.50970E+02    Multiplicity= 4.60597E-01
- neutron = 1.62172E+03    Multiplicity= 9.94662E-01
- proton  = 4.49735E-02    Multiplicity= 2.75839E-05
+ gamma   = 7.52034E+02    Multiplicity= 4.61066E-01
+ neutron = 1.62238E+03    Multiplicity= 9.94667E-01
+ proton  = 4.43562E-02    Multiplicity= 2.71944E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 2.18085E-02    Multiplicity= 1.33759E-05
+ alpha   = 2.19111E-02    Multiplicity= 1.34335E-05
 
  4. Residual production cross sections
 
@@ -1349,24 +1362,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 8.64103E+00    0    4.70801E+00  0.54484
-                                 1    3.93302E+00  0.45516   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.62182E+03    0    1.38755E+03  0.85555
-                                 1    2.34274E+02  0.14445   5.09000E+08 sec. 
-   40  93 ( 93Zr) 4.49611E-02    0    4.49611E-02  1.00000
-   39  90 ( 90Y ) 2.18041E-02    0    1.75624E-02  0.80546
-                                 2    4.24174E-03  0.19454   1.15000E+04 sec. 
+   41  94 ( 94Nb) 8.63696E+00    0    4.41238E+00  0.51087
+                                 1    4.22458E+00  0.48913   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.62251E+03    0    1.40779E+03  0.86766
+                                 1    2.14715E+02  0.13234   5.08700E+08 sec. 
+   40  93 ( 93Zr) 4.43418E-02    0    4.43418E-02  1.00000
+   39  90 ( 90Y ) 2.19067E-02    0    1.76788E-02  0.80701
+                                 2    4.22787E-03  0.19299   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 8.64103E+00
-   93 1.62187E+03
-   90 2.18041E-02
+   94 8.63696E+00
+   93 1.62255E+03
+   90 2.19067E-02
 
- Total residual production cross section:  1630.52808
- Non-elastic cross section              :  1630.42505
+ Total residual production cross section:  1631.21252
+ Non-elastic cross section              :  1631.07825
 
  ########## RESULTS FOR E=  2.60000 ##########
 
@@ -1395,33 +1408,33 @@
  Total           = 4.66001E+03
    Shape elastic   = 2.80984E+03
    Reaction        = 1.85017E+03
-     Compound elastic= 1.02227E+02
-     Non-elastic     = 1.74794E+03
-       Direct          = 8.24800E+01
-       Pre-equilibrium = 9.74506E+00
-       Giant resonance = 1.16207E+01
-       Compound non-el = 1.64410E+03
-     Total elastic   = 2.91207E+03
+     Compound elastic= 1.02285E+02
+     Non-elastic     = 1.74788E+03
+       Direct          = 8.27207E+01
+       Pre-equilibrium = 9.71993E+00
+       Giant resonance = 1.59074E+01
+       Compound non-el = 1.63954E+03
+     Total elastic   = 2.91213E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.08042E+01
- neutron = 1.73704E+03
- proton  = 7.24991E-02
+ gamma   = 1.08340E+01
+ neutron = 1.73695E+03
+ proton  = 7.19123E-02
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 3.02024E-02
+ alpha   = 3.05071E-02
 
  3. Total particle production cross sections
 
- gamma   = 9.36311E+02    Multiplicity= 5.35664E-01
- neutron = 1.73974E+03    Multiplicity= 9.95308E-01
- proton  = 7.25010E-02    Multiplicity= 4.14779E-05
+ gamma   = 9.42083E+02    Multiplicity= 5.38985E-01
+ neutron = 1.73966E+03    Multiplicity= 9.95293E-01
+ proton  = 7.19141E-02    Multiplicity= 4.11435E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 3.02059E-02    Multiplicity= 1.72809E-05
+ alpha   = 3.05107E-02    Multiplicity= 1.74558E-05
 
  4. Residual production cross sections
 
@@ -1430,24 +1443,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 8.10421E+00    0    4.23595E+00  0.52269
-                                 1    3.86826E+00  0.47731   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.73998E+03    0    1.52379E+03  0.87575
-                                 1    2.16187E+02  0.12425   5.09000E+08 sec. 
-   40  93 ( 93Zr) 7.24866E-02    0    7.24866E-02  1.00000
-   39  90 ( 90Y ) 3.02019E-02    0    2.39676E-02  0.79358
-                                 2    6.23432E-03  0.20642   1.15000E+04 sec. 
+   41  94 ( 94Nb) 8.13079E+00    0    3.97860E+00  0.48933
+                                 1    4.15218E+00  0.51067   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.73995E+03    0    1.53803E+03  0.88396
+                                 1    2.01912E+02  0.11604   5.08700E+08 sec. 
+   40  93 ( 93Zr) 7.19020E-02    0    7.19020E-02  1.00000
+   39  90 ( 90Y ) 3.05067E-02    0    2.43020E-02  0.79661
+                                 2    6.20471E-03  0.20339   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 8.10421E+00
-   93 1.74005E+03
-   90 3.02019E-02
+   94 8.13079E+00
+   93 1.74002E+03
+   90 3.05067E-02
 
- Total residual production cross section:  1748.18738
- Non-elastic cross section              :  1747.94324
+ Total residual production cross section:  1748.17896
+ Non-elastic cross section              :  1747.88477
 
  ########## RESULTS FOR E=  2.80000 ##########
 
@@ -1476,33 +1489,33 @@
  Total           = 4.36558E+03
    Shape elastic   = 2.29477E+03
    Reaction        = 2.07082E+03
-     Compound elastic= 1.12537E+02
-     Non-elastic     = 1.95828E+03
-       Direct          = 9.92166E+01
-       Pre-equilibrium = 1.38054E+01
-       Giant resonance = 1.45892E+01
-       Compound non-el = 1.83067E+03
-     Total elastic   = 2.40731E+03
+     Compound elastic= 1.12438E+02
+     Non-elastic     = 1.95838E+03
+       Direct          = 9.96561E+01
+       Pre-equilibrium = 1.37708E+01
+       Giant resonance = 1.90463E+01
+       Compound non-el = 1.82591E+03
+     Total elastic   = 2.40721E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.17176E+01
- neutron = 1.94641E+03
- proton  = 1.21496E-01
+ gamma   = 1.17362E+01
+ neutron = 1.94649E+03
+ proton  = 1.20126E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 4.53065E-02
+ alpha   = 4.58456E-02
 
  3. Total particle production cross sections
 
- gamma   = 1.20811E+03    Multiplicity= 6.16926E-01
- neutron = 1.95022E+03    Multiplicity= 9.95884E-01
- proton  = 1.21500E-01    Multiplicity= 6.20441E-05
+ gamma   = 1.21352E+03    Multiplicity= 6.19652E-01
+ neutron = 1.95030E+03    Multiplicity= 9.95874E-01
+ proton  = 1.20130E-01    Multiplicity= 6.13413E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 4.53119E-02    Multiplicity= 2.31386E-05
+ alpha   = 4.58510E-02    Multiplicity= 2.34127E-05
 
  4. Residual production cross sections
 
@@ -1511,24 +1524,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 7.90125E+00    0    4.24060E+00  0.53670
-                                 1    3.66065E+00  0.46330   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.95054E+03    0    1.71561E+03  0.87956
-                                 1    2.34931E+02  0.12044   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.21492E-01    0    1.21492E-01  1.00000
-   39  90 ( 90Y ) 4.53110E-02    0    3.54952E-02  0.78337
-                                 2    9.81576E-03  0.21663   1.15000E+04 sec. 
+   41  94 ( 94Nb) 7.92172E+00    0    3.98532E+00  0.50309
+                                 1    3.93640E+00  0.49691   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.95067E+03    0    1.73172E+03  0.88775
+                                 1    2.18957E+02  0.11225   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.20122E-01    0    1.20122E-01  1.00000
+   39  90 ( 90Y ) 4.58501E-02    0    3.60882E-02  0.78709
+                                 2    9.76191E-03  0.21291   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 7.90125E+00
-   93 1.95066E+03
-   90 4.53110E-02
+   94 7.92172E+00
+   93 1.95079E+03
+   90 4.58501E-02
 
- Total residual production cross section:  1958.60864
- Non-elastic cross section              :  1958.28308
+ Total residual production cross section:  1958.76160
+ Non-elastic cross section              :  1958.38196
 
  ########## RESULTS FOR E=  3.00000 ##########
 
@@ -1557,33 +1570,33 @@
  Total           = 4.17508E+03
    Shape elastic   = 2.13095E+03
    Reaction        = 2.04412E+03
-     Compound elastic= 9.10855E+01
-     Non-elastic     = 1.95303E+03
-       Direct          = 9.91710E+01
-       Pre-equilibrium = 1.68025E+01
-       Giant resonance = 1.69123E+01
-       Compound non-el = 1.82015E+03
-     Total elastic   = 2.22204E+03
+     Compound elastic= 9.08737E+01
+     Non-elastic     = 1.95325E+03
+       Direct          = 9.96776E+01
+       Pre-equilibrium = 1.67676E+01
+       Giant resonance = 2.04129E+01
+       Compound non-el = 1.81639E+03
+     Total elastic   = 2.22182E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.16910E+01
- neutron = 1.94111E+03
- proton  = 1.74234E-01
+ gamma   = 1.16947E+01
+ neutron = 1.94132E+03
+ proton  = 1.72368E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 6.61816E-02
+ alpha   = 6.69077E-02
 
  3. Total particle production cross sections
 
- gamma   = 1.38222E+03    Multiplicity= 7.07727E-01
- neutron = 1.94525E+03    Multiplicity= 9.96012E-01
- proton  = 1.74241E-01    Multiplicity= 8.92156E-05
+ gamma   = 1.38618E+03    Multiplicity= 7.09681E-01
+ neutron = 1.94545E+03    Multiplicity= 9.96009E-01
+ proton  = 1.72375E-01    Multiplicity= 8.82503E-05
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 6.61872E-02    Multiplicity= 3.38894E-05
+ alpha   = 6.69133E-02    Multiplicity= 3.42575E-05
 
  4. Residual production cross sections
 
@@ -1592,24 +1605,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 7.55585E+00    0    4.07393E+00  0.53918
-                                 1    3.48192E+00  0.46082   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.94562E+03    0    1.70283E+03  0.87522
-                                 1    2.42783E+02  0.12478   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.74235E-01    0    1.74235E-01  1.00000
-   39  90 ( 90Y ) 6.61865E-02    0    5.04707E-02  0.76255
-                                 2    1.57158E-02  0.23745   1.15000E+04 sec. 
+   41  94 ( 94Nb) 7.56454E+00    0    3.81903E+00  0.50486
+                                 1    3.74551E+00  0.49514   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.94586E+03    0    1.72036E+03  0.88411
+                                 1    2.25502E+02  0.11589   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.72368E-01    0    1.72368E-01  1.00000
+   39  90 ( 90Y ) 6.69125E-02    0    5.13303E-02  0.76713
+                                 2    1.55822E-02  0.23287   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 7.55585E+00
-   93 1.94579E+03
-   90 6.61865E-02
+   94 7.56454E+00
+   93 1.94603E+03
+   90 6.69125E-02
 
- Total residual production cross section:  1953.41296
- Non-elastic cross section              :  1953.03455
+ Total residual production cross section:  1953.66431
+ Non-elastic cross section              :  1953.24622
 
  ########## RESULTS FOR E=  3.20000 ##########
 
@@ -1638,33 +1651,33 @@
  Total           = 4.02055E+03
    Shape elastic   = 2.02222E+03
    Reaction        = 1.99834E+03
-     Compound elastic= 7.19877E+01
-     Non-elastic     = 1.92635E+03
-       Direct          = 9.77312E+01
-       Pre-equilibrium = 1.95192E+01
-       Giant resonance = 1.97682E+01
-       Compound non-el = 1.78933E+03
-     Total elastic   = 2.09421E+03
+     Compound elastic= 7.17746E+01
+     Non-elastic     = 1.92657E+03
+       Direct          = 9.82952E+01
+       Pre-equilibrium = 1.94959E+01
+       Giant resonance = 2.14480E+01
+       Compound non-el = 1.78733E+03
+     Total elastic   = 2.09399E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.16449E+01
- neutron = 1.91439E+03
- proton  = 2.39648E-01
+ gamma   = 1.16402E+01
+ neutron = 1.91461E+03
+ proton  = 2.37797E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 8.78113E-02
+ alpha   = 8.91133E-02
 
  3. Total particle production cross sections
 
- gamma   = 1.53017E+03    Multiplicity= 7.94335E-01
- neutron = 1.91876E+03    Multiplicity= 9.96060E-01
- proton  = 2.39658E-01    Multiplicity= 1.24410E-04
+ gamma   = 1.53211E+03    Multiplicity= 7.95256E-01
+ neutron = 1.91898E+03    Multiplicity= 9.96061E-01
+ proton  = 2.37808E-01    Multiplicity= 1.23436E-04
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 8.78191E-02    Multiplicity= 4.55883E-05
+ alpha   = 8.91212E-02    Multiplicity= 4.62591E-05
 
  4. Residual production cross sections
 
@@ -1673,24 +1686,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 7.27095E+00    0    3.93579E+00  0.54130
-                                 1    3.33516E+00  0.45870   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.91917E+03    0    1.66927E+03  0.86979
-                                 1    2.49895E+02  0.13021   5.09000E+08 sec. 
-   40  93 ( 93Zr) 2.39655E-01    0    2.39655E-01  1.00000
-   39  90 ( 90Y ) 8.78184E-02    0    6.57856E-02  0.74911
-                                 2    2.20328E-02  0.25089   1.15000E+04 sec. 
+   41  94 ( 94Nb) 7.27220E+00    0    3.68043E+00  0.50610
+                                 1    3.59176E+00  0.49390   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.91942E+03    0    1.68659E+03  0.87870
+                                 1    2.32826E+02  0.12130   5.08700E+08 sec. 
+   40  93 ( 93Zr) 2.37803E-01    0    2.37803E-01  1.00000
+   39  90 ( 90Y ) 8.91204E-02    0    6.73428E-02  0.75564
+                                 2    2.17776E-02  0.24436   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 7.27095E+00
-   93 1.91941E+03
-   90 8.78184E-02
+   94 7.27220E+00
+   93 1.91966E+03
+   90 8.91204E-02
 
- Total residual production cross section:  1926.76514
- Non-elastic cross section              :  1926.35229
+ Total residual production cross section:  1927.01648
+ Non-elastic cross section              :  1926.56531
 
  ########## RESULTS FOR E=  3.40000 ##########
 
@@ -1719,33 +1732,33 @@
  Total           = 3.89324E+03
    Shape elastic   = 1.93439E+03
    Reaction        = 1.95885E+03
-     Compound elastic= 5.56098E+01
-     Non-elastic     = 1.90324E+03
-       Direct          = 9.58234E+01
-       Pre-equilibrium = 2.19525E+01
-       Giant resonance = 2.30464E+01
-       Compound non-el = 1.76242E+03
-     Total elastic   = 1.99000E+03
+     Compound elastic= 5.55346E+01
+     Non-elastic     = 1.90332E+03
+       Direct          = 9.64296E+01
+       Pre-equilibrium = 2.19546E+01
+       Giant resonance = 2.22624E+01
+       Compound non-el = 1.76267E+03
+     Total elastic   = 1.98992E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.13971E+01
- neutron = 1.89142E+03
- proton  = 3.17455E-01
+ gamma   = 1.14043E+01
+ neutron = 1.89149E+03
+ proton  = 3.16027E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.17260E-01
+ alpha   = 1.19358E-01
 
  3. Total particle production cross sections
 
- gamma   = 1.62965E+03    Multiplicity= 8.56249E-01
- neutron = 1.89596E+03    Multiplicity= 9.96173E-01
- proton  = 3.17472E-01    Multiplicity= 1.66806E-04
+ gamma   = 1.63140E+03    Multiplicity= 8.57134E-01
+ neutron = 1.89603E+03    Multiplicity= 9.96170E-01
+ proton  = 3.16044E-01    Multiplicity= 1.66049E-04
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.17272E-01    Multiplicity= 6.16168E-05
+ alpha   = 1.19370E-01    Multiplicity= 6.27168E-05
 
  4. Residual production cross sections
 
@@ -1754,24 +1767,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 6.86082E+00    0    3.71644E+00  0.54169
-                                 1    3.14439E+00  0.45831   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.89640E+03    0    1.64640E+03  0.86817
-                                 1    2.50002E+02  0.13183   5.09000E+08 sec. 
-   40  93 ( 93Zr) 3.17470E-01    0    3.17470E-01  1.00000
-   39  90 ( 90Y ) 1.17271E-01    0    8.57911E-02  0.73156
-                                 2    3.14798E-02  0.26844   1.15000E+04 sec. 
+   41  94 ( 94Nb) 6.86787E+00    0    3.47623E+00  0.50616
+                                 1    3.39164E+00  0.49384   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.89649E+03    0    1.66244E+03  0.87659
+                                 1    2.34044E+02  0.12341   5.08700E+08 sec. 
+   40  93 ( 93Zr) 3.16040E-01    0    3.16040E-01  1.00000
+   39  90 ( 90Y ) 1.19369E-01    0    8.82478E-02  0.73929
+                                 2    3.11212E-02  0.26071   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 6.86082E+00
-   93 1.89672E+03
-   90 1.17271E-01
+   94 6.86787E+00
+   93 1.89680E+03
+   90 1.19369E-01
 
- Total residual production cross section:  1903.69958
- Non-elastic cross section              :  1903.24011
+ Total residual production cross section:  1903.79089
+ Non-elastic cross section              :  1903.31543
 
  ########## RESULTS FOR E=  3.60000 ##########
 
@@ -1800,33 +1813,33 @@
  Total           = 3.79161E+03
    Shape elastic   = 1.86514E+03
    Reaction        = 1.92648E+03
-     Compound elastic= 4.25597E+01
-     Non-elastic     = 1.88392E+03
-       Direct          = 9.35218E+01
-       Pre-equilibrium = 2.49623E+01
-       Giant resonance = 2.50245E+01
-       Compound non-el = 1.74041E+03
-     Total elastic   = 1.90770E+03
+     Compound elastic= 4.25755E+01
+     Non-elastic     = 1.88390E+03
+       Direct          = 9.41526E+01
+       Pre-equilibrium = 2.49806E+01
+       Giant resonance = 2.30652E+01
+       Compound non-el = 1.74171E+03
+     Total elastic   = 1.90772E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.10823E+01
- neutron = 1.87229E+03
- proton  = 4.07950E-01
+ gamma   = 1.11021E+01
+ neutron = 1.87225E+03
+ proton  = 4.06928E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.51629E-01
+ alpha   = 1.54550E-01
 
  3. Total particle production cross sections
 
- gamma   = 1.71728E+03    Multiplicity= 9.11543E-01
- neutron = 1.87715E+03    Multiplicity= 9.96406E-01
- proton  = 4.07975E-01    Multiplicity= 2.16556E-04
+ gamma   = 1.72018E+03    Multiplicity= 9.13093E-01
+ neutron = 1.87712E+03    Multiplicity= 9.96398E-01
+ proton  = 4.06953E-01    Multiplicity= 2.16016E-04
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.51644E-01    Multiplicity= 8.04937E-05
+ alpha   = 1.54565E-01    Multiplicity= 8.20449E-05
 
  4. Residual production cross sections
 
@@ -1835,24 +1848,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 6.22413E+00    0    3.40225E+00  0.54662
-                                 1    2.82188E+00  0.45338   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.87764E+03    0    1.63177E+03  0.86905
-                                 1    2.45870E+02  0.13095   5.09000E+08 sec. 
-   40  93 ( 93Zr) 4.07979E-01    0    4.07979E-01  1.00000
-   39  90 ( 90Y ) 1.51643E-01    0    1.08906E-01  0.71817
-                                 2    4.27375E-02  0.28183   1.15000E+04 sec. 
+   41  94 ( 94Nb) 6.23831E+00    0    3.18856E+00  0.51113
+                                 1    3.04975E+00  0.48887   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.87762E+03    0    1.64695E+03  0.87715
+                                 1    2.30672E+02  0.12285   5.08700E+08 sec. 
+   40  93 ( 93Zr) 4.06953E-01    0    4.06953E-01  1.00000
+   39  90 ( 90Y ) 1.54564E-01    0    1.12326E-01  0.72673
+                                 2    4.22375E-02  0.27327   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 6.22413E+00
-   93 1.87804E+03
-   90 1.51643E-01
+   94 6.23831E+00
+   93 1.87803E+03
+   90 1.54564E-01
 
- Total residual production cross section:  1884.41980
- Non-elastic cross section              :  1883.92029
+ Total residual production cross section:  1884.41833
+ Non-elastic cross section              :  1883.90454
 
  ########## RESULTS FOR E=  3.80000 ##########
 
@@ -1881,33 +1894,33 @@
  Total           = 3.71383E+03
    Shape elastic   = 1.81241E+03
    Reaction        = 1.90142E+03
-     Compound elastic= 3.30392E+01
-     Non-elastic     = 1.86838E+03
-       Direct          = 9.09427E+01
-       Pre-equilibrium = 2.83138E+01
-       Giant resonance = 2.63983E+01
-       Compound non-el = 1.72273E+03
-     Total elastic   = 1.84545E+03
+     Compound elastic= 3.30906E+01
+     Non-elastic     = 1.86833E+03
+       Direct          = 9.15815E+01
+       Pre-equilibrium = 2.83429E+01
+       Giant resonance = 2.39274E+01
+       Compound non-el = 1.72448E+03
+     Total elastic   = 1.84550E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.09000E+01
- neutron = 1.85681E+03
- proton  = 4.97978E-01
+ gamma   = 1.09252E+01
+ neutron = 1.85673E+03
+ proton  = 4.97496E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 1.87789E-01
+ alpha   = 1.92142E-01
 
  3. Total particle production cross sections
 
- gamma   = 1.81911E+03    Multiplicity= 9.73628E-01
- neutron = 1.86222E+03    Multiplicity= 9.96704E-01
- proton  = 4.98015E-01    Multiplicity= 2.66549E-04
+ gamma   = 1.82312E+03    Multiplicity= 9.75803E-01
+ neutron = 1.86215E+03    Multiplicity= 9.96694E-01
+ proton  = 4.97532E-01    Multiplicity= 2.66298E-04
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 1.87807E-01    Multiplicity= 1.00518E-04
+ alpha   = 1.92160E-01    Multiplicity= 1.02851E-04
 
  4. Residual production cross sections
 
@@ -1916,24 +1929,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 5.48637E+00    0    3.05445E+00  0.55673
-                                 1    2.43192E+00  0.44327   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.86275E+03    0    1.62127E+03  0.87037
-                                 1    2.41476E+02  0.12963   5.09000E+08 sec. 
-   40  93 ( 93Zr) 4.98032E-01    0    4.98032E-01  1.00000
-   39  90 ( 90Y ) 1.87806E-01    0    1.32437E-01  0.70518
-                                 2    5.53683E-02  0.29482   1.15000E+04 sec. 
+   41  94 ( 94Nb) 5.50174E+00    0    2.86452E+00  0.52066
+                                 1    2.63722E+00  0.47934   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.86269E+03    0    1.63627E+03  0.87844
+                                 1    2.26421E+02  0.12156   5.08700E+08 sec. 
+   40  93 ( 93Zr) 4.97542E-01    0    4.97542E-01  1.00000
+   39  90 ( 90Y ) 1.92159E-01    0    1.37388E-01  0.71497
+                                 2    5.47706E-02  0.28503   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 5.48637E+00
-   93 1.86324E+03
-   90 1.87806E-01
+   94 5.50174E+00
+   93 1.86318E+03
+   90 1.92159E-01
 
- Total residual production cross section:  1868.91797
- Non-elastic cross section              :  1868.38086
+ Total residual production cross section:  1868.87830
+ Non-elastic cross section              :  1868.32947
 
  ########## RESULTS FOR E=  4.00000 ##########
 
@@ -1962,33 +1975,33 @@
  Total           = 3.65786E+03
    Shape elastic   = 1.77439E+03
    Reaction        = 1.88347E+03
-     Compound elastic= 2.59549E+01
-     Non-elastic     = 1.85752E+03
-       Direct          = 8.83285E+01
-       Pre-equilibrium = 3.20767E+01
-       Giant resonance = 2.75733E+01
-       Compound non-el = 1.70954E+03
-     Total elastic   = 1.80034E+03
+     Compound elastic= 2.59673E+01
+     Non-elastic     = 1.85750E+03
+       Direct          = 8.89615E+01
+       Pre-equilibrium = 3.20748E+01
+       Giant resonance = 2.70439E+01
+       Compound non-el = 1.70942E+03
+     Total elastic   = 1.80036E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.08041E+01
- neutron = 1.84581E+03
- proton  = 6.61448E-01
+ gamma   = 1.08155E+01
+ neutron = 1.84579E+03
+ proton  = 6.60256E-01
  deuteron= 0.00000E+00
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 2.49996E-01
+ alpha   = 2.55286E-01
 
  3. Total particle production cross sections
 
- gamma   = 1.92793E+03    Multiplicity= 1.03791E+00
- neutron = 1.85141E+03    Multiplicity= 9.96715E-01
- proton  = 6.61499E-01    Multiplicity= 3.56120E-04
+ gamma   = 1.93322E+03    Multiplicity= 1.04076E+00
+ neutron = 1.85139E+03    Multiplicity= 9.96709E-01
+ proton  = 6.60307E-01    Multiplicity= 3.55481E-04
  deuteron= 0.00000E+00    Multiplicity= 0.00000E+00
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 2.50017E-01    Multiplicity= 1.34598E-04
+ alpha   = 2.55308E-01    Multiplicity= 1.37447E-04
 
  4. Residual production cross sections
 
@@ -1997,24 +2010,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 5.20535E+00    0    2.90703E+00  0.55847
-                                 1    2.29832E+00  0.44153   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.85198E+03    0    1.61217E+03  0.87051
-                                 1    2.39811E+02  0.12949   5.09000E+08 sec. 
-   40  93 ( 93Zr) 6.61535E-01    0    6.61535E-01  1.00000
-   39  90 ( 90Y ) 2.50016E-01    0    1.74244E-01  0.69693
-                                 2    7.57718E-02  0.30307   1.15000E+04 sec. 
+   41  94 ( 94Nb) 5.21310E+00    0    2.72416E+00  0.52256
+                                 1    2.48895E+00  0.47744   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.85199E+03    0    1.62752E+03  0.87880
+                                 1    2.24468E+02  0.12120   5.08700E+08 sec. 
+   40  93 ( 93Zr) 6.60328E-01    0    6.60328E-01  1.00000
+   39  90 ( 90Y ) 2.55307E-01    0    1.80465E-01  0.70686
+                                 2    7.48417E-02  0.29314   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 5.20535E+00
-   93 1.85264E+03
-   90 2.50016E-01
+   94 5.21310E+00
+   93 1.85265E+03
+   90 2.55307E-01
 
- Total residual production cross section:  1858.09937
- Non-elastic cross section              :  1857.51514
+ Total residual production cross section:  1858.11560
+ Non-elastic cross section              :  1857.50269
 
  ########## RESULTS FOR E=  4.20000 ##########
 
@@ -2043,33 +2056,33 @@
  Total           = 3.62151E+03
    Shape elastic   = 1.74943E+03
    Reaction        = 1.87208E+03
-     Compound elastic= 2.05323E+01
+     Compound elastic= 2.05314E+01
      Non-elastic     = 1.85155E+03
-       Direct          = 8.56882E+01
-       Pre-equilibrium = 3.58946E+01
-       Giant resonance = 2.86774E+01
-       Compound non-el = 1.70129E+03
+       Direct          = 8.63057E+01
+       Pre-equilibrium = 3.58806E+01
+       Giant resonance = 2.87444E+01
+       Compound non-el = 1.70062E+03
      Total elastic   = 1.76996E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.07374E+01
- neutron = 1.83976E+03
- proton  = 7.63065E-01
- deuteron= 4.00612E-34
+ gamma   = 1.07435E+01
+ neutron = 1.83975E+03
+ proton  = 7.61156E-01
+ deuteron= 4.00456E-34
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 3.06949E-01
+ alpha   = 3.13931E-01
 
  3. Total particle production cross sections
 
- gamma   = 2.03355E+03    Multiplicity= 1.09830E+00
- neutron = 1.84552E+03    Multiplicity= 9.96745E-01
- proton  = 7.63136E-01    Multiplicity= 4.12161E-04
- deuteron= 4.00612E-34    Multiplicity= 2.16366E-37
+ gamma   = 2.03921E+03    Multiplicity= 1.10136E+00
+ neutron = 1.84551E+03    Multiplicity= 9.96740E-01
+ proton  = 7.61227E-01    Multiplicity= 4.11130E-04
+ deuteron= 4.00456E-34    Multiplicity= 2.16282E-37
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 3.06978E-01    Multiplicity= 1.65796E-04
+ alpha   = 3.13961E-01    Multiplicity= 1.69567E-04
 
  4. Residual production cross sections
 
@@ -2078,24 +2091,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 4.97462E+00    0    2.78629E+00  0.56010
-                                 1    2.18833E+00  0.43990   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.84613E+03    0    1.60615E+03  0.87001
-                                 1    2.39982E+02  0.12999   5.09000E+08 sec. 
-   40  93 ( 93Zr) 7.63208E-01    0    7.63208E-01  1.00000
-   39  90 ( 90Y ) 3.06978E-01    0    2.09694E-01  0.68309
-                                 2    9.72840E-02  0.31691   1.15000E+04 sec. 
+   41  94 ( 94Nb) 4.97953E+00    0    2.61288E+00  0.52473
+                                 1    2.36664E+00  0.47527   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.84615E+03    0    1.62181E+03  0.87848
+                                 1    2.24341E+02  0.12152   5.08700E+08 sec. 
+   40  93 ( 93Zr) 7.61272E-01    0    7.61272E-01  1.00000
+   39  90 ( 90Y ) 3.13960E-01    0    2.17861E-01  0.69391
+                                 2    9.60996E-02  0.30609   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 4.97462E+00
-   93 1.84689E+03
-   90 3.06978E-01
+   94 4.97953E+00
+   93 1.84692E+03
+   90 3.13960E-01
 
- Total residual production cross section:  1852.17334
- Non-elastic cross section              :  1851.54773
+ Total residual production cross section:  1852.20911
+ Non-elastic cross section              :  1851.54858
 
  ########## RESULTS FOR E=  4.40000 ##########
 
@@ -2124,33 +2137,33 @@
  Total           = 3.60253E+03
    Shape elastic   = 1.73605E+03
    Reaction        = 1.86648E+03
-     Compound elastic= 1.63365E+01
-     Non-elastic     = 1.85014E+03
-       Direct          = 8.32336E+01
-       Pre-equilibrium = 4.01638E+01
-       Giant resonance = 2.97462E+01
-       Compound non-el = 1.69700E+03
-     Total elastic   = 1.75239E+03
+     Compound elastic= 1.63318E+01
+     Non-elastic     = 1.85015E+03
+       Direct          = 8.38297E+01
+       Pre-equilibrium = 4.01427E+01
+       Giant resonance = 3.00719E+01
+       Compound non-el = 1.69610E+03
+     Total elastic   = 1.75238E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.06762E+01
+ gamma   = 1.06804E+01
  neutron = 1.83821E+03
- proton  = 8.94051E-01
- deuteron= 8.95197E-24
+ proton  = 8.91802E-01
+ deuteron= 8.94727E-24
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 3.75857E-01
+ alpha   = 3.84822E-01
 
  3. Total particle production cross sections
 
- gamma   = 2.14063E+03    Multiplicity= 1.15701E+00
- neutron = 1.84414E+03    Multiplicity= 9.96754E-01
- proton  = 8.94149E-01    Multiplicity= 4.83286E-04
- deuteron= 8.95197E-24    Multiplicity= 4.83853E-27
+ gamma   = 2.14643E+03    Multiplicity= 1.16014E+00
+ neutron = 1.84413E+03    Multiplicity= 9.96749E-01
+ proton  = 8.91900E-01    Multiplicity= 4.82069E-04
+ deuteron= 8.94727E-24    Multiplicity= 4.83597E-27
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 3.75896E-01    Multiplicity= 2.03171E-04
+ alpha   = 3.84862E-01    Multiplicity= 2.08017E-04
 
  4. Residual production cross sections
 
@@ -2159,24 +2172,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 4.75253E+00    0    2.66785E+00  0.56135
-                                 1    2.08467E+00  0.43865   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.84480E+03    0    1.60521E+03  0.87013
-                                 1    2.39588E+02  0.12987   5.09000E+08 sec. 
-   40  93 ( 93Zr) 8.94284E-01    0    8.94284E-01  1.00000
-   39  90 ( 90Y ) 3.75895E-01    0    2.48220E-01  0.66034
-                                 2    1.27675E-01  0.33966   1.15000E+04 sec. 
+   41  94 ( 94Nb) 4.75632E+00    0    2.50458E+00  0.52658
+                                 1    2.25174E+00  0.47342   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.84484E+03    0    1.62102E+03  0.87868
+                                 1    2.23823E+02  0.12132   5.08700E+08 sec. 
+   40  93 ( 93Zr) 8.91985E-01    0    8.91985E-01  1.00000
+   39  90 ( 90Y ) 3.84861E-01    0    2.58646E-01  0.67205
+                                 2    1.26215E-01  0.32795   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 4.75253E+00
-   93 1.84569E+03
-   90 3.75895E-01
+   94 4.75632E+00
+   93 1.84573E+03
+   90 3.84861E-01
 
- Total residual production cross section:  1850.82056
- Non-elastic cross section              :  1850.14355
+ Total residual production cross section:  1850.87317
+ Non-elastic cross section              :  1850.14819
 
  ########## RESULTS FOR E=  4.60000 ##########
 
@@ -2205,33 +2218,33 @@
  Total           = 3.59864E+03
    Shape elastic   = 1.73292E+03
    Reaction        = 1.86572E+03
-     Compound elastic= 1.31283E+01
-     Non-elastic     = 1.85259E+03
-       Direct          = 8.11487E+01
-       Pre-equilibrium = 4.51408E+01
-       Giant resonance = 3.07712E+01
-       Compound non-el = 1.69553E+03
-     Total elastic   = 1.74605E+03
+     Compound elastic= 1.31212E+01
+     Non-elastic     = 1.85260E+03
+       Direct          = 8.17206E+01
+       Pre-equilibrium = 4.51150E+01
+       Giant resonance = 3.12024E+01
+       Compound non-el = 1.69456E+03
+     Total elastic   = 1.74604E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.06500E+01
+ gamma   = 1.06514E+01
  neutron = 1.84034E+03
- proton  = 1.14088E+00
- deuteron= 1.94062E-18
+ proton  = 1.13845E+00
+ deuteron= 1.93951E-18
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 4.75902E-01
+ alpha   = 4.86804E-01
 
  3. Total particle production cross sections
 
- gamma   = 2.25641E+03    Multiplicity= 1.21797E+00
- neutron = 1.84642E+03    Multiplicity= 9.96667E-01
- proton  = 1.14101E+00    Multiplicity= 6.15900E-04
- deuteron= 1.94062E-18    Multiplicity= 1.04751E-21
+ gamma   = 2.26245E+03    Multiplicity= 1.22123E+00
+ neutron = 1.84642E+03    Multiplicity= 9.96662E-01
+ proton  = 1.13858E+00    Multiplicity= 6.14586E-04
+ deuteron= 1.93951E-18    Multiplicity= 1.04691E-21
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 4.75953E-01    Multiplicity= 2.56912E-04
+ alpha   = 4.86856E-01    Multiplicity= 2.62796E-04
 
  4. Residual production cross sections
 
@@ -2240,24 +2253,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 4.57489E+00    0    2.57491E+00  0.56284
-                                 1    1.99998E+00  0.43716   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.84715E+03    0    1.60752E+03  0.87027
-                                 1    2.39622E+02  0.12973   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.14123E+00    0    1.14123E+00  1.00000
-   39  90 ( 90Y ) 4.75952E-01    0    3.14421E-01  0.66062
-                                 2    1.61530E-01  0.33938   1.15000E+04 sec. 
+   41  94 ( 94Nb) 4.57710E+00    0    2.41841E+00  0.52837
+                                 1    2.15869E+00  0.47163   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.84718E+03    0    1.62340E+03  0.87885
+                                 1    2.23777E+02  0.12115   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.13873E+00    0    1.13873E+00  1.00000
+   39  90 ( 90Y ) 4.86855E-01    0    3.27167E-01  0.67200
+                                 2    1.59688E-01  0.32800   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 4.57489E+00
-   93 1.84829E+03
-   90 4.75952E-01
+   94 4.57710E+00
+   93 1.84832E+03
+   90 4.86855E-01
 
- Total residual production cross section:  1853.33887
- Non-elastic cross section              :  1852.59167
+ Total residual production cross section:  1853.38000
+ Non-elastic cross section              :  1852.59875
 
  ########## RESULTS FOR E=  4.80000 ##########
 
@@ -2286,33 +2299,33 @@
  Total           = 3.60750E+03
    Shape elastic   = 1.73870E+03
    Reaction        = 1.86880E+03
-     Compound elastic= 1.06365E+01
-     Non-elastic     = 1.85816E+03
-       Direct          = 7.92056E+01
-       Pre-equilibrium = 5.03087E+01
-       Giant resonance = 3.17873E+01
-       Compound non-el = 1.69686E+03
-     Total elastic   = 1.74934E+03
+     Compound elastic= 1.06292E+01
+     Non-elastic     = 1.85817E+03
+       Direct          = 7.97531E+01
+       Pre-equilibrium = 5.02811E+01
+       Giant resonance = 3.22021E+01
+       Compound non-el = 1.69593E+03
+     Total elastic   = 1.74933E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.06607E+01
- neutron = 1.84571E+03
- proton  = 1.25801E+00
- deuteron= 5.18350E-15
+ gamma   = 1.06608E+01
+ neutron = 1.84570E+03
+ proton  = 1.25648E+00
+ deuteron= 5.18066E-15
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 5.56557E-01
+ alpha   = 5.70569E-01
 
  3. Total particle production cross sections
 
- gamma   = 2.37556E+03    Multiplicity= 1.27844E+00
- neutron = 1.85242E+03    Multiplicity= 9.96911E-01
- proton  = 1.25818E+00    Multiplicity= 6.77111E-04
- deuteron= 5.18350E-15    Multiplicity= 2.78958E-18
+ gamma   = 2.38158E+03    Multiplicity= 1.28168E+00
+ neutron = 1.85242E+03    Multiplicity= 9.96904E-01
+ proton  = 1.25665E+00    Multiplicity= 6.76286E-04
+ deuteron= 5.18066E-15    Multiplicity= 2.78804E-18
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 5.56622E-01    Multiplicity= 2.99555E-04
+ alpha   = 5.70635E-01    Multiplicity= 3.07095E-04
 
  4. Residual production cross sections
 
@@ -2321,24 +2334,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 3.94202E+00    0    2.28132E+00  0.57872
-                                 1    1.66070E+00  0.42128   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.85321E+03    0    1.61300E+03  0.87038
-                                 1    2.40214E+02  0.12962   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.25854E+00    0    1.25854E+00  1.00000
-   39  90 ( 90Y ) 5.56622E-01    0    3.55946E-01  0.63948
-                                 2    2.00676E-01  0.36052   1.15000E+04 sec. 
+   41  94 ( 94Nb) 3.94364E+00    0    2.14488E+00  0.54388
+                                 1    1.79875E+00  0.45612   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.85324E+03    0    1.62893E+03  0.87896
+                                 1    2.24314E+02  0.12104   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.25690E+00    0    1.25690E+00  1.00000
+   39  90 ( 90Y ) 5.70634E-01    0    3.72138E-01  0.65215
+                                 2    1.98496E-01  0.34785   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 3.94202E+00
-   93 1.85447E+03
-   90 5.56622E-01
+   94 3.94364E+00
+   93 1.85450E+03
+   90 5.70634E-01
 
- Total residual production cross section:  1858.96875
- Non-elastic cross section              :  1858.16357
+ Total residual production cross section:  1859.01233
+ Non-elastic cross section              :  1858.17090
 
  ########## RESULTS FOR E=  5.00000 ##########
 
@@ -2367,33 +2380,33 @@
  Total           = 3.62685E+03
    Shape elastic   = 1.75220E+03
    Reaction        = 1.87465E+03
-     Compound elastic= 8.64561E+00
-     Non-elastic     = 1.86600E+03
-       Direct          = 7.78681E+01
-       Pre-equilibrium = 5.57875E+01
-       Giant resonance = 3.27077E+01
-       Compound non-el = 1.69964E+03
-     Total elastic   = 1.76085E+03
+     Compound elastic= 8.63862E+00
+     Non-elastic     = 1.86601E+03
+       Direct          = 7.83927E+01
+       Pre-equilibrium = 5.57567E+01
+       Giant resonance = 3.31544E+01
+       Compound non-el = 1.69871E+03
+     Total elastic   = 1.76084E+03
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 1.06486E+01
- neutron = 1.85303E+03
- proton  = 1.65674E+00
- deuteron= 5.78972E-13
+ gamma   = 1.06477E+01
+ neutron = 1.85302E+03
+ proton  = 1.65646E+00
+ deuteron= 5.78678E-13
  triton  = 0.00000E+00
  helium-3= 0.00000E+00
- alpha   = 6.88763E-01
+ alpha   = 7.05554E-01
 
  3. Total particle production cross sections
 
- gamma   = 2.49476E+03    Multiplicity= 1.33695E+00
- neutron = 1.85995E+03    Multiplicity= 9.96756E-01
- proton  = 1.65696E+00    Multiplicity= 8.87973E-04
- deuteron= 5.78972E-13    Multiplicity= 3.10274E-16
+ gamma   = 2.50086E+03    Multiplicity= 1.34022E+00
+ neutron = 1.85994E+03    Multiplicity= 9.96748E-01
+ proton  = 1.65667E+00    Multiplicity= 8.87815E-04
+ deuteron= 5.78678E-13    Multiplicity= 3.10115E-16
  triton  = 0.00000E+00    Multiplicity= 0.00000E+00
  helium-3= 0.00000E+00    Multiplicity= 0.00000E+00
- alpha   = 6.88845E-01    Multiplicity= 3.69155E-04
+ alpha   = 7.05639E-01    Multiplicity= 3.78153E-04
 
  4. Residual production cross sections
 
@@ -2402,24 +2415,24 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 3.72388E+00    0    2.16375E+00  0.58105
-                                 1    1.56013E+00  0.41895   3.76000E+02 sec. 
-   41  93 ( 93Nb) 1.86080E+03    0    1.62006E+03  0.87063
-                                 1    2.40734E+02  0.12937   5.09000E+08 sec. 
-   40  93 ( 93Zr) 1.65750E+00    0    1.65750E+00  1.00000
-   39  90 ( 90Y ) 6.88844E-01    0    4.38718E-01  0.63689
-                                 2    2.50127E-01  0.36311   1.15000E+04 sec. 
+   41  94 ( 94Nb) 3.72489E+00    0    2.03474E+00  0.54625
+                                 1    1.69015E+00  0.45375   3.75800E+02 sec. 
+   41  93 ( 93Nb) 1.86082E+03    0    1.63602E+03  0.87919
+                                 1    2.24803E+02  0.12081   5.08700E+08 sec. 
+   40  93 ( 93Zr) 1.65706E+00    0    1.65706E+00  1.00000
+   39  90 ( 90Y ) 7.05637E-01    0    4.58228E-01  0.64938
+                                 2    2.47410E-01  0.35062   1.14800E+04 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 3.72389E+00
-   93 1.86245E+03
-   90 6.88844E-01
+   94 3.72489E+00
+   93 1.86248E+03
+   90 7.05637E-01
 
- Total residual production cross section:  1866.86682
- Non-elastic cross section              :  1866.00439
+ Total residual production cross section:  1866.91150
+ Non-elastic cross section              :  1866.01135
 
  ########## EXCITATION FUNCTIONS ###########
 
@@ -2427,61 +2440,61 @@
 
    Energy    Non-elastic  Elastic     Total    Comp. el.  Shape el.  Reaction   Comp non-el  Direct   Pre-equil.
 
-  2.000E-01   8.2991E+01 1.1919E+04 1.2002E+04 6.2534E+03 5.6658E+03 6.3364E+03 8.2983E+01 7.8379E-03 0.0000E+00 
-  4.000E-01   7.7440E+01 1.0633E+04 1.0710E+04 4.4775E+03 6.1555E+03 4.5550E+03 7.7373E+01 6.7601E-02 0.0000E+00 
-  6.000E-01   8.8687E+01 9.3662E+03 9.4549E+03 3.3673E+03 5.9990E+03 3.4559E+03 8.8503E+01 1.8434E-01 0.0000E+00 
-  8.000E-01   2.8199E+02 8.1769E+03 8.4589E+03 2.5847E+03 5.5922E+03 2.8667E+03 2.8165E+02 3.3823E-01 0.0000E+00 
-  1.000E+00   8.6758E+02 6.7994E+03 7.6670E+03 1.6899E+03 5.1095E+03 2.5575E+03 8.4139E+02 2.6190E+01 0.0000E+00 
-  1.200E+00   1.4291E+03 5.6400E+03 7.0691E+03 9.4778E+02 4.6923E+03 2.3769E+03 1.3520E+03 7.7094E+01 0.0000E+00 
-  1.400E+00   1.4052E+03 5.2904E+03 6.6956E+03 5.9924E+02 4.6912E+03 2.0044E+03 1.3446E+03 6.0570E+01 0.0000E+00 
-  1.600E+00   1.2542E+03 4.8141E+03 6.0683E+03 4.0867E+02 4.4054E+03 1.6628E+03 1.2128E+03 4.1332E+01 0.0000E+00 
-  1.800E+00   1.4517E+03 4.6036E+03 6.0552E+03 3.6669E+02 4.2369E+03 1.8184E+03 1.3798E+03 7.1727E+01 1.5609E-01 
-  2.000E+00   1.6459E+03 4.4634E+03 6.1093E+03 3.0025E+02 4.1631E+03 1.9462E+03 1.5340E+03 1.0968E+02 1.9435E+00 
-  2.200E+00   1.6798E+03 4.0967E+03 5.7765E+03 1.9751E+02 3.8991E+03 1.8773E+03 1.5667E+03 1.0721E+02 4.5270E+00 
-  2.400E+00   1.6304E+03 3.5748E+03 5.2052E+03 1.2009E+02 3.4547E+03 1.7505E+03 1.5385E+03 8.2659E+01 6.7957E+00 
-  2.600E+00   1.7479E+03 2.9121E+03 4.6600E+03 1.0223E+02 2.8098E+03 1.8502E+03 1.6441E+03 8.2480E+01 9.7451E+00 
-  2.800E+00   1.9583E+03 2.4073E+03 4.3656E+03 1.1254E+02 2.2948E+03 2.0708E+03 1.8307E+03 9.9217E+01 1.3805E+01 
-  3.000E+00   1.9530E+03 2.2220E+03 4.1751E+03 9.1086E+01 2.1309E+03 2.0441E+03 1.8201E+03 9.9171E+01 1.6803E+01 
-  3.200E+00   1.9264E+03 2.0942E+03 4.0206E+03 7.1988E+01 2.0222E+03 1.9983E+03 1.7893E+03 9.7731E+01 1.9519E+01 
-  3.400E+00   1.9032E+03 1.9900E+03 3.8932E+03 5.5610E+01 1.9344E+03 1.9588E+03 1.7624E+03 9.5823E+01 2.1952E+01 
-  3.600E+00   1.8839E+03 1.9077E+03 3.7916E+03 4.2560E+01 1.8651E+03 1.9265E+03 1.7404E+03 9.3522E+01 2.4962E+01 
-  3.800E+00   1.8684E+03 1.8454E+03 3.7138E+03 3.3039E+01 1.8124E+03 1.9014E+03 1.7227E+03 9.0943E+01 2.8314E+01 
-  4.000E+00   1.8575E+03 1.8003E+03 3.6579E+03 2.5955E+01 1.7744E+03 1.8835E+03 1.7095E+03 8.8329E+01 3.2077E+01 
-  4.200E+00   1.8515E+03 1.7700E+03 3.6215E+03 2.0532E+01 1.7494E+03 1.8721E+03 1.7013E+03 8.5688E+01 3.5895E+01 
-  4.400E+00   1.8501E+03 1.7524E+03 3.6025E+03 1.6336E+01 1.7361E+03 1.8665E+03 1.6970E+03 8.3234E+01 4.0164E+01 
-  4.600E+00   1.8526E+03 1.7460E+03 3.5986E+03 1.3128E+01 1.7329E+03 1.8657E+03 1.6955E+03 8.1149E+01 4.5141E+01 
-  4.800E+00   1.8582E+03 1.7493E+03 3.6075E+03 1.0637E+01 1.7387E+03 1.8688E+03 1.6969E+03 7.9206E+01 5.0309E+01 
-  5.000E+00   1.8660E+03 1.7608E+03 3.6269E+03 8.6456E+00 1.7522E+03 1.8747E+03 1.6996E+03 7.7868E+01 5.5787E+01 
+  2.00000E-01 8.31504E+01 1.19190E+04 1.20021E+04 6.25320E+03 5.66578E+03 6.33635E+03 8.31504E+01 0.00000E+00 0.0
+  4.00000E-01 7.75103E+01 1.06330E+04 1.07105E+04 4.47747E+03 6.15554E+03 4.55498E+03 7.75103E+01 0.00000E+00 0.0
+  6.00000E-01 8.86382E+01 9.36625E+03 9.45489E+03 3.36730E+03 5.99895E+03 3.45594E+03 8.86382E+01 0.00000E+00 0.0
+  8.00000E-01 2.81831E+02 8.17707E+03 8.45890E+03 2.58487E+03 5.59220E+03 2.86670E+03 2.81831E+02 0.00000E+00 0.0
+  1.00000E+00 8.67341E+02 6.79964E+03 7.66697E+03 1.69017E+03 5.10947E+03 2.55751E+03 8.41649E+02 2.56914E+01 0.0
+  1.20000E+00 1.43146E+03 5.63767E+03 7.06912E+03 9.45408E+02 4.69226E+03 2.37687E+03 1.35503E+03 7.64314E+01 0.0
+  1.40000E+00 1.41066E+03 5.28498E+03 6.69564E+03 5.93777E+02 4.69120E+03 2.00444E+03 1.35056E+03 6.01028E+01 0.0
+  1.60000E+00 1.25968E+03 4.80859E+03 6.06827E+03 4.03169E+02 4.40542E+03 1.66285E+03 1.21899E+03 4.06884E+01 0.0
+  1.80000E+00 1.45475E+03 4.60048E+03 6.05523E+03 3.63621E+02 4.23686E+03 1.81837E+03 1.38410E+03 7.04892E+01 1.5
+  2.00000E+00 1.64823E+03 4.46106E+03 6.10929E+03 2.97936E+02 4.16312E+03 1.94617E+03 1.53755E+03 1.08395E+02 1.9
+  2.20000E+00 1.68141E+03 4.09508E+03 5.77649E+03 1.95928E+02 3.89915E+03 1.87734E+03 1.56744E+03 1.06412E+02 4.5
+  2.40000E+00 1.63108E+03 3.57416E+03 5.20523E+03 1.19442E+02 3.45472E+03 1.75052E+03 1.53665E+03 8.23924E+01 6.7
+  2.60000E+00 1.74788E+03 2.91213E+03 4.66001E+03 1.02285E+02 2.80984E+03 1.85017E+03 1.63954E+03 8.27207E+01 9.7
+  2.80000E+00 1.95838E+03 2.40721E+03 4.36558E+03 1.12438E+02 2.29477E+03 2.07082E+03 1.82591E+03 9.96561E+01 1.3
+  3.00000E+00 1.95325E+03 2.22182E+03 4.17508E+03 9.08737E+01 2.13095E+03 2.04412E+03 1.81639E+03 9.96776E+01 1.6
+  3.20000E+00 1.92657E+03 2.09399E+03 4.02055E+03 7.17746E+01 2.02222E+03 1.99834E+03 1.78733E+03 9.82952E+01 1.9
+  3.40000E+00 1.90332E+03 1.98992E+03 3.89324E+03 5.55346E+01 1.93439E+03 1.95885E+03 1.76267E+03 9.64296E+01 2.1
+  3.60000E+00 1.88390E+03 1.90772E+03 3.79161E+03 4.25755E+01 1.86514E+03 1.92648E+03 1.74171E+03 9.41526E+01 2.4
+  3.80000E+00 1.86833E+03 1.84550E+03 3.71383E+03 3.30906E+01 1.81241E+03 1.90142E+03 1.72448E+03 9.15815E+01 2.8
+  4.00000E+00 1.85750E+03 1.80036E+03 3.65786E+03 2.59673E+01 1.77439E+03 1.88347E+03 1.70942E+03 8.89615E+01 3.2
+  4.20000E+00 1.85155E+03 1.76996E+03 3.62151E+03 2.05314E+01 1.74943E+03 1.87208E+03 1.70062E+03 8.63057E+01 3.5
+  4.40000E+00 1.85015E+03 1.75238E+03 3.60253E+03 1.63318E+01 1.73605E+03 1.86648E+03 1.69610E+03 8.38297E+01 4.0
+  4.60000E+00 1.85260E+03 1.74604E+03 3.59864E+03 1.31212E+01 1.73292E+03 1.86572E+03 1.69456E+03 8.17206E+01 4.5
+  4.80000E+00 1.85817E+03 1.74933E+03 3.60750E+03 1.06292E+01 1.73870E+03 1.86880E+03 1.69593E+03 7.97531E+01 5.0
+  5.00000E+00 1.86601E+03 1.76084E+03 3.62685E+03 8.63862E+00 1.75220E+03 1.87465E+03 1.69871E+03 7.83927E+01 5.5
 
  2. Binary non-elastic cross sections (non-exclusive)
 
    Energy     gamma      neutron    proton     deuteron   triton     helium-3   alpha   
 
-  2.000E-01   7.9375E+01 3.5227E+00 0.0000E+00 0.0000E+00 0.0000E+00 0.0000E+00 1.3605E-04                       
-  4.000E-01   6.3833E+01 1.3575E+01 0.0000E+00 0.0000E+00 0.0000E+00 0.0000E+00 3.9887E-04                       
-  6.000E-01   6.1325E+01 2.7352E+01 8.3988E-06 0.0000E+00 0.0000E+00 0.0000E+00 9.8580E-04                       
-  8.000E-01   5.7290E+01 2.2470E+02 1.0530E-04 0.0000E+00 0.0000E+00 0.0000E+00 1.9661E-03                       
-  1.000E+00   4.0624E+01 8.2695E+02 2.7278E-04 0.0000E+00 0.0000E+00 0.0000E+00 2.3170E-03                       
-  1.200E+00   2.7529E+01 1.4016E+03 8.9581E-04 0.0000E+00 0.0000E+00 0.0000E+00 2.9723E-03                       
-  1.400E+00   2.4408E+01 1.3808E+03 2.4229E-03 0.0000E+00 0.0000E+00 0.0000E+00 4.8381E-03                       
-  1.600E+00   2.0541E+01 1.2336E+03 4.6541E-03 0.0000E+00 0.0000E+00 0.0000E+00 5.9452E-03                       
-  1.800E+00   1.8271E+01 1.4334E+03 9.4955E-03 0.0000E+00 0.0000E+00 0.0000E+00 8.3998E-03                       
-  2.000E+00   1.5891E+01 1.6300E+03 1.7842E-02 0.0000E+00 0.0000E+00 0.0000E+00 1.2570E-02                       
-  2.200E+00   1.3369E+01 1.6664E+03 2.9540E-02 0.0000E+00 0.0000E+00 0.0000E+00 1.6210E-02                       
-  2.400E+00   1.1299E+01 1.6191E+03 4.4973E-02 0.0000E+00 0.0000E+00 0.0000E+00 2.1807E-02                       
-  2.600E+00   1.0804E+01 1.7370E+03 7.2499E-02 0.0000E+00 0.0000E+00 0.0000E+00 3.0202E-02                       
-  2.800E+00   1.1718E+01 1.9464E+03 1.2150E-01 0.0000E+00 0.0000E+00 0.0000E+00 4.5307E-02                       
-  3.000E+00   1.1691E+01 1.9411E+03 1.7423E-01 0.0000E+00 0.0000E+00 0.0000E+00 6.6182E-02                       
-  3.200E+00   1.1645E+01 1.9144E+03 2.3965E-01 0.0000E+00 0.0000E+00 0.0000E+00 8.7811E-02                       
-  3.400E+00   1.1397E+01 1.8914E+03 3.1746E-01 0.0000E+00 0.0000E+00 0.0000E+00 1.1726E-01                       
-  3.600E+00   1.1082E+01 1.8723E+03 4.0795E-01 0.0000E+00 0.0000E+00 0.0000E+00 1.5163E-01                       
-  3.800E+00   1.0900E+01 1.8568E+03 4.9798E-01 0.0000E+00 0.0000E+00 0.0000E+00 1.8779E-01                       
-  4.000E+00   1.0804E+01 1.8458E+03 6.6145E-01 0.0000E+00 0.0000E+00 0.0000E+00 2.5000E-01                       
-  4.200E+00   1.0737E+01 1.8398E+03 7.6306E-01 4.0061E-34 0.0000E+00 0.0000E+00 3.0695E-01                       
-  4.400E+00   1.0676E+01 1.8382E+03 8.9405E-01 8.9520E-24 0.0000E+00 0.0000E+00 3.7586E-01                       
-  4.600E+00   1.0650E+01 1.8403E+03 1.1409E+00 1.9406E-18 0.0000E+00 0.0000E+00 4.7590E-01                       
-  4.800E+00   1.0661E+01 1.8457E+03 1.2580E+00 5.1835E-15 0.0000E+00 0.0000E+00 5.5656E-01                       
-  5.000E+00   1.0649E+01 1.8530E+03 1.6567E+00 5.7897E-13 0.0000E+00 0.0000E+00 6.8876E-01                       
+  2.00000E-01 7.95426E+01 3.51635E+00 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 1.36141E-04                
+  4.00000E-01 6.39657E+01 1.35114E+01 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00 3.99029E-04                
+  6.00000E-01 6.14534E+01 2.71750E+01 8.40484E-06 0.00000E+00 0.00000E+00 0.00000E+00 9.85972E-04                
+  8.00000E-01 5.74342E+01 2.24393E+02 1.05319E-04 0.00000E+00 0.00000E+00 0.00000E+00 1.96607E-03                
+  1.00000E+00 4.07485E+01 8.26589E+02 2.72838E-04 0.00000E+00 0.00000E+00 0.00000E+00 2.31721E-03                
+  1.20000E+00 2.73919E+01 1.40407E+03 8.82370E-04 0.00000E+00 0.00000E+00 0.00000E+00 2.96207E-03                
+  1.40000E+00 2.41133E+01 1.38654E+03 2.36582E-03 0.00000E+00 0.00000E+00 0.00000E+00 4.78767E-03                
+  1.60000E+00 2.03585E+01 1.23931E+03 4.53025E-03 0.00000E+00 0.00000E+00 0.00000E+00 5.90127E-03                
+  1.80000E+00 1.82243E+01 1.43651E+03 9.22469E-03 0.00000E+00 0.00000E+00 0.00000E+00 8.38229E-03                
+  2.00000E+00 1.58531E+01 1.63235E+03 1.73588E-02 0.00000E+00 0.00000E+00 0.00000E+00 1.25242E-02                
+  2.20000E+00 1.33299E+01 1.66804E+03 2.89126E-02 0.00000E+00 0.00000E+00 0.00000E+00 1.62237E-02                
+  2.40000E+00 1.12864E+01 1.61973E+03 4.43554E-02 0.00000E+00 0.00000E+00 0.00000E+00 2.19093E-02                
+  2.60000E+00 1.08340E+01 1.73695E+03 7.19123E-02 0.00000E+00 0.00000E+00 0.00000E+00 3.05071E-02                
+  2.80000E+00 1.17362E+01 1.94649E+03 1.20126E-01 0.00000E+00 0.00000E+00 0.00000E+00 4.58456E-02                
+  3.00000E+00 1.16947E+01 1.94132E+03 1.72368E-01 0.00000E+00 0.00000E+00 0.00000E+00 6.69077E-02                
+  3.20000E+00 1.16402E+01 1.91461E+03 2.37797E-01 0.00000E+00 0.00000E+00 0.00000E+00 8.91133E-02                
+  3.40000E+00 1.14043E+01 1.89149E+03 3.16027E-01 0.00000E+00 0.00000E+00 0.00000E+00 1.19358E-01                
+  3.60000E+00 1.11021E+01 1.87225E+03 4.06928E-01 0.00000E+00 0.00000E+00 0.00000E+00 1.54550E-01                
+  3.80000E+00 1.09252E+01 1.85673E+03 4.97496E-01 0.00000E+00 0.00000E+00 0.00000E+00 1.92142E-01                
+  4.00000E+00 1.08155E+01 1.84579E+03 6.60256E-01 0.00000E+00 0.00000E+00 0.00000E+00 2.55286E-01                
+  4.20000E+00 1.07435E+01 1.83975E+03 7.61156E-01 4.00456E-34 0.00000E+00 0.00000E+00 3.13931E-01                
+  4.40000E+00 1.06804E+01 1.83821E+03 8.91802E-01 8.94727E-24 0.00000E+00 0.00000E+00 3.84822E-01                
+  4.60000E+00 1.06514E+01 1.84034E+03 1.13845E+00 1.93951E-18 0.00000E+00 0.00000E+00 4.86804E-01                
+  4.80000E+00 1.06608E+01 1.84570E+03 1.25648E+00 5.18066E-15 0.00000E+00 0.00000E+00 5.70569E-01                
+  5.00000E+00 1.06477E+01 1.85302E+03 1.65646E+00 5.78678E-13 0.00000E+00 0.00000E+00 7.05554E-01                
 
  3. Total particle production cross sections
 
@@ -2489,211 +2502,211 @@
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 2.43732E+02 2.93686E+00                                              
-  4.000E-01 2.00514E+02 2.58927E+00                                              
-  6.000E-01 1.93987E+02 2.18731E+00                                              
-  8.000E-01 1.83935E+02 6.52278E-01                                              
-  1.000E+00 1.32182E+02 1.52358E-01                                              
-  1.200E+00 8.78820E+01 6.14952E-02                                              
-  1.400E+00 7.67968E+01 5.46521E-02                                              
-  1.600E+00 6.50912E+01 5.18994E-02                                              
-  1.800E+00 9.83947E+01 6.77800E-02                                              
-  2.000E+00 3.60959E+02 2.19306E-01                                              
-  2.200E+00 6.01847E+02 3.58279E-01                                              
-  2.400E+00 7.50970E+02 4.60597E-01                                              
-  2.600E+00 9.36311E+02 5.35664E-01                                              
-  2.800E+00 1.20811E+03 6.16926E-01                                              
-  3.000E+00 1.38222E+03 7.07727E-01                                              
-  3.200E+00 1.53017E+03 7.94335E-01                                              
-  3.400E+00 1.62965E+03 8.56249E-01                                              
-  3.600E+00 1.71728E+03 9.11543E-01                                              
-  3.800E+00 1.81911E+03 9.73628E-01                                              
-  4.000E+00 1.92793E+03 1.03791E+00                                              
-  4.200E+00 2.03355E+03 1.09830E+00                                              
-  4.400E+00 2.14063E+03 1.15701E+00                                              
-  4.600E+00 2.25641E+03 1.21797E+00                                              
-  4.800E+00 2.37556E+03 1.27844E+00                                              
-  5.000E+00 2.49476E+03 1.33695E+00                                              
+  2.00000E-01 2.43635E+02 2.93005E+00                                            
+  4.00000E-01 2.00335E+02 2.58462E+00                                            
+  6.00000E-01 1.93791E+02 2.18631E+00                                            
+  8.00000E-01 1.83647E+02 6.51621E-01                                            
+  1.00000E+00 1.31921E+02 1.52098E-01                                            
+  1.20000E+00 8.71414E+01 6.08758E-02                                            
+  1.40000E+00 7.56112E+01 5.35998E-02                                            
+  1.60000E+00 6.42483E+01 5.10036E-02                                            
+  1.80000E+00 9.78263E+01 6.72461E-02                                            
+  2.00000E+00 3.59284E+02 2.17981E-01                                            
+  2.20000E+00 6.00680E+02 3.57247E-01                                            
+  2.40000E+00 7.52034E+02 4.61066E-01                                            
+  2.60000E+00 9.42083E+02 5.38985E-01                                            
+  2.80000E+00 1.21352E+03 6.19652E-01                                            
+  3.00000E+00 1.38618E+03 7.09681E-01                                            
+  3.20000E+00 1.53211E+03 7.95256E-01                                            
+  3.40000E+00 1.63140E+03 8.57134E-01                                            
+  3.60000E+00 1.72018E+03 9.13093E-01                                            
+  3.80000E+00 1.82312E+03 9.75803E-01                                            
+  4.00000E+00 1.93322E+03 1.04076E+00                                            
+  4.20000E+00 2.03921E+03 1.10136E+00                                            
+  4.40000E+00 2.14643E+03 1.16014E+00                                            
+  4.60000E+00 2.26245E+03 1.22123E+00                                            
+  4.80000E+00 2.38158E+03 1.28168E+00                                            
+  5.00000E+00 2.50086E+03 1.34022E+00                                            
 
  neutron  production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 3.62771E+00 4.37123E-02                                              
-  4.000E-01 1.36755E+01 1.76594E-01                                              
-  6.000E-01 2.82919E+01 3.19008E-01                                              
-  8.000E-01 2.25961E+02 8.01310E-01                                              
-  1.000E+00 8.28072E+02 9.54464E-01                                              
-  1.200E+00 1.40332E+03 9.81967E-01                                              
-  1.400E+00 1.38306E+03 9.84244E-01                                              
-  1.600E+00 1.23579E+03 9.85342E-01                                              
-  1.800E+00 1.43552E+03 9.88867E-01                                              
-  2.000E+00 1.63315E+03 9.92242E-01                                              
-  2.200E+00 1.66935E+03 9.93759E-01                                              
-  2.400E+00 1.62172E+03 9.94662E-01                                              
-  2.600E+00 1.73974E+03 9.95308E-01                                              
-  2.800E+00 1.95022E+03 9.95884E-01                                              
-  3.000E+00 1.94525E+03 9.96012E-01                                              
-  3.200E+00 1.91876E+03 9.96060E-01                                              
-  3.400E+00 1.89596E+03 9.96173E-01                                              
-  3.600E+00 1.87715E+03 9.96406E-01                                              
-  3.800E+00 1.86222E+03 9.96704E-01                                              
-  4.000E+00 1.85141E+03 9.96715E-01                                              
-  4.200E+00 1.84552E+03 9.96745E-01                                              
-  4.400E+00 1.84414E+03 9.96754E-01                                              
-  4.600E+00 1.84642E+03 9.96667E-01                                              
-  4.800E+00 1.85242E+03 9.96911E-01                                              
-  5.000E+00 1.85995E+03 9.96756E-01                                              
+  2.00000E-01 3.62142E+00 4.35527E-02                                            
+  4.00000E-01 1.36122E+01 1.75618E-01                                            
+  6.00000E-01 2.81144E+01 3.17181E-01                                            
+  8.00000E-01 2.25658E+02 8.00687E-01                                            
+  1.00000E+00 8.27710E+02 9.54308E-01                                            
+  1.20000E+00 1.40581E+03 9.82078E-01                                            
+  1.40000E+00 1.38877E+03 9.84484E-01                                            
+  1.60000E+00 1.24145E+03 9.85528E-01                                            
+  1.80000E+00 1.43862E+03 9.88915E-01                                            
+  2.00000E+00 1.63549E+03 9.92266E-01                                            
+  2.20000E+00 1.67095E+03 9.93779E-01                                            
+  2.40000E+00 1.62238E+03 9.94667E-01                                            
+  2.60000E+00 1.73966E+03 9.95293E-01                                            
+  2.80000E+00 1.95030E+03 9.95874E-01                                            
+  3.00000E+00 1.94545E+03 9.96009E-01                                            
+  3.20000E+00 1.91898E+03 9.96061E-01                                            
+  3.40000E+00 1.89603E+03 9.96170E-01                                            
+  3.60000E+00 1.87712E+03 9.96398E-01                                            
+  3.80000E+00 1.86215E+03 9.96694E-01                                            
+  4.00000E+00 1.85139E+03 9.96709E-01                                            
+  4.20000E+00 1.84551E+03 9.96740E-01                                            
+  4.40000E+00 1.84413E+03 9.96749E-01                                            
+  4.60000E+00 1.84642E+03 9.96662E-01                                            
+  4.80000E+00 1.85242E+03 9.96904E-01                                            
+  5.00000E+00 1.85994E+03 9.96748E-01                                            
 
  proton   production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 0.00000E+00 0.00000E+00                                              
-  4.000E-01 0.00000E+00 0.00000E+00                                              
-  6.000E-01 8.39878E-06 9.47011E-08                                              
-  8.000E-01 1.05298E-04 3.73412E-07                                              
-  1.000E+00 2.72783E-04 3.14420E-07                                              
-  1.200E+00 8.95816E-04 6.26844E-07                                              
-  1.400E+00 2.42289E-03 1.72424E-06                                              
-  1.600E+00 4.65414E-03 3.71091E-06                                              
-  1.800E+00 9.49562E-03 6.54113E-06                                              
-  2.000E+00 1.78424E-02 1.08404E-05                                              
-  2.200E+00 2.95403E-02 1.75853E-05                                              
-  2.400E+00 4.49735E-02 2.75839E-05                                              
-  2.600E+00 7.25010E-02 4.14779E-05                                              
-  2.800E+00 1.21500E-01 6.20441E-05                                              
-  3.000E+00 1.74241E-01 8.92156E-05                                              
-  3.200E+00 2.39658E-01 1.24410E-04                                              
-  3.400E+00 3.17472E-01 1.66806E-04                                              
-  3.600E+00 4.07975E-01 2.16556E-04                                              
-  3.800E+00 4.98015E-01 2.66549E-04                                              
-  4.000E+00 6.61499E-01 3.56120E-04                                              
-  4.200E+00 7.63136E-01 4.12161E-04                                              
-  4.400E+00 8.94149E-01 4.83286E-04                                              
-  4.600E+00 1.14101E+00 6.15900E-04                                              
-  4.800E+00 1.25818E+00 6.77111E-04                                              
-  5.000E+00 1.65696E+00 8.87973E-04                                              
+  2.00000E-01 0.00000E+00 0.00000E+00                                            
+  4.00000E-01 0.00000E+00 0.00000E+00                                            
+  6.00000E-01 8.40484E-06 9.48219E-08                                            
+  8.00000E-01 1.05321E-04 3.73702E-07                                            
+  1.00000E+00 2.72839E-04 3.14570E-07                                            
+  1.20000E+00 8.82376E-04 6.16416E-07                                            
+  1.40000E+00 2.36584E-03 1.67711E-06                                            
+  1.60000E+00 4.53028E-03 3.59638E-06                                            
+  1.80000E+00 9.22478E-03 6.34115E-06                                            
+  2.00000E+00 1.73590E-02 1.05319E-05                                            
+  2.20000E+00 2.89130E-02 1.71957E-05                                            
+  2.40000E+00 4.43562E-02 2.71944E-05                                            
+  2.60000E+00 7.19141E-02 4.11435E-05                                            
+  2.80000E+00 1.20130E-01 6.13413E-05                                            
+  3.00000E+00 1.72375E-01 8.82503E-05                                            
+  3.20000E+00 2.37808E-01 1.23436E-04                                            
+  3.40000E+00 3.16044E-01 1.66049E-04                                            
+  3.60000E+00 4.06953E-01 2.16016E-04                                            
+  3.80000E+00 4.97532E-01 2.66298E-04                                            
+  4.00000E+00 6.60307E-01 3.55481E-04                                            
+  4.20000E+00 7.61227E-01 4.11130E-04                                            
+  4.40000E+00 8.91900E-01 4.82069E-04                                            
+  4.60000E+00 1.13858E+00 6.14586E-04                                            
+  4.80000E+00 1.25665E+00 6.76286E-04                                            
+  5.00000E+00 1.65667E+00 8.87815E-04                                            
 
  deuteron production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 0.00000E+00 0.00000E+00                                              
-  4.000E-01 0.00000E+00 0.00000E+00                                              
-  6.000E-01 0.00000E+00 0.00000E+00                                              
-  8.000E-01 0.00000E+00 0.00000E+00                                              
-  1.000E+00 0.00000E+00 0.00000E+00                                              
-  1.200E+00 0.00000E+00 0.00000E+00                                              
-  1.400E+00 0.00000E+00 0.00000E+00                                              
-  1.600E+00 0.00000E+00 0.00000E+00                                              
-  1.800E+00 0.00000E+00 0.00000E+00                                              
-  2.000E+00 0.00000E+00 0.00000E+00                                              
-  2.200E+00 0.00000E+00 0.00000E+00                                              
-  2.400E+00 0.00000E+00 0.00000E+00                                              
-  2.600E+00 0.00000E+00 0.00000E+00                                              
-  2.800E+00 0.00000E+00 0.00000E+00                                              
-  3.000E+00 0.00000E+00 0.00000E+00                                              
-  3.200E+00 0.00000E+00 0.00000E+00                                              
-  3.400E+00 0.00000E+00 0.00000E+00                                              
-  3.600E+00 0.00000E+00 0.00000E+00                                              
-  3.800E+00 0.00000E+00 0.00000E+00                                              
-  4.000E+00 0.00000E+00 0.00000E+00                                              
-  4.200E+00 4.00612E-34 2.16366E-37                                              
-  4.400E+00 8.95197E-24 4.83853E-27                                              
-  4.600E+00 1.94062E-18 1.04751E-21                                              
-  4.800E+00 5.18350E-15 2.78958E-18                                              
-  5.000E+00 5.78972E-13 3.10274E-16                                              
+  2.00000E-01 0.00000E+00 0.00000E+00                                            
+  4.00000E-01 0.00000E+00 0.00000E+00                                            
+  6.00000E-01 0.00000E+00 0.00000E+00                                            
+  8.00000E-01 0.00000E+00 0.00000E+00                                            
+  1.00000E+00 0.00000E+00 0.00000E+00                                            
+  1.20000E+00 0.00000E+00 0.00000E+00                                            
+  1.40000E+00 0.00000E+00 0.00000E+00                                            
+  1.60000E+00 0.00000E+00 0.00000E+00                                            
+  1.80000E+00 0.00000E+00 0.00000E+00                                            
+  2.00000E+00 0.00000E+00 0.00000E+00                                            
+  2.20000E+00 0.00000E+00 0.00000E+00                                            
+  2.40000E+00 0.00000E+00 0.00000E+00                                            
+  2.60000E+00 0.00000E+00 0.00000E+00                                            
+  2.80000E+00 0.00000E+00 0.00000E+00                                            
+  3.00000E+00 0.00000E+00 0.00000E+00                                            
+  3.20000E+00 0.00000E+00 0.00000E+00                                            
+  3.40000E+00 0.00000E+00 0.00000E+00                                            
+  3.60000E+00 0.00000E+00 0.00000E+00                                            
+  3.80000E+00 0.00000E+00 0.00000E+00                                            
+  4.00000E+00 0.00000E+00 0.00000E+00                                            
+  4.20000E+00 4.00456E-34 2.16282E-37                                            
+  4.40000E+00 8.94727E-24 4.83597E-27                                            
+  4.60000E+00 1.93951E-18 1.04691E-21                                            
+  4.80000E+00 5.18066E-15 2.78804E-18                                            
+  5.00000E+00 5.78678E-13 3.10115E-16                                            
 
  triton   production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 0.00000E+00 0.00000E+00                                              
-  4.000E-01 0.00000E+00 0.00000E+00                                              
-  6.000E-01 0.00000E+00 0.00000E+00                                              
-  8.000E-01 0.00000E+00 0.00000E+00                                              
-  1.000E+00 0.00000E+00 0.00000E+00                                              
-  1.200E+00 0.00000E+00 0.00000E+00                                              
-  1.400E+00 0.00000E+00 0.00000E+00                                              
-  1.600E+00 0.00000E+00 0.00000E+00                                              
-  1.800E+00 0.00000E+00 0.00000E+00                                              
-  2.000E+00 0.00000E+00 0.00000E+00                                              
-  2.200E+00 0.00000E+00 0.00000E+00                                              
-  2.400E+00 0.00000E+00 0.00000E+00                                              
-  2.600E+00 0.00000E+00 0.00000E+00                                              
-  2.800E+00 0.00000E+00 0.00000E+00                                              
-  3.000E+00 0.00000E+00 0.00000E+00                                              
-  3.200E+00 0.00000E+00 0.00000E+00                                              
-  3.400E+00 0.00000E+00 0.00000E+00                                              
-  3.600E+00 0.00000E+00 0.00000E+00                                              
-  3.800E+00 0.00000E+00 0.00000E+00                                              
-  4.000E+00 0.00000E+00 0.00000E+00                                              
-  4.200E+00 0.00000E+00 0.00000E+00                                              
-  4.400E+00 0.00000E+00 0.00000E+00                                              
-  4.600E+00 0.00000E+00 0.00000E+00                                              
-  4.800E+00 0.00000E+00 0.00000E+00                                              
-  5.000E+00 0.00000E+00 0.00000E+00                                              
+  2.00000E-01 0.00000E+00 0.00000E+00                                            
+  4.00000E-01 0.00000E+00 0.00000E+00                                            
+  6.00000E-01 0.00000E+00 0.00000E+00                                            
+  8.00000E-01 0.00000E+00 0.00000E+00                                            
+  1.00000E+00 0.00000E+00 0.00000E+00                                            
+  1.20000E+00 0.00000E+00 0.00000E+00                                            
+  1.40000E+00 0.00000E+00 0.00000E+00                                            
+  1.60000E+00 0.00000E+00 0.00000E+00                                            
+  1.80000E+00 0.00000E+00 0.00000E+00                                            
+  2.00000E+00 0.00000E+00 0.00000E+00                                            
+  2.20000E+00 0.00000E+00 0.00000E+00                                            
+  2.40000E+00 0.00000E+00 0.00000E+00                                            
+  2.60000E+00 0.00000E+00 0.00000E+00                                            
+  2.80000E+00 0.00000E+00 0.00000E+00                                            
+  3.00000E+00 0.00000E+00 0.00000E+00                                            
+  3.20000E+00 0.00000E+00 0.00000E+00                                            
+  3.40000E+00 0.00000E+00 0.00000E+00                                            
+  3.60000E+00 0.00000E+00 0.00000E+00                                            
+  3.80000E+00 0.00000E+00 0.00000E+00                                            
+  4.00000E+00 0.00000E+00 0.00000E+00                                            
+  4.20000E+00 0.00000E+00 0.00000E+00                                            
+  4.40000E+00 0.00000E+00 0.00000E+00                                            
+  4.60000E+00 0.00000E+00 0.00000E+00                                            
+  4.80000E+00 0.00000E+00 0.00000E+00                                            
+  5.00000E+00 0.00000E+00 0.00000E+00                                            
 
  helium-3 production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 0.00000E+00 0.00000E+00                                              
-  4.000E-01 0.00000E+00 0.00000E+00                                              
-  6.000E-01 0.00000E+00 0.00000E+00                                              
-  8.000E-01 0.00000E+00 0.00000E+00                                              
-  1.000E+00 0.00000E+00 0.00000E+00                                              
-  1.200E+00 0.00000E+00 0.00000E+00                                              
-  1.400E+00 0.00000E+00 0.00000E+00                                              
-  1.600E+00 0.00000E+00 0.00000E+00                                              
-  1.800E+00 0.00000E+00 0.00000E+00                                              
-  2.000E+00 0.00000E+00 0.00000E+00                                              
-  2.200E+00 0.00000E+00 0.00000E+00                                              
-  2.400E+00 0.00000E+00 0.00000E+00                                              
-  2.600E+00 0.00000E+00 0.00000E+00                                              
-  2.800E+00 0.00000E+00 0.00000E+00                                              
-  3.000E+00 0.00000E+00 0.00000E+00                                              
-  3.200E+00 0.00000E+00 0.00000E+00                                              
-  3.400E+00 0.00000E+00 0.00000E+00                                              
-  3.600E+00 0.00000E+00 0.00000E+00                                              
-  3.800E+00 0.00000E+00 0.00000E+00                                              
-  4.000E+00 0.00000E+00 0.00000E+00                                              
-  4.200E+00 0.00000E+00 0.00000E+00                                              
-  4.400E+00 0.00000E+00 0.00000E+00                                              
-  4.600E+00 0.00000E+00 0.00000E+00                                              
-  4.800E+00 0.00000E+00 0.00000E+00                                              
-  5.000E+00 0.00000E+00 0.00000E+00                                              
+  2.00000E-01 0.00000E+00 0.00000E+00                                            
+  4.00000E-01 0.00000E+00 0.00000E+00                                            
+  6.00000E-01 0.00000E+00 0.00000E+00                                            
+  8.00000E-01 0.00000E+00 0.00000E+00                                            
+  1.00000E+00 0.00000E+00 0.00000E+00                                            
+  1.20000E+00 0.00000E+00 0.00000E+00                                            
+  1.40000E+00 0.00000E+00 0.00000E+00                                            
+  1.60000E+00 0.00000E+00 0.00000E+00                                            
+  1.80000E+00 0.00000E+00 0.00000E+00                                            
+  2.00000E+00 0.00000E+00 0.00000E+00                                            
+  2.20000E+00 0.00000E+00 0.00000E+00                                            
+  2.40000E+00 0.00000E+00 0.00000E+00                                            
+  2.60000E+00 0.00000E+00 0.00000E+00                                            
+  2.80000E+00 0.00000E+00 0.00000E+00                                            
+  3.00000E+00 0.00000E+00 0.00000E+00                                            
+  3.20000E+00 0.00000E+00 0.00000E+00                                            
+  3.40000E+00 0.00000E+00 0.00000E+00                                            
+  3.60000E+00 0.00000E+00 0.00000E+00                                            
+  3.80000E+00 0.00000E+00 0.00000E+00                                            
+  4.00000E+00 0.00000E+00 0.00000E+00                                            
+  4.20000E+00 0.00000E+00 0.00000E+00                                            
+  4.40000E+00 0.00000E+00 0.00000E+00                                            
+  4.60000E+00 0.00000E+00 0.00000E+00                                            
+  4.80000E+00 0.00000E+00 0.00000E+00                                            
+  5.00000E+00 0.00000E+00 0.00000E+00                                            
 
  alpha    production
 
  Energy   Cross section Multiplicity
 
-  2.000E-01 1.36050E-04 1.63934E-06                                              
-  4.000E-01 3.98921E-04 5.15133E-06                                              
-  6.000E-01 9.85876E-04 1.11163E-05                                              
-  8.000E-01 1.96610E-03 6.97226E-06                                              
-  1.000E+00 2.31731E-03 2.67102E-06                                              
-  1.200E+00 2.97273E-03 2.08016E-06                                              
-  1.400E+00 4.83837E-03 3.44320E-06                                              
-  1.600E+00 5.94574E-03 4.74075E-06                                              
-  1.800E+00 8.40067E-03 5.78687E-06                                              
-  2.000E+00 1.25707E-02 7.63751E-06                                              
-  2.200E+00 1.62105E-02 9.65010E-06                                              
-  2.400E+00 2.18085E-02 1.33759E-05                                              
-  2.600E+00 3.02059E-02 1.72809E-05                                              
-  2.800E+00 4.53119E-02 2.31386E-05                                              
-  3.000E+00 6.61872E-02 3.38894E-05                                              
-  3.200E+00 8.78191E-02 4.55883E-05                                              
-  3.400E+00 1.17272E-01 6.16168E-05                                              
-  3.600E+00 1.51644E-01 8.04937E-05                                              
-  3.800E+00 1.87807E-01 1.00518E-04                                              
-  4.000E+00 2.50017E-01 1.34598E-04                                              
-  4.200E+00 3.06978E-01 1.65796E-04                                              
-  4.400E+00 3.75896E-01 2.03171E-04                                              
-  4.600E+00 4.75953E-01 2.56912E-04                                              
-  4.800E+00 5.56622E-01 2.99555E-04                                              
-  5.000E+00 6.88845E-01 3.69155E-04                                              
+  2.00000E-01 1.36141E-04 1.63728E-06                                            
+  4.00000E-01 3.99078E-04 5.14871E-06                                            
+  6.00000E-01 9.86050E-04 1.11244E-05                                            
+  8.00000E-01 1.96610E-03 6.97618E-06                                            
+  1.00000E+00 2.31751E-03 2.67197E-06                                            
+  1.20000E+00 2.96252E-03 2.06957E-06                                            
+  1.40000E+00 4.78796E-03 3.39412E-06                                            
+  1.60000E+00 5.90177E-03 4.68513E-06                                            
+  1.80000E+00 8.38318E-03 5.76263E-06                                            
+  2.00000E+00 1.25252E-02 7.59916E-06                                            
+  2.20000E+00 1.62246E-02 9.64939E-06                                            
+  2.40000E+00 2.19111E-02 1.34335E-05                                            
+  2.60000E+00 3.05107E-02 1.74558E-05                                            
+  2.80000E+00 4.58510E-02 2.34127E-05                                            
+  3.00000E+00 6.69133E-02 3.42575E-05                                            
+  3.20000E+00 8.91212E-02 4.62591E-05                                            
+  3.40000E+00 1.19370E-01 6.27168E-05                                            
+  3.60000E+00 1.54565E-01 8.20449E-05                                            
+  3.80000E+00 1.92160E-01 1.02851E-04                                            
+  4.00000E+00 2.55308E-01 1.37447E-04                                            
+  4.20000E+00 3.13961E-01 1.69567E-04                                            
+  4.40000E+00 3.84862E-01 2.08017E-04                                            
+  4.60000E+00 4.86856E-01 2.62796E-04                                            
+  4.80000E+00 5.70635E-01 3.07095E-04                                            
+  5.00000E+00 7.05639E-01 3.78153E-04                                            
 
  4. Residual production cross sections
 
@@ -2704,97 +2717,97 @@
 
  Energy   Cross section
 
-  2.000E-01 7.92701E+01                                                          
-  4.000E-01 6.37322E+01                                                          
-  6.000E-01 6.03857E+01                                                          
-  8.000E-01 5.60249E+01                                                          
-  1.000E+00 3.95029E+01                                                          
-  1.200E+00 2.57673E+01                                                          
-  1.400E+00 2.21326E+01                                                          
-  1.600E+00 1.83737E+01                                                          
-  1.800E+00 1.61490E+01                                                          
-  2.000E+00 1.27422E+01                                                          
-  2.200E+00 1.04438E+01                                                          
-  2.400E+00 8.64103E+00                                                          
-  2.600E+00 8.10421E+00                                                          
-  2.800E+00 7.90125E+00                                                          
-  3.000E+00 7.55585E+00                                                          
-  3.200E+00 7.27095E+00                                                          
-  3.400E+00 6.86082E+00                                                          
-  3.600E+00 6.22413E+00                                                          
-  3.800E+00 5.48637E+00                                                          
-  4.000E+00 5.20535E+00                                                          
-  4.200E+00 4.97462E+00                                                          
-  4.400E+00 4.75253E+00                                                          
-  4.600E+00 4.57489E+00                                                          
-  4.800E+00 3.94202E+00                                                          
-  5.000E+00 3.72388E+00                                                          
+  2.00000E-01 7.94376E+01                                                        
+  4.00000E-01 6.38650E+01                                                        
+  6.00000E-01 6.05141E+01                                                        
+  8.00000E-01 5.61690E+01                                                        
+  1.00000E+00 3.96273E+01                                                        
+  1.20000E+00 2.56497E+01                                                        
+  1.40000E+00 2.18809E+01                                                        
+  1.60000E+00 1.82189E+01                                                        
+  1.80000E+00 1.61130E+01                                                        
+  2.00000E+00 1.27218E+01                                                        
+  2.20000E+00 1.04206E+01                                                        
+  2.40000E+00 8.63696E+00                                                        
+  2.60000E+00 8.13079E+00                                                        
+  2.80000E+00 7.92172E+00                                                        
+  3.00000E+00 7.56454E+00                                                        
+  3.20000E+00 7.27220E+00                                                        
+  3.40000E+00 6.86787E+00                                                        
+  3.60000E+00 6.23831E+00                                                        
+  3.80000E+00 5.50174E+00                                                        
+  4.00000E+00 5.21310E+00                                                        
+  4.20000E+00 4.97953E+00                                                        
+  4.40000E+00 4.75632E+00                                                        
+  4.60000E+00 4.57710E+00                                                        
+  4.80000E+00 3.94364E+00                                                        
+  5.00000E+00 3.72489E+00                                                        
 
- Production of Z= 41 A= 94 ( 94Nb) - Level  0  (lifetime: 6.41000E+11 sec.)
+ Production of Z= 41 A= 94 ( 94Nb) - Level  0  (lifetime: 6.40600E+11 sec.)
 
  Q-value    =   7.227545
  E-threshold=   0.000000
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 3.12704E+01  0.39448                                                 
-  4.000E-01 2.79903E+01  0.43919                                                 
-  6.000E-01 2.80252E+01  0.46410                                                 
-  8.000E-01 2.87882E+01  0.51385                                                 
-  1.000E+00 2.13680E+01  0.54092                                                 
-  1.200E+00 1.34818E+01  0.52321                                                 
-  1.400E+00 1.18548E+01  0.53563                                                 
-  1.600E+00 1.04846E+01  0.57063                                                 
-  1.800E+00 9.60854E+00  0.59499                                                 
-  2.000E+00 7.60397E+00  0.59676                                                 
-  2.200E+00 5.97964E+00  0.57256                                                 
-  2.400E+00 4.70801E+00  0.54484                                                 
-  2.600E+00 4.23595E+00  0.52269                                                 
-  2.800E+00 4.24060E+00  0.53670                                                 
-  3.000E+00 4.07393E+00  0.53918                                                 
-  3.200E+00 3.93579E+00  0.54130                                                 
-  3.400E+00 3.71644E+00  0.54169                                                 
-  3.600E+00 3.40225E+00  0.54662                                                 
-  3.800E+00 3.05445E+00  0.55673                                                 
-  4.000E+00 2.90703E+00  0.55847                                                 
-  4.200E+00 2.78629E+00  0.56010                                                 
-  4.400E+00 2.66785E+00  0.56135                                                 
-  4.600E+00 2.57491E+00  0.56284                                                 
-  4.800E+00 2.28132E+00  0.57872                                                 
-  5.000E+00 2.16375E+00  0.58105                                                 
+  2.00000E-01 2.89684E+01 3.64669E-01                                            
+  4.00000E-01 2.59840E+01 4.06859E-01                                            
+  6.00000E-01 2.60456E+01 4.30405E-01                                            
+  8.00000E-01 2.67550E+01 4.76330E-01                                            
+  1.00000E+00 1.98427E+01 5.00733E-01                                            
+  1.20000E+00 1.25024E+01 4.87430E-01                                            
+  1.40000E+00 1.09289E+01 4.99470E-01                                            
+  1.60000E+00 9.68770E+00 5.31738E-01                                            
+  1.80000E+00 8.98589E+00 5.57681E-01                                            
+  2.00000E+00 7.13951E+00 5.61203E-01                                            
+  2.20000E+00 5.60567E+00 5.37939E-01                                            
+  2.40000E+00 4.41238E+00 5.10872E-01                                            
+  2.60000E+00 3.97860E+00 4.89326E-01                                            
+  2.80000E+00 3.98532E+00 5.03088E-01                                            
+  3.00000E+00 3.81903E+00 5.04860E-01                                            
+  3.20000E+00 3.68043E+00 5.06097E-01                                            
+  3.40000E+00 3.47623E+00 5.06158E-01                                            
+  3.60000E+00 3.18856E+00 5.11125E-01                                            
+  3.80000E+00 2.86452E+00 5.20658E-01                                            
+  4.00000E+00 2.72416E+00 5.22559E-01                                            
+  4.20000E+00 2.61288E+00 5.24725E-01                                            
+  4.40000E+00 2.50458E+00 5.26580E-01                                            
+  4.60000E+00 2.41841E+00 5.28372E-01                                            
+  4.80000E+00 2.14488E+00 5.43885E-01                                            
+  5.00000E+00 2.03474E+00 5.46254E-01                                            
 
- Production of Z= 41 A= 94 ( 94Nb) - Level  1  (lifetime: 3.76000E+02 sec.)
+ Production of Z= 41 A= 94 ( 94Nb) - Level  1  (lifetime: 3.75800E+02 sec.)
 
  Q-value    =   7.186653
  E-threshold=   0.000000
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 4.79997E+01  0.60552                                                 
-  4.000E-01 3.57419E+01  0.56081                                                 
-  6.000E-01 3.23605E+01  0.53590                                                 
-  8.000E-01 2.72366E+01  0.48615                                                 
-  1.000E+00 1.81350E+01  0.45908                                                 
-  1.200E+00 1.22855E+01  0.47679                                                 
-  1.400E+00 1.02778E+01  0.46437                                                 
-  1.600E+00 7.88907E+00  0.42937                                                 
-  1.800E+00 6.54049E+00  0.40501                                                 
-  2.000E+00 5.13819E+00  0.40324                                                 
-  2.200E+00 4.46412E+00  0.42744                                                 
-  2.400E+00 3.93302E+00  0.45516                                                 
-  2.600E+00 3.86826E+00  0.47731                                                 
-  2.800E+00 3.66065E+00  0.46330                                                 
-  3.000E+00 3.48192E+00  0.46082                                                 
-  3.200E+00 3.33516E+00  0.45870                                                 
-  3.400E+00 3.14439E+00  0.45831                                                 
-  3.600E+00 2.82188E+00  0.45338                                                 
-  3.800E+00 2.43192E+00  0.44327                                                 
-  4.000E+00 2.29832E+00  0.44153                                                 
-  4.200E+00 2.18833E+00  0.43990                                                 
-  4.400E+00 2.08467E+00  0.43865                                                 
-  4.600E+00 1.99998E+00  0.43716                                                 
-  4.800E+00 1.66070E+00  0.42128                                                 
-  5.000E+00 1.56013E+00  0.41895                                                 
+  2.00000E-01 5.04691E+01 6.35331E-01                                            
+  4.00000E-01 3.78809E+01 5.93141E-01                                            
+  6.00000E-01 3.44685E+01 5.69595E-01                                            
+  8.00000E-01 2.94140E+01 5.23670E-01                                            
+  1.00000E+00 1.97846E+01 4.99267E-01                                            
+  1.20000E+00 1.31473E+01 5.12570E-01                                            
+  1.40000E+00 1.09520E+01 5.00530E-01                                            
+  1.60000E+00 8.53124E+00 4.68262E-01                                            
+  1.80000E+00 7.12707E+00 4.42319E-01                                            
+  2.00000E+00 5.58230E+00 4.38798E-01                                            
+  2.20000E+00 4.81497E+00 4.62061E-01                                            
+  2.40000E+00 4.22458E+00 4.89128E-01                                            
+  2.60000E+00 4.15218E+00 5.10674E-01                                            
+  2.80000E+00 3.93640E+00 4.96912E-01                                            
+  3.00000E+00 3.74551E+00 4.95140E-01                                            
+  3.20000E+00 3.59176E+00 4.93903E-01                                            
+  3.40000E+00 3.39164E+00 4.93842E-01                                            
+  3.60000E+00 3.04975E+00 4.88875E-01                                            
+  3.80000E+00 2.63722E+00 4.79342E-01                                            
+  4.00000E+00 2.48895E+00 4.77441E-01                                            
+  4.20000E+00 2.36664E+00 4.75275E-01                                            
+  4.40000E+00 2.25174E+00 4.73420E-01                                            
+  4.60000E+00 2.15869E+00 4.71628E-01                                            
+  4.80000E+00 1.79875E+00 4.56115E-01                                            
+  5.00000E+00 1.69015E+00 4.53746E-01                                            
 
  Production of Z= 41 A= 93 ( 93Nb) - Total
 
@@ -2803,31 +2816,31 @@
 
  Energy   Cross section
 
-  2.000E-01 3.62771E+00                                                          
-  4.000E-01 1.36755E+01                                                          
-  6.000E-01 2.82919E+01                                                          
-  8.000E-01 2.25961E+02                                                          
-  1.000E+00 8.28072E+02                                                          
-  1.200E+00 1.40332E+03                                                          
-  1.400E+00 1.38306E+03                                                          
-  1.600E+00 1.23579E+03                                                          
-  1.800E+00 1.43552E+03                                                          
-  2.000E+00 1.63317E+03                                                          
-  2.200E+00 1.66941E+03                                                          
-  2.400E+00 1.62182E+03                                                          
-  2.600E+00 1.73998E+03                                                          
-  2.800E+00 1.95054E+03                                                          
-  3.000E+00 1.94562E+03                                                          
-  3.200E+00 1.91917E+03                                                          
-  3.400E+00 1.89640E+03                                                          
-  3.600E+00 1.87764E+03                                                          
-  3.800E+00 1.86275E+03                                                          
-  4.000E+00 1.85198E+03                                                          
-  4.200E+00 1.84613E+03                                                          
-  4.400E+00 1.84480E+03                                                          
-  4.600E+00 1.84715E+03                                                          
-  4.800E+00 1.85321E+03                                                          
-  5.000E+00 1.86080E+03                                                          
+  2.00000E-01 3.62142E+00                                                        
+  4.00000E-01 1.36122E+01                                                        
+  6.00000E-01 2.81144E+01                                                        
+  8.00000E-01 2.25659E+02                                                        
+  1.00000E+00 8.27711E+02                                                        
+  1.20000E+00 1.40581E+03                                                        
+  1.40000E+00 1.38878E+03                                                        
+  1.60000E+00 1.24145E+03                                                        
+  1.80000E+00 1.43863E+03                                                        
+  2.00000E+00 1.63551E+03                                                        
+  2.20000E+00 1.67103E+03                                                        
+  2.40000E+00 1.62251E+03                                                        
+  2.60000E+00 1.73995E+03                                                        
+  2.80000E+00 1.95067E+03                                                        
+  3.00000E+00 1.94586E+03                                                        
+  3.20000E+00 1.91942E+03                                                        
+  3.40000E+00 1.89649E+03                                                        
+  3.60000E+00 1.87762E+03                                                        
+  3.80000E+00 1.86269E+03                                                        
+  4.00000E+00 1.85199E+03                                                        
+  4.20000E+00 1.84615E+03                                                        
+  4.40000E+00 1.84484E+03                                                        
+  4.60000E+00 1.84718E+03                                                        
+  4.80000E+00 1.85324E+03                                                        
+  5.00000E+00 1.86082E+03                                                        
 
  Production of Z= 41 A= 93 ( 93Nb) - Level  0  (lifetime: 0.00000E+00 sec.)
 
@@ -2836,64 +2849,64 @@
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 1.00305E-01  0.02765                                                 
-  4.000E-01 9.56317E-02  0.00699                                                 
-  6.000E-01 9.13268E-01  0.03228                                                 
-  8.000E-01 1.77121E+02  0.78386                                                 
-  1.000E+00 7.15883E+02  0.86452                                                 
-  1.200E+00 1.27697E+03  0.90996                                                 
-  1.400E+00 1.23050E+03  0.88970                                                 
-  1.600E+00 9.56338E+02  0.77386                                                 
-  1.800E+00 1.11275E+03  0.77516                                                 
-  2.000E+00 1.30517E+03  0.79916                                                 
-  2.200E+00 1.38429E+03  0.82921                                                 
-  2.400E+00 1.38755E+03  0.85555                                                 
-  2.600E+00 1.52379E+03  0.87575                                                 
-  2.800E+00 1.71561E+03  0.87956                                                 
-  3.000E+00 1.70283E+03  0.87522                                                 
-  3.200E+00 1.66927E+03  0.86979                                                 
-  3.400E+00 1.64640E+03  0.86817                                                 
-  3.600E+00 1.63177E+03  0.86905                                                 
-  3.800E+00 1.62127E+03  0.87037                                                 
-  4.000E+00 1.61217E+03  0.87051                                                 
-  4.200E+00 1.60615E+03  0.87001                                                 
-  4.400E+00 1.60521E+03  0.87013                                                 
-  4.600E+00 1.60752E+03  0.87027                                                 
-  4.800E+00 1.61300E+03  0.87038                                                 
-  5.000E+00 1.62006E+03  0.87063                                                 
+  2.00000E-01 1.00318E-01 2.77014E-02                                            
+  4.00000E-01 9.56229E-02 7.02481E-03                                            
+  6.00000E-01 9.13013E-01 3.24749E-02                                            
+  8.00000E-01 1.77147E+02 7.85021E-01                                            
+  1.00000E+00 7.16813E+02 8.66019E-01                                            
+  1.20000E+00 1.29014E+03 9.17718E-01                                            
+  1.40000E+00 1.25827E+03 9.06026E-01                                            
+  1.60000E+00 9.91646E+02 7.98779E-01                                            
+  1.80000E+00 1.14642E+03 7.96883E-01                                            
+  2.00000E+00 1.33822E+03 8.18225E-01                                            
+  2.20000E+00 1.41267E+03 8.45391E-01                                            
+  2.40000E+00 1.40779E+03 8.67665E-01                                            
+  2.60000E+00 1.53803E+03 8.83955E-01                                            
+  2.80000E+00 1.73172E+03 8.87753E-01                                            
+  3.00000E+00 1.72036E+03 8.84112E-01                                            
+  3.20000E+00 1.68659E+03 8.78699E-01                                            
+  3.40000E+00 1.66244E+03 8.76591E-01                                            
+  3.60000E+00 1.64695E+03 8.77146E-01                                            
+  3.80000E+00 1.63627E+03 8.78444E-01                                            
+  4.00000E+00 1.62752E+03 8.78796E-01                                            
+  4.20000E+00 1.62181E+03 8.78482E-01                                            
+  4.40000E+00 1.62102E+03 8.78676E-01                                            
+  4.60000E+00 1.62340E+03 8.78855E-01                                            
+  4.80000E+00 1.62893E+03 8.78961E-01                                            
+  5.00000E+00 1.63602E+03 8.79192E-01                                            
 
- Production of Z= 41 A= 93 ( 93Nb) - Level  1  (lifetime: 5.09000E+08 sec.)
+ Production of Z= 41 A= 93 ( 93Nb) - Level  1  (lifetime: 5.08700E+08 sec.)
 
  Q-value    =  -0.030770
  E-threshold=   0.031104
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 3.52741E+00  0.97235                                                 
-  4.000E-01 1.35799E+01  0.99301                                                 
-  6.000E-01 2.73787E+01  0.96772                                                 
-  8.000E-01 4.88401E+01  0.21614                                                 
-  1.000E+00 1.12189E+02  0.13548                                                 
-  1.200E+00 1.26350E+02  0.09004                                                 
-  1.400E+00 1.52551E+02  0.11030                                                 
-  1.600E+00 2.79457E+02  0.22614                                                 
-  1.800E+00 3.22763E+02  0.22484                                                 
-  2.000E+00 3.28000E+02  0.20084                                                 
-  2.200E+00 2.85119E+02  0.17079                                                 
-  2.400E+00 2.34274E+02  0.14445                                                 
-  2.600E+00 2.16187E+02  0.12425                                                 
-  2.800E+00 2.34931E+02  0.12044                                                 
-  3.000E+00 2.42783E+02  0.12478                                                 
-  3.200E+00 2.49895E+02  0.13021                                                 
-  3.400E+00 2.50002E+02  0.13183                                                 
-  3.600E+00 2.45870E+02  0.13095                                                 
-  3.800E+00 2.41476E+02  0.12963                                                 
-  4.000E+00 2.39811E+02  0.12949                                                 
-  4.200E+00 2.39982E+02  0.12999                                                 
-  4.400E+00 2.39588E+02  0.12987                                                 
-  4.600E+00 2.39622E+02  0.12973                                                 
-  4.800E+00 2.40214E+02  0.12962                                                 
-  5.000E+00 2.40734E+02  0.12937                                                 
+  2.00000E-01 3.52110E+00 9.72299E-01                                            
+  4.00000E-01 1.35165E+01 9.92975E-01                                            
+  6.00000E-01 2.72014E+01 9.67525E-01                                            
+  8.00000E-01 4.85118E+01 2.14979E-01                                            
+  1.00000E+00 1.10897E+02 1.33981E-01                                            
+  1.20000E+00 1.15673E+02 8.22823E-02                                            
+  1.40000E+00 1.30508E+02 9.39737E-02                                            
+  1.60000E+00 2.49806E+02 2.01221E-01                                            
+  1.80000E+00 2.92210E+02 2.03117E-01                                            
+  2.00000E+00 2.97294E+02 1.81775E-01                                            
+  2.20000E+00 2.58357E+02 1.54609E-01                                            
+  2.40000E+00 2.14715E+02 1.32335E-01                                            
+  2.60000E+00 2.01912E+02 1.16045E-01                                            
+  2.80000E+00 2.18957E+02 1.12247E-01                                            
+  3.00000E+00 2.25502E+02 1.15888E-01                                            
+  3.20000E+00 2.32826E+02 1.21301E-01                                            
+  3.40000E+00 2.34044E+02 1.23409E-01                                            
+  3.60000E+00 2.30672E+02 1.22854E-01                                            
+  3.80000E+00 2.26421E+02 1.21556E-01                                            
+  4.00000E+00 2.24468E+02 1.21204E-01                                            
+  4.20000E+00 2.24341E+02 1.21518E-01                                            
+  4.40000E+00 2.23823E+02 1.21324E-01                                            
+  4.60000E+00 2.23777E+02 1.21145E-01                                            
+  4.80000E+00 2.24314E+02 1.21039E-01                                            
+  5.00000E+00 2.24803E+02 1.20808E-01                                            
 
  Production of Z= 40 A= 93 ( 93Zr) - Total
 
@@ -2902,31 +2915,31 @@
 
  Energy   Cross section
 
-  2.000E-01 1.00000E-07                                                          
-  4.000E-01 1.00000E-07                                                          
-  6.000E-01 1.00000E-07                                                          
-  8.000E-01 1.00000E-07                                                          
-  1.000E+00 1.00000E-07                                                          
-  1.200E+00 1.00000E-07                                                          
-  1.400E+00 2.42289E-03                                                          
-  1.600E+00 4.65414E-03                                                          
-  1.800E+00 9.49562E-03                                                          
-  2.000E+00 1.78424E-02                                                          
-  2.200E+00 2.95393E-02                                                          
-  2.400E+00 4.49611E-02                                                          
-  2.600E+00 7.24866E-02                                                          
-  2.800E+00 1.21492E-01                                                          
-  3.000E+00 1.74235E-01                                                          
-  3.200E+00 2.39655E-01                                                          
-  3.400E+00 3.17470E-01                                                          
-  3.600E+00 4.07979E-01                                                          
-  3.800E+00 4.98032E-01                                                          
-  4.000E+00 6.61535E-01                                                          
-  4.200E+00 7.63208E-01                                                          
-  4.400E+00 8.94284E-01                                                          
-  4.600E+00 1.14123E+00                                                          
-  4.800E+00 1.25854E+00                                                          
-  5.000E+00 1.65750E+00                                                          
+  2.00000E-01 1.00000E-07                                                        
+  4.00000E-01 1.00000E-07                                                        
+  6.00000E-01 1.00000E-07                                                        
+  8.00000E-01 1.00000E-07                                                        
+  1.00000E+00 1.00000E-07                                                        
+  1.20000E+00 1.00000E-07                                                        
+  1.40000E+00 2.36584E-03                                                        
+  1.60000E+00 4.53028E-03                                                        
+  1.80000E+00 9.22478E-03                                                        
+  2.00000E+00 1.73590E-02                                                        
+  2.20000E+00 2.89118E-02                                                        
+  2.40000E+00 4.43418E-02                                                        
+  2.60000E+00 7.19020E-02                                                        
+  2.80000E+00 1.20122E-01                                                        
+  3.00000E+00 1.72368E-01                                                        
+  3.20000E+00 2.37803E-01                                                        
+  3.40000E+00 3.16040E-01                                                        
+  3.60000E+00 4.06953E-01                                                        
+  3.80000E+00 4.97542E-01                                                        
+  4.00000E+00 6.60328E-01                                                        
+  4.20000E+00 7.61272E-01                                                        
+  4.40000E+00 8.91985E-01                                                        
+  4.60000E+00 1.13873E+00                                                        
+  4.80000E+00 1.25690E+00                                                        
+  5.00000E+00 1.65706E+00                                                        
 
  Production of Z= 39 A= 90 ( 90Y ) - Total
 
@@ -2935,98 +2948,98 @@
 
  Energy   Cross section
 
-  2.000E-01 1.00000E-07                                                          
-  4.000E-01 1.00000E-07                                                          
-  6.000E-01 1.00000E-07                                                          
-  8.000E-01 1.96610E-03                                                          
-  1.000E+00 2.31731E-03                                                          
-  1.200E+00 2.97273E-03                                                          
-  1.400E+00 4.83837E-03                                                          
-  1.600E+00 5.94264E-03                                                          
-  1.800E+00 8.39670E-03                                                          
-  2.000E+00 1.25698E-02                                                          
-  2.200E+00 1.62063E-02                                                          
-  2.400E+00 2.18041E-02                                                          
-  2.600E+00 3.02019E-02                                                          
-  2.800E+00 4.53110E-02                                                          
-  3.000E+00 6.61865E-02                                                          
-  3.200E+00 8.78184E-02                                                          
-  3.400E+00 1.17271E-01                                                          
-  3.600E+00 1.51643E-01                                                          
-  3.800E+00 1.87806E-01                                                          
-  4.000E+00 2.50016E-01                                                          
-  4.200E+00 3.06978E-01                                                          
-  4.400E+00 3.75895E-01                                                          
-  4.600E+00 4.75952E-01                                                          
-  4.800E+00 5.56622E-01                                                          
-  5.000E+00 6.88844E-01                                                          
+  2.00000E-01 1.00000E-07                                                        
+  4.00000E-01 1.00000E-07                                                        
+  6.00000E-01 1.00000E-07                                                        
+  8.00000E-01 1.96610E-03                                                        
+  1.00000E+00 2.31751E-03                                                        
+  1.20000E+00 2.96252E-03                                                        
+  1.40000E+00 4.78796E-03                                                        
+  1.60000E+00 5.89859E-03                                                        
+  1.80000E+00 8.37894E-03                                                        
+  2.00000E+00 1.25241E-02                                                        
+  2.20000E+00 1.62202E-02                                                        
+  2.40000E+00 2.19067E-02                                                        
+  2.60000E+00 3.05067E-02                                                        
+  2.80000E+00 4.58501E-02                                                        
+  3.00000E+00 6.69125E-02                                                        
+  3.20000E+00 8.91204E-02                                                        
+  3.40000E+00 1.19369E-01                                                        
+  3.60000E+00 1.54564E-01                                                        
+  3.80000E+00 1.92159E-01                                                        
+  4.00000E+00 2.55307E-01                                                        
+  4.20000E+00 3.13960E-01                                                        
+  4.40000E+00 3.84861E-01                                                        
+  4.60000E+00 4.86855E-01                                                        
+  4.80000E+00 5.70634E-01                                                        
+  5.00000E+00 7.05637E-01                                                        
 
- Production of Z= 39 A= 90 ( 90Y ) - Level  0  (lifetime: 2.30000E+05 sec.)
+ Production of Z= 39 A= 90 ( 90Y ) - Level  0  (lifetime: 2.30400E+05 sec.)
 
  Q-value    =   4.928287
  E-threshold=   0.000000
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 1.36050E-04  0.00000                                                 
-  4.000E-01 2.10712E-04  0.00000                                                 
-  6.000E-01 6.63468E-04  0.00000                                                 
-  8.000E-01 1.88101E-03  0.95672                                                 
-  1.000E+00 2.15048E-03  0.92801                                                 
-  1.200E+00 2.76418E-03  0.92984                                                 
-  1.400E+00 4.24127E-03  0.87659                                                 
-  1.600E+00 4.99372E-03  0.84032                                                 
-  1.800E+00 6.84726E-03  0.81547                                                 
-  2.000E+00 1.00486E-02  0.79942                                                 
-  2.200E+00 1.31364E-02  0.81058                                                 
-  2.400E+00 1.75624E-02  0.80546                                                 
-  2.600E+00 2.39676E-02  0.79358                                                 
-  2.800E+00 3.54952E-02  0.78337                                                 
-  3.000E+00 5.04707E-02  0.76255                                                 
-  3.200E+00 6.57856E-02  0.74911                                                 
-  3.400E+00 8.57911E-02  0.73156                                                 
-  3.600E+00 1.08906E-01  0.71817                                                 
-  3.800E+00 1.32437E-01  0.70518                                                 
-  4.000E+00 1.74244E-01  0.69693                                                 
-  4.200E+00 2.09694E-01  0.68309                                                 
-  4.400E+00 2.48220E-01  0.66034                                                 
-  4.600E+00 3.14421E-01  0.66062                                                 
-  4.800E+00 3.55946E-01  0.63948                                                 
-  5.000E+00 4.38718E-01  0.63689                                                 
+  2.00000E-01 1.36141E-04 0.00000E+00                                            
+  4.00000E-01 2.10818E-04 0.00000E+00                                            
+  6.00000E-01 6.63566E-04 0.00000E+00                                            
+  8.00000E-01 1.88106E-03 9.56746E-01                                            
+  1.00000E+00 2.15072E-03 9.28029E-01                                            
+  1.20000E+00 2.75421E-03 9.29685E-01                                            
+  1.40000E+00 4.19630E-03 8.76429E-01                                            
+  1.60000E+00 4.95601E-03 8.40202E-01                                            
+  1.80000E+00 6.82581E-03 8.14639E-01                                            
+  2.00000E+00 9.99870E-03 7.98355E-01                                            
+  2.20000E+00 1.31514E-02 8.10803E-01                                            
+  2.40000E+00 1.76788E-02 8.07006E-01                                            
+  2.60000E+00 2.43020E-02 7.96611E-01                                            
+  2.80000E+00 3.60882E-02 7.87091E-01                                            
+  3.00000E+00 5.13303E-02 7.67125E-01                                            
+  3.20000E+00 6.73428E-02 7.55639E-01                                            
+  3.40000E+00 8.82478E-02 7.39286E-01                                            
+  3.60000E+00 1.12326E-01 7.26731E-01                                            
+  3.80000E+00 1.37388E-01 7.14972E-01                                            
+  4.00000E+00 1.80465E-01 7.06856E-01                                            
+  4.20000E+00 2.17861E-01 6.93911E-01                                            
+  4.40000E+00 2.58646E-01 6.72051E-01                                            
+  4.60000E+00 3.27167E-01 6.72001E-01                                            
+  4.80000E+00 3.72138E-01 6.52148E-01                                            
+  5.00000E+00 4.58228E-01 6.49381E-01                                            
 
- Production of Z= 39 A= 90 ( 90Y ) - Level  2  (lifetime: 1.15000E+04 sec.)
+ Production of Z= 39 A= 90 ( 90Y ) - Level  2  (lifetime: 1.14800E+04 sec.)
 
  Q-value    =   4.246617
  E-threshold=   0.000000
 
  Energy   Cross section Branching ratio
 
-  2.000E-01 0.00000E+00  0.00000                                                 
-  4.000E-01 0.00000E+00  0.00000                                                 
-  6.000E-01 0.00000E+00  0.00000                                                 
-  8.000E-01 8.50928E-05  0.04328                                                 
-  1.000E+00 1.66829E-04  0.07199                                                 
-  1.200E+00 2.08553E-04  0.07016                                                 
-  1.400E+00 5.97092E-04  0.12341                                                 
-  1.600E+00 9.48923E-04  0.15968                                                 
-  1.800E+00 1.54945E-03  0.18453                                                 
-  2.000E+00 2.52125E-03  0.20058                                                 
-  2.200E+00 3.06984E-03  0.18942                                                 
-  2.400E+00 4.24174E-03  0.19454                                                 
-  2.600E+00 6.23432E-03  0.20642                                                 
-  2.800E+00 9.81576E-03  0.21663                                                 
-  3.000E+00 1.57158E-02  0.23745                                                 
-  3.200E+00 2.20328E-02  0.25089                                                 
-  3.400E+00 3.14798E-02  0.26844                                                 
-  3.600E+00 4.27375E-02  0.28183                                                 
-  3.800E+00 5.53683E-02  0.29482                                                 
-  4.000E+00 7.57718E-02  0.30307                                                 
-  4.200E+00 9.72840E-02  0.31691                                                 
-  4.400E+00 1.27675E-01  0.33966                                                 
-  4.600E+00 1.61530E-01  0.33938                                                 
-  4.800E+00 2.00676E-01  0.36052                                                 
-  5.000E+00 2.50127E-01  0.36311                                                 
+  2.00000E-01 0.00000E+00 0.00000E+00                                            
+  4.00000E-01 0.00000E+00 0.00000E+00                                            
+  6.00000E-01 0.00000E+00 0.00000E+00                                            
+  8.00000E-01 8.50410E-05 4.32535E-02                                            
+  1.00000E+00 1.66794E-04 7.19712E-02                                            
+  1.20000E+00 2.08310E-04 7.03154E-02                                            
+  1.40000E+00 5.91653E-04 1.23571E-01                                            
+  1.60000E+00 9.42580E-04 1.59798E-01                                            
+  1.80000E+00 1.55313E-03 1.85361E-01                                            
+  2.00000E+00 2.52544E-03 2.01645E-01                                            
+  2.20000E+00 3.06880E-03 1.89197E-01                                            
+  2.40000E+00 4.22787E-03 1.92994E-01                                            
+  2.60000E+00 6.20471E-03 2.03389E-01                                            
+  2.80000E+00 9.76191E-03 2.12909E-01                                            
+  3.00000E+00 1.55822E-02 2.32875E-01                                            
+  3.20000E+00 2.17776E-02 2.44361E-01                                            
+  3.40000E+00 3.11212E-02 2.60714E-01                                            
+  3.60000E+00 4.22375E-02 2.73269E-01                                            
+  3.80000E+00 5.47706E-02 2.85028E-01                                            
+  4.00000E+00 7.48417E-02 2.93144E-01                                            
+  4.20000E+00 9.60996E-02 3.06089E-01                                            
+  4.40000E+00 1.26215E-01 3.27949E-01                                            
+  4.60000E+00 1.59688E-01 3.27999E-01                                            
+  4.80000E+00 1.98496E-01 3.47852E-01                                            
+  5.00000E+00 2.47410E-01 3.50619E-01                                            
 
- Execution time:  0 hours  0 minutes 13.54 seconds 
+ Execution time:  0 hours  0 minutes 14.72 seconds 
 
  The TALYS team congratulates you with this successful calculation.
