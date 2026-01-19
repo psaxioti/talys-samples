@@ -1,0 +1,5 @@
+colrm < ../a/ld043099.tot > lda 30
+colrm < ../b/ld043099.tot > ldb 30
+colrm < ../c/ld043099.tot > ldc 30
+xmgr -p ld.par -nxy lda ldb ldc
+xmgr -p np.par ../a/rp042099.tot ../b/rp042099.tot ../c/rp042099.tot
