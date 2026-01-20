@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 153Pr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.74254E-03 1.35847E-03 1.05978E-02 8.26202E-03
- 1.60000E+00 2.34249E-03 1.54773E-03 2.42447E-01 1.60191E-01
- 5.50000E+00 2.19241E-03 3.14261E-03 1.23735E+00 1.77363E+00
- 1.00000E+01 2.17845E-03 4.16100E-03 1.34307E+00 2.56537E+00
+# header:
+#   title: U238(n,f) fission yield for Pr153
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 59
+#   A: 153
+#   nuclide: Pr153
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.741430E-03   1.397613E-03   9.226613E-03   7.405012E-03
+   1.600000E+00   2.348340E-03   1.551823E-03   2.417796E-01   1.597731E-01
+   5.500000E+00   2.192365E-03   3.143073E-03   1.238239E+00   1.775206E+00
+   1.000000E+01   2.178443E-03   4.161057E-03   1.343048E+00   2.565378E+00

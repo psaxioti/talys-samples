@@ -1,15 +1,29 @@
-# n + Ba136 l-value: 1
-# URR parameters for ENDF-6 format
-# Mean level spacing per l
-# # energies =    10
-# E [MeV]     spacing
-  1.000E-03 4.14702E+02
-  2.000E-03 4.14179E+02
-  5.000E-03 4.12616E+02
-  1.000E-02 4.10023E+02
-  2.000E-02 4.04891E+02
-  5.000E-02 3.89888E+02
-  1.000E-01 3.66157E+02
-  2.000E-01 3.23101E+02
-  5.000E-01 2.22852E+02
-  1.000E+00 1.21459E+02
+# header:
+#   title: Ba136(n,urr) URR parameter - mean level spacing per l
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 56
+#   A: 136
+#   nuclide: Ba136
+# reaction:
+#   type: (n,urr)
+#   l-value: 1
+# datablock:
+#   quantity: URR parameter
+#   columns: 2
+#   entries: 10
+##       E           spacing
+##     [MeV]           []
+   1.000000E-03   4.147023E+02
+   2.000000E-03   4.141794E+02
+   5.000000E-03   4.126157E+02
+   1.000000E-02   4.100234E+02
+   2.000000E-02   4.048906E+02
+   5.000000E-02   3.898875E+02
+   1.000000E-01   3.661570E+02
+   2.000000E-01   3.231009E+02
+   5.000000E-01   2.228523E+02
+   1.000000E+00   1.214595E+02

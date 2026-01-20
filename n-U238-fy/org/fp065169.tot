@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 169Tb
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 7.21311E-07 0.00000E+00
- 1.60000E+00 1.94389E-05 2.25253E-08 2.01192E-03 2.33138E-06
- 5.50000E+00 4.00620E-06 2.24985E-05 2.26101E-03 1.26978E-02
- 1.00000E+01 1.60465E-06 3.10889E-05 9.89300E-04 1.91671E-02
+# header:
+#   title: U238(n,f) fission yield for Tb169
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 65
+#   A: 169
+#   nuclide: Tb169
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   0.000000E+00   0.000000E+00   4.262592E-07   0.000000E+00
+   1.600000E+00   1.962803E-05   1.412842E-08   2.020856E-03   1.454639E-06
+   5.500000E+00   4.003894E-06   2.250302E-05   2.261383E-03   1.270969E-02
+   1.000000E+01   1.604202E-06   3.109000E-05   9.890182E-04   1.916763E-02

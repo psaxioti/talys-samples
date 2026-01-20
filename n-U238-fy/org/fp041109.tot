@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 109Nb
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 6.71399E-05 5.06721E-04 4.08332E-04 3.08180E-03
- 1.60000E+00 2.54924E-04 7.31699E-04 2.63846E-02 7.57312E-02
- 5.50000E+00 7.41528E-05 4.83529E-04 4.18502E-02 2.72895E-01
- 1.00000E+01 1.09436E-04 3.89390E-04 6.74699E-02 2.40069E-01
+# header:
+#   title: U238(n,f) fission yield for Nb109
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 41
+#   A: 109
+#   nuclide: Nb109
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   6.507802E-05   5.102693E-04   3.448027E-04   2.703574E-03
+   1.600000E+00   2.566419E-04   7.344836E-04   2.642325E-02   7.562118E-02
+   5.500000E+00   7.412772E-05   4.834359E-04   4.186704E-02   2.730443E-01
+   1.000000E+01   1.094388E-04   3.893886E-04   6.747089E-02   2.400662E-01

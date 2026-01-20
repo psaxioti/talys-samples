@@ -1,5 +1,5 @@
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -104,6 +104,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -210,6 +213,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       n     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -1202,7 +1206,7 @@
    0.800 6.22734E+02 0.00000E+00 2.91329E-05 0.00000E+00 6.22734E+02
    0.900 6.78563E+02 0.00000E+00 3.70742E-05 0.00000E+00 6.78563E+02
    1.000 7.19372E+02 0.00000E+00 4.58444E-05 0.00000E+00 7.19372E+02
-   1.100 7.69115E+02 0.00000E+00 5.54283E-05 0.00000E+00 7.69115E+02
+   1.100 7.69116E+02 0.00000E+00 5.54283E-05 0.00000E+00 7.69115E+02
    1.200 7.96240E+02 0.00000E+00 6.58809E-05 0.00000E+00 7.96240E+02
    1.300 8.09060E+02 0.00000E+00 7.72014E-05 0.00000E+00 8.09060E+02
    1.400 8.48643E+02 0.00000E+00 8.94471E-05 0.00000E+00 8.48642E+02
@@ -2141,7 +2145,7 @@
    6.000 5.41547E-03 0.00000E+00 5.96614E-06 0.00000E+00 5.40950E-03 5.48576E-06 3.33726E-07 0.00000E+00
    6.500 1.63838E-02 0.00000E+00 5.25693E-05 0.00000E+00 1.63313E-02 4.84832E-05 3.01688E-06 0.00000E+00
    7.000 3.04333E-02 0.00000E+00 3.65231E-04 0.00000E+00 3.00681E-02 3.37321E-04 2.17404E-05 0.00000E+00
-   7.500 4.98971E-02 0.00000E+00 2.04103E-03 0.00000E+00 4.78560E-02 1.88605E-03 1.26464E-04 0.00000E+00
+   7.500 4.98970E-02 0.00000E+00 2.04103E-03 0.00000E+00 4.78560E-02 1.88605E-03 1.26464E-04 0.00000E+00
    8.000 1.09380E-01 0.00000E+00 8.97575E-03 0.00000E+00 1.00404E-01 8.29419E-03 5.78647E-04 0.00000E+00
    8.500 1.69758E-01 0.00000E+00 2.61764E-02 0.00000E+00 1.43582E-01 2.41772E-02 1.75499E-03 0.00000E+00
    9.000 2.76677E-01 0.00000E+00 7.56809E-02 0.00000E+00 2.00996E-01 6.98363E-02 5.27410E-03 0.00000E+00
@@ -2276,6 +2280,6 @@
  helium-3       5.820
  alpha         13.775
 
- Execution time:  0 hours  0 minutes  2.18 seconds 
+ Execution time:  0 hours  0 minutes  2.30 seconds 
 
  The TALYS team congratulates you with this successful calculation.

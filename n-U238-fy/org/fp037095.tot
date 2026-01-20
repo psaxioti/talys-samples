@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  95Rb
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.47781E-02 3.26454E-02 8.98779E-02 1.98545E-01
- 1.60000E+00 1.57785E-02 3.30460E-02 1.63308E+00 3.42028E+00
- 5.50000E+00 1.33712E-02 3.08200E-02 7.54642E+00 1.73942E+01
- 1.00000E+01 1.43583E-02 3.27244E-02 8.85219E+00 2.01754E+01
+# header:
+#   title: U238(n,f) fission yield for Rb95
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 37
+#   A: 95
+#   nuclide: Rb95
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.489353E-02   3.298015E-02   7.891036E-02   1.747397E-01
+   1.600000E+00   1.579263E-02   3.306415E-02   1.625972E+00   3.404228E+00
+   5.500000E+00   1.337015E-02   3.081886E-02   7.551406E+00   1.740648E+01
+   1.000000E+01   1.435833E-02   3.272451E-02   8.852157E+00   2.017534E+01

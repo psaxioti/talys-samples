@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 140Nd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.59431E-05 1.31178E-10 3.22109E-02 4.91648E-08
+# header:
+#   title: Th232(p,f) fission yield for Nd140
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 60
+#   A: 140
+#   nuclide: Nd140
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.594306E-05   1.311781E-10   3.221093E-02   4.916476E-08

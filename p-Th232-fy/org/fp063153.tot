@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 153Eu
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 6.10498E-06 6.80624E-07 2.28811E-03 2.55094E-04
+# header:
+#   title: Th232(p,f) fission yield for Eu153
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 63
+#   A: 153
+#   nuclide: Eu153
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   6.104980E-06   6.806238E-07   2.288109E-03   2.550937E-04

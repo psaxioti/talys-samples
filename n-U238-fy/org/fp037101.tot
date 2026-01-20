@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 101Rb
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.22504E-06 7.97425E-06 7.45045E-06 4.84982E-05
- 1.60000E+00 0.00000E+00 1.94537E-05 0.00000E+00 2.01347E-03
- 5.50000E+00 2.67502E-09 6.62742E-06 1.50972E-06 3.74039E-03
- 1.00000E+01 3.81118E-11 1.15491E-09 2.34968E-08 7.12033E-07
+# header:
+#   title: U238(n,f) fission yield for Rb101
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 37
+#   A: 101
+#   nuclide: Rb101
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   8.685646E-07   5.731131E-06   4.601914E-06   3.036541E-05
+   1.600000E+00   0.000000E+00   1.963694E-05   0.000000E+00   2.021786E-03
+   5.500000E+00   2.053866E-09   6.627850E-06   1.160015E-06   3.743406E-03
+   1.000000E+01   3.020948E-11   1.032730E-09   1.862467E-08   6.366993E-07

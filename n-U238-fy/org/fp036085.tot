@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  85Kr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 5.09580E-05 0.00000E+00
- 1.60000E+00 1.99747E-05 1.47548E-08 2.06739E-03 1.52713E-06
- 5.50000E+00 3.67268E-05 3.25656E-09 2.07278E-02 1.83794E-06
- 1.00000E+01 4.58409E-05 1.63401E-06 2.82619E-02 1.00741E-03
+# header:
+#   title: U238(n,f) fission yield for Kr85
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 36
+#   A: 85
+#   nuclide: Kr85
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   0.000000E+00   0.000000E+00   3.202395E-05   0.000000E+00
+   1.600000E+00   1.998645E-05   8.913143E-09   2.057758E-03   9.176821E-07
+   5.500000E+00   3.672975E-05   2.617259E-09   2.074482E-02   1.478226E-06
+   1.000000E+01   4.584117E-05   1.633800E-06   2.826188E-02   1.007272E-03

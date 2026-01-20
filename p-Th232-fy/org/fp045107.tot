@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 107Rh
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.13912E-02 1.80797E-04 4.26936E+00 6.77615E-02
+# header:
+#   title: Th232(p,f) fission yield for Rh107
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 45
+#   A: 107
+#   nuclide: Rh107
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.139121E-02   1.807968E-04   4.269357E+00   6.776154E-02

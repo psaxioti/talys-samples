@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  86Ge
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 4.81131E-05 1.10967E-04 2.92615E-04 6.74885E-04
- 1.60000E+00 4.01359E-05 1.39919E-04 4.15407E-03 1.44817E-02
- 5.50000E+00 5.10188E-05 8.06832E-05 2.87939E-02 4.55361E-02
- 1.00000E+01 2.51927E-05 7.31005E-05 1.55319E-02 4.50684E-02
+# header:
+#   title: U238(n,f) fission yield for Ge86
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 32
+#   A: 86
+#   nuclide: Ge86
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   4.582206E-05   1.024252E-04   2.427789E-04   5.426822E-04
+   1.600000E+00   4.008647E-05   1.399539E-04   4.127209E-03   1.440941E-02
+   5.500000E+00   5.101395E-05   8.066469E-05   2.881248E-02   4.555937E-02
+   1.000000E+01   2.519278E-05   7.310011E-05   1.553178E-02   4.506774E-02

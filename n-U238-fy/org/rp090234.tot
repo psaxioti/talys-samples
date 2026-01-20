@@ -1,9 +1,31 @@
-# n + U238: Production of Th234 - Total
-# Q-value    = 4.26986E+00 mass= 234.043600
-# E-threshold= 0.00000E+00
-# # energies =     4
-#     E          xs
- 1.00000E+00 1.00000E-12
- 1.60000E+00 1.00000E-12
- 5.50000E+00 1.00000E-12
- 1.00000E+01 1.25693E-06
+# header:
+#   title: U238(n,x)Th234 cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,x)
+#   Q-value [MeV]:  4.269863E+00
+#   E-threshold [MeV]:  0.000000E+00
+#   ENDF_MF: 6
+#   ENDF_MT: 5
+# residual:
+#   Z: 90
+#   A: 234
+#   nuclide: Th234
+#   mass [amu]:  2.340436E+02
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 4
+##       E             xs
+##     [MeV]          [mb]
+   1.000000E+00   1.000000E-12
+   1.600000E+00   1.000000E-12
+   5.500000E+00   1.000000E-12
+   1.000000E+01   1.256978E-06

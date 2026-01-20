@@ -1,8 +1,25 @@
-# n + Pu239: Fission product yield of 119Cd isomer      
-# 
-# # energies =     3
-# 
-# E-incident     FP yield      FP xs   Ratio 
- 2.53000E-08 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 2.00000E-07 0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00
- 1.00000E-06 1.38795E-04 2.49536E+01 4.79971E-01
+# header:
+#   title: Pu239(n,f) fission yield for Cd119m
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 239
+#   nuclide: Pu239
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 48
+#   A: 119
+#   nuclide: Cd119m
+# datablock:
+#   quantity: fission yield
+#   columns: 4
+#   entries: 239
+##       E          FP yield         FP xs          Ratio
+##     [MeV]           []            [mb]            []
+   2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
+   2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
+   1.000000E-06   1.387954E-04   2.495363E+01   4.799707E-01

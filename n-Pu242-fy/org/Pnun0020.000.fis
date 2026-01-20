@@ -1,18 +1,35 @@
-# n + Pu242: Prompt neutron  multiplicity distribution 
-# E-incident =   20.000 MeV
-# Mean value (nubar-prompt) =    5.68389
-# Average P(nu)             =    0.00000
-# number   nu 
-  0     0.0000E+00
-  1     1.1920E-01
-  2     1.2529E-01
-  3     1.3306E-01
-  4     1.3457E-01
-  5     1.2934E-01
-  6     1.2246E-01
-  7     1.1871E-01
-  8     1.1737E-01
-  9     1.8219E+00
- 10     1.8208E+00
- 11     1.4424E+00
- 12     2.6553E-06
+# header:
+#   title: Pu242(n,f) prompt neutron multiplicity at  2.000000E+01   MeV
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 94
+#   A: 242
+#   nuclide: Pu242
+# reaction:
+#   type: (n,f)
+#   E-incident [MeV]:  2.000000E+01
+#   ejectile: neutron
+#   nubar-prompt:  5.683939E+00
+#   average P(nu):  0.000000E+00
+# datablock:
+#   quantity: multiplicity
+#   columns: 2
+#   entries: 51
+##    number           nu
+##      []             []
+     0            0.000000E+00
+     1            1.192028E-01
+     2            1.252856E-01
+     3            1.330568E-01
+     4            1.345709E-01
+     5            1.293446E-01
+     6            1.224606E-01
+     7            1.187096E-01
+     8            1.173692E-01
+     9            1.821977E+00
+    10            1.820867E+00
+    11            1.442413E+00
+    12            2.655535E-06

@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  84Ge
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.08214E-05 8.00727E-04 3.02914E-02 3.00108E-01
+# header:
+#   title: Th232(p,f) fission yield for Ge84
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 32
+#   A: 84
+#   nuclide: Ge84
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.082143E-05   8.007270E-04   3.029138E-02   3.001076E-01

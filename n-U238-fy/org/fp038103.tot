@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 103Sr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.66802E-06 9.57197E-05 1.62264E-05 5.82153E-04
- 1.60000E+00 1.99665E-07 7.98865E-05 2.06653E-05 8.26830E-03
- 5.50000E+00 3.26961E-09 3.39430E-05 1.84530E-06 1.91568E-02
- 1.00000E+01 4.91003E-10 5.17381E-06 3.02714E-07 3.18979E-03
+# header:
+#   title: U238(n,f) fission yield for Sr103
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 38
+#   A: 103
+#   nuclide: Sr103
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   1.930935E-06   9.697335E-05   1.023067E-05   5.137966E-04
+   1.600000E+00   1.358157E-07   7.993678E-05   1.398326E-05   8.230154E-03
+   5.500000E+00   2.557048E-09   3.394496E-05   1.444211E-06   1.917209E-02
+   1.000000E+01   4.341530E-10   5.173211E-06   2.676629E-07   3.189392E-03

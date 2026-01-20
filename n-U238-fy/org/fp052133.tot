@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 133Te
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 5.96850E-03 2.17593E-03 3.62993E-02 1.32337E-02
- 1.60000E+00 9.08326E-03 1.66535E-03 9.40117E-01 1.72364E-01
- 5.50000E+00 1.34106E-02 3.39086E-03 7.56866E+00 1.91374E+00
- 1.00000E+01 1.99260E-02 3.49129E-03 1.22848E+01 2.15247E+00
+# header:
+#   title: U238(n,f) fission yield for Te133
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 52
+#   A: 133
+#   nuclide: Te133
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   6.163931E-03   2.159630E-03   3.265835E-02   1.144243E-02
+   1.600000E+00   9.122550E-03   1.656867E-03   9.392365E-01   1.705882E-01
+   5.500000E+00   1.341129E-02   3.391326E-03   7.574646E+00   1.915419E+00
+   1.000000E+01   1.992652E-02   3.491288E-03   1.228505E+01   2.152452E+00

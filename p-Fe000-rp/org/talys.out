@@ -8,7 +8,7 @@
    57Fe   0.021190
    58Fe   0.002820
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -112,6 +112,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -218,6 +221,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       n     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -2406,11 +2410,11 @@
  Total residual production cross section:   730.3541260
  Non-elastic cross section              :   729.1339722
 
- Execution time:  0 hours  0 minutes 36.06 seconds 
+ Execution time:  0 hours  0 minutes 37.92 seconds 
 
  The TALYS team congratulates you with this successful calculation.
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -2514,6 +2518,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -2620,6 +2627,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       n     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -4817,11 +4825,11 @@
  Total residual production cross section:   765.0323486
  Non-elastic cross section              :   763.5250244
 
- Execution time:  0 hours  1 minutes 17.85 seconds 
+ Execution time:  0 hours  1 minutes 21.73 seconds 
 
  The TALYS team congratulates you with this successful calculation.
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -4925,6 +4933,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -5031,6 +5042,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       n     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -7285,11 +7297,11 @@
  Total residual production cross section:   790.5588989
  Non-elastic cross section              :   788.7819824
 
- Execution time:  0 hours  2 minutes  5.90 seconds 
+ Execution time:  0 hours  2 minutes 12.16 seconds 
 
  The TALYS team congratulates you with this successful calculation.
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -7393,6 +7405,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -7499,6 +7514,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       n     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -9716,6 +9732,6 @@
  Total residual production cross section:   802.2047729
  Non-elastic cross section              :   800.4210205
 
- Execution time:  0 hours  2 minutes 51.69 seconds 
+ Execution time:  0 hours  3 minutes  0.33 seconds 
 
  The TALYS team congratulates you with this successful calculation.

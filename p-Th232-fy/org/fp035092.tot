@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  92Br
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 4.75272E-05 2.24860E-03 1.78129E-02 8.42761E-01
+# header:
+#   title: Th232(p,f) fission yield for Br92
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 35
+#   A: 92
+#   nuclide: Br92
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   4.752719E-05   2.248599E-03   1.781290E-02   8.427613E-01

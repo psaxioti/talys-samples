@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  86Zn
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 5.22868E-17 1.11936E-08 1.95968E-14 4.19527E-06
+# header:
+#   title: Th232(p,f) fission yield for Zn86
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 30
+#   A: 86
+#   nuclide: Zn86
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   5.228681E-17   1.119355E-08   1.959678E-14   4.195275E-06

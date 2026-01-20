@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 100Y 
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.21121E-02 2.64465E-02 1.34482E-01 1.60843E-01
- 1.60000E+00 2.22454E-02 2.96863E-02 2.30240E+00 3.07255E+00
- 5.50000E+00 1.83521E-02 2.82802E-02 1.03575E+01 1.59608E+01
- 1.00000E+01 1.83579E-02 3.01471E-02 1.13181E+01 1.85865E+01
+# header:
+#   title: U238(n,f) fission yield for Y100
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 39
+#   A: 100
+#   nuclide: Y100
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.238415E-02   2.680587E-02   1.185979E-01   1.420263E-01
+   1.600000E+00   2.225702E-02   2.973768E-02   2.291531E+00   3.061741E+00
+   5.500000E+00   1.835024E-02   2.827923E-02   1.036414E+01   1.597210E+01
+   1.000000E+01   1.835790E-02   3.014721E-02   1.131796E+01   1.858638E+01

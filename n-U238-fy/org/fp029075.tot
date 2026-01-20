@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  75Cu
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.24373E-04 1.25381E-04 7.56413E-04 7.62549E-04
- 1.60000E+00 9.85880E-05 1.18027E-04 1.02039E-02 1.22158E-02
- 5.50000E+00 1.35853E-04 1.47905E-04 7.66726E-02 8.34746E-02
- 1.00000E+01 1.13089E-04 1.31179E-04 6.97221E-02 8.08755E-02
+# header:
+#   title: U238(n,f) fission yield for Cu75
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 29
+#   A: 75
+#   nuclide: Cu75
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.341577E-04   1.348642E-04   7.108072E-04   7.145546E-04
+   1.600000E+00   9.905671E-05   1.186844E-04   1.019865E-02   1.221955E-02
+   5.500000E+00   1.358577E-04   1.479112E-04   7.673187E-02   8.354014E-02
+   1.000000E+01   1.130887E-04   1.311788E-04   6.972115E-02   8.087444E-02

@@ -1,9 +1,26 @@
-# n + U238: Fission product yield of A= 85
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 8.37495E-03 6.25677E-03 5.09860E-02 3.80528E-02
- 1.60000E+00 9.17470E-03 7.35170E-03 9.49584E-01 7.60907E-01
- 5.50000E+00 1.11790E-02 9.05294E-03 6.30921E+00 5.10933E+00
- 1.00000E+01 1.23861E-02 1.04716E-02 7.63636E+00 6.45605E+00
+# header:
+#   title: U238(n,f) fission yield for Np85
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+# residual:
+#   Z: 93
+#   A: 85
+#   nuclide: Np85
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   8.486134E-03   6.322767E-03   4.499424E-02   3.350015E-02
+   1.600000E+00   9.183153E-03   7.361252E-03   9.454795E-01   7.579041E-01
+   5.500000E+00   1.117966E-02   9.053352E-03   6.314255E+00   5.113347E+00
+   1.000000E+01   1.238618E-02   1.047169E-02   7.636331E+00   6.456039E+00

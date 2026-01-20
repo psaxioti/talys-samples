@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 158Nd
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.04569E-03 1.88600E-03 6.35969E-03 1.14704E-02
- 1.60000E+00 1.07857E-03 1.69376E-03 1.11632E-01 1.75305E-01
- 5.50000E+00 5.66125E-04 2.48674E-03 3.19508E-01 1.40347E+00
- 1.00000E+01 3.25824E-04 2.12303E-03 2.00878E-01 1.30890E+00
+# header:
+#   title: U238(n,f) fission yield for Nd158
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 60
+#   A: 158
+#   nuclide: Nd158
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.066110E-03   1.939478E-03   5.648566E-03   1.027599E-02
+   1.600000E+00   1.079043E-03   1.695877E-03   1.110958E-01   1.746046E-01
+   5.500000E+00   5.660800E-04   2.486977E-03   3.197197E-01   1.404643E+00
+   1.000000E+01   3.258022E-04   2.123007E-03   2.008627E-01   1.308878E+00

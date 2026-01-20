@@ -1,6 +1,19 @@
-# n + Bi209 Average triton   emission energy
-# Q-value    =-2.68509E+00
-# 
-# # energies =     1
-#    E       E-average
- 6.30000E+01 3.16144E+01
+# header:
+#   title: Bi209(n,xt) average emission energy
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 83
+#   A: 209
+#   nuclide: Bi209
+# reaction:
+#   type: (n,xt)
+# datablock:
+#   quantity: average emission energy
+#   columns: 2
+#   entries: 0
+##       E          E-average
+##     [MeV]          [MeV]
+   6.300000E+01   3.161444E+01

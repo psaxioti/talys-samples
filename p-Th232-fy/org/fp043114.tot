@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 114Tc
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.65189E-07 1.41946E-03 6.19118E-05 5.32004E-01
+# header:
+#   title: Th232(p,f) fission yield for Tc114
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 43
+#   A: 114
+#   nuclide: Tc114
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.651890E-07   1.419457E-03   6.191181E-05   5.320040E-01

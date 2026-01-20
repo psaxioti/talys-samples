@@ -1,0 +1,25 @@
+# header:
+#   title: Th232(p,f) cross section for Te129
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 6
+#   ENDF_MT: 5
+# residual:
+#   Z: 52
+#   A: 129
+#   nuclide: Te129
+# datablock:
+#   quantity: cross section
+#   columns: 2
+#   entries: 1
+##       E            FP xs
+##     [MeV]          [mb]
+   8.000000E+01   3.345927E+00

@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 110Zr
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 3.54911E-09 4.29249E-09 2.15850E-08 2.61062E-08
- 1.60000E+00 1.63424E-09 2.01887E-07 1.69144E-07 2.08954E-05
- 5.50000E+00 4.58540E-07 1.82018E-05 2.58790E-04 1.02728E-02
- 1.00000E+01 4.49796E-06 9.42143E-06 2.77309E-03 5.80855E-03
+# header:
+#   title: U238(n,f) fission yield for Zr110
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 40
+#   A: 110
+#   nuclide: Zr110
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   2.552727E-09   3.087622E-09   1.352511E-08   1.635924E-08
+   1.600000E+00   1.002958E-09   1.371790E-07   1.032622E-07   1.412372E-05
+   5.500000E+00   4.581684E-07   1.820632E-05   2.587717E-04   1.028292E-02
+   1.000000E+01   4.498285E-06   9.421510E-06   2.773271E-03   5.808557E-03

@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 136La
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.42315E-03 4.95799E-06 9.08184E-01 1.85823E-03
+# header:
+#   title: Th232(p,f) fission yield for La136
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 57
+#   A: 136
+#   nuclide: La136
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.423154E-03   4.957995E-06   9.081835E-01   1.858226E-03

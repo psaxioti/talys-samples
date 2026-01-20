@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 135Sn
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.38022E-10 5.20103E-05 8.92093E-08 1.94931E-02
+# header:
+#   title: Th232(p,f) fission yield for Sn135
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 50
+#   A: 135
+#   nuclide: Sn135
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.380224E-10   5.201027E-05   8.920934E-08   1.949313E-02

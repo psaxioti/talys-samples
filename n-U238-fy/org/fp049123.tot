@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 123In
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 0.00000E+00 0.00000E+00 1.62263E-05 0.00000E+00
- 1.60000E+00 0.00000E+00 0.00000E+00 1.73129E-06 0.00000E+00
- 5.50000E+00 2.42617E-05 9.16398E-07 1.36928E-02 5.17198E-04
- 1.00000E+01 5.38384E-05 1.06183E-05 3.31926E-02 6.54647E-03
+# header:
+#   title: U238(n,f) fission yield for In123
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 49
+#   A: 123
+#   nuclide: In123
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   0.000000E+00   0.000000E+00   1.023056E-05   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00   1.065147E-06   0.000000E+00
+   5.500000E+00   2.426764E-05   9.160051E-07   1.370627E-02   5.173592E-04
+   1.000000E+01   5.384250E-05   1.061898E-05   3.319484E-02   6.546823E-03

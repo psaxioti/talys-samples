@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 119Te
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.30022E-05 5.65567E-12 3.11087E-02 2.11971E-09
+# header:
+#   title: Th232(p,f) fission yield for Te119
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 52
+#   A: 119
+#   nuclide: Te119
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.300224E-05   5.655669E-12   3.110874E-02   2.119710E-09

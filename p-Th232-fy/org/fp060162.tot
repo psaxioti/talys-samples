@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 162Nd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 5.45575E-18 2.52282E-09 2.04478E-15 9.45539E-07
+# header:
+#   title: Th232(p,f) fission yield for Nd162
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 60
+#   A: 162
+#   nuclide: Nd162
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   5.455749E-18   2.522825E-09   2.044782E-15   9.455395E-07

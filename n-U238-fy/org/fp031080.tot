@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  80Ga
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 4.72552E-04 3.64698E-04 2.87398E-03 2.21804E-03
- 1.60000E+00 4.79827E-04 4.58619E-04 4.96621E-02 4.74673E-02
- 5.50000E+00 5.14838E-04 4.48838E-04 2.90563E-01 2.53316E-01
- 1.00000E+01 5.41590E-04 4.75772E-04 3.33902E-01 2.93326E-01
+# header:
+#   title: U238(n,f) fission yield for Ga80
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 31
+#   A: 80
+#   nuclide: Ga80
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   4.799534E-04   3.578916E-04   2.542936E-03   1.896227E-03
+   1.600000E+00   4.798763E-04   4.590735E-04   4.940695E-02   4.726542E-02
+   5.500000E+00   5.148170E-04   4.488161E-04   2.907666E-01   2.534911E-01
+   1.000000E+01   5.415900E-04   4.757707E-04   3.338996E-01   2.933226E-01

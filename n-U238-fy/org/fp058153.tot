@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 153Ce
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.11897E-03 9.99410E-03 1.28872E-02 6.07826E-02
- 1.60000E+00 2.24420E-03 9.76462E-03 2.32275E-01 1.01064E+00
- 5.50000E+00 1.37067E-03 6.57069E-03 7.73577E-01 3.70837E+00
- 1.00000E+01 7.88020E-04 5.67491E-03 4.85832E-01 3.49873E+00
+# header:
+#   title: U238(n,f) fission yield for Ce153
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 58
+#   A: 153
+#   nuclide: Ce153
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.085833E-03   1.008292E-02   1.105137E-02   5.342261E-02
+   1.600000E+00   2.242852E-03   9.762971E-03   2.309188E-01   1.005179E+00
+   5.500000E+00   1.370565E-03   6.569587E-03   7.740895E-01   3.710499E+00
+   1.000000E+01   7.879676E-04   5.674865E-03   4.857957E-01   3.498672E+00

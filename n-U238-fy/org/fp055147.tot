@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 147Cs
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.26489E-03 5.82821E-03 7.69281E-03 3.54463E-02
- 1.60000E+00 1.28842E-03 5.75612E-03 1.33351E-01 5.95762E-01
- 5.50000E+00 4.85003E-04 4.90623E-03 2.73725E-01 2.76899E+00
- 1.00000E+01 2.62608E-04 4.65117E-03 1.61904E-01 2.86757E+00
+# header:
+#   title: U238(n,f) fission yield for Cs147
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 55
+#   A: 147
+#   nuclide: Cs147
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.219592E-03   6.013227E-03   6.461761E-03   3.186005E-02
+   1.600000E+00   1.285670E-03   5.764119E-03   1.323696E-01   5.934639E-01
+   5.500000E+00   4.848715E-04   4.905810E-03   2.738535E-01   2.770799E+00
+   1.000000E+01   2.625923E-04   4.651171E-03   1.618927E-01   2.867544E+00

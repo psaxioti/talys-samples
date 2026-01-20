@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 119Ag
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 2.76655E-06 2.69118E-06 1.68256E-05 1.63674E-05
- 1.60000E+00 1.98648E-07 2.18294E-10 2.05600E-05 2.25935E-08
- 5.50000E+00 4.56526E-05 1.88050E-07 2.57654E-02 1.06132E-04
- 1.00000E+01 8.48737E-05 2.31799E-05 5.23265E-02 1.42910E-02
+# header:
+#   title: U238(n,f) fission yield for Ag119
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 47
+#   A: 119
+#   nuclide: Ag119
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   2.004440E-06   1.946602E-06   1.062012E-05   1.031374E-05
+   1.600000E+00   1.323686E-07   1.342896E-10   1.362837E-05   1.382623E-08
+   5.500000E+00   4.566313E-05   1.865124E-07   2.579035E-02   1.053421E-04
+   1.000000E+01   8.488000E-05   2.318167E-05   5.232999E-02   1.429198E-02

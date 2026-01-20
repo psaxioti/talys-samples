@@ -1,9 +1,24 @@
-# n + U238 Total proton   production
-# Q-value    =-2.80396E+00
-# 
-# # energies =     4
-#    E         xs         Yield
- 1.00000E+00 0.00000E+00 0.00000E+00
- 1.60000E+00 0.00000E+00 0.00000E+00
- 5.50000E+00 4.15821E-13 1.22686E-16
- 1.00000E+01 5.32377E-04 1.63547E-07
+# header:
+#   title: U238(n,xp) cross section
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,xp)
+#   ENDF_MF: 3
+#   ENDF_MT: 203
+# datablock:
+#   quantity: cross section
+#   columns: 3
+#   entries: 4
+##       E             xs        Multiplicity
+##     [MeV]          [mb]            []
+   1.000000E+00   0.000000E+00   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00
+   5.500000E+00   4.162121E-13   1.228013E-16
+   1.000000E+01   5.323862E-04   1.635500E-07

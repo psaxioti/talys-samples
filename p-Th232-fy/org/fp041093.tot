@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  93Nb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 4.29489E-05 1.61625E-08 1.60970E-02 6.05760E-06
+# header:
+#   title: Th232(p,f) fission yield for Nb93
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 41
+#   A: 93
+#   nuclide: Nb93
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   4.294893E-05   1.616249E-08   1.609700E-02   6.057602E-06

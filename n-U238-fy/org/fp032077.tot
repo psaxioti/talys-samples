@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  77Ge
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.04583E-04 2.58826E-05 6.36057E-04 1.57414E-04
- 1.60000E+00 9.81523E-05 3.90416E-05 1.01588E-02 4.04082E-03
- 5.50000E+00 1.25090E-04 3.70997E-05 7.05981E-02 2.09384E-02
- 1.00000E+01 1.08295E-04 3.53717E-05 6.67666E-02 2.18076E-02
+# header:
+#   title: U238(n,f) fission yield for Ge77
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 32
+#   A: 77
+#   nuclide: Ge77
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.143920E-04   2.428212E-05   6.060831E-04   1.286546E-04
+   1.600000E+00   9.876503E-05   3.935991E-05   1.016862E-02   4.052430E-03
+   5.500000E+00   1.251155E-04   3.710492E-05   7.066476E-02   2.095684E-02
+   1.000000E+01   1.082921E-04   3.537139E-05   6.676398E-02   2.180720E-02

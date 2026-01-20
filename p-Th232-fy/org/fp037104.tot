@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 104Rb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.34061E-23 1.71292E-07 8.77246E-21 6.41992E-05
+# header:
+#   title: Th232(p,f) fission yield for Rb104
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 37
+#   A: 104
+#   nuclide: Rb104
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   2.340608E-23   1.712920E-07   8.772456E-21   6.419919E-05

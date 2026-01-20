@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of  85Br
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 5.07871E-04 1.59105E-04 3.08878E-03 9.67650E-04
- 1.60000E+00 4.21128E-04 4.21639E-05 4.35867E-02 4.36399E-03
- 5.50000E+00 9.86008E-04 3.46155E-04 5.56481E-01 1.95363E-01
- 1.00000E+01 1.35878E-03 4.65290E-04 8.37719E-01 2.86863E-01
+# header:
+#   title: U238(n,f) fission yield for Br85
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 35
+#   A: 85
+#   nuclide: Br85
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   5.331980E-04   1.702802E-04   2.825042E-03   9.022003E-04
+   1.600000E+00   4.207400E-04   4.143831E-05   4.331841E-02   4.266418E-03
+   5.500000E+00   9.861378E-04   3.462058E-04   5.569667E-01   1.955369E-01
+   1.000000E+01   1.358802E-03   4.652964E-04   8.377253E-01   2.868649E-01

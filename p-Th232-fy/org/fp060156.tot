@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 156Nd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.74981E-10 5.98140E-05 6.55819E-08 2.24179E-02
+# header:
+#   title: Th232(p,f) fission yield for Nd156
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 60
+#   A: 156
+#   nuclide: Nd156
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.749813E-10   5.981400E-05   6.558193E-08   2.241793E-02

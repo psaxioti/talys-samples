@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 151Gd
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.56521E-06 5.67193E-11 5.86633E-04 2.12580E-08
+# header:
+#   title: Th232(p,f) fission yield for Gd151
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 64
+#   A: 151
+#   nuclide: Gd151
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   1.565215E-06   5.671926E-11   5.866330E-04   2.125804E-08

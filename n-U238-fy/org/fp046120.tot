@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 120Pd
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.30563E-05 2.90644E-05 7.94059E-05 1.76765E-04
- 1.60000E+00 2.27461E-07 1.98227E-05 2.35422E-05 2.05166E-03
- 5.50000E+00 4.44390E-05 5.91225E-05 2.50804E-02 3.33676E-02
- 1.00000E+01 1.86562E-05 9.70828E-05 1.15020E-02 5.98541E-02
+# header:
+#   title: U238(n,f) fission yield for Pd120
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 46
+#   A: 120
+#   nuclide: Pd120
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.497456E-05   3.209804E-05   7.933965E-05   1.700659E-04
+   1.600000E+00   1.497758E-07   1.987919E-05   1.542056E-05   2.046728E-03
+   5.500000E+00   4.444494E-05   5.912759E-05   2.510232E-02   3.339523E-02
+   1.000000E+01   1.865627E-05   9.708820E-05   1.150191E-02   5.985690E-02

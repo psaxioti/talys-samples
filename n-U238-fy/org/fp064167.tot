@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 167Gd
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 1.36992E-05 5.22476E-05 8.33160E-05 3.17762E-04
- 1.60000E+00 3.91917E-05 4.01074E-05 4.05634E-03 4.15114E-03
- 5.50000E+00 4.15178E-05 8.64867E-05 2.34317E-02 4.88115E-02
- 1.00000E+01 2.17319E-05 1.01998E-04 1.33982E-02 6.28842E-02
+# header:
+#   title: U238(n,f) fission yield for Gd167
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 64
+#   A: 167
+#   nuclide: Gd167
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.542347E-05   5.433622E-05   8.171811E-05   2.878911E-04
+   1.600000E+00   3.946206E-05   4.006235E-05   4.062921E-03   4.124751E-03
+   5.500000E+00   4.152378E-05   8.648130E-05   2.345247E-02   4.884459E-02
+   1.000000E+01   2.173163E-05   1.019987E-04   1.339793E-02   6.288431E-02

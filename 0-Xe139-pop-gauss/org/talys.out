@@ -1,5 +1,5 @@
 
-    TALYS-1.97 (Version: December 29, 2023)
+    TALYS-2.0 (Version: December 29, 2023)
 
  Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
@@ -102,6 +102,9 @@
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
  maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
  maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ user      Arjan Koning    user         user for this calculation
+ source    TALYS-2.0       source       source for this calculation
+ format    YANDF-0.1       oformat      format for output
  #
  # Optical model
  #
@@ -208,6 +211,7 @@
  #
  outmain             y     flagmain     flag for main output
  outbasic            n     flagbasic    flag for output of basic information and results
+ outall              n     flagoutall   flag for output of all data in main output file
  outpopulation       y     flagpop      flag for output of population
  outcheck            n     flagcheck    flag for output of numerical checks
  outlevels           n     flaglevels   flag for output of discrete level information
@@ -18048,6 +18052,6 @@
  Total residual production cross section:     0.9999903
  Initial population cross section       :     1.0000001
 
- Execution time:  0 hours  0 minutes  6.42 seconds 
+ Execution time:  0 hours  0 minutes  5.24 seconds 
 
  The TALYS team congratulates you with this successful calculation.

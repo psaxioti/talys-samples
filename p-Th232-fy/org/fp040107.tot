@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 107Zr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 2.33311E-09 6.29690E-04 8.74434E-07 2.36004E-01
+# header:
+#   title: Th232(p,f) fission yield for Zr107
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 40
+#   A: 107
+#   nuclide: Zr107
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   2.333105E-09   6.296903E-04   8.744336E-07   2.360041E-01

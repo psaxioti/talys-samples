@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 121Sb
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 8.65946E-03 1.95814E-05 3.24551E+00 7.33901E-03
+# header:
+#   title: Th232(p,f) fission yield for Sb121
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 51
+#   A: 121
+#   nuclide: Sb121
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   8.659460E-03   1.958144E-05   3.245513E+00   7.339005E-03

@@ -1,6 +1,23 @@
-# p + Th232: Fission product yield of A=121
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 3.27915E-02 3.31462E-02 1.22901E+01 1.24230E+01
+# header:
+#   title: Th232(p,f) fission yield for Pa121
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+# residual:
+#   Z: 91
+#   A: 121
+#   nuclide: Pa121
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   3.279149E-02   3.314623E-02   1.229006E+01   1.242301E+01

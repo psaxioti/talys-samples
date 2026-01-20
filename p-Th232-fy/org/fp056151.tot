@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 151Ba
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 1.09283E-18 1.88823E-06 4.09587E-16 7.07697E-04
+# header:
+#   title: Th232(p,f) fission yield for Ba151
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 56
+#   A: 151
+#   nuclide: Ba151
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]           []             []            [mb]           [mb]
+   8.000000E+01   1.092833E-18   1.888230E-06   4.095871E-16   7.076973E-04

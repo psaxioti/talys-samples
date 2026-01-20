@@ -1,9 +1,22 @@
-# n + U238 Total cross sections
-# 
-# 
-# # energies =     4
-#     E      Non-elastic    Elastic     Total     Comp. el.   Shape el.   Reaction   Comp. nonel   Direct    Pre-equil.  Dir. Capt.
- 1.00000E+00 2.60645E+03 4.43412E+03 7.04056E+03 8.40438E+02 3.59368E+03 3.44689E+03 2.13138E+03 4.75072E+02 0.00000E+00 0.00000E+00
- 1.60000E+00 3.58181E+03 3.33790E+03 6.91971E+03 1.99872E+02 3.13803E+03 3.78168E+03 2.78050E+03 7.00576E+02 1.86706E+01 0.00000E+00
- 5.50000E+00 3.38931E+03 4.05483E+03 7.44413E+03 1.72361E-02 4.05481E+03 3.38933E+03 2.67561E+03 4.75041E+02 1.76310E+02 0.00000E+00
- 1.00000E+01 3.25519E+03 2.61916E+03 5.87435E+03 4.46417E-07 2.61916E+03 3.25519E+03 2.45772E+03 3.36886E+02 3.92579E+02 0.00000E+00
+# header:
+#   title: U238(n,all) general cross sections [mb]
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,all)
+# datablock:
+#   quantity: cross section
+#   columns: 11
+#   entries: 4
+##      MeV        Non-elastic      Elastic         Total     Compound elast. Shape elastic    Reaction    Compound nonel.    Direct     Preequilibrium Direct capture
+##     [mb]           [mb]           [mb]           [mb]           [mb]           [mb]           [mb]           [mb]           [mb]           [mb]           [mb]
+   1.000000E+00   2.603177E+03   4.437393E+03   7.040560E+03   8.437131E+02   3.593680E+03   3.446890E+03   2.128104E+03   4.750724E+02   0.000000E+00   0.000000E+00
+   1.600000E+00   3.581042E+03   3.338667E+03   6.919710E+03   2.006374E+02   3.138030E+03   3.781680E+03   2.779738E+03   7.005752E+02   1.866680E+01   0.000000E+00
+   5.500000E+00   3.389313E+03   4.054827E+03   7.444130E+03   1.725506E-02   4.054810E+03   3.389330E+03   2.675644E+03   4.750367E+02   1.762806E+02   0.000000E+00
+   1.000000E+01   3.255190E+03   2.619160E+03   5.874350E+03   4.464573E-07   2.619160E+03   3.255190E+03   2.457761E+03   3.368835E+02   3.925386E+02   0.000000E+00

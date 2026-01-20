@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of  81Kr
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 6.05771E-06 1.53093E-08 2.27039E-03 5.73783E-06
+# header:
+#   title: Th232(p,f) fission yield for Kr81
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 36
+#   A: 81
+#   nuclide: Kr81
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   6.057713E-06   1.530929E-08   2.270394E-03   5.737828E-06

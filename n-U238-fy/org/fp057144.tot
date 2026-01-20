@@ -1,9 +1,28 @@
-# n + U238: Fission product yield of 144La
-# 
-# # energies =     4
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 1.00000E+00 9.60780E-04 2.43504E-05 5.84329E-03 1.48096E-04
- 1.60000E+00 1.35890E-03 2.08018E-05 1.40646E-01 2.15300E-03
- 5.50000E+00 2.69062E-03 4.81642E-05 1.51853E+00 2.71830E-02
- 1.00000E+01 5.37776E-03 7.02213E-05 3.31551E+00 4.32933E-02
+# header:
+#   title: U238(n,f) fission yield for La144
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 92
+#   A: 238
+#   nuclide: U238
+# reaction:
+#   type: (n,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 57
+#   A: 144
+#   nuclide: La144
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 4
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   1.004683E-03   2.316409E-05   5.323111E-03   1.227310E-04
+   1.600000E+00   1.365971E-03   2.054201E-05   1.406372E-01   2.114970E-03
+   5.500000E+00   2.690912E-03   4.816666E-05   1.519817E+00   2.720451E-02
+   1.000000E+01   5.377972E-03   7.022150E-05   3.315613E+00   4.329302E-02

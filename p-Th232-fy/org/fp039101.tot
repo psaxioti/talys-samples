@@ -1,6 +1,25 @@
-# p + Th232: Fission product yield of 101Y 
-# 
-# # energies =     1
-# 
-# E-incident    FP yield    FF yield      FP xs       FF xs
- 8.00000E+01 5.84940E-05 7.60367E-03 2.19232E-02 2.84981E+00
+# header:
+#   title: Th232(p,f) fission yield for Y101
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# target:
+#   Z: 90
+#   A: 232
+#   nuclide: Th232
+# reaction:
+#   type: (p,f)
+#   ENDF_MF: 8
+#   ENDF_MT: 454
+# residual:
+#   Z: 39
+#   A: 101
+#   nuclide: Y101
+# datablock:
+#   quantity: fission yield
+#   columns: 5
+#   entries: 1
+##       E          FP yield       FF yield         FP xs          FF xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   8.000000E+01   5.849405E-05   7.603666E-03   2.192321E-02   2.849808E+00

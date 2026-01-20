@@ -1,19 +1,48 @@
-# Level density for  99Tc            
-# Model: Back-shifted Fermi Gas   Collective enhancement: no
-# Experimental D0 :              0.00 eV +-         0.00000
-# Theoretical D0  :              5.31 eV Chi2: 0.00000E+00 Dtheo/Dexp:   0.00000
-# Nlow:   8 Ntop:  15           Mass in a.m.u.  :  98.906250
-# a(Sn)           :  13.00419   Asymptotic a    :  11.33053
-# Shell correction:   2.47530   Damping gamma   :   0.08869
-# Pairing energy  :   0.00000   Separation en.  :   8.96698
-# Disc. sigma     :   2.98608   Sigma (Sn)      :   5.39072
-# Adj. pair shift :  -0.64772
-#
-# Energy  Level N_cumulative    Total l.d.        a            Sigma  
-# Chi-2 per level :   0.40684
-# Frms per level  :   1.05009
-# Erms per level  :   0.98130
-# av dev per level:   0.56165
+# header:
+#   title: Tc99 level density
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2024-01-17
+#   format: YANDF-0.1
+# residual:
+#   Z: 43
+#   A: 99
+#   nuclide: Tc99
+# parameters:
+#   ldmodel keyword: 2
+#   level density model: Back-shifted Fermi Gas
+#   Collective enhacement: n
+#   a(Sn) [MeV^-1]:  1.300419E+01
+#   asymptotic a [MeV^-1]:  1.133053E+01
+#   shell correction [MeV]:  2.475302E+00
+#   damping gamma:  8.869071E-02
+#   pairing energy [MeV]:  0.000000E+00
+#   adjusted pairing shift [MeV]: -6.477200E-01
+#   separation energy [MeV]:  8.966977E+00
+#   discrete spin cutoff parameter:  8.916667E+00
+#   spin cutoff parameter(Sn):  2.905991E+01
+#   Nlow: 8
+#   Ntop: 15
+#   ctable:  1.000000E-20
+#   ptable:  1.000000E-20
+# observables:
+#   experimental D0 [eV]:  0.000000E+00
+#   experimental D0 unc. [eV]:  0.000000E+00
+#   theoretical D0 [eV]:  5.311060E+00
+#   Chi-2 D0:  0.000000E+00
+#   C/E D0:  1.401298E-45
+#   Frms D0:  0.000000E+00
+#   Erms D0:  0.000000E+00
+#   Chi-2 per level:  1.991500E-02
+#   Frms per level:  1.010872E+00
+#   Erms per level:  9.990766E-01
+#   average deviation per level:  2.749319E-02
+# datablock:
+#   quantity: level density
+#   columns: 6
+#   entries: 134
+##       E            Level      N_cumulative     Total LD           a            Sigma
+##     [MeV]           []             []          [MeV^-1]       [MeV^-1]          []
    6.527700E-01     9            8.899537E+00   3.405316E+01   1.367990E+01   2.986079E+00
    6.714770E-01    10            9.550120E+00   3.551546E+01   1.367799E+01   2.986079E+00
    7.194100E-01    11            1.134622E+01   3.952242E+01   1.367310E+01   2.986079E+00
