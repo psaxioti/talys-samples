@@ -1,28 +1,31 @@
-# header:
+# header: 
 #   title: U238(n,d)Pa237 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,d)
-#   Q-value [MeV]: -5.284289E+00
-#   E-threshold [MeV]:  5.306680E+00
-# residual:
-#   Z: 91
-#   A: 237
-#   nuclide: Pa237
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 4
-##       E             xs          gamma xs    xs/res.prod.xs
+#   Q-value [MeV]: -5.284462E+00
+#   E-threshold [MeV]:  5.306854E+00
+#   ENDF_MF: 3
+#   ENDF_MT: 104
+#   residual: 
+#     Z: 91
+#     A: 237
+#     nuclide: Pa237
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 4
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    5.500000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E+01   1.043994E-09   2.378926E-09   9.998800E-01
+   1.000000E+01   6.367747E-10   1.167559E-09   9.997925E-01

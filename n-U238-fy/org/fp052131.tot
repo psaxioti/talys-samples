@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Te131
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 52
-#   A: 131
-#   nuclide: Te131
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 52
+#     A: 131
+#     nuclide: Te131
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.056433E-04   5.301436E-05   5.597298E-04   2.808875E-04
-   1.600000E+00   1.590367E-04   9.489092E-07   1.637405E-02   9.769807E-05
-   5.500000E+00   5.566346E-04   1.031202E-04   3.143850E-01   5.824224E-02
-   1.000000E+01   1.172870E-03   9.065447E-05   7.230949E-01   5.589037E-02
+   1.000000E+00   9.557077E-05   5.120743E-05   6.225267E-04   3.335559E-04
+   1.600000E+00   1.593931E-04   1.846486E-06   1.356700E-02   1.571676E-04
+   5.500000E+00   5.417572E-04   9.860552E-05   3.089703E-01   5.623621E-02
+   1.000000E+01   1.173552E-03   8.333056E-05   7.167549E-01   5.089499E-02

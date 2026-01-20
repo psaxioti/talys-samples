@@ -1,27 +1,28 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Sn126
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 50
-#   A: 126
-#   nuclide: Sn126
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 3
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 50
+#     A: 126
+#     nuclide: Sn126
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 3
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]           [mb]            []            [mb]
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   1.234023E-03   3.319193E-04   2.218953E+02   5.970933E+01
+   1.000000E-06   1.165808E-03   3.319185E-04   9.777918E+01   2.786339E+01

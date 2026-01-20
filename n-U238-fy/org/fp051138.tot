@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Sb138
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 51
-#   A: 138
-#   nuclide: Sb138
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 51
+#     A: 138
+#     nuclide: Sb138
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.163495E-04   1.028683E-03   6.164543E-04   5.450300E-03
-   1.600000E+00   1.601147E-04   9.619521E-04   1.648504E-02   9.904095E-02
-   5.500000E+00   4.503424E-05   5.688859E-04   2.543516E-02   3.213065E-01
-   1.000000E+01   2.440418E-05   3.669162E-04   1.504560E-02   2.262115E-01
+   1.000000E+00   1.456320E-04   1.052499E-03   9.486143E-04   6.855787E-03
+   1.600000E+00   1.606859E-04   9.617080E-04   1.367704E-02   8.185784E-02
+   5.500000E+00   4.443530E-05   5.494874E-04   2.534196E-02   3.133809E-01
+   1.000000E+01   2.582161E-05   3.615071E-04   1.577073E-02   2.207942E-01

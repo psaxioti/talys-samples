@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Th232(p,f) fission yield for As77
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 90
 #   A: 232
 #   nuclide: Th232
-# reaction:
+# reaction: 
 #   type: (p,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 33
-#   A: 77
-#   nuclide: As77
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 1
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 33
+#     A: 77
+#     nuclide: As77
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 1
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   8.000000E+01   1.432015E-04   9.635261E-06   5.367106E-02   3.611238E-03
+   8.000000E+01   1.852366E-04   9.004838E-06   1.559733E-02   7.582271E-04

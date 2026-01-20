@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Fe57(p,x)Fe52g cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 57
 #   nuclide: Fe57
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -4.372472E+01
-#   E-threshold [MeV]:  4.449828E+01
+#   Q-value [MeV]: -4.372468E+01
+#   E-threshold [MeV]:  4.449866E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 26
-#   A: 52
-#   nuclide: Fe52g
-#   mass [amu]:  5.194811E+01
-#   level: 
-#     number: 0
-#     energy [MeV]:  0.000000E+00
-#     spin:  0.000000E+00
-#     parity: 1
-#     isomer: 0
-#     half-life [sec]:  2.979000E+04
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 24
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 26
+#     A: 52
+#     nuclide: Fe52g
+#   parameters: 
+#     mass [amu]:  5.194811E+01
+#     level: 
+#       number: 0
+#       energy [MeV]:  0.000000E+00
+#       spin:  0.000000E+00
+#       parity: 1
+#       isomer: 0
+#       half-life [sec]:  2.979000E+04
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 24
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    2.000000E+00   0.000000E+00   0.000000E+00
@@ -51,8 +53,8 @@
    4.000000E+01   0.000000E+00   0.000000E+00
    4.500000E+01   0.000000E+00   0.000000E+00
    5.000000E+01   0.000000E+00   0.000000E+00
-   6.000000E+01   1.288990E-02   9.965658E-01
-   7.000000E+01   1.323676E-01   9.924167E-01
-   8.000000E+01   3.451310E-01   9.889397E-01
-   9.000000E+01   4.733626E-01   9.887142E-01
-   1.000000E+02   5.425538E-01   9.905680E-01
+   6.000000E+01   1.253536E-02   9.954171E-01
+   7.000000E+01   1.282615E-01   9.900002E-01
+   8.000000E+01   3.282647E-01   9.876397E-01
+   9.000000E+01   4.872155E-01   9.875186E-01
+   1.000000E+02   5.093907E-01   9.896722E-01

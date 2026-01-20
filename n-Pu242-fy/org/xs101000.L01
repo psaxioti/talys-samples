@@ -1,35 +1,36 @@
-# header:
+# header: 
 #   title: Pu242(n,nd)Np240m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 242
 #   nuclide: Pu242
-# reaction:
+# reaction: 
 #   type: (n,nd)
-#   Q-value [MeV]: -1.085307E+01
-#   E-threshold [MeV]:  1.089830E+01
+#   Q-value [MeV]: -1.085324E+01
+#   E-threshold [MeV]:  1.089847E+01
 #   ENDF_MF: 10
 #   ENDF_MT: 32
-# residual:
-#   Z: 93
-#   A: 240
-#   nuclide: Np240m
-#   level: 
-#     number: 1
-#     energy [MeV]:  1.180000E-01
-#     spin:  1.000000E+00
-#     parity: 1
-#     isomer: 1
-#     half-life [sec]:  4.332000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 19
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 93
+#     A: 240
+#     nuclide: Np240m
+#     level: 
+#       number: 1
+#       energy [MeV]:  1.180000E-01
+#       spin:  1.000000E+00
+#       parity: 1
+#       isomer: 1
+#       half-life [sec]:  4.332000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 19
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-11   0.000000E+00   0.000000E+00
    2.530000E-08   0.000000E+00   0.000000E+00
@@ -49,4 +50,4 @@
    8.000000E+00   0.000000E+00   0.000000E+00
    1.000000E+01   0.000000E+00   0.000000E+00
    1.400000E+01   0.000000E+00   0.000000E+00
-   2.000000E+01   5.308749E-04   9.114224E-02
+   2.000000E+01   4.484755E-04   5.858131E-02

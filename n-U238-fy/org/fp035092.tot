@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Br92
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 35
-#   A: 92
-#   nuclide: Br92
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 35
+#     A: 92
+#     nuclide: Br92
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   2.047766E-03   3.235203E-03   1.084968E-02   1.714117E-02
-   1.600000E+00   1.957180E-03   3.539362E-03   2.015067E-01   3.644067E-01
-   5.500000E+00   1.661502E-03   2.951213E-03   9.384099E-01   1.666843E+00
-   1.000000E+01   1.602069E-03   2.750980E-03   9.877036E-01   1.696037E+00
+   1.000000E+00   1.987389E-03   3.088139E-03   1.294541E-02   2.011557E-02
+   1.600000E+00   1.960373E-03   3.538972E-03   1.668604E-01   3.012272E-01
+   5.500000E+00   1.635838E-03   3.023401E-03   9.329371E-01   1.724291E+00
+   1.000000E+01   1.483352E-03   2.625227E-03   9.059672E-01   1.603384E+00

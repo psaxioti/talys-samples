@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Rb101
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 37
-#   A: 101
-#   nuclide: Rb101
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
-##     [MeV]           []             []            [mb]           [mb]
-   1.000000E+00   8.685646E-07   5.731131E-06   4.601914E-06   3.036541E-05
-   1.600000E+00   0.000000E+00   1.963694E-05   0.000000E+00   2.021786E-03
-   5.500000E+00   2.053866E-09   6.627850E-06   1.160015E-06   3.743406E-03
-   1.000000E+01   3.020948E-11   1.032730E-09   1.862467E-08   6.366993E-07
+#   residual: 
+#     Z: 37
+#     A: 101
+#     nuclide: Rb101
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
+##     [MeV]           []             []             []             []
+   1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+   1.600000E+00   0.000000E+00   1.962071E-05   0.000000E+00   1.670059E-03
+   5.500000E+00   3.109132E-09   1.015135E-08   1.773173E-06   5.789467E-06
+   1.000000E+01   1.808059E-10   1.146757E-06   1.104284E-07   7.003937E-04

@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Sm166
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 62
-#   A: 166
-#   nuclide: Sm166
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
-##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.569778E-08   1.347607E-06   8.317153E-08   7.140063E-06
-   1.600000E+00   1.047977E-08   1.986118E-07   1.078973E-06   2.044873E-05
-   5.500000E+00   1.988255E-09   1.616491E-05   1.122959E-06   9.129933E-03
-   1.000000E+01   2.530250E-06   2.644369E-05   1.559943E-03   1.630308E-02
+#   residual: 
+#     Z: 62
+#     A: 166
+#     nuclide: Sm166
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
+##     [MeV]           []             []            [mb]           [mb]
+   1.000000E+00   6.787536E-08   4.259077E-06   4.421250E-07   2.774285E-05
+   1.600000E+00   1.657221E-07   3.990126E-07   1.410571E-05   3.396281E-05
+   5.500000E+00   2.083165E-12   7.773316E-06   1.188053E-09   4.433238E-03
+   1.000000E+01   5.309212E-10   1.847649E-05   3.242638E-07   1.128471E-02

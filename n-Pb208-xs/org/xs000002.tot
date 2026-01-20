@@ -1,26 +1,29 @@
-# header:
+# header: 
 #   title: Pb208(n,2a)Pt201 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,2a)
-#   Q-value [MeV]:  5.213685E+00
+#   Q-value [MeV]:  5.214266E+00
 #   E-threshold [MeV]:  0.000000E+00
-# residual:
-#   Z: 78
-#   A: 201
-#   nuclide: Pt201
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 46
-##       E             xs          gamma xs    xs/res.prod.xs
+#   ENDF_MF: 3
+#   ENDF_MT: 108
+#   residual: 
+#     Z: 78
+#     A: 201
+#     nuclide: Pt201
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 46
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E+00   1.000000E-07   1.000000E-07   0.000000E+00
    1.200000E+00   1.000000E-07   1.000000E-07   0.000000E+00

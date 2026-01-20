@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Y89(n,x)Rb86m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 39
 #   A: 89
 #   nuclide: Y89
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]:  1.261619E-01
+#   Q-value [MeV]:  1.264497E-01
 #   E-threshold [MeV]:  0.000000E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 37
-#   A: 86
-#   nuclide: Rb86m
-#   mass [amu]:  8.591117E+01
-#   level: 
-#     number: 2
-#     energy [MeV]:  5.560500E-01
-#     spin:  6.000000E+00
-#     parity: -1
-#     isomer: 1
-#     half-life [sec]:  6.102000E+01
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 44
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 37
+#     A: 86
+#     nuclide: Rb86m
+#   parameters: 
+#     mass [amu]:  8.591117E+01
+#     level: 
+#       number: 2
+#       energy [MeV]:  5.560500E-01
+#       spin:  6.000000E+00
+#       parity: -1
+#       isomer: 1
+#       half-life [sec]:  6.102000E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 44
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-11   0.000000E+00   0.000000E+00
    2.530000E-08   0.000000E+00   0.000000E+00
@@ -67,12 +69,12 @@
    2.800000E+00   0.000000E+00   0.000000E+00
    3.000000E+00   0.000000E+00   0.000000E+00
    3.200001E+00   0.000000E+00   0.000000E+00
-   3.400001E+00   3.193152E-14   0.000000E+00
-   3.600001E+00   2.089307E-13   0.000000E+00
-   3.800001E+00   1.155777E-12   0.000000E+00
-   4.000000E+00   5.529976E-12   0.000000E+00
-   4.200000E+00   8.315978E-12   0.000000E+00
-   4.400000E+00   9.180950E-11   0.000000E+00
-   4.600000E+00   2.418517E-10   0.000000E+00
-   4.800000E+00   2.550314E-10   0.000000E+00
-   5.000000E+00   1.695905E-08   0.000000E+00
+   3.400001E+00   0.000000E+00   0.000000E+00
+   3.600001E+00   0.000000E+00   0.000000E+00
+   3.800001E+00   0.000000E+00   0.000000E+00
+   4.000000E+00   5.529945E-12   0.000000E+00
+   4.200000E+00   8.317920E-12   0.000000E+00
+   4.400000E+00   9.180987E-11   0.000000E+00
+   4.600000E+00   2.419136E-10   0.000000E+00
+   4.800000E+00   2.550865E-10   0.000000E+00
+   5.000000E+00   3.126483E-08   0.000000E+00

@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Fe0(p,x)Fe51 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 0
 #   nuclide: Fe0
-# reaction:
+# reaction: 
 #   type: (p,x)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 26
-#   A: 51
-#   nuclide: Fe51
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 24
+#   residual: 
+#     Z: 26
+#     A: 51
+#     nuclide: Fe51
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 24
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -38,11 +39,11 @@
    2.500000E+01   0.000000E+00
    3.000000E+01   0.000000E+00
    3.500000E+01   0.000000E+00
-   4.000000E+01   2.395664E-04
-   4.500000E+01   1.237639E-03
-   5.000000E+01   4.376699E-03
-   6.000000E+01   1.842661E-02
-   7.000000E+01   2.133685E-02
-   8.000000E+01   2.556447E-02
-   9.000000E+01   3.254846E-02
-   1.000000E+02   3.810061E-02
+   4.000000E+01   2.311212E-04
+   4.500000E+01   8.307919E-04
+   5.000000E+01   3.145083E-03
+   6.000000E+01   1.282508E-02
+   7.000000E+01   1.409004E-02
+   8.000000E+01   1.564752E-02
+   9.000000E+01   1.973578E-02
+   1.000000E+02   2.154039E-02

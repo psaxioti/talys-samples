@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for As80
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 33
-#   A: 80
-#   nuclide: As80
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 33
+#     A: 80
+#     nuclide: As80
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.903574E-04   3.929641E-05   1.008570E-03   2.082053E-04
-   1.600000E+00   1.604158E-04   5.066660E-07   1.651603E-02   5.216547E-05
-   5.500000E+00   2.910579E-04   5.832396E-05   1.643883E-01   3.294134E-02
-   1.000000E+01   3.921556E-04   1.244240E-04   2.417707E-01   7.670997E-02
+   1.000000E+00   1.792095E-04   3.375042E-05   1.167331E-03   2.198441E-04
+   1.600000E+00   1.598380E-04   1.493663E-06   1.360487E-02   1.271363E-04
+   5.500000E+00   2.820589E-04   5.614562E-05   1.608614E-01   3.202069E-02
+   1.000000E+01   3.486528E-04   1.084239E-04   2.129421E-01   6.622101E-02

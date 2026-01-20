@@ -1,17 +1,17 @@
-# header:
+# header: 
 #   title: Pb208(n,xg_5-3)Pb205 gamma-ray production cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,xg_5-3)
-#   Q-value [MeV]: -2.295375E+01
-#   E-threshold [MeV]:  2.306508E+01
+#   Q-value [MeV]: -2.295374E+01
+#   E-threshold [MeV]:  2.306506E+01
 #   level: 
 #     number: 5
 #     energy [MeV]:  7.614300E-01
@@ -23,14 +23,15 @@
 #       spin:  1.500000E+00
 #       parity: -1
 #   gamma energy [MeV]:  1.852300E-01
-# residual:
-#   Z: 82
-#   A: 205
-#   nuclide: Pb205
-# datablock:
-#   quantity: gamma-ray production cross section
-#   columns: 2
-#   entries: 67
+#   residual: 
+#     Z: 82
+#     A: 205
+#     nuclide: Pb205
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 67
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E-11   0.000000E+00
@@ -93,10 +94,10 @@
    2.100000E+01   0.000000E+00
    2.200000E+01   0.000000E+00
    2.300000E+01   0.000000E+00
-   2.400000E+01   1.680163E-03
-   2.500000E+01   3.148907E-02
-   2.600000E+01   1.535769E-01
-   2.700000E+01   4.100386E-01
-   2.800000E+01   7.748815E-01
-   2.900000E+01   1.182353E+00
-   3.000000E+01   1.554997E+00
+   2.400000E+01   2.305112E-03
+   2.500000E+01   4.202070E-02
+   2.600000E+01   1.989615E-01
+   2.700000E+01   5.077848E-01
+   2.800000E+01   9.222464E-01
+   2.900000E+01   1.336518E+00
+   3.000000E+01   1.675923E+00

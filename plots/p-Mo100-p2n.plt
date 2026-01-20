@@ -62,7 +62,7 @@ set style line 3 linetype 8  linewidth 2 linecolor rgb "orange"
 plot [5:30][0:500] \
 "/Users/koning/talys/samples/p-Mo100-medical/org/rp043099.L02" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS" w lines linestyle 10, \
 "/Users/koning/libraries/p/Mo100/jendl5.0/tables/residual/p-Mo100-rp043099m.jendl5.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JENDL-5.0" w lines linestyle 1, \
-"/Users/koning/libraries/p/Mo100/iaea.2022/tables/residual/p-Mo100-rp043099m.iaea.2022" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
+"/Users/koning/libraries/p/Mo100/iaea.2024/tables/residual/p-Mo100-rp043099m.iaea.2024" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
 "/Users/koning/libraries/p/Mo100/tendl.2023/tables/residual/p-Mo100-rp043099m.tendl.2023" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TENDL-2023" w lines linestyle 3, \
 "/Users/koning/libraries/p/Mo100/exfor/residual/043099m/p-Mo100-rp043099m-Lamere-C2413034.2019" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
 "/Users/koning/libraries/p/Mo100/exfor/residual/043099m/p-Mo100-rp043099m-Lamere-C2413034.2019" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Lamere(2019) " linestyle 11, \

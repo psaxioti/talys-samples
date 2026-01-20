@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Dy173
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 66
-#   A: 173
-#   nuclide: Dy173
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 66
+#     A: 173
+#     nuclide: Dy173
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
-   1.000000E+00   0.000000E+00   4.912604E-07   0.000000E+00   2.602859E-06
-   1.600000E+00   0.000000E+00   3.545205E-09   0.000000E+00   3.650082E-07
-   5.500000E+00   0.000000E+00   1.925762E-06   0.000000E+00   1.087670E-03
-   1.000000E+01   3.792386E-13   2.727825E-06   2.338072E-10   1.681761E-03
+   1.000000E+00   0.000000E+00   2.458631E-06   0.000000E+00   1.601507E-05
+   1.600000E+00   0.000000E+00   1.862731E-10   0.000000E+00   1.585503E-08
+   5.500000E+00   2.015704E-09   1.782207E-06   1.149579E-06   1.016419E-03
+   1.000000E+01   1.437343E-12   6.344000E-06   8.778673E-10   3.874663E-03

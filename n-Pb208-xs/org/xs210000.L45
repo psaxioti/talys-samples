@@ -1,35 +1,36 @@
-# header:
+# header: 
 #   title: Pb208(n,2np)Tl206m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,2np)
-#   Q-value [MeV]: -1.749862E+01
-#   E-threshold [MeV]:  1.758348E+01
+#   Q-value [MeV]: -1.749854E+01
+#   E-threshold [MeV]:  1.758341E+01
 #   ENDF_MF: 10
 #   ENDF_MT: 41
-# residual:
-#   Z: 81
-#   A: 206
-#   nuclide: Tl206m
-#   level: 
-#     number: 45
-#     energy [MeV]:  2.643100E+00
-#     spin:  1.200000E+01
-#     parity: -1
-#     isomer: 1
-#     half-life [sec]:  2.244000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 46
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 81
+#     A: 206
+#     nuclide: Tl206m
+#     level: 
+#       number: 45
+#       energy [MeV]:  2.643100E+00
+#       spin:  1.200000E+01
+#       parity: -1
+#       isomer: 1
+#       half-life [sec]:  2.244000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 46
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    1.200000E+00   0.000000E+00   0.000000E+00
@@ -71,9 +72,9 @@
    1.700000E+01   0.000000E+00   0.000000E+00
    1.800000E+01   0.000000E+00   0.000000E+00
    1.900000E+01   0.000000E+00   0.000000E+00
-   2.000000E+01   2.997319E-20   5.327237E-16
-   2.200000E+01   4.251540E-06   6.624946E-04
-   2.400000E+01   1.814218E-03   1.550415E-02
-   2.600000E+01   4.434557E-02   5.642013E-02
-   2.800000E+01   3.011115E-01   9.877341E-02
-   3.000000E+01   1.409510E+00   1.627692E-01
+   2.000000E+01   9.209747E-21   6.088374E-16
+   2.200000E+01   2.959021E-07   8.794148E-05
+   2.400000E+01   1.793895E-04   2.071040E-03
+   2.600000E+01   7.329761E-03   9.646210E-03
+   2.800000E+01   8.858225E-02   2.665629E-02
+   3.000000E+01   4.629331E-01   4.909416E-02

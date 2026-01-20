@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Th232(p,f) fission yield for Ga87
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 90
 #   A: 232
 #   nuclide: Th232
-# reaction:
+# reaction: 
 #   type: (p,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 31
-#   A: 87
-#   nuclide: Ga87
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 1
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 31
+#     A: 87
+#     nuclide: Ga87
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 1
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
-   8.000000E+01   5.943349E-13   1.093047E-06   2.227531E-10   4.096672E-04
+   8.000000E+01   2.155208E-13   1.758149E-06   1.814732E-11   1.480400E-04

@@ -1,25 +1,27 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Rh110g
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
-# residual:
-#   Z: 45
-#   A: 110
-#   nuclide: Rh110g
-# datablock:
-#   quantity: fission yield
-#   columns: 4
-#   entries: 239
-##       E          FP yield         FP xs          Ratio
+#   residual: 
+#     Z: 45
+#     A: 110
+#     nuclide: Rh110g
+#   isomer: 0
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 4
+#     entries: 239
+##       E          FP_yield         FP_xs          Ratio
 ##     [MeV]           []            [mb]            []
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   4.259641E-04   7.658288E+01   5.345339E-01
+   1.000000E-06   3.400256E-04   2.851092E+01   4.230629E-01

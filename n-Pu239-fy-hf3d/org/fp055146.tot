@@ -1,27 +1,28 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Cs146
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 55
-#   A: 146
-#   nuclide: Cs146
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 3
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 55
+#     A: 146
+#     nuclide: Cs146
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 3
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   7.766784E-05   4.153465E-04   1.396368E+01   7.471617E+01
+   1.000000E-06   7.700054E-05   4.153461E-04   6.456442E+00   3.486641E+01

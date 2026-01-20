@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Sn120(n,x)In118n cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 50
 #   A: 120
 #   nuclide: Sn120
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -1.094804E+01
-#   E-threshold [MeV]:  1.104014E+01
+#   Q-value [MeV]: -1.094795E+01
+#   E-threshold [MeV]:  1.104004E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 49
-#   A: 118
-#   nuclide: In118n
-#   mass [amu]:  1.179064E+02
-#   level: 
-#     number: 3
-#     energy [MeV]:  2.000000E-01
-#     spin:  8.000000E+00
-#     parity: -1
-#     isomer: 2
-#     half-life [sec]:  8.500000E+00
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 34
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 49
+#     A: 118
+#     nuclide: In118n
+#   parameters: 
+#     mass [amu]:  1.179064E+02
+#     level: 
+#       number: 3
+#       energy [MeV]:  2.000000E-01
+#       spin:  8.000000E+00
+#       parity: -1
+#       isomer: 2
+#       half-life [sec]:  8.500000E+00
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 34
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-02   0.000000E+00   0.000000E+00
    2.000000E-02   0.000000E+00   0.000000E+00
@@ -62,7 +64,7 @@
    1.400000E+01   0.000000E+00   0.000000E+00
    1.500000E+01   0.000000E+00   0.000000E+00
    1.600000E+01   0.000000E+00   0.000000E+00
-   1.700000E+01   4.697719E-04   1.018562E-01
-   1.800000E+01   3.277613E-03   9.459360E-02
-   1.900000E+01   1.357560E-02   1.036856E-01
-   2.000000E+01   3.831103E-02   1.185727E-01
+   1.700000E+01   3.321357E-04   5.720244E-02
+   1.800000E+01   2.913205E-03   9.139330E-02
+   1.900000E+01   1.301440E-02   9.923749E-02
+   2.000000E+01   3.777641E-02   1.121226E-01

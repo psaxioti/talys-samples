@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Th232(p,f) fission yield for Tb164
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 90
 #   A: 232
 #   nuclide: Th232
-# reaction:
+# reaction: 
 #   type: (p,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 65
-#   A: 164
-#   nuclide: Tb164
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 1
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 65
+#     A: 164
+#     nuclide: Tb164
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 1
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   8.000000E+01   1.323764E-10   3.056536E-07   4.961387E-08   1.145571E-04
+   8.000000E+01   5.866167E-11   3.613979E-07   4.939441E-09   3.043050E-05

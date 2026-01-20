@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Te126
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 52
-#   A: 126
-#   nuclide: Te126
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 52
+#     A: 126
+#     nuclide: Te126
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []             []             []
    1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   5.500000E+00   4.599117E-07   4.570242E-07   2.597563E-04   2.581270E-04
-   1.000000E+01   2.217131E-06   1.115092E-06   1.366900E-03   6.874775E-04
+   1.600000E+00   1.303798E-08   1.303790E-08   1.109749E-06   1.109749E-06
+   5.500000E+00   0.000000E+00   0.000000E+00   5.111498E-04   0.000000E+00
+   1.000000E+01   1.689711E-06   5.994090E-07   1.032003E-03   3.660952E-04

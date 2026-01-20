@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) cross section for Ni71
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 28
-#   A: 71
-#   nuclide: Ni71
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 4
-##       E            FP xs
+#   residual: 
+#     Z: 28
+#     A: 71
+#     nuclide: Ni71
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 4
+##       E            FP_xs
 ##     [MeV]          [mb]
-   1.000000E+00   3.689962E-04
-   1.600000E+00   4.042337E-03
-   5.500000E+00   3.749213E-02
-   1.000000E+01   5.140776E-02
+   1.000000E+00   3.567046E-04
+   1.600000E+00   3.386133E-03
+   5.500000E+00   3.202260E-02
+   1.000000E+01   4.545482E-02

@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Ce157
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 58
-#   A: 157
-#   nuclide: Ce157
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 58
+#     A: 157
+#     nuclide: Ce157
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
-   1.000000E+00   2.040681E-06   7.606531E-05   1.081213E-05   4.030190E-04
-   1.600000E+00   5.628463E-08   6.154271E-05   5.794934E-06   6.336332E-03
-   5.500000E+00   4.989710E-09   2.394263E-05   2.818168E-06   1.352279E-02
-   1.000000E+01   7.686227E-11   1.390321E-05   4.738692E-08   8.571621E-03
+   1.000000E+00   7.301631E-06   8.000919E-05   4.756120E-05   5.211653E-04
+   1.600000E+00   2.317588E-07   6.149547E-05   1.972653E-05   5.234319E-03
+   5.500000E+00   2.765262E-09   1.760482E-05   1.577061E-06   1.004029E-02
+   1.000000E+01   3.496956E-11   1.323608E-05   2.135790E-08   8.084075E-03

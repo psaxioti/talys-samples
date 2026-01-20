@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Th232(p,f) fission yield for Dy167
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 90
 #   A: 232
 #   nuclide: Th232
-# reaction:
+# reaction: 
 #   type: (p,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 66
-#   A: 167
-#   nuclide: Dy167
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 1
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 66
+#     A: 167
+#     nuclide: Dy167
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 1
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   8.000000E+01   2.371272E-10   2.942113E-08   8.887383E-08   1.102686E-05
+   8.000000E+01   5.816967E-13   3.726810E-08   4.898014E-11   3.138055E-06

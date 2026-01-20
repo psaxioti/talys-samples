@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Fe54(p,x)Ti49 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 54
 #   nuclide: Fe54
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -3.719975E+01
-#   E-threshold [MeV]:  3.789442E+01
+#   Q-value [MeV]: -3.719913E+01
+#   E-threshold [MeV]:  3.789417E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 22
-#   A: 49
-#   nuclide: Ti49
-#   mass [amu]:  4.894786E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 24
+#   residual: 
+#     Z: 22
+#     A: 49
+#     nuclide: Ti49
+#   parameters: 
+#     mass [amu]:  4.894786E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 24
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -45,7 +47,7 @@
    4.500000E+01   0.000000E+00
    5.000000E+01   0.000000E+00
    6.000000E+01   0.000000E+00
-   7.000000E+01   3.697321E-02
-   8.000000E+01   1.862007E-01
-   9.000000E+01   4.085207E-01
-   1.000000E+02   4.966303E-01
+   7.000000E+01   2.638389E-02
+   8.000000E+01   1.277467E-01
+   9.000000E+01   2.888649E-01
+   1.000000E+02   3.532222E-01

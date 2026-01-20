@@ -1,26 +1,27 @@
-# header:
+# header: 
 #   title: Pu242(n,f) cross section for Fe70
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 242
 #   nuclide: Pu242
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 26
-#   A: 70
-#   nuclide: Fe70
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 19
-##       E            FP xs
+#   residual: 
+#     Z: 26
+#     A: 70
+#     nuclide: Fe70
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 19
+##       E            FP_xs
 ##     [MeV]          [mb]
    1.000000E-11   0.000000E+00
    2.530000E-08   0.000000E+00
@@ -31,13 +32,13 @@
    1.000000E-01   0.000000E+00
    2.000000E-01   0.000000E+00
    5.000000E-01   0.000000E+00
-   1.000000E+00   0.000000E+00
-   1.500000E+00   2.961061E-06
-   2.000000E+00   0.000000E+00
-   3.000000E+00   4.254969E-06
-   4.000000E+00   1.384702E-05
-   6.000000E+00   1.111182E-02
-   8.000000E+00   1.960053E-03
-   1.000000E+01   1.748516E-06
-   1.400000E+01   9.099157E-07
-   2.000000E+01   6.765410E-04
+   1.000000E+00   2.499641E-06
+   1.500000E+00   2.439117E-06
+   2.000000E+00   1.107655E-06
+   3.000000E+00   1.745803E-05
+   4.000000E+00   1.675186E-05
+   6.000000E+00   1.123181E-02
+   8.000000E+00   3.863532E-04
+   1.000000E+01   3.829500E-06
+   1.400000E+01   3.241668E-04
+   2.000000E+01   9.880411E-04

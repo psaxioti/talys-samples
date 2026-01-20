@@ -1,26 +1,29 @@
-# header:
+# header: 
 #   title: Si28(n,d)Al27 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,d)
-#   Q-value [MeV]: -9.360330E+00
-#   E-threshold [MeV]:  9.697802E+00
-# residual:
-#   Z: 13
-#   A: 27
-#   nuclide: Al27
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 50
-##       E             xs          gamma xs    xs/res.prod.xs
+#   Q-value [MeV]: -9.360503E+00
+#   E-threshold [MeV]:  9.697982E+00
+#   ENDF_MF: 3
+#   ENDF_MT: 104
+#   residual: 
+#     Z: 13
+#     A: 27
+#     nuclide: Al27
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 50
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
@@ -67,8 +70,8 @@
    9.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    9.500000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    1.000000E+01   0.000000E+00   0.000000E+00   0.000000E+00
-   1.200000E+01   4.745965E+00   3.054706E-01   9.999998E-01
-   1.400000E+01   1.701201E+01   8.922203E+00   1.466558E-01
-   1.600000E+01   2.485669E+01   2.270539E+01   7.535839E-02
-   1.800000E+01   3.044480E+01   3.642997E+01   6.715222E-02
-   2.000000E+01   3.533343E+01   4.911036E+01   7.062604E-02
+   1.200000E+01   4.503251E+00   2.929402E-01   9.999999E-01
+   1.400000E+01   1.677447E+01   8.768690E+00   1.378000E-01
+   1.600000E+01   2.492987E+01   2.230441E+01   8.056398E-02
+   1.800000E+01   3.193776E+01   3.876095E+01   7.836676E-02
+   2.000000E+01   3.811787E+01   5.350573E+01   8.570428E-02

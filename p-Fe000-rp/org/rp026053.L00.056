@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Fe56(p,x)Fe53g cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 56
 #   nuclide: Fe56
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -2.539183E+01
-#   E-threshold [MeV]:  2.584908E+01
+#   Q-value [MeV]: -2.539180E+01
+#   E-threshold [MeV]:  2.584930E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 26
-#   A: 53
-#   nuclide: Fe53g
-#   mass [amu]:  5.294531E+01
-#   level: 
-#     number: 0
-#     energy [MeV]:  0.000000E+00
-#     spin:  3.500000E+00
-#     parity: -1
-#     isomer: 0
-#     half-life [sec]:  5.106000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 24
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 26
+#     A: 53
+#     nuclide: Fe53g
+#   parameters: 
+#     mass [amu]:  5.294531E+01
+#     level: 
+#       number: 0
+#       energy [MeV]:  0.000000E+00
+#       spin:  3.500000E+00
+#       parity: -1
+#       isomer: 0
+#       half-life [sec]:  5.106000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 24
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    2.000000E+00   0.000000E+00   0.000000E+00
@@ -46,13 +48,13 @@
    1.800000E+01   0.000000E+00   0.000000E+00
    2.000000E+01   0.000000E+00   0.000000E+00
    2.500000E+01   0.000000E+00   0.000000E+00
-   3.000000E+01   4.309211E-03   1.000000E+00
-   3.500000E+01   1.892647E-01   9.757707E-01
-   4.000000E+01   1.271710E+00   9.741241E-01
-   4.500000E+01   8.380952E+00   9.561579E-01
-   5.000000E+01   1.616981E+01   9.122641E-01
-   6.000000E+01   1.832662E+01   9.082108E-01
-   7.000000E+01   1.631885E+01   9.273345E-01
-   8.000000E+01   1.515580E+01   9.336978E-01
-   9.000000E+01   1.350574E+01   9.407886E-01
-   1.000000E+02   1.293847E+01   9.428031E-01
+   3.000000E+01   4.574808E-03   1.000000E+00
+   3.500000E+01   2.270939E-01   9.912813E-01
+   4.000000E+01   1.281976E+00   9.900312E-01
+   4.500000E+01   8.735868E+00   9.809771E-01
+   5.000000E+01   1.773736E+01   9.649595E-01
+   6.000000E+01   2.020076E+01   9.655225E-01
+   7.000000E+01   1.781773E+01   9.736739E-01
+   8.000000E+01   1.637913E+01   9.776633E-01
+   9.000000E+01   1.537889E+01   9.797192E-01
+   1.000000E+02   1.395956E+01   9.800534E-01

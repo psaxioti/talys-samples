@@ -1,26 +1,29 @@
-# header:
+# header: 
 #   title: Si28(n,pa)Na24 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,pa)
-#   Q-value [MeV]: -1.471745E+01
-#   E-threshold [MeV]:  1.524807E+01
-# residual:
-#   Z: 11
-#   A: 24
-#   nuclide: Na24
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 50
-##       E             xs          gamma xs    xs/res.prod.xs
+#   Q-value [MeV]: -1.471709E+01
+#   E-threshold [MeV]:  1.524770E+01
+#   ENDF_MF: 3
+#   ENDF_MT: 112
+#   residual: 
+#     Z: 11
+#     A: 24
+#     nuclide: Na24
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 50
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
@@ -70,5 +73,5 @@
    1.200000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    1.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    1.600000E+01   0.000000E+00   0.000000E+00   0.000000E+00
-   1.800000E+01   1.029564E-06   4.354509E-16   0.000000E+00
-   2.000000E+01   2.327948E-02   4.451078E-03   9.999999E-01
+   1.800000E+01   1.263704E-06   6.672533E-16   0.000000E+00
+   2.000000E+01   2.700501E-02   5.052948E-03   1.000000E+00

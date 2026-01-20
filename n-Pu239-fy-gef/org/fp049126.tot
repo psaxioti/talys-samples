@@ -1,27 +1,28 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for In126
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 49
-#   A: 126
-#   nuclide: In126
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 3
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 49
+#     A: 126
+#     nuclide: In126
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 3
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   1.024497E-03   7.005927E-04   1.842196E+02   1.260304E+02
+   1.000000E-06   1.099113E-03   7.005911E-04   9.218530E+01   5.881217E+01

@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Mo100(p,x)Y93 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 42
 #   A: 100
 #   nuclide: Mo100
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]:  4.732718E-01
+#   Q-value [MeV]:  4.737854E-01
 #   E-threshold [MeV]:  0.000000E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 39
-#   A: 93
-#   nuclide: Y93
-#   mass [amu]:  9.290958E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 45
+#   residual: 
+#     Z: 39
+#     A: 93
+#     nuclide: Y93
+#   parameters: 
+#     mass [amu]:  9.290958E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 45
 ##       E             xs
 ##     [MeV]          [mb]
    8.000000E+00   1.000000E-07
@@ -66,7 +68,7 @@
    2.700000E+01   1.000000E-07
    2.750000E+01   1.000000E-07
    2.800000E+01   1.000000E-07
-   2.850000E+01   1.000000E-07
-   2.900000E+01   1.000000E-07
-   2.950000E+01   8.866304E-04
-   3.000000E+01   9.775356E-04
+   2.850000E+01   1.049586E-03
+   2.900000E+01   1.281422E-03
+   2.950000E+01   1.538405E-03
+   3.000000E+01   1.806738E-03

@@ -56,7 +56,7 @@ set style line 3 linetype 8  linewidth 2 linecolor rgb "orange"
 plot [1.:30][1.41174402E-04:1000] \
 "/Users/koning/talys/samples/p-Te123-pn-fit/org/rp053123.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS fitted" w lines linestyle 10, \
 "/Users/koning/libraries/p/Te123/jendl5.0/tables/xs/p-Te123-MT004.jendl5.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JENDL-5.0" w lines linestyle 1, \
-"/Users/koning/libraries/p/Te123/iaea.2022/tables/xs/p-Te123-MT004.iaea.2022" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
+"/Users/koning/libraries/p/Te123/iaea.2024/tables/residual/p-Te123-rp053123.iaea.2024" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IAEA" w lines linestyle 2, \
 "/Users/koning/talys/samples/p-Te123-pn-global/org/rp053123.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS global" w lines linestyle 3, \
 "/Users/koning/libraries/p/Te123/exfor/xs/004/p-Te123-MT004-Mahunka-D4142002.1996" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
 "/Users/koning/libraries/p/Te123/exfor/xs/004/p-Te123-MT004-Mahunka-D4142002.1996" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Mahunka(1996) " linestyle 11, \

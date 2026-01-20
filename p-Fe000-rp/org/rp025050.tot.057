@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Fe57(p,x)Mn50 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 57
 #   nuclide: Fe57
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -4.497636E+01
-#   E-threshold [MeV]:  4.577207E+01
+#   Q-value [MeV]: -4.497612E+01
+#   E-threshold [MeV]:  4.577225E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 25
-#   A: 50
-#   nuclide: Mn50
-#   mass [amu]:  4.995424E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 24
+#   residual: 
+#     Z: 25
+#     A: 50
+#     nuclide: Mn50
+#   parameters: 
+#     mass [amu]:  4.995424E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 24
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -44,8 +46,8 @@
    4.000000E+01   0.000000E+00
    4.500000E+01   0.000000E+00
    5.000000E+01   0.000000E+00
-   6.000000E+01   6.944883E-03
-   7.000000E+01   5.703222E-02
-   8.000000E+01   7.323379E-02
-   9.000000E+01   1.017113E-01
-   1.000000E+02   2.375579E-01
+   6.000000E+01   1.125171E-02
+   7.000000E+01   9.131375E-02
+   8.000000E+01   1.044493E-01
+   9.000000E+01   1.221513E-01
+   1.000000E+02   2.236456E-01

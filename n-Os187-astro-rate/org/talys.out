@@ -1,9 +1,12 @@
 
-    TALYS-2.0 (Version: December 29, 2023)
+    TALYS-2.2 (Version: December 18, 2025)
 
- Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
+ Copyright (C) 2025  A.J. Koning, S. Hilaire and S. Goriely
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
+
+ User: Arjan Koning
+ Date: 2026-01-18
 
  ########## USER INPUT ##########
 
@@ -51,14 +54,14 @@
  popmev              n     flagpopmev   flag to use initial population per MeV instead of histograms
  segment             1     segment      number of segments to divide emission energy grid
  maxlevelstar       30     nlevmax      maximum number of included discrete levels for target
- maxlevelsres       10     nlevmaxres   maximum number of included discrete levels for residual nucleus
- maxlevelsbin g     10     nlevbin      maximum number of included discrete levels for gamma    channel
+ maxlevelsres       30     nlevmaxres   maximum number of included discrete levels for residual nucleus
+ maxlevelsbin g     30     nlevbin      maximum number of included discrete levels for gamma    channel
  maxlevelsbin n     30     nlevbin      maximum number of included discrete levels for neutron  channel
- maxlevelsbin p     10     nlevbin      maximum number of included discrete levels for proton   channel
- maxlevelsbin d      5     nlevbin      maximum number of included discrete levels for deuteron channel
- maxlevelsbin t      5     nlevbin      maximum number of included discrete levels for triton   channel
- maxlevelsbin h      5     nlevbin      maximum number of included discrete levels for helium-3 channel
- maxlevelsbin a     10     nlevbin      maximum number of included discrete levels for alpha    channel
+ maxlevelsbin p     30     nlevbin      maximum number of included discrete levels for proton   channel
+ maxlevelsbin d     30     nlevbin      maximum number of included discrete levels for deuteron channel
+ maxlevelsbin t     30     nlevbin      maximum number of included discrete levels for triton   channel
+ maxlevelsbin h     30     nlevbin      maximum number of included discrete levels for helium-3 channel
+ maxlevelsbin a     30     nlevbin      maximum number of included discrete levels for alpha    channel
  ltarget             0     ltarget      excited level of target
  isomer           1.00E+00 isomer       definition of isomer in seconds
  transpower         15     transpower   power for transmission coefficient limit
@@ -75,7 +78,7 @@
  maxchannel          4     maxchannel   maximal number of outgoing particles in individual channel description
  micro               n     flagmicro    flag for completely microscopic Talys calculation
  best                n     flagbest     flag to use best set of adjusted parameters
- bestbranch          y     flagbestbr   flag to use flag to use only best set of branching ratios
+ bestbranch          n     flagbestbr   flag to use flag to use only best set of branching ratios
  bestend             n     flagbestend  flag to put best set of parameters at end of input file
  relativistic        y     flagrel      flag for relativistic kinematics
  recoil              n     flagrecoil   flag for calculation of recoils
@@ -88,6 +91,7 @@
  nffit               n     flagnffit    flag for using fitted (n,f) nuclear model parameters
  nnfit               n     flagnnfit    flag for using fitted (n,n), (n,2n) and (n,p) nuclear model parameters
  nafit               n     flagnafit    flag for using fitted (n,a) nuclear model parameters
+ ndfit               n     flagndfit    flag for using fitted (n,d) nuclear model parameters
  pnfit               n     flagpnfit    flag for using fitted (p,n) nuclear model parameters
  dnfit               n     flagdnfit    flag for using fitted (d,n) nuclear model parameters
  gnfit               n     flaggnfit    flag for using fitted (g,n) nuclear model parameters
@@ -106,17 +110,20 @@
  gefran          50000     gefran       number of random events for GEF calculation
  Estop            1000.000 Estop        incident energy above which TALYS stops
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
- maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
- maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
+ legacy              n     flaglegacy   flag to run legacy models
+ maxZrp             12     maxZrp       maximal number of protons from the initial CN before residual evaporation
+ maxNrp             32     maxNrp       maximal number of neutrons from the initial CN before residual evaporation
  user      Arjan Koning    user         user for this calculation
- source    TALYS-2.0       source       source for this calculation
- format    YANDF-0.1       oformat      format for output
+ source    TALYS-2.2       source       source for this calculation
+ format    YANDF-0.4       oformat      format for output
  #
  # Optical model
  #
  localomp            y     flaglocalomp flag for local (y) or global (n) optical model
  dispersion          n     flagdisp     flag for dispersive optical model
  jlmomp              n     flagjlm      flag for using semi-microscopic JLM OMP
+ pruitt              n     flagpruitt   identifier for Pruitt parameters for KD03
+ pruittset           0     pruittset    random set for Pruitt et al OMP
  riplomp             n     flagriplomp  flag for RIPL OMP
  riplrisk            n     flagriplrisk flag for going outside RIPL mass validity range
  optmodall           n     flagompall   flag for new optical model calculation for all residual nuclei
@@ -128,7 +135,7 @@
  coulomb             y     flagcoulomb  flag for Coulomb excitation calculation with ECIS
  statepot            n     flagstate    flag for optical model potential for each excited state
  maxband             0     maxband      highest vibrational band added to rotational model
- maxrot              2     maxrot       number of included excited rotational levels
+ maxrot              4     maxrot       number of included excited rotational levels
  sysreaction               sysreaction  particles with reaction cross section from systematics
  rotational                rotational   particles with possible rotational optical model
  core               -1     core         even-even core for weakcoupling (-1 or 1)
@@ -138,14 +145,15 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
+ alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding pot., 6,8= Avrigeanu, 7=Nolte)
  deuteronomp         4     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
+ ecisstep         0.00E+00 ecisstep     integration step size for ECIS OMP calculation
  #
  # Compound nucleus
  #
  widthfluc           6.290 ewfc         off-set incident energy for width fluctuation calculation
  widthmode           1     wmode        designator for width fluctuation model
- WFCfactor           1     WFCfactor    enhancement factor for WFC: 1: Original, 2: Ernebjerg and Herman
+ WFCfactor           1     WFCfactor    enhancement factor for WFC: 1: Original, 2: Ernebjerg and Herman 3: Kawano
  compound            y     flagcomp     flag for compound nucleus model
  fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
  eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
@@ -159,11 +167,13 @@
  gammax              2     gammax       number of l-values for gamma multipolarity
  strength            8     strength     model for E1 gamma-ray strength function
  strengthM1          8     strengthM1   model for M1 gamma-ray strength function
+ pseudoresonances    n    flagpseudores flag for using light nuclide discrete levels for resonances
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
  ldmodelracap        3     ldmodelracap level density model for direct radiative capture
  upbend              y     flagupbend   flag for low-energy upbend of photon strength function
  psfglobal           n    flagpsfglobal flag for global photon strength functions only
+ globalwtable        y    flagglobalwtable flag for global average wtable value instead of 1.
  gnorm               n     flaggnorm    flag to normalize PSF to average radiative width
  #
  # Pre-equilibrium
@@ -190,6 +200,7 @@
  shellmodel          1     shellmodel   model for shell correction energies
  kvibmodel           2     kvibmodel    model for vibrational enhancement
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
+ ldglobal            n     flagldglobal flag for global level density model
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
  colenhance          n     flagcolall   flag for collective enhancement of level density for all nuclides
@@ -200,11 +211,12 @@
  # Fission
  #
  fission             n     flagfission  flag for fission
- fismodel            3     fismodel     fission model
+ fismodel            6     fismodel     fission model
  fismodelalt         3     fismodelalt  alternative fission model for default barriers
  hbstate             n     flaghbstate  flag for head band states in fission
  class2              n     flagclass2   flag for class2 states in fission
  fispartdamp         n  flagfispartdamp flag for fission partial damping
+ sffactor            n     flagsffactor flag to constrain vfiscor and rmiufiscor by sp. fis. half-life
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
@@ -245,12 +257,32 @@
  outdwba             n     flagoutdwba  flag for output of DWBA cross sections for MSD
  outgamdis           n     flaggamdis   flag for output of discrete gamma-ray intensities
  outexcitation       n     flagexc      flag for output of excitation functions
+ filedensity         n     filedensity  flag for level densities on separate files
+ filepsf             n     filepsf      flag for photon strength functions on separate files
+ filechannels        n     filechannels flag for exclusive channel cross sections on separate file
+ fileelastic         n     fileelastic  flag for elastic angular distribution on separate file
+ filefission         n     filefission  flag for fission cross sections on separate file
+ filegamdis          n     filegamdis   flag for gamma-ray intensities on separate file
+ filerecoil          n     filerecoil   flag for recoil spectra on separate file
+ fileresidual        y     fileresidual flag for residual production cross sections on separate file
+ filetotal           n     filetotal    flag for total cross sections on separate file
  components          n     flagcompo    flag for output of cross section components
  endf                n     flagendf     flag for information for ENDF-6 file
  endfdetail          y     flagendfdet  flag for detailed ENDF-6 information per channel
  sacs                n     flagsacs     flag for statistical analysis of cross sections
  partable            y     flagpartable flag for output of model parameters on separate file
  block               n     flagblock    flag to block spectra, angle and gamma files
+ blockddx            n     flagblockddx flag to block DDX files
+ blockspectra        n flagblockspectra flag to block spectra files
+ blockangle          n   flagblockangle flag to block angle files
+ blockdirect         n  flagblockdirect flag to block direct reaction files
+ blockbin            n     flagblockbin flag to block binary files
+ blocklevels         n  flagblocklevels flag to block discrete level files
+ blockomp            y     flagblockomp flag to block optical model files
+ blockpreeq          n   flagblockpreeq flag to block preequilibrium files
+ blockastro          n   flagblockastro flag to block astro reaction rate files
+ blockyield          n   flagblockyield flag to block isotopic yield files
+ blockZA             y     flagblockZA  flag to block residual nuclide files
 
  ########## BASIC REACTION PARAMETERS ##########
 
@@ -381,13 +413,13 @@
 
  Q-values for binary reactions:
 
- Q(n,g):  7.98961
+ Q(n,g):  7.98960
  Q(n,n):  0.00000
- Q(n,p):  0.77989
- Q(n,d): -4.35609
- Q(n,t): -4.27844
- Q(n,h): -4.69102
- Q(n,a): 10.13285
+ Q(n,p):  0.77995
+ Q(n,d): -4.35627
+ Q(n,t): -4.27835
+ Q(n,h): -4.69055
+ Q(n,a): 10.13314
 
  ########## RESULTS FOR E= 2.01079E-06 ##########
 
@@ -1491,881 +1523,36 @@
 
  8. Thermonuclear reaction rates
 
- Reaction rate for Z= 76 A=188 (188Os)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 1.25584E+09 5.12410E+05
-   0.0005 1.00000E+00 9.04067E+08 1.64967E+05
-   0.0010 1.00000E+00 7.23165E+08 9.33081E+04
-   0.0050 1.00000E+00 4.26427E+08 2.46060E+04
-   0.0100 1.00002E+00 3.30321E+08 1.34778E+04
-   0.0500 1.20779E+00 1.84543E+08 3.36740E+03
-   0.1000 1.64517E+00 1.47049E+08 1.89734E+03
-   0.1500 1.95223E+00 1.33521E+08 1.40665E+03
-   0.2000 2.19821E+00 1.26311E+08 1.15241E+03
-   0.2500 2.44688E+00 1.21133E+08 9.88497E+02
-   0.3000 2.72612E+00 1.16744E+08 8.69671E+02
-   0.4000 3.39403E+00 1.09472E+08 7.06247E+02
-   0.5000 4.18187E+00 1.03973E+08 5.99955E+02
-   0.6000 5.05473E+00 9.98364E+07 5.25890E+02
-   0.7000 5.99188E+00 9.66375E+07 4.71280E+02
-   0.8000 6.98412E+00 9.40777E+07 4.29164E+02
-   0.9000 8.02859E+00 9.19698E+07 3.95554E+02
-   1.0000 9.12541E+00 9.01980E+07 3.68026E+02
-   1.5000 1.54559E+01 8.43872E+07 2.81134E+02
-   2.0000 2.34476E+01 8.09707E+07 2.33612E+02
-   2.5000 3.37117E+01 7.80044E+07 2.01294E+02
-   3.0000 4.74664E+01 7.45125E+07 1.75530E+02
-   3.5000 6.71251E+01 6.97742E+07 1.52175E+02
-   4.0000 9.78008E+01 6.30356E+07 1.28599E+02
-   5.0000 2.58070E+02 4.16346E+07 7.59717E+01
-   6.0000 1.08300E+03 1.77881E+07 2.96302E+01
-   7.0000 6.56051E+03 5.44529E+06 8.39757E+00
-   8.0000 4.49565E+04 1.51179E+06 2.18086E+00
-   9.0000 3.11097E+05 4.20428E+05 5.71811E-01
-  10.0000 2.11628E+06 1.18547E+05 1.52958E-01
-
- Reaction rate for Z= 76 A=187 (187Os)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 5.89832E-16 1.07628E-19
-   0.0010 1.00000E+00 2.50707E-06 3.23480E-10
-   0.0050 1.00000E+00 3.15294E+01 1.81934E-03
-   0.0100 1.00002E+00 6.99488E+03 2.85405E-01
-   0.0500 1.20779E+00 6.16506E+07 1.12495E+03
-   0.1000 1.64517E+00 1.58916E+08 2.05046E+03
-   0.1500 1.95223E+00 2.04295E+08 2.15226E+03
-   0.2000 2.19821E+00 2.25632E+08 2.05858E+03
-   0.2500 2.44688E+00 2.36699E+08 1.93156E+03
-   0.3000 2.72612E+00 2.46179E+08 1.83389E+03
-   0.4000 3.39403E+00 2.73634E+08 1.76531E+03
-   0.5000 4.18187E+00 3.11577E+08 1.79789E+03
-   0.6000 5.05473E+00 3.52961E+08 1.85923E+03
-   0.7000 5.99188E+00 3.93510E+08 1.91906E+03
-   0.8000 6.98412E+00 4.31632E+08 1.96902E+03
-   0.9000 8.02859E+00 4.66996E+08 2.00851E+03
-   1.0000 9.12541E+00 4.99752E+08 2.03909E+03
-   1.5000 1.54559E+01 6.34049E+08 2.11232E+03
-   2.0000 2.34476E+01 7.35845E+08 2.12302E+03
-   2.5000 3.37117E+01 8.17660E+08 2.11001E+03
-   3.0000 4.74664E+01 8.87326E+08 2.09028E+03
-   3.5000 6.71251E+01 9.49816E+08 2.07151E+03
-   4.0000 9.78008E+01 1.00735E+09 2.05509E+03
-   5.0000 2.58070E+02 1.08957E+09 1.98817E+03
-   6.0000 1.08300E+03 1.01782E+09 1.69542E+03
-   7.0000 6.56051E+03 7.50031E+08 1.15668E+03
-   8.0000 4.49565E+04 4.46889E+08 6.44668E+02
-   9.0000 3.11097E+05 2.24799E+08 3.05742E+02
-  10.0000 2.11628E+06 9.85173E+07 1.27114E+02
-
- Reaction rate for Z= 75 A=187 (187Re)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 2.71632E-14 1.10831E-17
-   0.0005 1.00000E+00 6.53171E-14 1.19186E-17
-   0.0010 1.00000E+00 8.80724E-14 1.13637E-17
-   0.0050 1.00000E+00 2.06761E-13 1.19307E-17
-   0.0100 1.00002E+00 2.78477E-13 1.13624E-17
-   0.0500 1.20779E+00 5.15509E-13 9.40661E-18
-   0.1000 1.64517E+00 5.32081E-13 6.86530E-18
-   0.1500 1.95223E+00 5.49923E-13 5.79346E-18
-   0.2000 2.19821E+00 5.67168E-13 5.17462E-18
-   0.2500 2.44688E+00 5.72898E-13 4.67508E-18
-   0.3000 2.72612E+00 5.66042E-13 4.21668E-18
-   0.4000 3.39403E+00 6.87593E-13 4.43592E-18
-   0.5000 4.18187E+00 5.38357E-12 3.10647E-17
-   0.6000 5.05473E+00 6.49409E-11 3.42078E-16
-   0.7000 5.99188E+00 5.50948E-10 2.68685E-15
-   0.8000 6.98412E+00 3.63373E-09 1.65764E-14
-   0.9000 8.02859E+00 1.97976E-08 8.51478E-14
-   1.0000 9.12541E+00 9.13963E-08 3.72916E-13
-   1.5000 1.54559E+01 3.22219E-05 1.07346E-10
-   2.0000 2.34476E+01 1.95688E-03 5.64588E-09
-   2.5000 3.37117E+01 4.46053E-02 1.15106E-07
-   3.0000 4.74664E+01 5.35841E-01 1.26228E-06
-   3.5000 6.71251E+01 4.13726E+00 9.02319E-06
-   4.0000 9.78008E+01 2.34401E+01 4.78203E-05
-   5.0000 2.58070E+02 3.86674E+02 7.05573E-04
-   6.0000 1.08300E+03 2.77601E+03 4.62410E-03
-   7.0000 6.56051E+03 9.10949E+03 1.40484E-02
-   8.0000 4.49565E+04 1.67425E+04 2.41523E-02
-   9.0000 3.11097E+05 2.03553E+04 2.76846E-02
-  10.0000 2.11628E+06 1.81349E+04 2.33990E-02
-
- Reaction rate for Z= 76 A=186 (186Os)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 8.15628E-20 3.32793E-25
-   1.5000 1.54559E+01 4.69884E-09 1.56540E-14
-   2.0000 2.34476E+01 1.34698E-03 3.88622E-09
-   2.5000 3.37117E+01 2.88818E+00 7.45309E-06
-   3.0000 4.74664E+01 5.21352E+02 1.22815E-03
-   3.5000 6.71251E+01 2.25263E+04 4.91290E-02
-   4.0000 9.78008E+01 3.86503E+05 7.88505E-01
-   5.0000 2.58070E+02 1.79515E+07 3.27565E+01
-   6.0000 1.08300E+03 1.48030E+08 2.46579E+02
-   7.0000 6.56051E+03 4.18322E+08 6.45125E+02
-   8.0000 4.49565E+04 6.68112E+08 9.63799E+02
-   9.0000 3.11097E+05 7.59616E+08 1.03313E+03
-  10.0000 2.11628E+06 6.70781E+08 8.65490E+02
-
- Reaction rate for Z= 75 A=186 (186Re)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 2.95799E-37 1.20692E-42
-   1.5000 1.54559E+01 8.54896E-24 2.84806E-29
-   2.0000 2.34476E+01 3.95660E-16 1.14153E-21
-   2.5000 3.37117E+01 4.63800E-11 1.19686E-16
-   3.0000 4.74664E+01 2.09734E-07 4.94071E-13
-   3.5000 6.71251E+01 1.02280E-04 2.23069E-10
-   4.0000 9.78008E+01 1.15045E-02 2.34704E-08
-   5.0000 2.58070E+02 8.85688E+00 1.61613E-05
-   6.0000 1.08300E+03 5.53658E+02 9.22248E-04
-   7.0000 6.56051E+03 6.98706E+03 1.07752E-02
-   8.0000 4.49565E+04 3.33585E+04 4.81220E-02
-   9.0000 3.11097E+05 8.52727E+04 1.15977E-01
-  10.0000 2.11628E+06 1.41550E+05 1.82639E-01
-
- Reaction rate for Z= 74 A=186 (186W )
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 5.56234E-38 1.85308E-43
-   2.0000 2.34476E+01 2.66559E-28 7.69061E-34
-   2.5000 3.37117E+01 3.57032E-22 9.21338E-28
-   3.0000 4.74664E+01 8.23350E-18 1.93957E-23
-   3.5000 6.71251E+01 1.62311E-14 3.53994E-20
-   4.0000 9.78008E+01 6.33576E-12 1.29256E-17
-   5.0000 2.58070E+02 3.92033E-08 7.15352E-14
-   6.0000 1.08300E+03 1.29499E-05 2.15711E-11
-   7.0000 6.56051E+03 7.75803E-04 1.19642E-09
-   8.0000 4.49565E+04 1.56956E-02 2.26420E-08
-   9.0000 3.11097E+05 1.39486E-01 1.89711E-07
-  10.0000 2.11628E+06 6.54377E-01 8.44326E-07
-
- Reaction rate for Z= 76 A=185 (185Os)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 1.40938E-12 3.63696E-18
-   3.0000 4.74664E+01 1.88664E-07 4.44436E-13
-   3.5000 6.71251E+01 7.93810E-04 1.73127E-09
-   4.0000 9.78008E+01 3.92420E-01 8.00577E-07
-   5.0000 2.58070E+02 1.90626E+03 3.47839E-03
-   6.0000 1.08300E+03 3.31921E+05 5.52893E-01
-   7.0000 6.56051E+03 7.31541E+06 1.12816E+01
-   8.0000 4.49565E+04 4.78483E+07 6.90245E+01
-   9.0000 3.11097E+05 1.51511E+08 2.06065E+02
-  10.0000 2.11628E+06 3.00255E+08 3.87411E+02
-
- Reaction rate for Z= 75 A=185 (185Re)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 1.15367E-25 3.84343E-31
-   2.0000 2.34476E+01 1.11591E-18 3.21957E-24
-   2.5000 3.37117E+01 3.19294E-14 8.23954E-20
-   3.0000 4.74664E+01 4.26730E-11 1.00525E-16
-   3.5000 6.71251E+01 1.08273E-08 2.36139E-14
-   4.0000 9.78008E+01 1.10859E-06 2.26163E-12
-   5.0000 2.58070E+02 5.82989E-03 1.06379E-08
-   6.0000 1.08300E+03 3.02825E+00 5.04426E-06
-   7.0000 6.56051E+03 2.13799E+02 3.29715E-04
-   8.0000 4.49565E+04 4.03465E+03 5.82026E-03
-   9.0000 3.11097E+05 3.02072E+04 4.10838E-02
-  10.0000 2.11628E+06 1.17699E+05 1.51864E-01
-
- Reaction rate for Z= 74 A=185 (185W )
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 1.37116E-39 4.56799E-45
-   2.0000 2.34476E+01 1.92102E-30 5.54241E-36
-   2.5000 3.37117E+01 1.34816E-24 3.47898E-30
-   3.0000 4.74664E+01 1.68725E-20 3.97466E-26
-   3.5000 6.71251E+01 2.25980E-17 4.92853E-23
-   4.0000 9.78008E+01 7.37127E-15 1.50381E-20
-   5.0000 2.58070E+02 2.04445E-10 3.73055E-16
-   6.0000 1.08300E+03 8.00632E-07 1.33364E-12
-   7.0000 6.56051E+03 2.67015E-04 4.11782E-10
-   8.0000 4.49565E+04 1.67818E-02 2.42089E-08
-   9.0000 3.11097E+05 3.38466E-01 4.60337E-07
-  10.0000 2.11628E+06 3.02852E+00 3.90762E-06
-
- Reaction rate for Z= 73 A=185 (185Ta)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 1.93629E-30 3.95022E-36
-   5.0000 2.58070E+02 4.62803E-22 8.44487E-28
-   6.0000 1.08300E+03 9.45371E-17 1.57474E-22
-   7.0000 6.56051E+03 4.15750E-13 6.41158E-19
-   8.0000 4.49565E+04 1.94988E-10 2.81283E-16
-   9.0000 3.11097E+05 1.91486E-08 2.60435E-14
-  10.0000 2.11628E+06 6.02060E-07 7.76822E-13
-
- Reaction rate for Z= 76 A=184 (184Os)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 6.03476E-08 1.23115E-13
-   5.0000 2.58070E+02 3.29584E-02 6.01400E-08
-   6.0000 1.08300E+03 9.93945E+01 1.65565E-04
-   7.0000 6.56051E+03 1.51879E+04 2.34224E-02
-   8.0000 4.49565E+04 4.40379E+05 6.35278E-01
-   9.0000 3.11097E+05 4.71228E+06 6.40902E+00
-  10.0000 2.11628E+06 2.53465E+07 3.27040E+01
-
- Reaction rate for Z= 75 A=184 (184Re)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 9.96187E-25 2.57071E-30
-   3.0000 4.74664E+01 9.43449E-18 2.22249E-23
-   3.5000 6.71251E+01 1.96936E-13 4.29510E-19
-   4.0000 9.78008E+01 3.59662E-10 7.33748E-16
-   5.0000 2.58070E+02 1.10477E-05 2.01590E-11
-   6.0000 1.08300E+03 1.03698E-02 1.72733E-08
-   7.0000 6.56051E+03 1.83526E+00 2.83029E-06
-   8.0000 4.49565E+04 9.79862E+01 1.41352E-04
-   9.0000 3.11097E+05 1.97298E+03 2.68338E-03
-  10.0000 2.11628E+06 1.84775E+04 2.38411E-02
-
- Reaction rate for Z= 74 A=184 (184W )
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 6.95299E+02 2.83696E-01
-   0.0005 1.00000E+00 5.07425E+02 9.25909E-02
-   0.0010 1.00000E+00 4.07886E+02 5.26284E-02
-   0.0050 1.00000E+00 2.43067E+02 1.40257E-02
-   0.0100 1.00002E+00 1.88881E+02 7.70671E-03
-   0.0500 1.20779E+00 1.00394E+02 1.83191E-03
-   0.1000 1.64517E+00 7.33930E+01 9.46971E-04
-   0.1500 1.95223E+00 6.42921E+01 6.77320E-04
-   0.2000 2.19821E+00 5.98652E+01 5.46187E-04
-   0.2500 2.44688E+00 5.67956E+01 4.63475E-04
-   0.3000 2.72612E+00 5.41178E+01 4.03145E-04
-   0.4000 3.39403E+00 4.93552E+01 3.18409E-04
-   0.5000 4.18187E+00 4.55052E+01 2.62578E-04
-   0.6000 5.05473E+00 4.25488E+01 2.24127E-04
-   0.7000 5.99188E+00 4.02969E+01 1.96519E-04
-   0.8000 6.98412E+00 3.85657E+01 1.75929E-04
-   0.9000 8.02859E+00 3.72224E+01 1.60090E-04
-   1.0000 9.12541E+00 3.61790E+01 1.47618E-04
-   1.5000 1.54559E+01 3.40121E+01 1.13310E-04
-   2.0000 2.34476E+01 3.57072E+01 1.03020E-04
-   2.5000 3.37117E+01 4.18865E+01 1.08090E-04
-   3.0000 4.74664E+01 5.57817E+01 1.31405E-04
-   3.5000 6.71251E+01 8.50908E+01 1.85580E-04
-   4.0000 9.78008E+01 1.47005E+02 2.99906E-04
-   5.0000 2.58070E+02 5.49131E+02 1.00201E-03
-   6.0000 1.08300E+03 1.87366E+03 3.12103E-03
-   7.0000 6.56051E+03 4.34845E+03 6.70606E-03
-   8.0000 4.49565E+04 6.90874E+03 9.96635E-03
-   9.0000 3.11097E+05 7.96583E+03 1.08341E-02
-  10.0000 2.11628E+06 7.01336E+03 9.04915E-03
-
- Reaction rate for Z= 73 A=184 (184Ta)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 3.44081E-30 7.01960E-36
-   5.0000 2.58070E+02 1.60834E-22 2.93477E-28
-   6.0000 1.08300E+03 2.24835E-17 3.74516E-23
-   7.0000 6.56051E+03 1.87433E-13 2.89054E-19
-   8.0000 4.49565E+04 1.87945E-10 2.71124E-16
-   9.0000 3.11097E+05 3.33433E-08 4.53492E-14
-  10.0000 2.11628E+06 1.64902E-06 2.12768E-12
-
- Reaction rate for Z= 72 A=184 (184Hf)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 0.00000E+00 0.00000E+00
-   5.0000 2.58070E+02 0.00000E+00 0.00000E+00
-   6.0000 1.08300E+03 5.84679E-31 9.73921E-37
-   7.0000 6.56051E+03 1.08497E-24 1.67322E-30
-   8.0000 4.49565E+04 1.49530E-20 2.15707E-26
-   9.0000 3.11097E+05 5.42064E-18 7.37244E-24
-  10.0000 2.11628E+06 4.20041E-16 5.41968E-22
-
- Reaction rate for Z= 75 A=183 (183Re)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 1.02854E-15 2.09833E-21
-   5.0000 2.58070E+02 2.30775E-09 4.21100E-15
-   6.0000 1.08300E+03 3.82463E-05 6.37082E-11
-   7.0000 6.56051E+03 2.28238E-02 3.51983E-08
-   8.0000 4.49565E+04 2.14007E+00 3.08720E-06
-   9.0000 3.11097E+05 7.58829E+01 1.03206E-04
-  10.0000 2.11628E+06 1.35580E+03 1.74936E-03
-
- Reaction rate for Z= 74 A=183 (183W )
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 2.71632E-14 1.10831E-17
-   0.0005 1.00000E+00 6.53171E-14 1.19186E-17
-   0.0010 1.00000E+00 8.80724E-14 1.13637E-17
-   0.0050 1.00000E+00 2.06761E-13 1.19307E-17
-   0.0100 1.00002E+00 2.78477E-13 1.13624E-17
-   0.0500 1.20779E+00 5.15509E-13 9.40661E-18
-   0.1000 1.64517E+00 5.32081E-13 6.86530E-18
-   0.1500 1.95223E+00 5.49923E-13 5.79346E-18
-   0.2000 2.19821E+00 5.67168E-13 5.17462E-18
-   0.2500 2.44688E+00 5.72884E-13 4.67497E-18
-   0.3000 2.72612E+00 5.65182E-13 4.21026E-18
-   0.4000 3.39403E+00 5.24545E-13 3.38403E-18
-   0.5000 4.18187E+00 4.74526E-13 2.73815E-18
-   0.6000 5.05473E+00 4.28497E-13 2.25712E-18
-   0.7000 5.99188E+00 3.89219E-13 1.89813E-18
-   0.8000 6.98412E+00 3.56108E-13 1.62450E-18
-   0.9000 8.02859E+00 3.27979E-13 1.41061E-18
-   1.0000 9.12541E+00 3.03773E-13 1.23946E-18
-   1.5000 1.54559E+01 5.44593E-13 1.81430E-18
-   2.0000 2.34476E+01 2.57736E-09 7.43604E-15
-   2.5000 3.37117E+01 1.32746E-06 3.42557E-12
-   3.0000 4.74664E+01 1.48214E-04 3.49148E-10
-   3.5000 6.71251E+01 6.38832E-03 1.39327E-08
-   4.0000 9.78008E+01 1.42928E-01 2.91588E-07
-   5.0000 2.58070E+02 1.75944E+01 3.21048E-05
-   6.0000 1.08300E+03 4.86598E+02 8.10544E-04
-   7.0000 6.56051E+03 4.36110E+03 6.72556E-03
-   8.0000 4.49565E+04 1.83653E+04 2.64932E-02
-   9.0000 3.11097E+05 4.57493E+04 6.22222E-02
-  10.0000 2.11628E+06 7.76740E+04 1.00221E-01
-
- Reaction rate for Z= 73 A=183 (183Ta)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 2.71632E-14 1.10831E-17
-   0.0005 1.00000E+00 6.53171E-14 1.19186E-17
-   0.0010 1.00000E+00 8.80724E-14 1.13637E-17
-   0.0050 1.00000E+00 2.06761E-13 1.19307E-17
-   0.0100 1.00002E+00 2.78477E-13 1.13624E-17
-   0.0500 1.20779E+00 5.15509E-13 9.40661E-18
-   0.1000 1.64517E+00 5.32081E-13 6.86530E-18
-   0.1500 1.95223E+00 5.49923E-13 5.79346E-18
-   0.2000 2.19821E+00 5.67168E-13 5.17462E-18
-   0.2500 2.44688E+00 5.72884E-13 4.67497E-18
-   0.3000 2.72612E+00 5.65182E-13 4.21026E-18
-   0.4000 3.39403E+00 5.24545E-13 3.38403E-18
-   0.5000 4.18187E+00 4.74526E-13 2.73815E-18
-   0.6000 5.05473E+00 4.28497E-13 2.25712E-18
-   0.7000 5.99188E+00 3.89219E-13 1.89813E-18
-   0.8000 6.98412E+00 3.56108E-13 1.62450E-18
-   0.9000 8.02859E+00 3.27979E-13 1.41061E-18
-   1.0000 9.12541E+00 3.03773E-13 1.23945E-18
-   1.5000 1.54559E+01 2.19231E-13 7.30362E-19
-   2.0000 2.34476E+01 1.67060E-13 4.81990E-19
-   2.5000 3.37117E+01 1.30102E-13 3.35733E-19
-   3.0000 4.74664E+01 1.02805E-13 2.42179E-19
-   3.5000 6.71251E+01 5.42347E-13 1.18284E-18
-   4.0000 9.78008E+01 4.82143E-11 9.83621E-17
-   5.0000 2.58070E+02 6.00013E-08 1.09486E-13
-   6.0000 1.08300E+03 9.85692E-06 1.64190E-11
-   7.0000 6.56051E+03 4.12951E-04 6.36842E-10
-   8.0000 4.49565E+04 7.14310E-03 1.03044E-08
-   9.0000 3.11097E+05 5.95882E-02 8.10440E-08
-  10.0000 2.11628E+06 2.70581E-01 3.49124E-07
-
- Reaction rate for Z= 72 A=183 (183Hf)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 0.00000E+00 0.00000E+00
-   3.5000 6.71251E+01 0.00000E+00 0.00000E+00
-   4.0000 9.78008E+01 0.00000E+00 0.00000E+00
-   5.0000 2.58070E+02 0.00000E+00 0.00000E+00
-   6.0000 1.08300E+03 1.19870E-29 1.99671E-35
-   7.0000 6.56051E+03 7.37067E-24 1.13668E-29
-   8.0000 4.49565E+04 7.98779E-20 1.15230E-25
-   9.0000 3.11097E+05 2.85194E-17 3.87883E-23
-  10.0000 2.11628E+06 2.19607E-15 2.83353E-21
-
- Reaction rate for Z= 74 A=182 (182W )
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 3.41321E-32 1.13710E-37
-   2.0000 2.34476E+01 2.48630E-21 7.17333E-27
-   2.5000 3.37117E+01 1.76497E-15 4.55458E-21
-   3.0000 4.74664E+01 1.93758E-11 4.56437E-17
-   3.5000 6.71251E+01 2.11807E-08 4.61943E-14
-   4.0000 9.78008E+01 5.01589E-06 1.02329E-11
-   5.0000 2.58070E+02 1.51840E-02 2.77066E-08
-   6.0000 1.08300E+03 3.36261E+00 5.60123E-06
-   7.0000 6.56051E+03 1.41833E+02 2.18731E-04
-   8.0000 4.49565E+04 2.15255E+03 3.10520E-03
-   9.0000 3.11097E+05 1.52043E+04 2.06789E-02
-  10.0000 2.11628E+06 5.94869E+04 7.67543E-02
-
- Reaction rate for Z= 73 A=182 (182Ta)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 7.35642E-29 1.89836E-34
-   3.0000 4.74664E+01 3.00408E-23 7.07673E-29
-   3.5000 6.71251E+01 4.67675E-19 1.01998E-24
-   4.0000 9.78008E+01 9.10883E-16 1.85829E-21
-   5.0000 2.58070E+02 9.74439E-11 1.77808E-16
-   6.0000 1.08300E+03 3.31579E-07 5.52323E-13
-   7.0000 6.56051E+03 9.44813E-05 1.45706E-10
-   8.0000 4.49565E+04 5.59992E-03 8.07827E-09
-   9.0000 3.11097E+05 1.12810E-01 1.53430E-07
-  10.0000 2.11628E+06 1.03271E+00 1.33248E-06
-
- Reaction rate for Z= 72 A=182 (182Hf)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 3.02531E-35 7.12675E-41
-   3.5000 6.71251E+01 1.04509E-30 2.27931E-36
-   4.0000 9.78008E+01 2.64343E-26 5.39287E-32
-   5.0000 2.58070E+02 2.74323E-20 5.00563E-26
-   6.0000 1.08300E+03 5.12662E-16 8.53960E-22
-   7.0000 6.56051E+03 7.44829E-13 1.14865E-18
-   8.0000 4.49565E+04 2.05414E-10 2.96324E-16
-   9.0000 3.11097E+05 1.55689E-08 2.11748E-14
-  10.0000 2.11628E+06 4.25208E-07 5.48634E-13
-
- Reaction rate for Z= 73 A=181 (181Ta)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 1.53831E-29 3.96969E-35
-   3.0000 4.74664E+01 3.42355E-24 8.06489E-30
-   3.5000 6.71251E+01 3.51970E-20 7.67633E-26
-   4.0000 9.78008E+01 4.63285E-17 9.45149E-23
-   5.0000 2.58070E+02 1.22055E-12 2.22716E-18
-   6.0000 1.08300E+03 2.56994E-09 4.28084E-15
-   7.0000 6.56051E+03 2.30508E-06 3.55483E-12
-   8.0000 4.49565E+04 4.42037E-04 6.37669E-10
-   9.0000 3.11097E+05 2.30801E-02 3.13905E-08
-  10.0000 2.11628E+06 4.56448E-01 5.88942E-07
-
- Reaction rate for Z= 72 A=181 (181Hf)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0005 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0010 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0050 1.00000E+00 0.00000E+00 0.00000E+00
-   0.0100 1.00002E+00 0.00000E+00 0.00000E+00
-   0.0500 1.20779E+00 0.00000E+00 0.00000E+00
-   0.1000 1.64517E+00 0.00000E+00 0.00000E+00
-   0.1500 1.95223E+00 0.00000E+00 0.00000E+00
-   0.2000 2.19821E+00 0.00000E+00 0.00000E+00
-   0.2500 2.44688E+00 0.00000E+00 0.00000E+00
-   0.3000 2.72612E+00 0.00000E+00 0.00000E+00
-   0.4000 3.39403E+00 0.00000E+00 0.00000E+00
-   0.5000 4.18187E+00 0.00000E+00 0.00000E+00
-   0.6000 5.05473E+00 0.00000E+00 0.00000E+00
-   0.7000 5.99188E+00 0.00000E+00 0.00000E+00
-   0.8000 6.98412E+00 0.00000E+00 0.00000E+00
-   0.9000 8.02859E+00 0.00000E+00 0.00000E+00
-   1.0000 9.12541E+00 0.00000E+00 0.00000E+00
-   1.5000 1.54559E+01 0.00000E+00 0.00000E+00
-   2.0000 2.34476E+01 0.00000E+00 0.00000E+00
-   2.5000 3.37117E+01 0.00000E+00 0.00000E+00
-   3.0000 4.74664E+01 3.81534E-36 8.98782E-42
-   3.5000 6.71251E+01 1.12658E-31 2.45702E-37
-   4.0000 9.78008E+01 1.44192E-27 2.94166E-33
-   5.0000 2.58070E+02 1.26825E-21 2.31421E-27
-   6.0000 1.08300E+03 4.59166E-17 7.64850E-23
-   7.0000 6.56051E+03 3.01686E-13 4.65252E-19
-   8.0000 4.49565E+04 2.49813E-10 3.60372E-16
-   9.0000 3.11097E+05 3.91966E-08 5.33100E-14
-  10.0000 2.11628E+06 1.79117E-06 2.31109E-12
-
- Reaction rate for Z= 72 A=180 (180Hf)
-
-    T        G(T)        Rate       MACS 
-
-   0.0001 1.00000E+00 2.71632E-14 1.10831E-17
-   0.0005 1.00000E+00 6.53171E-14 1.19186E-17
-   0.0010 1.00000E+00 8.80724E-14 1.13637E-17
-   0.0050 1.00000E+00 2.06761E-13 1.19307E-17
-   0.0100 1.00002E+00 2.78477E-13 1.13624E-17
-   0.0500 1.20779E+00 5.15509E-13 9.40661E-18
-   0.1000 1.64517E+00 5.32081E-13 6.86530E-18
-   0.1500 1.95223E+00 5.49923E-13 5.79346E-18
-   0.2000 2.19821E+00 5.67168E-13 5.17462E-18
-   0.2500 2.44688E+00 5.72884E-13 4.67497E-18
-   0.3000 2.72612E+00 5.65182E-13 4.21026E-18
-   0.4000 3.39403E+00 5.24545E-13 3.38403E-18
-   0.5000 4.18187E+00 4.74526E-13 2.73815E-18
-   0.6000 5.05473E+00 4.28497E-13 2.25712E-18
-   0.7000 5.99188E+00 3.89219E-13 1.89813E-18
-   0.8000 6.98412E+00 3.56108E-13 1.62450E-18
-   0.9000 8.02859E+00 3.27979E-13 1.41061E-18
-   1.0000 9.12541E+00 3.03773E-13 1.23945E-18
-   1.5000 1.54559E+01 2.19231E-13 7.30362E-19
-   2.0000 2.34476E+01 1.67074E-13 4.82031E-19
-   2.5000 3.37117E+01 1.33391E-13 3.44222E-19
-   3.0000 4.74664E+01 3.49057E-13 8.22275E-19
-   3.5000 6.71251E+01 1.01352E-11 2.21044E-17
-   4.0000 9.78008E+01 2.62801E-10 5.36140E-16
-   5.0000 2.58070E+02 7.65837E-08 1.39744E-13
-   6.0000 1.08300E+03 6.87422E-06 1.14506E-11
-   7.0000 6.56051E+03 1.93067E-04 2.97743E-10
-   8.0000 4.49565E+04 2.56775E-03 3.70415E-09
-   9.0000 3.11097E+05 1.88881E-02 2.56891E-08
-  10.0000 2.11628E+06 8.07123E-02 1.04141E-07
-
- Execution time:  0 hours  2 minutes 10.32 seconds 
+file: astrorate076188.tot
+file: astrorate076187.tot
+file: astrorate075187.tot
+file: astrorate076186.tot
+file: astrorate075186.tot
+file: astrorate074186.tot
+file: astrorate076185.tot
+file: astrorate075185.tot
+file: astrorate074185.tot
+file: astrorate073185.tot
+file: astrorate076184.tot
+file: astrorate075184.tot
+file: astrorate074184.tot
+file: astrorate073184.tot
+file: astrorate072184.tot
+file: astrorate075183.tot
+file: astrorate074183.tot
+file: astrorate073183.tot
+file: astrorate072183.tot
+file: astrorate074182.tot
+file: astrorate073182.tot
+file: astrorate072182.tot
+file: astrorate073181.tot
+file: astrorate072181.tot
+file: astrorate072180.tot
+file: astrorate.g
+file: astrorate.p
+file: astrorate.a
+file: astrorate.tot
+
+ Execution time:  0 hours  9 minutes 36.52 seconds 
 
  The TALYS team congratulates you with this successful calculation.

@@ -1,35 +1,37 @@
-# header:
+# header: 
 #   title: Fe54(p,x)Sc42g cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 54
 #   nuclide: Fe54
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -3.219070E+01
-#   E-threshold [MeV]:  3.279183E+01
+#   Q-value [MeV]: -3.218989E+01
+#   E-threshold [MeV]:  3.279133E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 21
-#   A: 42
-#   nuclide: Sc42g
-#   mass [amu]:  4.196552E+01
-#   level: 
-#     number: 0
-#     energy [MeV]:  0.000000E+00
-#     spin:  0.000000E+00
-#     parity: 1
-#     isomer: 0
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 24
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 21
+#     A: 42
+#     nuclide: Sc42g
+#   parameters: 
+#     mass [amu]:  4.196552E+01
+#     level: 
+#       number: 0
+#       energy [MeV]:  0.000000E+00
+#       spin:  0.000000E+00
+#       parity: 1
+#       isomer: 0
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 24
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    2.000000E+00   0.000000E+00   0.000000E+00
@@ -51,7 +53,7 @@
    4.500000E+01   0.000000E+00   0.000000E+00
    5.000000E+01   0.000000E+00   0.000000E+00
    6.000000E+01   0.000000E+00   0.000000E+00
-   7.000000E+01   3.436064E-03   5.343369E-01
-   8.000000E+01   3.915914E-03   5.322276E-01
-   9.000000E+01   7.402799E-03   4.999238E-01
-   1.000000E+02   4.408938E-02   4.833006E-01
+   7.000000E+01   2.645236E-03   4.960420E-01
+   8.000000E+01   2.987277E-03   4.936484E-01
+   9.000000E+01   7.187895E-03   5.042121E-01
+   1.000000E+02   4.592675E-02   4.177248E-01

@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Sn120(n,x)In119g cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 50
 #   A: 120
 #   nuclide: Sn120
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -8.463481E+00
-#   E-threshold [MeV]:  8.534679E+00
+#   Q-value [MeV]: -8.463653E+00
+#   E-threshold [MeV]:  8.534853E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 49
-#   A: 119
-#   nuclide: In119g
-#   mass [amu]:  1.189059E+02
-#   level: 
-#     number: 0
-#     energy [MeV]:  0.000000E+00
-#     spin:  4.500000E+00
-#     parity: 1
-#     isomer: 0
-#     half-life [sec]:  1.440000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 34
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 49
+#     A: 119
+#     nuclide: In119g
+#   parameters: 
+#     mass [amu]:  1.189059E+02
+#     level: 
+#       number: 0
+#       energy [MeV]:  0.000000E+00
+#       spin:  4.500000E+00
+#       parity: 1
+#       isomer: 0
+#       half-life [sec]:  1.440000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 34
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-02   0.000000E+00   0.000000E+00
    2.000000E-02   0.000000E+00   0.000000E+00
@@ -59,10 +61,10 @@
    1.100000E+01   0.000000E+00   0.000000E+00
    1.200000E+01   0.000000E+00   0.000000E+00
    1.300000E+01   0.000000E+00   0.000000E+00
-   1.400000E+01   3.490956E-03   6.374182E-01
-   1.500000E+01   4.482109E-02   6.666823E-01
-   1.600000E+01   2.587412E-01   7.027360E-01
-   1.700000E+01   8.951689E-01   7.131258E-01
-   1.800000E+01   2.243517E+00   7.263067E-01
-   1.900000E+01   4.328596E+00   7.347721E-01
-   2.000000E+01   7.395646E+00   7.391437E-01
+   1.400000E+01   3.611428E-03   6.510089E-01
+   1.500000E+01   5.349781E-02   7.227905E-01
+   1.600000E+01   3.206654E-01   7.395498E-01
+   1.700000E+01   1.099283E+00   7.427811E-01
+   1.800000E+01   2.838098E+00   7.580379E-01
+   1.900000E+01   4.445123E+00   7.359488E-01
+   2.000000E+01   7.728448E+00   7.533756E-01

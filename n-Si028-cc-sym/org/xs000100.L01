@@ -1,35 +1,36 @@
-# header:
+# header: 
 #   title: Si28(n,t)Al26m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,t)
-#   Q-value [MeV]: -1.638943E+01
-#   E-threshold [MeV]:  1.698033E+01
+#   Q-value [MeV]: -1.638934E+01
+#   E-threshold [MeV]:  1.698024E+01
 #   ENDF_MF: 10
 #   ENDF_MT: 105
-# residual:
-#   Z: 13
-#   A: 26
-#   nuclide: Al26m
-#   level: 
-#     number: 1
-#     energy [MeV]:  2.283050E-01
-#     spin:  0.000000E+00
-#     parity: 1
-#     isomer: 1
-#     half-life [sec]:  6.346000E+00
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 50
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 13
+#     A: 26
+#     nuclide: Al26m
+#     level: 
+#       number: 1
+#       energy [MeV]:  2.283050E-01
+#       spin:  0.000000E+00
+#       parity: 1
+#       isomer: 1
+#       half-life [sec]:  6.346000E+00
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 50
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-01   0.000000E+00   0.000000E+00
    2.000000E-01   0.000000E+00   0.000000E+00
@@ -79,5 +80,5 @@
    1.200000E+01   0.000000E+00   0.000000E+00
    1.400000E+01   0.000000E+00   0.000000E+00
    1.600000E+01   0.000000E+00   0.000000E+00
-   1.800000E+01   5.654295E-05   1.828368E-02
-   2.000000E+01   4.055743E-02   1.182458E-01
+   1.800000E+01   6.538028E-05   1.973556E-02
+   2.000000E+01   4.899748E-02   1.243834E-01

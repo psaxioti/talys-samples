@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Mo100(p,x)Nb94g cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 42
 #   A: 100
 #   nuclide: Mo100
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -1.917388E+01
-#   E-threshold [MeV]:  1.936719E+01
+#   Q-value [MeV]: -1.917364E+01
+#   E-threshold [MeV]:  1.936706E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 41
-#   A: 94
-#   nuclide: Nb94g
-#   mass [amu]:  9.390728E+01
-#   level: 
-#     number: 0
-#     energy [MeV]:  0.000000E+00
-#     spin:  6.000000E+00
-#     parity: 1
-#     isomer: 0
-#     half-life [sec]:  6.438000E+11
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 45
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 41
+#     A: 94
+#     nuclide: Nb94g
+#   parameters: 
+#     mass [amu]:  9.390728E+01
+#     level: 
+#       number: 0
+#       energy [MeV]:  0.000000E+00
+#       spin:  6.000000E+00
+#       parity: 1
+#       isomer: 0
+#       half-life [sec]:  6.438000E+11
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 45
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    8.000000E+00   0.000000E+00   0.000000E+00
    8.500000E+00   0.000000E+00   0.000000E+00
@@ -73,7 +75,7 @@
    2.700000E+01   0.000000E+00   0.000000E+00
    2.750000E+01   0.000000E+00   0.000000E+00
    2.800000E+01   0.000000E+00   0.000000E+00
-   2.850000E+01   1.306607E-03   5.726907E-01
-   2.900000E+01   2.696503E-03   5.887128E-01
-   2.950000E+01   1.235721E-02   5.779506E-01
-   3.000000E+01   2.181501E-02   5.788814E-01
+   2.850000E+01   2.018785E-03   5.824662E-01
+   2.900000E+01   4.280570E-03   5.808142E-01
+   2.950000E+01   1.635683E-02   6.296412E-01
+   3.000000E+01   3.596699E-02   5.836586E-01

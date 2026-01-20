@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Ag120
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 47
-#   A: 120
-#   nuclide: Ag120
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 47
+#     A: 120
+#     nuclide: Ag120
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   2.541229E-06   2.606177E-06   1.346419E-05   1.380838E-05
-   1.600000E+00   2.445772E-08   9.794745E-09   2.518110E-06   1.008450E-06
-   5.500000E+00   5.457436E-05   3.564497E-05   3.082338E-02   2.013226E-02
-   1.000000E+01   9.816771E-05   5.475337E-05   6.052209E-02   3.375659E-02
+   1.000000E+00   2.153212E-06   4.237233E-06   1.402554E-05   2.760056E-05
+   1.600000E+00   2.718576E-07   1.114702E-08   2.313960E-05   9.488024E-07
+   5.500000E+00   5.619073E-05   3.610415E-05   3.204622E-02   2.059074E-02
+   1.000000E+01   9.141932E-05   6.917728E-05   5.583498E-02   4.225073E-02

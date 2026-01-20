@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Fe58(p,x)Co54m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 58
 #   nuclide: Fe58
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -4.740994E+01
-#   E-threshold [MeV]:  4.823425E+01
+#   Q-value [MeV]: -4.740999E+01
+#   E-threshold [MeV]:  4.823475E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 27
-#   A: 54
-#   nuclide: Co54m
-#   mass [amu]:  5.394846E+01
-#   level: 
-#     number: 1
-#     energy [MeV]:  1.971000E-01
-#     spin:  7.000000E+00
-#     parity: 1
-#     isomer: 1
-#     half-life [sec]:  8.880000E+01
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 24
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 27
+#     A: 54
+#     nuclide: Co54m
+#   parameters: 
+#     mass [amu]:  5.394846E+01
+#     level: 
+#       number: 1
+#       energy [MeV]:  1.971000E-01
+#       spin:  7.000000E+00
+#       parity: 1
+#       isomer: 1
+#       half-life [sec]:  8.880000E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 24
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    2.000000E+00   0.000000E+00   0.000000E+00
@@ -51,8 +53,8 @@
    4.000000E+01   0.000000E+00   0.000000E+00
    4.500000E+01   0.000000E+00   0.000000E+00
    5.000000E+01   0.000000E+00   0.000000E+00
-   6.000000E+01   3.395931E-02   5.894119E-01
-   7.000000E+01   4.288384E-02   4.878229E-01
-   8.000000E+01   2.897424E-02   4.508368E-01
-   9.000000E+01   2.169211E-02   4.385846E-01
-   1.000000E+02   1.707317E-02   4.286332E-01
+   6.000000E+01   9.260125E-02   6.936094E-01
+   7.000000E+01   8.775382E-02   5.605705E-01
+   8.000000E+01   5.316791E-02   5.087458E-01
+   9.000000E+01   3.702157E-02   4.915818E-01
+   1.000000E+02   2.806211E-02   4.728712E-01

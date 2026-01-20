@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Ho165(a,x)Er164 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 67
 #   A: 165
 #   nuclide: Ho165
-# reaction:
+# reaction: 
 #   type: (a,x)
-#   Q-value [MeV]: -2.762297E+01
-#   E-threshold [MeV]:  2.829334E+01
+#   Q-value [MeV]: -2.762316E+01
+#   E-threshold [MeV]:  2.829353E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 68
-#   A: 164
-#   nuclide: Er164
-#   mass [amu]:  1.639292E+02
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 19
+#   residual: 
+#     Z: 68
+#     A: 164
+#     nuclide: Er164
+#   parameters: 
+#     mass [amu]:  1.639292E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 19
 ##       E             xs
 ##     [MeV]          [mb]
    1.200000E+01   0.000000E+00
@@ -42,5 +44,5 @@
    3.200000E+01   0.000000E+00
    3.400000E+01   0.000000E+00
    3.600000E+01   0.000000E+00
-   3.800000E+01   9.706968E-03
-   4.000000E+01   8.253176E-02
+   3.800000E+01   9.683721E-03
+   4.000000E+01   8.436706E-02

@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Pu242(n,x)Np242m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 242
 #   nuclide: Pu242
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -2.167647E+00
-#   E-threshold [MeV]:  2.176680E+00
+#   Q-value [MeV]: -2.167580E+00
+#   E-threshold [MeV]:  2.176612E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 93
-#   A: 242
-#   nuclide: Np242m
-#   mass [amu]:  2.420616E+02
-#   level: 
-#     number: 3
-#     energy [MeV]:  2.500000E-01
-#     spin:  6.000000E+00
-#     parity: 1
-#     isomer: 1
-#     half-life [sec]:  3.300000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 19
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 93
+#     A: 242
+#     nuclide: Np242m
+#   parameters: 
+#     mass [amu]:  2.420616E+02
+#     level: 
+#       number: 3
+#       energy [MeV]:  2.500000E-01
+#       spin:  6.000000E+00
+#       parity: 1
+#       isomer: 1
+#       half-life [sec]:  3.300000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 19
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-11   0.000000E+00   0.000000E+00
    2.530000E-08   0.000000E+00   0.000000E+00
@@ -46,8 +48,8 @@
    2.000000E+00   0.000000E+00   0.000000E+00
    3.000000E+00   0.000000E+00   0.000000E+00
    4.000000E+00   0.000000E+00   0.000000E+00
-   6.000000E+00   7.082443E-10   1.699394E-01
-   8.000000E+00   6.649386E-06   2.417945E-01
-   1.000000E+01   9.688036E-04   2.786863E-01
-   1.400000E+01   2.031267E-01   3.527003E-01
-   2.000000E+01   3.600470E+00   4.040910E-01
+   6.000000E+00   2.065583E-09   3.145122E-01
+   8.000000E+00   2.124267E-05   3.955967E-01
+   1.000000E+01   2.105166E-03   3.773316E-01
+   1.400000E+01   2.760260E-01   3.918205E-01
+   2.000000E+01   4.311718E+00   4.723100E-01

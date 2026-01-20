@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Mo100(p,x)Mo96 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 42
 #   A: 100
 #   nuclide: Mo100
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -2.120161E+01
-#   E-threshold [MeV]:  2.141537E+01
+#   Q-value [MeV]: -2.120158E+01
+#   E-threshold [MeV]:  2.141545E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 42
-#   A: 96
-#   nuclide: Mo96
-#   mass [amu]:  9.590467E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 45
+#   residual: 
+#     Z: 42
+#     A: 96
+#     nuclide: Mo96
+#   parameters: 
+#     mass [amu]:  9.590467E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 45
 ##       E             xs
 ##     [MeV]          [mb]
    8.000000E+00   0.000000E+00
@@ -63,10 +65,10 @@
    2.550000E+01   0.000000E+00
    2.600000E+01   0.000000E+00
    2.650000E+01   0.000000E+00
-   2.700000E+01   1.474045E-03
-   2.750000E+01   4.279049E-03
-   2.800000E+01   1.108230E-02
-   2.850000E+01   2.498315E-02
-   2.900000E+01   4.763906E-02
-   2.950000E+01   8.291416E-02
-   3.000000E+01   1.378888E-01
+   2.700000E+01   1.545093E-03
+   2.750000E+01   4.749152E-03
+   2.800000E+01   1.204865E-02
+   2.850000E+01   2.610567E-02
+   2.900000E+01   4.930727E-02
+   2.950000E+01   8.886791E-02
+   3.000000E+01   1.460388E-01

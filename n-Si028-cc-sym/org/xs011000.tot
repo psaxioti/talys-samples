@@ -1,26 +1,29 @@
-# header:
+# header: 
 #   title: Si28(n,pd)Mg26 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,pd)
-#   Q-value [MeV]: -1.763162E+01
-#   E-threshold [MeV]:  1.826730E+01
-# residual:
-#   Z: 12
-#   A: 26
-#   nuclide: Mg26
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 50
-##       E             xs          gamma xs    xs/res.prod.xs
+#   Q-value [MeV]: -1.763172E+01
+#   E-threshold [MeV]:  1.826740E+01
+#   ENDF_MF: 3
+#   ENDF_MT: 115
+#   residual: 
+#     Z: 12
+#     A: 26
+#     nuclide: Mg26
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 50
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-01   0.000000E+00   0.000000E+00   0.000000E+00
@@ -71,4 +74,4 @@
    1.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    1.600000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    1.800000E+01   0.000000E+00   0.000000E+00   0.000000E+00
-   2.000000E+01   1.059812E-03   6.187911E-09   2.664360E-03
+   2.000000E+01   1.382993E-03   8.145113E-09   3.015838E-03

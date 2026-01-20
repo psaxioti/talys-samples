@@ -1,26 +1,27 @@
-# header:
+# header: 
 #   title: Pu242(n,f) cross section for La139
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 242
 #   nuclide: Pu242
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 57
-#   A: 139
-#   nuclide: La139
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 19
-##       E            FP xs
+#   residual: 
+#     Z: 57
+#     A: 139
+#     nuclide: La139
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 19
+##       E            FP_xs
 ##     [MeV]          [mb]
    1.000000E-11   0.000000E+00
    2.530000E-08   0.000000E+00
@@ -30,14 +31,14 @@
    1.000000E-02   0.000000E+00
    1.000000E-01   0.000000E+00
    2.000000E-01   0.000000E+00
-   5.000000E-01   9.569192E-04
-   1.000000E+00   0.000000E+00
-   1.500000E+00   2.344094E-06
+   5.000000E-01   9.475785E-04
+   1.000000E+00   2.329433E-07
+   1.500000E+00   4.878128E-06
    2.000000E+00   0.000000E+00
-   3.000000E+00   1.137005E-05
-   4.000000E+00   3.878624E-06
-   6.000000E+00   1.386343E-03
-   8.000000E+00   5.499122E-03
-   1.000000E+01   3.626897E-03
-   1.400000E+01   1.273365E-02
-   2.000000E+01   2.488318E-02
+   3.000000E+00   0.000000E+00
+   4.000000E+00   3.331071E-06
+   6.000000E+00   1.416994E-03
+   8.000000E+00   9.827573E-03
+   1.000000E+01   1.195957E-02
+   1.400000E+01   1.176542E-02
+   2.000000E+01   4.528169E-02

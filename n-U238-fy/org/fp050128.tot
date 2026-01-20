@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Sn128
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 50
-#   A: 128
-#   nuclide: Sn128
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 50
+#     A: 128
+#     nuclide: Sn128
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.216798E-03   5.944384E-04   6.446959E-03   3.149530E-03
-   1.600000E+00   1.527387E-03   6.166124E-04   1.572562E-01   6.348536E-02
-   5.500000E+00   2.122803E-03   8.594959E-04   1.198951E+00   4.854428E-01
-   1.000000E+01   3.233707E-03   9.773532E-04   1.993636E+00   6.025586E-01
+   1.000000E+00   1.082644E-03   5.257173E-04   7.052104E-03   3.424427E-03
+   1.600000E+00   1.519098E-03   6.133101E-04   1.293005E-01   5.220321E-02
+   5.500000E+00   2.216602E-03   9.221454E-04   1.264154E+00   5.259134E-01
+   1.000000E+01   3.232582E-03   9.557529E-04   1.974322E+00   5.837359E-01

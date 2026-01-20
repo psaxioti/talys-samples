@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Co67
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 27
-#   A: 67
-#   nuclide: Co67
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 27
+#     A: 67
+#     nuclide: Co67
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []             []             []
    1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   5.500000E+00   1.252576E-05   1.252568E-05   7.074498E-03   7.074498E-03
-   1.000000E+01   8.917631E-06   9.328027E-06   5.497874E-03   5.750922E-03
+   5.500000E+00   1.275583E-05   1.275575E-05   7.274795E-03   7.274795E-03
+   1.000000E+01   1.023691E-05   1.023686E-05   6.252266E-03   6.252270E-03

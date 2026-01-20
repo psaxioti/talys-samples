@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for I138
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 53
-#   A: 138
-#   nuclide: I138
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 53
+#     A: 138
+#     nuclide: I138
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   3.090408E-02   2.629741E-02   1.637390E-01   1.393323E-01
-   1.600000E+00   3.159570E-02   2.763604E-02   3.253020E+00   2.845359E+00
-   5.500000E+00   2.979930E-02   2.717834E-02   1.683053E+01   1.535031E+01
-   1.000000E+01   2.512819E-02   3.010990E-02   1.549196E+01   1.856338E+01
+   1.000000E+00   3.036692E-02   2.627005E-02   1.978034E-01   1.711183E-01
+   1.600000E+00   3.160106E-02   2.757849E-02   2.689776E+00   2.347402E+00
+   5.500000E+00   2.980474E-02   2.698818E-02   1.699799E+01   1.539176E+01
+   1.000000E+01   2.530720E-02   3.008018E-02   1.545655E+01   1.837178E+01

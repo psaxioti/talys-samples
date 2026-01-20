@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Kr95
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 36
-#   A: 95
-#   nuclide: Kr95
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 36
+#     A: 95
+#     nuclide: Kr95
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.415117E-03   5.446014E-03   7.497710E-03   2.885477E-02
-   1.600000E+00   1.127671E-03   5.147109E-03   1.161024E-01   5.299376E-01
-   5.500000E+00   8.738343E-04   3.689313E-03   4.935381E-01   2.083722E+00
-   1.000000E+01   7.043774E-04   3.140735E-03   4.342609E-01   1.936328E+00
+   1.000000E+00   1.523223E-03   5.462443E-03   9.921935E-03   3.558135E-02
+   1.600000E+00   1.134675E-03   5.153731E-03   9.657971E-02   4.386709E-01
+   5.500000E+00   8.683272E-04   3.824890E-03   4.952170E-01   2.181392E+00
+   1.000000E+01   6.939629E-04   3.198531E-03   4.238426E-01   1.953535E+00

@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Gd169
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 64
-#   A: 169
-#   nuclide: Gd169
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 64
+#     A: 169
+#     nuclide: Gd169
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
-   1.000000E+00   8.299583E-08   1.943225E-05   4.397367E-07   1.029584E-04
-   1.600000E+00   7.973007E-10   1.587548E-07   8.208822E-08   1.634512E-05
-   5.500000E+00   1.661424E-09   2.954520E-05   9.383659E-07   1.668711E-02
-   1.000000E+01   7.453211E-07   3.869374E-05   4.595034E-04   2.385550E-02
+   1.000000E+00   0.000000E+00   1.360505E-05   0.000000E+00   8.862083E-05
+   1.600000E+00   1.814979E-08   5.225295E-07   1.544849E-06   4.447622E-05
+   5.500000E+00   1.844841E-09   3.517918E-05   1.052134E-06   2.006322E-02
+   1.000000E+01   2.380157E-06   2.951598E-05   1.453697E-03   1.802719E-02

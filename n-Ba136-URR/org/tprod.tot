@@ -1,21 +1,22 @@
-# header:
+# header: 
 #   title: Ba136(n,xt) cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 56
 #   A: 136
 #   nuclide: Ba136
-# reaction:
+# reaction: 
 #   type: (n,xt)
 #   ENDF_MF: 3
 #   ENDF_MT: 205
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 10
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 10
 ##       E             xs        Multiplicity
 ##     [MeV]          [mb]            []
    1.000000E-03   0.000000E+00   0.000000E+00

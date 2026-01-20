@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Fe54(p,x)V45 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 54
 #   nuclide: Fe54
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -3.807167E+01
-#   E-threshold [MeV]:  3.878263E+01
+#   Q-value [MeV]: -3.807115E+01
+#   E-threshold [MeV]:  3.878248E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 23
-#   A: 45
-#   nuclide: V45
-#   mass [amu]:  4.496577E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 24
+#   residual: 
+#     Z: 23
+#     A: 45
+#     nuclide: V45
+#   parameters: 
+#     mass [amu]:  4.496577E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 24
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -44,8 +46,8 @@
    4.000000E+01   0.000000E+00
    4.500000E+01   0.000000E+00
    5.000000E+01   0.000000E+00
-   6.000000E+01   1.926740E-03
-   7.000000E+01   5.600190E-03
-   8.000000E+01   5.505153E-03
-   9.000000E+01   8.987763E-03
-   1.000000E+02   3.278944E-02
+   6.000000E+01   1.621308E-03
+   7.000000E+01   4.500924E-03
+   8.000000E+01   4.285789E-03
+   9.000000E+01   9.796345E-03
+   1.000000E+02   3.104451E-02

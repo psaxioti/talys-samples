@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Ho165(a,x)Ho164m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 67
 #   A: 165
 #   nuclide: Ho165
-# reaction:
+# reaction: 
 #   type: (a,x)
-#   Q-value [MeV]: -8.128602E+00
-#   E-threshold [MeV]:  8.325871E+00
+#   Q-value [MeV]: -8.128598E+00
+#   E-threshold [MeV]:  8.325866E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 67
-#   A: 164
-#   nuclide: Ho164m
-#   mass [amu]:  1.639302E+02
-#   level: 
-#     number: 3
-#     energy [MeV]:  1.397800E-01
-#     spin:  6.000000E+00
-#     parity: -1
-#     isomer: 1
-#     half-life [sec]:  2.196000E+03
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 19
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 67
+#     A: 164
+#     nuclide: Ho164m
+#   parameters: 
+#     mass [amu]:  1.639302E+02
+#     level: 
+#       number: 3
+#       energy [MeV]:  1.397800E-01
+#       spin:  6.000000E+00
+#       parity: -1
+#       isomer: 1
+#       half-life [sec]:  2.196000E+03
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 19
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.200000E+01   0.000000E+00   0.000000E+00
    1.300000E+01   0.000000E+00   0.000000E+00
@@ -41,13 +43,13 @@
    1.800000E+01   0.000000E+00   0.000000E+00
    1.900000E+01   0.000000E+00   0.000000E+00
    2.000000E+01   0.000000E+00   0.000000E+00
-   2.200000E+01   1.929796E-03   2.338135E-01
-   2.400000E+01   3.812866E-02   2.161624E-01
-   2.600000E+01   8.630684E-01   2.136238E-01
-   2.800000E+01   9.910620E+00   2.161444E-01
-   3.000000E+01   2.284116E+01   2.141884E-01
-   3.200000E+01   2.021243E+01   2.126023E-01
-   3.400000E+01   1.979347E+01   2.085623E-01
-   3.600000E+01   1.977984E+01   2.070702E-01
-   3.800000E+01   1.762963E+01   2.050099E-01
-   4.000000E+01   1.602422E+01   2.042722E-01
+   2.200000E+01   2.677328E-03   5.500852E-01
+   2.400000E+01   3.044801E-02   5.763205E-01
+   2.600000E+01   2.893342E-01   5.783644E-01
+   2.800000E+01   1.579410E+00   5.844615E-01
+   3.000000E+01   5.179840E+00   5.960396E-01
+   3.200000E+01   9.728666E+00   5.926844E-01
+   3.400000E+01   1.868128E+01   5.985613E-01
+   3.600000E+01   2.924755E+01   5.976108E-01
+   3.800000E+01   3.898945E+01   5.986872E-01
+   4.000000E+01   4.973523E+01   5.962040E-01

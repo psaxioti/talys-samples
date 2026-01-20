@@ -1,27 +1,28 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Pr147
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 59
-#   A: 147
-#   nuclide: Pr147
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 3
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 59
+#     A: 147
+#     nuclide: Pr147
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 3
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   8.288979E-04   1.307220E-04   1.490252E+02   2.351543E+01
+   1.000000E-06   7.919847E-04   1.307219E-04   6.640738E+01   1.097351E+01

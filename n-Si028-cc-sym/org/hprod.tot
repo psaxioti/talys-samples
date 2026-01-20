@@ -1,21 +1,22 @@
-# header:
+# header: 
 #   title: Si28(n,xh) cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,xh)
 #   ENDF_MF: 3
 #   ENDF_MT: 206
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 50
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 50
 ##       E             xs        Multiplicity
 ##     [MeV]          [mb]            []
    1.000000E-01   0.000000E+00   0.000000E+00
@@ -64,7 +65,7 @@
    9.500000E+00   0.000000E+00   0.000000E+00
    1.000000E+01   0.000000E+00   0.000000E+00
    1.200000E+01   0.000000E+00   0.000000E+00
-   1.400000E+01   1.116939E-06   1.033395E-09
-   1.600000E+01   1.781817E-02   1.721158E-05
-   1.800000E+01   1.395651E-01   1.405592E-04
-   2.000000E+01   3.967204E-01   4.153846E-04
+   1.400000E+01   1.121769E-06   1.075179E-09
+   1.600000E+01   1.880073E-02   1.888718E-05
+   1.800000E+01   1.539320E-01   1.620341E-04
+   2.000000E+01   4.571935E-01   5.024939E-04

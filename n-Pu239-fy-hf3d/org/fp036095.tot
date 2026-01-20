@@ -1,27 +1,28 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Kr95
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 36
-#   A: 95
-#   nuclide: Kr95
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 3
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 36
+#     A: 95
+#     nuclide: Kr95
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 3
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   1.410591E-04   6.963756E-04   2.536062E+01   1.252702E+02
+   1.000000E-06   1.400626E-04   6.963752E-04   1.174416E+01   5.845753E+01

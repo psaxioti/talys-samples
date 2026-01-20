@@ -1,14 +1,14 @@
-# header:
-#   title: Pb208(n,n_1) angular distribution at  1.100000E+01 MeV
-#   source: TALYS-2.0
+# header: 
+#   title: Pb208(n,n_1) angular distribution at 1.100000E+01 MeV
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,n_1)
 #   ENDF_MF: 4
 #   ENDF_MT: 51
@@ -18,10 +18,11 @@
 #     energy [MeV]:  2.614522E+00
 #     spin:  3.000000E+00
 #     parity: -1
-# datablock:
-#   quantity: angular distribution
-#   columns: 4
-#   entries: 91
+#   quantity: 
+#     type: angular distribution
+#   datablock: 
+#     columns: 4
+#     entries: 91
 ##     Angle           xs           Direct        Compound
 ##     [deg]         [mb/sr]        [mb/sr]        [mb/sr]
    0.000000E+00   3.418180E+00   3.418180E+00   0.000000E+00

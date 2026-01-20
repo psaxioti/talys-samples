@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Fe57(p,x)Mn50m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 57
 #   nuclide: Fe57
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]: -4.520164E+01
-#   E-threshold [MeV]:  4.600133E+01
+#   Q-value [MeV]: -4.520140E+01
+#   E-threshold [MeV]:  4.600152E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 25
-#   A: 50
-#   nuclide: Mn50m
-#   mass [amu]:  4.995424E+01
-#   level: 
-#     number: 1
-#     energy [MeV]:  2.252800E-01
-#     spin:  5.000000E+00
-#     parity: 1
-#     isomer: 1
-#     half-life [sec]:  1.050000E+02
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 24
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 25
+#     A: 50
+#     nuclide: Mn50m
+#   parameters: 
+#     mass [amu]:  4.995424E+01
+#     level: 
+#       number: 1
+#       energy [MeV]:  2.252800E-01
+#       spin:  5.000000E+00
+#       parity: 1
+#       isomer: 1
+#       half-life [sec]:  1.050000E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 24
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00
    2.000000E+00   0.000000E+00   0.000000E+00
@@ -51,8 +53,8 @@
    4.000000E+01   0.000000E+00   0.000000E+00
    4.500000E+01   0.000000E+00   0.000000E+00
    5.000000E+01   0.000000E+00   0.000000E+00
-   6.000000E+01   5.280029E-03   7.602761E-01
-   7.000000E+01   3.609957E-02   6.329681E-01
-   8.000000E+01   4.360036E-02   5.953586E-01
-   9.000000E+01   6.306915E-02   6.200801E-01
-   1.000000E+02   1.435499E-01   6.042730E-01
+   6.000000E+01   8.436113E-03   7.497628E-01
+   7.000000E+01   5.551496E-02   6.079584E-01
+   8.000000E+01   5.871423E-02   5.621315E-01
+   9.000000E+01   7.368405E-02   6.032196E-01
+   1.000000E+02   1.373224E-01   6.140178E-01

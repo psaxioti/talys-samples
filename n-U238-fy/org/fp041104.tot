@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Nb104
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 41
-#   A: 104
-#   nuclide: Nb104
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 41
+#     A: 104
+#     nuclide: Nb104
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.734413E-02   1.862755E-02   9.189435E-02   9.869488E-02
-   1.600000E+00   1.751006E-02   1.893527E-02   1.802795E+00   1.949543E+00
-   5.500000E+00   1.338635E-02   1.893604E-02   7.560555E+00   1.069507E+01
-   1.000000E+01   1.297222E-02   1.940668E-02   7.997600E+00   1.196462E+01
+   1.000000E+00   1.689879E-02   1.801838E-02   1.100750E-01   1.173685E-01
+   1.600000E+00   1.745798E-02   1.893866E-02   1.485965E+00   1.612004E+00
+   5.500000E+00   1.328568E-02   1.887506E-02   7.576976E+00   1.076473E+01
+   1.000000E+01   1.312758E-02   1.952552E-02   8.017759E+00   1.192541E+01

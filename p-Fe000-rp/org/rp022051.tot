@@ -1,25 +1,26 @@
-# header:
+# header: 
 #   title: Fe0(p,x)Ti51 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 26
 #   A: 0
 #   nuclide: Fe0
-# reaction:
+# reaction: 
 #   type: (p,x)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 22
-#   A: 51
-#   nuclide: Ti51
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 24
+#   residual: 
+#     Z: 22
+#     A: 51
+#     nuclide: Ti51
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 24
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -41,8 +42,8 @@
    4.000000E+01   0.000000E+00
    4.500000E+01   0.000000E+00
    5.000000E+01   0.000000E+00
-   6.000000E+01   4.418179E-05
-   7.000000E+01   7.337044E-05
-   8.000000E+01   9.862611E-05
-   9.000000E+01   1.942930E-03
-   1.000000E+02   4.031708E-03
+   6.000000E+01   7.080346E-05
+   7.000000E+01   1.149155E-04
+   8.000000E+01   7.917078E-04
+   9.000000E+01   2.079198E-03
+   1.000000E+02   3.812562E-03

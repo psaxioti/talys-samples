@@ -105,9 +105,9 @@ set style line 19 pointtype 9 linecolor rgb "blue "
 set style line 20 pointtype 10 linecolor rgb "blue "
 plot [1.e-3:1][100.:10000.0] \
 "/Users/koning/talys/samples/n-Os187-astro-ng/org/xs000000.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS" w lines linestyle 10, \
-"/Users/koning/libraries/n/Os187/jeff3.3/tables/xs/n-Os187-MT102.jeff3.3" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JEFF-3.3" w lines linestyle 1, \
+"/Users/koning/libraries/n/Os187/jeff4.0/tables/xs/n-Os187-MT102.jeff4.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JEFF-3.3" w lines linestyle 1, \
 "/Users/koning/libraries/n/Os187/jendl5.0/tables/xs/n-Os187-MT102.jendl5.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JENDL-5.0" w lines linestyle 2, \
-"/Users/koning/libraries/n/Os187/endfb8.0/tables/xs/n-Os187-MT102.endfb8.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "ENDF/B-VIII" w lines linestyle 3, \
+"/Users/koning/libraries/n/Os187/endfb8.1/tables/xs/n-Os187-MT102.endfb8.1" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "ENDF/B-VIII.1" w lines linestyle 3, \
 "/Users/koning/libraries/n/Os187/tendl.2023/tables/xs/n-Os187-MT102.tendl.2023" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TENDL-2023" w lines linestyle 5, \
-"/Users/koning/libraries/n/Os187/exfor/xs/102/n-Os187-MT102-Mosconi-22796003.2010" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
-"/Users/koning/libraries/n/Os187/exfor/xs/102/n-Os187-MT102-Mosconi-22796003.2010" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Mosconi(2010) " linestyle 11, \
+"/Users/koning/libraries/n/Os187/exfor/xs/102/n-Os187-MT102-Winters-10882003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
+"/Users/koning/libraries/n/Os187/exfor/xs/102/n-Os187-MT102-Winters-10882003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Winters(1980) " linestyle 11, \

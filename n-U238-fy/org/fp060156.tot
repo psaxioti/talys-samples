@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Nd156
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 60
-#   A: 156
-#   nuclide: Nd156
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 60
+#     A: 156
+#     nuclide: Nd156
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   2.722577E-03   1.474885E-03   1.442503E-02   7.814423E-03
-   1.600000E+00   2.363553E-03   1.538765E-03   2.433459E-01   1.584286E-01
-   5.500000E+00   2.349206E-03   2.909487E-03   1.326822E+00   1.643276E+00
-   1.000000E+01   1.707898E-03   2.940757E-03   1.052949E+00   1.813038E+00
+   1.000000E+00   2.754235E-03   1.368343E-03   1.794047E-02   8.913139E-03
+   1.600000E+00   2.358412E-03   1.533437E-03   2.007400E-01   1.305218E-01
+   5.500000E+00   2.251351E-03   2.811409E-03   1.283971E+00   1.603389E+00
+   1.000000E+01   1.692185E-03   3.003142E-03   1.033513E+00   1.834200E+00

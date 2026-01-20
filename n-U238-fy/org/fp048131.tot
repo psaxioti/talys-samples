@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Cd131
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 48
-#   A: 131
-#   nuclide: Cd131
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 48
+#     A: 131
+#     nuclide: Cd131
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []            [mb]           [mb]
-   1.000000E+00   4.580158E-07   3.642215E-05   2.426704E-06   1.929765E-04
-   1.600000E+00   4.521803E-07   2.014753E-05   4.655543E-05   2.074356E-03
-   5.500000E+00   4.551442E-06   1.433934E-05   2.570636E-03   8.098849E-03
-   1.000000E+01   1.345590E-08   1.348832E-05   8.295799E-06   8.315830E-03
+   1.000000E+00   3.430137E-06   4.435342E-05   2.234315E-05   2.889101E-04
+   1.600000E+00   8.371618E-08   2.045573E-05   7.125638E-06   1.741133E-03
+   5.500000E+00   3.160908E-09   1.590250E-05   1.802702E-06   9.069433E-03
+   1.000000E+01   3.344855E-07   1.493759E-05   2.042893E-04   9.123286E-03

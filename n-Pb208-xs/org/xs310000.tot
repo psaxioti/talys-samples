@@ -1,26 +1,29 @@
-# header:
+# header: 
 #   title: Pb208(n,3np)Tl205 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,3np)
-#   Q-value [MeV]: -2.135933E+01
-#   E-threshold [MeV]:  2.146292E+01
-# residual:
-#   Z: 81
-#   A: 205
-#   nuclide: Tl205
-# datablock:
-#   quantity: cross section
-#   columns: 4
-#   entries: 46
-##       E             xs          gamma xs    xs/res.prod.xs
+#   Q-value [MeV]: -2.135925E+01
+#   E-threshold [MeV]:  2.146284E+01
+#   ENDF_MF: 3
+#   ENDF_MT: 42
+#   residual: 
+#     Z: 81
+#     A: 205
+#     nuclide: Tl205
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 4
+#     entries: 46
+##       E             xs          gamma_xs    xs/res.prod.xs
 ##     [MeV]          [mb]           [mb]            []
    1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    1.200000E+00   0.000000E+00   0.000000E+00   0.000000E+00
@@ -65,6 +68,6 @@
    2.000000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    2.200000E+01   0.000000E+00   0.000000E+00   0.000000E+00
    2.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
-   2.600000E+01   1.764069E-06   1.098288E-06   2.475673E-06
-   2.800000E+01   8.857941E-04   9.142843E-04   4.944997E-04
-   3.000000E+01   3.271351E-02   5.241994E-02   1.015304E-02
+   2.600000E+01   3.435800E-07   2.084832E-07   5.184549E-07
+   2.800000E+01   2.087903E-04   2.046407E-04   1.203150E-04
+   3.000000E+01   1.045597E-02   1.443805E-02   3.320375E-03

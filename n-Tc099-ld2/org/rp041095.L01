@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Tc99(n,x)Nb95m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 43
 #   A: 99
 #   nuclide: Tc99
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -3.202199E+00
-#   E-threshold [MeV]:  3.234855E+00
+#   Q-value [MeV]: -3.201906E+00
+#   E-threshold [MeV]:  3.234560E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 41
-#   A: 95
-#   nuclide: Nb95m
-#   mass [amu]:  9.490683E+01
-#   level: 
-#     number: 1
-#     energy [MeV]:  2.356900E-01
-#     spin:  5.000000E-01
-#     parity: -1
-#     isomer: 1
-#     half-life [sec]:  3.119000E+05
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 34
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 41
+#     A: 95
+#     nuclide: Nb95m
+#   parameters: 
+#     mass [amu]:  9.490683E+01
+#     level: 
+#       number: 1
+#       energy [MeV]:  2.356900E-01
+#       spin:  5.000000E-01
+#       parity: -1
+#       isomer: 1
+#       half-life [sec]:  3.119000E+05
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 34
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.000000E-02   0.000000E+00   0.000000E+00
    2.000000E-02   0.000000E+00   0.000000E+00
@@ -56,13 +58,13 @@
    8.000000E+00   0.000000E+00   0.000000E+00
    9.000000E+00   0.000000E+00   0.000000E+00
    1.000000E+01   0.000000E+00   0.000000E+00
-   1.100000E+01   9.808260E-05   5.807287E-02
-   1.200000E+01   6.932207E-04   4.221239E-02
-   1.300000E+01   5.490270E-03   4.644833E-02
-   1.400000E+01   2.798619E-02   5.723104E-02
-   1.500000E+01   9.995788E-02   6.403399E-02
-   1.600000E+01   1.861328E-01   4.608281E-02
-   1.700000E+01   3.869462E-01   4.799499E-02
-   1.800000E+01   6.411298E-01   5.219371E-02
-   1.900000E+01   7.912527E-01   4.561069E-02
-   2.000000E+01   9.784265E-01   4.810845E-02
+   1.100000E+01   2.423807E-04   4.444755E-02
+   1.200000E+01   2.370155E-03   6.006476E-02
+   1.300000E+01   1.635434E-02   6.108607E-02
+   1.400000E+01   5.046584E-02   4.517542E-02
+   1.500000E+01   1.545857E-01   4.802362E-02
+   1.600000E+01   3.361545E-01   5.454502E-02
+   1.700000E+01   4.945236E-01   4.617459E-02
+   1.800000E+01   7.352505E-01   4.710042E-02
+   1.900000E+01   9.641086E-01   4.632682E-02
+   2.000000E+01   1.170813E+00   4.569868E-02

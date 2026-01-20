@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Tb172
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 65
-#   A: 172
-#   nuclide: Tb172
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 65
+#     A: 172
+#     nuclide: Tb172
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]           []             []             []             []
    1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
    1.600000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   5.500000E+00   3.021729E-11   9.556838E-06   1.706660E-08   5.397697E-03
-   1.000000E+01   3.131263E-11   1.908388E-06   1.930478E-08   1.176561E-03
+   5.500000E+00   2.211497E-09   9.931229E-06   1.261242E-06   5.663929E-03
+   1.000000E+01   1.226075E-07   5.711515E-06   7.488341E-05   3.488366E-03

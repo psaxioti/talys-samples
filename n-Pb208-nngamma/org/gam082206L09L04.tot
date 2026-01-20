@@ -1,17 +1,17 @@
-# header:
+# header: 
 #   title: Pb208(n,xg_9-4)Pb206 gamma-ray production cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 82
 #   A: 208
 #   nuclide: Pb208
-# reaction:
+# reaction: 
 #   type: (n,xg_9-4)
-#   Q-value [MeV]: -1.625463E+01
-#   E-threshold [MeV]:  1.633346E+01
+#   Q-value [MeV]: -1.625462E+01
+#   E-threshold [MeV]:  1.633345E+01
 #   level: 
 #     number: 9
 #     energy [MeV]:  2.148970E+00
@@ -23,14 +23,15 @@
 #       spin:  2.000000E+00
 #       parity: 1
 #   gamma energy [MeV]:  6.821599E-01
-# residual:
-#   Z: 82
-#   A: 206
-#   nuclide: Pb206
-# datablock:
-#   quantity: gamma-ray production cross section
-#   columns: 2
-#   entries: 67
+#   residual: 
+#     Z: 82
+#     A: 206
+#     nuclide: Pb206
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 67
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E-11   0.000000E+00
@@ -86,17 +87,17 @@
    1.400000E+01   0.000000E+00
    1.500000E+01   0.000000E+00
    1.600000E+01   0.000000E+00
-   1.700000E+01   1.785263E-02
-   1.800000E+01   3.255949E-01
-   1.900000E+01   1.109895E+00
-   2.000000E+01   2.106801E+00
-   2.100000E+01   2.950373E+00
-   2.200000E+01   3.534062E+00
-   2.300000E+01   3.920500E+00
-   2.400000E+01   4.178418E+00
-   2.500000E+01   4.346045E+00
-   2.600000E+01   4.379484E+00
-   2.700000E+01   4.262263E+00
-   2.800000E+01   3.962819E+00
-   2.900000E+01   3.520417E+00
-   3.000000E+01   3.084047E+00
+   1.700000E+01   1.657040E-02
+   1.800000E+01   2.991761E-01
+   1.900000E+01   9.686849E-01
+   2.000000E+01   1.722483E+00
+   2.100000E+01   2.241652E+00
+   2.200000E+01   2.443601E+00
+   2.300000E+01   2.434564E+00
+   2.400000E+01   2.319025E+00
+   2.500000E+01   2.139203E+00
+   2.600000E+01   1.904147E+00
+   2.700000E+01   1.635197E+00
+   2.800000E+01   1.385101E+00
+   2.900000E+01   1.188373E+00
+   3.000000E+01   9.812074E-01

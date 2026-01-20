@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Si28(n,x)Al27 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -9.360330E+00
-#   E-threshold [MeV]:  9.697802E+00
+#   Q-value [MeV]: -9.360504E+00
+#   E-threshold [MeV]:  9.697983E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 13
-#   A: 27
-#   nuclide: Al27
-#   mass [amu]:  2.698154E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 50
+#   residual: 
+#     Z: 13
+#     A: 27
+#     nuclide: Al27
+#   parameters: 
+#     mass [amu]:  2.698154E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 50
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E-01   0.000000E+00
@@ -70,8 +72,8 @@
    9.000000E+00   0.000000E+00
    9.500000E+00   0.000000E+00
    1.000000E+01   0.000000E+00
-   1.200000E+01   4.745965E+00
-   1.400000E+01   1.159995E+02
-   1.600000E+01   3.298464E+02
-   1.800000E+01   4.533700E+02
-   2.000000E+01   5.002889E+02
+   1.200000E+01   4.503251E+00
+   1.400000E+01   1.217305E+02
+   1.600000E+01   3.094419E+02
+   1.800000E+01   4.075422E+02
+   2.000000E+01   4.447604E+02

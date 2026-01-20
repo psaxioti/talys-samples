@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Pm161
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 61
-#   A: 161
-#   nuclide: Pm161
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 61
+#     A: 161
+#     nuclide: Pm161
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.348167E-04   3.310320E-04   7.142989E-04   1.753916E-03
-   1.600000E+00   1.983755E-04   5.375477E-04   2.042428E-02   5.534500E-02
-   5.500000E+00   3.867531E-05   5.908048E-04   2.184366E-02   3.336862E-01
-   1.000000E+01   5.632884E-05   5.833842E-04   3.472771E-02   3.596685E-01
+   1.000000E+00   1.283738E-04   3.675632E-04   8.361982E-04   2.394239E-03
+   1.600000E+00   1.979157E-04   5.328954E-04   1.684592E-02   4.535854E-02
+   5.500000E+00   3.121759E-05   5.793663E-04   1.780375E-02   3.304213E-01
+   1.000000E+01   3.938930E-05   5.271345E-04   2.405728E-02   3.219528E-01

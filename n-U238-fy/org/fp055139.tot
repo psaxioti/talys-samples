@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Cs139
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 55
-#   A: 139
-#   nuclide: Cs139
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 55
+#     A: 139
+#     nuclide: Cs139
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.011902E-03   2.766202E-05   5.361358E-03   1.465625E-04
-   1.600000E+00   1.545426E-03   2.054422E-05   1.591134E-01   2.115198E-03
-   5.500000E+00   3.626045E-03   1.698727E-04   2.047976E+00   9.594403E-02
-   1.000000E+01   6.897682E-03   3.277994E-04   4.252541E+00   2.020951E-01
+   1.000000E+00   9.409809E-04   3.008167E-05   6.129340E-03   1.959465E-04
+   1.600000E+00   1.537689E-03   2.060467E-05   1.308829E-01   1.753810E-03
+   5.500000E+00   3.619600E-03   1.833286E-04   2.064299E+00   1.045551E-01
+   1.000000E+01   7.016969E-03   2.930240E-04   4.285662E+00   1.789674E-01

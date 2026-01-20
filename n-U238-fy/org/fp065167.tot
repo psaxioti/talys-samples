@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Tb167
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 65
-#   A: 167
-#   nuclide: Tb167
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
-##     [MeV]           []             []             []             []
-   1.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
-   1.600000E+00   0.000000E+00   0.000000E+00   1.250497E-06   0.000000E+00
-   5.500000E+00   1.871431E-05   7.720919E-07   1.056977E-02   4.360771E-04
-   1.000000E+01   1.329776E-05   1.699499E-05   8.198301E-03   1.047776E-02
+#   residual: 
+#     Z: 65
+#     A: 167
+#     nuclide: Tb167
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
+##     [MeV]          [mb]            []            [mb]           [mb]
+   1.000000E+00   0.000000E+00   0.000000E+00   1.379231E-05   0.000000E+00
+   1.600000E+00   0.000000E+00   0.000000E+00   1.544849E-06   0.000000E+00
+   5.500000E+00   1.560426E-05   1.997454E-08   8.899290E-03   1.139178E-05
+   1.000000E+01   1.875739E-05   1.138773E-05   1.145621E-02   6.955175E-03

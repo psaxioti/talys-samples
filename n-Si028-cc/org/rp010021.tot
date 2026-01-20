@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Si28(n,x)Ne21 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 14
 #   A: 28
 #   nuclide: Si28
-# reaction:
+# reaction: 
 #   type: (n,x)
-#   Q-value [MeV]: -1.253952E+01
-#   E-threshold [MeV]:  1.299162E+01
+#   Q-value [MeV]: -1.253894E+01
+#   E-threshold [MeV]:  1.299101E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 10
-#   A: 21
-#   nuclide: Ne21
-#   mass [amu]:  2.099385E+01
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 50
+#   residual: 
+#     Z: 10
+#     A: 21
+#     nuclide: Ne21
+#   parameters: 
+#     mass [amu]:  2.099385E+01
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 50
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E-01   0.000000E+00
@@ -74,4 +76,4 @@
    1.400000E+01   0.000000E+00
    1.600000E+01   0.000000E+00
    1.800000E+01   0.000000E+00
-   2.000000E+01   4.547204E-02
+   2.000000E+01   6.974853E-02

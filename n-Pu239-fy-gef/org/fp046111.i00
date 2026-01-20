@@ -1,25 +1,27 @@
-# header:
+# header: 
 #   title: Pu239(n,f) fission yield for Pd111g
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 239
 #   nuclide: Pu239
-# reaction:
+# reaction: 
 #   type: (n,f)
-# residual:
-#   Z: 46
-#   A: 111
-#   nuclide: Pd111g
-# datablock:
-#   quantity: fission yield
-#   columns: 4
-#   entries: 239
-##       E          FP yield         FP xs          Ratio
+#   residual: 
+#     Z: 46
+#     A: 111
+#     nuclide: Pd111g
+#   isomer: 0
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 4
+#     entries: 239
+##       E          FP_yield         FP_xs          Ratio
 ##     [MeV]           []            [mb]            []
    2.530000E-08   0.000000E+00   0.000000E+00   0.000000E+00
    2.000000E-07   0.000000E+00   0.000000E+00   0.000000E+00
-   1.000000E-06   9.919890E-05   1.783741E+01   7.693886E-01
+   1.000000E-06   7.604156E-05   6.377793E+00   5.861377E-01

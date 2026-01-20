@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Mo104
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 42
-#   A: 104
-#   nuclide: Mo104
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 42
+#     A: 104
+#     nuclide: Mo104
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.172407E-02   2.234226E-03   6.211761E-02   1.183766E-02
-   1.600000E+00   1.167104E-02   2.350395E-03   1.201623E+00   2.419926E-01
-   5.500000E+00   1.063286E-02   3.319479E-03   6.005399E+00   1.874840E+00
-   1.000000E+01   9.423833E-03   2.832310E-03   5.809957E+00   1.746178E+00
+   1.000000E+00   1.178807E-02   2.346798E-03   7.678490E-02   1.528662E-02
+   1.600000E+00   1.171803E-02   2.351408E-03   9.973989E-01   2.001451E-01
+   5.500000E+00   1.044171E-02   3.346788E-03   5.955028E+00   1.908723E+00
+   1.000000E+01   9.227034E-03   2.773597E-03   5.635475E+00   1.694003E+00

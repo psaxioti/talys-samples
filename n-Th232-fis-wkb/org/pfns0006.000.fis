@@ -1,25 +1,26 @@
-# header:
-#   title: Th232(n,f) prompt fission neutron emission spectrum at  6.000000E+00 MeV
-#   source: TALYS-2.0
+# header: 
+#   title: Th232(n,f) prompt fission neutron emission spectrum at 6.000000E+00 MeV
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 90
 #   A: 232
 #   nuclide: Th232
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 5
 #   ENDF_MT: 18
 #   ejectile: neutron
 #   E-incident [MeV]:  6.000000E+00
 #   E-average [MeV]:  2.049191E+00
-# datablock:
-#   quantity: emission spectrum
-#   columns: 4
-#   entries: 243
-##     E-out        spectrum     Maxwell ratio   spectrum_CM
+#   quantity: 
+#     type: emission spectrum
+#   datablock: 
+#     columns: 4
+#     entries: 243
+##     E-out        spectrum     Maxwell_ratio   spectrum_CM
 ##     [MeV]        [mb/MeV]          []          [mb/MeV]
    1.000000E-03   1.945708E-02   8.830248E-01   1.021568E-01
    2.000000E-03   2.752309E-02   8.804523E-01   1.021568E-01

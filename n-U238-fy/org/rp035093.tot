@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) cross section for Br93
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 35
-#   A: 93
-#   nuclide: Br93
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 4
-##       E            FP xs
+#   residual: 
+#     Z: 35
+#     A: 93
+#     nuclide: Br93
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 4
+##       E            FP_xs
 ##     [MeV]          [mb]
-   1.000000E+00   1.831677E-03
-   1.600000E+00   4.918019E-02
-   5.500000E+00   1.079053E-01
-   1.000000E+01   1.544966E-01
+   1.000000E+00   2.455328E-03
+   1.600000E+00   4.073104E-02
+   5.500000E+00   1.280209E-01
+   1.000000E+01   1.378725E-01

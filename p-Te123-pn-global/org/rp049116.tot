@@ -1,28 +1,30 @@
-# header:
+# header: 
 #   title: Te123(p,x)In116 cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 52
 #   A: 123
 #   nuclide: Te123
-# reaction:
+# reaction: 
 #   type: (p,x)
-#   Q-value [MeV]:  1.517926E+00
+#   Q-value [MeV]:  1.518440E+00
 #   E-threshold [MeV]:  0.000000E+00
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 49
-#   A: 116
-#   nuclide: In116
-#   mass [amu]:  1.159053E+02
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 59
+#   residual: 
+#     Z: 49
+#     A: 116
+#     nuclide: In116
+#   parameters: 
+#     mass [amu]:  1.159053E+02
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 59
 ##       E             xs
 ##     [MeV]          [mb]
    1.000000E+00   0.000000E+00
@@ -83,4 +85,4 @@
    2.850000E+01   1.000000E-07
    2.900000E+01   1.000000E-07
    2.950000E+01   1.000000E-07
-   3.000000E+01   1.000000E-07
+   3.000000E+01   9.184969E-04

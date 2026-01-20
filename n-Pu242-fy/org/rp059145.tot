@@ -1,26 +1,27 @@
-# header:
+# header: 
 #   title: Pu242(n,f) cross section for Pr145
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 94
 #   A: 242
 #   nuclide: Pu242
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 59
-#   A: 145
-#   nuclide: Pr145
-# datablock:
-#   quantity: cross section
-#   columns: 2
-#   entries: 19
-##       E            FP xs
+#   residual: 
+#     Z: 59
+#     A: 145
+#     nuclide: Pr145
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 2
+#     entries: 19
+##       E            FP_xs
 ##     [MeV]          [mb]
    1.000000E-11   0.000000E+00
    2.530000E-08   0.000000E+00
@@ -31,13 +32,13 @@
    1.000000E-01   0.000000E+00
    2.000000E-01   0.000000E+00
    5.000000E-01   0.000000E+00
-   1.000000E+00   2.590214E-06
-   1.500000E+00   5.413352E-05
-   2.000000E+00   0.000000E+00
-   3.000000E+00   1.354734E-02
-   4.000000E+00   3.201563E-05
-   6.000000E+00   4.765118E-03
-   8.000000E+00   1.468057E-02
-   1.000000E+01   2.468871E-02
-   1.400000E+01   2.388253E-02
-   2.000000E+01   5.932410E-02
+   1.000000E+00   0.000000E+00
+   1.500000E+00   0.000000E+00
+   2.000000E+00   1.026211E-05
+   3.000000E+00   1.370325E-02
+   4.000000E+00   3.003057E-06
+   6.000000E+00   1.963575E-03
+   8.000000E+00   1.050957E-02
+   1.000000E+01   2.306314E-02
+   1.400000E+01   1.545397E-02
+   2.000000E+01   6.788332E-02

@@ -120,16 +120,10 @@ set style line 29 pointtype 19 linecolor rgb "blue "
 set style line 30 pointtype 20 linecolor rgb "blue "
 plot [0.:20.0000000][0.:600.0] \
 "/Users/koning/talys/samples/n-Th232-fis-wkb/org/fission.tot" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "TALYS" w lines linestyle 10, \
-"/Users/koning/libraries/n/Th232/jeff3.3/tables/xs/n-Th232-MT018.jeff3.3" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JEFF-3.3" w lines linestyle 1, \
+"/Users/koning/libraries/n/Th232/jeff4.0/tables/xs/n-Th232-MT018.jeff4.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JEFF-3.3" w lines linestyle 1, \
 "/Users/koning/libraries/n/Th232/jendl5.0/tables/xs/n-Th232-MT018.jendl5.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "JENDL-5.0" w lines linestyle 2, \
-"/Users/koning/libraries/n/Th232/endfb8.0/tables/xs/n-Th232-MT018.endfb8.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "ENDF/B-VIII" w lines linestyle 3, \
+"/Users/koning/libraries/n/Th232/endfb8.1/tables/xs/n-Th232-MT018.endfb8.1" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "ENDF/B-VIII.1" w lines linestyle 3, \
 "/Users/koning/libraries/n/Th232/irdff2.0/tables/xs/n-Th232-MT018.irdff2.0" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "IRDFF-2.0" w lines linestyle 4, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050021.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050021.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "KaihongFangg(2012) " linestyle 11, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050022.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 12, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050022.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "KaihongFangg(2012) " linestyle 12, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050023.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 13, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-KaihongFangg-327050023.2012" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "KaihongFangg(2012) " linestyle 13, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Jain-31424002.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 18, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Jain-31424002.1997" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Jain(1997) " linestyle 18, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Garlea-31459025.1992" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 19, \
@@ -142,8 +136,8 @@ plot [0.:20.0000000][0.:600.0] \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Manabe-222820022.1988" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Manabe(1988) " linestyle 24, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-131340032.1988" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 25, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-131340032.1988" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Meadows(1988) " linestyle 25, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-108430032.1983" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 26, \
-"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-108430032.1983" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Meadows(1983) " linestyle 26, \
+"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-108430032.1979" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 26, \
+"/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Meadows-108430032.1979" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Meadows(1983) " linestyle 26, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Blons-21656003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 29, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Blons-21656003.1980" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Blons(1980) " linestyle 29, \
 "/Users/koning/libraries/n/Th232/exfor/xs/018/n-Th232-MT018-Casanova-20953002.1973" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 30, \

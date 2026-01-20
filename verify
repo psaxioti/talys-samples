@@ -1,8 +1,6 @@
 #!/bin/bash
 echo
-echo "     verify (Version November 26 2023) (C) Copyright 2023 Arjan Koning All Rights Reserved"
-echo
-echo "     detailed options for output of computer time and file differences by Viktor Zerkin"
+echo "     verify (Version December 27 2024) (C) Copyright 2024 Arjan Koning and Viktor Zerkin All Rights Reserved"
 echo
 #
 # verify: run TALYS for each sample case present in the new/ directories and determine
@@ -72,8 +70,8 @@ for f in ${files} ; do
 #
 # Run TALYS and output of calculation time
 #
-  echo "${ii}/${iimax}  *** Starting sample case $dir `date +%F,%T`"
-  echo
+  echo "${ii}/${iimax}  *** Sample case $dir "
+  echo "          *** Start: `date +%F,%T`"
   t0=`date +%s`
   $talys < talys.inp > talys.out
   errCode=$?
@@ -84,7 +82,7 @@ for f in ${files} ; do
   dt=$(($t1-t0))
   dt0=$(($t1-t00))
   printf " %2d/%-2d %-30s %s time[sec]:%-5d total[sec]:%-5d sec err:%d\n" $ii ${iimax} $dir `date +%F,%T` $dt ${dt0} $errCode>>../../times.log
-  echo "       *** Finished sample case $dir `date +%F,%T` time[sec]:${dt} total[sec]:${dt0} sec"
+  echo "          *** End  : `date +%F,%T`" time[sec]:${dt}
   echo
 #
 # Output of file differences
@@ -129,7 +127,7 @@ done
 #
 t11=`date +%s`; dt0=$(($t11-t00))
 echo "Script $0 `date +%F,%T` stop $ii cases ${dt0}sec">>times.log
-echo "Elapsed time: ${dt0}sec"
+echo "Elapsed time[sec]:" ${dt0}
 end=`date +%F,%T`
 echo "*** All sample cases done " 
 echo "Start: " $start

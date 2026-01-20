@@ -1,28 +1,29 @@
-# header:
+# header: 
 #   title: U238(n,f) fission yield for Tc106
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 92
 #   A: 238
 #   nuclide: U238
-# reaction:
+# reaction: 
 #   type: (n,f)
 #   ENDF_MF: 8
 #   ENDF_MT: 454
-# residual:
-#   Z: 43
-#   A: 106
-#   nuclide: Tc106
-# datablock:
-#   quantity: fission yield
-#   columns: 5
-#   entries: 4
-##       E          FP yield       FF yield         FP xs          FF xs
+#   residual: 
+#     Z: 43
+#     A: 106
+#     nuclide: Tc106
+#   quantity: 
+#     type: fission yield
+#   datablock: 
+#     columns: 5
+#     entries: 4
+##       E          FP_yield       FF_yield         FP_xs          FF_xs
 ##     [MeV]          [mb]            []            [mb]           [mb]
-   1.000000E+00   1.387916E-03   2.213400E-04   7.353590E-03   1.172732E-03
-   1.600000E+00   1.473036E-03   2.591681E-04   1.516604E-01   2.668351E-02
-   5.500000E+00   1.379531E-03   3.825484E-04   7.791533E-01   2.160631E-01
-   1.000000E+01   1.706309E-03   4.830627E-04   1.051969E+00   2.978182E-01
+   1.000000E+00   1.311478E-03   2.277646E-04   8.542679E-03   1.483617E-03
+   1.600000E+00   1.469913E-03   2.589588E-04   1.251140E-01   2.204183E-02
+   5.500000E+00   1.363347E-03   3.381549E-04   7.775325E-01   1.928548E-01
+   1.000000E+01   1.647970E-03   4.789159E-04   1.006509E+00   2.925028E-01

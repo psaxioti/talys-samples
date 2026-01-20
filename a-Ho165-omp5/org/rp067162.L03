@@ -1,36 +1,38 @@
-# header:
+# header: 
 #   title: Ho165(a,x)Ho162m cross section
-#   source: TALYS-2.0
+#   source: TALYS-2.2
 #   user: Arjan Koning
-#   date: 2024-01-17
-#   format: YANDF-0.1
-# target:
+#   date: 2026-01-18
+#   format: YANDF-0.4
+# target: 
 #   Z: 67
 #   A: 165
 #   nuclide: Ho165
-# reaction:
+# reaction: 
 #   type: (a,x)
-#   Q-value [MeV]: -2.317729E+01
-#   E-threshold [MeV]:  2.373977E+01
+#   Q-value [MeV]: -2.317728E+01
+#   E-threshold [MeV]:  2.373975E+01
 #   ENDF_MF: 6
 #   ENDF_MT: 5
-# residual:
-#   Z: 67
-#   A: 162
-#   nuclide: Ho162m
-#   mass [amu]:  1.619291E+02
-#   level: 
-#     number: 3
-#     energy [MeV]:  1.058700E-01
-#     spin:  6.000000E+00
-#     parity: -1
-#     isomer: 1
-#     half-life [sec]:  4.020000E+03
-# datablock:
-#   quantity: cross section
-#   columns: 3
-#   entries: 19
-##       E             xs       Isomeric ratio
+#   residual: 
+#     Z: 67
+#     A: 162
+#     nuclide: Ho162m
+#   parameters: 
+#     mass [amu]:  1.619291E+02
+#     level: 
+#       number: 3
+#       energy [MeV]:  1.058700E-01
+#       spin:  6.000000E+00
+#       parity: -1
+#       isomer: 1
+#       half-life [sec]:  4.020000E+03
+#   quantity: 
+#     type: cross section
+#   datablock: 
+#     columns: 3
+#     entries: 19
+##       E             xs       Isomeric_ratio
 ##     [MeV]          [mb]            []
    1.200000E+01   0.000000E+00   0.000000E+00
    1.300000E+01   0.000000E+00   0.000000E+00
@@ -49,5 +51,5 @@
    3.200000E+01   0.000000E+00   0.000000E+00
    3.400000E+01   0.000000E+00   0.000000E+00
    3.600000E+01   0.000000E+00   0.000000E+00
-   3.800000E+01   4.281833E-03   6.754801E-01
-   4.000000E+01   7.085977E-02   6.619088E-01
+   3.800000E+01   2.480642E-03   7.158840E-01
+   4.000000E+01   4.609045E-02   7.122063E-01
