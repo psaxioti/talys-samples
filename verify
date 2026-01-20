@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This script runs TALYS for each sample case 
 # present in the new-directories and determines
@@ -8,12 +8,13 @@
 files=`find . -name input | grep new`
 #
 homedir=`pwd`
+talys=~/bin/talysC
 for  f  in  ${files}
 do
    dir=`dirname ${f}`
    cd ${dir}
    pwd
-   talys < input > output
+   $talys < input > output
    diff -bitw output ../org/output > outputdiff
    cd $homedir
 done

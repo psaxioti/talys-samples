@@ -1,8 +1,7 @@
 
-    TALYS-1.9 (Version: December 21, 2017)
+    TALYS-1.95 (Version: December 28, 2019)
 
- Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
-                         IAEA         CEA          ULB    
+ Copyright (C) 2019  A.J. Koning, S. Hilaire and S. Goriely      
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -10,13 +9,13 @@
 
  USER INPUT FILE
 
- #                                                                               
- # general                                                                       
- #                                                                               
- projectile n                                                                    
- element nb                                                                      
- mass 93                                                                         
- energy 14.                                                                      
+ #
+ # general
+ #
+ projectile n
+ element nb
+ mass 93
+ energy 14.
 
  USER INPUT FILE + DEFAULTS
 
@@ -133,6 +132,8 @@
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
  ldmodelracap        1     ldmodelracap level density model for direct radiative capture
+ upbend              n     flagupbend   flag for low-energy upbend of photon strength function
+ psfglobal           n    flagpsfglobal flag for global photon strength functions only
  #
  # Pre-equilibrium
  #
@@ -159,9 +160,10 @@
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
+ colenhance          n     flagcolall   flag for collective enhancement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+ colldamp            n     flagcolldamp flag for damping of collective effects in effective  level density
  #
  # Fission
  #
@@ -170,6 +172,7 @@
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
  hbstate             y     flaghbstate  flag for head band states in fission
  class2              y     flagclass2   flag for class2 states in fission
+ fispartdamp         n  flagfispartdamp flag for fission partial damping
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
@@ -185,8 +188,10 @@
  outlevels           n     flaglevels   flag for output of discrete level information
  outdensity          n     flagdensity  flag for output of level densities
  outomp              n     flagoutomp   flag for output of optical model parameters
+ outkd               n     flagoutkd    flag for output of KD03 OMP parameters
  outdirect           n     flagdirect   flag for output of direct reaction results
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+ outdecay            n     flagdecay    flag for output of decay of each population bin
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
  outgamma            n     flaggamma    flag for output of gamma-ray information
@@ -225,7 +230,7 @@
                      helium-3
                      alpha   
 
- 1 incident energy (LAB):
+     1 incident energy (LAB):
 
      14.000
 
@@ -258,7 +263,7 @@
  Total           = 3.98195E+03
    Shape elastic   = 2.21132E+03
    Reaction        = 1.77063E+03
-     Compound elastic= 5.70654E-04
+     Compound elastic= 5.70665E-04
      Non-elastic     = 1.77063E+03
        Direct          = 4.28253E+01
        Pre-equilibrium = 4.14263E+02
@@ -268,23 +273,23 @@
 
  2. Binary non-elastic cross sections (non-exclusive)
 
- gamma   = 4.16219E+00
- neutron = 1.69467E+03
- proton  = 3.79993E+01
+ gamma   = 4.11909E+00
+ neutron = 1.69471E+03
+ proton  = 3.79994E+01
  deuteron= 4.95110E+00
  triton  = 1.81644E-01
- helium-3= 6.92110E-10
+ helium-3= 6.92122E-10
  alpha   = 2.86699E+01
 
  3. Total particle production cross sections
 
- gamma   = 2.22456E+03    Multiplicity= 1.25637E+00
- neutron = 3.08462E+03    Multiplicity= 1.74210E+00
- proton  = 4.03268E+01    Multiplicity= 2.27754E-02
+ gamma   = 2.22373E+03    Multiplicity= 1.25590E+00
+ neutron = 3.08491E+03    Multiplicity= 1.74227E+00
+ proton  = 4.03281E+01    Multiplicity= 2.27761E-02
  deuteron= 4.95110E+00    Multiplicity= 2.79624E-03
  triton  = 1.81644E-01    Multiplicity= 1.02587E-04
- helium-3= 6.92111E-10    Multiplicity= 3.90884E-13
- alpha   = 2.92211E+01    Multiplicity= 1.65032E-02
+ helium-3= 6.92122E-10    Multiplicity= 3.90891E-13
+ alpha   = 2.92214E+01    Multiplicity= 1.65034E-02
 
  4. Residual production cross sections
 
@@ -293,34 +298,34 @@
    Z   A  nuclide    total     level   isomeric    isomeric    lifetime
                  cross section       cross section  ratio
 
-   41  94 ( 94Nb) 1.13883E+00    0    5.23890E-01  0.46003
-                                 1    6.14938E-01  0.53997   3.75800E+02 sec. 
-   41  93 ( 93Nb) 3.21887E+02    0    2.84051E+02  0.88246
-                                 1    3.78358E+01  0.11754   5.08700E+08 sec. 
-   40  93 ( 93Zr) 2.99513E+01    0    2.99513E+01  1.00000
-   41  92 ( 92Nb) 1.37629E+03    0    8.59477E+02  0.62449
-                                 1    5.16812E+02  0.37551   8.77000E+05 sec. 
-   40  92 ( 92Zr) 1.55693E+01    0    1.55693E+01  1.00000
+   41  94 ( 94Nb) 1.13719E+00    0    5.22879E-01  0.45980
+                                 1    6.14307E-01  0.54020   3.75800E+02 sec. 
+   41  93 ( 93Nb) 3.21609E+02    0    2.83791E+02  0.88241
+                                 1    3.78187E+01  0.11759   5.08700E+08 sec. 
+   40  93 ( 93Zr) 2.99428E+01    0    2.99428E+01  1.00000
+   41  92 ( 92Nb) 1.37657E+03    0    8.59693E+02  0.62452
+                                 1    5.16873E+02  0.37548   8.77000E+05 sec. 
+   40  92 ( 92Zr) 1.55791E+01    0    1.55791E+01  1.00000
    40  91 ( 91Zr) 1.82214E-01    0    1.82214E-01  1.00000
-   39  90 ( 90Y ) 2.63195E+01    0    1.41877E+01  0.53906
-                                 2    1.21318E+01  0.46094   1.14800E+04 sec. 
-   39  89 ( 89Y ) 2.90161E+00    0    1.22546E+00  0.42234
-                                 1    1.67615E+00  0.57766   1.56600E+01 sec. 
+   39  90 ( 90Y ) 2.63170E+01    0    1.41863E+01  0.53905
+                                 2    1.21307E+01  0.46095   1.14800E+04 sec. 
+   39  89 ( 89Y ) 2.90445E+00    0    1.22684E+00  0.42240
+                                 1    1.67761E+00  0.57760   1.56600E+01 sec. 
 
    b. Per mass
 
    A  cross section
 
-   94 1.13883E+00
-   93 3.51838E+02
-   92 1.39186E+03
+   94 1.13719E+00
+   93 3.51552E+02
+   92 1.39214E+03
    91 1.82214E-01
-   90 2.63195E+01
-   89 2.90161E+00
+   90 2.63170E+01
+   89 2.90445E+00
 
- Total residual production cross section:  1774.23792
- Non-elastic cross section              :  1770.62939
+ Total residual production cross section:  1774.2379150
+ Non-elastic cross section              :  1770.6293945
 
- Execution time:  0 hours  0 minutes  1.62 seconds 
+ Execution time:  0 hours  0 minutes  2.00 seconds 
 
  The TALYS team congratulates you with this successful calculation.

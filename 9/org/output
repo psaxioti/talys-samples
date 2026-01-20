@@ -1,8 +1,7 @@
 
-    TALYS-1.9 (Version: December 21, 2017)
+    TALYS-1.95 (Version: December 28, 2019)
 
- Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
-                         IAEA         CEA          ULB    
+ Copyright (C) 2019  A.J. Koning, S. Hilaire and S. Goriely      
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -10,31 +9,31 @@
 
  USER INPUT FILE
 
- #                                                                               
- # general                                                                       
- #                                                                               
- projectile n                                                                    
- element pb                                                                      
- mass 208                                                                        
- energy energies                                                                 
- #                                                                               
- # avoid unnecessary calculations and output                                     
- #                                                                               
- ejectiles n                                                                     
- preequilibrium n                                                                
- compound n                                                                      
- maxz 0                                                                          
- maxn 0                                                                          
- bins 5                                                                          
- fileresidual n                                                                  
- filetotal n                                                                     
- #                                                                               
- # output                                                                        
- #                                                                               
- outangle y                                                                      
- fileelastic y                                                                   
- fileangle 1                                                                     
- fileangle 2                                                                     
+ #
+ # general
+ #
+ projectile n
+ element pb
+ mass 208
+ energy energies
+ #
+ # avoid unnecessary calculations and output
+ #
+ ejectiles n
+ preequilibrium n
+ compound n
+ maxz 0
+ maxn 0
+ bins 5
+ fileresidual n
+ filetotal n
+ #
+ # output
+ #
+ outangle y
+ fileelastic y
+ fileangle 1
+ fileangle 2
 
  USER INPUT FILE + DEFAULTS
 
@@ -151,6 +150,8 @@
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
  ldmodelracap        1     ldmodelracap level density model for direct radiative capture
+ upbend              n     flagupbend   flag for low-energy upbend of photon strength function
+ psfglobal           n    flagpsfglobal flag for global photon strength functions only
  #
  # Pre-equilibrium
  #
@@ -177,9 +178,10 @@
  spincutmodel        1     spincutmodel model for spin cutoff factor for ground state
  asys                n     flagasys     flag for all level density parameters a from systematics
  parity              n     flagparity   flag for non-equal parity distribution
- colenhance          n     flagcolall   flag for collective enahncement of level density for all nuclides
+ colenhance          n     flagcolall   flag for collective enhancement of level density for all nuclides
  ctmglobal           n     flagctmglob  flag for global CTM model (no discrete level info)
  gshell              n     flaggshell   flag for energy dependence of single particle level density parameter g
+ colldamp            n     flagcolldamp flag for damping of collective effects in effective  level density
  #
  # Fission
  #
@@ -188,6 +190,7 @@
  fismodelalt         4     fismodelalt  alternative fission model for default barriers
  hbstate             y     flaghbstate  flag for head band states in fission
  class2              y     flagclass2   flag for class2 states in fission
+ fispartdamp         n  flagfispartdamp flag for fission partial damping
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
@@ -203,8 +206,10 @@
  outlevels           n     flaglevels   flag for output of discrete level information
  outdensity          n     flagdensity  flag for output of level densities
  outomp              n     flagoutomp   flag for output of optical model parameters
+ outkd               n     flagoutkd    flag for output of KD03 OMP parameters
  outdirect           n     flagdirect   flag for output of direct reaction results
  outinverse          n     flaginverse  flag for output of transmission coefficients and inverse reaction cross sections
+ outdecay            n     flagdecay    flag for output of decay of each population bin
  outtransenergy      y     flagtransen  flag for output of transmission coefficients per energy
  outecis             n     flagoutecis  flag for output of ECIS results
  outgamma            n     flaggamma    flag for output of gamma-ray information
@@ -296,8 +301,8 @@
    A  cross section
 
 
- Total residual production cross section:     0.00000
- Non-elastic cross section              :  2515.39990
+ Total residual production cross section:     0.0000000
+ Non-elastic cross section              :  2515.3999023
 
  8. Discrete state angular distributions
 
@@ -2176,8 +2181,8 @@
    A  cross section
 
 
- Total residual production cross section:     0.00000
- Non-elastic cross section              :  2541.63989
+ Total residual production cross section:     0.0000000
+ Non-elastic cross section              :  2541.6398926
 
  8. Discrete state angular distributions
 
@@ -4056,8 +4061,8 @@
    A  cross section
 
 
- Total residual production cross section:     0.00000
- Non-elastic cross section              :  2511.68994
+ Total residual production cross section:     0.0000000
+ Non-elastic cross section              :  2511.6899414
 
  8. Discrete state angular distributions
 
@@ -5936,8 +5941,8 @@
    A  cross section
 
 
- Total residual production cross section:     0.00000
- Non-elastic cross section              :  2526.37988
+ Total residual production cross section:     0.0000000
+ Non-elastic cross section              :  2526.3798828
 
  8. Discrete state angular distributions
 
@@ -7816,8 +7821,8 @@
    A  cross section
 
 
- Total residual production cross section:     0.00000
- Non-elastic cross section              :  2507.32007
+ Total residual production cross section:     0.0000000
+ Non-elastic cross section              :  2507.3200684
 
  8. Discrete state angular distributions
 
@@ -9656,6 +9661,6 @@
 
  4. Residual production cross sections
 
- Execution time:  0 hours  0 minutes  1.40 seconds 
+ Execution time:  0 hours  0 minutes  2.02 seconds 
 
  The TALYS team congratulates you with this successful calculation.
