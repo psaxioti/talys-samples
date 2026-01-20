@@ -3,16 +3,16 @@
 ##
 ## Level density
 ##
-a                90 233  31.08391
+a                90 233  31.08088
 aadjust          90 233   1.00000
 gammald          90 233   0.07459
 pair             90 233   0.78615
 Pshift           90 233   0.00000   0
 Pshiftadjust     90 233   0.00000   0
-deltaW           90 233   3.55462   0
-T                90 233   0.41176   0
-E0               90 233  -0.97562   0
-Exmatch          90 233   4.46538   0
+deltaW           90 233   3.55276   0
+T                90 233   0.41180   0
+E0               90 233  -0.97576   0
+Exmatch          90 233   4.46577   0
 Tadjust          90 233   1.00000   0
 E0adjust         90 233   1.00000   0
 Exmatchadjust    90 233   1.00000   0
@@ -24,7 +24,7 @@ ptable           90 233   0.00000
 Krotconstant     90 233   1.00000   0
 Pshift           90 233   0.00000   1
 Pshiftadjust     90 233   0.00000   1
-deltaW           90 233   2.36975   1
+deltaW           90 233   2.36851   1
 T                90 233   0.41756   1
 E0               90 233  -0.90113   1
 Exmatch          90 233   5.89461   1
@@ -39,7 +39,7 @@ ptable           90 233   0.00000
 Krotconstant     90 233   1.00000   1
 Pshift           90 233   0.00000   2
 Pshiftadjust     90 233   0.00000   2
-deltaW           90 233   2.36975   2
+deltaW           90 233   2.36851   2
 T                90 233   0.56780   2
 E0               90 233  -2.52108   2
 Exmatch          90 233   6.63983   2
@@ -115,7 +115,7 @@ gammald          90 232   0.07470
 pair             90 232   1.57568
 Pshift           90 232   0.00000   0
 Pshiftadjust     90 232   0.00000   0
-deltaW           90 232   3.39501   0
+deltaW           90 232   3.39315   0
 T                90 232   0.46845   0
 E0               90 232  -0.39156   0
 Exmatch          90 232   5.55627   0
@@ -130,7 +130,7 @@ ptable           90 232   0.00000
 Krotconstant     90 232   1.00000   0
 Pshift           90 232   0.00000   1
 Pshiftadjust     90 232   0.00000   1
-deltaW           90 232   2.26334   1
+deltaW           90 232   2.26210   1
 T                90 232   0.41262   1
 E0               90 232  -1.66339   1
 Exmatch          90 232   6.74958   1
@@ -145,7 +145,7 @@ ptable           90 232   0.00000
 Krotconstant     90 232   1.00000   1
 Pshift           90 232   0.00000   2
 Pshiftadjust     90 232   0.00000   2
-deltaW           90 232   2.26334   2
+deltaW           90 232   2.26210   2
 T                90 232   0.44833   2
 E0               90 232  -0.51471   2
 Exmatch          90 232   6.45816   2
@@ -430,7 +430,7 @@ Rclass2mom       89 231   1.00000  2
 ##
 ## Level density
 ##
-a                89 230  31.11995
+a                89 230  31.12173
 aadjust          89 230   1.00000
 gammald          89 230   0.07492
 pair             89 230   0.00000
@@ -535,7 +535,7 @@ Rclass2mom       89 230   1.00000  2
 ##
 ## Level density
 ##
-a                88 230  31.62032
+a                88 230  31.61717
 aadjust          88 230   1.00000
 gammald          88 230   0.07492
 pair             88 230   1.58251
@@ -640,16 +640,16 @@ Rclass2mom       88 230   1.00000  2
 ##
 ## Level density
 ##
-a                88 229  31.71960
+a                88 229  31.74467
 aadjust          88 229   1.00000
 gammald          88 229   0.07502
 pair             88 229   0.79298
 Pshift           88 229   0.00000   0
 Pshiftadjust     88 229   0.00000   0
-deltaW           88 229   4.16989   0
-T                88 229   0.32213   0
-E0               88 229   0.05106   0
-Exmatch          88 229   2.93369   0
+deltaW           88 229   4.18293   0
+T                88 229   0.32193   0
+E0               88 229   0.05131   0
+Exmatch          88 229   2.93252   0
 Tadjust          88 229   1.00000   0
 E0adjust         88 229   1.00000   0
 Exmatchadjust    88 229   1.00000   0
@@ -661,10 +661,10 @@ ptable           88 229   0.00000
 Krotconstant     88 229   1.00000   0
 Pshift           88 229   0.00000   1
 Pshiftadjust     88 229   0.00000   1
-deltaW           88 229   2.77992   1
-T                88 229   0.48925   1
-E0               88 229  -1.85789   1
-Exmatch          88 229   5.83010   1
+deltaW           88 229   2.78862   1
+T                88 229   0.48902   1
+E0               88 229  -1.85676   1
+Exmatch          88 229   5.82715   1
 Tadjust          88 229   1.00000   1
 E0adjust         88 229   1.00000   1
 Exmatchadjust    88 229   1.00000   1
@@ -676,10 +676,10 @@ ptable           88 229   0.00000
 Krotconstant     88 229   1.00000   1
 Pshift           88 229   0.00000   2
 Pshiftadjust     88 229   0.00000   2
-deltaW           88 229   2.77992   2
-T                88 229   0.52204   2
-E0               88 229  -2.41682   2
-Exmatch          88 229   6.56453   2
+deltaW           88 229   2.78862   2
+T                88 229   0.52181   2
+E0               88 229  -2.41543   2
+Exmatch          88 229   6.56111   2
 Tadjust          88 229   1.00000   2
 E0adjust         88 229   1.00000   2
 Exmatchadjust    88 229   1.00000   2
@@ -751,7 +751,7 @@ gammald          90 231   0.07481
 pair             90 231   0.78954
 Pshift           90 231   0.00000   0
 Pshiftadjust     90 231   0.00000   0
-deltaW           90 231   3.31879   0
+deltaW           90 231   3.31692   0
 T                90 231   0.45494   0
 E0               90 231  -0.91497   0
 Exmatch          90 231   4.92684   0
@@ -766,7 +766,7 @@ ptable           90 231   0.00000
 Krotconstant     90 231   1.00000   0
 Pshift           90 231   0.00000   1
 Pshiftadjust     90 231   0.00000   1
-deltaW           90 231   2.21252   1
+deltaW           90 231   2.21128   1
 T                90 231   0.47007   1
 E0               90 231  -2.16775   1
 Exmatch          90 231   5.98780   1
@@ -781,7 +781,7 @@ ptable           90 231   0.00000
 Krotconstant     90 231   1.00000   1
 Pshift           90 231   0.00000   2
 Pshiftadjust     90 231   0.00000   2
-deltaW           90 231   2.21252   2
+deltaW           90 231   2.21128   2
 T                90 231   0.68793   2
 E0               90 231  -2.79424   2
 Exmatch          90 231   6.74959   2
@@ -851,16 +851,16 @@ Rclass2mom       90 231   1.00000  2
 ##
 ## Level density
 ##
-a                89 229  30.80896
+a                89 229  30.79618
 aadjust          89 229   1.00000
 gammald          89 229   0.07502
 pair             89 229   0.79298
 Pshift           89 229   0.00000   0
 Pshiftadjust     89 229   0.00000   0
-deltaW           89 229   3.85047   0
-T                89 229   0.41327   0
-E0               89 229  -0.99932   0
-Exmatch          89 229   4.49084   0
+deltaW           89 229   3.84302   0
+T                89 229   0.41343   0
+E0               89 229  -0.99994   0
+Exmatch          89 229   4.49246   0
 Tadjust          89 229   1.00000   0
 E0adjust         89 229   1.00000   0
 Exmatchadjust    89 229   1.00000   0
@@ -872,10 +872,10 @@ ptable           89 229   0.00000
 Krotconstant     89 229   1.00000   0
 Pshift           89 229   0.00000   1
 Pshiftadjust     89 229   0.00000   1
-deltaW           89 229   2.56698   1
-T                89 229   0.44321   1
-E0               89 229  -1.08422   1
-Exmatch          89 229   4.81693   1
+deltaW           89 229   2.56201   1
+T                89 229   0.44332   1
+E0               89 229  -1.08464   1
+Exmatch          89 229   4.81827   1
 Tadjust          89 229   1.00000   1
 E0adjust         89 229   1.00000   1
 Exmatchadjust    89 229   1.00000   1
@@ -887,10 +887,10 @@ ptable           89 229   0.00000
 Krotconstant     89 229   1.00000   1
 Pshift           89 229   0.00000   2
 Pshiftadjust     89 229   0.00000   2
-deltaW           89 229   2.56698   2
-T                89 229   0.42621   2
-E0               89 229  -0.83627   2
-Exmatch          89 229   4.48159   2
+deltaW           89 229   2.56201   2
+T                89 229   0.42631   2
+E0               89 229  -0.83646   2
+Exmatch          89 229   4.48245   2
 Tadjust          89 229   1.00000   2
 E0adjust         89 229   1.00000   2
 Exmatchadjust    89 229   1.00000   2
@@ -956,16 +956,16 @@ Rclass2mom       89 229   1.00000  2
 ##
 ## Level density
 ##
-a                88 228  30.87826
+a                88 228  30.87530
 aadjust          88 228   1.00000
 gammald          88 228   0.07513
 pair             88 228   1.58944
 Pshift           88 228   0.00000   0
 Pshiftadjust     88 228   0.00000   0
-deltaW           88 228   3.86363   0
-T                88 228   0.40043   0
-E0               88 228  -0.01287   0
-Exmatch          88 228   5.02752   0
+deltaW           88 228   3.86176   0
+T                88 228   0.40047   0
+E0               88 228  -0.01301   0
+Exmatch          88 228   5.02789   0
 Tadjust          88 228   1.00000   0
 E0adjust         88 228   1.00000   0
 Exmatchadjust    88 228   1.00000   0
@@ -977,10 +977,10 @@ ptable           88 228   0.00000
 Krotconstant     88 228   1.00000   0
 Pshift           88 228   0.00000   1
 Pshiftadjust     88 228   0.00000   1
-deltaW           88 228   2.57575   1
-T                88 228   0.49640   1
-E0               88 228  -1.09854   1
-Exmatch          88 228   6.71289   1
+deltaW           88 228   2.57451   1
+T                88 228   0.49643   1
+E0               88 228  -1.09867   1
+Exmatch          88 228   6.71325   1
 Tadjust          88 228   1.00000   1
 E0adjust         88 228   1.00000   1
 Exmatchadjust    88 228   1.00000   1
@@ -992,10 +992,10 @@ ptable           88 228   0.00000
 Krotconstant     88 228   1.00000   1
 Pshift           88 228   0.00000   2
 Pshiftadjust     88 228   0.00000   2
-deltaW           88 228   2.57575   2
-T                88 228   0.48065   2
-E0               88 228  -0.82758   2
-Exmatch          88 228   6.37135   2
+deltaW           88 228   2.57451   2
+T                88 228   0.48068   2
+E0               88 228  -0.82764   2
+Exmatch          88 228   6.37163   2
 Tadjust          88 228   1.00000   2
 E0adjust         88 228   1.00000   2
 Exmatchadjust    88 228   1.00000   2
@@ -1067,7 +1067,7 @@ gammald          90 230   0.07492
 pair             90 230   1.58251
 Pshift           90 230   0.00000   0
 Pshiftadjust     90 230   0.00000   0
-deltaW           90 230   3.24021   0
+deltaW           90 230   3.23835   0
 T                90 230   0.47155   0
 E0               90 230  -0.33802   0
 Exmatch          90 230   5.52092   0
@@ -1082,7 +1082,7 @@ ptable           90 230   0.00000
 Krotconstant     90 230   1.00000   0
 Pshift           90 230   0.00000   1
 Pshiftadjust     90 230   0.00000   1
-deltaW           90 230   2.16014   1
+deltaW           90 230   2.15890   1
 T                90 230   0.45039   1
 E0               90 230  -1.14073   1
 Exmatch          90 230   6.80289   1
@@ -1097,7 +1097,7 @@ ptable           90 230   0.00000
 Krotconstant     90 230   1.00000   1
 Pshift           90 230   0.00000   2
 Pshiftadjust     90 230   0.00000   2
-deltaW           90 230   2.16014   2
+deltaW           90 230   2.15890   2
 T                90 230   0.41118   2
 E0               90 230  -1.25432   2
 Exmatch          90 230   6.52706   2
@@ -1167,16 +1167,16 @@ Rclass2mom       90 230   1.00000  2
 ##
 ## Level density
 ##
-a                89 228  30.32954
+a                89 228  30.32662
 aadjust          89 228   1.00000
 gammald          89 228   0.07513
 pair             89 228   0.00000
 Pshift           89 228   0.00000   0
 Pshiftadjust     89 228   0.00000   0
-deltaW           89 228   3.55230   0
-T                89 228   0.36844   0
-E0               89 228  -1.13830   0
-Exmatch          89 228   2.80018   0
+deltaW           89 228   3.55044   0
+T                89 228   0.36849   0
+E0               89 228  -1.13854   0
+Exmatch          89 228   2.80068   0
 Tadjust          89 228   1.00000   0
 E0adjust         89 228   1.00000   0
 Exmatchadjust    89 228   1.00000   0
@@ -1188,10 +1188,10 @@ ptable           89 228   0.00000
 Krotconstant     89 228   1.00000   0
 Pshift           89 228   0.00000   1
 Pshiftadjust     89 228   0.00000   1
-deltaW           89 228   2.36820   1
-T                89 228   0.38452   1
-E0               89 228  -1.06998   1
-Exmatch          89 228   2.86148   1
+deltaW           89 228   2.36696   1
+T                89 228   0.38456   1
+E0               89 228  -1.07015   1
+Exmatch          89 228   2.86188   1
 Tadjust          89 228   1.00000   1
 E0adjust         89 228   1.00000   1
 Exmatchadjust    89 228   1.00000   1
@@ -1203,10 +1203,10 @@ ptable           89 228   0.00000
 Krotconstant     89 228   1.00000   1
 Pshift           89 228   0.00000   2
 Pshiftadjust     89 228   0.00000   2
-deltaW           89 228   2.36820   2
-T                89 228   0.40547   2
-E0               89 228  -1.30471   2
-Exmatch          89 228   3.23788   2
+deltaW           89 228   2.36696   2
+T                89 228   0.40551   2
+E0               89 228  -1.30487   2
+Exmatch          89 228   3.23828   2
 Tadjust          89 228   1.00000   2
 E0adjust         89 228   1.00000   2
 Exmatchadjust    89 228   1.00000   2
@@ -1272,16 +1272,16 @@ Rclass2mom       89 228   1.00000  2
 ##
 ## Level density
 ##
-a                88 227  30.90194
+a                88 227  30.89892
 aadjust          88 227   1.00000
 gammald          88 227   0.07524
 pair             88 227   0.79647
 Pshift           88 227   0.00000   0
 Pshiftadjust     88 227   0.00000   0
-deltaW           88 227   3.81738   0
-T                88 227   0.42468   0
-E0               88 227  -1.12398   0
-Exmatch          88 227   4.67557   0
+deltaW           88 227   3.81552   0
+T                88 227   0.42473   0
+E0               88 227  -1.12420   0
+Exmatch          88 227   4.67605   0
 Tadjust          88 227   1.00000   0
 E0adjust         88 227   1.00000   0
 Exmatchadjust    88 227   1.00000   0
@@ -1293,10 +1293,10 @@ ptable           88 227   0.00000
 Krotconstant     88 227   1.00000   0
 Pshift           88 227   0.00000   1
 Pshiftadjust     88 227   0.00000   1
-deltaW           88 227   2.54492   1
-T                88 227   0.49255   1
-E0               88 227  -1.79812   1
-Exmatch          88 227   5.80507   1
+deltaW           88 227   2.54368   1
+T                88 227   0.49259   1
+E0               88 227  -1.79826   1
+Exmatch          88 227   5.80564   1
 Tadjust          88 227   1.00000   1
 E0adjust         88 227   1.00000   1
 Exmatchadjust    88 227   1.00000   1
@@ -1308,10 +1308,10 @@ ptable           88 227   0.00000
 Krotconstant     88 227   1.00000   1
 Pshift           88 227   0.00000   2
 Pshiftadjust     88 227   0.00000   2
-deltaW           88 227   2.54492   2
-T                88 227   0.52959   2
-E0               88 227  -2.42386   2
-Exmatch          88 227   6.63388   2
+deltaW           88 227   2.54368   2
+T                88 227   0.52962   2
+E0               88 227  -2.42407   2
+Exmatch          88 227   6.63445   2
 Tadjust          88 227   1.00000   2
 E0adjust         88 227   1.00000   2
 Exmatchadjust    88 227   1.00000   2
@@ -1374,20 +1374,230 @@ Rtransmom        88 227   1.00000  2
 Rclass2mom       88 227   1.00000  2
 ##--------------------------------------------
 ##
+## Parameters for 231Ra
+##
+## Level density
+##
+a                88 231  32.20954
+aadjust          88 231   1.00000
+gammald          88 231   0.07481
+pair             88 231   0.78954
+Pshift           88 231   0.00000   0
+Pshiftadjust     88 231   0.00000   0
+deltaW           88 231   4.31800   0
+T                88 231   0.33933   0
+E0               88 231  -0.17224   0
+Exmatch          88 231   3.25833   0
+Tadjust          88 231   1.00000   0
+E0adjust         88 231   1.00000   0
+Exmatchadjust    88 231   1.00000   0
+Ntop             88 231  18   0
+Nlow             88 231   4   0
+s2adjust         88 231   1.00000   0
+ctable           88 231   0.00000
+ptable           88 231   0.00000
+Krotconstant     88 231   1.00000   0
+Pshift           88 231   0.00000   1
+Pshiftadjust     88 231   0.00000   1
+deltaW           88 231   2.87866   1
+T                88 231   0.48315   1
+E0               88 231  -1.82809   1
+Exmatch          88 231   5.76140   1
+Tadjust          88 231   1.00000   1
+E0adjust         88 231   1.00000   1
+Exmatchadjust    88 231   1.00000   1
+Ntop             88 231   9   1
+Nlow             88 231   2   1
+s2adjust         88 231   1.00000   1
+ctable           88 231   0.00000
+ptable           88 231   0.00000
+Krotconstant     88 231   1.00000   1
+Pshift           88 231   0.00000   2
+Pshiftadjust     88 231   0.00000   2
+deltaW           88 231   2.87866   2
+T                88 231   0.51543   2
+E0               88 231  -2.37808   2
+Exmatch          88 231   6.48330   2
+Tadjust          88 231   1.00000   2
+E0adjust         88 231   1.00000   2
+Exmatchadjust    88 231   1.00000   2
+Ntop             88 231  17   2
+Nlow             88 231   2   2
+s2adjust         88 231   1.00000   2
+ctable           88 231   0.00000
+ptable           88 231   0.00000
+Krotconstant     88 231   1.00000   2
+g                88 231  15.40000
+gp               88 231   5.86667
+gn               88 231   9.53333
+gnadjust         88 231   1.00000
+gpadjust         88 231   1.00000
+##
+## Gamma-ray
+##
+gamgam           88 231   0.03000
+gamgamadjust     88 231   1.00000
+sgr              88 231 675.458 E1
+egr              88 231  13.401 E1
+ggr              88 231   3.697 E1
+sgradjust        88 231   1.000 E1
+egradjust        88 231   1.000 E1
+ggradjust        88 231   1.000 E1
+sgr              88 231   1.057 M1
+egr              88 231   6.682 M1
+ggr              88 231   4.000 M1
+sgradjust        88 231   1.000 M1
+egradjust        88 231   1.000 M1
+ggradjust        88 231   1.000 M1
+sgr              88 231   0.544 E2
+egr              88 231  10.268 E2
+ggr              88 231   3.338 E2
+sgradjust        88 231   1.000 E2
+egradjust        88 231   1.000 E2
+ggradjust        88 231   1.000 E2
+sgr              88 231   0.001 M2
+egr              88 231   6.682 M2
+ggr              88 231   4.000 M2
+sgradjust        88 231   1.000 M2
+egradjust        88 231   1.000 M2
+ggradjust        88 231   1.000 M2
+##
+## Fission parameters
+##
+fisbar           88 231   4.40000  1
+fishw            88 231   1.00000  1
+fisbaradjust     88 231   1.00000  1
+fishwadjust      88 231   1.00000  1
+class2width      88 231   0.20000  1
+Rtransmom        88 231   0.60000  1
+Rclass2mom       88 231   1.00000  1
+fisbar           88 231   9.50000  2
+fishw            88 231   0.60000  2
+fisbaradjust     88 231   1.00000  2
+fishwadjust      88 231   1.00000  2
+Rtransmom        88 231   1.00000  2
+Rclass2mom       88 231   1.00000  2
+##--------------------------------------------
+##
+## Parameters for 229Fr
+##
+## Level density
+##
+a                87 229  32.30152
+aadjust          87 229   1.00000
+gammald          87 229   0.07502
+pair             87 229   0.79298
+Pshift           87 229   0.00000   0
+Pshiftadjust     87 229   0.00000   0
+deltaW           87 229   4.74357   0
+T                87 229   0.31346   0
+E0               87 229   0.06216   0
+Exmatch          87 229   2.87854   0
+Tadjust          87 229   1.00000   0
+E0adjust         87 229   1.00000   0
+Exmatchadjust    87 229   1.00000   0
+Ntop             87 229   1   0
+Nlow             87 229   0   0
+s2adjust         87 229   1.00000   0
+ctable           87 229   0.00000
+ptable           87 229   0.00000
+Krotconstant     87 229   1.00000   0
+Pshift           87 229   0.00000   1
+Pshiftadjust     87 229   0.00000   1
+deltaW           87 229   3.16238   1
+T                87 229   0.31346   1
+E0               87 229   0.29165   1
+Exmatch          87 229   2.64881   1
+Tadjust          87 229   1.00000   1
+E0adjust         87 229   1.00000   1
+Exmatchadjust    87 229   1.00000   1
+Ntop             87 229   7   1
+Nlow             87 229   2   1
+s2adjust         87 229   1.00000   1
+ctable           87 229   0.00000
+ptable           87 229   0.00000
+Krotconstant     87 229   1.00000   1
+Pshift           87 229   0.00000   2
+Pshiftadjust     87 229   0.00000   2
+deltaW           87 229   3.16238   2
+T                87 229   0.31346   2
+E0               87 229   0.58673   2
+Exmatch          87 229   4.56779   2
+Tadjust          87 229   1.00000   2
+E0adjust         87 229   1.00000   2
+Exmatchadjust    87 229   1.00000   2
+Ntop             87 229  10   2
+Nlow             87 229   2   2
+s2adjust         87 229   1.00000   2
+ctable           87 229   0.00000
+ptable           87 229   0.00000
+Krotconstant     87 229   1.00000   2
+g                87 229  15.26667
+gp               87 229   5.80000
+gn               87 229   9.46667
+gnadjust         87 229   1.00000
+gpadjust         87 229   1.00000
+##
+## Gamma-ray
+##
+gamgam           87 229   0.03000
+gamgamadjust     87 229   1.00000
+sgr              87 229 666.354 E1
+egr              87 229  13.428 E1
+ggr              87 229   3.711 E1
+sgradjust        87 229   1.000 E1
+egradjust        87 229   1.000 E1
+ggradjust        87 229   1.000 E1
+sgr              87 229   1.040 M1
+egr              87 229   6.701 M1
+ggr              87 229   4.000 M1
+sgradjust        87 229   1.000 M1
+egradjust        87 229   1.000 M1
+ggradjust        87 229   1.000 M1
+sgr              87 229   0.531 E2
+egr              87 229  10.297 E2
+ggr              87 229   3.362 E2
+sgradjust        87 229   1.000 E2
+egradjust        87 229   1.000 E2
+ggradjust        87 229   1.000 E2
+sgr              87 229   0.001 M2
+egr              87 229   6.701 M2
+ggr              87 229   4.000 M2
+sgradjust        87 229   1.000 M2
+egradjust        87 229   1.000 M2
+ggradjust        87 229   1.000 M2
+##
+## Fission parameters
+##
+fisbar           87 229   3.70000  1
+fishw            87 229   1.00000  1
+fisbaradjust     87 229   1.00000  1
+fishwadjust      87 229   1.00000  1
+class2width      87 229   0.20000  1
+Rtransmom        87 229   0.60000  1
+Rclass2mom       87 229   1.00000  1
+fisbar           87 229  10.40000  2
+fishw            87 229   0.60000  2
+fisbaradjust     87 229   1.00000  2
+fishwadjust      87 229   1.00000  2
+Rtransmom        87 229   1.00000  2
+Rclass2mom       87 229   1.00000  2
+##--------------------------------------------
+##
 ## Parameters for 228Fr
 ##
 ## Level density
 ##
-a                87 228  32.15872
+a                87 228  32.18723
 aadjust          87 228   1.00000
 gammald          87 228   0.07513
 pair             87 228   0.00000
 Pshift           87 228   0.00000   0
 Pshiftadjust     87 228   0.00000   0
-deltaW           87 228   4.62481   0
-T                87 228   0.31629   0
-E0               87 228  -0.73594   0
-Exmatch          87 228   2.10385   0
+deltaW           87 228   4.63971   0
+T                87 228   0.31607   0
+E0               87 228  -0.73566   0
+Exmatch          87 228   2.10248   0
 Tadjust          87 228   1.00000   0
 E0adjust         87 228   1.00000   0
 Exmatchadjust    87 228   1.00000   0
@@ -1399,10 +1609,10 @@ ptable           87 228   0.00000
 Krotconstant     87 228   1.00000   0
 Pshift           87 228   0.00000   1
 Pshiftadjust     87 228   0.00000   1
-deltaW           87 228   3.08321   1
-T                87 228   0.31629   1
-E0               87 228  -0.50818   1
-Exmatch          87 228   1.87498   1
+deltaW           87 228   3.09314   1
+T                87 228   0.31607   1
+E0               87 228  -0.50754   1
+Exmatch          87 228   1.87317   1
 Tadjust          87 228   1.00000   1
 E0adjust         87 228   1.00000   1
 Exmatchadjust    87 228   1.00000   1
@@ -1414,9 +1624,9 @@ ptable           87 228   0.00000
 Krotconstant     87 228   1.00000   1
 Pshift           87 228   0.00000   2
 Pshiftadjust     87 228   0.00000   2
-deltaW           87 228   3.08321   2
-T                87 228   0.31629   2
-E0               87 228  -0.21912   2
+deltaW           87 228   3.09314   2
+T                87 228   0.31607   2
+E0               87 228  -0.21781   2
 Exmatch          87 228   3.77965   2
 Tadjust          87 228   1.00000   2
 E0adjust         87 228   1.00000   2
@@ -1483,16 +1693,16 @@ Rclass2mom       87 228   1.00000  2
 ##
 ## Level density
 ##
-a                87 227  31.59184
+a                87 227  31.59013
 aadjust          87 227   1.00000
 gammald          87 227   0.07524
 pair             87 227   0.79647
 Pshift           87 227   0.00000   0
 Pshiftadjust     87 227   0.00000   0
-deltaW           87 227   4.45412   0
-T                87 227   0.31995   0
-E0               87 227   0.05471   0
-Exmatch          87 227   2.92227   0
+deltaW           87 227   4.45039   0
+T                87 227   0.32000   0
+E0               87 227   0.05464   0
+Exmatch          87 227   2.92265   0
 Tadjust          87 227   1.00000   0
 E0adjust         87 227   1.00000   0
 Exmatchadjust    87 227   1.00000   0
@@ -1504,10 +1714,10 @@ ptable           87 227   0.00000
 Krotconstant     87 227   1.00000   0
 Pshift           87 227   0.00000   1
 Pshiftadjust     87 227   0.00000   1
-deltaW           87 227   2.96941   1
-T                87 227   0.31995   1
-E0               87 227   0.27903   1
-Exmatch          87 227   2.69723   1
+deltaW           87 227   2.96693   1
+T                87 227   0.32000   1
+E0               87 227   0.27886   1
+Exmatch          87 227   2.69770   1
 Tadjust          87 227   1.00000   1
 E0adjust         87 227   1.00000   1
 Exmatchadjust    87 227   1.00000   1
@@ -1519,9 +1729,9 @@ ptable           87 227   0.00000
 Krotconstant     87 227   1.00000   1
 Pshift           87 227   0.00000   2
 Pshiftadjust     87 227   0.00000   2
-deltaW           87 227   2.96941   2
-T                87 227   0.31995   2
-E0               87 227   0.55984   2
+deltaW           87 227   2.96693   2
+T                87 227   0.32000   2
+E0               87 227   0.55951   2
 Exmatch          87 227   4.58101   2
 Tadjust          87 227   1.00000   2
 E0adjust         87 227   1.00000   2
@@ -1588,16 +1798,16 @@ Rclass2mom       87 227   1.00000  2
 ##
 ## Level density
 ##
-a                87 226  31.32376
+a                87 226  31.28664
 aadjust          87 226   1.00000
 gammald          87 226   0.07535
 pair             87 226   0.00000
 Pshift           87 226   0.00000   0
 Pshiftadjust     87 226   0.00000   0
-deltaW           87 226   4.23491   0
-T                87 226   0.32442   0
-E0               87 226  -0.74853   0
-Exmatch          87 226   2.15246   0
+deltaW           87 226   4.21441   0
+T                87 226   0.32474   0
+E0               87 226  -0.74892   0
+Exmatch          87 226   2.15444   0
 Tadjust          87 226   1.00000   0
 E0adjust         87 226   1.00000   0
 Exmatchadjust    87 226   1.00000   0
@@ -1609,10 +1819,10 @@ ptable           87 226   0.00000
 Krotconstant     87 226   1.00000   0
 Pshift           87 226   0.00000   1
 Pshiftadjust     87 226   0.00000   1
-deltaW           87 226   2.82327   1
-T                87 226   0.32442   1
-E0               87 226  -0.52863   1
-Exmatch          87 226   1.93541   1
+deltaW           87 226   2.80961   1
+T                87 226   0.32474   1
+E0               87 226  -0.52954   1
+Exmatch          87 226   1.93801   1
 Tadjust          87 226   1.00000   1
 E0adjust         87 226   1.00000   1
 Exmatchadjust    87 226   1.00000   1
@@ -1624,9 +1834,9 @@ ptable           87 226   0.00000
 Krotconstant     87 226   1.00000   1
 Pshift           87 226   0.00000   2
 Pshiftadjust     87 226   0.00000   2
-deltaW           87 226   2.82327   2
-T                87 226   0.32442   2
-E0               87 226  -0.25864   2
+deltaW           87 226   2.80961   2
+T                87 226   0.32474   2
+E0               87 226  -0.26049   2
 Exmatch          87 226   3.78947   2
 Tadjust          87 226   1.00000   2
 E0adjust         87 226   1.00000   2
@@ -1899,230 +2109,20 @@ Rtransmom        86 225   1.00000  2
 Rclass2mom       86 225   1.00000  2
 ##--------------------------------------------
 ##
-## Parameters for 231Ra
-##
-## Level density
-##
-a                88 231  32.20954
-aadjust          88 231   1.00000
-gammald          88 231   0.07481
-pair             88 231   0.78954
-Pshift           88 231   0.00000   0
-Pshiftadjust     88 231   0.00000   0
-deltaW           88 231   4.31800   0
-T                88 231   0.33933   0
-E0               88 231  -0.17224   0
-Exmatch          88 231   3.25833   0
-Tadjust          88 231   1.00000   0
-E0adjust         88 231   1.00000   0
-Exmatchadjust    88 231   1.00000   0
-Ntop             88 231  18   0
-Nlow             88 231   4   0
-s2adjust         88 231   1.00000   0
-ctable           88 231   0.00000
-ptable           88 231   0.00000
-Krotconstant     88 231   1.00000   0
-Pshift           88 231   0.00000   1
-Pshiftadjust     88 231   0.00000   1
-deltaW           88 231   2.87866   1
-T                88 231   0.48315   1
-E0               88 231  -1.82809   1
-Exmatch          88 231   5.76140   1
-Tadjust          88 231   1.00000   1
-E0adjust         88 231   1.00000   1
-Exmatchadjust    88 231   1.00000   1
-Ntop             88 231   9   1
-Nlow             88 231   2   1
-s2adjust         88 231   1.00000   1
-ctable           88 231   0.00000
-ptable           88 231   0.00000
-Krotconstant     88 231   1.00000   1
-Pshift           88 231   0.00000   2
-Pshiftadjust     88 231   0.00000   2
-deltaW           88 231   2.87866   2
-T                88 231   0.51543   2
-E0               88 231  -2.37808   2
-Exmatch          88 231   6.48330   2
-Tadjust          88 231   1.00000   2
-E0adjust         88 231   1.00000   2
-Exmatchadjust    88 231   1.00000   2
-Ntop             88 231  17   2
-Nlow             88 231   2   2
-s2adjust         88 231   1.00000   2
-ctable           88 231   0.00000
-ptable           88 231   0.00000
-Krotconstant     88 231   1.00000   2
-g                88 231  15.40000
-gp               88 231   5.86667
-gn               88 231   9.53333
-gnadjust         88 231   1.00000
-gpadjust         88 231   1.00000
-##
-## Gamma-ray
-##
-gamgam           88 231   0.03000
-gamgamadjust     88 231   1.00000
-sgr              88 231 675.458 E1
-egr              88 231  13.401 E1
-ggr              88 231   3.697 E1
-sgradjust        88 231   1.000 E1
-egradjust        88 231   1.000 E1
-ggradjust        88 231   1.000 E1
-sgr              88 231   1.057 M1
-egr              88 231   6.682 M1
-ggr              88 231   4.000 M1
-sgradjust        88 231   1.000 M1
-egradjust        88 231   1.000 M1
-ggradjust        88 231   1.000 M1
-sgr              88 231   0.544 E2
-egr              88 231  10.268 E2
-ggr              88 231   3.338 E2
-sgradjust        88 231   1.000 E2
-egradjust        88 231   1.000 E2
-ggradjust        88 231   1.000 E2
-sgr              88 231   0.001 M2
-egr              88 231   6.682 M2
-ggr              88 231   4.000 M2
-sgradjust        88 231   1.000 M2
-egradjust        88 231   1.000 M2
-ggradjust        88 231   1.000 M2
-##
-## Fission parameters
-##
-fisbar           88 231   4.40000  1
-fishw            88 231   1.00000  1
-fisbaradjust     88 231   1.00000  1
-fishwadjust      88 231   1.00000  1
-class2width      88 231   0.20000  1
-Rtransmom        88 231   0.60000  1
-Rclass2mom       88 231   1.00000  1
-fisbar           88 231   9.50000  2
-fishw            88 231   0.60000  2
-fisbaradjust     88 231   1.00000  2
-fishwadjust      88 231   1.00000  2
-Rtransmom        88 231   1.00000  2
-Rclass2mom       88 231   1.00000  2
-##--------------------------------------------
-##
-## Parameters for 229Fr
-##
-## Level density
-##
-a                87 229  32.31721
-aadjust          87 229   1.00000
-gammald          87 229   0.07502
-pair             87 229   0.79298
-Pshift           87 229   0.00000   0
-Pshiftadjust     87 229   0.00000   0
-deltaW           87 229   4.75009   0
-T                87 229   0.31336   0
-E0               87 229   0.06229   0
-Exmatch          87 229   2.87800   0
-Tadjust          87 229   1.00000   0
-E0adjust         87 229   1.00000   0
-Exmatchadjust    87 229   1.00000   0
-Ntop             87 229   1   0
-Nlow             87 229   0   0
-s2adjust         87 229   1.00000   0
-ctable           87 229   0.00000
-ptable           87 229   0.00000
-Krotconstant     87 229   1.00000   0
-Pshift           87 229   0.00000   1
-Pshiftadjust     87 229   0.00000   1
-deltaW           87 229   3.16673   1
-T                87 229   0.31336   1
-E0               87 229   0.29192   1
-Exmatch          87 229   2.64803   1
-Tadjust          87 229   1.00000   1
-E0adjust         87 229   1.00000   1
-Exmatchadjust    87 229   1.00000   1
-Ntop             87 229   7   1
-Nlow             87 229   2   1
-s2adjust         87 229   1.00000   1
-ctable           87 229   0.00000
-ptable           87 229   0.00000
-Krotconstant     87 229   1.00000   1
-Pshift           87 229   0.00000   2
-Pshiftadjust     87 229   0.00000   2
-deltaW           87 229   3.16673   2
-T                87 229   0.31336   2
-E0               87 229   0.58730   2
-Exmatch          87 229   4.56779   2
-Tadjust          87 229   1.00000   2
-E0adjust         87 229   1.00000   2
-Exmatchadjust    87 229   1.00000   2
-Ntop             87 229  10   2
-Nlow             87 229   2   2
-s2adjust         87 229   1.00000   2
-ctable           87 229   0.00000
-ptable           87 229   0.00000
-Krotconstant     87 229   1.00000   2
-g                87 229  15.26667
-gp               87 229   5.80000
-gn               87 229   9.46667
-gnadjust         87 229   1.00000
-gpadjust         87 229   1.00000
-##
-## Gamma-ray
-##
-gamgam           87 229   0.03000
-gamgamadjust     87 229   1.00000
-sgr              87 229 666.354 E1
-egr              87 229  13.428 E1
-ggr              87 229   3.711 E1
-sgradjust        87 229   1.000 E1
-egradjust        87 229   1.000 E1
-ggradjust        87 229   1.000 E1
-sgr              87 229   1.040 M1
-egr              87 229   6.701 M1
-ggr              87 229   4.000 M1
-sgradjust        87 229   1.000 M1
-egradjust        87 229   1.000 M1
-ggradjust        87 229   1.000 M1
-sgr              87 229   0.531 E2
-egr              87 229  10.297 E2
-ggr              87 229   3.362 E2
-sgradjust        87 229   1.000 E2
-egradjust        87 229   1.000 E2
-ggradjust        87 229   1.000 E2
-sgr              87 229   0.001 M2
-egr              87 229   6.701 M2
-ggr              87 229   4.000 M2
-sgradjust        87 229   1.000 M2
-egradjust        87 229   1.000 M2
-ggradjust        87 229   1.000 M2
-##
-## Fission parameters
-##
-fisbar           87 229   3.70000  1
-fishw            87 229   1.00000  1
-fisbaradjust     87 229   1.00000  1
-fishwadjust      87 229   1.00000  1
-class2width      87 229   0.20000  1
-Rtransmom        87 229   0.60000  1
-Rclass2mom       87 229   1.00000  1
-fisbar           87 229  10.40000  2
-fishw            87 229   0.60000  2
-fisbaradjust     87 229   1.00000  2
-fishwadjust      87 229   1.00000  2
-Rtransmom        87 229   1.00000  2
-Rclass2mom       87 229   1.00000  2
-##--------------------------------------------
-##
 ## Parameters for 229Th
 ##
 ## Level density
 ##
-a                90 229  30.07933
+a                90 229  30.07788
 aadjust          90 229   1.00000
 gammald          90 229   0.07502
 pair             90 229   0.79298
 Pshift           90 229   0.00000   0
 Pshiftadjust     90 229   0.00000   0
-deltaW           90 229   3.25622   0
-T                90 229   0.46384   0
-E0               90 229  -1.62161   0
-Exmatch          90 229   5.39167   0
+deltaW           90 229   3.25529   0
+T                90 229   0.46387   0
+E0               90 229  -1.62177   0
+Exmatch          90 229   5.39186   0
 Tadjust          90 229   1.00000   0
 E0adjust         90 229   1.00000   0
 Exmatchadjust    90 229   1.00000   0
@@ -2134,10 +2134,10 @@ ptable           90 229   0.00000
 Krotconstant     90 229   1.00000   0
 Pshift           90 229   0.00000   1
 Pshiftadjust     90 229   0.00000   1
-deltaW           90 229   2.17081   1
-T                90 229   0.50531   1
-E0               90 229  -1.93668   1
-Exmatch          90 229   6.04180   1
+deltaW           90 229   2.17019   1
+T                90 229   0.50533   1
+E0               90 229  -1.93678   1
+Exmatch          90 229   6.04209   1
 Tadjust          90 229   1.00000   1
 E0adjust         90 229   1.00000   1
 Exmatchadjust    90 229   1.00000   1
@@ -2149,10 +2149,10 @@ ptable           90 229   0.00000
 Krotconstant     90 229   1.00000   1
 Pshift           90 229   0.00000   2
 Pshiftadjust     90 229   0.00000   2
-deltaW           90 229   2.17081   2
-T                90 229   0.53902   2
-E0               90 229  -2.51409   2
-Exmatch          90 229   6.81331   2
+deltaW           90 229   2.17019   2
+T                90 229   0.53904   2
+E0               90 229  -2.51425   2
+Exmatch          90 229   6.81360   2
 Tadjust          90 229   1.00000   2
 E0adjust         90 229   1.00000   2
 Exmatchadjust    90 229   1.00000   2
@@ -2219,16 +2219,16 @@ Rclass2mom       90 229   1.00000  2
 ##
 ## Level density
 ##
-a                89 227  29.76088
+a                89 227  29.75801
 aadjust          89 227   1.00000
 gammald          89 227   0.07524
 pair             89 227   0.79647
 Pshift           89 227   0.00000   0
 Pshiftadjust     89 227   0.00000   0
-deltaW           89 227   3.33755   0
-T                89 227   0.44094   0
-E0               89 227  -1.24960   0
-Exmatch          89 227   4.90109   0
+deltaW           89 227   3.33568   0
+T                89 227   0.44099   0
+E0               89 227  -1.24983   0
+Exmatch          89 227   4.90167   0
 Tadjust          89 227   1.00000   0
 E0adjust         89 227   1.00000   0
 Exmatchadjust    89 227   1.00000   0
@@ -2240,10 +2240,10 @@ ptable           89 227   0.00000
 Krotconstant     89 227   1.00000   0
 Pshift           89 227   0.00000   1
 Pshiftadjust     89 227   0.00000   1
-deltaW           89 227   2.22503   1
-T                89 227   0.45503   1
-E0               89 227  -1.12915   1
-Exmatch          89 227   4.94331   1
+deltaW           89 227   2.22379   1
+T                89 227   0.45506   1
+E0               89 227  -1.12924   1
+Exmatch          89 227   4.94360   1
 Tadjust          89 227   1.00000   1
 E0adjust         89 227   1.00000   1
 Exmatchadjust    89 227   1.00000   1
@@ -2255,10 +2255,10 @@ ptable           89 227   0.00000
 Krotconstant     89 227   1.00000   1
 Pshift           89 227   0.00000   2
 Pshiftadjust     89 227   0.00000   2
-deltaW           89 227   2.22503   2
-T                89 227   0.42531   2
-E0               89 227  -0.71200   2
-Exmatch          89 227   4.35871   2
+deltaW           89 227   2.22379   2
+T                89 227   0.42534   2
+E0               89 227  -0.71205   2
+Exmatch          89 227   4.35891   2
 Tadjust          89 227   1.00000   2
 E0adjust         89 227   1.00000   2
 Exmatchadjust    89 227   1.00000   2
@@ -2324,16 +2324,16 @@ Rclass2mom       89 227   1.00000  2
 ##
 ## Level density
 ##
-a                88 226  29.84789
+a                88 226  29.84489
 aadjust          88 226   1.00000
 gammald          88 226   0.07535
 pair             88 226   1.59646
 Pshift           88 226   0.00000   0
 Pshiftadjust     88 226   0.00000   0
-deltaW           88 226   3.35496   0
-T                88 226   0.41361   0
-E0               88 226  -0.04872   0
-Exmatch          88 226   5.15217   0
+deltaW           88 226   3.35310   0
+T                88 226   0.41365   0
+E0               88 226  -0.04885   0
+Exmatch          88 226   5.15254   0
 Tadjust          88 226   1.00000   0
 E0adjust         88 226   1.00000   0
 Exmatchadjust    88 226   1.00000   0
@@ -2345,10 +2345,10 @@ ptable           88 226   0.00000
 Krotconstant     88 226   1.00000   0
 Pshift           88 226   0.00000   1
 Pshiftadjust     88 226   0.00000   1
-deltaW           88 226   2.23664   1
-T                88 226   0.50889   1
-E0               88 226  -1.15183   1
-Exmatch          88 226   6.86734   1
+deltaW           88 226   2.23540   1
+T                88 226   0.50892   1
+E0               88 226  -1.15193   1
+Exmatch          88 226   6.86771   1
 Tadjust          88 226   1.00000   1
 E0adjust         88 226   1.00000   1
 Exmatchadjust    88 226   1.00000   1
@@ -2360,10 +2360,10 @@ ptable           88 226   0.00000
 Krotconstant     88 226   1.00000   1
 Pshift           88 226   0.00000   2
 Pshiftadjust     88 226   0.00000   2
-deltaW           88 226   2.23664   2
-T                88 226   0.49230   2
-E0               88 226  -0.86683   2
-Exmatch          88 226   6.50403   2
+deltaW           88 226   2.23540   2
+T                88 226   0.49233   2
+E0               88 226  -0.86695   2
+Exmatch          88 226   6.50440   2
 Tadjust          88 226   1.00000   2
 E0adjust         88 226   1.00000   2
 Exmatchadjust    88 226   1.00000   2
@@ -2429,7 +2429,7 @@ Rclass2mom       88 226   1.00000  2
 ##
 ## Level density
 ##
-a                87 225  30.30173
+a                87 225  30.31116
 aadjust          87 225   1.00000
 gammald          87 225   0.07547
 pair             87 225   0.80000
@@ -2635,20 +2635,335 @@ Rtransmom        86 224   1.00000  2
 Rclass2mom       86 224   1.00000  2
 ##--------------------------------------------
 ##
+## Parameters for 228Th
+##
+## Level density
+##
+a                90 228  29.47959
+aadjust          90 228   1.00000
+gammald          90 228   0.07513
+pair             90 228   1.58944
+Pshift           90 228   0.00000   0
+Pshiftadjust     90 228   0.00000   0
+deltaW           90 228   3.05700   0
+T                90 228   0.42171   0
+E0               90 228  -0.12813   0
+Exmatch          90 228   5.27522   0
+Tadjust          90 228   1.00000   0
+E0adjust         90 228   1.00000   0
+Exmatchadjust    90 228   1.00000   0
+Ntop             90 228  15   0
+Nlow             90 228   5   0
+s2adjust         90 228   1.00000   0
+ctable           90 228   0.00000
+ptable           90 228   0.00000
+Krotconstant     90 228   1.00000   0
+Pshift           90 228   0.00000   1
+Pshiftadjust     90 228   0.00000   1
+deltaW           90 228   2.03800   1
+T                90 228   0.51012   1
+E0               90 228  -1.15689   1
+Exmatch          90 228   6.88907   1
+Tadjust          90 228   1.00000   1
+E0adjust         90 228   1.00000   1
+Exmatchadjust    90 228   1.00000   1
+Ntop             90 228  38   1
+Nlow             90 228   2   1
+s2adjust         90 228   1.00000   1
+ctable           90 228   0.00000
+ptable           90 228   0.00000
+Krotconstant     90 228   1.00000   1
+Pshift           90 228   0.00000   2
+Pshiftadjust     90 228   0.00000   2
+deltaW           90 228   2.03800   2
+T                90 228   0.49346   2
+E0               90 228  -0.87061   2
+Exmatch          90 228   6.52161   2
+Tadjust          90 228   1.00000   2
+E0adjust         90 228   1.00000   2
+Exmatchadjust    90 228   1.00000   2
+Ntop             90 228  12   2
+Nlow             90 228   2   2
+s2adjust         90 228   1.00000   2
+ctable           90 228   0.00000
+ptable           90 228   0.00000
+Krotconstant     90 228   1.00000   2
+g                90 228  15.20000
+gp               90 228   6.00000
+gn               90 228   9.20000
+gnadjust         90 228   1.00000
+gpadjust         90 228   1.00000
+##
+## Gamma-ray
+##
+gamgam           90 228   0.03000
+gamgamadjust     90 228   1.00000
+sgr              90 228 671.560 E1
+egr              90 228  13.442 E1
+ggr              90 228   3.718 E1
+sgradjust        90 228   1.000 E1
+egradjust        90 228   1.000 E1
+ggradjust        90 228   1.000 E1
+sgr              90 228   1.047 M1
+egr              90 228   6.711 M1
+ggr              90 228   4.000 M1
+sgradjust        90 228   1.000 M1
+egradjust        90 228   1.000 M1
+ggradjust        90 228   1.000 M1
+sgr              90 228   0.567 E2
+egr              90 228  10.312 E2
+ggr              90 228   3.374 E2
+sgradjust        90 228   1.000 E2
+egradjust        90 228   1.000 E2
+ggradjust        90 228   1.000 E2
+sgr              90 228   0.001 M2
+egr              90 228   6.711 M2
+ggr              90 228   4.000 M2
+sgradjust        90 228   1.000 M2
+egradjust        90 228   1.000 M2
+ggradjust        90 228   1.000 M2
+##
+## Fission parameters
+##
+fisbar           90 228   3.90000  1
+fishw            90 228   1.00000  1
+fisbaradjust     90 228   1.00000  1
+fishwadjust      90 228   1.00000  1
+class2width      90 228   0.20000  1
+Rtransmom        90 228   0.60000  1
+Rclass2mom       90 228   1.00000  1
+fisbar           90 228   6.40000  2
+fishw            90 228   0.60000  2
+fisbaradjust     90 228   1.00000  2
+fishwadjust      90 228   1.00000  2
+Rtransmom        90 228   1.00000  2
+Rclass2mom       90 228   1.00000  2
+##--------------------------------------------
+##
+## Parameters for 226Ac
+##
+## Level density
+##
+a                89 226  29.24991
+aadjust          89 226   1.00000
+gammald          89 226   0.07535
+pair             89 226   0.00000
+Pshift           89 226   0.00000   0
+Pshiftadjust     89 226   0.00000   0
+deltaW           89 226   3.03443   0
+T                89 226   0.28247   0
+E0               89 226  -0.25827   0
+Exmatch          89 226   1.37061   0
+Tadjust          89 226   1.00000   0
+E0adjust         89 226   1.00000   0
+Exmatchadjust    89 226   1.00000   0
+Ntop             89 226  15   0
+Nlow             89 226   8   0
+s2adjust         89 226   1.00000   0
+ctable           89 226   0.00000
+ptable           89 226   0.00000
+Krotconstant     89 226   1.00000   0
+Pshift           89 226   0.00000   1
+Pshiftadjust     89 226   0.00000   1
+deltaW           89 226   2.02295   1
+T                89 226   0.39757   1
+E0               89 226  -1.12569   1
+Exmatch          89 226   2.99145   1
+Tadjust          89 226   1.00000   1
+E0adjust         89 226   1.00000   1
+Exmatchadjust    89 226   1.00000   1
+Ntop             89 226  19   1
+Nlow             89 226   2   1
+s2adjust         89 226   1.00000   1
+ctable           89 226   0.00000
+ptable           89 226   0.00000
+Krotconstant     89 226   1.00000   1
+Pshift           89 226   0.00000   2
+Pshiftadjust     89 226   0.00000   2
+deltaW           89 226   2.02295   2
+T                89 226   0.41890   2
+E0               89 226  -1.36724   2
+Exmatch          89 226   3.37992   2
+Tadjust          89 226   1.00000   2
+E0adjust         89 226   1.00000   2
+Exmatchadjust    89 226   1.00000   2
+Ntop             89 226  27   2
+Nlow             89 226   2   2
+s2adjust         89 226   1.00000   2
+ctable           89 226   0.00000
+ptable           89 226   0.00000
+Krotconstant     89 226   1.00000   2
+g                89 226  15.06667
+gp               89 226   5.93333
+gn               89 226   9.13333
+gnadjust         89 226   1.00000
+gpadjust         89 226   1.00000
+##
+## Gamma-ray
+##
+gamgam           89 226   0.03100
+gamgamadjust     89 226   1.00000
+sgr              89 226 662.551 E1
+egr              89 226  13.469 E1
+ggr              89 226   3.732 E1
+sgradjust        89 226   1.000 E1
+egradjust        89 226   1.000 E1
+ggradjust        89 226   1.000 E1
+sgr              89 226   1.031 M1
+egr              89 226   6.731 M1
+ggr              89 226   4.000 M1
+sgradjust        89 226   1.000 M1
+egradjust        89 226   1.000 M1
+ggradjust        89 226   1.000 M1
+sgr              89 226   0.554 E2
+egr              89 226  10.343 E2
+ggr              89 226   3.398 E2
+sgradjust        89 226   1.000 E2
+egradjust        89 226   1.000 E2
+ggradjust        89 226   1.000 E2
+sgr              89 226   0.001 M2
+egr              89 226   6.731 M2
+ggr              89 226   4.000 M2
+sgradjust        89 226   1.000 M2
+egradjust        89 226   1.000 M2
+ggradjust        89 226   1.000 M2
+##
+## Fission parameters
+##
+fisbar           89 226   4.40000  1
+fishw            89 226   1.00000  1
+fisbaradjust     89 226   1.00000  1
+fishwadjust      89 226   1.00000  1
+class2width      89 226   0.20000  1
+Rtransmom        89 226   0.60000  1
+Rclass2mom       89 226   1.00000  1
+fisbar           89 226   7.90000  2
+fishw            89 226   0.60000  2
+fisbaradjust     89 226   1.00000  2
+fishwadjust      89 226   1.00000  2
+Rtransmom        89 226   1.00000  2
+Rclass2mom       89 226   1.00000  2
+##--------------------------------------------
+##
+## Parameters for 225Ra
+##
+## Level density
+##
+a                88 225  29.51482
+aadjust          88 225   1.00000
+gammald          88 225   0.07547
+pair             88 225   0.80000
+Pshift           88 225   0.00000   0
+Pshiftadjust     88 225   0.00000   0
+deltaW           88 225   3.13185   0
+T                88 225   0.45268   0
+E0               88 225  -1.33709   0
+Exmatch          88 225   5.05874   0
+Tadjust          88 225   1.00000   0
+E0adjust         88 225   1.00000   0
+Exmatchadjust    88 225   1.00000   0
+Ntop             88 225  15   0
+Nlow             88 225   8   0
+s2adjust         88 225   1.00000   0
+ctable           88 225   0.00000
+ptable           88 225   0.00000
+Krotconstant     88 225   1.00000   0
+Pshift           88 225   0.00000   1
+Pshiftadjust     88 225   0.00000   1
+deltaW           88 225   2.08790   1
+T                88 225   0.50861   1
+E0               88 225  -1.87453   1
+Exmatch          88 225   6.00390   1
+Tadjust          88 225   1.00000   1
+E0adjust         88 225   1.00000   1
+Exmatchadjust    88 225   1.00000   1
+Ntop             88 225   8   1
+Nlow             88 225   2   1
+s2adjust         88 225   1.00000   1
+ctable           88 225   0.00000
+ptable           88 225   0.00000
+Krotconstant     88 225   1.00000   1
+Pshift           88 225   0.00000   2
+Pshiftadjust     88 225   0.00000   2
+deltaW           88 225   2.08790   2
+T                88 225   0.54674   2
+E0               88 225  -2.52128   2
+Exmatch          88 225   6.87091   2
+Tadjust          88 225   1.00000   2
+E0adjust         88 225   1.00000   2
+Exmatchadjust    88 225   1.00000   2
+Ntop             88 225  16   2
+Nlow             88 225   2   2
+s2adjust         88 225   1.00000   2
+ctable           88 225   0.00000
+ptable           88 225   0.00000
+Krotconstant     88 225   1.00000   2
+g                88 225  15.00000
+gp               88 225   5.86667
+gn               88 225   9.13333
+gnadjust         88 225   1.00000
+gpadjust         88 225   1.00000
+##
+## Gamma-ray
+##
+gamgam           88 225   0.03150
+gamgamadjust     88 225   1.00000
+sgr              88 225 656.737 E1
+egr              88 225  13.483 E1
+ggr              88 225   3.740 E1
+sgradjust        88 225   1.000 E1
+egradjust        88 225   1.000 E1
+ggradjust        88 225   1.000 E1
+sgr              88 225   1.020 M1
+egr              88 225   6.741 M1
+ggr              88 225   4.000 M1
+sgradjust        88 225   1.000 M1
+egradjust        88 225   1.000 M1
+ggradjust        88 225   1.000 M1
+sgr              88 225   0.541 E2
+egr              88 225  10.358 E2
+ggr              88 225   3.410 E2
+sgradjust        88 225   1.000 E2
+egradjust        88 225   1.000 E2
+ggradjust        88 225   1.000 E2
+sgr              88 225   0.001 M2
+egr              88 225   6.741 M2
+ggr              88 225   4.000 M2
+sgradjust        88 225   1.000 M2
+egradjust        88 225   1.000 M2
+ggradjust        88 225   1.000 M2
+##
+## Fission parameters
+##
+fisbar           88 225   4.50000  1
+fishw            88 225   1.00000  1
+fisbaradjust     88 225   1.00000  1
+fishwadjust      88 225   1.00000  1
+class2width      88 225   0.20000  1
+Rtransmom        88 225   0.60000  1
+Rclass2mom       88 225   1.00000  1
+fisbar           88 225   9.00000  2
+fishw            88 225   0.60000  2
+fisbaradjust     88 225   1.00000  2
+fishwadjust      88 225   1.00000  2
+Rtransmom        88 225   1.00000  2
+Rclass2mom       88 225   1.00000  2
+##--------------------------------------------
+##
 ## Parameters for 224Fr
 ##
 ## Level density
 ##
-a                87 224  29.75278
+a                87 224  29.67191
 aadjust          87 224   1.00000
 gammald          87 224   0.07558
 pair             87 224   0.00000
 Pshift           87 224   0.00000   0
 Pshiftadjust     87 224   0.00000   0
-deltaW           87 224   3.41685   0
-T                87 224   0.33992   0
-E0               87 224  -0.76903   0
-Exmatch          87 224   2.24752   0
+deltaW           87 224   3.37027   0
+T                87 224   0.34070   0
+E0               87 224  -0.76988   0
+Exmatch          87 224   2.25237   0
 Tadjust          87 224   1.00000   0
 E0adjust         87 224   1.00000   0
 Exmatchadjust    87 224   1.00000   0
@@ -2660,10 +2975,10 @@ ptable           87 224   0.00000
 Krotconstant     87 224   1.00000   0
 Pshift           87 224   0.00000   1
 Pshiftadjust     87 224   0.00000   1
-deltaW           87 224   2.27790   1
-T                87 224   0.33992   1
-E0               87 224  -0.57049   1
-Exmatch          87 224   2.05693   1
+deltaW           87 224   2.24685   1
+T                87 224   0.34070   1
+E0               87 224  -0.57281   1
+Exmatch          87 224   2.06348   1
 Tadjust          87 224   1.00000   1
 E0adjust         87 224   1.00000   1
 Exmatchadjust    87 224   1.00000   1
@@ -2675,9 +2990,9 @@ ptable           87 224   0.00000
 Krotconstant     87 224   1.00000   1
 Pshift           87 224   0.00000   2
 Pshiftadjust     87 224   0.00000   2
-deltaW           87 224   2.27790   2
-T                87 224   0.33992   2
-E0               87 224  -0.33876   2
+deltaW           87 224   2.24685   2
+T                87 224   0.34070   2
+E0               87 224  -0.34316   2
 Exmatch          87 224   3.79946   2
 Tadjust          87 224   1.00000   2
 E0adjust         87 224   1.00000   2
@@ -2744,7 +3059,7 @@ Rclass2mom       87 224   1.00000  2
 ##
 ## Level density
 ##
-a                86 223  30.04629
+a                86 223  30.04667
 aadjust          86 223   1.00000
 gammald          86 223   0.07569
 pair             86 223   0.80358
@@ -2845,321 +3160,6 @@ Rtransmom        86 223   1.00000  2
 Rclass2mom       86 223   1.00000  2
 ##--------------------------------------------
 ##
-## Parameters for 228Th
-##
-## Level density
-##
-a                90 228  29.48241
-aadjust          90 228   1.00000
-gammald          90 228   0.07513
-pair             90 228   1.58944
-Pshift           90 228   0.00000   0
-Pshiftadjust     90 228   0.00000   0
-deltaW           90 228   3.05886   0
-T                90 228   0.42168   0
-E0               90 228  -0.12806   0
-Exmatch          90 228   5.27494   0
-Tadjust          90 228   1.00000   0
-E0adjust         90 228   1.00000   0
-Exmatchadjust    90 228   1.00000   0
-Ntop             90 228  15   0
-Nlow             90 228   5   0
-s2adjust         90 228   1.00000   0
-ctable           90 228   0.00000
-ptable           90 228   0.00000
-Krotconstant     90 228   1.00000   0
-Pshift           90 228   0.00000   1
-Pshiftadjust     90 228   0.00000   1
-deltaW           90 228   2.03924   1
-T                90 228   0.51008   1
-E0               90 228  -1.15677   1
-Exmatch          90 228   6.88853   1
-Tadjust          90 228   1.00000   1
-E0adjust         90 228   1.00000   1
-Exmatchadjust    90 228   1.00000   1
-Ntop             90 228  38   1
-Nlow             90 228   2   1
-s2adjust         90 228   1.00000   1
-ctable           90 228   0.00000
-ptable           90 228   0.00000
-Krotconstant     90 228   1.00000   1
-Pshift           90 228   0.00000   2
-Pshiftadjust     90 228   0.00000   2
-deltaW           90 228   2.03924   2
-T                90 228   0.49343   2
-E0               90 228  -0.87047   2
-Exmatch          90 228   6.52124   2
-Tadjust          90 228   1.00000   2
-E0adjust         90 228   1.00000   2
-Exmatchadjust    90 228   1.00000   2
-Ntop             90 228  12   2
-Nlow             90 228   2   2
-s2adjust         90 228   1.00000   2
-ctable           90 228   0.00000
-ptable           90 228   0.00000
-Krotconstant     90 228   1.00000   2
-g                90 228  15.20000
-gp               90 228   6.00000
-gn               90 228   9.20000
-gnadjust         90 228   1.00000
-gpadjust         90 228   1.00000
-##
-## Gamma-ray
-##
-gamgam           90 228   0.03000
-gamgamadjust     90 228   1.00000
-sgr              90 228 671.560 E1
-egr              90 228  13.442 E1
-ggr              90 228   3.718 E1
-sgradjust        90 228   1.000 E1
-egradjust        90 228   1.000 E1
-ggradjust        90 228   1.000 E1
-sgr              90 228   1.047 M1
-egr              90 228   6.711 M1
-ggr              90 228   4.000 M1
-sgradjust        90 228   1.000 M1
-egradjust        90 228   1.000 M1
-ggradjust        90 228   1.000 M1
-sgr              90 228   0.567 E2
-egr              90 228  10.312 E2
-ggr              90 228   3.374 E2
-sgradjust        90 228   1.000 E2
-egradjust        90 228   1.000 E2
-ggradjust        90 228   1.000 E2
-sgr              90 228   0.001 M2
-egr              90 228   6.711 M2
-ggr              90 228   4.000 M2
-sgradjust        90 228   1.000 M2
-egradjust        90 228   1.000 M2
-ggradjust        90 228   1.000 M2
-##
-## Fission parameters
-##
-fisbar           90 228   3.90000  1
-fishw            90 228   1.00000  1
-fisbaradjust     90 228   1.00000  1
-fishwadjust      90 228   1.00000  1
-class2width      90 228   0.20000  1
-Rtransmom        90 228   0.60000  1
-Rclass2mom       90 228   1.00000  1
-fisbar           90 228   6.40000  2
-fishw            90 228   0.60000  2
-fisbaradjust     90 228   1.00000  2
-fishwadjust      90 228   1.00000  2
-Rtransmom        90 228   1.00000  2
-Rclass2mom       90 228   1.00000  2
-##--------------------------------------------
-##
-## Parameters for 226Ac
-##
-## Level density
-##
-a                89 226  29.25133
-aadjust          89 226   1.00000
-gammald          89 226   0.07535
-pair             89 226   0.00000
-Pshift           89 226   0.00000   0
-Pshiftadjust     89 226   0.00000   0
-deltaW           89 226   3.03536   0
-T                89 226   0.28245   0
-E0               89 226  -0.25819   0
-Exmatch          89 226   1.37041   0
-Tadjust          89 226   1.00000   0
-E0adjust         89 226   1.00000   0
-Exmatchadjust    89 226   1.00000   0
-Ntop             89 226  15   0
-Nlow             89 226   8   0
-s2adjust         89 226   1.00000   0
-ctable           89 226   0.00000
-ptable           89 226   0.00000
-Krotconstant     89 226   1.00000   0
-Pshift           89 226   0.00000   1
-Pshiftadjust     89 226   0.00000   1
-deltaW           89 226   2.02357   1
-T                89 226   0.39755   1
-E0               89 226  -1.12563   1
-Exmatch          89 226   2.99125   1
-Tadjust          89 226   1.00000   1
-E0adjust         89 226   1.00000   1
-Exmatchadjust    89 226   1.00000   1
-Ntop             89 226  19   1
-Nlow             89 226   2   1
-s2adjust         89 226   1.00000   1
-ctable           89 226   0.00000
-ptable           89 226   0.00000
-Krotconstant     89 226   1.00000   1
-Pshift           89 226   0.00000   2
-Pshiftadjust     89 226   0.00000   2
-deltaW           89 226   2.02357   2
-T                89 226   0.41888   2
-E0               89 226  -1.36716   2
-Exmatch          89 226   3.37972   2
-Tadjust          89 226   1.00000   2
-E0adjust         89 226   1.00000   2
-Exmatchadjust    89 226   1.00000   2
-Ntop             89 226  27   2
-Nlow             89 226   2   2
-s2adjust         89 226   1.00000   2
-ctable           89 226   0.00000
-ptable           89 226   0.00000
-Krotconstant     89 226   1.00000   2
-g                89 226  15.06667
-gp               89 226   5.93333
-gn               89 226   9.13333
-gnadjust         89 226   1.00000
-gpadjust         89 226   1.00000
-##
-## Gamma-ray
-##
-gamgam           89 226   0.03100
-gamgamadjust     89 226   1.00000
-sgr              89 226 662.551 E1
-egr              89 226  13.469 E1
-ggr              89 226   3.732 E1
-sgradjust        89 226   1.000 E1
-egradjust        89 226   1.000 E1
-ggradjust        89 226   1.000 E1
-sgr              89 226   1.031 M1
-egr              89 226   6.731 M1
-ggr              89 226   4.000 M1
-sgradjust        89 226   1.000 M1
-egradjust        89 226   1.000 M1
-ggradjust        89 226   1.000 M1
-sgr              89 226   0.554 E2
-egr              89 226  10.343 E2
-ggr              89 226   3.398 E2
-sgradjust        89 226   1.000 E2
-egradjust        89 226   1.000 E2
-ggradjust        89 226   1.000 E2
-sgr              89 226   0.001 M2
-egr              89 226   6.731 M2
-ggr              89 226   4.000 M2
-sgradjust        89 226   1.000 M2
-egradjust        89 226   1.000 M2
-ggradjust        89 226   1.000 M2
-##
-## Fission parameters
-##
-fisbar           89 226   4.40000  1
-fishw            89 226   1.00000  1
-fisbaradjust     89 226   1.00000  1
-fishwadjust      89 226   1.00000  1
-class2width      89 226   0.20000  1
-Rtransmom        89 226   0.60000  1
-Rclass2mom       89 226   1.00000  1
-fisbar           89 226   7.90000  2
-fishw            89 226   0.60000  2
-fisbaradjust     89 226   1.00000  2
-fishwadjust      89 226   1.00000  2
-Rtransmom        89 226   1.00000  2
-Rclass2mom       89 226   1.00000  2
-##--------------------------------------------
-##
-## Parameters for 225Ra
-##
-## Level density
-##
-a                88 225  29.51627
-aadjust          88 225   1.00000
-gammald          88 225   0.07547
-pair             88 225   0.80000
-Pshift           88 225   0.00000   0
-Pshiftadjust     88 225   0.00000   0
-deltaW           88 225   3.13278   0
-T                88 225   0.45265   0
-E0               88 225  -1.33697   0
-Exmatch          88 225   5.05845   0
-Tadjust          88 225   1.00000   0
-E0adjust         88 225   1.00000   0
-Exmatchadjust    88 225   1.00000   0
-Ntop             88 225  15   0
-Nlow             88 225   8   0
-s2adjust         88 225   1.00000   0
-ctable           88 225   0.00000
-ptable           88 225   0.00000
-Krotconstant     88 225   1.00000   0
-Pshift           88 225   0.00000   1
-Pshiftadjust     88 225   0.00000   1
-deltaW           88 225   2.08852   1
-T                88 225   0.50859   1
-E0               88 225  -1.87443   1
-Exmatch          88 225   6.00370   1
-Tadjust          88 225   1.00000   1
-E0adjust         88 225   1.00000   1
-Exmatchadjust    88 225   1.00000   1
-Ntop             88 225   8   1
-Nlow             88 225   2   1
-s2adjust         88 225   1.00000   1
-ctable           88 225   0.00000
-ptable           88 225   0.00000
-Krotconstant     88 225   1.00000   1
-Pshift           88 225   0.00000   2
-Pshiftadjust     88 225   0.00000   2
-deltaW           88 225   2.08852   2
-T                88 225   0.54672   2
-E0               88 225  -2.52118   2
-Exmatch          88 225   6.87062   2
-Tadjust          88 225   1.00000   2
-E0adjust         88 225   1.00000   2
-Exmatchadjust    88 225   1.00000   2
-Ntop             88 225  16   2
-Nlow             88 225   2   2
-s2adjust         88 225   1.00000   2
-ctable           88 225   0.00000
-ptable           88 225   0.00000
-Krotconstant     88 225   1.00000   2
-g                88 225  15.00000
-gp               88 225   5.86667
-gn               88 225   9.13333
-gnadjust         88 225   1.00000
-gpadjust         88 225   1.00000
-##
-## Gamma-ray
-##
-gamgam           88 225   0.03150
-gamgamadjust     88 225   1.00000
-sgr              88 225 656.737 E1
-egr              88 225  13.483 E1
-ggr              88 225   3.740 E1
-sgradjust        88 225   1.000 E1
-egradjust        88 225   1.000 E1
-ggradjust        88 225   1.000 E1
-sgr              88 225   1.020 M1
-egr              88 225   6.741 M1
-ggr              88 225   4.000 M1
-sgradjust        88 225   1.000 M1
-egradjust        88 225   1.000 M1
-ggradjust        88 225   1.000 M1
-sgr              88 225   0.541 E2
-egr              88 225  10.358 E2
-ggr              88 225   3.410 E2
-sgradjust        88 225   1.000 E2
-egradjust        88 225   1.000 E2
-ggradjust        88 225   1.000 E2
-sgr              88 225   0.001 M2
-egr              88 225   6.741 M2
-ggr              88 225   4.000 M2
-sgradjust        88 225   1.000 M2
-egradjust        88 225   1.000 M2
-ggradjust        88 225   1.000 M2
-##
-## Fission parameters
-##
-fisbar           88 225   4.50000  1
-fishw            88 225   1.00000  1
-fisbaradjust     88 225   1.00000  1
-fishwadjust      88 225   1.00000  1
-class2width      88 225   0.20000  1
-Rtransmom        88 225   0.60000  1
-Rclass2mom       88 225   1.00000  1
-fisbar           88 225   9.00000  2
-fishw            88 225   0.60000  2
-fisbaradjust     88 225   1.00000  2
-fishwadjust      88 225   1.00000  2
-Rtransmom        88 225   1.00000  2
-Rclass2mom       88 225   1.00000  2
-##--------------------------------------------
-##
 ## General parameters
 ##
 ## Level density
@@ -3182,7 +3182,7 @@ Kph              15.00000
 ## Gamma-ray
 ##
 gnorm             9.00000
-xscaptherm      7.35000E+03
+xscaptherm      3.21455E+04
 ##
 ## Pre-equilibrium
 ##
@@ -3195,11 +3195,24 @@ Rpinu             1.00000
 Rnupi             1.00000
 Rgamma            2.00000
 Esurf            13.55631
+Cstrip        n   1.00000
+Cknock        n   1.00000
+Cbreak        n   1.00000
+Cstrip        p   1.00000
+Cknock        p   1.00000
+Cbreak        p   1.00000
 Cstrip        d   1.00000
+Cknock        d   1.00000
+Cbreak        d   1.00000
 Cstrip        t   1.00000
+Cknock        t   1.00000
+Cbreak        t   1.00000
 Cstrip        h   1.00000
+Cknock        h   1.00000
+Cbreak        h   1.00000
 Cstrip        a   1.00000
 Cknock        a   1.00000
+Cbreak        a   1.00000
 ##
 ## Optical model
 ##
@@ -3368,4 +3381,4 @@ tljadjust     a   1.00000 4
 ##
 ## Resonance parameters
 ## Z   A     S0        R      xs(therm)    D0         a         P        Sn
-##  90 232 2.697E-01 5.113E+00 7.350E+03 3.814E+01 3.108E+01 7.861E-01 4.786E+00
+##  90 232 2.697E-01 5.113E+00 3.215E+04 3.818E+01 3.108E+01 7.861E-01 4.786E+00

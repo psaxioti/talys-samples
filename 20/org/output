@@ -1,8 +1,8 @@
 
-    TALYS-1.8 (Version: December 28, 2015)
+    TALYS-1.9 (Version: December 21, 2017)
 
- Copyright (C) 2015  A.J. Koning, S. Hilaire and S. Goriely      
-                         NRG          CEA          ULB    
+ Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
+                         IAEA         CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -78,6 +78,8 @@
  reaction            y     flagreaction flag for calculation of nuclear reactions
  astro               y     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             y     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
+ astroex             n     flagastroex  flag for calculation of astrophysics reaction rate to long-lived excited states
+ nonthermlev        -1     nonthermlev  excited level non-thermalized in the calculation of astrophysics rate
  massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
  disctable           1     disctable    table with discrete levels
@@ -112,8 +114,8 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            6     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
- deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
+ alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
+ deuteronomp         1     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
@@ -216,7 +218,7 @@
  ########## BASIC REACTION PARAMETERS ##########
 
  Projectile           : neutron     Mass in a.m.u.      :   1.008665
- Target               : 138Ba       Mass in a.m.u.      : 137.905246
+ Target               : 138Ba       Mass in a.m.u.      : 137.905247
 
  Included channels:
                      gamma   
@@ -309,11 +311,11 @@
 
  Q(n,g):  4.72343
  Q(n,n):  0.00000
- Q(n,p): -4.59246
+ Q(n,p): -4.59235
  Q(n,d): -6.78043
  Q(n,t): -8.80141
- Q(n,h): -8.69258
- Q(n,a):  3.80132
+ Q(n,h): -8.69236
+ Q(n,a):  3.79792
 
  ########## RESULTS FOR E= 2.01463E-06 ##########
 
@@ -535,7 +537,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00101 ##########
+ ########## RESULTS FOR E=   0.00101 ##########
 
  Energy dependent input flags
 
@@ -545,7 +547,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00201 ##########
+ ########## RESULTS FOR E=   0.00201 ##########
 
  Energy dependent input flags
 
@@ -555,7 +557,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00302 ##########
+ ########## RESULTS FOR E=   0.00302 ##########
 
  Energy dependent input flags
 
@@ -565,7 +567,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00403 ##########
+ ########## RESULTS FOR E=   0.00403 ##########
 
  Energy dependent input flags
 
@@ -575,7 +577,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00504 ##########
+ ########## RESULTS FOR E=   0.00504 ##########
 
  Energy dependent input flags
 
@@ -585,7 +587,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00604 ##########
+ ########## RESULTS FOR E=   0.00604 ##########
 
  Energy dependent input flags
 
@@ -595,7 +597,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00705 ##########
+ ########## RESULTS FOR E=   0.00705 ##########
 
  Energy dependent input flags
 
@@ -605,7 +607,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00806 ##########
+ ########## RESULTS FOR E=   0.00806 ##########
 
  Energy dependent input flags
 
@@ -615,7 +617,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.00907 ##########
+ ########## RESULTS FOR E=   0.00907 ##########
 
  Energy dependent input flags
 
@@ -625,7 +627,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.01007 ##########
+ ########## RESULTS FOR E=   0.01007 ##########
 
  Energy dependent input flags
 
@@ -635,7 +637,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.01410 ##########
+ ########## RESULTS FOR E=   0.01410 ##########
 
  Energy dependent input flags
 
@@ -645,7 +647,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.01813 ##########
+ ########## RESULTS FOR E=   0.01813 ##########
 
  Energy dependent input flags
 
@@ -655,7 +657,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.02216 ##########
+ ########## RESULTS FOR E=   0.02216 ##########
 
  Energy dependent input flags
 
@@ -665,7 +667,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.02619 ##########
+ ########## RESULTS FOR E=   0.02619 ##########
 
  Energy dependent input flags
 
@@ -675,7 +677,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.03022 ##########
+ ########## RESULTS FOR E=   0.03022 ##########
 
  Energy dependent input flags
 
@@ -685,7 +687,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.03425 ##########
+ ########## RESULTS FOR E=   0.03425 ##########
 
  Energy dependent input flags
 
@@ -695,7 +697,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.03828 ##########
+ ########## RESULTS FOR E=   0.03828 ##########
 
  Energy dependent input flags
 
@@ -705,7 +707,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.04231 ##########
+ ########## RESULTS FOR E=   0.04231 ##########
 
  Energy dependent input flags
 
@@ -715,7 +717,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.04634 ##########
+ ########## RESULTS FOR E=   0.04634 ##########
 
  Energy dependent input flags
 
@@ -725,7 +727,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.05037 ##########
+ ########## RESULTS FOR E=   0.05037 ##########
 
  Energy dependent input flags
 
@@ -735,7 +737,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.05439 ##########
+ ########## RESULTS FOR E=   0.05439 ##########
 
  Energy dependent input flags
 
@@ -745,7 +747,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.05842 ##########
+ ########## RESULTS FOR E=   0.05842 ##########
 
  Energy dependent input flags
 
@@ -755,7 +757,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.06245 ##########
+ ########## RESULTS FOR E=   0.06245 ##########
 
  Energy dependent input flags
 
@@ -765,7 +767,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.06648 ##########
+ ########## RESULTS FOR E=   0.06648 ##########
 
  Energy dependent input flags
 
@@ -775,7 +777,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.07051 ##########
+ ########## RESULTS FOR E=   0.07051 ##########
 
  Energy dependent input flags
 
@@ -785,7 +787,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.07454 ##########
+ ########## RESULTS FOR E=   0.07454 ##########
 
  Energy dependent input flags
 
@@ -795,7 +797,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.07857 ##########
+ ########## RESULTS FOR E=   0.07857 ##########
 
  Energy dependent input flags
 
@@ -805,7 +807,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.08260 ##########
+ ########## RESULTS FOR E=   0.08260 ##########
 
  Energy dependent input flags
 
@@ -815,7 +817,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.08663 ##########
+ ########## RESULTS FOR E=   0.08663 ##########
 
  Energy dependent input flags
 
@@ -825,7 +827,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.09066 ##########
+ ########## RESULTS FOR E=   0.09066 ##########
 
  Energy dependent input flags
 
@@ -835,7 +837,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.09469 ##########
+ ########## RESULTS FOR E=   0.09469 ##########
 
  Energy dependent input flags
 
@@ -845,7 +847,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.09872 ##########
+ ########## RESULTS FOR E=   0.09872 ##########
 
  Energy dependent input flags
 
@@ -855,7 +857,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.10275 ##########
+ ########## RESULTS FOR E=   0.10275 ##########
 
  Energy dependent input flags
 
@@ -865,7 +867,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.15311 ##########
+ ########## RESULTS FOR E=   0.15311 ##########
 
  Energy dependent input flags
 
@@ -875,7 +877,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.20348 ##########
+ ########## RESULTS FOR E=   0.20348 ##########
 
  Energy dependent input flags
 
@@ -885,7 +887,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.25384 ##########
+ ########## RESULTS FOR E=   0.25384 ##########
 
  Energy dependent input flags
 
@@ -895,7 +897,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.30421 ##########
+ ########## RESULTS FOR E=   0.30421 ##########
 
  Energy dependent input flags
 
@@ -905,7 +907,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.35457 ##########
+ ########## RESULTS FOR E=   0.35457 ##########
 
  Energy dependent input flags
 
@@ -915,7 +917,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.40494 ##########
+ ########## RESULTS FOR E=   0.40494 ##########
 
  Energy dependent input flags
 
@@ -925,7 +927,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.45531 ##########
+ ########## RESULTS FOR E=   0.45531 ##########
 
  Energy dependent input flags
 
@@ -935,7 +937,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.50567 ##########
+ ########## RESULTS FOR E=   0.50567 ##########
 
  Energy dependent input flags
 
@@ -945,7 +947,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.55604 ##########
+ ########## RESULTS FOR E=   0.55604 ##########
 
  Energy dependent input flags
 
@@ -955,7 +957,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.60640 ##########
+ ########## RESULTS FOR E=   0.60640 ##########
 
  Energy dependent input flags
 
@@ -965,7 +967,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.65677 ##########
+ ########## RESULTS FOR E=   0.65677 ##########
 
  Energy dependent input flags
 
@@ -975,7 +977,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.70713 ##########
+ ########## RESULTS FOR E=   0.70713 ##########
 
  Energy dependent input flags
 
@@ -985,7 +987,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.75750 ##########
+ ########## RESULTS FOR E=   0.75750 ##########
 
  Energy dependent input flags
 
@@ -995,7 +997,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.80787 ##########
+ ########## RESULTS FOR E=   0.80787 ##########
 
  Energy dependent input flags
 
@@ -1005,7 +1007,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.85823 ##########
+ ########## RESULTS FOR E=   0.85823 ##########
 
  Energy dependent input flags
 
@@ -1015,7 +1017,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.90860 ##########
+ ########## RESULTS FOR E=   0.90860 ##########
 
  Energy dependent input flags
 
@@ -1025,7 +1027,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  0.95896 ##########
+ ########## RESULTS FOR E=   0.95896 ##########
 
  Energy dependent input flags
 
@@ -1035,7 +1037,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  1.00933 ##########
+ ########## RESULTS FOR E=   1.00933 ##########
 
  Energy dependent input flags
 
@@ -1045,7 +1047,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  1.26116 ##########
+ ########## RESULTS FOR E=   1.26116 ##########
 
  Energy dependent input flags
 
@@ -1055,7 +1057,7 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins: 40
 
- ########## RESULTS FOR E=  1.51299 ##########
+ ########## RESULTS FOR E=   1.51299 ##########
 
  Energy dependent input flags
 
@@ -1083,14 +1085,14 @@
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 2.43579E-07 1.68280E-12
+   0.3481 1.00000E+00 1.66342E-12 1.14920E-17
 
  Reaction rate for Z= 52 A=131 (131Te) at <E>= 0.03000 MeV (Excited States Contribution : n)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 1.66319E-12 1.14904E-17
+   0.3481 1.00000E+00 1.11029E-21 7.67060E-27
 
- Execution time:  0 hours  0 minutes  9.36 seconds 
+ Execution time:  0 hours  0 minutes 10.78 seconds 
 
  The TALYS team congratulates you with this successful calculation.

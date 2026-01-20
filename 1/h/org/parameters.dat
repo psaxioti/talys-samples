@@ -62,7 +62,7 @@ ggradjust        41  94   1.000 M2
 ##
 ## Level density
 ##
-a                41  93  12.33154
+a                41  93  12.33153
 aadjust          41  93   1.00000
 gammald          41  93   0.09559
 pair             41  93   1.24434
@@ -126,10 +126,10 @@ gammald          40  93   0.09559
 pair             40  93   1.24434
 Pshift           40  93   0.00000   0
 Pshiftadjust     40  93   0.00000   0
-deltaW           40  93   0.47557   0
+deltaW           40  93   0.47650   0
 T                40  93   0.75772   0
-E0               40  93  -0.15768   0
-Exmatch          40  93   5.58163   0
+E0               40  93  -0.15769   0
+Exmatch          40  93   5.58143   0
 Tadjust          40  93   1.00000   0
 E0adjust         40  93   1.00000   0
 Exmatchadjust    40  93   1.00000   0
@@ -185,10 +185,10 @@ gammald          40  92   0.09594
 pair             40  92   2.50217
 Pshift           40  92   0.00000   0
 Pshiftadjust     40  92   0.00000   0
-deltaW           40  92  -0.00664   0
+deltaW           40  92  -0.00571   0
 T                40  92   0.85478   0
-E0               40  92   0.52894   0
-Exmatch          40  92   8.05964   0
+E0               40  92   0.52892   0
+Exmatch          40  92   8.05935   0
 Tadjust          40  92   1.00000   0
 E0adjust         40  92   1.00000   0
 Exmatchadjust    40  92   1.00000   0
@@ -244,10 +244,10 @@ gammald          40  91   0.09629
 pair             40  91   1.25794
 Pshift           40  91   0.00000   0
 Pshiftadjust     40  91   0.00000   0
-deltaW           40  91  -1.23343   0
+deltaW           40  91  -1.23250   0
 T                40  91   0.84670   0
-E0               40  91  -0.14706   0
-Exmatch          40  91   6.32025   0
+E0               40  91  -0.14707   0
+Exmatch          40  91   6.32005   0
 Tadjust          40  91   1.00000   0
 E0adjust         40  91   1.00000   0
 Exmatchadjust    40  91   1.00000   0
@@ -297,16 +297,16 @@ ggradjust        40  91   1.000 M2
 ##
 ## Level density
 ##
-a                39  91  12.16339
+a                39  91  12.16418
 aadjust          39  91   1.00000
 gammald          39  91   0.09629
 pair             39  91   1.25794
 Pshift           39  91   0.00000   0
 Pshiftadjust     39  91   0.00000   0
-deltaW           39  91   0.16421   0
-T                39  91   0.65999   0
-E0               39  91   0.58131   0
-Exmatch          39  91   4.24067   0
+deltaW           39  91   0.16514   0
+T                39  91   0.65991   0
+E0               39  91   0.58155   0
+Exmatch          39  91   4.23995   0
 Tadjust          39  91   1.00000   0
 E0adjust         39  91   1.00000   0
 Exmatchadjust    39  91   1.00000   0
@@ -361,10 +361,10 @@ gammald          39  90   0.09664
 pair             39  90   0.00000
 Pshift           39  90   0.00000   0
 Pshiftadjust     39  90   0.00000   0
-deltaW           39  90  -1.29786   0
-T                39  90   0.86541   0
+deltaW           39  90  -1.29693   0
+T                39  90   0.86540   0
 E0               39  90  -0.71469   0
-Exmatch          39  90   4.06888   0
+Exmatch          39  90   4.06866   0
 Tadjust          39  90   1.00000   0
 E0adjust         39  90   1.00000   0
 Exmatchadjust    39  90   1.00000   0
@@ -414,7 +414,7 @@ ggradjust        39  90   1.000 M2
 ##
 ## Level density
 ##
-a                41  92  10.98388
+a                41  92  10.98389
 aadjust          41  92   1.00000
 gammald          41  92   0.09594
 pair             41  92   0.00000
@@ -472,16 +472,16 @@ ggradjust        41  92   1.000 M2
 ##
 ## Level density
 ##
-a                40  90  10.43456
+a                40  90  10.43525
 aadjust          40  90   1.00000
 gammald          40  90   0.09664
 pair             40  90   2.52982
 Pshift           40  90   0.00000   0
 Pshiftadjust     40  90   0.00000   0
-deltaW           40  90  -1.95637   0
-T                40  90   0.51156   0
-E0               40  90   3.03859   0
-Exmatch          40  90   3.32280   0
+deltaW           40  90  -1.95544   0
+T                40  90   0.51167   0
+E0               40  90   3.03829   0
+Exmatch          40  90   3.32564   0
 Tadjust          40  90   1.00000   0
 E0adjust         40  90   1.00000   0
 Exmatchadjust    40  90   1.00000   0
@@ -530,16 +530,16 @@ ggradjust        40  90   1.000 M2
 ##
 ## Level density
 ##
-a                39  89  10.44412
+a                39  89  10.44474
 aadjust          39  89   1.00000
 gammald          39  89   0.09700
 pair             39  89   1.27200
 Pshift           39  89   0.00000   0
 Pshiftadjust     39  89   0.00000   0
-deltaW           39  89  -1.86699   0
-T                39  89   0.94479   0
-E0               39  89  -0.80008   0
-Exmatch          39  89   8.06554   0
+deltaW           39  89  -1.86606   0
+T                39  89   0.94472   0
+E0               39  89  -0.79996   0
+Exmatch          39  89   8.06452   0
 Tadjust          39  89   1.00000   0
 E0adjust         39  89   1.00000   0
 Exmatchadjust    39  89   1.00000   0
@@ -588,16 +588,16 @@ ggradjust        39  89   1.000 M2
 ##
 ## Level density
 ##
-a                41  91  10.62702
+a                41  91  10.62770
 aadjust          41  91   1.00000
 gammald          41  91   0.09629
 pair             41  91   1.25794
 Pshift           41  91   0.00000   0
 Pshiftadjust     41  91   0.00000   0
-deltaW           41  91  -1.93897   0
-T                41  91   0.91319   0
-E0               41  91  -0.58176   0
-Exmatch          41  91   7.58120   0
+deltaW           41  91  -1.93804   0
+T                41  91   0.91311   0
+E0               41  91  -0.58144   0
+Exmatch          41  91   7.57977   0
 Tadjust          41  91   1.00000   0
 E0adjust         41  91   1.00000   0
 Exmatchadjust    41  91   1.00000   0
@@ -646,16 +646,16 @@ ggradjust        41  91   1.000 M2
 ##
 ## Level density
 ##
-a                40  89  11.32719
+a                40  89  11.32790
 aadjust          40  89   1.00000
 gammald          40  89   0.09700
 pair             40  89   1.27200
 Pshift           40  89   0.00000   0
 Pshiftadjust     40  89   0.00000   0
-deltaW           40  89  -0.59564   0
-T                40  89   0.81462   0
-E0               40  89  -0.22683   0
-Exmatch          40  89   6.13879   0
+deltaW           40  89  -0.59471   0
+T                40  89   0.81454   0
+E0               40  89  -0.22656   0
+Exmatch          40  89   6.13786   0
 Tadjust          40  89   1.00000   0
 E0adjust         40  89   1.00000   0
 Exmatchadjust    40  89   1.00000   0
@@ -820,7 +820,7 @@ ggradjust        39  92   1.000 M2
 ##
 ## Level density
 ##
-a                38  90  12.03676
+a                38  90  12.03677
 aadjust          38  90   1.00000
 gammald          38  90   0.09664
 pair             38  90   2.52982
@@ -884,10 +884,10 @@ gammald          38  89   0.09700
 pair             38  89   1.27200
 Pshift           38  89   0.00000   0
 Pshiftadjust     38  89   0.00000   0
-deltaW           38  89  -0.95255   0
-T                38  89   0.60138   0
-E0               38  89   1.51279   0
-Exmatch          38  89   1.63815   0
+deltaW           38  89  -0.95348   0
+T                38  89   0.60151   0
+E0               38  89   1.51245   0
+Exmatch          38  89   1.63775   0
 Tadjust          38  89   1.00000   0
 E0adjust         38  89   1.00000   0
 Exmatchadjust    38  89   1.00000   0
@@ -944,9 +944,9 @@ pair             38  88   2.55841
 Pshift           38  88   0.00000   0
 Pshiftadjust     38  88   0.00000   0
 deltaW           38  88  -1.51455   0
-T                38  88   0.87098   0
-E0               38  88   1.51776   0
-Exmatch          38  88   7.22032   0
+T                38  88   0.87138   0
+E0               38  88   1.51622   0
+Exmatch          38  88   7.22475   0
 Tadjust          38  88   1.00000   0
 E0adjust         38  88   1.00000   0
 Exmatchadjust    38  88   1.00000   0
@@ -1172,7 +1172,7 @@ ggradjust        37  86   1.000 M2
 ##
 ## Level density
 ##
-a                38  86  12.03654
+a                38  86  12.03633
 aadjust          38  86   1.00000
 gammald          38  86   0.09812
 pair             38  86   2.58799
@@ -1302,7 +1302,7 @@ Kph              15.00000
 ## Gamma-ray
 ##
 gnorm             2.56010
-xscaptherm      1.15000E+03
+xscaptherm      1.02847E+04
 ##
 ## Pre-equilibrium
 ##
@@ -1315,11 +1315,24 @@ Rpinu             1.00000
 Rnupi             1.00000
 Rgamma            2.00000
 Esurf            12.11795
+Cstrip        n   1.00000
+Cknock        n   1.00000
+Cbreak        n   1.00000
+Cstrip        p   1.00000
+Cknock        p   1.00000
+Cbreak        p   1.00000
 Cstrip        d   1.00000
+Cknock        d   1.00000
+Cbreak        d   1.00000
 Cstrip        t   1.00000
+Cknock        t   1.00000
+Cbreak        t   1.00000
 Cstrip        h   1.00000
+Cknock        h   1.00000
+Cbreak        h   1.00000
 Cstrip        a   1.00000
 Cknock        a   1.00000
+Cbreak        a   1.00000
 ##
 ## Optical model
 ##
@@ -1488,4 +1501,4 @@ tljadjust     a   1.00000 4
 ##
 ## Resonance parameters
 ## Z   A     S0        R      xs(therm)    D0         a         P        Sn
-##  41  93 3.175E-01 4.195E+00 1.150E+03 7.988E+01 1.242E+01 0.000E+00 7.228E+00
+##  41  93 3.175E-01 4.195E+00 1.028E+04 7.988E+01 1.242E+01 0.000E+00 7.228E+00

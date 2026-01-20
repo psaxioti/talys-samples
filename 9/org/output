@@ -1,8 +1,8 @@
 
-    TALYS-1.8 (Version: December 28, 2015)
+    TALYS-1.9 (Version: December 21, 2017)
 
- Copyright (C) 2015  A.J. Koning, S. Hilaire and S. Goriely      
-                         NRG          CEA          ULB    
+ Copyright (C) 2017  A.J. Koning, S. Hilaire and S. Goriely      
+                         IAEA         CEA          ULB    
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -92,6 +92,8 @@
  reaction            y     flagreaction flag for calculation of nuclear reactions
  astro               n     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             n     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
+ astroex             n     flagastroex  flag for calculation of astrophysics reaction rate to long-lived excited states
+ nonthermlev        -1     nonthermlev  excited level non-thermalized in the calculation of astrophysics rate
  massmodel           2     massmodel    model for theoretical nuclear mass
  expmass             y     flagexpmass  flag for using experimental nuclear mass if available
  disctable           1     disctable    table with discrete levels
@@ -126,8 +128,8 @@
  endfecis            y     flagendfecis flag for new ECIS calculation for ENDF-6 files
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
- alphaomp            6     alphaomp     alpha optical model (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
- deuteronomp         1     deuteronomp  deuteron optical model (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
+ alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
+ deuteronomp         1     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
@@ -230,7 +232,7 @@
  ########## BASIC REACTION PARAMETERS ##########
 
  Projectile           : neutron     Mass in a.m.u.      :   1.008665
- Target               : 208Pb       Mass in a.m.u.      : 207.976652
+ Target               : 208Pb       Mass in a.m.u.      : 207.976651
 
  Included channels:
                      neutron 
@@ -247,7 +249,7 @@
 
  Q(n,n):  0.00000
 
- ########## RESULTS FOR E= 11.00000 ##########
+ ########## RESULTS FOR E=  11.00000 ##########
 
  Energy dependent input flags
 
@@ -257,9 +259,9 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
 
- ########### REACTION SUMMARY FOR E= 11.00000 ###########
+ ########### REACTION SUMMARY FOR E=  11.00000 ###########
 
- Center-of-mass energy:  10.947
+ Center-of-mass energy:   10.947
 
  1. Total (binary) cross sections
 
@@ -2127,7 +2129,7 @@
 
  8c. Angular distributions for other reactions
 
- ########## RESULTS FOR E= 13.70000 ##########
+ ########## RESULTS FOR E=  13.70000 ##########
 
  Energy dependent input flags
 
@@ -2137,9 +2139,9 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
 
- ########### REACTION SUMMARY FOR E= 13.70000 ###########
+ ########### REACTION SUMMARY FOR E=  13.70000 ###########
 
- Center-of-mass energy:  13.633
+ Center-of-mass energy:   13.633
 
  1. Total (binary) cross sections
 
@@ -4007,7 +4009,7 @@
 
  8c. Angular distributions for other reactions
 
- ########## RESULTS FOR E= 20.00000 ##########
+ ########## RESULTS FOR E=  20.00000 ##########
 
  Energy dependent input flags
 
@@ -4017,9 +4019,9 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
 
- ########### REACTION SUMMARY FOR E= 20.00000 ###########
+ ########### REACTION SUMMARY FOR E=  20.00000 ###########
 
- Center-of-mass energy:  19.902
+ Center-of-mass energy:   19.902
 
  1. Total (binary) cross sections
 
@@ -5887,7 +5889,7 @@
 
  8c. Angular distributions for other reactions
 
- ########## RESULTS FOR E= 22.00000 ##########
+ ########## RESULTS FOR E=  22.00000 ##########
 
  Energy dependent input flags
 
@@ -5897,9 +5899,9 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
 
- ########### REACTION SUMMARY FOR E= 22.00000 ###########
+ ########### REACTION SUMMARY FOR E=  22.00000 ###########
 
- Center-of-mass energy:  21.893
+ Center-of-mass energy:   21.893
 
  1. Total (binary) cross sections
 
@@ -7767,7 +7769,7 @@
 
  8c. Angular distributions for other reactions
 
- ########## RESULTS FOR E= 25.70000 ##########
+ ########## RESULTS FOR E=  25.70000 ##########
 
  Energy dependent input flags
 
@@ -7777,9 +7779,9 @@
  Multiple preequilibrium (flagmulpre)      : n
  Number of continuum excitation energy bins:  5
 
- ########### REACTION SUMMARY FOR E= 25.70000 ###########
+ ########### REACTION SUMMARY FOR E=  25.70000 ###########
 
- Center-of-mass energy:  25.574
+ Center-of-mass energy:   25.574
 
  1. Total (binary) cross sections
 
@@ -9654,6 +9656,6 @@
 
  4. Residual production cross sections
 
- Execution time:  0 hours  0 minutes  1.48 seconds 
+ Execution time:  0 hours  0 minutes  1.40 seconds 
 
  The TALYS team congratulates you with this successful calculation.
