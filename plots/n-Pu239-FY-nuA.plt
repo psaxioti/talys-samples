@@ -121,4 +121,3 @@ set style line 30 pointtype 20 linecolor rgb "blue "
 plot [60.:180.0][0.:4.0] \
 "/Users/koning/talys/samples/n-Pu239-fy-gef/org/nunA1.00E-06.fis" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "GEF" w lines linestyle 10, \
 "/Users/koning/talys/samples/n-Pu239-fy-hf3d/org/nunA1.00E-06.fis" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "HF3D" w lines linestyle 1, \
-"/Users/koning/talys/samples/n-Pu239-fy-spy/org/nunA1.00E-06.fis" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "SPY" w lines linestyle 2, \

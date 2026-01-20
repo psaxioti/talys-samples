@@ -20,34 +20,41 @@ with the following input file
 
 which produces various output files in which the reaction rates as 
 function of temperature are given.
-The $(n,\gamma )$ rate as given in the output file is   
+The $(n,\gamma )$ rate as given in the file {\em astrorate.g} is   
 {\small \begin{verbatim}
-
- 8. Thermonuclear reaction rates                                                 
- Reaction rate for Z= 76 A=188 (188Os)                                           
-    T        G(T)        Rate            
-   0.0001 1.00000E+00 5.46242E+08                                                  
-   0.0005 1.00000E+00 4.96512E+08
-   0.0010 1.00000E+00 4.45882E+08                                                  
-   0.0050 1.00000E+00 3.52813E+08
-   0.0100 1.00002E+00 3.01755E+08                                                  
-   0.0500 1.20827E+00 2.03467E+08
-   0.1000 1.64630E+00 1.87256E+08                                                  
-   0.1500 1.95860E+00 1.82416E+08
-   0.2000 2.21894E+00 1.80436E+08                                                  
-   0.2500 2.48838E+00 1.79690E+08
-   0.3000 2.79031E+00 1.79474E+08                                                  
-   0.4000 3.49874E+00 1.79716E+08
-   0.5000 4.31540E+00 1.80165E+08
-   0.6000 5.20597E+00 1.80375E+08
-   0.7000 6.15215E+00 1.80187E+08
-   0.8000 7.14759E+00 1.79580E+08
-   0.9000 8.19300E+00 1.78579E+08
-   1.0000 9.29313E+00 1.77221E+08
+# header:
+#   title: Os187(n,g) reaction rate
+#   source: TALYS-2.0
+#   user: Arjan Koning
+#   date: 2023-12-14
+#   format: YANDF-0.1
+# target:
+#   Z: 76
+#   A: 187
+#   nuclide: Os187
+# reaction:
+#   type: (n,g)
+#   Q-value [MeV]:  7.989608E+00
+#   E-threshold [MeV]:  0.000000E+00
+# datablock:
+#   quantity: reaction rate
+#   columns: 4
+#   entries: 30
+##       T        reaction rate      MACS           G(T)
+##   [10^9 K]      [cm3/mol/s]       [mb]            []
+   1.000000E-04   1.255844E+09   5.124098E+05   1.000000E+00
+   5.000000E-04   9.040671E+08   1.649672E+05   1.000000E+00
+   9.999999E-04   7.231653E+08   9.330813E+04   1.000000E+00
+   5.000000E-03   4.264272E+08   2.460604E+04   1.000000E+00
+   1.000000E-02   3.303214E+08   1.347778E+04   1.000024E+00
+   5.000000E-02   1.845430E+08   3.367398E+03   1.207792E+00
+   9.999999E-02   1.470494E+08   1.897340E+03   1.645169E+00
+   1.500000E-01   1.335211E+08   1.406650E+03   1.952226E+00
+   2.000000E-01   1.263106E+08   1.152409E+03   2.198210E+00
 .....................................
 \end{verbatim} } \renewcommand{\baselinestretch}{1.07}\small\normalsize
 \noindent
-The same numbers can be found in the separate file {\em astrorate.g}.
+Similar same numbers can be found in the file for protons, etc.
 In {\em astrorate.tot} the rates for all reactions can be found.
 
 \end{samplecase}

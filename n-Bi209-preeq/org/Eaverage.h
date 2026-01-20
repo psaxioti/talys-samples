@@ -1,4 +1,4 @@
-# n + 209Bi Average helium-3 emission energy
+# n + Bi209 Average helium-3 emission energy
 # Q-value    =-4.08403E+00
 # 
 # # energies =     1

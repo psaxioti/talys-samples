@@ -1,7 +1,7 @@
 
-    TALYS-1.96 (Version: December 30, 2021)
+    TALYS-1.97 (Version: December 29, 2023)
 
- Copyright (C) 2021  A.J. Koning, S. Hilaire and S. Goriely
+ Copyright (C) 2023  A.J. Koning, S. Hilaire and S. Goriely
 
  Dimensions - Cross sections: mb, Energies: MeV, Angles: degrees
 
@@ -38,8 +38,8 @@
  # Basic physical and numerical parameters
  #
  ejectiles g n p d t h a   outtype      outgoing particles
- maxz               12     maxZ         maximal number of protons away from the initial compound nucleus
- maxn               32     maxN         maximal number of neutrons away from the initial compound nucleus
+ maxz               12     maxZ         maximal number of protons from the initial compound nucleus
+ maxn               32     maxN         maximal number of neutrons from the initial compound nucleus
  bins               40     nbins        number of continuum excitation energy bins
  equidistant         y     flagequi     flag to use equidistant excitation bins instead of logarithmic bins
  equispec            n     flagequispec flag to use equidistant bins for emission spectra
@@ -78,9 +78,17 @@
  recoilaverage       n     flagrecoilav flag for average velocity in recoil calculation
  channelenergy       n     flagEchannel flag for channel energy for emission spectrum
  reaction            y     flagreaction flag for calculation of nuclear reactions
+ fit                 n     flagfit      flag to use automatically fitted parameters
  ngfit               n     flagngfit    flag for using fitted (n,g) nuclear model parameters
+ nffit               n     flagnffit    flag for using fitted (n,f) nuclear model parameters
  nnfit               n     flagnnfit    flag for using fitted (n,n), (n,2n) and (n,p) nuclear model parameters
  nafit               n     flagnafit    flag for using fitted (n,a) nuclear model parameters
+ pnfit               n     flagpnfit    flag for using fitted (p,n) nuclear model parameters
+ dnfit               n     flagdnfit    flag for using fitted (d,n) nuclear model parameters
+ gnfit               n     flaggnfit    flag for using fitted (g,n) nuclear model parameters
+ anfit               n     flaganfit    flag for using fitted (a,n) nuclear model parameters
+ gamgamfit           n    flaggamgamfit flag for using fitted Gamma_gamma nuclear model parameters
+ macsfit             n     flagmacsfit  flag for using fitted MACS nuclear model parameters
  astro               y     flagastro    flag for calculation of astrophysics reaction rate
  astrogs             y     flagastrogs  flag for calculation of astrophysics reaction rate with target in ground state only
  astroex             n     flagastroex  flag for calculation of astrophysics reaction rate to long-lived excited states
@@ -93,8 +101,8 @@
  gefran          50000     gefran       number of random events for GEF calculation
  Estop            1000.000 Estop        incident energy above which TALYS stops
  rpevap              n     flagrpevap   flag for evaporation of residual products at high incident energies
- maxZrp             12     maxZrp       maximal number of protons away from the initial compound nucleus before residual evaporation
- maxNrp             32     maxNrp       maximal number of neutrons away from the initial compound nucleus before residual evaporation
+ maxZrp             12     maxZrp       maximal number of protons from the initial compound nucleus before residual evaporation
+ maxNrp             32     maxNrp       maximal number of neutrons from the initial compound nucleus before residual evaporation
  #
  # Optical model
  #
@@ -114,7 +122,7 @@
  maxband             0     maxband      highest vibrational band added to rotational model
  maxrot              2     maxrot       number of included excited rotational levels
  sysreaction               sysreaction  particles with reaction cross section from systematics
- rotational   n            rotational   particles with possible rotational optical model
+ rotational                rotational   particles with possible rotational optical model
  core               -1     core         even-even core for weakcoupling (-1 or 1)
  ecissave            n     flagecissave flag for saving ECIS input and output files
  eciscalc            y     flageciscalc flag for new ECIS calculation for outgoing particles and energy grid
@@ -123,12 +131,13 @@
  radialmodel         2     radialmodel  model for radial matter densities (JLM OMP only)
  jlmmode             0     jlmmode      option for JLM imaginary potential normalization
  alphaomp            6     alphaomp     alpha OMP (1=normal, 2= McFadden-Satchler, 3-5= folding potential, 6,8= Avrigeanu, 7=Nolte)
- deuteronomp         1     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
+ deuteronomp         4     deuteronomp  deuteron OMP (1=normal, 2=Daehnick, 3=Bojowald, 4=Han-Shi-Shen, 5=An-Cai)
  #
  # Compound nucleus
  #
  widthfluc           y     flagwidth    flag for width fluctuation calculation
  widthmode           1     wmode        designator for width fluctuation model
+ WFCfactor           1     WFCfactor    enhancement factor for WFC: 1: Original, 2: Ernebjerg and Herman
  compound            y     flagcomp     flag for compound nucleus model
  fullhf              n     flagfullhf   flag for full spin dependence of transmission coefficients
  eciscompound        n     flageciscomp flag for compound nucleus calculation by ECIS
@@ -144,9 +153,10 @@
  strengthM1          3     strengthM1   model for M1 gamma-ray strength function
  electronconv        y     flagelectron flag for application of electron conversion coefficient
  racap               n     flagracap    flag for radiative capture model
- ldmodelracap        1     ldmodelracap level density model for direct radiative capture
+ ldmodelracap        3     ldmodelracap level density model for direct radiative capture
  upbend              y     flagupbend   flag for low-energy upbend of photon strength function
  psfglobal           n    flagpsfglobal flag for global photon strength functions only
+ gnorm               n     flaggnorm    flag to normalize PSF to average radiative width
  #
  # Pre-equilibrium
  #
@@ -184,14 +194,14 @@
  fission             n     flagfission  flag for fission
  fismodel            3     fismodel     fission model
  fismodelalt         3     fismodelalt  alternative fission model for default barriers
- hbstate             y     flaghbstate  flag for head band states in fission
- class2              y     flagclass2   flag for class2 states in fission
+ hbstate             n     flaghbstate  flag for head band states in fission
+ class2              n     flagclass2   flag for class2 states in fission
  fispartdamp         n  flagfispartdamp flag for fission partial damping
  massdis             n     flagmassdis  flag for calculation of fission fragment mass yields
  ffevaporation       y     flagffevap   flag for calculation of particle evaporation from fission fragment mass yields
  fisfeed             n     flagfisfeed  flag for output of fission per excitation bin
  fymodel             2     fymodel      fission yield model, 1: Brosa 2: GEF
- ffmodel             1     ffmodel      fission fragment model, 1: GEF 2: HF3D (Okumura) 3: SPY
+ ffmodel             1     ffmodel      fission fragment model, 1: GEF 2: HF3D (Okumura) 3: SPY 4: Langevin-4D 0: own files
  pfnsmodel           1     pfnsmodel    PFNS model, 1: Iwamoto 2: from FF decay
  ffspin              n     flagffspin   flag to use spin distribution in initial FF population
  #
@@ -218,7 +228,7 @@
  outbinspectra       n     flagbinspec  flag for output of emission spectrum per excitation bin
  resonance           n     flagres      flag for output of low energy resonance cross sections
  group               n     flaggroup    flag for output of low energy groupwise cross sections
- addiscrete          y     flagadd      flag for addition of discrete states to spectra
+ adddiscrete         y     flagadd      flag for addition of discrete states to spectra
  addelastic          y     flagaddel    flag for addition of elastic peak to spectra
  outangle            n     flagang      flag for output of angular distributions
  outlegendre         n     flaglegendre flag for output of Legendre coefficients
@@ -236,7 +246,7 @@
  ########## BASIC REACTION PARAMETERS ##########
 
  Projectile           : neutron     Mass in a.m.u.      :   1.008665
- Target               : 138Ba       Mass in a.m.u.      : 137.905247
+ Target               : Ba138       Mass in a.m.u.      : 137.905247
 
  Included channels:
                      gamma   
@@ -1087,30 +1097,30 @@
 
  8. Thermonuclear reaction rates
 
- Reaction rate for Z= 56 A=139 (139Ba) at <E>= 0.03000 MeV (Excited States Contribution : n)
+ Reaction rate for Z= 56 A=139 (139Ba) at <E>= 0.03000 MeV (Excited States Contribution : y)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 8.89856E+05 6.14770E+00
+   0.3481 1.00000E+00 8.52199E+05 5.88754E+00
 
- Reaction rate for Z= 56 A=138 (138Ba) at <E>= 0.03000 MeV (Excited States Contribution : n)
+ Reaction rate for Z= 56 A=138 (138Ba) at <E>= 0.03000 MeV (Excited States Contribution : y)
 
     T        G(T)        Rate       MACS 
 
-   0.3481 1.00000E+00 6.37975E+00 4.40754E-05
+   0.3481 1.00000E+00 6.04596E+00 4.17694E-05
 
- Reaction rate for Z= 54 A=135 (135Xe) at <E>= 0.03000 MeV (Excited States Contribution : n)
+ Reaction rate for Z= 54 A=135 (135Xe) at <E>= 0.03000 MeV (Excited States Contribution : y)
 
     T        G(T)        Rate       MACS 
 
    0.3481 1.00000E+00 1.66342E-12 1.14920E-17
 
- Reaction rate for Z= 52 A=131 (131Te) at <E>= 0.03000 MeV (Excited States Contribution : n)
+ Reaction rate for Z= 52 A=131 (131Te) at <E>= 0.03000 MeV (Excited States Contribution : y)
 
     T        G(T)        Rate       MACS 
 
    0.3481 1.00000E+00 1.11029E-21 7.67060E-27
 
- Execution time:  0 hours  0 minutes  8.25 seconds 
+ Execution time:  0 hours  0 minutes  7.92 seconds 
 
  The TALYS team congratulates you with this successful calculation.

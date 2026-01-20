@@ -98,7 +98,7 @@ set style line 19 pointtype 9 linecolor rgb "blue "
 set style line 20 pointtype 10 linecolor rgb "blue "
 plot [0:20][0.:1500.0] \
 "/Users/koning/talys/samples/n-Ge074-vib/org/nn.L01" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) t "Spherical OMP" w lines linestyle 10, \
-"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Konobeevskii-40196006.1972" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 11, \
+"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Konobeevskii-40196006.1972" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 11, \
 "/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Konobeevskii-40196006.1972" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Konobeevskii(1972) " linestyle 11, \
-"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Chung-10045069.1970" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ):4:3 w xyerrorbars notitle linestyle 12, \
-"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Chung-10045069.1970" u ( $1 > 0. ? $1 : 1.e-10 ):( $2 > 0. ? $2 : 1.e-10 ) w points t "Chung(1970) " linestyle 12, \
+"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Chung-10045069.1970" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ):2:4 w xyerrorbars notitle linestyle 12, \
+"/Users/koning/libraries/n/Ge074/exfor/xs/051/n-Ge074-MT051-Chung-10045069.1970" u ( $1 > 0. ? $1 : 1.e-10 ):( $3 > 0. ? $3 : 1.e-10 ) w points t "Chung(1970) " linestyle 12, \

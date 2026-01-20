@@ -23,6 +23,8 @@ ctable           92 239   0.00000   0
 ptable           92 239   0.00000   0
 ctableadjust     92 239   0.00000   0
 ptableadjust     92 239   0.00000   0
+Ufermi           92 239  30.00000   0
+cfermi           92 239   5.00000   0
 Krotconstant     92 239   1.00000   0
 Pshift           92 239   0.00000   1
 Pshiftadjust     92 239   0.00000   1
@@ -33,13 +35,15 @@ Exmatch          92 239   5.89414   1
 Tadjust          92 239   1.00000   1
 E0adjust         92 239   1.00000   1
 Exmatchadjust    92 239   1.00000   1
-Ntop             92 239   9   1
-Nlow             92 239   2   1
+Ntop             92 239   1   1
+Nlow             92 239   0   1
 s2adjust         92 239   1.00000   1
 ctable           92 239   0.00000   1
 ptable           92 239   0.00000   1
 ctableadjust     92 239   0.00000   1
 ptableadjust     92 239   0.00000   1
+Ufermi           92 239  45.00000   1
+cfermi           92 239   5.00000   1
 Krotconstant     92 239   1.00000   1
 Pshift           92 239   0.00000   2
 Pshiftadjust     92 239   0.00000   2
@@ -50,13 +54,15 @@ Exmatch          92 239   6.63850   2
 Tadjust          92 239   1.00000   2
 E0adjust         92 239   1.00000   2
 Exmatchadjust    92 239   1.00000   2
-Ntop             92 239  17   2
-Nlow             92 239   2   2
+Ntop             92 239   1   2
+Nlow             92 239   0   2
 s2adjust         92 239   1.00000   2
 ctable           92 239   0.00000   2
 ptable           92 239   0.00000   2
 ctableadjust     92 239   0.00000   2
 ptableadjust     92 239   0.00000   2
+Ufermi           92 239  45.00000   2
+cfermi           92 239   5.00000   2
 Krotconstant     92 239   1.00000   2
 D0               92 239 2.08000E-02
 g                92 239  15.93333
@@ -65,6 +71,7 @@ gn               92 239   9.80000
 gnadjust         92 239   1.00000
 gpadjust         92 239   1.00000
 gadjust          92 239   1.00000
+Risomer          92 239   1.00000
 ##
 ## Gamma-ray
 ##
@@ -72,7 +79,7 @@ gamgam           92 239   0.02400
 gamgamadjust     92 239   1.00000
 etable           92 239   0.00000 E1
 ftable           92 239   1.00000 E1
-wtable           92 239   1.72359 E1
+wtable           92 239   1.11281 E1
 etableadjust     92 239   0.00000 E1
 ftableadjust     92 239   1.00000 E1
 wtableadjust     92 239   1.00000 E1
@@ -138,6 +145,8 @@ ctable           92 238   0.00000   0
 ptable           92 238   0.00000   0
 ctableadjust     92 238   0.00000   0
 ptableadjust     92 238   0.00000   0
+Ufermi           92 238  30.00000   0
+cfermi           92 238   5.00000   0
 Krotconstant     92 238   1.00000   0
 Pshift           92 238   0.00000   1
 Pshiftadjust     92 238   0.00000   1
@@ -148,13 +157,15 @@ Exmatch          92 238   6.70320   1
 Tadjust          92 238   1.00000   1
 E0adjust         92 238   1.00000   1
 Exmatchadjust    92 238   1.00000   1
-Ntop             92 238  39   1
-Nlow             92 238   2   1
+Ntop             92 238   1   1
+Nlow             92 238   0   1
 s2adjust         92 238   1.00000   1
 ctable           92 238   0.00000   1
 ptable           92 238   0.00000   1
 ctableadjust     92 238   0.00000   1
 ptableadjust     92 238   0.00000   1
+Ufermi           92 238  45.00000   1
+cfermi           92 238   5.00000   1
 Krotconstant     92 238   1.00000   1
 Pshift           92 238   0.00000   2
 Pshiftadjust     92 238   0.00000   2
@@ -165,13 +176,15 @@ Exmatch          92 238   6.48765   2
 Tadjust          92 238   1.00000   2
 E0adjust         92 238   1.00000   2
 Exmatchadjust    92 238   1.00000   2
-Ntop             92 238  14   2
-Nlow             92 238   2   2
+Ntop             92 238   1   2
+Nlow             92 238   0   2
 s2adjust         92 238   1.00000   2
 ctable           92 238   0.00000   2
 ptable           92 238   0.00000   2
 ctableadjust     92 238   0.00000   2
 ptableadjust     92 238   0.00000   2
+Ufermi           92 238  45.00000   2
+cfermi           92 238   5.00000   2
 Krotconstant     92 238   1.00000   2
 D0               92 238 3.50000E-03
 g                92 238  15.86667
@@ -180,14 +193,15 @@ gn               92 238   9.73333
 gnadjust         92 238   1.00000
 gpadjust         92 238   1.00000
 gadjust          92 238   1.00000
+Risomer          92 238   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           92 238   0.03000
+gamgam           92 238   0.00000
 gamgamadjust     92 238   1.00000
 etable           92 238   0.00000 E1
 ftable           92 238   1.00000 E1
-wtable           92 238   1.06900 E1
+wtable           92 238   1.04800 E1
 etableadjust     92 238   0.00000 E1
 ftableadjust     92 238   1.00000 E1
 wtableadjust     92 238   1.00000 E1
@@ -252,13 +266,15 @@ Exmatch          91 238   2.13828   0
 Tadjust          91 238   1.00000   0
 E0adjust         91 238   1.00000   0
 Exmatchadjust    91 238   1.00000   0
-Ntop             91 238   1   0
-Nlow             91 238   0   0
+Ntop             91 238  10   0
+Nlow             91 238   2   0
 s2adjust         91 238   1.00000   0
 ctable           91 238   0.00000   0
 ptable           91 238   0.00000   0
 ctableadjust     91 238   0.00000   0
 ptableadjust     91 238   0.00000   0
+Ufermi           91 238  30.00000   0
+cfermi           91 238   5.00000   0
 Krotconstant     91 238   1.00000   0
 Pshift           91 238   0.00000   1
 Pshiftadjust     91 238   0.00000   1
@@ -269,13 +285,15 @@ Exmatch          91 238   1.94784   1
 Tadjust          91 238   1.00000   1
 E0adjust         91 238   1.00000   1
 Exmatchadjust    91 238   1.00000   1
-Ntop             91 238  21   1
-Nlow             91 238   2   1
+Ntop             91 238   1   1
+Nlow             91 238   0   1
 s2adjust         91 238   1.00000   1
 ctable           91 238   0.00000   1
 ptable           91 238   0.00000   1
 ctableadjust     91 238   0.00000   1
 ptableadjust     91 238   0.00000   1
+Ufermi           91 238  45.00000   1
+cfermi           91 238   5.00000   1
 Krotconstant     91 238   1.00000   1
 Pshift           91 238   0.00000   2
 Pshiftadjust     91 238   0.00000   2
@@ -286,13 +304,15 @@ Exmatch          91 238   3.73303   2
 Tadjust          91 238   1.00000   2
 E0adjust         91 238   1.00000   2
 Exmatchadjust    91 238   1.00000   2
-Ntop             91 238  28   2
-Nlow             91 238   2   2
+Ntop             91 238   1   2
+Nlow             91 238   0   2
 s2adjust         91 238   1.00000   2
 ctable           91 238   0.00000   2
 ptable           91 238   0.00000   2
 ctableadjust     91 238   0.00000   2
 ptableadjust     91 238   0.00000   2
+Ufermi           91 238  45.00000   2
+cfermi           91 238   5.00000   2
 Krotconstant     91 238   1.00000   2
 g                91 238  15.86667
 gp               91 238   6.06667
@@ -300,14 +320,15 @@ gn               91 238   9.80000
 gnadjust         91 238   1.00000
 gpadjust         91 238   1.00000
 gadjust          91 238   1.00000
+Risomer          91 238   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           91 238   0.03000
+gamgam           91 238   0.00000
 gamgamadjust     91 238   1.00000
 etable           91 238   0.00000 E1
 ftable           91 238   1.00000 E1
-wtable           91 238   1.06900 E1
+wtable           91 238   1.04800 E1
 etableadjust     91 238   0.00000 E1
 ftableadjust     91 238   1.00000 E1
 wtableadjust     91 238   1.00000 E1
@@ -373,40 +394,46 @@ ctable           91 237   0.00000   0
 ptable           91 237   0.00000   0
 ctableadjust     91 237   0.00000   0
 ptableadjust     91 237   0.00000   0
+Ufermi           91 237  30.00000   0
+cfermi           91 237   5.00000   0
 Krotconstant     91 237   1.00000   0
 Pshift           91 237   0.00000   1
 Pshiftadjust     91 237   0.00000   1
 deltaW           91 237   2.45561   1
-T                91 237   0.44632   1
-E0               91 237  -1.24191   1
-Exmatch          91 237   4.99725   1
+T                91 237   0.34723   1
+E0               91 237   0.00006   1
+Exmatch          91 237   3.14484   1
 Tadjust          91 237   1.00000   1
 E0adjust         91 237   1.00000   1
 Exmatchadjust    91 237   1.00000   1
-Ntop             91 237   9   1
-Nlow             91 237   2   1
+Ntop             91 237   1   1
+Nlow             91 237   0   1
 s2adjust         91 237   1.00000   1
 ctable           91 237   0.00000   1
 ptable           91 237   0.00000   1
 ctableadjust     91 237   0.00000   1
 ptableadjust     91 237   0.00000   1
+Ufermi           91 237  45.00000   1
+cfermi           91 237   5.00000   1
 Krotconstant     91 237   1.00000   1
 Pshift           91 237   0.00000   2
 Pshiftadjust     91 237   0.00000   2
 deltaW           91 237   2.45561   2
-T                91 237   0.41741   2
-E0               91 237  -0.81797   2
-Exmatch          91 237   4.41390   2
+T                91 237   0.34817   2
+E0               91 237   0.00005   2
+Exmatch          91 237   3.16030   2
 Tadjust          91 237   1.00000   2
 E0adjust         91 237   1.00000   2
 Exmatchadjust    91 237   1.00000   2
-Ntop             91 237  10   2
-Nlow             91 237   2   2
+Ntop             91 237   1   2
+Nlow             91 237   0   2
 s2adjust         91 237   1.00000   2
 ctable           91 237   0.00000   2
 ptable           91 237   0.00000   2
 ctableadjust     91 237   0.00000   2
 ptableadjust     91 237   0.00000   2
+Ufermi           91 237  45.00000   2
+cfermi           91 237   5.00000   2
 Krotconstant     91 237   1.00000   2
 g                91 237  15.80000
 gp               91 237   6.06667
@@ -414,14 +441,15 @@ gn               91 237   9.73333
 gnadjust         91 237   1.00000
 gpadjust         91 237   1.00000
 gadjust          91 237   1.00000
+Risomer          91 237   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           91 237   0.03000
+gamgam           91 237   0.00000
 gamgamadjust     91 237   1.00000
 etable           91 237   0.00000 E1
 ftable           91 237   1.00000 E1
-wtable           91 237   1.06900 E1
+wtable           91 237   1.04800 E1
 etableadjust     91 237   0.00000 E1
 ftableadjust     91 237   1.00000 E1
 wtableadjust     91 237   1.00000 E1
@@ -487,40 +515,46 @@ ctable           91 236   0.00000   0
 ptable           91 236   0.00000   0
 ctableadjust     91 236   0.00000   0
 ptableadjust     91 236   0.00000   0
+Ufermi           91 236  30.00000   0
+cfermi           91 236   5.00000   0
 Krotconstant     91 236   1.00000   0
 Pshift           91 236   0.00000   1
 Pshiftadjust     91 236   0.00000   1
 deltaW           91 236   2.22838   1
-T                91 236   0.38147   1
-E0               91 236  -1.09819   1
-Exmatch          91 236   2.89856   1
+T                91 236   0.24525   1
+E0               91 236   0.00002   1
+Exmatch          91 236   0.87886   1
 Tadjust          91 236   1.00000   1
 E0adjust         91 236   1.00000   1
 Exmatchadjust    91 236   1.00000   1
-Ntop             91 236  21   1
-Nlow             91 236   2   1
+Ntop             91 236   1   1
+Nlow             91 236   0   1
 s2adjust         91 236   1.00000   1
 ctable           91 236   0.00000   1
 ptable           91 236   0.00000   1
 ctableadjust     91 236   0.00000   1
 ptableadjust     91 236   0.00000   1
+Ufermi           91 236  45.00000   1
+cfermi           91 236   5.00000   1
 Krotconstant     91 236   1.00000   1
 Pshift           91 236   0.00000   2
 Pshiftadjust     91 236   0.00000   2
 deltaW           91 236   2.22838   2
-T                91 236   0.39815   2
-E0               91 236  -1.28572   2
-Exmatch          91 236   3.20277   2
+T                91 236   0.24665   2
+E0               91 236   0.00003   2
+Exmatch          91 236   0.89544   2
 Tadjust          91 236   1.00000   2
 E0adjust         91 236   1.00000   2
 Exmatchadjust    91 236   1.00000   2
-Ntop             91 236  28   2
-Nlow             91 236   2   2
+Ntop             91 236   1   2
+Nlow             91 236   0   2
 s2adjust         91 236   1.00000   2
 ctable           91 236   0.00000   2
 ptable           91 236   0.00000   2
 ctableadjust     91 236   0.00000   2
 ptableadjust     91 236   0.00000   2
+Ufermi           91 236  45.00000   2
+cfermi           91 236   5.00000   2
 Krotconstant     91 236   1.00000   2
 g                91 236  15.73333
 gp               91 236   6.06667
@@ -528,14 +562,15 @@ gn               91 236   9.66667
 gnadjust         91 236   1.00000
 gpadjust         91 236   1.00000
 gadjust          91 236   1.00000
+Risomer          91 236   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           91 236   0.03000
+gamgam           91 236   0.00000
 gamgamadjust     91 236   1.00000
 etable           91 236   0.00000 E1
 ftable           91 236   1.00000 E1
-wtable           91 236   1.06900 E1
+wtable           91 236   1.04800 E1
 etableadjust     91 236   0.00000 E1
 ftableadjust     91 236   1.00000 E1
 wtableadjust     91 236   1.00000 E1
@@ -594,13 +629,15 @@ Exmatch          90 236   3.69221   0
 Tadjust          90 236   1.00000   0
 E0adjust         90 236   1.00000   0
 Exmatchadjust    90 236   1.00000   0
-Ntop             90 236   1   0
-Nlow             90 236   0   0
+Ntop             90 236   5   0
+Nlow             90 236   2   0
 s2adjust         90 236   1.00000   0
 ctable           90 236   0.00000   0
 ptable           90 236   0.00000   0
 ctableadjust     90 236   0.00000   0
 ptableadjust     90 236   0.00000   0
+Ufermi           90 236  30.00000   0
+cfermi           90 236   5.00000   0
 Krotconstant     90 236   1.00000   0
 Pshift           90 236   0.00000   1
 Pshiftadjust     90 236   0.00000   1
@@ -611,13 +648,15 @@ Exmatch          90 236   3.49410   1
 Tadjust          90 236   1.00000   1
 E0adjust         90 236   1.00000   1
 Exmatchadjust    90 236   1.00000   1
-Ntop             90 236  39   1
-Nlow             90 236   2   1
+Ntop             90 236   1   1
+Nlow             90 236   0   1
 s2adjust         90 236   1.00000   1
 ctable           90 236   0.00000   1
 ptable           90 236   0.00000   1
 ctableadjust     90 236   0.00000   1
 ptableadjust     90 236   0.00000   1
+Ufermi           90 236  45.00000   1
+cfermi           90 236   5.00000   1
 Krotconstant     90 236   1.00000   1
 Pshift           90 236   0.00000   2
 Pshiftadjust     90 236   0.00000   2
@@ -628,13 +667,15 @@ Exmatch          90 236   5.30430   2
 Tadjust          90 236   1.00000   2
 E0adjust         90 236   1.00000   2
 Exmatchadjust    90 236   1.00000   2
-Ntop             90 236  14   2
-Nlow             90 236   2   2
+Ntop             90 236   1   2
+Nlow             90 236   0   2
 s2adjust         90 236   1.00000   2
 ctable           90 236   0.00000   2
 ptable           90 236   0.00000   2
 ctableadjust     90 236   0.00000   2
 ptableadjust     90 236   0.00000   2
+Ufermi           90 236  45.00000   2
+cfermi           90 236   5.00000   2
 Krotconstant     90 236   1.00000   2
 g                90 236  15.73333
 gp               90 236   6.00000
@@ -642,14 +683,15 @@ gn               90 236   9.73333
 gnadjust         90 236   1.00000
 gpadjust         90 236   1.00000
 gadjust          90 236   1.00000
+Risomer          90 236   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           90 236   0.03000
+gamgam           90 236   0.00000
 gamgamadjust     90 236   1.00000
 etable           90 236   0.00000 E1
 ftable           90 236   1.00000 E1
-wtable           90 236   1.06900 E1
+wtable           90 236   1.04800 E1
 etableadjust     90 236   0.00000 E1
 ftableadjust     90 236   1.00000 E1
 wtableadjust     90 236   1.00000 E1
@@ -708,13 +750,15 @@ Exmatch          90 235   2.93795   0
 Tadjust          90 235   1.00000   0
 E0adjust         90 235   1.00000   0
 Exmatchadjust    90 235   1.00000   0
-Ntop             90 235   1   0
-Nlow             90 235   0   0
+Ntop             90 235  10   0
+Nlow             90 235   2   0
 s2adjust         90 235   1.00000   0
 ctable           90 235   0.00000   0
 ptable           90 235   0.00000   0
 ctableadjust     90 235   0.00000   0
 ptableadjust     90 235   0.00000   0
+Ufermi           90 235  30.00000   0
+cfermi           90 235   5.00000   0
 Krotconstant     90 235   1.00000   0
 Pshift           90 235   0.00000   1
 Pshiftadjust     90 235   0.00000   1
@@ -725,13 +769,15 @@ Exmatch          90 235   2.74523   1
 Tadjust          90 235   1.00000   1
 E0adjust         90 235   1.00000   1
 Exmatchadjust    90 235   1.00000   1
-Ntop             90 235   9   1
-Nlow             90 235   2   1
+Ntop             90 235   1   1
+Nlow             90 235   0   1
 s2adjust         90 235   1.00000   1
 ctable           90 235   0.00000   1
 ptable           90 235   0.00000   1
 ctableadjust     90 235   0.00000   1
 ptableadjust     90 235   0.00000   1
+Ufermi           90 235  45.00000   1
+cfermi           90 235   5.00000   1
 Krotconstant     90 235   1.00000   1
 Pshift           90 235   0.00000   2
 Pshiftadjust     90 235   0.00000   2
@@ -742,13 +788,15 @@ Exmatch          90 235   4.52939   2
 Tadjust          90 235   1.00000   2
 E0adjust         90 235   1.00000   2
 Exmatchadjust    90 235   1.00000   2
-Ntop             90 235  17   2
-Nlow             90 235   2   2
+Ntop             90 235   1   2
+Nlow             90 235   0   2
 s2adjust         90 235   1.00000   2
 ctable           90 235   0.00000   2
 ptable           90 235   0.00000   2
 ctableadjust     90 235   0.00000   2
 ptableadjust     90 235   0.00000   2
+Ufermi           90 235  45.00000   2
+cfermi           90 235   5.00000   2
 Krotconstant     90 235   1.00000   2
 g                90 235  15.66667
 gp               90 235   6.00000
@@ -756,14 +804,15 @@ gn               90 235   9.66667
 gnadjust         90 235   1.00000
 gpadjust         90 235   1.00000
 gadjust          90 235   1.00000
+Risomer          90 235   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           90 235   0.03000
+gamgam           90 235   0.00000
 gamgamadjust     90 235   1.00000
 etable           90 235   0.00000 E1
 ftable           90 235   1.00000 E1
-wtable           90 235   1.06900 E1
+wtable           90 235   1.04800 E1
 etableadjust     90 235   0.00000 E1
 ftableadjust     90 235   1.00000 E1
 wtableadjust     90 235   1.00000 E1
@@ -829,6 +878,8 @@ ctable           92 237   0.00000   0
 ptable           92 237   0.00000   0
 ctableadjust     92 237   0.00000   0
 ptableadjust     92 237   0.00000   0
+Ufermi           92 237  30.00000   0
+cfermi           92 237   5.00000   0
 Krotconstant     92 237   1.00000   0
 Pshift           92 237   0.00000   1
 Pshiftadjust     92 237   0.00000   1
@@ -839,13 +890,15 @@ Exmatch          92 237   6.01208   1
 Tadjust          92 237   1.00000   1
 E0adjust         92 237   1.00000   1
 Exmatchadjust    92 237   1.00000   1
-Ntop             92 237   9   1
-Nlow             92 237   2   1
+Ntop             92 237   1   1
+Nlow             92 237   0   1
 s2adjust         92 237   1.00000   1
 ctable           92 237   0.00000   1
 ptable           92 237   0.00000   1
 ctableadjust     92 237   0.00000   1
 ptableadjust     92 237   0.00000   1
+Ufermi           92 237  45.00000   1
+cfermi           92 237   5.00000   1
 Krotconstant     92 237   1.00000   1
 Pshift           92 237   0.00000   2
 Pshiftadjust     92 237   0.00000   2
@@ -856,13 +909,15 @@ Exmatch          92 237   6.77712   2
 Tadjust          92 237   1.00000   2
 E0adjust         92 237   1.00000   2
 Exmatchadjust    92 237   1.00000   2
-Ntop             92 237  17   2
-Nlow             92 237   2   2
+Ntop             92 237   1   2
+Nlow             92 237   0   2
 s2adjust         92 237   1.00000   2
 ctable           92 237   0.00000   2
 ptable           92 237   0.00000   2
 ctableadjust     92 237   0.00000   2
 ptableadjust     92 237   0.00000   2
+Ufermi           92 237  45.00000   2
+cfermi           92 237   5.00000   2
 Krotconstant     92 237   1.00000   2
 D0               92 237 1.50000E-02
 g                92 237  15.80000
@@ -871,6 +926,7 @@ gn               92 237   9.66667
 gnadjust         92 237   1.00000
 gpadjust         92 237   1.00000
 gadjust          92 237   1.00000
+Risomer          92 237   1.00000
 ##
 ## Gamma-ray
 ##
@@ -878,7 +934,7 @@ gamgam           92 237   0.02300
 gamgamadjust     92 237   1.00000
 etable           92 237   0.00000 E1
 ftable           92 237   1.00000 E1
-wtable           92 237   1.16767 E1
+wtable           92 237   1.04800 E1
 etableadjust     92 237   0.00000 E1
 ftableadjust     92 237   1.00000 E1
 wtableadjust     92 237   1.00000 E1
@@ -944,40 +1000,46 @@ ctable           91 235   0.00000   0
 ptable           91 235   0.00000   0
 ctableadjust     91 235   0.00000   0
 ptableadjust     91 235   0.00000   0
+Ufermi           91 235  30.00000   0
+cfermi           91 235   5.00000   0
 Krotconstant     91 235   1.00000   0
 Pshift           91 235   0.00000   1
 Pshiftadjust     91 235   0.00000   1
 deltaW           91 235   2.30609   1
-T                91 235   0.45331   1
-E0               91 235  -1.27105   1
-Exmatch          91 235   5.07329   1
+T                91 235   0.35179   1
+E0               91 235   0.00002   1
+Exmatch          91 235   3.17173   1
 Tadjust          91 235   1.00000   1
 E0adjust         91 235   1.00000   1
 Exmatchadjust    91 235   1.00000   1
-Ntop             91 235   9   1
-Nlow             91 235   2   1
+Ntop             91 235   1   1
+Nlow             91 235   0   1
 s2adjust         91 235   1.00000   1
 ctable           91 235   0.00000   1
 ptable           91 235   0.00000   1
 ctableadjust     91 235   0.00000   1
 ptableadjust     91 235   0.00000   1
+Ufermi           91 235  45.00000   1
+cfermi           91 235   5.00000   1
 Krotconstant     91 235   1.00000   1
 Pshift           91 235   0.00000   2
 Pshiftadjust     91 235   0.00000   2
 deltaW           91 235   2.30609   2
-T                91 235   0.42320   2
-E0               91 235  -0.83000   2
-Exmatch          91 235   4.46410   2
+T                91 235   0.35273   2
+E0               91 235   0.00006   2
+Exmatch          91 235   3.18719   2
 Tadjust          91 235   1.00000   2
 E0adjust         91 235   1.00000   2
 Exmatchadjust    91 235   1.00000   2
-Ntop             91 235  10   2
-Nlow             91 235   2   2
+Ntop             91 235   1   2
+Nlow             91 235   0   2
 s2adjust         91 235   1.00000   2
 ctable           91 235   0.00000   2
 ptable           91 235   0.00000   2
 ctableadjust     91 235   0.00000   2
 ptableadjust     91 235   0.00000   2
+Ufermi           91 235  45.00000   2
+cfermi           91 235   5.00000   2
 Krotconstant     91 235   1.00000   2
 g                91 235  15.66667
 gp               91 235   6.06667
@@ -985,14 +1047,15 @@ gn               91 235   9.60000
 gnadjust         91 235   1.00000
 gpadjust         91 235   1.00000
 gadjust          91 235   1.00000
+Risomer          91 235   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           91 235   0.03000
+gamgam           91 235   0.00000
 gamgamadjust     91 235   1.00000
 etable           91 235   0.00000 E1
 ftable           91 235   1.00000 E1
-wtable           91 235   1.06900 E1
+wtable           91 235   1.04800 E1
 etableadjust     91 235   0.00000 E1
 ftableadjust     91 235   1.00000 E1
 wtableadjust     91 235   1.00000 E1
@@ -1058,40 +1121,46 @@ ctable           90 234   0.00000   0
 ptable           90 234   0.00000   0
 ctableadjust     90 234   0.00000   0
 ptableadjust     90 234   0.00000   0
+Ufermi           90 234  30.00000   0
+cfermi           90 234   5.00000   0
 Krotconstant     90 234   1.00000   0
 Pshift           90 234   0.00000   1
 Pshiftadjust     90 234   0.00000   1
 deltaW           90 234   2.41657   1
-T                90 234   0.49020   1
-E0               90 234  -1.08524   1
-Exmatch          90 234   6.65765   1
+T                90 234   0.41820   1
+E0               90 234   0.00005   1
+Exmatch          90 234   5.15871   1
 Tadjust          90 234   1.00000   1
 E0adjust         90 234   1.00000   1
 Exmatchadjust    90 234   1.00000   1
-Ntop             90 234  39   1
-Nlow             90 234   2   1
+Ntop             90 234   1   1
+Nlow             90 234   0   1
 s2adjust         90 234   1.00000   1
 ctable           90 234   0.00000   1
 ptable           90 234   0.00000   1
 ctableadjust     90 234   0.00000   1
 ptableadjust     90 234   0.00000   1
+Ufermi           90 234  45.00000   1
+cfermi           90 234   5.00000   1
 Krotconstant     90 234   1.00000   1
 Pshift           90 234   0.00000   2
 Pshiftadjust     90 234   0.00000   2
 deltaW           90 234   2.41657   2
-T                90 234   0.48070   2
-E0               90 234  -0.91490   2
-Exmatch          90 234   6.44859   2
+T                90 234   0.41905   2
+E0               90 234   0.00004   2
+Exmatch          90 234   5.17508   2
 Tadjust          90 234   1.00000   2
 E0adjust         90 234   1.00000   2
 Exmatchadjust    90 234   1.00000   2
-Ntop             90 234  14   2
-Nlow             90 234   2   2
+Ntop             90 234   1   2
+Nlow             90 234   0   2
 s2adjust         90 234   1.00000   2
 ctable           90 234   0.00000   2
 ptable           90 234   0.00000   2
 ctableadjust     90 234   0.00000   2
 ptableadjust     90 234   0.00000   2
+Ufermi           90 234  45.00000   2
+cfermi           90 234   5.00000   2
 Krotconstant     90 234   1.00000   2
 g                90 234  15.60000
 gp               90 234   6.00000
@@ -1099,14 +1168,15 @@ gn               90 234   9.60000
 gnadjust         90 234   1.00000
 gpadjust         90 234   1.00000
 gadjust          90 234   1.00000
+Risomer          90 234   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           90 234   0.03000
+gamgam           90 234   0.00000
 gamgamadjust     90 234   1.00000
 etable           90 234   0.00000 E1
 ftable           90 234   1.00000 E1
-wtable           90 234   1.06900 E1
+wtable           90 234   1.04800 E1
 etableadjust     90 234   0.00000 E1
 ftableadjust     90 234   1.00000 E1
 wtableadjust     90 234   1.00000 E1
@@ -1165,13 +1235,15 @@ Exmatch          89 234   2.10625   0
 Tadjust          89 234   1.00000   0
 E0adjust         89 234   1.00000   0
 Exmatchadjust    89 234   1.00000   0
-Ntop             89 234   1   0
-Nlow             89 234   0   0
+Ntop             89 234  10   0
+Nlow             89 234   2   0
 s2adjust         89 234   1.00000   0
 ctable           89 234   0.00000   0
 ptable           89 234   0.00000   0
 ctableadjust     89 234   0.00000   0
 ptableadjust     89 234   0.00000   0
+Ufermi           89 234  30.00000   0
+cfermi           89 234   5.00000   0
 Krotconstant     89 234   1.00000   0
 Pshift           89 234   0.00000   1
 Pshiftadjust     89 234   0.00000   1
@@ -1182,13 +1254,15 @@ Exmatch          89 234   1.89305   1
 Tadjust          89 234   1.00000   1
 E0adjust         89 234   1.00000   1
 Exmatchadjust    89 234   1.00000   1
-Ntop             89 234  21   1
-Nlow             89 234   2   1
+Ntop             89 234   1   1
+Nlow             89 234   0   1
 s2adjust         89 234   1.00000   1
 ctable           89 234   0.00000   1
 ptable           89 234   0.00000   1
 ctableadjust     89 234   0.00000   1
 ptableadjust     89 234   0.00000   1
+Ufermi           89 234  45.00000   1
+cfermi           89 234   5.00000   1
 Krotconstant     89 234   1.00000   1
 Pshift           89 234   0.00000   2
 Pshiftadjust     89 234   0.00000   2
@@ -1199,13 +1273,15 @@ Exmatch          89 234   3.75120   2
 Tadjust          89 234   1.00000   2
 E0adjust         89 234   1.00000   2
 Exmatchadjust    89 234   1.00000   2
-Ntop             89 234  28   2
-Nlow             89 234   2   2
+Ntop             89 234   1   2
+Nlow             89 234   0   2
 s2adjust         89 234   1.00000   2
 ctable           89 234   0.00000   2
 ptable           89 234   0.00000   2
 ctableadjust     89 234   0.00000   2
 ptableadjust     89 234   0.00000   2
+Ufermi           89 234  45.00000   2
+cfermi           89 234   5.00000   2
 Krotconstant     89 234   1.00000   2
 g                89 234  15.60000
 gp               89 234   5.93333
@@ -1213,14 +1289,15 @@ gn               89 234   9.66667
 gnadjust         89 234   1.00000
 gpadjust         89 234   1.00000
 gadjust          89 234   1.00000
+Risomer          89 234   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           89 234   0.03000
+gamgam           89 234   0.00000
 gamgamadjust     89 234   1.00000
 etable           89 234   0.00000 E1
 ftable           89 234   1.00000 E1
-wtable           89 234   1.06900 E1
+wtable           89 234   1.04800 E1
 etableadjust     89 234   0.00000 E1
 ftableadjust     89 234   1.00000 E1
 wtableadjust     89 234   1.00000 E1
@@ -1279,13 +1356,15 @@ Exmatch          89 233   2.89252   0
 Tadjust          89 233   1.00000   0
 E0adjust         89 233   1.00000   0
 Exmatchadjust    89 233   1.00000   0
-Ntop             89 233   1   0
-Nlow             89 233   0   0
+Ntop             89 233  10   0
+Nlow             89 233   2   0
 s2adjust         89 233   1.00000   0
 ctable           89 233   0.00000   0
 ptable           89 233   0.00000   0
 ctableadjust     89 233   0.00000   0
 ptableadjust     89 233   0.00000   0
+Ufermi           89 233  30.00000   0
+cfermi           89 233   5.00000   0
 Krotconstant     89 233   1.00000   0
 Pshift           89 233   0.00000   1
 Pshiftadjust     89 233   0.00000   1
@@ -1296,13 +1375,15 @@ Exmatch          89 233   2.67925   1
 Tadjust          89 233   1.00000   1
 E0adjust         89 233   1.00000   1
 Exmatchadjust    89 233   1.00000   1
-Ntop             89 233   8   1
-Nlow             89 233   2   1
+Ntop             89 233   1   1
+Nlow             89 233   0   1
 s2adjust         89 233   1.00000   1
 ctable           89 233   0.00000   1
 ptable           89 233   0.00000   1
 ctableadjust     89 233   0.00000   1
 ptableadjust     89 233   0.00000   1
+Ufermi           89 233  45.00000   1
+cfermi           89 233   5.00000   1
 Krotconstant     89 233   1.00000   1
 Pshift           89 233   0.00000   2
 Pshiftadjust     89 233   0.00000   2
@@ -1313,13 +1394,15 @@ Exmatch          89 233   4.54198   2
 Tadjust          89 233   1.00000   2
 E0adjust         89 233   1.00000   2
 Exmatchadjust    89 233   1.00000   2
-Ntop             89 233  10   2
-Nlow             89 233   2   2
+Ntop             89 233   1   2
+Nlow             89 233   0   2
 s2adjust         89 233   1.00000   2
 ctable           89 233   0.00000   2
 ptable           89 233   0.00000   2
 ctableadjust     89 233   0.00000   2
 ptableadjust     89 233   0.00000   2
+Ufermi           89 233  45.00000   2
+cfermi           89 233   5.00000   2
 Krotconstant     89 233   1.00000   2
 g                89 233  15.53333
 gp               89 233   5.93333
@@ -1327,14 +1410,15 @@ gn               89 233   9.60000
 gnadjust         89 233   1.00000
 gpadjust         89 233   1.00000
 gadjust          89 233   1.00000
+Risomer          89 233   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           89 233   0.03000
+gamgam           89 233   0.00000
 gamgamadjust     89 233   1.00000
 etable           89 233   0.00000 E1
 ftable           89 233   1.00000 E1
-wtable           89 233   1.06900 E1
+wtable           89 233   1.04800 E1
 etableadjust     89 233   0.00000 E1
 ftableadjust     89 233   1.00000 E1
 wtableadjust     89 233   1.00000 E1
@@ -1400,6 +1484,8 @@ ctable           89 232   0.00000   0
 ptable           89 232   0.00000   0
 ctableadjust     89 232   0.00000   0
 ptableadjust     89 232   0.00000   0
+Ufermi           89 232  30.00000   0
+cfermi           89 232   5.00000   0
 Krotconstant     89 232   1.00000   0
 Pshift           89 232   0.00000   1
 Pshiftadjust     89 232   0.00000   1
@@ -1410,13 +1496,15 @@ Exmatch          89 232   1.91743   1
 Tadjust          89 232   1.00000   1
 E0adjust         89 232   1.00000   1
 Exmatchadjust    89 232   1.00000   1
-Ntop             89 232  20   1
-Nlow             89 232   2   1
+Ntop             89 232   1   1
+Nlow             89 232   0   1
 s2adjust         89 232   1.00000   1
 ctable           89 232   0.00000   1
 ptable           89 232   0.00000   1
 ctableadjust     89 232   0.00000   1
 ptableadjust     89 232   0.00000   1
+Ufermi           89 232  45.00000   1
+cfermi           89 232   5.00000   1
 Krotconstant     89 232   1.00000   1
 Pshift           89 232   0.00000   2
 Pshiftadjust     89 232   0.00000   2
@@ -1427,13 +1515,15 @@ Exmatch          89 232   3.76052   2
 Tadjust          89 232   1.00000   2
 E0adjust         89 232   1.00000   2
 Exmatchadjust    89 232   1.00000   2
-Ntop             89 232  28   2
-Nlow             89 232   2   2
+Ntop             89 232   1   2
+Nlow             89 232   0   2
 s2adjust         89 232   1.00000   2
 ctable           89 232   0.00000   2
 ptable           89 232   0.00000   2
 ctableadjust     89 232   0.00000   2
 ptableadjust     89 232   0.00000   2
+Ufermi           89 232  45.00000   2
+cfermi           89 232   5.00000   2
 Krotconstant     89 232   1.00000   2
 g                89 232  15.46667
 gp               89 232   5.93333
@@ -1441,14 +1531,15 @@ gn               89 232   9.53333
 gnadjust         89 232   1.00000
 gpadjust         89 232   1.00000
 gadjust          89 232   1.00000
+Risomer          89 232   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           89 232   0.03000
+gamgam           89 232   0.00000
 gamgamadjust     89 232   1.00000
 etable           89 232   0.00000 E1
 ftable           89 232   1.00000 E1
-wtable           89 232   1.06900 E1
+wtable           89 232   1.04800 E1
 etableadjust     89 232   0.00000 E1
 ftableadjust     89 232   1.00000 E1
 wtableadjust     89 232   1.00000 E1
@@ -1514,6 +1605,8 @@ ctable           88 232   0.00000   0
 ptable           88 232   0.00000   0
 ctableadjust     88 232   0.00000   0
 ptableadjust     88 232   0.00000   0
+Ufermi           88 232  30.00000   0
+cfermi           88 232   5.00000   0
 Krotconstant     88 232   1.00000   0
 Pshift           88 232   0.00000   1
 Pshiftadjust     88 232   0.00000   1
@@ -1524,13 +1617,15 @@ Exmatch          88 232   3.46051   1
 Tadjust          88 232   1.00000   1
 E0adjust         88 232   1.00000   1
 Exmatchadjust    88 232   1.00000   1
-Ntop             88 232  39   1
-Nlow             88 232   2   1
+Ntop             88 232   1   1
+Nlow             88 232   0   1
 s2adjust         88 232   1.00000   1
 ctable           88 232   0.00000   1
 ptable           88 232   0.00000   1
 ctableadjust     88 232   0.00000   1
 ptableadjust     88 232   0.00000   1
+Ufermi           88 232  45.00000   1
+cfermi           88 232   5.00000   1
 Krotconstant     88 232   1.00000   1
 Pshift           88 232   0.00000   2
 Pshiftadjust     88 232   0.00000   2
@@ -1541,13 +1636,15 @@ Exmatch          88 232   5.33619   2
 Tadjust          88 232   1.00000   2
 E0adjust         88 232   1.00000   2
 Exmatchadjust    88 232   1.00000   2
-Ntop             88 232  13   2
-Nlow             88 232   2   2
+Ntop             88 232   1   2
+Nlow             88 232   0   2
 s2adjust         88 232   1.00000   2
 ctable           88 232   0.00000   2
 ptable           88 232   0.00000   2
 ctableadjust     88 232   0.00000   2
 ptableadjust     88 232   0.00000   2
+Ufermi           88 232  45.00000   2
+cfermi           88 232   5.00000   2
 Krotconstant     88 232   1.00000   2
 g                88 232  15.46667
 gp               88 232   5.86667
@@ -1555,14 +1652,15 @@ gn               88 232   9.60000
 gnadjust         88 232   1.00000
 gpadjust         88 232   1.00000
 gadjust          88 232   1.00000
+Risomer          88 232   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           88 232   0.03000
+gamgam           88 232   0.00000
 gamgamadjust     88 232   1.00000
 etable           88 232   0.00000 E1
 ftable           88 232   1.00000 E1
-wtable           88 232   1.06900 E1
+wtable           88 232   1.04800 E1
 etableadjust     88 232   0.00000 E1
 ftableadjust     88 232   1.00000 E1
 wtableadjust     88 232   1.00000 E1
@@ -1628,40 +1726,46 @@ ctable           88 231   0.00000   0
 ptable           88 231   0.00000   0
 ctableadjust     88 231   0.00000   0
 ptableadjust     88 231   0.00000   0
+Ufermi           88 231  30.00000   0
+cfermi           88 231   5.00000   0
 Krotconstant     88 231   1.00000   0
 Pshift           88 231   0.00000   1
 Pshiftadjust     88 231   0.00000   1
 deltaW           88 231   2.87870   1
-T                88 231   0.48315   1
-E0               88 231  -1.82806   1
-Exmatch          88 231   5.76131   1
+T                88 231   0.34698   1
+E0               88 231   0.00002   1
+Exmatch          88 231   3.14923   1
 Tadjust          88 231   1.00000   1
 E0adjust         88 231   1.00000   1
 Exmatchadjust    88 231   1.00000   1
-Ntop             88 231   9   1
-Nlow             88 231   2   1
+Ntop             88 231   1   1
+Nlow             88 231   0   1
 s2adjust         88 231   1.00000   1
 ctable           88 231   0.00000   1
 ptable           88 231   0.00000   1
 ctableadjust     88 231   0.00000   1
 ptableadjust     88 231   0.00000   1
+Ufermi           88 231  45.00000   1
+cfermi           88 231   5.00000   1
 Krotconstant     88 231   1.00000   1
 Pshift           88 231   0.00000   2
 Pshiftadjust     88 231   0.00000   2
 deltaW           88 231   2.87870   2
-T                88 231   0.51543   2
-E0               88 231  -2.37809   2
-Exmatch          88 231   6.48311   2
+T                88 231   0.34791   2
+E0               88 231   0.00006   2
+Exmatch          88 231   3.16442   2
 Tadjust          88 231   1.00000   2
 E0adjust         88 231   1.00000   2
 Exmatchadjust    88 231   1.00000   2
-Ntop             88 231  17   2
-Nlow             88 231   2   2
+Ntop             88 231   1   2
+Nlow             88 231   0   2
 s2adjust         88 231   1.00000   2
 ctable           88 231   0.00000   2
 ptable           88 231   0.00000   2
 ctableadjust     88 231   0.00000   2
 ptableadjust     88 231   0.00000   2
+Ufermi           88 231  45.00000   2
+cfermi           88 231   5.00000   2
 Krotconstant     88 231   1.00000   2
 g                88 231  15.40000
 gp               88 231   5.86667
@@ -1669,14 +1773,15 @@ gn               88 231   9.53333
 gnadjust         88 231   1.00000
 gpadjust         88 231   1.00000
 gadjust          88 231   1.00000
+Risomer          88 231   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           88 231   0.03000
+gamgam           88 231   0.00000
 gamgamadjust     88 231   1.00000
 etable           88 231   0.00000 E1
 ftable           88 231   1.00000 E1
-wtable           88 231   1.06900 E1
+wtable           88 231   1.04800 E1
 etableadjust     88 231   0.00000 E1
 ftableadjust     88 231   1.00000 E1
 wtableadjust     88 231   1.00000 E1
@@ -1742,6 +1847,8 @@ ctable           92 236   0.00000   0
 ptable           92 236   0.00000   0
 ctableadjust     92 236   0.00000   0
 ptableadjust     92 236   0.00000   0
+Ufermi           92 236  30.00000   0
+cfermi           92 236   5.00000   0
 Krotconstant     92 236   1.00000   0
 Pshift           92 236   0.00000   1
 Pshiftadjust     92 236   0.00000   1
@@ -1752,13 +1859,15 @@ Exmatch          92 236  11.03055   1
 Tadjust          92 236   1.00000   1
 E0adjust         92 236   1.00000   1
 Exmatchadjust    92 236   1.00000   1
-Ntop             92 236  39   1
-Nlow             92 236   2   1
+Ntop             92 236   1   1
+Nlow             92 236   0   1
 s2adjust         92 236   1.00000   1
 ctable           92 236   0.00000   1
 ptable           92 236   0.00000   1
 ctableadjust     92 236   0.00000   1
 ptableadjust     92 236   0.00000   1
+Ufermi           92 236  45.00000   1
+cfermi           92 236   5.00000   1
 Krotconstant     92 236   1.00000   1
 Pshift           92 236   0.00000   2
 Pshiftadjust     92 236   0.00000   2
@@ -1769,13 +1878,15 @@ Exmatch          92 236  10.23217   2
 Tadjust          92 236   1.00000   2
 E0adjust         92 236   1.00000   2
 Exmatchadjust    92 236   1.00000   2
-Ntop             92 236  14   2
-Nlow             92 236   2   2
+Ntop             92 236   1   2
+Nlow             92 236   0   2
 s2adjust         92 236   1.00000   2
 ctable           92 236   0.00000   2
 ptable           92 236   0.00000   2
 ctableadjust     92 236   0.00000   2
 ptableadjust     92 236   0.00000   2
+Ufermi           92 236  45.00000   2
+cfermi           92 236   5.00000   2
 Krotconstant     92 236   1.00000   2
 D0               92 236 4.30000E-04
 g                92 236  15.73333
@@ -1784,6 +1895,7 @@ gn               92 236   9.60000
 gnadjust         92 236   1.00000
 gpadjust         92 236   1.00000
 gadjust          92 236   1.00000
+Risomer          92 236   1.00000
 ##
 ## Gamma-ray
 ##
@@ -1791,7 +1903,7 @@ gamgam           92 236   0.03500
 gamgamadjust     92 236   1.00000
 etable           92 236   0.00000 E1
 ftable           92 236   1.00000 E1
-wtable           92 236   1.64875 E1
+wtable           92 236   1.04800 E1
 etableadjust     92 236   0.00000 E1
 ftableadjust     92 236   1.00000 E1
 wtableadjust     92 236   1.00000 E1
@@ -1863,6 +1975,8 @@ ctable           91 234   0.00000   0
 ptable           91 234   0.00000   0
 ctableadjust     91 234   0.00000   0
 ptableadjust     91 234   0.00000   0
+Ufermi           91 234  30.00000   0
+cfermi           91 234   5.00000   0
 Krotconstant     91 234   1.00000   0
 Pshift           91 234   0.00000   1
 Pshiftadjust     91 234   0.00000   1
@@ -1873,13 +1987,15 @@ Exmatch          91 234   2.04506   1
 Tadjust          91 234   1.00000   1
 E0adjust         91 234   1.00000   1
 Exmatchadjust    91 234   1.00000   1
-Ntop             91 234  21   1
-Nlow             91 234   2   1
+Ntop             91 234   1   1
+Nlow             91 234   0   1
 s2adjust         91 234   1.00000   1
 ctable           91 234   0.00000   1
 ptable           91 234   0.00000   1
 ctableadjust     91 234   0.00000   1
 ptableadjust     91 234   0.00000   1
+Ufermi           91 234  45.00000   1
+cfermi           91 234   5.00000   1
 Krotconstant     91 234   1.00000   1
 Pshift           91 234   0.00000   2
 Pshiftadjust     91 234   0.00000   2
@@ -1890,13 +2006,15 @@ Exmatch          91 234   3.75120   2
 Tadjust          91 234   1.00000   2
 E0adjust         91 234   1.00000   2
 Exmatchadjust    91 234   1.00000   2
-Ntop             91 234  28   2
-Nlow             91 234   2   2
+Ntop             91 234   1   2
+Nlow             91 234   0   2
 s2adjust         91 234   1.00000   2
 ctable           91 234   0.00000   2
 ptable           91 234   0.00000   2
 ctableadjust     91 234   0.00000   2
 ptableadjust     91 234   0.00000   2
+Ufermi           91 234  45.00000   2
+cfermi           91 234   5.00000   2
 Krotconstant     91 234   1.00000   2
 D0               91 234 6.00000E-04
 g                91 234  15.60000
@@ -1905,6 +2023,7 @@ gn               91 234   9.53333
 gnadjust         91 234   1.00000
 gpadjust         91 234   1.00000
 gadjust          91 234   1.00000
+Risomer          91 234   1.00000
 ##
 ## Gamma-ray
 ##
@@ -1912,7 +2031,7 @@ gamgam           91 234   0.04700
 gamgamadjust     91 234   1.00000
 etable           91 234   0.00000 E1
 ftable           91 234   1.00000 E1
-wtable           91 234   1.06900 E1
+wtable           91 234   1.04800 E1
 etableadjust     91 234   0.00000 E1
 ftableadjust     91 234   1.00000 E1
 wtableadjust     91 234   1.00000 E1
@@ -1978,40 +2097,46 @@ ctable           90 233   0.00000   0
 ptable           90 233   0.00000   0
 ctableadjust     90 233   0.00000   0
 ptableadjust     90 233   0.00000   0
+Ufermi           90 233  30.00000   0
+cfermi           90 233   5.00000   0
 Krotconstant     90 233   1.00000   0
 Pshift           90 233   0.00000   1
 Pshiftadjust     90 233   0.00000   1
 deltaW           90 233   2.36855   1
-T                90 233   0.49263   1
-E0               90 233  -1.87443   1
-Exmatch          90 233   5.89462   1
+T                90 233   0.35295   1
+E0               90 233   0.00003   1
+Exmatch          90 233   3.17978   1
 Tadjust          90 233   1.00000   1
 E0adjust         90 233   1.00000   1
 Exmatchadjust    90 233   1.00000   1
-Ntop             90 233   9   1
-Nlow             90 233   2   1
+Ntop             90 233   1   1
+Nlow             90 233   0   1
 s2adjust         90 233   1.00000   1
 ctable           90 233   0.00000   1
 ptable           90 233   0.00000   1
 ctableadjust     90 233   0.00000   1
 ptableadjust     90 233   0.00000   1
+Ufermi           90 233  45.00000   1
+cfermi           90 233   5.00000   1
 Krotconstant     90 233   1.00000   1
 Pshift           90 233   0.00000   2
 Pshiftadjust     90 233   0.00000   2
 deltaW           90 233   2.36855   2
-T                90 233   0.52534   2
-E0               90 233  -2.43367   2
-Exmatch          90 233   6.64002   2
+T                90 233   0.35389   2
+E0               90 233   0.00005   2
+Exmatch          90 233   3.19525   2
 Tadjust          90 233   1.00000   2
 E0adjust         90 233   1.00000   2
 Exmatchadjust    90 233   1.00000   2
-Ntop             90 233  17   2
-Nlow             90 233   2   2
+Ntop             90 233   1   2
+Nlow             90 233   0   2
 s2adjust         90 233   1.00000   2
 ctable           90 233   0.00000   2
 ptable           90 233   0.00000   2
 ctableadjust     90 233   0.00000   2
 ptableadjust     90 233   0.00000   2
+Ufermi           90 233  45.00000   2
+cfermi           90 233   5.00000   2
 Krotconstant     90 233   1.00000   2
 D0               90 233 1.66000E-02
 g                90 233  15.53333
@@ -2020,6 +2145,7 @@ gn               90 233   9.53333
 gnadjust         90 233   1.00000
 gpadjust         90 233   1.00000
 gadjust          90 233   1.00000
+Risomer          90 233   1.00000
 ##
 ## Gamma-ray
 ##
@@ -2027,7 +2153,7 @@ gamgam           90 233   0.02400
 gamgamadjust     90 233   1.00000
 etable           90 233   0.00000 E1
 ftable           90 233   1.00000 E1
-wtable           90 233   1.24050 E1
+wtable           90 233   1.04800 E1
 etableadjust     90 233   0.00000 E1
 ftableadjust     90 233   1.00000 E1
 wtableadjust     90 233   1.00000 E1
@@ -2086,13 +2212,15 @@ Exmatch          90 237   2.89469   0
 Tadjust          90 237   1.00000   0
 E0adjust         90 237   1.00000   0
 Exmatchadjust    90 237   1.00000   0
-Ntop             90 237   1   0
-Nlow             90 237   0   0
+Ntop             90 237  10   0
+Nlow             90 237   2   0
 s2adjust         90 237   1.00000   0
 ctable           90 237   0.00000   0
 ptable           90 237   0.00000   0
 ctableadjust     90 237   0.00000   0
 ptableadjust     90 237   0.00000   0
+Ufermi           90 237  30.00000   0
+cfermi           90 237   5.00000   0
 Krotconstant     90 237   1.00000   0
 Pshift           90 237   0.00000   1
 Pshiftadjust     90 237   0.00000   1
@@ -2103,13 +2231,15 @@ Exmatch          90 237   2.69439   1
 Tadjust          90 237   1.00000   1
 E0adjust         90 237   1.00000   1
 Exmatchadjust    90 237   1.00000   1
-Ntop             90 237   9   1
-Nlow             90 237   2   1
+Ntop             90 237   1   1
+Nlow             90 237   0   1
 s2adjust         90 237   1.00000   1
 ctable           90 237   0.00000   1
 ptable           90 237   0.00000   1
 ctableadjust     90 237   0.00000   1
 ptableadjust     90 237   0.00000   1
+Ufermi           90 237  45.00000   1
+cfermi           90 237   5.00000   1
 Krotconstant     90 237   1.00000   1
 Pshift           90 237   0.00000   2
 Pshiftadjust     90 237   0.00000   2
@@ -2120,13 +2250,15 @@ Exmatch          90 237   4.51699   2
 Tadjust          90 237   1.00000   2
 E0adjust         90 237   1.00000   2
 Exmatchadjust    90 237   1.00000   2
-Ntop             90 237  17   2
-Nlow             90 237   2   2
+Ntop             90 237   1   2
+Nlow             90 237   0   2
 s2adjust         90 237   1.00000   2
 ctable           90 237   0.00000   2
 ptable           90 237   0.00000   2
 ctableadjust     90 237   0.00000   2
 ptableadjust     90 237   0.00000   2
+Ufermi           90 237  45.00000   2
+cfermi           90 237   5.00000   2
 Krotconstant     90 237   1.00000   2
 g                90 237  15.80000
 gp               90 237   6.00000
@@ -2134,14 +2266,15 @@ gn               90 237   9.80000
 gnadjust         90 237   1.00000
 gpadjust         90 237   1.00000
 gadjust          90 237   1.00000
+Risomer          90 237   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           90 237   0.03000
+gamgam           90 237   0.00000
 gamgamadjust     90 237   1.00000
 etable           90 237   0.00000 E1
 ftable           90 237   1.00000 E1
-wtable           90 237   1.06900 E1
+wtable           90 237   1.04800 E1
 etableadjust     90 237   0.00000 E1
 ftableadjust     90 237   1.00000 E1
 wtableadjust     90 237   1.00000 E1
@@ -2200,13 +2333,15 @@ Exmatch          89 235   2.85816   0
 Tadjust          89 235   1.00000   0
 E0adjust         89 235   1.00000   0
 Exmatchadjust    89 235   1.00000   0
-Ntop             89 235   1   0
-Nlow             89 235   0   0
+Ntop             89 235  10   0
+Nlow             89 235   2   0
 s2adjust         89 235   1.00000   0
 ctable           89 235   0.00000   0
 ptable           89 235   0.00000   0
 ctableadjust     89 235   0.00000   0
 ptableadjust     89 235   0.00000   0
+Ufermi           89 235  30.00000   0
+cfermi           89 235   5.00000   0
 Krotconstant     89 235   1.00000   0
 Pshift           89 235   0.00000   1
 Pshiftadjust     89 235   0.00000   1
@@ -2217,13 +2352,15 @@ Exmatch          89 235   2.64006   1
 Tadjust          89 235   1.00000   1
 E0adjust         89 235   1.00000   1
 Exmatchadjust    89 235   1.00000   1
-Ntop             89 235   9   1
-Nlow             89 235   2   1
+Ntop             89 235   1   1
+Nlow             89 235   0   1
 s2adjust         89 235   1.00000   1
 ctable           89 235   0.00000   1
 ptable           89 235   0.00000   1
 ctableadjust     89 235   0.00000   1
 ptableadjust     89 235   0.00000   1
+Ufermi           89 235  45.00000   1
+cfermi           89 235   5.00000   1
 Krotconstant     89 235   1.00000   1
 Pshift           89 235   0.00000   2
 Pshiftadjust     89 235   0.00000   2
@@ -2234,13 +2371,15 @@ Exmatch          89 235   4.52939   2
 Tadjust          89 235   1.00000   2
 E0adjust         89 235   1.00000   2
 Exmatchadjust    89 235   1.00000   2
-Ntop             89 235  10   2
-Nlow             89 235   2   2
+Ntop             89 235   1   2
+Nlow             89 235   0   2
 s2adjust         89 235   1.00000   2
 ctable           89 235   0.00000   2
 ptable           89 235   0.00000   2
 ctableadjust     89 235   0.00000   2
 ptableadjust     89 235   0.00000   2
+Ufermi           89 235  45.00000   2
+cfermi           89 235   5.00000   2
 Krotconstant     89 235   1.00000   2
 g                89 235  15.66667
 gp               89 235   5.93333
@@ -2248,14 +2387,15 @@ gn               89 235   9.73333
 gnadjust         89 235   1.00000
 gpadjust         89 235   1.00000
 gadjust          89 235   1.00000
+Risomer          89 235   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           89 235   0.03000
+gamgam           89 235   0.00000
 gamgamadjust     89 235   1.00000
 etable           89 235   0.00000 E1
 ftable           89 235   1.00000 E1
-wtable           89 235   1.06900 E1
+wtable           89 235   1.04800 E1
 etableadjust     89 235   0.00000 E1
 ftableadjust     89 235   1.00000 E1
 wtableadjust     89 235   1.00000 E1
@@ -2321,40 +2461,46 @@ ctable           89 231   0.00000   0
 ptable           89 231   0.00000   0
 ctableadjust     89 231   0.00000   0
 ptableadjust     89 231   0.00000   0
+Ufermi           89 231  30.00000   0
+cfermi           89 231   5.00000   0
 Krotconstant     89 231   1.00000   0
 Pshift           89 231   0.00000   1
 Pshiftadjust     89 231   0.00000   1
 deltaW           89 231   2.71226   1
-T                89 231   0.43643   1
-E0               89 231  -1.05826   1
-Exmatch          89 231   4.74748   1
+T                89 231   0.34960   1
+E0               89 231   0.00005   1
+Exmatch          89 231   3.16334   1
 Tadjust          89 231   1.00000   1
 E0adjust         89 231   1.00000   1
 Exmatchadjust    89 231   1.00000   1
-Ntop             89 231   7   1
-Nlow             89 231   2   1
+Ntop             89 231   1   1
+Nlow             89 231   0   1
 s2adjust         89 231   1.00000   1
 ctable           89 231   0.00000   1
 ptable           89 231   0.00000   1
 ctableadjust     89 231   0.00000   1
 ptableadjust     89 231   0.00000   1
+Ufermi           89 231  45.00000   1
+cfermi           89 231   5.00000   1
 Krotconstant     89 231   1.00000   1
 Pshift           89 231   0.00000   2
 Pshiftadjust     89 231   0.00000   2
 deltaW           89 231   2.71226   2
-T                89 231   0.42043   2
-E0               89 231  -0.82424   2
-Exmatch          89 231   4.43235   2
+T                89 231   0.35054   2
+E0               89 231   0.00001   2
+Exmatch          89 231   3.17872   2
 Tadjust          89 231   1.00000   2
 E0adjust         89 231   1.00000   2
 Exmatchadjust    89 231   1.00000   2
-Ntop             89 231  10   2
-Nlow             89 231   2   2
+Ntop             89 231   1   2
+Nlow             89 231   0   2
 s2adjust         89 231   1.00000   2
 ctable           89 231   0.00000   2
 ptable           89 231   0.00000   2
 ctableadjust     89 231   0.00000   2
 ptableadjust     89 231   0.00000   2
+Ufermi           89 231  45.00000   2
+cfermi           89 231   5.00000   2
 Krotconstant     89 231   1.00000   2
 g                89 231  15.40000
 gp               89 231   5.93333
@@ -2362,14 +2508,15 @@ gn               89 231   9.46667
 gnadjust         89 231   1.00000
 gpadjust         89 231   1.00000
 gadjust          89 231   1.00000
+Risomer          89 231   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           89 231   0.03000
+gamgam           89 231   0.00000
 gamgamadjust     89 231   1.00000
 etable           89 231   0.00000 E1
 ftable           89 231   1.00000 E1
-wtable           89 231   1.06900 E1
+wtable           89 231   1.04800 E1
 etableadjust     89 231   0.00000 E1
 ftableadjust     89 231   1.00000 E1
 wtableadjust     89 231   1.00000 E1
@@ -2435,40 +2582,46 @@ ctable           88 230   0.00000   0
 ptable           88 230   0.00000   0
 ctableadjust     88 230   0.00000   0
 ptableadjust     88 230   0.00000   0
+Ufermi           88 230  30.00000   0
+cfermi           88 230   5.00000   0
 Krotconstant     88 230   1.00000   0
 Pshift           88 230   0.00000   1
 Pshiftadjust     88 230   0.00000   1
 deltaW           88 230   2.77712   1
-T                88 230   0.48771   1
-E0               88 230  -1.06159   1
-Exmatch          88 230   6.60832   1
+T                88 230   0.41720   1
+E0               88 230   0.00006   1
+Exmatch          88 230   5.15897   1
 Tadjust          88 230   1.00000   1
 E0adjust         88 230   1.00000   1
 Exmatchadjust    88 230   1.00000   1
-Ntop             88 230  38   1
-Nlow             88 230   2   1
+Ntop             88 230   1   1
+Nlow             88 230   0   1
 s2adjust         88 230   1.00000   1
 ctable           88 230   0.00000   1
 ptable           88 230   0.00000   1
 ctableadjust     88 230   0.00000   1
 ptableadjust     88 230   0.00000   1
+Ufermi           88 230  45.00000   1
+cfermi           88 230   5.00000   1
 Krotconstant     88 230   1.00000   1
 Pshift           88 230   0.00000   2
 Pshiftadjust     88 230   0.00000   2
 deltaW           88 230   2.77712   2
-T                88 230   0.47610   2
-E0               88 230  -0.85756   2
-Exmatch          88 230   6.35690   2
+T                88 230   0.41805   2
+E0               88 230   0.00002   2
+Exmatch          88 230   5.17517   2
 Tadjust          88 230   1.00000   2
 E0adjust         88 230   1.00000   2
 Exmatchadjust    88 230   1.00000   2
-Ntop             88 230  13   2
-Nlow             88 230   2   2
+Ntop             88 230   1   2
+Nlow             88 230   0   2
 s2adjust         88 230   1.00000   2
 ctable           88 230   0.00000   2
 ptable           88 230   0.00000   2
 ctableadjust     88 230   0.00000   2
 ptableadjust     88 230   0.00000   2
+Ufermi           88 230  45.00000   2
+cfermi           88 230   5.00000   2
 Krotconstant     88 230   1.00000   2
 g                88 230  15.33333
 gp               88 230   5.86667
@@ -2476,14 +2629,15 @@ gn               88 230   9.46667
 gnadjust         88 230   1.00000
 gpadjust         88 230   1.00000
 gadjust          88 230   1.00000
+Risomer          88 230   1.00000
 ##
 ## Gamma-ray
 ##
-gamgam           88 230   0.03000
+gamgam           88 230   0.00000
 gamgamadjust     88 230   1.00000
 etable           88 230   0.00000 E1
 ftable           88 230   1.00000 E1
-wtable           88 230   1.06900 E1
+wtable           88 230   1.04800 E1
 etableadjust     88 230   0.00000 E1
 ftableadjust     88 230   1.00000 E1
 wtableadjust     88 230   1.00000 E1
@@ -2529,6 +2683,8 @@ Rclass2mom       88 230   1.00000  2
 ##
 ## Level density
 ##
+ldmodel        1
+colenhance     y
 alphald           0.06660
 betald            0.25800
 gammashell1       0.45900
@@ -2536,19 +2692,16 @@ gammashell2       0.00000
 pairconstant     12.00000
 pshiftconstant    0.00000
 Rspincut          1.00000
-Rspincutff        9.00000
+Rspincutff        4.00000
 cglobal         1.00000E-20
 pglobal         1.00000E-20
-Ufermi           30.00000
-cfermi            5.00000
-Ufermibf         45.00000
-cfermibf          5.00000
 Kph              15.00000
 ##
 ## Gamma-ray
 ##
-gnorm             1.00000
-xscaptherm      2.68000E+03
+strength        9
+strengthM1      3
+xscaptherm      2.67000E+03
 ##
 ## Pre-equilibrium
 ##
@@ -2560,6 +2713,7 @@ Rnunu             1.50000
 Rpinu             1.00000
 Rnupi             1.00000
 Rgamma            2.00000
+Rspincutpreeq     1.00000
 Esurf            12.10659
 Cstrip        n   1.00000
 Cknock        n   1.00000
@@ -2582,13 +2736,17 @@ Cbreak        a   1.00000
 ##
 ## Fission
 ##
+fismodel       1
 Cnubar1           1.00000
 Cnubar2           1.00000
 Tmadjust          1.00000
 Fsadjust          1.00000
+Cbarrier          1.20000
 ##
 ## Optical model
 ##
+deuteronomp    4
+alphaomp       6
 v1adjust      n   1.00000
 v2adjust      n   1.00000
 v3adjust      n   1.00000
@@ -2612,6 +2770,8 @@ rvsoadjust    n   1.00000
 avsoadjust    n   1.00000
 vso1adjust    n   1.00000
 vso2adjust    n   1.00000
+rwsoadjust    n   1.00000
+awsoadjust    n   1.00000
 wso1adjust    n   1.00000
 wso2adjust    n   1.00000
 rcadjust      n   1.00000
@@ -2638,6 +2798,8 @@ rvsoadjust    p   1.00000
 avsoadjust    p   1.00000
 vso1adjust    p   1.00000
 vso2adjust    p   1.00000
+rwsoadjust    p   1.00000
+awsoadjust    p   1.00000
 wso1adjust    p   1.00000
 wso2adjust    p   1.00000
 rcadjust      p   1.00000
@@ -2664,6 +2826,8 @@ rvsoadjust    d   1.00000
 avsoadjust    d   1.00000
 vso1adjust    d   1.00000
 vso2adjust    d   1.00000
+rwsoadjust    d   1.00000
+awsoadjust    d   1.00000
 wso1adjust    d   1.00000
 wso2adjust    d   1.00000
 rcadjust      d   1.00000
@@ -2690,6 +2854,8 @@ rvsoadjust    t   1.00000
 avsoadjust    t   1.00000
 vso1adjust    t   1.00000
 vso2adjust    t   1.00000
+rwsoadjust    t   1.00000
+awsoadjust    t   1.00000
 wso1adjust    t   1.00000
 wso2adjust    t   1.00000
 rcadjust      t   1.00000
@@ -2716,6 +2882,8 @@ rvsoadjust    h   1.00000
 avsoadjust    h   1.00000
 vso1adjust    h   1.00000
 vso2adjust    h   1.00000
+rwsoadjust    h   1.00000
+awsoadjust    h   1.00000
 wso1adjust    h   1.00000
 wso2adjust    h   1.00000
 rcadjust      h   1.00000
@@ -2742,10 +2910,12 @@ rvsoadjust    a   1.00000
 avsoadjust    a   1.00000
 vso1adjust    a   1.00000
 vso2adjust    a   1.00000
+rwsoadjust    a   1.00000
+awsoadjust    a   1.00000
 wso1adjust    a   1.00000
 wso2adjust    a   1.00000
 rcadjust      a   1.00000
 ##
 ## Resonance parameters
 ## Z   A     S0        R      xs(therm)    D0         a         P        Sn
-##  92 238 3.557E-01 4.565E+00 2.680E+03 5.616E+01 2.994E+01 7.762E-01 4.806E+00
+##  92 238 3.557E-01 4.565E+00 2.670E+03 5.616E+01 2.994E+01 7.762E-01 4.806E+00

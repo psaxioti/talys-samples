@@ -10,10 +10,9 @@ energy   1.
 #
 # Parameters 
 #
-ldmodel   5
-asys n
-strength 2
-gnorm 0.27
 astro y
 astrogs n
 partable y
+ldmodel 1
+strength 8
+wtable        76 188    0.88 e1
