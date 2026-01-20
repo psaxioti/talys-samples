@@ -1,9 +1,0 @@
-#!/bin/csh -f
-xmgr -p p.par -xydy bi209nxp063.exp -xy ../a/org/pspec063.000.tot ../b/org/pspec063.000.tot &
-xmgr -p d.par -xydy bi209nxd063.exp -xy ../a/org/dspec063.000.tot &
-xmgr -p t.par -xydy bi209nxt063.exp -xy ../a/org/tspec063.000.tot &
-xmgr -p a.par -xydy bi209nxa063.exp -xy ../a/org/aspec063.000.tot &
-xmgr -p pddx.par -xydy bi209nxp063deg020.exp bi209nxp063deg070.exp bi209nxp063deg110.exp -xy ../b/org/pddx*deg &
-xmgr -p dddx.par -xydy bi209nxd063deg020.exp bi209nxd063deg070.exp bi209nxd063deg110.exp -xy ../a/org/dddx*deg &
-xmgr -p tddx.par -xydy bi209nxt063deg020.exp bi209nxt063deg070.exp bi209nxt063deg110.exp -xy ../a/org/tddx*deg &
-xmgr -p addx.par -xydy bi209nxa063deg020.exp bi209nxa063deg070.exp bi209nxa063deg110.exp -xy ../a/org/addx*deg &

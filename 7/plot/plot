@@ -1,8 +1,0 @@
-#!/bin/csh -f
-xmgr -p log.par -xy zr090pxp120.exp -xy ../org/pspec120.000.tot\
-                -xy zr090pxn120.exp -xy ../org/nspec120.000.tot &
-xmgr -p logang.par -xy zr090pxp120out020.exp -xy ../org/pddx020.0.mev\
-                   -xy zr090pxp120out040.exp -xy ../org/pddx040.0.mev\
-                   -xy zr090pxp120out060.exp -xy ../org/pddx060.0.mev\
-                   -xy zr090pxp120out080.exp -xy ../org/pddx080.0.mev\
-                   -xy zr090pxp120out100.exp -xy ../org/pddx100.0.mev &
